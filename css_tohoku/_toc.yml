@@ -9,9 +9,11 @@ parts:
   - file: markdown
   - file: notebooks
   - file: markdown-notebooks
+  - file: draft/regular_expressions
 
 - caption: Getting started
   chapters:
   - file: getting_started/about
   - file: getting_started/installation
   - file: getting_started/jupyter
+  - file: draft/persistence
