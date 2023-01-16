@@ -165,6 +165,16 @@ const thebe_selector_output = ".output, .cell_output"
    Presistence
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="draft/backpropagation.html">
+   誤差逆伝播法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="draft/attention.html">
+   Attention
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -364,6 +374,44 @@ title="Print to PDF"
 <li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/jupyter.html">The Jupyter ecosystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draft/persistence.html">Presistence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/backpropagation.html">誤差逆伝播法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/backpropagation.html#begin-aligned-frac-partial-l-partial-boldsymbol-x-begin-pmatrix-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-1-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-1-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-1-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-2-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-2-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-2-end-pmatrix">\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
+\end{pmatrix} \</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/backpropagation.html#begin-pmatrix-frac-partial-l-partial-y-1-w-11-frac-partial-l-partial-y-2-w-21-frac-partial-l-partial-y-3-w-31-frac-partial-l-partial-y-1-w-12-frac-partial-l-partial-y-2-w-22-frac-partial-l-partial-y-3-w-32-end-pmatrix">\begin{pmatrix}
+\frac{\partial L}{\partial y_1} w_{11} +
+\frac{\partial L}{\partial y_2} w_{21} +
+\frac{\partial L}{\partial y_3} w_{31} &amp;
+\frac{\partial L}{\partial y_1} w_{12} +
+\frac{\partial L}{\partial y_2} w_{22} +
+\frac{\partial L}{\partial y_3} w_{32}
+\end{pmatrix} \</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/backpropagation.html#id4">\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
+\end{pmatrix} \</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/backpropagation.html#id5">\begin{pmatrix}
+\frac{\partial L}{\partial y_1} w_{11} +
+\frac{\partial L}{\partial y_2} w_{21} +
+\frac{\partial L}{\partial y_3} w_{31} &amp;
+\frac{\partial L}{\partial y_1} w_{12} +
+\frac{\partial L}{\partial y_2} w_{22} +
+\frac{\partial L}{\partial y_3} w_{32}
+\end{pmatrix} \</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draft/attention.html">Attention</a></li>
 </ul>
 </div>
 </section>
