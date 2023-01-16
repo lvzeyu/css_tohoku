@@ -3,7 +3,15 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+- caption: イントロダクション
+  chapters:
+  - file: markdown
+  - file: notebooks
+  - file: markdown-notebooks
+
+- caption: Getting started
+  chapters:
+  - file: getting_started/about
+  - file: getting_started/installation
+  - file: getting_started/jupyter
