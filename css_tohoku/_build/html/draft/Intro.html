@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Presistence &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>Esstential Python Libraries &#8212; 計算社会科学のためのPythonプログラミング入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="誤差逆伝播法" href="backpropagation.html" />
-    <link rel="prev" title="The Jupyter ecosystem" href="../getting_started/jupyter.html" />
+    <link rel="next" title="授業についての概要" href="../markdown.html" />
+    <link rel="prev" title="計算社会科学のためのPythonプログラミング入門" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,9 +118,9 @@ const thebe_selector_output = ".output, .cell_output"
   イントロダクション
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Esstential Python Libraries
   </a>
  </li>
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
   Getting started
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started/about.html">
    About this course
@@ -166,8 +166,8 @@ const thebe_selector_output = ".output, .cell_output"
    The Jupyter ecosystem
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="persistence.html">
    Presistence
   </a>
  </li>
@@ -240,7 +240,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=tree/css_tohoku/draft/persistence.ipynb"
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=tree/css_tohoku/draft/Intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -300,7 +300,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/persistence.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/Intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -328,7 +328,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/draft/persistence.ipynb"
+        <a href="../_sources/draft/Intro.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -387,33 +387,51 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csv">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     csv
-    </span>
-   </code>
-   モジュール
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Esstential Python Libraries
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     NumPy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas">
+     pandas
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scikit-learn">
+     scikit-learn
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     json
-    </span>
-   </code>
-   モジュール
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python環境構築
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dump">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dump
-      </span>
-     </code>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anaconda">
+     Anaconda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Anacondaのインストール
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda">
+     Conda環境の作成
     </a>
    </li>
   </ul>
@@ -427,7 +445,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Presistence</h1>
+                <h1>Esstential Python Libraries</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -437,33 +455,51 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csv">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     csv
-    </span>
-   </code>
-   モジュール
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Esstential Python Libraries
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy">
+     NumPy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas">
+     pandas
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scikit-learn">
+     scikit-learn
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     json
-    </span>
-   </code>
-   モジュール
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python環境構築
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dump">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dump
-      </span>
-     </code>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anaconda">
+     Anaconda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Anacondaのインストール
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda">
+     Conda環境の作成
     </a>
    </li>
   </ul>
@@ -478,16 +514,69 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="presistence">
-<h1>Presistence<a class="headerlink" href="#presistence" title="Permalink to this headline">#</a></h1>
-<section id="csv">
-<h2><code class="docutils literal notranslate"><span class="pre">csv</span></code>モジュール<a class="headerlink" href="#csv" title="Permalink to this headline">#</a></h2>
+  <section id="esstential-python-libraries">
+<h1>Esstential Python Libraries<a class="headerlink" href="#esstential-python-libraries" title="Permalink to this headline">#</a></h1>
+<section id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
+<p><strong>NumPy</strong>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。</p>
 </section>
-<section id="json">
-<h2><a class="reference external" href="https://docs.python.org/ja/3/library/json.html"><code class="docutils literal notranslate"><span class="pre">json</span></code></a>モジュール<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h2>
-<section id="dump">
-<h3><code class="docutils literal notranslate"><span class="pre">dump</span></code><a class="headerlink" href="#dump" title="Permalink to this headline">#</a></h3>
+<section id="pandas">
+<h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h2>
+<p><strong>pandas</strong>とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。
+Pandasの特徴には、データ操作のための高速で効率的なデータフレーム (DataFrame) という独自のデータ構造が提供されており、データの調整や変形など様々な処理が可能です。</p>
 </section>
+<section id="matplotlib">
+<h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
+<p>matplotlibは、グラフ描画ライブラリである。オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持つ。</p>
+</section>
+<section id="scikit-learn">
+<h2>scikit-learn<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">#</a></h2>
+<p>scikit-learnは機械学習ライブラリである。教師あり学習、教師なし学習に関するアルゴリズム(SVM、Random Forest、回帰、クラスタリングなど)が一通り利用出来る上、データセットが豊富に揃っている。</p>
+</section>
+</section>
+<section id="python">
+<h1>Python環境構築<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="anaconda">
+<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
+<p>Python の環境を構築するもう一つの方法として <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>を利用することもできます。
+Anaconda はデータサイエンス向けの環境を提供するプラットフォームです。科学技術計算などを中心とした、多くのモジュールやツールのコンパイル済みバイナリファイルを提供しており、簡単にPythonを利用する環境を構築・管理できます。</p>
+</section>
+<section id="id1">
+<h2>Anacondaのインストール<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>下記の記事を参照してAnacondaをインストールします</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/windows/install.html">Windows版Anacondaのインストール</a></p></li>
+<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/macos/install.html">MacOS版Anacondaのインストール</a></p></li>
+<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/unix/install.html">Linux版Anacondaのインストール</a></p></li>
+</ul>
+</section>
+<section id="conda">
+<h2>Conda環境の作成<a class="headerlink" href="#conda" title="Permalink to this headline">#</a></h2>
+<p>Conda環境は、<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code>コマンドでPython環境を作成します。
+つぎのコマンドは、<code class="docutils literal notranslate"><span class="pre">chss</span></code> という名前で、<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.10</span></code>の環境を作成します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) $ conda create --name chss python=3.10
+</pre></div>
+</div>
+<p>作成した環境を確認します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) $ conda info -e
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>conda<span class="w"> </span>info<span class="w"> </span>-e
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># conda environments:
+#
+base                     /opt/anaconda3
+chss                     /opt/anaconda3/envs/chss
+jupyterbook           *  /opt/anaconda3/envs/jupyterbook
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -518,17 +607,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../getting_started/jupyter.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The Jupyter ecosystem</p>
+            <p class="prev-next-title">計算社会科学のためのPythonプログラミング入門</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="backpropagation.html" title="next page">
+    <a class='right-next' id="next-link" href="../markdown.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">誤差逆伝播法</p>
+        <p class="prev-next-title">授業についての概要</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
