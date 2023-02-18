@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Intro.html">
-   Esstential Python Libraries
+   Pythonの基本
   </a>
  </li>
  <li class="toctree-l1">
@@ -242,7 +242,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=tree/css_tohoku/draft/backpropagation.ipynb"
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/backpropagation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -255,6 +255,24 @@ title="Launch on Binder"
     <img src="../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/backpropagation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -389,188 +407,121 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   誤差逆伝播法
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     前回の内容
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     今回の内容
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#affine">
-     Affineレイヤー
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-aligned-frac-partial-l-partial-boldsymbol-x-begin-pmatrix-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-1-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-1-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-1-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-2-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-2-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-2-end-pmatrix">
-   \begin{aligned}
-   <span class="math notranslate nohighlight">
-    \(\frac{\partial L}{\partial \boldsymbol{X}}\)
-   </span>
-   =
-\begin{pmatrix}
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   前回の内容
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-pmatrix-frac-partial-l-partial-y-1-w-11-frac-partial-l-partial-y-2-w-21-frac-partial-l-partial-y-3-w-31-frac-partial-l-partial-y-1-w-12-frac-partial-l-partial-y-2-w-22-frac-partial-l-partial-y-3-w-32-end-pmatrix">
-   \begin{pmatrix}
-\frac{\partial L}{\partial y_1} w_{11} +
-\frac{\partial L}{\partial y_2} w_{21} +
-\frac{\partial L}{\partial y_3} w_{31} &amp;
-\frac{\partial L}{\partial y_1} w_{12} +
-\frac{\partial L}{\partial y_2} w_{22} +
-\frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   今回の内容
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine">
+   Affineレイヤー
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   \begin{aligned}
-   <span class="math notranslate nohighlight">
-    \(\frac{\partial L}{\partial \boldsymbol{X}}\)
-   </span>
-   =
-\begin{pmatrix}
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \
+   バッチ版Affineレイヤの逆伝播
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   \begin{pmatrix}
-\frac{\partial L}{\partial y_1} w_{11} +
-\frac{\partial L}{\partial y_2} w_{21} +
-\frac{\partial L}{\partial y_3} w_{31} &amp;
-\frac{\partial L}{\partial y_1} w_{12} +
-\frac{\partial L}{\partial y_2} w_{22} +
-\frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     順伝播の確認
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     バッチ版Affineレイヤの逆伝播
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       順伝播の確認
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       逆伝播の導出
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     ミニバッチ学習
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     誤差逆伝播法の実装
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
-       入力層から隠れ層
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       隠れ層から出力層
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       平均二乗誤差
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       逆伝播
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#softmax-with-loss">
-     Softmax-with-Lossレイヤ
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnist">
-     Mnistでの実装
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       勾配確認
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#network-numerical-gradient">
-         <strong>
-          network.numerical_gradient
-         </strong>
-         を解読しましょう
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pedict-function">
-       pedict functionで順伝播の結果を計算する
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id16">
-         <strong>
-          network.numerical_gradient
-         </strong>
-         はただこの前に紹介した計算方法をパッチに対応させた
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     誤差逆伝播法を使った学習
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     参考になった資料
+     逆伝播の導出
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ミニバッチ学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   誤差逆伝播法の実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     入力層から隠れ層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     隠れ層から出力層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     平均二乗誤差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     逆伝播
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#softmax-with-loss">
+   Softmax-with-Lossレイヤ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   Mnistでの実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     勾配確認
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#network-numerical-gradient">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       を解読しましょう
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pedict-function">
+     pedict functionで順伝播の結果を計算する
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       はただこの前に紹介した計算方法をパッチに対応させた
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   誤差逆伝播法を使った学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   参考になった資料
+  </a>
  </li>
 </ul>
 
@@ -591,188 +542,121 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   誤差逆伝播法
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     前回の内容
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     今回の内容
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#affine">
-     Affineレイヤー
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-aligned-frac-partial-l-partial-boldsymbol-x-begin-pmatrix-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-1-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-1-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-1-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-2-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-2-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-2-end-pmatrix">
-   \begin{aligned}
-   <span class="math notranslate nohighlight">
-    \(\frac{\partial L}{\partial \boldsymbol{X}}\)
-   </span>
-   =
-\begin{pmatrix}
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   前回の内容
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-pmatrix-frac-partial-l-partial-y-1-w-11-frac-partial-l-partial-y-2-w-21-frac-partial-l-partial-y-3-w-31-frac-partial-l-partial-y-1-w-12-frac-partial-l-partial-y-2-w-22-frac-partial-l-partial-y-3-w-32-end-pmatrix">
-   \begin{pmatrix}
-\frac{\partial L}{\partial y_1} w_{11} +
-\frac{\partial L}{\partial y_2} w_{21} +
-\frac{\partial L}{\partial y_3} w_{31} &amp;
-\frac{\partial L}{\partial y_1} w_{12} +
-\frac{\partial L}{\partial y_2} w_{22} +
-\frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   今回の内容
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine">
+   Affineレイヤー
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   \begin{aligned}
-   <span class="math notranslate nohighlight">
-    \(\frac{\partial L}{\partial \boldsymbol{X}}\)
-   </span>
-   =
-\begin{pmatrix}
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
-\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
-\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \
+   バッチ版Affineレイヤの逆伝播
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   \begin{pmatrix}
-\frac{\partial L}{\partial y_1} w_{11} +
-\frac{\partial L}{\partial y_2} w_{21} +
-\frac{\partial L}{\partial y_3} w_{31} &amp;
-\frac{\partial L}{\partial y_1} w_{12} +
-\frac{\partial L}{\partial y_2} w_{22} +
-\frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     順伝播の確認
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     バッチ版Affineレイヤの逆伝播
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       順伝播の確認
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       逆伝播の導出
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     ミニバッチ学習
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     誤差逆伝播法の実装
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
-       入力層から隠れ層
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       隠れ層から出力層
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       平均二乗誤差
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       逆伝播
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#softmax-with-loss">
-     Softmax-with-Lossレイヤ
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mnist">
-     Mnistでの実装
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       勾配確認
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#network-numerical-gradient">
-         <strong>
-          network.numerical_gradient
-         </strong>
-         を解読しましょう
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pedict-function">
-       pedict functionで順伝播の結果を計算する
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id16">
-         <strong>
-          network.numerical_gradient
-         </strong>
-         はただこの前に紹介した計算方法をパッチに対応させた
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     誤差逆伝播法を使った学習
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id18">
-     参考になった資料
+     逆伝播の導出
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ミニバッチ学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   誤差逆伝播法の実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     入力層から隠れ層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     隠れ層から出力層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     平均二乗誤差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     逆伝播
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#softmax-with-loss">
+   Softmax-with-Lossレイヤ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   Mnistでの実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     勾配確認
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#network-numerical-gradient">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       を解読しましょう
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pedict-function">
+     pedict functionで順伝播の結果を計算する
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       はただこの前に紹介した計算方法をパッチに対応させた
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   誤差逆伝播法を使った学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   参考になった資料
+  </a>
  </li>
 </ul>
 
@@ -811,7 +695,7 @@ title="Print to PDF"
 \[
 \mathbf{L} = Z (\mathbf{Y})
 \]</div>
-<img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F121304%2F409245cd-9b50-b40f-3a4d-b3adbf2da0df.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=394ef3d3f33c088000b6a67debf0c11d" alt="drawing" width="500"/>
+<a class="reference internal image-reference" href="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F121304%2F409245cd-9b50-b40f-3a4d-b3adbf2da0df.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=394ef3d3f33c088000b6a67debf0c11d"><img alt="drawing" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F121304%2F409245cd-9b50-b40f-3a4d-b3adbf2da0df.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=394ef3d3f33c088000b6a67debf0c11d" style="width: 500px;" /></a>
 <p>入力として<span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1\; x_2)\)</span>の２次元だとします。 この入力に対して、第１層目への出力を３つにしたい場合、<span class="math notranslate nohighlight">\((2, 3)\)</span>の行列を右からかけます。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -821,172 +705,182 @@ w_{12} &amp; w_{22} &amp; w_{32}
 \end{pmatrix}
 \end{split}\]</div>
 <p>出力<span class="math notranslate nohighlight">\(\boldsymbol{Y}\)</span>は</p>
-<p>\begin{align}
-\boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \
+<div class="amsmath math notranslate nohighlight" id="equation-7fd75c0d-d498-4982-bc80-1bf2c223846b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7fd75c0d-d498-4982-bc80-1bf2c223846b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \\
 &amp;=
 \begin{pmatrix}
 x_1 &amp; x_2
 \end{pmatrix}
 \begin{pmatrix}
-w_{11} &amp; w_{21} &amp; w_{31} \
-w_{12} &amp; w_{22} &amp; w_{32}
-\end{pmatrix} \
-&amp;=
+w_{11} &amp; w_{21} &amp; w_{31} \\
+w_{12} &amp; w_{22} &amp; w_{32} 
+\end{pmatrix} \\
+&amp;= 
 \begin{pmatrix}
 w_{11}x_1+w_{12}x_2 &amp; w_{21}x_1+w_{22}x_2 &amp; w_{31}x_1+w_{32}x_2
-\end{pmatrix} \
+\end{pmatrix} \\
 &amp;=
 \begin{pmatrix}
 y_1 &amp; y_2 &amp; y_3
 \end{pmatrix}　\tag{1.1}
-\end{align}
-となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
-<p>\begin{align}
-\frac{\partial L}{\partial \boldsymbol{X}} &amp;=
+\end{align}\]</div>
+<p>となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-00fa388b-57db-4066-aedd-f301f566324e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-00fa388b-57db-4066-aedd-f301f566324e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{X}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial x_1} &amp; \frac{\partial L}{\partial x_2}
-\end{pmatrix} \
+\end{pmatrix} \\
 &amp;=
 \begin{pmatrix}
 \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} &amp; \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_2}
-\end{pmatrix}
-\end{align}
-ここで</p>
-<p>\begin{align}
-\frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} =
+\end{pmatrix} 
+\end{align}\]</div>
+<p>ここで</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4edb3e37-1507-4e00-b956-e44f47336a93">
+<span class="eqno">(3)<a class="headerlink" href="#equation-4edb3e37-1507-4e00-b956-e44f47336a93" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} = 
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
-\frac{\partial y_1}{\partial x_1} \
-\frac{\partial y_2}{\partial x_1} \
-\frac{\partial y_3}{\partial x_1}
+\frac{\partial y_1}{\partial x_1} \\
+\frac{\partial y_2}{\partial x_1} \\
+\frac{\partial y_3}{\partial x_1} 
 \end{pmatrix}
-\end{align}</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="begin-aligned-frac-partial-l-partial-boldsymbol-x-begin-pmatrix-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-1-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-1-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-1-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-2-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-2-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-2-end-pmatrix">
-<h1>\begin{aligned}
-<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =
-\begin{pmatrix}
+\end{align}\]</div>
+<p>\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
+<div class="amsmath math notranslate nohighlight" id="equation-23358910-e85a-459f-937f-8a932892ddb0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-23358910-e85a-459f-937f-8a932892ddb0" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \<a class="headerlink" href="#begin-aligned-frac-partial-l-partial-boldsymbol-x-begin-pmatrix-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-1-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-1-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-1-frac-partial-l-partial-y-1-frac-partial-y-1-partial-x-2-frac-partial-l-partial-y-2-frac-partial-y-2-partial-x-2-frac-partial-l-partial-y-3-frac-partial-y-3-partial-x-2-end-pmatrix" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="begin-pmatrix-frac-partial-l-partial-y-1-w-11-frac-partial-l-partial-y-2-w-21-frac-partial-l-partial-y-3-w-31-frac-partial-l-partial-y-1-w-12-frac-partial-l-partial-y-2-w-22-frac-partial-l-partial-y-3-w-32-end-pmatrix">
-<h1>\begin{pmatrix}
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-74df64c2-2426-4d83-9b28-82cd8b9260a6">
+<span class="eqno">(5)<a class="headerlink" href="#equation-74df64c2-2426-4d83-9b28-82cd8b9260a6" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
 \frac{\partial L}{\partial y_1} w_{12} +
 \frac{\partial L}{\partial y_2} w_{22} +
 \frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \<a class="headerlink" href="#begin-pmatrix-frac-partial-l-partial-y-1-w-11-frac-partial-l-partial-y-2-w-21-frac-partial-l-partial-y-3-w-31-frac-partial-l-partial-y-1-w-12-frac-partial-l-partial-y-2-w-22-frac-partial-l-partial-y-3-w-32-end-pmatrix" title="Permalink to this headline">#</a></h1>
-<p>\begin{pmatrix}
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77bd4b01-690a-4597-93e5-82ac3c95417a">
+<span class="eqno">(6)<a class="headerlink" href="#equation-77bd4b01-690a-4597-93e5-82ac3c95417a" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
-\end{pmatrix}
-\begin{pmatrix}
-w_{11} &amp; w_{12} \
-w_{21} &amp; w_{22} \
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2274a84a-2187-4701-818b-fc1d2fa0df44">
+<span class="eqno">(7)<a class="headerlink" href="#equation-2274a84a-2187-4701-818b-fc1d2fa0df44" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+w_{11} &amp; w_{12} \\
+w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
-\end{pmatrix} \
-= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
+\end{pmatrix}\]</div>
+<p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
 \end{aligned}</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id4">
-<h1>\begin{aligned}
-<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =
-\begin{pmatrix}
+<p>\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e58ed72f-5d44-44ef-bf63-e68d804e723f">
+<span class="eqno">(8)<a class="headerlink" href="#equation-e58ed72f-5d44-44ef-bf63-e68d804e723f" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
-\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2}
-\end{pmatrix} \<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id5">
-<h1>\begin{pmatrix}
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ad78754a-2d51-47dd-882e-b1b32100e9d3">
+<span class="eqno">(9)<a class="headerlink" href="#equation-ad78754a-2d51-47dd-882e-b1b32100e9d3" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
 \frac{\partial L}{\partial y_1} w_{12} +
 \frac{\partial L}{\partial y_2} w_{22} +
 \frac{\partial L}{\partial y_3} w_{32}
-\end{pmatrix} \<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h1>
-<p>\begin{pmatrix}
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a6fd1f7e-b83e-471c-ab53-248ffe5a8b3f">
+<span class="eqno">(10)<a class="headerlink" href="#equation-a6fd1f7e-b83e-471c-ab53-248ffe5a8b3f" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
-\end{pmatrix}
-\begin{pmatrix}
-w_{11} &amp; w_{12} \
-w_{21} &amp; w_{22} \
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02028a6e-a103-4712-b26f-cca15fc2ce47">
+<span class="eqno">(11)<a class="headerlink" href="#equation-02028a6e-a103-4712-b26f-cca15fc2ce47" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+w_{11} &amp; w_{12} \\
+w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
-\end{pmatrix} \
-= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
+\end{pmatrix}\]</div>
+<p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
 \end{aligned}</p>
 <p>一方、損失関数<span class="math notranslate nohighlight">\(L\)</span>の重み<span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span>による偏微分は</p>
-<p>\begin{align}
-\frac{\partial L}{\partial \boldsymbol{W}} &amp;=
+<div class="amsmath math notranslate nohighlight" id="equation-873dd99b-de61-4a7e-b674-9c08266df7ac">
+<span class="eqno">(12)<a class="headerlink" href="#equation-873dd99b-de61-4a7e-b674-9c08266df7ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
-\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \
-\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}}
-\end{pmatrix} \
-\end{align}
-です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
-<p>\begin{align}
-\frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \
-\frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \
-\frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \
-\frac{\partial L}{\partial w_{22}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{22}} \
-\frac{\partial L}{\partial w_{31}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \
+\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
+\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}} 
+\end{pmatrix} \\
+\end{align}\]</div>
+<p>です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7cc687d-0213-4693-b20b-1d8234167c7c">
+<span class="eqno">(13)<a class="headerlink" href="#equation-d7cc687d-0213-4693-b20b-1d8234167c7c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \\
+\frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \\
+\frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \\
+\frac{\partial L}{\partial w_{22}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{22}} \\
+\frac{\partial L}{\partial w_{31}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \\
 \frac{\partial L}{\partial w_{32}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
-\end{align}
-となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
-<p>\begin{align}
-\frac{\partial L}{\partial \boldsymbol{W}} &amp;=
+\end{align}\]</div>
+<p>となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5bb645dc-747d-432d-a7fb-ae6e648a6a07">
+<span class="eqno">(14)<a class="headerlink" href="#equation-5bb645dc-747d-432d-a7fb-ae6e648a6a07" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
-\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \
-\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}}
-\end{pmatrix} \
-&amp;=
+\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
+\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}} 
+\end{pmatrix} \\
+&amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} &amp;
 \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} &amp;
-\frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \
+\frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \\
 \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} &amp; \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{22}} &amp;
 \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
-\end{pmatrix} \
+\end{pmatrix} \\
 &amp;=
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1}x_1 &amp;
 \frac{\partial L}{\partial y_2}x_1 &amp;
-\frac{\partial L}{\partial y_3}x_1 \
+\frac{\partial L}{\partial y_3}x_1 \\
 \frac{\partial L}{\partial y_1}x_2 &amp;
 \frac{\partial L}{\partial y_2}x_2 &amp;
 \frac{\partial L}{\partial y_3}x_2
-\end{pmatrix} \
+\end{pmatrix} \\
 &amp;= \begin{pmatrix}
-x_1 \
+x_1 \\
 x_2
 \end{pmatrix}
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp;
 \frac{\partial L}{\partial y_2} &amp;
-\frac{\partial L}{\partial y_3}
-\end{pmatrix} \
+\frac{\partial L}{\partial y_3} 
+\end{pmatrix} \\
 &amp;= \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
-\end{align}
-これで、</p>
-<p>\begin{align}
+\end{align}\]</div>
+<p>これで、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e5c512cc-5ea9-4dd4-a7ad-526d9794dbcc">
+<span class="eqno">(15)<a class="headerlink" href="#equation-e5c512cc-5ea9-4dd4-a7ad-526d9794dbcc" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;=
 \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
-\end{align}
-の導出が（低次元で、活性化関数も考慮していませんが）できました。</p>
+\end{align}\]</div>
+<p>の導出が（低次元で、活性化関数も考慮していませんが）できました。</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial L}{\partial \mathbf{X}}= \frac{\partial L}{\partial \mathbf{Y}} W^\mathrm{T} 
@@ -995,11 +889,12 @@ x_2
 \[
 \frac{\partial L}{\partial \mathbf{W}}= X^\mathrm{T} \frac{\partial L}{\partial \mathbf{Y}}  
 \]</div>
-<section id="id6">
-<h2>バッチ版Affineレイヤの逆伝播<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id4">
+<h2>バッチ版Affineレイヤの逆伝播<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>複数の層の場合にも対応できるような説明を加えます</p>
-<section id="id7">
-<h3>順伝播の確認<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h3>順伝播の確認<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>第1層の入力<span class="math notranslate nohighlight">\(\mathbf{X}\)</span>は、行数がバッチサイズ<span class="math notranslate nohighlight">\(N\)</span>、列数がピクセルデータ数<span class="math notranslate nohighlight">\(28^2\)</span>に対応するため、<span class="math notranslate nohighlight">\(N \times 784\)</span>の行列とします。<br />
 　これに対応する(第1層の)重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は、行数がピクセルデータ数、列数が隠れ層のニューロン数に対応するため、<span class="math notranslate nohighlight">\( 784\times M\)</span>の行列になります。隠れ層のニューロン数は自由に決められるため<span class="math notranslate nohighlight">\(M\)</span>とします。最終層の重みであれば、行数は最終層の入力の列数、列数は0から9の数字の数10に対応します。この項では1層のニューラルネットワークを扱うため、重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は<span class="math notranslate nohighlight">\(784 \times 10\)</span>の行列とします。<br />
 バイアス<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>は、要素数が10の1次元配列とします。
@@ -1066,8 +961,8 @@ $<span class="math notranslate nohighlight">\(
 \end{aligned}
 \end{split}\]</div>
 </section>
-<section id="id8">
-<h3>逆伝播の導出<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="id6">
+<h3>逆伝播の導出<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>最終層のAffineレイヤの出力<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>は、損失関数レイヤの入力となり、交差エントロピー誤差<span class="math notranslate nohighlight">\(L\)</span>として出力されるのでした。よって最終層のAffineレイヤには、<span class="math notranslate nohighlight">\(L\)</span>を<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>で微分した
 $<span class="math notranslate nohighlight">\(
 \frac{\partial L}{\partial \mathbf{Y}}
@@ -1210,8 +1105,8 @@ $<span class="math notranslate nohighlight">\(
 \end{split}\]</div>
 </section>
 </section>
-<section id="id9">
-<h2>ミニバッチ学習<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h2>ミニバッチ学習<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>訓練データセットから一様ランダムに <span class="math notranslate nohighlight">\(N_{b} \ (&gt;0)\)</span> 個のデータを抽出する</p></li>
 <li><p>その <span class="math notranslate nohighlight">\(N_{b}\)</span> 個のデータをまとめてニューラルネットワークに入力し、それぞれのデータに対する目的関数の値を計算する</p></li>
@@ -1220,12 +1115,12 @@ $<span class="math notranslate nohighlight">\(
 <li><p>求めた勾配を使ってパラメータを更新する</p></li>
 </ol>
 </section>
-<section id="id10">
-<h2>誤差逆伝播法の実装<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h2>誤差逆伝播法の実装<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>ここまで、Afflineレイヤーまた活性化関数に対して逆伝播で値を計算する方法を理解できたと思います。<br /> 実際のニューラルネットワークで逆伝播を活用する場合は<strong>誤差逆伝播法</strong>になります。<br /></p>
 <p>ニューラルネットワークを構成する関数が持つパラメータについての<strong>目的関数の勾配</strong>を、順伝播で通った経路を逆向きにたどるようにして<strong>途中の関数の勾配の掛け算</strong>によって求める</p>
 <p>ここから、手計算を通じて誤差逆伝播法の実装を理解しましよう。</p>
-<img src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630142019140-402363317.png" alt="drawing" width="500"/>
+<a class="reference internal image-reference" href="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630142019140-402363317.png"><img alt="drawing" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630142019140-402363317.png" style="width: 500px;" /></a>
 <p>入力
 $<span class="math notranslate nohighlight">\(
 i_{1} = 0.05,i_{2} = 0.10
@@ -1246,8 +1141,8 @@ o_{1} = 0.01,o_{2} = 0.99
 \[
 L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
 \]</div>
-<section id="id11">
-<h3>入力層から隠れ層<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>入力層から隠れ層<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 net_{h_{1}}=w_{1}*i_{1}+w_{2}*i_{2}+b_{1}*1
@@ -1278,12 +1173,13 @@ out_{h_{1}}= Sigmoid(net_{h_{1}})
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
 </div>
@@ -1321,8 +1217,8 @@ out_h2=0.5968843698501587
 </div>
 </div>
 </section>
-<section id="id12">
-<h3>隠れ層から出力層<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<section id="id10">
+<h3>隠れ層から出力層<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 net_{o_{1}}=w_{5}*out_{h_{1}}+w_{6}*out_{h_{2}}+b_{2}*1
@@ -1373,8 +1269,8 @@ out_o2=0.7729284763336182
 </div>
 <p><span class="math notranslate nohighlight">\([0.751365065574646,0.7729284763336182]\)</span>と<span class="math notranslate nohighlight">\([0.05,0.10]\)</span>に比べて大きな差がありますので、パラメータを調整する必要がある。</p>
 </section>
-<section id="id13">
-<h3>平均二乗誤差<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<section id="id11">
+<h3>平均二乗誤差<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
@@ -1395,9 +1291,9 @@ L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
 </div>
 </div>
 </section>
-<section id="id14">
-<h3>逆伝播<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
-<img src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png" alt="drawing" width="500"/>
+<section id="id12">
+<h3>逆伝播<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<a class="reference internal image-reference" href="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png"><img alt="drawing" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png" style="width: 500px;" /></a>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial L}{\partial w_5} = \frac{\partial L}{\partial out_{o1}}\frac{\partial out_{o1}}{\partial net_{o1}}\frac{\partial net_{o1}}{\partial w_5}
@@ -1632,8 +1528,8 @@ L   = - \frac{1}{N}
 <img alt="../_images/backpropagation_42_0.png" src="../_images/backpropagation_42_0.png" />
 </div>
 </div>
-<section id="id15">
-<h3>勾配確認<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<section id="id13">
+<h3>勾配確認<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad_numerical</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">numerical_gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
@@ -1901,8 +1797,8 @@ L   = - \frac{1}{N}
 </div>
 </div>
 </div>
-<section id="id16">
-<h4><strong>network.numerical_gradient</strong>はただこの前に紹介した計算方法をパッチに対応させた<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
+<section id="id14">
+<h4><strong>network.numerical_gradient</strong>はただこの前に紹介した計算方法をパッチに対応させた<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
         <span class="n">W1</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span>
         <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span>
@@ -1978,8 +1874,8 @@ b2:1.3970555004100272e-07
 </section>
 </section>
 </section>
-<section id="id17">
-<h2>誤差逆伝播法を使った学習<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<section id="id15">
+<h2>誤差逆伝播法を使った学習<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iters_num</span> <span class="o">=</span> <span class="mi">10000</span>
@@ -2135,8 +2031,8 @@ train_acc=0.9781666666666666, test_acc=0.9705
 </div>
 </div>
 </section>
-<section id="id18">
-<h2>参考になった資料<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<section id="id16">
+<h2>参考になった資料<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/04/180000">バッチ版Affineレイヤの逆伝播【ゼロつく1のノート(数学)】</a></p></li>
 <li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/06/180000">ソフトマックス関数と交差エントロピー誤差の逆伝播【ゼロつく1のノート(数学)】</a></p></li>
@@ -2159,7 +2055,7 @@ train_acc=0.9781666666666666, test_acc=0.9705
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./draft"
         },
         predefinedOutput: true
