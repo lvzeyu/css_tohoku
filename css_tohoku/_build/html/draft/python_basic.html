@@ -451,6 +451,16 @@ title="Print to PDF"
        ブール値
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       整数
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       浮動小数点数
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -518,6 +528,16 @@ title="Print to PDF"
        ブール値
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       整数
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       浮動小数点数
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -546,7 +566,7 @@ title="Print to PDF"
 <p>Pythonで変数を定義できます。変数とは、プログラムで使いたいメモリ上の値に名前を付けたものです。
 Pythonで変数の作成は、いくつかのルールがあります。</p>
 <ul class="simple">
-<li><p>大文字と小文字を区別する：chss, Chss, CHSSはすべて異なる名前です。</p></li>
+<li><p>大文字と小文字を区別する：<code class="docutils literal notranslate"><span class="pre">chss</span></code>,<code class="docutils literal notranslate"><span class="pre">Chss</span></code>, <code class="docutils literal notranslate"><span class="pre">CHSS</span></code>はすべて異なる名前です。</p></li>
 <li><p>先頭で数字は使えないです。例えば、<code class="docutils literal notranslate"><span class="pre">1a</span></code>は無効な変数名です。</p></li>
 <li><p>Pythonの予約語を避けます。</p></li>
 </ul>
@@ -660,7 +680,7 @@ break               for                 not
 <a class="reference internal image-reference" href="../_images/immutable.png"><img alt="../_images/immutable.png" src="../_images/immutable.png" style="width: 130.5px; height: 140.5px;" /></a>
 </figure>
 <p>つまり、代入は値をコピーするわけではない、<strong>データを入れてあるオブジェクトに名前を付けるだけです</strong>。名前はものの<strong>参照手段</strong>であり、もの自体ではないです。</p>
-<p>変数の代入は、メモリ内のどこかにあるオブジェクトに長いヒモで繋がるというイメージです。そのため、静的言語では変数の型を指定しなければないが、Pythonでは型を指定する必要はありません。</p>
+<p>変数の代入は、メモリ内のどこかにあるオブジェクトに長いヒモで繋がるというイメージです。そのため、<span class="math notranslate nohighlight">\(C\)</span>や<span class="math notranslate nohighlight">\(JAVA\)</span>のような静的言語では変数の型を明確的に指定しなければないが、Pythonでは型を指定する必要はありません。</p>
 <figure class="align-left">
 <a class="reference internal image-reference" href="../_images/immutable2.png"><img alt="../_images/immutable2.png" src="../_images/immutable2.png" style="width: 300.40000000000003px; height: 108.4px;" /></a>
 </figure>
@@ -678,7 +698,7 @@ break               for                 not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4450910576,b:4450910576,5:4450910576
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4482990448,b:4482990448,5:4482990448
 </pre></div>
 </div>
 </div>
@@ -723,6 +743,192 @@ break               for                 not
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3>整数<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>整数は、小数点以下がなく数値です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">123</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">123</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-123
+</pre></div>
+</div>
+</div>
+</div>
+<p>大きな数値のセパレータとしてアンダースコア(<code class="docutils literal notranslate"><span class="pre">_</span></code>)を使えます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1_000_000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>電卓の代わりにPythonを使うことができます。色々な数学演算子が実装されています。</p>
+<table class="table2">
+    <thead>
+        <tr><th>演算子</th><th>演算</th><th>例</th></tr>
+    </thead>
+    <tbody>  
+        <tr><td>+</td><td>加算</td><td>a + b</td></tr>
+        <tr><td>-</td><td>減算</td><td>a - b</td></tr>
+        <tr><td>*</td><td>乗算</td><td>a * b</td></tr> 
+        <tr><td>/</td><td>除算</td><td>a / b</td></tr> 
+        <tr><td>%</td><td>剰余</td><td>a % b</td></tr>
+        <tr><td>//</td><td>切り捨て除算</td><td>a // b</td></tr>
+        <tr><td>**</td><td>べき乗</td><td>a ** b</td></tr>
+    </tbody>
+</table>
+<p>少し注意する必要があるのは、</p>
+<ul class="simple">
+<li><p>演算子 <code class="docutils literal notranslate"><span class="pre">//</span></code> は小数部を切り捨てた整数値（商）を返します。</p></li>
+<li><p>演算子 <code class="docutils literal notranslate"><span class="pre">%</span></code>は整数除算の余り（剰余）を返します。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">//</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">%</span><span class="k">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>整数の先頭に<span class="math notranslate nohighlight">\(0b\)</span>,<span class="math notranslate nohighlight">\(0o\)</span>,<span class="math notranslate nohighlight">\(0x\)</span>がつくのは、通常の10進数以外の基数であることを指します。</p>
+</div>
+</section>
+<section id="id9">
+<h3>浮動小数点数<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>Pythonでは、整数と小数点のある数（実数）は浮動小数点数といいます。</p>
+<p>ここで注意する必要があるのは、整数と実数が数学的に同じ数を表す場合でも、コンピュータの中で異なる形式で記憶されますので、表示は異なります。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">5.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>浮動小数点数は文字<code class="docutils literal notranslate"><span class="pre">e</span></code>の後ろに<span class="math notranslate nohighlight">\(10\)</span>進の桁数を入れて指定することもできます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">5e2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>500.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで注意する必要があるのは、整数と実数が数学的に同じ数を表す場合でも、コンピュータの中で異なる形式で記憶されますので、表示は異なります。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">5.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>浮動小数点数も算術演算子を使えます。</p>
+<p>また、整数と実数が混ざって計算も可能です。ただ、その場合、結果は実数になります。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">int()</span></code>関数で、浮動小数点数を整数に変換できます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">98.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>98
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">float()</span></code>関数で、整数を浮動小数点数に変換できます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">98</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>98.0
 </pre></div>
 </div>
 </div>
