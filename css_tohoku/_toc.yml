@@ -17,6 +17,6 @@ parts:
   - file: getting_started/about
   - file: getting_started/installation
   - file: getting_started/jupyter
-  - file: draft/persistence
+  - file: draft/python_basic
   - file: draft/backpropagation
   - file: draft/attention
