@@ -461,6 +461,11 @@ title="Print to PDF"
        浮動小数点数
       </a>
      </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       文字列
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -536,6 +541,11 @@ title="Print to PDF"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id9">
        浮動小数点数
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       文字列
       </a>
      </li>
     </ul>
@@ -680,7 +690,7 @@ break               for                 not
 <a class="reference internal image-reference" href="../_images/immutable.png"><img alt="../_images/immutable.png" src="../_images/immutable.png" style="width: 130.5px; height: 140.5px;" /></a>
 </figure>
 <p>つまり、代入は値をコピーするわけではない、<strong>データを入れてあるオブジェクトに名前を付けるだけです</strong>。名前はものの<strong>参照手段</strong>であり、もの自体ではないです。</p>
-<p>変数の代入は、メモリ内のどこかにあるオブジェクトに長いヒモで繋がるというイメージです。そのため、<span class="math notranslate nohighlight">\(C\)</span>や<span class="math notranslate nohighlight">\(JAVA\)</span>のような静的言語では変数の型を明確的に指定しなければないが、Pythonでは型を指定する必要はありません。</p>
+<p>変数の代入は、メモリ内のどこかにあるオブジェクトに長いヒモで繋がるというイメージです。そのため、<code class="docutils literal notranslate"><span class="pre">C</span></code>や<code class="docutils literal notranslate"><span class="pre">JAVA</span></code>のような静的言語では変数の型を明確的に指定しなければないが、Pythonでは型を指定する必要はありません。</p>
 <figure class="align-left">
 <a class="reference internal image-reference" href="../_images/immutable2.png"><img alt="../_images/immutable2.png" src="../_images/immutable2.png" style="width: 300.40000000000003px; height: 108.4px;" /></a>
 </figure>
@@ -698,7 +708,7 @@ break               for                 not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4482990448,b:4482990448,5:4482990448
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4459987312,b:4459987312,5:4459987312
 </pre></div>
 </div>
 </div>
@@ -776,6 +786,10 @@ break               for                 not
 </div>
 </div>
 <p>大きな数値のセパレータとしてアンダースコア(<code class="docutils literal notranslate"><span class="pre">_</span></code>)を使えます。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>整数の先頭に<span class="math notranslate nohighlight">\(0b\)</span>,<span class="math notranslate nohighlight">\(0o\)</span>,<span class="math notranslate nohighlight">\(0x\)</span>がつくのは、通常の10進数以外の基数であることを指します。</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1_000_000</span>
@@ -788,7 +802,8 @@ break               for                 not
 </div>
 </div>
 </div>
-<p>電卓の代わりにPythonを使うことができます。色々な数学演算子が実装されています。</p>
+<p>Pythonでは数値の計算もできます。数学演算子は表のように定義されています。</p>
+<p>演算の優先順位は通常の数学と同様に定義されています。通常の数学と同様に、()を使えば、演算の順番を決めることもできます。</p>
 <table class="table2">
     <thead>
         <tr><th>演算子</th><th>演算</th><th>例</th></tr>
@@ -803,7 +818,7 @@ break               for                 not
         <tr><td>**</td><td>べき乗</td><td>a ** b</td></tr>
     </tbody>
 </table>
-<p>少し注意する必要があるのは、</p>
+<p>少し馴染みのない演算子のは、</p>
 <ul class="simple">
 <li><p>演算子 <code class="docutils literal notranslate"><span class="pre">//</span></code> は小数部を切り捨てた整数値（商）を返します。</p></li>
 <li><p>演算子 <code class="docutils literal notranslate"><span class="pre">%</span></code>は整数除算の余り（剰余）を返します。</p></li>
@@ -831,10 +846,6 @@ break               for                 not
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>整数の先頭に<span class="math notranslate nohighlight">\(0b\)</span>,<span class="math notranslate nohighlight">\(0o\)</span>,<span class="math notranslate nohighlight">\(0x\)</span>がつくのは、通常の10進数以外の基数であることを指します。</p>
 </div>
 </section>
 <section id="id9">
@@ -879,6 +890,10 @@ break               for                 not
 </div>
 </div>
 <p>ここで注意する必要があるのは、整数と実数が数学的に同じ数を表す場合でも、コンピュータの中で異なる形式で記憶されますので、表示は異なります。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>プログラムの中で扱う変数には様々な”型”(<code class="docutils literal notranslate"><span class="pre">type</span></code>)があります。変数の型は<code class="docutils literal notranslate"><span class="pre">type()</span></code>という関数を使うことで調べることができる。</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">5.0</span><span class="p">))</span>
@@ -929,6 +944,129 @@ break               for                 not
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>98.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="3d995c02-c39a-4db1-99c6-03fa38321742" name="1cb2adfd-7689-4b60-bf72-9011752a06fe" type="radio">
+</input><label class="sd-tab-label" for="3d995c02-c39a-4db1-99c6-03fa38321742">
+練習問題1</label><div class="sd-tab-content docutils">
+<p>一日は何秒だを計算してみよう。</p>
+</div>
+<input id="50daff3d-57cf-4dd2-ab46-75b964a018e9" name="1cb2adfd-7689-4b60-bf72-9011752a06fe" type="radio">
+</input><label class="sd-tab-label" for="50daff3d-57cf-4dd2-ab46-75b964a018e9">
+練習問題2</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(1\)</span>年<span class="math notranslate nohighlight">\(365\)</span>日といいますが、厳密的に言えば、<span class="math notranslate nohighlight">\(1\)</span>年を<span class="math notranslate nohighlight">\(366\)</span>日とする閏年を<span class="math notranslate nohighlight">\(400\)</span>年間に<span class="math notranslate nohighlight">\(97\)</span>回設けることによって、<span class="math notranslate nohighlight">\(1\)</span>年の平均日数を<span class="math notranslate nohighlight">\(365.2425\)</span>日とする。</p>
+<p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>文字列<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>文字列は数値とは異なるデータ型の一つで、文字通り文字を扱います。</p>
+<p>文字列は、<strong>シーケンス</strong>型という広義の型に属しています。シーケンス型とは順番のある要素の集まりを指します。インデックスで要素を指定して取り出すことができます。インデックスは<span class="math notranslate nohighlight">\(R\)</span>などとは違い、<span class="math notranslate nohighlight">\(1\)</span>ではなく、<span class="math notranslate nohighlight">\(0\)</span>から始まります。例えば、</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code>とすると、<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(2\)</span>までの要素を取り出します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1:</span></code>とすると<span class="math notranslate nohighlight">\(1\)</span>以降のすべての要素を取り出します。</p></li>
+</ul>
+<p>文字列は、シングルクォーテーションかダブルクォーテーションで文字を囲んで作ります。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2"> World&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+ World
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hel&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ello!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>特定の文字の前にバックスラッシュをつけると、その文字を特殊な意味として扱うことができます。もっともよく使われるのは改行を意味する<code class="docutils literal notranslate"><span class="pre">\n</span></code>です。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Pythonには、小数の特殊なタイプの文字列があり、それらは最初クォートの前に文字を付けて示す。例えば、先頭が<code class="docutils literal notranslate"><span class="pre">r</span></code>の<em>raw文字列</em>では、 文字内の<code class="docutils literal notranslate"><span class="pre">\n</span></code> は改行を表すエスケープシーケンスをエスケープシーケンスとして解釈されないようにする。特に説明しない限り、ここで取り上げるのは普通のUnicode文字列です。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+World
 </pre></div>
 </div>
 </div>
