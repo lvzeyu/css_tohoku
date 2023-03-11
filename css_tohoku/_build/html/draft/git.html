@@ -383,8 +383,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Gitの初期設定
+      <a class="reference internal nav-link" href="#github">
+       GitHubの初期設定
       </a>
      </li>
     </ul>
@@ -392,6 +392,23 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vscode">
      VSCodeのインストール
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Gitの基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     既存のディレクトリでのリポジトリの初期化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit">
+     コミット(commit)
     </a>
    </li>
   </ul>
@@ -436,8 +453,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Gitの初期設定
+      <a class="reference internal nav-link" href="#github">
+       GitHubの初期設定
       </a>
      </li>
     </ul>
@@ -445,6 +462,23 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vscode">
      VSCodeのインストール
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Gitの基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     既存のディレクトリでのリポジトリの初期化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit">
+     コミット(commit)
     </a>
    </li>
   </ul>
@@ -481,9 +515,10 @@ title="Print to PDF"
 <h4>Gitインストール<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールする。</p>
 </section>
-<section id="id4">
-<h4>Gitの初期設定<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<section id="github">
+<h4>GitHubの初期設定<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
+<li><p>GitHubアカウントを作成します。</p></li>
 <li><p>ターミナルを開きます。</p></li>
 <li><p>次の git コマンドでユーザー情報を設定する。</p></li>
 </ul>
@@ -505,7 +540,7 @@ title="Print to PDF"
 <li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→New SSH key→Add SSH keyをクリックしてください。</p></li>
 <li><p>キーを <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてください。</p></li>
-<li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubの連携できたら、以下の内容が表示されます。</p></li>
+<li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubと連携できましたら、以下の内容が表示されます。</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </pre></div>
@@ -514,10 +549,86 @@ title="Print to PDF"
 </section>
 <section id="vscode">
 <h3>VSCodeのインストール<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVsCodeをインストールする。</p>
+<p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVSCodeをインストールする。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている<a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux">Python拡張機能</a>もたくさんありますので、Python開発にもよく活用されています。</p>
+<p>VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている<a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux">Python拡張機能</a>もたくさんあります。</p>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>Gitの基本操作<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>Git プロジェクトを取得するには、大きく二通りの方法があります。</p>
+<ul class="simple">
+<li><p>既存のプロジェクトやディレクトリを Git にインポートする方法。</p></li>
+<li><p>既存の Git リポジトリを別のサーバーからクローンする方法です。</p></li>
+</ul>
+<p>まず、既存のプロジェクトやディレクトリを Git にインポートし、ファイルをコミットと履歴の管理を説明します。</p>
+<section id="id5">
+<h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>空のディレクトリではなくすでに存在するファイルのバージョン管理を始めたい場合は、まずそのファイルを監視対象に追加する。例えば、すでに存在する<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を以下のコマンドで追加します。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code></p>
+</aside>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="dc967eeb-45c2-4b36-8833-979c84cb614d" name="7e885737-51bd-451a-95f7-e65df128f946" type="radio">
+</input><label class="sd-tab-label" for="dc967eeb-45c2-4b36-8833-979c84cb614d">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>ディレクトリを作ろう <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">test</span></code> → <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">test</span></code></p></li>
+<li><p><strong>リポジトリの初期化</strong> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code></p></li>
+</ul>
+</div>
+<input id="1ab5f006-4473-4fee-94f9-9091e12fdae0" name="7e885737-51bd-451a-95f7-e65df128f946" type="radio">
+</input><label class="sd-tab-label" for="1ab5f006-4473-4fee-94f9-9091e12fdae0">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>「ファイル」→「フォルダーを開く』→　ディレクトリを選択。VSCode左側の『エクスプローラー』に、開いたフォルダ名が表示されます。</p></li>
+<li><p>サイドバーの「ソース管理」(Source Control)を表示して，「リポジトリの初期化」(Initialize Rspository)をクリックします。</p></li>
+</ul>
+<p><img alt="" src="../_images/git_init.png" /></p>
+</div>
+</div>
+</section>
+<section id="commit">
+<h3>コミット(commit)<a class="headerlink" href="#commit" title="Permalink to this headline">#</a></h3>
+<p>リポジトリを作成すると、そこに対するファイルの変更履歴を登録することができます。その操作をコミット(commit)といいます。</p>
+<p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョンと呼ばれるものが作成されます。</p>
+<p><img alt="" src="../_images/commit1.png" /></p>
+<ul class="simple">
+<li><p>Gitの管理下に置かれた、みなさんが実際に作業をしているディレクトリのことをワークツリーと呼びます。</p></li>
+<li><p>Gitではリポジトリとワークツリーの間にはインデックスというものが存在しています。インデックスとは、リポジトリにコミットする準備をするための場所のことです。</p></li>
+<li><p>コミットでファイルの状態を記録するためには、まずインデックスにファイルを登録し、そして変更をコミットするプロセスになります。</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="c2d662d6-cc85-4efc-b45a-4561094892a6" name="e4c2527b-58a4-4744-ba1c-6af0d71be331" type="radio">
+</input><label class="sd-tab-label" for="c2d662d6-cc85-4efc-b45a-4561094892a6">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>ディレクトリで任意のファイルを作る。例えば、<code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">some</span> <span class="pre">text</span> <span class="pre">&gt;</span> <span class="pre">myfile.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>は<code class="docutils literal notranslate"><span class="pre">Untracked</span> <span class="pre">file</span></code>であり、つまり、また追跡対象になっていないです。
+<img alt="" src="../_images/commit_example1.png" /></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code>で<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を追跡対象に追加し、再び<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">Changes</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">committed</span></code>、すなわち、コミット待ちと表示されています。
+<img alt="" src="../_images/commit_example2.png" /></p></li>
+<li><p>コミットをするには<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>というコマンドを使います。コミットをする際、コミットの内容を説明するメッセージを記入する必要があります。<code class="docutils literal notranslate"><span class="pre">-m</span></code> というオプションを付加して、その後メッセージを入れましょう。例えば、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;myfileを作成ました&quot;</span></code>
+<img alt="" src="../_images/commit_example3.png" /></p></li>
+</ul>
+</div>
+<input id="d34ad40f-0b20-41d0-b4f2-4df9844bd659" name="e4c2527b-58a4-4744-ba1c-6af0d71be331" type="radio">
+</input><label class="sd-tab-label" for="d34ad40f-0b20-41d0-b4f2-4df9844bd659">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>ファイルを作成すると、VSCodeが自動的に変更を検出し、ソース管理サイドバーで数字が表示されます。
+<img alt="" src="../_images/commit_example4.png" /></p></li>
+<li><p>ソース管理に更新ファイルの一覧が表示されます。<code class="docutils literal notranslate"><span class="pre">+</span></code>アイコンでステージング操作を行います。</p></li>
+<li><p>ステージングした状態からコミットメッセージを入力して、<code class="docutils literal notranslate"><span class="pre">コミット(Commit)</span></code>アイコンでコミットが完了します。
+<img alt="" src="../_images/commit_example5.png" /></p></li>
+</ul>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">3be9fa78156da4febd9b9cea28b71c15d8f95c4d</span></code>のような形のハッシュを使います。</p>
 </div>
 </section>
 </section>
