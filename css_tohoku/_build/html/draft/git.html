@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python環境 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>GitとGitHub &#8212; 計算社会科学のためのPythonプログラミング入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Attention" href="attention.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -148,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
   Getting started
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started/about.html">
    About this course
@@ -165,8 +166,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="persistence.html">
-   Presistence
+  <a class="reference internal" href="python_basic.html">
+   Pythonの基礎
   </a>
  </li>
  <li class="toctree-l1">
@@ -177,6 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="attention.html">
    Attention
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   GitとGitHub
   </a>
  </li>
 </ul>
@@ -357,18 +363,35 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anaconda">
-   Anaconda
+  <a class="reference internal nav-link" href="#id1">
+   紹介
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   インストール
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Anacondaのインストール
+    <a class="reference internal nav-link" href="#git">
+     Git
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Gitインストール
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Gitの初期設定
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conda">
-     Conda環境の作成
+    <a class="reference internal nav-link" href="#vscode">
+     VSCodeのインストール
     </a>
    </li>
   </ul>
@@ -382,7 +405,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python環境</h1>
+                <h1>GitとGitHub</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -393,18 +416,35 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anaconda">
-   Anaconda
+  <a class="reference internal nav-link" href="#id1">
+   紹介
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   インストール
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Anacondaのインストール
+    <a class="reference internal nav-link" href="#git">
+     Git
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Gitインストール
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Gitの初期設定
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conda">
-     Conda環境の作成
+    <a class="reference internal nav-link" href="#vscode">
+     VSCodeのインストール
     </a>
    </li>
   </ul>
@@ -419,40 +459,65 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="python">
-<h1>Python環境<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
-<section id="anaconda">
-<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
-<p>数あるPython の環境を構築する方法の中で、 <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>を利用することをお勧めします。
-Anaconda はデータサイエンス向けの環境を提供するプラットフォームです。科学技術計算などを中心とした、多くのモジュールやツールのコンパイル済みバイナリファイルを提供しており、簡単にPythonを利用する環境を構築・管理できます。Windows, Linux, macOS向けのパッケージが提供されています。</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="gitgithub">
+<h1>GitとGitHub<a class="headerlink" href="#gitgithub" title="Permalink to this headline">#</a></h1>
 <section id="id1">
-<h3>Anacondaのインストール<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>下記の記事を参照してAnacondaをインストールします</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/windows/install.html">Windows版Anacondaのインストール</a></p></li>
-<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/macos/install.html">MacOS版Anacondaのインストール</a></p></li>
-<li><p><a class="reference external" href="https://www.python.jp/install/anaconda/unix/install.html">Linux版Anacondaのインストール</a></p></li>
-</ul>
+<h2>紹介<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://git-scm.com/">Git</a>は「<strong>パージョン管理システム(Version Control System)</strong>」と呼ばれるものの一つです。</p>
+<p>パージョン管理システムは、バージョン管理とは、一つのファイルやファイルの集合に対して時間とともに加えられていく変更を記録するシステムで、後で特定バージョンを呼び出すことができるようにするためのものです。</p>
+<p>ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、どのタイミングで問題が起こっているかといった様々なことができるようになって、プログラム開発やファイル管理を補助するシステムです。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>様々な方法でGitを使うことができます。この授業はコマンドラインツールとVSCodeでGitを使うことにします。コマンドラインツールを利用しますので、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを起動する方法を調べてください。</p>
+</aside>
+<p>パージョン管理システムはたくさんの種類がありますが、現在最も利用されているのはGitです。さらに、<a class="reference external" href="https://github.com/"><strong>GitHub</strong></a>などの<strong>リモートリポジトリ</strong>と組み合わせることで、クラウドでデータを管理したり、プロジェクトを共同開発するとき強力なツールとなります。</p>
+<p><img alt="" src="../_images/remote.png" /></p>
 </section>
-<section id="conda">
-<h3>Conda環境の作成<a class="headerlink" href="#conda" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h2>インストール<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h4>Gitインストール<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールする。</p>
+</section>
+<section id="id4">
+<h4>Gitの初期設定<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>Conda環境は、<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code>コマンドでPython環境を作成します。つぎのコマンドは、<code class="docutils literal notranslate"><span class="pre">chss</span></code> という名前で、<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.10</span></code>の環境を作成します。</p></li>
+<li><p>ターミナルを開きます。</p></li>
+<li><p>次の git コマンドでユーザー情報を設定する。</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">chss</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;First-name Family-name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;username@example.com&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>作成した環境を確認します。</p></li>
+<li><p>次の git コマンドでSSHキーを生成する。</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">-</span><span class="n">e</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/.</span><span class="n">ssh</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>作成した環境を有効にする。</p></li>
+<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば空欄のままEnterでよい。</p></li>
+<li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーを開く、<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>を全てコピーします。</p></li>
+<li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→New SSH key→Add SSH keyをクリックしてください。</p></li>
+<li><p>キーを <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてください。</p></li>
+<li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubの連携できたら、以下の内容が表示されます。</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">chss</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </pre></div>
+</div>
+</section>
+</section>
+<section id="vscode">
+<h3>VSCodeのインストール<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVsCodeをインストールする。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている<a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux">Python拡張機能</a>もたくさんありますので、Python開発にもよく活用されています。</p>
 </div>
 </section>
 </section>
@@ -485,6 +550,13 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="attention.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Attention</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>

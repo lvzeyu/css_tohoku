@@ -20,3 +20,4 @@ parts:
   - file: draft/python_basic
   - file: draft/backpropagation
   - file: draft/attention
+  - file: draft/git.ipynb

@@ -1,39 +1,61 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
-
-
-
-# ## Python環境
+# # GitとGitHub
 # 
-# ### Anaconda
+# ## 紹介
 # 
-# 数あるPython の環境を構築する方法の中で、 [Anaconda](https://www.anaconda.com/)を利用することをお勧めします。
-# Anaconda はデータサイエンス向けの環境を提供するプラットフォームです。科学技術計算などを中心とした、多くのモジュールやツールのコンパイル済みバイナリファイルを提供しており、簡単にPythonを利用する環境を構築・管理できます。Windows, Linux, macOS向けのパッケージが提供されています。
+# [Git](https://git-scm.com/)は「**パージョン管理システム(Version Control System)**」と呼ばれるものの一つです。
 # 
-# #### Anacondaのインストール
+# パージョン管理システムは、バージョン管理とは、一つのファイルやファイルの集合に対して時間とともに加えられていく変更を記録するシステムで、後で特定バージョンを呼び出すことができるようにするためのものです。
 # 
-# 下記の記事を参照してAnacondaをインストールします
+# ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、どのタイミングで問題が起こっているかといった様々なことができるようになって、プログラム開発やファイル管理を補助するシステムです。
 # 
-# - [Windows版Anacondaのインストール](https://www.python.jp/install/anaconda/windows/install.html)
-# - [MacOS版Anacondaのインストール](https://www.python.jp/install/anaconda/macos/install.html)
-# - [Linux版Anacondaのインストール](https://www.python.jp/install/anaconda/unix/install.html)
-# 
-# #### Conda環境の作成
-# - Conda環境は、```conda create```コマンドでPython環境を作成します。つぎのコマンドは、```chss``` という名前で、```Python 3.10```の環境を作成します。
+# ```{margin}
+# 様々な方法でGitを使うことができます。この授業はコマンドラインツールとVSCodeでGitを使うことにします。コマンドラインツールを利用しますので、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを起動する方法を調べてください。
 # ```
-# conda create --name chss python=3.10
+# 
+# パージョン管理システムはたくさんの種類がありますが、現在最も利用されているのはGitです。さらに、[**GitHub**](https://github.com/)などの**リモートリポジトリ**と組み合わせることで、クラウドでデータを管理したり、プロジェクトを共同開発するとき強力なツールとなります。
+# 
+# ![](./Figure/remote.png)
+
+# ## インストール
+# 
+# ### Git
+# 
+# #### Gitインストール
+# 
+# [公式サイト](https://git-scm.com/downloads)からGitをインストールする。
+# 
+# #### Gitの初期設定
+# - ターミナルを開きます。
+# - 次の git コマンドでユーザー情報を設定する。
 # ```
-# - 作成した環境を確認します。
+# git config --global user.name "First-name Family-name"
+# git config --global user.email "username@example.com"
 # ```
-# conda info -e
+# - 次の git コマンドでSSHキーを生成する。
 # ```
-# - 作成した環境を有効にする。
+# cd ~/.ssh
+# ssh-keygen -t rsa
 # ```
-# conda activate chss
+# - 任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば空欄のままEnterでよい。
+# - SSH Keyを格納するディレクトリに移動します。```ls```でファイルを確認します。```id_rsa.pub```というファイルがあるはずです。
+# - ```cat id_rsa.pub```でSSHキーを開く、```ssh-rsa XXX```を全てコピーします。
+# - Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→New SSH key→Add SSH keyをクリックしてください。
+# - キーを ```Key``` フィールドに貼り付けます。
+# - ```Add SSH key```をクリックしてください。
+# - ターミナルで```ssh -T git@github.com```を実行します。もしGitHubの連携できたら、以下の内容が表示されます。
+# ```
+# Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+# ```
+# 
+# ### VSCodeのインストール
+# 
+# [公式サイト](https://code.visualstudio.com/)からVsCodeをインストールする。
+# 
+# ```{note}
+# VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている[Python拡張機能](https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux)もたくさんありますので、Python開発にもよく活用されています。
 # ```
 
 # 

@@ -465,6 +465,29 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#id10">
        文字列
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id11">
+         作成
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id12">
+         <span class="math notranslate nohighlight">
+          \(+\)
+         </span>
+         による連結
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id13">
+         <span class="math notranslate nohighlight">
+          \(*\)
+         </span>
+         による繰り返し
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -547,6 +570,29 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#id10">
        文字列
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id11">
+         作成
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id12">
+         <span class="math notranslate nohighlight">
+          \(+\)
+         </span>
+         による連結
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id13">
+         <span class="math notranslate nohighlight">
+          \(*\)
+         </span>
+         による繰り返し
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -708,7 +754,7 @@ break               for                 not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4459987312,b:4459987312,5:4459987312
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4482171248,b:4482171248,5:4482171248
 </pre></div>
 </div>
 </div>
@@ -949,13 +995,13 @@ break               for                 not
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3d995c02-c39a-4db1-99c6-03fa38321742" name="1cb2adfd-7689-4b60-bf72-9011752a06fe" type="radio">
-</input><label class="sd-tab-label" for="3d995c02-c39a-4db1-99c6-03fa38321742">
+<input checked="checked" id="85c56313-a5ee-4cee-aa0d-fd4281962111" name="dae4663e-42cb-48b9-ab23-a475cf2db020" type="radio">
+</input><label class="sd-tab-label" for="85c56313-a5ee-4cee-aa0d-fd4281962111">
 練習問題1</label><div class="sd-tab-content docutils">
 <p>一日は何秒だを計算してみよう。</p>
 </div>
-<input id="50daff3d-57cf-4dd2-ab46-75b964a018e9" name="1cb2adfd-7689-4b60-bf72-9011752a06fe" type="radio">
-</input><label class="sd-tab-label" for="50daff3d-57cf-4dd2-ab46-75b964a018e9">
+<input id="c45d1e21-6e31-45e4-8fb2-846c6287d8b7" name="dae4663e-42cb-48b9-ab23-a475cf2db020" type="radio">
+</input><label class="sd-tab-label" for="c45d1e21-6e31-45e4-8fb2-846c6287d8b7">
 練習問題2</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(1\)</span>年<span class="math notranslate nohighlight">\(365\)</span>日といいますが、厳密的に言えば、<span class="math notranslate nohighlight">\(1\)</span>年を<span class="math notranslate nohighlight">\(366\)</span>日とする閏年を<span class="math notranslate nohighlight">\(400\)</span>年間に<span class="math notranslate nohighlight">\(97\)</span>回設けることによって、<span class="math notranslate nohighlight">\(1\)</span>年の平均日数を<span class="math notranslate nohighlight">\(365.2425\)</span>日とする。</p>
 <p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
@@ -965,35 +1011,23 @@ break               for                 not
 <section id="id10">
 <h3>文字列<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>文字列は数値とは異なるデータ型の一つで、文字通り文字を扱います。</p>
+<section id="id11">
+<h4>作成<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>文字列は、<strong>シーケンス</strong>型という広義の型に属しています。シーケンス型とは順番のある要素の集まりを指します。インデックスで要素を指定して取り出すことができます。インデックスは<span class="math notranslate nohighlight">\(R\)</span>などとは違い、<span class="math notranslate nohighlight">\(1\)</span>ではなく、<span class="math notranslate nohighlight">\(0\)</span>から始まります。例えば、</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code>とすると、<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(2\)</span>までの要素を取り出します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">1:</span></code>とすると<span class="math notranslate nohighlight">\(1\)</span>以降のすべての要素を取り出します。</p></li>
 </ul>
-<p>文字列は、シングルクォーテーションかダブルクォーテーションで文字を囲んで作ります。</p>
+<p>文字列は、 クォートで文字を囲んで作ります。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span> <span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2"> World&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
- World
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello!&quot;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
 </pre></div>
 </div>
 </div>
@@ -1001,54 +1035,55 @@ break               for                 not
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello!&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;ダブル&quot; クォートを埋め込むことができます&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&quot;ダブル&quot; クォートを埋め込むことができます&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;&#39;シングル&#39; クォートを埋め込むことができます&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hel&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;&#39;シングル&#39; クォートを埋め込むことができます&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;三つのシングルクォート&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ello!&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;三つのシングルクォート&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;!&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello!&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1071,6 +1106,37 @@ World
 </div>
 </div>
 </div>
+</section>
+<section id="id12">
+<h4><span class="math notranslate nohighlight">\(+\)</span>による連結<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">+</span><span class="s2">&quot;World&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HelloWorld&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id13">
+<h4><span class="math notranslate nohighlight">\(*\)</span>による繰り返し<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HelloHelloHello&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
