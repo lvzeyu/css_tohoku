@@ -1,0 +1,37 @@
+(base) ryotakusakai@ryotakusakainoMacBook-Pro test % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   myfile.txt
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git commit -m "myfileを作成ました"
+[main (root-commit) 8983e71] myfileを作成ました
+ 1 file changed, 1 insertion(+)
+ create mode 100644 myfile.txt
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git log
+commit 5d5277156bfef81535e8938f4e9f71b1db2eacf8 (HEAD -> main)
+Author: lvzeyu <lvzeyu1995@gmail.com>
+Date:   Sat Mar 18 22:43:34 2023 +0900
+
+    delete myfile
+
+commit 8983e71d981c204a92d417c0301b8e9c5f99b7f9
+Author: lvzeyu <lvzeyu1995@gmail.com>
+Date:   Sat Mar 18 22:34:11 2023 +0900
+
+    myfileを作成ました

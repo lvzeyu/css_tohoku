@@ -1,35 +1,44 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitとGitHub &#8212; 計算社会科学のためのPythonプログラミング入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +46,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,60 +59,94 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/git';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Attention" href="attention.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo_j_p.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">計算社会科学のためのPythonプログラミング入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo_j_p.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo_j_p.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -112,430 +155,307 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  イントロダクション
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
-   授業の概要
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   授業についての概要
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks.html">
-   環境設定
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regular_expressions.html">
-   正規表現
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">授業についての概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">環境設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">正規表現</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting started
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started/about.html">
-   About this course
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started/installation.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started/jupyter.html">
-   The Jupyter ecosystem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基礎
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="backpropagation.html">
-   誤差逆伝播法
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="attention.html">
-   Attention
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   GitとGitHub
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/about.html">About this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/jupyter.html">The Jupyter ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Pythonの基礎</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="backpropagation.html">誤差逆伝播法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attention.html">Attention</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">GitとGitHub</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/tree/master/blob/master/css_tohoku/draft/git.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="ソースリポジトリ"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/git.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="問題を報告"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/draft/git.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/git.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/draft/git.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   紹介
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   インストール
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git">
-     Git
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Gitインストール
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#github">
-       GitHubの初期設定
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vscode">
-     VSCodeのインストール
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Gitの基本操作
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     既存のディレクトリでのリポジトリの初期化
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commit">
-     コミット(commit)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reset">
-     コミットリセット(reset)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#branch">
-     ブランチ(branch)
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>GitとGitHub</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   紹介
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   インストール
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git">
-     Git
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Gitインストール
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#github">
-       GitHubの初期設定
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vscode">
-     VSCodeのインストール
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
-   Gitの基本操作
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     既存のディレクトリでのリポジトリの初期化
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commit">
-     コミット(commit)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reset">
-     コミットリセット(reset)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#branch">
-     ブランチ(branch)
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GitとGitHub</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">紹介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">インストール</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Gitインストール</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHubの初期設定</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="gitgithub">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="gitgithub">
 <h1>GitとGitHub<a class="headerlink" href="#gitgithub" title="Permalink to this headline">#</a></h1>
-<section id="id1">
+<div class="section" id="id1">
 <h2>紹介<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/">Git</a>は「<strong>パージョン管理システム(Version Control System)</strong>」と呼ばれるものの一つです。</p>
 <p>パージョン管理システムは、バージョン管理とは、一つのファイルやファイルの集合に対して時間とともに加えられていく変更を記録するシステムで、後で特定バージョンを呼び出すことができるようにするためのものです。</p>
 <p>ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、どのタイミングで問題が起こっているかといった様々なことができるようになって、プログラム開発やファイル管理を補助するシステムです。</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>様々な方法でGitを使うことができます。この授業はコマンドラインツールとVSCodeでGitを使うことにします。コマンドラインツールを利用しますので、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを起動する方法を調べてください。</p>
-</aside>
+</div>
 <p>パージョン管理システムはたくさんの種類がありますが、現在最も利用されているのはGitです。さらに、<a class="reference external" href="https://github.com/"><strong>GitHub</strong></a>などの<strong>リモートリポジトリ</strong>と組み合わせることで、クラウドでデータを管理したり、プロジェクトを共同開発するとき強力なツールとなります。</p>
 <p><img alt="" src="../_images/remote.png" /></p>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h2>インストール<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<section id="git">
+<div class="section" id="git">
 <h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h3>
-<section id="id3">
+<div class="section" id="id3">
 <h4>Gitインストール<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールする。</p>
-</section>
-<section id="github">
+</div>
+<div class="section" id="github">
 <h4>GitHubの初期設定<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>GitHubアカウントを作成します。</p></li>
@@ -557,26 +477,26 @@ title="Print to PDF"
 <li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば空欄のままEnterでよい。</p></li>
 <li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーを開く、<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>を全てコピーします。</p></li>
-<li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→New SSH key→Add SSH keyをクリックしてください。</p></li>
-<li><p>キーを <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてください。</p></li>
+<li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→SSH and GPG keys→ New SSH keyという順番でクリックしてください。</p></li>
+<li><p>クリップボードの内容を <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてたら、SSHの登録が完了です。</p></li>
 <li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubと連携できましたら、以下の内容が表示されます。</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </pre></div>
 </div>
-</section>
-</section>
-<section id="vscode">
+</div>
+</div>
+<div class="section" id="vscode">
 <h3>VSCodeのインストール<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVSCodeをインストールする。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている<a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux">Python拡張機能</a>もたくさんあります。</p>
 </div>
-</section>
-</section>
-<section id="id4">
+</div>
+</div>
+<div class="section" id="id4">
 <h2>Gitの基本操作<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Git プロジェクトを取得するには、大きく二通りの方法があります。</p>
 <ul class="simple">
@@ -584,23 +504,32 @@ title="Print to PDF"
 <li><p>既存の Git リポジトリを別のサーバーからクローンする方法です。</p></li>
 </ul>
 <p>まず、既存のプロジェクトやディレクトリを Git にインポートし、ファイルをコミットと履歴の管理を説明します。</p>
-<section id="id5">
+<div class="section" id="id5">
 <h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>空のディレクトリではなくすでに存在するファイルのバージョン管理を始めたい場合は、まずそのファイルを監視対象に追加する。例えば、すでに存在する<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を以下のコマンドで追加します。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code></p>
-</aside>
+</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c2abf248-bc48-4914-bb4e-24b318187dcc" name="a3803f5b-49c2-472a-8920-c6e79dbdced5" type="radio">
-</input><label class="sd-tab-label" for="c2abf248-bc48-4914-bb4e-24b318187dcc">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>ディレクトリを作ろう <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">test</span></code> → <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">test</span></code></p></li>
-<li><p><strong>リポジトリの初期化</strong> <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code></p></li>
+<li><p>ディレクトリを作ろう</p></li>
 </ul>
+<pre>
+mkdir test
+cd test
+</pre>
+<ul class="simple">
+<li><p><strong>リポジトリの初期化</strong></p></li>
+</ul>
+<pre>
+git init
+</pre>
 </div>
-<input id="53ccec03-4120-4c31-bab0-df66f9c20228" name="a3803f5b-49c2-472a-8920-c6e79dbdced5" type="radio">
-</input><label class="sd-tab-label" for="53ccec03-4120-4c31-bab0-df66f9c20228">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ファイル」→「フォルダーを開く』→　ディレクトリを選択。VSCode左側の『エクスプローラー』に、開いたフォルダ名が表示されます。</p></li>
@@ -609,8 +538,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p><img alt="" src="../_images/git_init.png" /></p>
 </div>
 </div>
-</section>
-<section id="commit">
+</div>
+<div class="section" id="commit">
 <h3>コミット(commit)<a class="headerlink" href="#commit" title="Permalink to this headline">#</a></h3>
 <p>リポジトリを作成すると、そこに対するファイルの変更履歴を登録することができます。その操作をコミット(commit)といいます。</p>
 <p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョンと呼ばれるものが作成されます。</p>
@@ -621,50 +550,85 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <li><p>コミットでファイルの状態を記録するためには、まずインデックスにファイルを登録し、そして変更をコミットするプロセスになります。</p></li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9e7ab836-b757-45d4-893a-75b40fa2455c" name="e67838e0-7bdc-479d-a369-091fe97f3316" type="radio">
-</input><label class="sd-tab-label" for="9e7ab836-b757-45d4-893a-75b40fa2455c">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>ディレクトリで任意のファイルを作る。例えば、<code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">some</span> <span class="pre">text</span> <span class="pre">&gt;</span> <span class="pre">myfile.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>は<code class="docutils literal notranslate"><span class="pre">Untracked</span> <span class="pre">file</span></code>であり、つまり、また追跡対象になっていないです。
-<img alt="" src="../_images/commit_example1.png" /></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code>で<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を追跡対象に追加し、再び<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">Changes</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">committed</span></code>、すなわち、コミット待ちと表示されています。
-<img alt="" src="../_images/commit_example2.png" /></p></li>
-<li><p>コミットをするには<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>というコマンドを使います。コミットをする際、コミットの内容を説明するメッセージを記入する必要があります。<code class="docutils literal notranslate"><span class="pre">-m</span></code> というオプションを付加して、その後メッセージを入れましょう。例えば、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;myfileを作成ました&quot;</span></code>
-<img alt="" src="../_images/commit_example3.png" /></p></li>
+<li><p>ディレクトリで任意のファイルを作る。例えば、</p></li>
 </ul>
+<pre>
+echo This is some text > myfile.txt
+</pre>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>は<code class="docutils literal notranslate"><span class="pre">Untracked</span> <span class="pre">file</span></code>であり、つまり、また追跡対象になっていないです。</p></li>
+</ul>
+<pre>
+git status
+</pre>
+<p><img alt="" src="../_images/git_status_1.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code>で<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を追跡対象に追加し、再び<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">Changes</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">committed</span></code>、すなわち、コミット待ちと表示されています。</p></li>
+</ul>
+<pre>
+git add myfile.txt
+git status
+</pre>
+<p><img alt="" src="../_images/git_status_2.png" /></p>
+<ul class="simple">
+<li><p>コミットをするには<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>というコマンドを使います。コミットをする際、コミットの内容を説明するメッセージを記入する必要があります。<code class="docutils literal notranslate"><span class="pre">-m</span></code> というオプションを付加して、その後メッセージを入れましょう。例えば、</p></li>
+</ul>
+<pre>
+git commit -m "myfileを作成ました"
+</pre>
+<p><img alt="" src="../_images/git_status_3.png" /></p>
 </div>
-<input id="d25102ce-78fc-4db7-b7d8-18c508714688" name="e67838e0-7bdc-479d-a369-091fe97f3316" type="radio">
-</input><label class="sd-tab-label" for="d25102ce-78fc-4db7-b7d8-18c508714688">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>ファイルを作成すると、VSCodeが自動的に変更を検出し、ソース管理サイドバーで数字が表示されます。
-<img alt="" src="../_images/commit_example4.png" /></p></li>
+<li><p>ファイルを作成すると、VSCodeが自動的に変更を検出し、ソース管理サイドバーで数字が表示されます。</p></li>
+</ul>
+<p><img alt="" src="../_images/commit_example4.png" /></p>
+<ul class="simple">
 <li><p>ソース管理に更新ファイルの一覧が表示されます。<code class="docutils literal notranslate"><span class="pre">+</span></code>アイコンでステージング操作を行います(<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>と相当する)。</p></li>
-<li><p>ステージングした状態からコミットメッセージを入力して、<code class="docutils literal notranslate"><span class="pre">コミット(Commit)</span></code>アイコンでコミットが完了します。
-<img alt="" src="../_images/commit_example5.png" /></p></li>
+<li><p>ステージングした状態からコミットメッセージを入力して、<code class="docutils literal notranslate"><span class="pre">コミット(Commit)</span></code>アイコンでコミットが完了します。</p></li>
+</ul>
+<p><img alt="" src="../_images/commit_example5.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="reset">
+<h3>コミットリセット(reset)<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h3>
+<p>どんな作業であっても、何かをやり直したくなることはあります。 ここでは、行った変更を取り消すための基本的なツールについて説明します。</p>
+<p>仮に、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を削除し、コミットした操作を行いましたが、実はこのファイルは捨ててはいけないファイルだったと気ついたとします。</p>
+<p>Gitで間違えた変更を元に戻していきましょう。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を削除し、<code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">myfile</span></code>というコメントでコミットします。</p></li>
 </ul>
 </div>
 </div>
-</section>
-<section id="reset">
-<h3>コミットリセット(reset)<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h3>
-<p>どんな作業であっても、何かをやり直したくなることはあります。 ここでは、行った変更を取り消すための基本的なツールについて説明します。</p>
-<p>仮に、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を削除し、<code class="docutils literal notranslate"><span class="pre">delect</span> <span class="pre">myfile</span></code>でコミットした操作を行いましたが、実はこのファイルは捨ててはいけないファイルだったと気ついたとします。</p>
-<p>Gitで間違えた変更を元に戻していきましょう。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7e413353-1600-43f2-b9a3-70ac67966419" name="a167875a-9538-443b-86b8-b69cd3725d92" type="radio">
-</input><label class="sd-tab-label" for="7e413353-1600-43f2-b9a3-70ac67966419">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>でコミットの情報を確認します。コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">2804ae24e06a56e40621075b9ddeef859964e01e</span></code>のような形のハッシュを使います。
-オレンジ色の部分はコミットIDの情報になります。
-<img alt="" src="../_images/reset1.png" /></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>でコミットの情報を確認します。コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">5d5277156bfef81535e8938f4e9f71b1db2eacf8</span></code>のような形のハッシュを使います。
+オレンジ色の部分はコミットIDの情報になります。</p></li>
+</ul>
+<pre>
+git log
+</pre>
+<p><img alt="" src="../_images/git_log.png" /></p>
+<ul class="simple">
 <li><p>特定のコミットまで戻す場合、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">1bce0dde07dbe83b786c745110983d62dff5fdec</span></code>という形でコミットIDを指定できます。</p></li>
 </ul>
 </div>
-<input id="11d5669b-92ce-4a4e-8d5f-7735c549433c" name="a167875a-9538-443b-86b8-b69cd3725d92" type="radio">
-</input><label class="sd-tab-label" for="11d5669b-92ce-4a4e-8d5f-7735c549433c">
+<input id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a>という拡張機能をインストールします。</p></li>
@@ -686,15 +650,15 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p class="admonition-title">Advanced</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>でも元の状態に戻すことができます。ただ、この操作はワークツリーまで変更するので、場合による<code class="docutils literal notranslate"><span class="pre">checkout</span></code>は作業ディレクトリを破壊する(上書きなど)可能性もありますので、十分に注意してください。一方、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>は<code class="docutils literal notranslate"><span class="pre">--hard</span></code>オプションではないなら、作業ディレクトリにファイルに直接に変更は加えられていません。</p>
 </div>
-</section>
-<section id="branch">
+</div>
+<div class="section" id="branch">
 <h3>ブランチ(branch)<a class="headerlink" href="#branch" title="Permalink to this headline">#</a></h3>
 <p>ブランチとは、開発の本流から分岐し、それぞれ状態ごとに作業を進める機能のことです。</p>
 <p>ブランチ機能を使うことで、複数の状態を同時に保つことができます。個人作業での試行錯誤もグールプの共同作業も非常に役を立っています。</p>
 <p><img alt="" src="../_images/branch.png" /></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e04de5ef-7479-4473-ae45-86bc020fe3b1" name="543b2657-694b-45ca-8d33-189eb2bb7232" type="radio">
-</input><label class="sd-tab-label" for="e04de5ef-7479-4473-ae45-86bc020fe3b1">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>新しいブランチを作ってみましょう。例えば、<code class="docutils literal notranslate"><span class="pre">develop</span></code>という名前のブランチを作るなら、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">develop</span></code>を実行します。</p></li>
@@ -704,8 +668,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>で切り替えます。例えば、<code class="docutils literal notranslate"><span class="pre">develop</span></code>に切り替えるなら、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">develop</span></code>を実行します。</p></li>
 </ul>
 </div>
-<input id="e854ba3e-4f85-421f-abd9-4654baa2a731" name="543b2657-694b-45ca-8d33-189eb2bb7232" type="radio">
-</input><label class="sd-tab-label" for="e854ba3e-4f85-421f-abd9-4654baa2a731">
+<input id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>画面の左下のブランチ名（master）が表示されている個所をクリックし、新しいブランチを作成を実行します。手順で作成するブランチ名を入力してブランチを作成します。</p></li>
@@ -722,18 +686,68 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="87117551-b046-4b60-87d3-7f14ee77edde" name="fa183ed2-468f-4b4e-95ba-672870f57a29" type="radio">
-</input><label class="sd-tab-label" for="87117551-b046-4b60-87d3-7f14ee77edde">
-練習問題</label><div class="sd-tab-content docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチに切り替えます。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">myfile5.txt</span></code>を作成し、コミットします。</p></li>
 </ul>
 </div>
 </div>
-</section>
-</section>
-</section>
+<p>ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチを<code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチにマージします。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在<code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチにいることを確認します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">develop</span></code>でマージを実行します。</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>ステータスバーの左下端に表示されているブランチが「<code class="docutils literal notranslate"><span class="pre">master</span></code>」になっていることを確認します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code>（<code class="docutils literal notranslate"><span class="pre">Command+Shift+P</span></code>）でコマンドパレットを開く、入力欄に<code class="docutils literal notranslate"><span class="pre">Git:merge</span></code>と入力するとマージの項目が表示されます。</p></li>
+<li><p>マージしたいブランチを選択します。これで、現在のブランチに選択したブランチがマージされます。</p></li>
+</ul>
+</div>
+</div>
+<pre class="brush: python">
+import panda as pd
+</pre></div>
+</div>
+<div class="section" id="id6">
+<h2>GitHubの基本操作<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<p>ここまで、Gitをローカル環境での利用方法をまなびました。Gitは分散型のバージョン管理システムで、同じプロジェクトに関するリポジトリをネットワーク上に複数置くこともできます。この性質を利用すると、色々なことができるようになります。</p>
+<ul class="simple">
+<li><p>複数人で一つのプログラムを編集したり、修正作業を依頼したりすること</p></li>
+<li><p>共同作業の進捗を管理すること</p></li>
+<li><p>リモートリポジトリで作業をバックアップすること</p></li>
+</ul>
+<p>Git機能を搭載したプロジェクト管理サービスは数多くありますが、本授業はその中でも一番使われている<a class="reference external" href="https://github.com/">Github</a>を利用していきます。</p>
+<div class="section" id="id7">
+<h3>リモートリポジトリの作成<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Githubの使い方は、公式のチュートリアルを適宜参照してください。</p>
+</div>
+<ol class="arabic simple">
+<li><p>ページの右上隅で、[<span class="math notranslate nohighlight">\(+\)</span>]ドロップダウンメニューを使用して、 [新しいリポジトリ] を選択します。
+<img alt="" src="https://docs.github.com/assets/cb-11427/mw-1000/images/help/repository/repo-create.webp" /></p></li>
+<li><p>リポジトリ名を入力します。必要に応じて、リポジトリの説明を追加します。</p></li>
+<li><p>リポジトリの可視性を選択してください。パブリックリポジトリには、インターネット上の誰でもアクセスできます。プライベートリポジトリには、自分や招待した人のみがアクセスできます。</p></li>
+<li><p>[Initialize this repository with a README] (このレポジトリを README で初期化する) を選択します。</p></li>
+</ol>
+<p><img alt="" src="https://docs.github.com/assets/cb-49938/mw-1000/images/help/repository/initialize-with-readme.webp" /></p>
+<ol class="arabic simple" start="5">
+<li><p>[Create repository] (リポジトリの作成) をクリックします。</p></li>
+</ol>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -755,43 +769,110 @@ VSCode操作</label><div class="sd-tab-content docutils">
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="attention.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Attention</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="attention.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Attention</p>
+      </div>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">紹介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">インストール</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Gitインストール</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHubの初期設定</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 呂　沢宇<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+著者 呂　沢宇
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
