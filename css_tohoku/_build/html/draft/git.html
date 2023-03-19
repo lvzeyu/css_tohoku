@@ -416,6 +416,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">マージ(merge)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">
@@ -438,11 +439,11 @@ document.write(`
 <div class="section" id="id1">
 <h2>紹介<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/">Git</a>は「<strong>パージョン管理システム(Version Control System)</strong>」と呼ばれるものの一つです。</p>
-<p>パージョン管理システムは、バージョン管理とは、一つのファイルやファイルの集合に対して時間とともに加えられていく変更を記録するシステムで、後で特定バージョンを呼び出すことができるようにするためのものです。</p>
-<p>ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、どのタイミングで問題が起こっているかといった様々なことができるようになって、プログラム開発やファイル管理を補助するシステムです。</p>
+<p>パージョン管理システムとは、一つのファイル、または複数のファイルの集合に対して、時間とともに加えられた変更を記録するシステムで、後から特定のバージョンを呼び出すことができるようにするためのものです。</p>
+<p>ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、またはどのタイミングで問題が起こっていたかを確認したり、様々なことができるプログラム開発やファイル管理を補助するシステムです。</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>様々な方法でGitを使うことができます。この授業はコマンドラインツールとVSCodeでGitを使うことにします。コマンドラインツールを利用しますので、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを起動する方法を調べてください。</p>
+<p>様々な方法でGitを使うことができますが、この授業では、コマンドラインツールとVSCodeでGitを使います。コマンドラインツールを利用する際、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを使います。</p>
 </div>
 <p>パージョン管理システムはたくさんの種類がありますが、現在最も利用されているのはGitです。さらに、<a class="reference external" href="https://github.com/"><strong>GitHub</strong></a>などの<strong>リモートリポジトリ</strong>と組み合わせることで、クラウドでデータを管理したり、プロジェクトを共同開発するとき強力なツールとなります。</p>
 <p><img alt="" src="../_images/remote.png" /></p>
@@ -474,9 +475,9 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば空欄のままEnterでよい。</p></li>
+<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば<strong>空欄のまま</strong>Enterでよい。</p></li>
 <li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーを開く、<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>を全てコピーします。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーのファイルを開く、表示された<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>という形の内容はSSHキーになります。SHキーをコピーします。</p></li>
 <li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→SSH and GPG keys→ New SSH keyという順番でクリックしてください。</p></li>
 <li><p>クリップボードの内容を <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてたら、SSHの登録が完了です。</p></li>
@@ -541,13 +542,19 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 <div class="section" id="commit">
 <h3>コミット(commit)<a class="headerlink" href="#commit" title="Permalink to this headline">#</a></h3>
-<p>リポジトリを作成すると、そこに対するファイルの変更履歴を登録することができます。その操作をコミット(commit)といいます。</p>
-<p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョンと呼ばれるものが作成されます。</p>
+<p>リポジトリを作成すると、そこに対する<strong>ファイルの変更履歴を登録すること</strong>ができます。その操作を<ins><strong>コミット(commit)</strong><ins>といいます。</p>
+<p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョンと呼ばれるものが作成されます。コミットによって、ディレクトリ中の全てのファイルのスナップショットを記録します。</p>
 <p><img alt="" src="../_images/commit1.png" /></p>
 <ul class="simple">
-<li><p>Gitの管理下に置かれた、みなさんが実際に作業をしているディレクトリのことをワークツリーと呼びます。</p></li>
-<li><p>Gitではリポジトリとワークツリーの間にはインデックスというものが存在しています。インデックスとは、リポジトリにコミットする準備をするための場所のことです。</p></li>
-<li><p>コミットでファイルの状態を記録するためには、まずインデックスにファイルを登録し、そして変更をコミットするプロセスになります。</p></li>
+<li><p>Gitの管理下に置かれた、みなさんが実際に作業をしているディレクトリのことを<ins>ワークツリー<ins>と呼びます。</p></li>
+<li><p>Gitでは、コミットを実行した時にワークツリーから直接リポジトリ内に状態を記録するのでなく、その間に設けられている<ins>インデックス<ins>の設定された状態を記録するようになっています。インデックスとは、リポジトリにコミットする準備をするための場所のことです。そのため、コミットでファイルの状態を記録するためには、<ins>まずインデックスにファイルを登録する必要があります。<ins>このようにインデックスを間に挟むことで、ワークツリー内の必要ないファイルを含めずにコミットを行ったり、ファイルの一部の変更だけをインデックスに登録してコミットすることができます。</p></li>
+<li><p>まとめると、コミットのプロセスは以下になります:</p>
+<ol class="arabic simple">
+<li><p>ワークツリー（作業している場所）で編集、変更を行います</p></li>
+<li><p>インデックス（一時登録場所）へ編集・変更内容を登録</p></li>
+<li><p>リポジトリへ変更内容を登録（コミット）</p></li>
+</ol>
+</li>
 </ul>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
@@ -560,7 +567,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 echo This is some text > myfile.txt
 </pre>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>は<code class="docutils literal notranslate"><span class="pre">Untracked</span> <span class="pre">file</span></code>であり、つまり、また追跡対象になっていないです。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>というコマンドでステータスを確認すると、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>は<code class="docutils literal notranslate"><span class="pre">Untracked</span> <span class="pre">file</span></code>であり、つまり、また追跡対象になっていないです。</p></li>
 </ul>
 <pre>
 git status
@@ -611,6 +618,10 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code>は現在使用しているブランチの先頭を表す、つまり、今自分が作業をしているブランチの最新のコミットを示すことです。</p>
+</div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-5">
@@ -624,8 +635,11 @@ git log
 </pre>
 <p><img alt="" src="../_images/git_log.png" /></p>
 <ul class="simple">
-<li><p>特定のコミットまで戻す場合、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">1bce0dde07dbe83b786c745110983d62dff5fdec</span></code>という形でコミットIDを指定できます。</p></li>
+<li><p>特定のコミットまで戻す場合、以下のコマンドのような形でコミットIDを指定できます。</p></li>
 </ul>
+<pre>
+git reset 8983e71d981c204a92d417c0301b8e9c5f99b7f9
+</pre>
 </div>
 <input id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-6">
@@ -659,65 +673,103 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-4" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-7">
-ターミナル操作</label><div class="sd-tab-content docutils">
+実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>新しいブランチを作ってみましょう。例えば、<code class="docutils literal notranslate"><span class="pre">develop</span></code>という名前のブランチを作るなら、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">develop</span></code>を実行します。</p></li>
-<li><p>特定のコミットからブランチを作る際、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>コマンドを使います。例えば、コミットID<code class="docutils literal notranslate"><span class="pre">3be9fa7</span></code>から<code class="docutils literal notranslate"><span class="pre">renewal</span></code>という名前のブランチを作るなら、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">1bce0dd</span> <span class="pre">-b</span> <span class="pre">renewal</span></code>を実行します。
-<img alt="" src="../_images/branch2.png" /></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在作られるブランチの一覧を確認できます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>で切り替えます。例えば、<code class="docutils literal notranslate"><span class="pre">develop</span></code>に切り替えるなら、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">develop</span></code>を実行します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">myfile2.txt</span></code>という新しいファイルを作成し、<code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">myfile2</span></code>というコメントでコミットします。</p></li>
+<li><p>コミットの履歴を確認します。</p></li>
 </ul>
 </div>
-<input id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-5" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-8">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>新しいブランチを作ってみましょう。例えば、以下のコマンドで<code class="docutils literal notranslate"><span class="pre">develop</span></code>という名前のブランチを作成します。</p></li>
+</ul>
+<pre>
+git branch develop
+</pre>
+<ul class="simple">
+<li><p>特定のコミットからブランチを作る際、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>コマンドを使います。例えば、コミットID<code class="docutils literal notranslate"><span class="pre">3be9fa7</span></code>から<code class="docutils literal notranslate"><span class="pre">renewal</span></code>という名前のブランチを作るなら、以下のコマンドを実行します。</p></li>
+</ul>
+<pre>
+git checkout 8983e71 -b renewal
+</pre>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在作られるブランチの一覧を確認できます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>で切り替えます。例えば、以下のコマンドで<code class="docutils literal notranslate"><span class="pre">develop</span></code>に切り替えます。</p></li>
+</ul>
+<pre>
+git checkout develop
+</pre>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>画面の左下のブランチ名（master）が表示されている個所をクリックし、新しいブランチを作成を実行します。手順で作成するブランチ名を入力してブランチを作成します。</p></li>
+<li><p>画面の左下のブランチ名（main/master）が表示されている個所をクリックし、新しいブランチを作成を実行します。手順で作成するブランチ名を入力してブランチを作成します。</p></li>
 <li><p>Git Graphを開けて、分岐を作成したいコミットで右クリックし、表示される表示されるメニュで<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Branch</span></code>を選ぶ、手順で作成するブランチ名を入力してブランチを作成します。</p></li>
 </ul>
 </div>
 </div>
+<p><img alt="" src="../_images/git_branch1.svg" /></p>
+</div>
+<div class="section" id="merge">
+<h3>マージ(merge)<a class="headerlink" href="#merge" title="Permalink to this headline">#</a></h3>
 <p>ブランチを分けて作業を進めると、各ブランチでの内容がバラバラになります。そんな時に、各ブランチでの変更をまとめる機能は「マージ」です。</p>
-<p>仮に、<code class="docutils literal notranslate"><span class="pre">develop</span> <span class="pre">branch</span></code>で<code class="docutils literal notranslate"><span class="pre">myfile4.txt</span></code>を追加する作業を行います。</p>
+<p>仮に、<code class="docutils literal notranslate"><span class="pre">develop</span> <span class="pre">branch</span></code>で<code class="docutils literal notranslate"><span class="pre">myfile3.txt</span></code>を追加する作業を行います。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">develop</span>
-<span class="n">echo</span> <span class="n">some</span> <span class="n">text</span> <span class="o">&gt;&gt;</span> <span class="n">myfile4</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">git</span> <span class="n">add</span> <span class="n">myfile4</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;add myfile4.txt&quot;</span>
+<span class="n">echo</span> <span class="n">some</span> <span class="n">text</span> <span class="o">&gt;&gt;</span> <span class="n">myfile3</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">myfile3</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;add myfile3.txt&quot;</span>
 </pre></div>
 </div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
-実習問題</label><div class="sd-tab-content docutils">
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチに切り替えます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">myfile5.txt</span></code>を作成し、コミットします。</p></li>
-</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">[ブランチ名A]</span> <span class="pre">[ブランチ名B]</span></code>でブランチ間の差分を確認できます。</p>
 </div>
-</div>
-<p>ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチを<code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチにマージします。</p>
+<p><img alt="" src="../_images/git_merge_1.svg" /></p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-10" name="sd-tab-set-6" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-10">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチに切り替えます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">myfile4.txt</span></code>を作成し、 “add myfile4.txt” というメッセージでコミットします。</p></li>
+</ul>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチと<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチの間に差分を確認できます。
+<img alt="" src="../_images/git_merge_2.svg" />
+ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチを```main/master``ブランチにマージします。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在<code class="docutils literal notranslate"><span class="pre">master</span></code>ブランチにいることを確認します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチにいることを確認します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">develop</span></code>でマージを実行します。</p></li>
 </ul>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-6" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
+<input id="sd-tab-item-12" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p>ステータスバーの左下端に表示されているブランチが「<code class="docutils literal notranslate"><span class="pre">master</span></code>」になっていることを確認します。</p></li>
+<li><p>ステータスバーの左下端に表示されているブランチが「<code class="docutils literal notranslate"><span class="pre">main/master</span></code>」になっていることを確認します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code>（<code class="docutils literal notranslate"><span class="pre">Command+Shift+P</span></code>）でコマンドパレットを開く、入力欄に<code class="docutils literal notranslate"><span class="pre">Git:merge</span></code>と入力するとマージの項目が表示されます。</p></li>
 <li><p>マージしたいブランチを選択します。これで、現在のブランチに選択したブランチがマージされます。</p></li>
 </ul>
 </div>
 </div>
-<pre class="brush: python">
-import panda as pd
-</pre></div>
+<p>再び<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチと<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチの間に差分を確認すると、<code class="docutils literal notranslate"><span class="pre">develop</span></code>での変更は<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチに反映できたことがわかりました。
+<img alt="" src="../_images/git_merge_3.svg" /></p>
+<p>ブランチの履歴も確認できます。</p>
+<pre>
+git log --graph --decorate --oneline
+</pre>
+<p><img alt="" src="../_images/git_merge_4.png" /></p>
+</div>
 </div>
 <div class="section" id="id6">
 <h2>GitHubの基本操作<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
@@ -816,6 +868,7 @@ import panda as pd
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">マージ(merge)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">

@@ -35,3 +35,79 @@ Author: lvzeyu <lvzeyu1995@gmail.com>
 Date:   Sat Mar 18 22:34:11 2023 +0900
 
     myfileを作成ました
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git branch
+  develop
+* main
+  renewal
+(base) ryozawau@ryozawauMacBook-Pro test % ls 
+myfile.txt      myfile2.txt
+(base) ryozawau@ryozawauMacBook-Pro test % git checkout develop
+Switched to branch 'develop'
+(base) ryozawau@ryozawauMacBook-Pro test % ls
+myfile.txt      myfile2.txt
+(base) ryozawau@ryozawauMacBook-Pro test % git checkout renewal
+Switched to branch 'renewal'
+(base) ryozawau@ryozawauMacBook-Pro test % ls
+myfile.txt
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git checkout develop
+
+Switched to branch 'develop'
+(base) ryozawau@ryozawauMacBook-Pro test % echo some text >> myfile3.txt
+
+(base) ryozawau@ryozawauMacBook-Pro test % git add myfile3.txt
+
+(base) ryozawau@ryozawauMacBook-Pro test % git commit -a -m "add myfile3.txt"
+
+[develop 05f952e] add myfile3.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 myfile3.txt
+(base) ryozawau@ryozawauMacBook-Pro test % git diff main develop
+diff --git a/myfile3.txt b/myfile3.txt
+new file mode 100644
+index 0000000..7b57bd2
+--- /dev/null
++++ b/myfile3.txt
+@@ -0,0 +1 @@
++some text
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git diff main develop             
+diff --git a/myfile3.txt b/myfile3.txt
+new file mode 100644
+index 0000000..7b57bd2
+--- /dev/null
++++ b/myfile3.txt
+@@ -0,0 +1 @@
++some text
+diff --git a/myfile4.txt b/myfile4.txt
+deleted file mode 100644
+index 9cb342e..0000000
+--- a/myfile4.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-some texts in myfile4
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git diff main develop
+diff --git a/myfile4.txt b/myfile4.txt
+deleted file mode 100644
+index 9cb342e..0000000
+--- a/myfile4.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-some texts in myfile4
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git log --graph --decorate --oneline
+
+*   0f0a3a8 (HEAD -> main) Merge branch develop
+|\  
+| * 05f952e (develop) add myfile3.txt
+* | 99a635d add myfile4.txt
+|/  
+* 7d428ac add myfile2
+* 8983e71 (renewal) myfileを作成ました
