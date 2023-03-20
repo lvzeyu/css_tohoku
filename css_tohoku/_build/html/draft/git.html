@@ -420,7 +420,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成と連携</a></li>
 </ul>
 </li>
 </ul>
@@ -490,7 +490,18 @@ document.write(`
 </div>
 <div class="section" id="vscode">
 <h3>VSCodeのインストール<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVSCodeをインストールする。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/">公式サイト</a>からVSCodeをインストールする。</p></li>
+<li><p>必要な拡張機能をインストールします。左側のサイドバーで「拡張機能」をクリックして、検索欄で以下の拡張機能を検索し、インストールしてください。</p>
+<ul>
+<li><p>Git History</p></li>
+<li><p>Git Graph</p></li>
+<li><p>GitLens</p></li>
+<li><p>Python</p></li>
+<li><p>Jupyter</p></li>
+</ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>VSCodeは強力なコードエディターであり、様々なプログラミング言語に機能を提供する幅広い拡張機能を備えた軽量の汎用統合開発環境 (IDE) です。VSCodeでより簡単的に・効率的にGitを操作できます。また、VSCodeでは便利な機能が豊富に搭載されている<a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/5-exercise-install-python-extension?pivots=linux">Python拡張機能</a>もたくさんあります。</p>
@@ -640,6 +651,7 @@ git log
 <pre>
 git reset 8983e71d981c204a92d417c0301b8e9c5f99b7f9
 </pre>
+<p>-「特定のコミットまで戻す」とは、コミットにおけるワークツーリ、インデックス、リポジトリのどちらに戻すでも可能です。コマンドにオプションを付加することでresetの方法を指定できます。デフォルトの場合は、コミットとステージングが元の状態に戻ります。</p>
 </div>
 <input id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-6">
@@ -655,10 +667,20 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p class="admonition-title">Note</p>
 <p>リセットはオプションを指定できます。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--soft</span></code> 「変更」→「ステージング」→「コミット」の作業のうち、最後の「コミット」だけをリセットする方法です。ファイルがステージングされた状態まで戻されます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--mixed</span></code> 「ステージング」までをリセットする方法です(default オプション)。インデックスが空の状態に戻すので、ここでステージングを一からやり直してコミットできます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--hard</span></code>「変更」から全て破棄する方法です。この方法の場合、ファイルの変更などを含めて破棄されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--soft</span></code> 「ワークツーリでの変更」→「ステージング」→「リポジトリへコミット」の作業のうち、最後の「コミット」だけをリセットする方法です。ファイルがステージングされた状態まで戻されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mixed</span></code> 「ワークツーリでの変更」→「ステージング」→「リポジトリへコミット」の作業のうち、「ステージング」までをリセットする方法です(default オプション)。インデックスが空の状態に戻すので、ここでステージングをやり直してコミットできます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hard</span></code>　「ワークツーリでの変更」→「ステージング」→「リポジトリへコミット」の作業のうち、「ワークツーリでの変更」までをリセットする方法です。この方法の場合、ファイルの変更などを含めて破棄されます。つまり、指定したミットまでまるごと消す操作になります。</p></li>
 </ul>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>で一つ前のコミットに戻す、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でコミット状態を確認してください。</p></li>
+<li><p>ファイルの変更状態を確認できましtら、「ステージング」→「リポジトリへコミット」の操作でワークツーリにおけるファイルの変更を行います。</p></li>
+</ul>
+</div>
 </div>
 <div class="important admonition">
 <p class="admonition-title">Advanced</p>
@@ -671,8 +693,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>ブランチ機能を使うことで、複数の状態を同時に保つことができます。個人作業での試行錯誤もグールプの共同作業も非常に役を立っています。</p>
 <p><img alt="" src="../_images/branch.png" /></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-7">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">myfile2.txt</span></code>という新しいファイルを作成し、<code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">myfile2</span></code>というコメントでコミットします。</p></li>
@@ -681,8 +703,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-8">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>新しいブランチを作ってみましょう。例えば、以下のコマンドで<code class="docutils literal notranslate"><span class="pre">develop</span></code>という名前のブランチを作成します。</p></li>
@@ -704,8 +726,8 @@ git checkout 8983e71 -b renewal
 git checkout develop
 </pre>
 </div>
-<input id="sd-tab-item-9" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
+<input id="sd-tab-item-10" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>画面の左下のブランチ名（main/master）が表示されている個所をクリックし、新しいブランチを作成を実行します。手順で作成するブランチ名を入力してブランチを作成します。</p></li>
@@ -731,8 +753,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 <p><img alt="" src="../_images/git_merge_1.svg" /></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-6" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-10">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチに切り替えます。</p></li>
@@ -744,16 +766,19 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <img alt="" src="../_images/git_merge_2.svg" />
 ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチを```main/master``ブランチにマージします。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-7" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチにいることを確認します。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">develop</span></code>でマージを実行します。</p></li>
+<li><p>マージを実行します。</p></li>
 </ul>
+<pre>
+git merge develop -m "merge develop branch
+</pre>
 </div>
-<input id="sd-tab-item-12" name="sd-tab-set-7" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-12">
+<input id="sd-tab-item-13" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ステータスバーの左下端に表示されているブランチが「<code class="docutils literal notranslate"><span class="pre">main/master</span></code>」になっていることを確認します。</p></li>
@@ -781,22 +806,54 @@ git log --graph --decorate --oneline
 </ul>
 <p>Git機能を搭載したプロジェクト管理サービスは数多くありますが、本授業はその中でも一番使われている<a class="reference external" href="https://github.com/">Github</a>を利用していきます。</p>
 <div class="section" id="id7">
-<h3>リモートリポジトリの作成<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>リモートリポジトリの作成と連携<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Githubの使い方は、公式のチュートリアルを適宜参照してください。</p>
 </div>
-<ol class="arabic simple">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
 <li><p>ページの右上隅で、[<span class="math notranslate nohighlight">\(+\)</span>]ドロップダウンメニューを使用して、 [新しいリポジトリ] を選択します。
 <img alt="" src="https://docs.github.com/assets/cb-11427/mw-1000/images/help/repository/repo-create.webp" /></p></li>
 <li><p>リポジトリ名を入力します。必要に応じて、リポジトリの説明を追加します。</p></li>
 <li><p>リポジトリの可視性を選択してください。パブリックリポジトリには、インターネット上の誰でもアクセスできます。プライベートリポジトリには、自分や招待した人のみがアクセスできます。</p></li>
-<li><p>[Initialize this repository with a README] (このレポジトリを README で初期化する) を選択します。</p></li>
-</ol>
-<p><img alt="" src="https://docs.github.com/assets/cb-49938/mw-1000/images/help/repository/initialize-with-readme.webp" /></p>
-<ol class="arabic simple" start="5">
 <li><p>[Create repository] (リポジトリの作成) をクリックします。</p></li>
-</ol>
+<li><p>リモートリポジトリのSSHアドレスをコピーしておきます。
+<img alt="" src="../_images/github1.png" /></p></li>
+<li><p>以下のコマンドでリモートリポジトリとローカルリポジトリに対応づけます。各自のSSHアドレスを入れ替えてください。</p></li>
+</ul>
+<pre>
+git remote add origin git@github.com:lvzeyu/test.git
+</pre>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>でリモートリポジトリの一覧を確認します。正しく追加されたら、<code class="docutils literal notranslate"><span class="pre">origin</span></code>というリモートリポジトリが表示されます。</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>新しいリモートリポジトリの作成
+-「ソース管理」→「Branchの発行」をクリックします。</p>
+<ul>
+<li><p>初回はGitHubとの連携認証を行います。指示に従って認証処理を行ってください。</p></li>
+<li><p>リモートリポジトリの名前を入力し、可視性を選択してください。
+<img alt="" src="../_images/github2.png" /></p></li>
+</ul>
+</li>
+<li><p>既存リモートブランチの連携</p>
+<ul>
+<li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「リモート追加」→「GitHubからリモートを追加」でクリックしてください。
+-　連携したいリモートリポジトリの名前またはURLで検索してください。</p></li>
+<li><p>リモート名を入力します。ここで<code class="docutils literal notranslate"><span class="pre">origin</span></code>にしておきましょう。</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -872,7 +929,7 @@ git log --graph --decorate --oneline
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リモートリポジトリの作成と連携</a></li>
 </ul>
 </li>
 </ul>
