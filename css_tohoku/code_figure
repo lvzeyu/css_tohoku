@@ -102,12 +102,16 @@ index 9cb342e..0000000
 -some texts in myfile4
 
 
-(base) ryozawau@ryozawauMacBook-Pro test % git log --graph --decorate --oneline
-
-*   0f0a3a8 (HEAD -> main) Merge branch develop
-|\  
-| * 05f952e (develop) add myfile3.txt
-* | 99a635d add myfile4.txt
-|/  
-* 7d428ac add myfile2
-* 8983e71 (renewal) myfileを作成ました
+(base) ryozawau@ryozawauMacBook-Pro test % git remote                        
+origin
+(base) ryozawau@ryozawauMacBook-Pro test % git push -u origin main
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.05 KiB | 1.05 MiB/s, done.
+Total 14 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To github.com:lvzeyu/test.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
