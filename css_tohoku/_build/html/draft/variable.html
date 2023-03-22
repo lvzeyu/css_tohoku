@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Jupyter ecosystem &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>変数 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
   
   
@@ -59,9 +59,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/jupyter';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/variable';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="データ型" href="python_basic.html" />
+    <link rel="prev" title="Python環境" href="python_environment.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,20 +156,20 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../draft/Intro.html">授業の概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../draft/git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../draft/github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../draft/python_environment.html">Python環境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../draft/variable.html">変数</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">変数</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../draft/python_basic.html">データ型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">データ型</a></li>
 </ul>
 
     </div>
@@ -214,6 +216,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/tree/master/blob/master/css_tohoku/draft/variable.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -239,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fgetting_started/jupyter.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/variable.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="問題を報告"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/getting_started/jupyter.md" target="_blank"
+      <li><a href="../_sources/draft/variable.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="ソースファイルをダウンロード"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -279,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -351,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Jupyter ecosystem</h1>
+    <h1>変数</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -361,10 +394,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterhub">JupyterHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-interfaces-classic-vs-jupyterlab">Jupyter interfaces: classic vs. JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">変数</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">変数の命名</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">予約語の一覧を表示</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">代入</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -375,48 +414,135 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-jupyter-ecosystem">
-<h1>The Jupyter ecosystem<a class="headerlink" href="#the-jupyter-ecosystem" title="Permalink to this headline">#</a></h1>
-<p>In this course, we will use several tools from <em>project Jupyter</em> <span id="id1">[]</span>. This project includes several nifty tools to make programming a little easier!</p>
-<div class="section" id="jupyterhub">
-<h2>JupyterHub<a class="headerlink" href="#jupyterhub" title="Permalink to this headline">#</a></h2>
-<p>One tool that we use in this course is “JupyterHub”. This piece of software allows you to easily create a preconfigured Python environment on an external server — no need to install Python on your own computer anymore! You just go to the website/public IP associated with the external server and you can start programming! We run JupyterHub on our own server at the University of Amsterdam, which Research Master students can use for this course. Others may use the aforementioned tool “Binder” to create a JupyterHub instance themselves, which can be used for this course as well!</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>変数<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<div class="section" id="id2">
+<h2>変数の命名<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Pythonにおいて<strong>すべての数、文字列、データ構造、関数、クラス、モジュールがオブジェクト</strong>です。初心者にとってやや理解しにくいかもしれませんが、ここではさしあたり、オブジェクトのイメージを簡単に説明します。</p>
 </div>
-<div class="section" id="jupyter-interfaces-classic-vs-jupyterlab">
-<h2>Jupyter interfaces: classic vs. JupyterLab<a class="headerlink" href="#jupyter-interfaces-classic-vs-jupyterlab" title="Permalink to this headline">#</a></h2>
-<p>The Jupyter environment offers two interfaces: the <em>classic</em> interface and the more extensive <em>JupyterLab</em> interface. On our own JupyterHub instance, we enabled the classic interface by default, because the <a class="reference external" href="https://nbgrader.readthedocs.io/">grading software</a> we use only works with this interface. On Binder, the classic notebook is the default interface, as well.</p>
+<p>Pythonで変数を定義できます。変数とは、プログラムで使いたいメモリ上の値に名前を付けたものです。
+Pythonで変数の作成は、いくつかのルールがあります。</p>
+<ul class="simple">
+<li><p>大文字と小文字を区別する：<code class="docutils literal notranslate"><span class="pre">chss</span></code>,<code class="docutils literal notranslate"><span class="pre">Chss</span></code>, <code class="docutils literal notranslate"><span class="pre">CHSS</span></code>はすべて異なる名前です。</p></li>
+<li><p>先頭で数字は使えないです。例えば、<code class="docutils literal notranslate"><span class="pre">1a</span></code>は無効な変数名です。</p></li>
+<li><p>Pythonの予約語を避けます。</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id3">
+<h1>予約語の一覧を表示<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h1>
+<p>help(“keywords”)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Both the classic interface and the JupyterLab interface are shipped with the Anaconda distribution, so no need to install them manually! If you, for whatever reason, <em>do</em> need to install them, you can do so using <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">{</span><span class="n">package</span><span class="o">-</span><span class="n">name</span><span class="p">}</span>
+<p>強制ではないですが、可読性を向上するために、できるだけ推奨される変数の命名規則にしたがった方が良いです。</p>
+<table class="table2">
+    <thead>
+<tr>
+<th style="text-align: center">対象</th>
+<th style="text-align: center">ルール</th>
+<th style="text-align: center">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center">パッケージ</td>
+<td style="text-align: center">全小文字 なるべく短くアンダースコア非推奨</td>
+<td style="text-align: center">tqdm, requests ...</td>
+</tr>
+<tr>
+<td style="text-align: center">モジュール</td>
+<td style="text-align: center">全小文字 なるべく短くアンダースコア可</td>
+<td style="text-align: center">sys, os,...</td>
+</tr>
+<tr>
+<td style="text-align: center">クラス</td>
+<td style="text-align: center">最初大文字 + 大文字区切り</td>
+<td style="text-align: center">MyFavoriteClass</td>
+</tr>
+<tr>
+<td style="text-align: center">例外</td>
+<td style="text-align: center">最初大文字 + 大文字区切り</td>
+<td style="text-align: center">MyFuckingError</td>
+</tr>
+<tr>
+<td style="text-align: center">型変数</td>
+<td style="text-align: center">最初大文字 + 大文字区切り</td>
+<td style="text-align: center">MyFavoriteType</td>
+</tr>
+<tr>
+<td style="text-align: center">メソッド</td>
+<td style="text-align: center">全小文字 + アンダースコア区切り</td>
+<td style="text-align: center">my_favorite_method</td>
+</tr>
+<tr>
+<td style="text-align: center">関数</td>
+<td style="text-align: center">全小文字 + アンダースコア区切り</td>
+<td style="text-align: center">my_favorite_funcion</td>
+</tr>
+<tr>
+<td style="text-align: center">変数</td>
+<td style="text-align: center">全小文字 + アンダースコア区切り</td>
+<td style="text-align: center">my_favorite_instance</td>
+</tr>
+<tr>
+<td style="text-align: center">定数</td>
+<td style="text-align: center">
+<strong>全大文字</strong> + アンダースコア区切り</td>
+<td style="text-align: center">MY_FAVORITE_CONST</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>代入<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">=</span></code>を使って変数に値を代入する。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">{package-name}</span></code> with <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> to install the classic notebook interface and with <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> to (additionally) install the JupyterLab interface.</p>
-<p>Also, while on JupyterHub (including Binder) the Jupyter environment is always running, on your own computer you need to start it manually by running the following command in your terminal (or CMD prompt/Anaconda prompt/Powershell on Windows):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+10
 </pre></div>
 </div>
-<p>which opens the classic interface. To open the JupyterLab interface, run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Advanced</p>
+<p>多くのプログラミング言語では、変数自体が型を持ち、メモリ位置が固定されているが、Pythonの場合、<strong>変数はただの名前です</strong>。</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../_images/immutable.png"><img alt="../_images/immutable.png" src="../_images/immutable.png" style="width: 130.5px; height: 140.5px;" /></a>
+</div>
+<p>つまり、代入は値をコピーするわけではない、<strong>データを入れてあるオブジェクトに名前を付けるだけです</strong>。名前はものの<strong>参照手段</strong>であり、もの自体ではないです。</p>
+<p>変数の代入は、メモリ内のどこかにあるオブジェクトに長いヒモで繋がるというイメージです。そのため、<code class="docutils literal notranslate"><span class="pre">C</span></code>や<code class="docutils literal notranslate"><span class="pre">JAVA</span></code>のような静的言語では変数の型を明確的に指定しなければないが、Pythonでは型を指定する必要はありません。</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../_images/immutable2.png"><img alt="../_images/immutable2.png" src="../_images/immutable2.png" style="width: 300.40000000000003px; height: 108.4px;" /></a>
+</div>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../_images/immutable3.png"><img alt="../_images/immutable3.png" src="../_images/immutable3.png" style="width: 289.2px; height: 168.4px;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#新たに生成したように見えるbは同じ値を指しているので、変数も値そのものもIDは同じになります。</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a:</span><span class="si">{}</span><span class="s2">,b:</span><span class="si">{}</span><span class="s2">,5:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p>These command will open a (new) tab in your default browser with the Jupyter interface. Note that, to stop the interface on your own computer, you need to stop the terminal process you started by typing Control (or Command) + C (or simply closing the terminal).</p>
 </div>
-<p>Both interfaces allow you to write, edit, and run code. Note that this is not limited to Python code! By installing different <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/projects/kernels.html">kernels</a>, you can run programs written in many different programming languages, including R, <a class="reference external" href="https://julialang.org/">Julia</a>, and even Matlab. In fact, the name “Jupyter” is a reference to the three core programming languages supported by Jupyter: Julia, Python, and R.</p>
-<p>In the Jupyter environment, code can be written and executed in different ways, which can be roughly divided into “script-based” and “interactive” approaches. In the script-based approach, you write your Python code in plain-text Python files (i.e., files with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>) and run them, as a whole, in the terminal. In the interactive approach, you can write and run code interactively in either a Python <em>console</em> (or <em>shell</em>) or in a <em>Jupyter notebook</em>. The Jupyter notebook is the most common format for interactive computing and we will use it heavily in week 1 of this course. The next sections explains Jupyter Notebooks in more detail.</p>
-<p>For now, if you want to quickly explore the Jupyter environment, you can click one of the two buttons below, which will access JupyterHub instance (with a classic interface) that includes the course materials. The UvA JupyterHub (orange button) is only accessible to Research Master Students enrolled in the “Programming for Psychology” course; instructions on how to log in onto the UvA JupyterHub can be found on Canvas. The Binder JupyterHub (blue button) can be used by anyone.</p>
-<p><a class="reference external" href="https://neuroimaging.lukas-snoek.com"><img alt="UvA" src="https://badgen.net/badge/UvA/Jupyterhub/orange" /></a>
-<a class="reference external" href="https://mybinder.org/v2/gh/lukassnoek/introPy/master?urlpath=lab"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
-<p>Note that, instead of using the classic interface, you can launch the JupyterLab interface by replacing the <code class="docutils literal notranslate"><span class="pre">/tree</span></code> snippet in the URL to <code class="docutils literal notranslate"><span class="pre">/lab</span></code>. To change it back to the classic interface again, click on <em>Help</em> → <em>Launch Classic Notebook</em> or change the <code class="docutils literal notranslate"><span class="pre">/lab</span></code> snippet back to <code class="docutils literal notranslate"><span class="pre">/tree</span></code> in the URL.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a:4461013424,b:4461013424,5:4461013424
+</pre></div>
 </div>
-<div class="section" id="jupyter-notebooks">
-<h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h2>
-<p>As mentioned, we use “Jupyter Notebooks” a lot in this course. Jupyter notebooks are very similar to R Markdown files. Like R Markdown files, you can mix text, code, plots, and mathematical formulas within a single document (see gif below).</p>
-<p><img alt="jupyter_gif" src="https://miro.medium.com/max/2380/1*Y0wfx6EBWAGo_gfmUZHJLw.gif" />
-<em>Gif from Cornellius Yudha Wijaya on <a class="reference external" href="https://towardsdatascience.com/elevate-your-jupyter-notebook-environment-experience-9bdd1101aa54">towardsdatascience.com</a></em></p>
-<p>Most of our tutorials are actually written in Jupyter notebooks. These notebooks are great for “interactive programming”, in which it is easy to experiment, try out, and troubleshoot your code. Because this mode of programming is great for teaching, we will use Jupyter notebooks a lot in week 1. Interactive programing is not, however, the only way in which you use Python. In fact, a lot of people use Python in a non-interactive way by writing scripts. In this “script mode” (for lack of a better term), writing the code and running the code are done separately. The code interface of PsychoPy (discussed in week 2), for example, cannot be used interactively and only supports “script mode”. We will dicuss both modes in this course.</p>
-<p>If you want to check out Jupyter notebooks already, open a Jupyter interface (using Binder, the UvA JupyterHub, or on your own computer) and, in the upper right corner, click on <em>New</em> → <em>Python 3</em> (in the classic interface) or click on the Python 3 tile in the launcher tab (in the JupyterLab interface).</p>
-<p>Now, you should be ready to start on the <span class="xref myst">course materials from week 1</span>.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -433,7 +559,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./getting_started"
+            path: "./draft"
         },
         predefinedOutput: true
     }
@@ -448,6 +574,24 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="python_environment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python環境</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python_basic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">データ型</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -463,10 +607,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterhub">JupyterHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-interfaces-classic-vs-jupyterlab">Jupyter interfaces: classic vs. JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">変数</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">変数の命名</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">予約語の一覧を表示</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">代入</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

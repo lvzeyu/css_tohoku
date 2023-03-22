@@ -7,17 +7,14 @@ parts:
 - caption: イントロダクション
   chapters:
   - file: draft/Intro.ipynb
-  - file: markdown
-  - file: notebooks
-  - file: markdown-notebooks
-  - file: draft/regular_expressions
 
-- caption: Getting started
+- caption: GitとGitHub
   chapters:
-  - file: getting_started/about
-  - file: getting_started/installation
-  - file: getting_started/jupyter
-  - file: draft/python_basic
-  - file: draft/backpropagation
-  - file: draft/attention
   - file: draft/git.ipynb
+  - file: draft/github.ipynb
+
+- caption: Pythonの基礎
+  chapters:
+  - file: draft/python_environment.ipynb
+  - file: draft/variable.ipynb
+  - file: draft/python_basic.ipynb
