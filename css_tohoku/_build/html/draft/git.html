@@ -257,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="ソースリポジトリ"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/git.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="問題を報告"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -304,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/draft/git.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="ソースファイルをダウンロード"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -322,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="PDFに印刷"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -342,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="全画面モード"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -390,22 +390,18 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> 目次 </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">紹介</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">インストール</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitインストール</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHubの初期設定</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Gitインストール</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Gitの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
@@ -439,42 +435,8 @@ document.write(`
 <div class="section" id="id2">
 <h2>インストール<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="section" id="id3">
-<h3>Git<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<div class="section" id="id4">
-<h4>Gitインストール<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<h3>Gitインストール<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールする。</p>
-</div>
-<div class="section" id="github">
-<h4>GitHubの初期設定<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h4>
-<ul class="simple">
-<li><p>GitHubアカウントを作成します。</p></li>
-<li><p>ターミナルを開きます。</p></li>
-<li><p>次の git コマンドでユーザー情報を設定する。</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;First-name Family-name&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;username@example.com&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>次の git コマンドでSSHキーを生成する。</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/.</span><span class="n">ssh</span>
-<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば<strong>空欄のまま</strong>Enterでよい。</p></li>
-<li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーのファイルを開く、表示された<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>という形の内容はSSHキーになります。SHキーをコピーします。</p></li>
-<li><p>Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→SSH and GPG keys→ New SSH keyという順番でクリックしてください。</p></li>
-<li><p>クリップボードの内容を <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてたら、SSHの登録が完了です。</p></li>
-<li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubと連携できましたら、以下の内容が表示されます。</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="vscode">
 <h3>VSCodeのインストール<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h3>
@@ -496,16 +458,16 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Gitの基本操作<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id4">
+<h2>Gitの基本操作<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Git プロジェクトを取得するには、大きく二通りの方法があります。</p>
 <ul class="simple">
 <li><p>既存のプロジェクトやディレクトリを Git にインポートする方法。</p></li>
 <li><p>既存の Git リポジトリを別のサーバーからクローンする方法です。</p></li>
 </ul>
 <p>まず、既存のプロジェクトやディレクトリを Git にインポートし、ファイルをコミットと履歴の管理を説明します。</p>
-<div class="section" id="id6">
-<h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<div class="section" id="id5">
+<h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>空のディレクトリではなくすでに存在するファイルのバージョン管理を始めたい場合は、まずそのファイルを監視対象に追加する。例えば、すでに存在する<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を以下のコマンドで追加します。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code></p>
@@ -626,8 +588,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </input><label class="sd-tab-label" for="sd-tab-item-5">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>でコミットの情報を確認します。コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">5d5277156bfef81535e8938f4e9f71b1db2eacf8</span></code>のような形のハッシュを使います。
-オレンジ色の部分はコミットIDの情報になります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>でコミットの情報を確認します。コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">5d5277156bfef81535e8938f4e9f71b1db2eacf8</span></code>のような形のハッシュを使います。</p></li>
 </ul>
 <pre>
 git log
@@ -843,22 +804,18 @@ git log --graph --decorate --oneline
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> 目次
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">紹介</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">インストール</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Git</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitインストール</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHubの初期設定</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Gitインストール</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Gitの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
@@ -879,7 +836,7 @@ git log --graph --decorate --oneline
   <div class="footer-item">
     
 <p class="component-author">
-著者 呂　沢宇
+By 呂　沢宇
 </p>
 
   </div>

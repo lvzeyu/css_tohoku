@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="ソースリポジトリ"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/github.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="問題を報告"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/draft/github.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="ソースファイルをダウンロード"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="PDFに印刷"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -344,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="全画面モード"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -392,12 +392,18 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> 目次 </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">リモートリポジトリの作成と連携</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プッシュ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">プルリクエストの実例</a></li>
 </ul>
             </nav>
         </div>
@@ -419,7 +425,38 @@ document.write(`
 </ul>
 <p>Git機能を搭載したプロジェクト管理サービスは数多くありますが、本授業はその中でも一番使われている<a class="reference external" href="https://github.com/">Github</a>を利用していきます。</p>
 <div class="section" id="id1">
-<h2>リモートリポジトリの作成と連携<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>GitHubの初期設定<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>GitHubアカウントを作成します。</p></li>
+<li><p>ターミナルを開きます。</p></li>
+<li><p>次の git コマンドでユーザー情報を設定する。ここで、<code class="docutils literal notranslate"><span class="pre">user.name</span></code>はGitHubのユーザ名、<code class="docutils literal notranslate"><span class="pre">user.email</span></code>はGitHub登録用のメールを使ってください。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;First-name Family-name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;username@example.com&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SSH (Secure Shell プロトコル) を使用して、GitHubのリポジトリ内のデータにアクセスして書き込むことができます。 SSH経由で接続する場合は、ローカルコンピューター上の秘密キーファイルを使用して認証します。SSH を設定するときは、新しいプライベート SSH キーを生成し、SSH エージェントに追加する必要があります。次のコマンドでSSHキーを生成する。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/.</span><span class="n">ssh</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば<strong>空欄のまま</strong>Enterでよい。</p></li>
+<li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーのファイルを開く、表示された<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>という形の内容はSSHキーになります。SHHキーをコピーします。</p></li>
+<li><p>GitHub のアカウントにパブリック SSH キーを追加する必要もあります。Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→SSH and GPG keys→ New SSH keyという順番でクリックしてください。</p></li>
+<li><p>クリップボードの内容を <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてたら、SSHの登録が完了です。</p></li>
+<li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubと連携できましたら、以下の内容が表示されます。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>リモートリポジトリの作成と連携<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>GitHubの使い方は、公式のチュートリアルを適宜参照してください。</p>
@@ -468,8 +505,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>プッシュ<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="push">
+<h2>プッシュ(Push)<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h2>
 <p>リモートリポジトリにローカルリポジトリでの変更を反映する操作は「プッシュ」といいます。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
@@ -494,9 +531,171 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
+</div>
+<div class="section" id="fetch">
+<h2>フェッチ(Fetch)<a class="headerlink" href="#fetch" title="Permalink to this headline">#</a></h2>
+<p>リモートリポジトリとローカルリポジトリ、それぞれの状況に違いがあるかを調べる操作は、フェッチ(Fetch)といいます。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+実習問題1</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>GitHubでリモートリポジトリのREADMEファイルを作成し、適宜内容を加えて、その変更をコミットします。</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+実習問題2</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>ローカルリポジトリの<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>に任意の変更を加えて、その変更をコミットします。</p></li>
+</ul>
+</div>
+</div>
 <div class="margin sidebar">
-<p class="sidebar-title">An optional title</p>
-<p>My margin content</p>
+<p class="sidebar-title"></p>
+<p>ログが途中までして表示されおらず、プロンプトが<code class="docutils literal notranslate"><span class="pre">「：」</span></code>となっている場合、<code class="docutils literal notranslate"><span class="pre">q</span></code>キーを押してください。</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>でリモートリポジトリの状況を取ってきます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">origin/main</span></code>で確認すると、リモートリポジトリの状態が反映されたはずです。
+<img alt="" src="../_images/git_fetch.png" /></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「fetch」でフェッチを行います。</p></li>
+<li><p>「ソース管理」→ 「REMOTES」でリモートリポジトリとの最新状況を確認できます。
+<img alt="" src="../_images/git_fetch2.png" /></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="pull">
+<h2>プル(Pull)<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h2>
+<p>リモートリポジトリに加えられた変更がローカルリポジトリに取り込まれる操作は「プル(Pull)」といいます。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>でプル操作を行います。</p></li>
+<li><p>ローカルリポジトリの内容が更新されることを確認できます。</p></li>
+</ul>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「pull」でフェッチを行います。</p></li>
+</ul>
+</div>
+</div>
+<p>基本的に、リモートリポジトリで作業する場合、<ins><strong>作業前は必ずプルしよう</strong><ins>ことを覚えてください。</p>
+<p>最新の状態をプルを忘れ、古いファイルをしてしまった結果、プッシュをするときにエラーが発生し、そこでプルをするとコンフリクトが起きます。特に他のメンバーと共同作業をしているときコンフリクトが発生すると、解決するのはなかなか困難です。</p>
+<p>普段から作業を始まる前にプルを行い、1日中でに作業が一段落ついたときもプルするなど、できるだけ頻繁に最新の状態に保っておくと良いでしょう。</p>
+</div>
+<div class="section" id="revert">
+<h2>revert<a class="headerlink" href="#revert" title="Permalink to this headline">#</a></h2>
+<p>ローカルリポジトリでは、コミットをした後間違いに気づいたときは、リセットをしてやり直すことができます。</p>
+<p>リモートリポジトリにプッシュしてしまった後で間違いに気づいたら、<code class="docutils literal notranslate"><span class="pre">revert</span></code>でコミットを取り消せることができます。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>での変更をリモートリポジトリにプッシュします。</p></li>
+<li><p>GitHubでプッシュした変更を確認します。</p></li>
+</ul>
+<p><img alt="" src="../_images/revert1.png" /></p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>コマンドで打ち消したいコミットを指定します。例えば、</p></li>
+</ul>
+<pre>
+git revert 1453d39
+</pre>
+<ul class="simple">
+<li><p>これで、コミットが打ち消されました。そのままプッシュします。</p></li>
+</ul>
+<pre>
+git push
+</pre>
+<ul class="simple">
+<li><p>GitHubで、この前のコミットで変更した内容が取り消されたことを確認できました。</p></li>
+</ul>
+<p><img alt="" src="../_images/revert2.png" /></p>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+VSCode操作</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>「ソース管理」→ 「COMMITS」でコミットの一覧を確認します。</p></li>
+<li><p>打ち消したいコミットを選択し、右クリックし、表示されたメニューに「Revert Commit」をクリックします。</p></li>
+<li><p>プッシュします。</p></li>
+<li><p>GitHubで、この前のコミットで変更した内容が取り消されたことを確認できました。</p></li>
+</ul>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">revert</span></code>は「打ち消し」を機能していますが、<code class="docutils literal notranslate"><span class="pre">reset</span></code>とは違って元に戻すのではなく<ins>「間違ったところを訂正する内容のコミットをする」</ins>といった作業を行なっています(revert→push)。</p>
+<p>なぜこのような設計になるといえば、共同作業の場合、他のメンバーがすでにプルして、変更などをしてしまっているかもしれません。その状態でリモートリポジトリの内容を後戻りさせてしまうと、その差分を埋めるのは困難です。つまり、本質的には、プッシュした内容を「なかったこと」にすることはできません。</p>
+</div>
+<div class="section" id="pull-request">
+<h2>プルリクエスト(Pull request)<a class="headerlink" href="#pull-request" title="Permalink to this headline">#</a></h2>
+<p>ここまでに説明した通り、間違えた内容をプッシュすると、他のメンバーが知らねうちに間違えた内容を適用しまって、不具合の原因になります。</p>
+<p>このようなリスクを回避するために、通常はプッシュは慎重に行いながら、「プルリクエスト(Pull request)」を使うことが推奨されます。</p>
+<p>プルプルリクエストとは、マージを実行する際に、他のメンバーへの変更通知や変更箇所の比較表示など様々の確認を行うことができる機能です。この機能を使えば、プッシュする前にメンバーにレビューを依頼し、問題がない場合だけブランチにマージをして、変更を確定することができるようになります。</p>
+</div>
+<div class="section" id="id3">
+<h2>プルリクエストの実例<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチで作業を行い、<code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチにプルリクエストをして、確認する上でマージを実行する処理を行いましょう。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチに切り替えて、適宜内容を変更した後、リモートリポジトリに変更内容をプッシュします。</p></li>
+</ul>
+<pre>
+git checkout develop
+git push --set-upstream origin develop
+</pre>
+<ul class="simple">
+<li><p>GitHubで、ブランチの一覧で<code class="docutils literal notranslate"><span class="pre">main</span></code>と<code class="docutils literal notranslate"><span class="pre">develop</span></code>があることを確認できました。そして、<code class="docutils literal notranslate"><span class="pre">develop</span> <span class="pre">had</span> <span class="pre">recent</span> <span class="pre">pushes</span></code>というリマインドも表示されています。</p></li>
+</ul>
+<p><img alt="" src="../_images/pullrequest.png" /></p>
+<ul class="simple">
+<li><p>「<code class="docutils literal notranslate"><span class="pre">Compare&amp;pull</span> <span class="pre">request</span></code>」ボタンをクリックすると、プルリクエストの作成画面に切り替えます。適宜タイトルと説明を編集して、「<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">pull</span> <span class="pre">request</span></code>」ボタンを押します。</p></li>
+</ul>
+<p><img alt="" src="../_images/pullrequest2.png" /></p>
+<ul class="simple">
+<li><p>プルリクエストの画面では、プルリクエストが送られたブランチで行われたコミットの履歴を確認できます。</p></li>
+</ul>
+<p><img alt="" src="../_images/pullrequest3.png" /></p>
+<ul class="simple">
+<li><p>コミットをクリックすると、具体的な変更内容をチェックすることができます。もし気になる箇所があれば、マウスカーソルを近付けると「<code class="docutils literal notranslate"><span class="pre">+</span></code>」ボタンが表示されます。ボタンをクリックすると、コメント欄が開くので、コメントを記入し、「<code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">a</span> <span class="pre">review</span></code>」をクリックします。</p></li>
+</ul>
+<p><img alt="" src="../_images/pullrequest4.png" /></p>
+<ul class="simple">
+<li><p>右上の「<code class="docutils literal notranslate"><span class="pre">Finish</span> <span class="pre">your</span> <span class="pre">review</span></code>」ボタンをクリックすると、レニューの種類を選択できます。次に、「<code class="docutils literal notranslate"><span class="pre">Sumbit</span> <span class="pre">your</span> <span class="pre">review</span></code>」ボタンをクリックします。</p></li>
+<li><p>再びプルリクエストの画面を表示すると、コメントの履歴も表示されます。ここで引き続き議論することができます。このように、コメントをしたり、コミットとプッシュをしたり、作業を進めていくことができます。</p></li>
+<li><p>確認と修正が完了すると、「<code class="docutils literal notranslate"><span class="pre">Merge</span> <span class="pre">pull</span> <span class="pre">request</span></code>」ボタンをクリックします。次に、必要に応じてコミットメッセージを入力し、「<code class="docutils literal notranslate"><span class="pre">Confirm</span> <span class="pre">merge</span></code>」ボタンをクリックしたらマージ完了です。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチにおける<code class="docutils literal notranslate"><span class="pre">develop</span></code>での変更が反映されますことを確認できます。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>レビューの種類</p>
+<ul class="simple">
+<li><p>コメント(Comment): コメントだけを送信します。</p></li>
+<li><p>承認(Approvr): pull request で提案された変更のマージを承認します。</p></li>
+<li><p>変更依頼(Request changes): pull request をマージする前に対処する必要があることを見つけた際に、変更や確認を依頼します。</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -558,12 +757,18 @@ VSCode操作</label><div class="sd-tab-content docutils">
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> 目次
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">リモートリポジトリの作成と連携</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">プッシュ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">プルリクエストの実例</a></li>
 </ul>
   </nav></div>
 
@@ -578,7 +783,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
   <div class="footer-item">
     
 <p class="component-author">
-著者 呂　沢宇
+By 呂　沢宇
 </p>
 
   </div>

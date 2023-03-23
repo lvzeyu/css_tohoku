@@ -115,3 +115,12 @@ remote: Resolving deltas: 100% (4/4), done.
 To github.com:lvzeyu/test.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
+
+
+(base) ryozawau@ryozawauMacBook-Pro test % git fetch  
+(base) ryozawau@ryozawauMacBook-Pro test % git log origin/main
+commit 75e44097f672164b9e064e92eeaf2a4c0cd4a7d1 (origin/main)
+Author: lvzeyu <lvzeyu1995@gmail.com>
+Date:   Thu Mar 23 08:48:40 2023 +0900
+
+    Create README.md
