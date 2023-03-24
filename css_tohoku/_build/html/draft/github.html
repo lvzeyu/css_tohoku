@@ -159,7 +159,6 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="current nav bd-sidenav">
@@ -397,13 +396,33 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリの作成と連携</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">プルリクエストの実例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリに関する操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">プルリクエストの実例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">クローン(Clone)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クローンのやり方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubでの共同作業</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-flow">GitHub Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">mainブランチでは開発しない</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">開発する内容ごとに「トピックブランチ」を作成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ブランチは定期的にPushする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">プルリクエストを使って作業に関するやりとりをする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">プルリクエストを使ってにコードレビューを行う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">レビューが承認されたらmainブランチにマージする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-issues">GitHub Issues</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -456,7 +475,9 @@ document.write(`
 </div>
 </div>
 <div class="section" id="id2">
-<h2>リモートリポジトリの作成と連携<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>リモートリポジトリに関する操作<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id3">
+<h3>リモートリポジトリの作成と連携<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>GitHubの使い方は、公式のチュートリアルを適宜参照してください。</p>
@@ -506,7 +527,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="section" id="push">
-<h2>プッシュ(Push)<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h2>
+<h3>プッシュ(Push)<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリにローカルリポジトリでの変更を反映する操作は「プッシュ」といいます。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
@@ -533,7 +554,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="section" id="fetch">
-<h2>フェッチ(Fetch)<a class="headerlink" href="#fetch" title="Permalink to this headline">#</a></h2>
+<h3>フェッチ(Fetch)<a class="headerlink" href="#fetch" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリとローカルリポジトリ、それぞれの状況に違いがあるかを調べる操作は、フェッチ(Fetch)といいます。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
@@ -577,7 +598,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="section" id="pull">
-<h2>プル(Pull)<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h2>
+<h3>プル(Pull)<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリに加えられた変更がローカルリポジトリに取り込まれる操作は「プル(Pull)」といいます。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
@@ -601,7 +622,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>普段から作業を始まる前にプルを行い、1日中でに作業が一段落ついたときもプルするなど、できるだけ頻繁に最新の状態に保っておくと良いでしょう。</p>
 </div>
 <div class="section" id="revert">
-<h2>revert<a class="headerlink" href="#revert" title="Permalink to this headline">#</a></h2>
+<h3>revert<a class="headerlink" href="#revert" title="Permalink to this headline">#</a></h3>
 <p>ローカルリポジトリでは、コミットをした後間違いに気づいたときは、リセットをしてやり直すことができます。</p>
 <p>リモートリポジトリにプッシュしてしまった後で間違いに気づいたら、<code class="docutils literal notranslate"><span class="pre">revert</span></code>でコミットを取り消せることができます。</p>
 <div class="sd-tab-set docutils">
@@ -651,13 +672,12 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>なぜこのような設計になるといえば、共同作業の場合、他のメンバーがすでにプルして、変更などをしてしまっているかもしれません。その状態でリモートリポジトリの内容を後戻りさせてしまうと、その差分を埋めるのは困難です。つまり、本質的には、プッシュした内容を「なかったこと」にすることはできません。</p>
 </div>
 <div class="section" id="pull-request">
-<h2>プルリクエスト(Pull request)<a class="headerlink" href="#pull-request" title="Permalink to this headline">#</a></h2>
+<h3>プルリクエスト(Pull request)<a class="headerlink" href="#pull-request" title="Permalink to this headline">#</a></h3>
 <p>ここまでに説明した通り、間違えた内容をプッシュすると、他のメンバーが知らねうちに間違えた内容を適用しまって、不具合の原因になります。</p>
 <p>このようなリスクを回避するために、通常はプッシュは慎重に行いながら、「プルリクエスト(Pull request)」を使うことが推奨されます。</p>
 <p>プルプルリクエストとは、マージを実行する際に、他のメンバーへの変更通知や変更箇所の比較表示など様々の確認を行うことができる機能です。この機能を使えば、プッシュする前にメンバーにレビューを依頼し、問題がない場合だけブランチにマージをして、変更を確定することができるようになります。</p>
-</div>
-<div class="section" id="id3">
-<h2>プルリクエストの実例<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id4">
+<h4>プルリクエストの実例<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチで作業を行い、<code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチにプルリクエストをして、確認する上でマージを実行する処理を行いましょう。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチに切り替えて、適宜内容を変更した後、リモートリポジトリに変更内容をプッシュします。</p></li>
@@ -693,8 +713,82 @@ git push --set-upstream origin develop
 <p>レビューの種類</p>
 <ul class="simple">
 <li><p>コメント(Comment): コメントだけを送信します。</p></li>
-<li><p>承認(Approvr): pull request で提案された変更のマージを承認します。</p></li>
+<li><p>承認(Approve): pull request で提案された変更のマージを承認します。</p></li>
 <li><p>変更依頼(Request changes): pull request をマージする前に対処する必要があることを見つけた際に、変更や確認を依頼します。</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="clone">
+<h3>クローン(Clone)<a class="headerlink" href="#clone" title="Permalink to this headline">#</a></h3>
+<p>リモートリポジトリをコピーしてローカルリポジトリを作る操作は、クローン(Clone)といいます。
+クローンをすると、リモートリポジトリの内容が丸ごと新しく作られたローカルリポジトリに複製され、そのリポジトリはクローン元のリモートリポジトリと紐ついた状態になります。</p>
+<p>こうして、複数の環境でプログラムの開発が行えるようになります。</p>
+<div class="section" id="id5">
+<h4>クローンのやり方<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>ここで、この授業のリモートリポジトリをクローンしてみましょう。</p>
+<ul class="simple">
+<li><p>クローンをするためには、まずは目的のリモートリポジトリのアドレスを手に入れる必要があります。リモートリポジトリの画面の右上の「Code」ボタンをクリクリします。</p></li>
+<li><p>「Clone」というエリアにアドレスで、「SSH」を選択し、リモートリポジトリのアドレスをコピーしておきます。<code class="docutils literal notranslate"><span class="pre">git&#64;github.com:lvzeyu/css_tohoku.git</span></code></p></li>
+<li><p>自分のPCでターミナルを開く、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>コマンドにリモートリポジトリのアドレスを指定すると、そのコピーはディレクトリとしてローカルに作られます。</p></li>
+</ul>
+<p><img alt="" src="../_images/clone.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>GitHubでの共同作業<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<div class="section" id="github-flow">
+<h3>GitHub Flow<a class="headerlink" href="#github-flow" title="Permalink to this headline">#</a></h3>
+<p>ここまで紹介したように、GitとGitHubは豊富な機能が備え、スムーズに開発と共同作業に資することができます。一方で、運用する場合にはルールを定めないとき様々な問題が起こりうるです。</p>
+<p>GitHubはプルリクエストを中心とした「GitHub Flow」というワークフローを提唱しています。</p>
+</div>
+<div class="section" id="main">
+<h3>mainブランチでは開発しない<a class="headerlink" href="#main" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>mainブランチは常に最新で正しい状態にしておく、<ins>直接mainブランチで作業などは行ってはいけません。</ins></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>開発する内容ごとに「トピックブランチ」を作成する<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>機能の追加・変更、バグフィックスの際には、<ins>作業の内容ごとに「トピックブランチ」を分けます</ins>。トピックブランチの名前はできるだけ作業内容がわかるものとします。<ins>必ずmainブランチからトピックブランチを切って作業を行います。</ins></p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>ブランチは定期的にPushする<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>定期的にローカルリポジトリからリモートリポジトリにPushして、ローカルでの作業内容をメンバーと共有しましょう。できるだけマージする際に生じる変更箇所のコンフリクトを回避します。</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>プルリクエストを使って作業に関するやりとりをする<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>プルリクエスト機能を活用して他のメンバーとコミュニケーションをとりましょう。何かコミュニケーションをしたいことがある場合、プルリクエストのコメント欄でやりとりをします。</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>プルリクエストを使ってにコードレビューを行う<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>トピックブランチでの作業が終わったら、レビュアーを指定してプルリクエストのレビューを依頼します。レビュアーは内容を確認して、承認またはコメントをします。</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>レビューが承認されたらmainブランチにマージする<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>コードレビューが承認されたらmainブランチにマージします。マージ後には、できるだけ早く動作検証を行います。問題がなければ、トピックブランチを削除してもよいでしょう。</p></li>
+</ul>
+<p><img alt="" src="../_images/flow.png" /></p>
+</div>
+<div class="section" id="github-issues">
+<h3>GitHub Issues<a class="headerlink" href="#github-issues" title="Permalink to this headline">#</a></h3>
+<p>Issueとは「課題」という意味で、開発メンバー間で共有が必要な事項をスレッド形式で立てられる機能です。</p>
+<p>見つけた問題点を報告することはもちろん、それ以外にも作業の計画やコードに関する質問を手軽に投稿して、チームメンバーとコミュニケーションすることができます。</p>
+<p>Issueは共同作業のため豊富な機能が備えています。具体的には、<a class="reference external" href="https://docs.github.com/ja/issues/tracking-your-work-with-issues/about-issues">公式チュトリアル</a>をご参照ください。</p>
+<ul class="simple">
+<li><p>コミットまたPull RequestにIssueをリンクすることができます。</p></li>
+<li><p>他のメンバーにIssueおよびプルリクエストをアサインすることで、誰が特定の Issue やPull Requestで作業しているかが明確になります。</p></li>
+<li><p>ラベルでIssueを分類します。</p></li>
 </ul>
 </div>
 </div>
@@ -762,13 +856,33 @@ git push --set-upstream origin develop
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリの作成と連携</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">プルリクエストの実例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリに関する操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">プルリクエストの実例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">クローン(Clone)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クローンのやり方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubでの共同作業</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-flow">GitHub Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">mainブランチでは開発しない</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">開発する内容ごとに「トピックブランチ」を作成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ブランチは定期的にPushする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">プルリクエストを使って作業に関するやりとりをする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">プルリクエストを使ってにコードレビューを行う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">レビューが承認されたらmainブランチにマージする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-issues">GitHub Issues</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
