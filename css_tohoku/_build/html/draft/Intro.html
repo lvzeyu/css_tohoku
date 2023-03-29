@@ -159,6 +159,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">授業の概要</a></li>
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="nav bd-sidenav">
@@ -395,6 +398,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">授業の概要</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">授業の内容</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a></li>
@@ -410,10 +414,13 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">授業設計と成績評価</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">授業の資料</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">次回の授業までに</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">授業設計と成績評価</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">授業の資料</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">次回の授業までに</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -436,19 +443,432 @@ document.write(`
 <div class="section" id="numpy">
 <h4>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。</p>
+<ul class="simple">
+<li><p>配列を作成するための関数は多く備えています</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># すべて0の配列を作成</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0.]
+ [0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+    <span class="n">loc</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>      <span class="c1"># 平均</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>      <span class="c1"># 標準偏差</span>
+    <span class="n">size</span>  <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="c1"># 出力配列のサイズ</span>
+<span class="p">)</span> <span class="c1"># 正規分布に従う乱数の配列を作成</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.34741678 -0.0048623 ]
+ [ 0.95169837  0.99267077]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1]
+ [2 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 2]
+ [3 4 5]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>行列の操作と演算を行うにはNumPyを使うと便利です</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2, 3]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 転置</span>
+<span class="n">arr1</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 2],
+       [1, 3]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 逆行列</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.5,  0.5],
+       [ 1. ,  0. ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 内積</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3,  4,  5],
+       [ 9, 14, 19]])
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="pandas">
 <h4>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://pandas.pydata.org/docs/"><strong>pandas</strong></a>とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。
 Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 頻度を計算する</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>setosa        50
+versicolor    50
+virginica     50
+Name: species, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 統計量</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    150.000000
+mean       3.057333
+std        0.435866
+min        2.000000
+25%        2.800000
+50%        3.000000
+75%        3.300000
+max        4.400000
+Name: sepal_width, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># データフレームの変形</span>
+<span class="n">data</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> 
+        <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> 
+        <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>features</th>
+      <th>values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>setosa</td>
+      <td>sepal_length</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>setosa</td>
+      <td>sepal_length</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>setosa</td>
+      <td>sepal_length</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>setosa</td>
+      <td>sepal_length</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>setosa</td>
+      <td>sepal_length</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>595</th>
+      <td>virginica</td>
+      <td>petal_width</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>596</th>
+      <td>virginica</td>
+      <td>petal_width</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>597</th>
+      <td>virginica</td>
+      <td>petal_width</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>598</th>
+      <td>virginica</td>
+      <td>petal_width</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>599</th>
+      <td>virginica</td>
+      <td>petal_width</td>
+      <td>1.8</td>
+    </tr>
+  </tbody>
+</table>
+<p>600 rows × 3 columns</p>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="matplotlib">
 <h4>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://matplotlib.org/stable/index.html"><strong>matplotlib</strong></a>は、グラフ描画ライブラリである。オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持つ。Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、他のライブライとうまく連携しやすくなっています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;xtick.direction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;out&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;ytick.direction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;in&quot;</span>
+
+<span class="n">normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">normal</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/27c41682747c28dd67f6dedfbe5b0a3f8cb7617b3dbcefb2feba78609c7cd806.png" src="../_images/27c41682747c28dd67f6dedfbe5b0a3f8cb7617b3dbcefb2feba78609c7cd806.png" />
+</div>
+</div>
 </div>
 <div class="section" id="scikit-learn">
 <h4>scikit-learn<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://scikit-learn.org/stable/"><strong>scikit-learn</strong></a>は機械学習ライブラリである。教師あり学習、教師なし学習に関するアルゴリズム(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装を提供しています。</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/"><strong>scikit-learn</strong></a>は機械学習ライブラリである。教師あり学習、教師なし学習に関する<a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html">アルゴリズム</a>(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装を提供しています。</p>
 </div>
 <div class="section" id="id3">
 <h4>学習の到達目標<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
@@ -475,8 +895,9 @@ Pandasの特徴は、データ操作のための高速で効率的なデータ�
 </div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>授業設計と成績評価<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id5">
+<h1>授業設計と成績評価<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>授業中実践的なプログラミング操作が多いので、必ずPCをご持参ください。また、インターネットとの接続が必要される操作もありますので、PCのインターネット接続も事前に設定してください。</p></li>
 <li><p>授業後課題提出を求める場合があります。基本的には授業の理解度を確認するためのプログラミング課題と想定しています。</p></li>
@@ -505,8 +926,8 @@ Pandasの特徴は、データ操作のための高速で効率的なデータ�
 <li><p>授業のオフィスアワーは、できれば二日前アポイントを取ってくだい。</p></li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>授業の資料<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="id6">
+<h1>授業の資料<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h1>
 <p>この授業の資料は、<a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a>形式で作成されたソースファイルを<a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>を用いて変換することで作成されたコンテンツになっている。</p>
 <ul class="simple">
 <li><p>授業の資料はこちらの<a class="reference external" href="https://lvzeyu.github.io/css_tohoku/">リンク</a>で閲覧できます。</p></li>
@@ -519,13 +940,12 @@ Pandasの特徴は、データ操作のための高速で効率的なデータ�
 </div>
 <p><img alt="" src="../_images/intro1.png" /></p>
 </div>
-<div class="section" id="id7">
-<h2>次回の授業までに<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="id7">
+<h1>次回の授業までに<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/"><strong>GitHub</strong></a>アカウントを作ってください。</p></li>
 <li><p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールしてください。</p></li>
 </ul>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -589,6 +1009,7 @@ Pandasの特徴は、データ操作のための高速で効率的なデータ�
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">授業の概要</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">授業の内容</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a></li>
@@ -604,10 +1025,13 @@ Pandasの特徴は、データ操作のための高速で効率的なデータ�
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">授業設計と成績評価</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">授業の資料</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">次回の授業までに</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">授業設計と成績評価</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">授業の資料</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">次回の授業までに</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
