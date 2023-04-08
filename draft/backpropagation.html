@@ -1,0 +1,2077 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>誤差逆伝播法 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/tohoku-university-logo-vector.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">計算社会科学のためのPythonプログラミング入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    計算社会科学のためのPythonプログラミング入門
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  イントロダクション
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro.html">
+   授業の概要
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  GitとGitHub
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="github.html">
+   GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pythonの基礎
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_environment.html">
+   Python環境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_basic.html">
+   Pythonの基本文法
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variable.html">
+   変数
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/backpropagation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/backpropagation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/backpropagation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/draft/backpropagation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   前回の内容
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   今回の内容
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine">
+   Affineレイヤー
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   バッチ版Affineレイヤの逆伝播
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     順伝播の確認
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     逆伝播の導出
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ミニバッチ学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   誤差逆伝播法の実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     入力層から隠れ層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     隠れ層から出力層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     平均二乗誤差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     逆伝播
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#softmax-with-loss">
+   Softmax-with-Lossレイヤ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   Mnistでの実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     勾配確認
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#network-numerical-gradient">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       を解読しましょう
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pedict-function">
+     pedict functionで順伝播の結果を計算する
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       はただこの前に紹介した計算方法をパッチに対応させた
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   誤差逆伝播法を使った学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   参考になった資料
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>誤差逆伝播法</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   前回の内容
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   今回の内容
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affine">
+   Affineレイヤー
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   バッチ版Affineレイヤの逆伝播
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     順伝播の確認
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     逆伝播の導出
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ミニバッチ学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   誤差逆伝播法の実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     入力層から隠れ層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     隠れ層から出力層
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     平均二乗誤差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     逆伝播
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#softmax-with-loss">
+   Softmax-with-Lossレイヤ
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnist">
+   Mnistでの実装
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     勾配確認
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#network-numerical-gradient">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       を解読しましょう
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pedict-function">
+     pedict functionで順伝播の結果を計算する
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       <strong>
+        network.numerical_gradient
+       </strong>
+       はただこの前に紹介した計算方法をパッチに対応させた
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   誤差逆伝播法を使った学習
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   参考になった資料
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>誤差逆伝播法<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>前回の内容<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>逆伝播が<strong>連鎖律</strong>によって成り立つ：合成関数の偏微分は、<strong>連鎖律によって複数の偏微分の積の形に変形できる</strong>。</p></li>
+<li><p>簡単のレイヤーで逆伝播を実装することで、逆伝播の原理を理解した</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>今回の内容<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>ニューラルネットワーク全体に対して誤差逆伝播法によるパラメータを更新する流れを理解する。</p></li>
+<li><p>ニューラルネットワークで誤差逆伝播法で複数のパラメータ最適化を実装し、手書き数字を識別する。</p></li>
+</ul>
+<p><img alt="誤差逆伝播法 (backpropagation) の計算過程" src="https://tutorials.chainer.org/ja/_images/13_backpropagation.gif" /></p>
+</section>
+<section id="affine">
+<h2>Affineレイヤー<a class="headerlink" href="#affine" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{Y} = \mathbf{X}\mathbf{W}+\mathbf{B}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{L} = Z (\mathbf{Y})
+\]</div>
+<a class="reference internal image-reference" href="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F121304%2F409245cd-9b50-b40f-3a4d-b3adbf2da0df.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=394ef3d3f33c088000b6a67debf0c11d"><img alt="drawing" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F121304%2F409245cd-9b50-b40f-3a4d-b3adbf2da0df.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=394ef3d3f33c088000b6a67debf0c11d" style="width: 500px;" /></a>
+<p>入力として<span class="math notranslate nohighlight">\(\boldsymbol{x} = (x_1\; x_2)\)</span>の２次元だとします。 この入力に対して、第１層目への出力を３つにしたい場合、<span class="math notranslate nohighlight">\((2, 3)\)</span>の行列を右からかけます。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\boldsymbol{W}= \begin{pmatrix}
+w_{11} &amp; w_{21} &amp; w_{31} \\
+w_{12} &amp; w_{22} &amp; w_{32} 
+\end{pmatrix}
+\end{split}\]</div>
+<p>出力<span class="math notranslate nohighlight">\(\boldsymbol{Y}\)</span>は</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7ed44bd-eda7-4f36-aafd-f8b053234576">
+<span class="eqno">()<a class="headerlink" href="#equation-b7ed44bd-eda7-4f36-aafd-f8b053234576" title="Permalink to this equation">#</a></span>\[\begin{align}
+\boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \\
+&amp;=
+\begin{pmatrix}
+x_1 &amp; x_2
+\end{pmatrix}
+\begin{pmatrix}
+w_{11} &amp; w_{21} &amp; w_{31} \\
+w_{12} &amp; w_{22} &amp; w_{32} 
+\end{pmatrix} \\
+&amp;= 
+\begin{pmatrix}
+w_{11}x_1+w_{12}x_2 &amp; w_{21}x_1+w_{22}x_2 &amp; w_{31}x_1+w_{32}x_2
+\end{pmatrix} \\
+&amp;=
+\begin{pmatrix}
+y_1 &amp; y_2 &amp; y_3
+\end{pmatrix}　\tag{1.1}
+\end{align}\]</div>
+<p>となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6999aaed-e23e-4e6e-94d9-b248a4cd0ae5">
+<span class="eqno">()<a class="headerlink" href="#equation-6999aaed-e23e-4e6e-94d9-b248a4cd0ae5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{X}} &amp;= 
+\begin{pmatrix}
+\frac{\partial L}{\partial x_1} &amp; \frac{\partial L}{\partial x_2}
+\end{pmatrix} \\
+&amp;=
+\begin{pmatrix}
+\frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} &amp; \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_2}
+\end{pmatrix} 
+\end{align}\]</div>
+<p>ここで</p>
+<div class="amsmath math notranslate nohighlight" id="equation-33a1ea6c-1e5f-4b3b-9a85-6a46e84ef685">
+<span class="eqno">()<a class="headerlink" href="#equation-33a1ea6c-1e5f-4b3b-9a85-6a46e84ef685" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} = 
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\frac{\partial y_1}{\partial x_1} \\
+\frac{\partial y_2}{\partial x_1} \\
+\frac{\partial y_3}{\partial x_1} 
+\end{pmatrix}
+\end{align}\]</div>
+<p>\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c7df9094-dcda-46a2-84f0-3012686a9947">
+<span class="eqno">()<a class="headerlink" href="#equation-c7df9094-dcda-46a2-84f0-3012686a9947" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-af077f46-1567-4231-a8cd-57ddfb8a24f4">
+<span class="eqno">()<a class="headerlink" href="#equation-af077f46-1567-4231-a8cd-57ddfb8a24f4" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} w_{11} +
+\frac{\partial L}{\partial y_2} w_{21} +
+\frac{\partial L}{\partial y_3} w_{31} &amp;
+\frac{\partial L}{\partial y_1} w_{12} +
+\frac{\partial L}{\partial y_2} w_{22} +
+\frac{\partial L}{\partial y_3} w_{32}
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67782ea7-50e9-40b6-9605-921b29890073">
+<span class="eqno">()<a class="headerlink" href="#equation-67782ea7-50e9-40b6-9605-921b29890073" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-76614d00-3985-41f5-95b2-c3a0ca8a127a">
+<span class="eqno">()<a class="headerlink" href="#equation-76614d00-3985-41f5-95b2-c3a0ca8a127a" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+w_{11} &amp; w_{12} \\
+w_{21} &amp; w_{22} \\
+w_{31} &amp; w_{32}
+\end{pmatrix}\]</div>
+<p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
+\end{aligned}</p>
+<p>\begin{aligned}
+<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
+<div class="amsmath math notranslate nohighlight" id="equation-857e1b76-aa3e-4092-85d0-905df445597d">
+<span class="eqno">()<a class="headerlink" href="#equation-857e1b76-aa3e-4092-85d0-905df445597d" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
+\frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_2} +
+\frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_2} +
+\frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5fb4f1e5-5a1c-49ee-9013-653480e002c7">
+<span class="eqno">()<a class="headerlink" href="#equation-5fb4f1e5-5a1c-49ee-9013-653480e002c7" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} w_{11} +
+\frac{\partial L}{\partial y_2} w_{21} +
+\frac{\partial L}{\partial y_3} w_{31} &amp;
+\frac{\partial L}{\partial y_1} w_{12} +
+\frac{\partial L}{\partial y_2} w_{22} +
+\frac{\partial L}{\partial y_3} w_{32}
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46c305e1-501e-4d71-840a-8d9a74ad25e6">
+<span class="eqno">()<a class="headerlink" href="#equation-46c305e1-501e-4d71-840a-8d9a74ad25e6" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+\frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c129c293-e725-4c2f-b2d8-0720b01260f2">
+<span class="eqno">()<a class="headerlink" href="#equation-c129c293-e725-4c2f-b2d8-0720b01260f2" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+w_{11} &amp; w_{12} \\
+w_{21} &amp; w_{22} \\
+w_{31} &amp; w_{32}
+\end{pmatrix}\]</div>
+<p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
+\end{aligned}</p>
+<p>一方、損失関数<span class="math notranslate nohighlight">\(L\)</span>の重み<span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span>による偏微分は</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b192880a-8611-4094-8586-562db3eb3f02">
+<span class="eqno">()<a class="headerlink" href="#equation-b192880a-8611-4094-8586-562db3eb3f02" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
+\begin{pmatrix}
+\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
+\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}} 
+\end{pmatrix} \\
+\end{align}\]</div>
+<p>です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ab8c40aa-cf54-48af-97ba-4cfadba1ba87">
+<span class="eqno">()<a class="headerlink" href="#equation-ab8c40aa-cf54-48af-97ba-4cfadba1ba87" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \\
+\frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \\
+\frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \\
+\frac{\partial L}{\partial w_{22}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{22}} \\
+\frac{\partial L}{\partial w_{31}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \\
+\frac{\partial L}{\partial w_{32}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
+\end{align}\]</div>
+<p>となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
+<div class="amsmath math notranslate nohighlight" id="equation-182ea1d8-e8e2-4e04-9f95-5bcea683a094">
+<span class="eqno">()<a class="headerlink" href="#equation-182ea1d8-e8e2-4e04-9f95-5bcea683a094" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
+\begin{pmatrix}
+\frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
+\frac{\partial L}{\partial w_{12}} &amp; \frac{\partial L}{\partial w_{22}} &amp; \frac{\partial L}{\partial w_{32}} 
+\end{pmatrix} \\
+&amp;= 
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} &amp;
+\frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} &amp;
+\frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{31}} \\
+\frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} &amp; \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{22}} &amp;
+\frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
+\end{pmatrix} \\
+&amp;=
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1}x_1 &amp;
+\frac{\partial L}{\partial y_2}x_1 &amp;
+\frac{\partial L}{\partial y_3}x_1 \\
+\frac{\partial L}{\partial y_1}x_2 &amp;
+\frac{\partial L}{\partial y_2}x_2 &amp;
+\frac{\partial L}{\partial y_3}x_2
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+x_1 \\
+x_2
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial L}{\partial y_1} &amp;
+\frac{\partial L}{\partial y_2} &amp;
+\frac{\partial L}{\partial y_3} 
+\end{pmatrix} \\
+&amp;= \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
+\end{align}\]</div>
+<p>これで、</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9f28867e-92ff-4da3-8d6d-113fd42b08c1">
+<span class="eqno">()<a class="headerlink" href="#equation-9f28867e-92ff-4da3-8d6d-113fd42b08c1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{\partial L}{\partial \boldsymbol{W}} &amp;=
+\boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
+\end{align}\]</div>
+<p>の導出が（低次元で、活性化関数も考慮していませんが）できました。</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial \mathbf{X}}= \frac{\partial L}{\partial \mathbf{Y}} W^\mathrm{T} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial \mathbf{W}}= X^\mathrm{T} \frac{\partial L}{\partial \mathbf{Y}}  
+\]</div>
+</section>
+<section id="id4">
+<h2>バッチ版Affineレイヤの逆伝播<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>複数の層の場合にも対応できるような説明を加えます</p>
+<section id="id5">
+<h3>順伝播の確認<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>第1層の入力<span class="math notranslate nohighlight">\(\mathbf{X}\)</span>は、行数がバッチサイズ<span class="math notranslate nohighlight">\(N\)</span>、列数がピクセルデータ数<span class="math notranslate nohighlight">\(28^2\)</span>に対応するため、<span class="math notranslate nohighlight">\(N \times 784\)</span>の行列とします。<br />
+　これに対応する(第1層の)重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は、行数がピクセルデータ数、列数が隠れ層のニューロン数に対応するため、<span class="math notranslate nohighlight">\( 784\times M\)</span>の行列になります。隠れ層のニューロン数は自由に決められるため<span class="math notranslate nohighlight">\(M\)</span>とします。最終層の重みであれば、行数は最終層の入力の列数、列数は0から9の数字の数10に対応します。この項では1層のニューラルネットワークを扱うため、重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は<span class="math notranslate nohighlight">\(784 \times 10\)</span>の行列とします。<br />
+バイアス<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>は、要素数が10の1次元配列とします。
+$<span class="math notranslate nohighlight">\(
+\mathbf{X}
+    = \begin{pmatrix}
+          x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1,784} \\
+          x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2,784} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          x_{N1} &amp; x_{N2} &amp; \cdots &amp; x_{N,784}
+      \end{pmatrix}
+,\ 
+\mathbf{W}
+    = \begin{pmatrix}
+          w_{11} &amp; w_{12} &amp; \cdots &amp; w_{1,10} \\
+          w_{21} &amp; w_{22} &amp; \cdots &amp; w_{2,10} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          w_{784,1} &amp; w_{784,2} &amp; \cdots &amp; w_{784,10}
+      \end{pmatrix}
+\)</span>$</p>
+<p>バイアス<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>は、要素数が10の1次元配列とします。
+$<span class="math notranslate nohighlight">\(
+\mathbf{B}
+    = (b_1, b_2, \cdots, b_{10})
+\)</span>$</p>
+<p>本来は行列と1次元配列の和は計算できません。これは複数の画像データを1枚ずつ(forループのように)処理するとき、同じバイアス変数を使って計算することに対応します。つまり次のような行列との和を計算するイメージです。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{B}
+    = \begin{pmatrix}
+          b_1 &amp; b_2 &amp; \cdots &amp; b_{10} \\
+          b_1 &amp; b_2 &amp; \cdots &amp; b_{10} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          b_1 &amp; b_2 &amp; \cdots &amp; b_{10}
+      \end{pmatrix}
+\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dout</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dW</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dout</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>従って第1層のAffineレイヤの順伝播の出力(計算結果)<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>は</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\mathbf{Y}
+   &amp;= \mathbf{X} \mathbf{W}
+      + \mathbf{B}
+\\
+   &amp;= \begin{pmatrix}
+          \sum_{j=1}^{784} x_{1j} w_{j1} + b_1 &amp; \sum_{j=1}^{784} x_{1j} w_{j2} + b_2 &amp; \cdots &amp; \sum_{j=1}^{784} x_{1j} w_{j,10} + b_{10} \\
+          \sum_{j=1}^{784} x_{2j} w_{j1} + b_1 &amp; \sum_{j=1}^{784} x_{2,j} w_{j2} + b_2 &amp; \cdots &amp; \sum_{j=1}^{784} x_{2j} w_{j,10} + b_{10} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          \sum_{j=1}^{784} x_{Nj} w_{j1} + b_1 &amp; \sum_{j=1}^{784} x_{Nj} w_{j2} + b_2 &amp; \cdots &amp; \sum_{j=1}^{784} x_{Nj} w_{j,10} + b_{10}
+      \end{pmatrix}
+\\
+   &amp;= \begin{pmatrix}
+          y_{11} &amp; y_{12} &amp; \cdots &amp; y_{1,10} \\
+          y_{21} &amp; y_{22} &amp; \cdots &amp; y_{2,10} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          y_{N1} &amp; y_{N2} &amp; \cdots &amp; y_{N,10}
+      \end{pmatrix}
+\end{aligned}
+\end{split}\]</div>
+</section>
+<section id="id6">
+<h3>逆伝播の導出<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>最終層のAffineレイヤの出力<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>は、損失関数レイヤの入力となり、交差エントロピー誤差<span class="math notranslate nohighlight">\(L\)</span>として出力されるのでした。よって最終層のAffineレイヤには、<span class="math notranslate nohighlight">\(L\)</span>を<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>で微分した
+$<span class="math notranslate nohighlight">\(
+\frac{\partial L}{\partial \mathbf{Y}}
+    = \begin{pmatrix}
+          \frac{\partial L}{\partial y_{11}} &amp; \frac{\partial L}{\partial y_{12}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{1,10}} \\
+          \frac{\partial L}{\partial y_{21}} &amp; \frac{\partial L}{\partial y_{22}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{2,10}} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          \frac{\partial L}{\partial y_{N1}} &amp; \frac{\partial L}{\partial y_{N2}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{N,10}} \\
+      \end{pmatrix}
+\)</span>$</p>
+<p>重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>の微分を例として計算してみます。</p>
+<p><span class="math notranslate nohighlight">\(L\)</span>に対する入力<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>の微分<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \mathbf{W}}\)</span>を考えます。これも連鎖率より
+$<span class="math notranslate nohighlight">\(
+\frac{\partial L}{\partial \mathbf{W}}
+    = \frac{\partial L}{\partial \mathbf{Y}}
+      \frac{\partial \mathbf{Y}}{\partial \mathbf{W}}
+\)</span>$</p>
+<p>まずは、重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>の1行1列目の要素<span class="math notranslate nohighlight">\(w_{11}\)</span>による<span class="math notranslate nohighlight">\(L\)</span>の微分を考えます。<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial w_{11}}\)</span>は、連鎖率より</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial w_{11}}
+    = \frac{\partial L}{\partial \mathbf{y}_{\cdot 1}}
+      \frac{\partial \mathbf{y}_{\cdot 1}}{\partial w_{11}}
+\]</div>
+<p>と分解できます。</p>
+<p>ここで、重みの1列目に対応する<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>の1列目を<span class="math notranslate nohighlight">\(\mathbf{y}_{\cdot 1}\)</span>としています。<span class="math notranslate nohighlight">\(\mathbf{y}_{\cdot 1}\)</span>は<span class="math notranslate nohighlight">\(10 \times 1\)</span>の行列です。各要素を詳しくみると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{y}_{\cdot 1}
+    = \begin{pmatrix}
+          y_{11} \\
+          y_{12} \\
+          \vdots \\
+          y_{1,10}
+      \end{pmatrix}
+    = \begin{pmatrix}
+          \sum_{j=1}^{784} x_{1j} w_{j1} + b_1 \\
+          \sum_{j=1}^{784} x_{2j} w_{j1} + b_1 \\
+          \vdots \\
+          \sum_{j=1}^{784} x_{Nj} w_{j1} + b_1
+      \end{pmatrix}
+\end{split}\]</div>
+<p>どの要素も<span class="math notranslate nohighlight">\(w_{11}\)</span>を含んでいることが分かります。</p>
+<p>これを<span class="math notranslate nohighlight">\(w_{11}\)</span>で微分すると、各要素において<span class="math notranslate nohighlight">\(w_{11}\)</span>の係数になっている項(入力<span class="math notranslate nohighlight">\(x_{i1}\)</span>)だけが残るので
+$<span class="math notranslate nohighlight">\(
+\frac{\partial \mathbf{y}_{\cdot 1}}{\partial w_{11}}
+    = \begin{pmatrix}
+          x_{11} &amp; x_{21} &amp; \cdots &amp; x_{N1}
+      \end{pmatrix}
+\)</span>$</p>
+<p>これを連鎖率の式に代入すると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{\partial L}{\partial w_{11}}
+    &amp;= \frac{\partial L}{\partial \mathbf{y}_{\cdot 1}}
+       \frac{\partial \mathbf{y}_{\cdot 1}}{\partial w_{11}}
+ \\
+    &amp;= \begin{pmatrix}
+           \frac{\partial L}{\partial y_{11}} \\
+           \frac{\partial L}{\partial y_{21}} \\
+           \vdots \\
+           \frac{\partial L}{\partial y_{N1}}
+       \end{pmatrix}
+       \begin{pmatrix}
+          x_{11} &amp; x_{21} &amp; \cdots &amp; x_{N1}
+      \end{pmatrix}
+\\
+    &amp;= \begin{pmatrix}
+           \frac{\partial L}{\partial y_{11}} x_{11} &amp; \frac{\partial L}{\partial y_{11}} x_{21} &amp; \cdots &amp; \frac{\partial L}{\partial y_{11}} x_{N1} \\
+           \frac{\partial L}{\partial y_{21}} x_{11} &amp; \frac{\partial L}{\partial y_{21}} x_{21} &amp; \cdots &amp; \frac{\partial L}{\partial y_{21}} x_{N1} \\
+           \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+           \frac{\partial L}{\partial y_{N1}} x_{11} &amp; \frac{\partial L}{\partial y_{N1}} x_{21} &amp; \cdots &amp; \frac{\partial L}{\partial y_{N1}} x_{N1}
+       \end{pmatrix}
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{\partial L}{\partial w_{11}}
+   &amp;= \frac{\partial L}{\partial y_{11}} x_{11}
+      + \frac{\partial L}{\partial y_{21}} x_{21}
+      + \cdots
+      + \frac{\partial L}{\partial y_{N1}} x_{N1}
+\\
+   &amp;= \sum_{i=1}^N \frac{\partial L}{\partial y_{i1}} x_{i1}
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(L\)</span>と<span class="math notranslate nohighlight">\(w_{11}\)</span>はスカラなので、その微分もスカラになります。</p>
+<p>重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>の1行目を<span class="math notranslate nohighlight">\(\mathbf{w}_{1 \cdot} = (w_{11}, w_{12}, \cdots, w_{1,10})\)</span>として、他の要素についても同様に求めると、<span class="math notranslate nohighlight">\(\mathbf{w}_{1 \cdot}\)</span>による<span class="math notranslate nohighlight">\(L\)</span>微分は次のようになる</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+\frac{\partial L}{\partial \mathbf{w}_{1 \cdot}}
+   &amp;= \begin{pmatrix}
+           \sum_{i=1}^N \frac{\partial L}{\partial y_{i1}} x_{i1} &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i2}} x_{i1} &amp; \cdots &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i,10}} x_{i1}
+      \end{pmatrix}
+\end{aligned}
+\]</div>
+<p>スカラ<span class="math notranslate nohighlight">\(L\)</span>を<span class="math notranslate nohighlight">\(1 \times 784\)</span>行列<span class="math notranslate nohighlight">\(\mathbf{w}_{1 \cdot}\)</span>で微分した結果は、同じ形状である<span class="math notranslate nohighlight">\(1 \times 784\)</span>の行列となります。</p>
+<p>更に、全ての要素<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>での微分について考えると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{\partial L}{\partial \mathbf{X}}
+   &amp;= \frac{\partial L}{\partial \mathbf{Y}}
+      \frac{\partial \mathbf{Y}}{\partial \mathbf{X}}
+\\
+   &amp;= \begin{pmatrix}
+          \sum_{i=1}^N \frac{\partial L}{\partial y_{i1}} x_{i1} &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i2}} x_{i1} &amp; \cdots &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i,10}} x_{i1} \\
+          \sum_{i=1}^N \frac{\partial L}{\partial y_{i1}} x_{i2} &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i2}} x_{i2} &amp; \cdots &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i,10}} x_{i2} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          \sum_{i=1}^N \frac{\partial L}{\partial y_{i1}} x_{i,784} &amp; \sum_{i=1}^N \frac{\partial L}{\partial y_{i2}} x_{i,784} &amp; \cdots &amp; \sum_{i=1}^N\frac{\partial L}{\partial y_{i10}} x_{i,784}
+      \end{pmatrix}
+\end{aligned}
+\end{split}\]</div>
+<p>となります。</p>
+<p>この計算結果は、次のように分解できます。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial L}{\partial \mathbf{W}}
+   &amp;= \begin{pmatrix}
+          x_{11} &amp; x_{21} &amp; \cdots &amp; x_{N1} \\
+          x_{12} &amp; x_{22} &amp; \cdots &amp; x_{N2} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          x_{1,784} &amp; x_{2,784} &amp; \cdots &amp; x_{N,784}
+      \end{pmatrix}
+      \begin{pmatrix}
+          \frac{\partial L}{\partial y_{11}} &amp; \frac{\partial L}{\partial y_{12}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{1,10}} \\
+          \frac{\partial L}{\partial y_{21}} &amp; \frac{\partial L}{\partial y_{22}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{2,10}} \\
+          \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+          \frac{\partial L}{\partial y_{N1}} &amp; \frac{\partial L}{\partial y_{N2}} &amp; \cdots &amp; \frac{\partial L}{\partial y_{N,10}}
+      \end{pmatrix}
+\\
+   &amp;= \mathbf{X}^{\mathrm{T}}
+      \frac{\partial L}{\partial \mathbf{Y}}
+\tag{5.13.1}
+\end{align}
+\end{split}\]</div>
+</section>
+</section>
+<section id="id7">
+<h2>ミニバッチ学習<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>訓練データセットから一様ランダムに <span class="math notranslate nohighlight">\(N_{b} \ (&gt;0)\)</span> 個のデータを抽出する</p></li>
+<li><p>その <span class="math notranslate nohighlight">\(N_{b}\)</span> 個のデータをまとめてニューラルネットワークに入力し、それぞれのデータに対する目的関数の値を計算する</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_b\)</span> 個の目的関数の値の平均をとる</p></li>
+<li><p>この平均の値に対する各パラメータの勾配を求める</p></li>
+<li><p>求めた勾配を使ってパラメータを更新する</p></li>
+</ol>
+</section>
+<section id="id8">
+<h2>誤差逆伝播法の実装<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<p>ここまで、Afflineレイヤーまた活性化関数に対して逆伝播で値を計算する方法を理解できたと思います。<br /> 実際のニューラルネットワークで逆伝播を活用する場合は<strong>誤差逆伝播法</strong>になります。<br /></p>
+<p>ニューラルネットワークを構成する関数が持つパラメータについての<strong>目的関数の勾配</strong>を、順伝播で通った経路を逆向きにたどるようにして<strong>途中の関数の勾配の掛け算</strong>によって求める</p>
+<p>ここから、手計算を通じて誤差逆伝播法の実装を理解しましよう。</p>
+<a class="reference internal image-reference" href="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630142019140-402363317.png"><img alt="drawing" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630142019140-402363317.png" style="width: 500px;" /></a>
+<p>入力
+$<span class="math notranslate nohighlight">\(
+i_{1} = 0.05,i_{2} = 0.10
+\)</span><span class="math notranslate nohighlight">\(
+初期パラメータ
+\)</span><span class="math notranslate nohighlight">\(
+w_{1} = 0.15,w_{2} = 0.20,w_{3} = 0.25,w_{4} = 0.30
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+w_{5} = 0.40,w_{6} = 0.45,w_{7} = 0.50,w_{8} = 0.55
+\)</span>$</p>
+<p>教師データ
+$<span class="math notranslate nohighlight">\(
+o_{1} = 0.01,o_{2} = 0.99
+\)</span>$</p>
+<p>目的関数には以下の平均二乗誤差関数を用いることにします。</p>
+<div class="math notranslate nohighlight">
+\[
+L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
+\]</div>
+<section id="id9">
+<h3>入力層から隠れ層<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+net_{h_{1}}=w_{1}*i_{1}+w_{2}*i_{2}+b_{1}*1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+out_{h_{1}}= Sigmoid(net_{h_{1}})
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">common.layers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">common.gradient</span> <span class="kn">import</span> <span class="n">numerical_gradient</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">dataset.mnist</span> <span class="kn">import</span> <span class="n">load_mnist</span>
+<span class="kn">from</span> <span class="nn">ch05.two_layer_net</span> <span class="kn">import</span> <span class="n">TwoLayerNet</span>
+<span class="kn">from</span> <span class="nn">common.functions</span> <span class="kn">import</span> <span class="n">softmax</span> <span class="c1"># ソフトマックス関数:バッチ対応版</span>
+<span class="kn">from</span> <span class="nn">common.functions</span> <span class="kn">import</span> <span class="n">cross_entropy_error</span> <span class="c1"># 交差エントロピー誤差:4.2.4項</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_h1</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.15</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.35</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_h1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_h1</span><span class="p">))</span>
+<span class="n">out_h1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_h1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_h1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_h1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_h1=0.3775
+out_h1=0.5932700037956238
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_h2</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.35</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_h2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_h2</span><span class="p">))</span>
+<span class="n">out_h2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_h2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_h2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_h2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_h2=0.39249999999999996
+out_h2=0.5968843698501587
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>隠れ層から出力層<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+net_{o_{1}}=w_{5}*out_{h_{1}}+w_{6}*out_{h_{2}}+b_{2}*1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+out_{o_{1}}= Sigmoid(net_{o_{1}})
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_o1</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">)</span><span class="o">*</span><span class="n">out_h1</span><span class="o">+</span><span class="p">(</span><span class="mf">0.45</span><span class="p">)</span><span class="o">*</span><span class="n">out_h2</span><span class="o">+</span><span class="mf">0.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_h1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_o1</span><span class="p">))</span>
+<span class="n">out_o1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_o1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_o1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_o1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_h1=1.1059060096740723
+out_o1=0.751365065574646
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:3: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  This is separate from the ipykernel package so we can avoid doing imports until
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_o2</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">out_h1</span><span class="o">+</span><span class="p">(</span><span class="mf">0.55</span><span class="p">)</span><span class="o">*</span><span class="n">out_h2</span><span class="o">+</span><span class="mf">0.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_o2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_o2</span><span class="p">))</span>
+<span class="n">out_o2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_o2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_o2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_o2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_o2=1.224921464920044
+out_o2=0.7729284763336182
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:3: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  This is separate from the ipykernel package so we can avoid doing imports until
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\([0.751365065574646,0.7729284763336182]\)</span>と<span class="math notranslate nohighlight">\([0.05,0.10]\)</span>に比べて大きな差がありますので、パラメータを調整する必要がある。</p>
+</section>
+<section id="id11">
+<h3>平均二乗誤差<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_1</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mf">0.01</span><span class="o">-</span><span class="n">out_o1</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="n">L_2</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mf">0.99</span><span class="o">-</span><span class="n">out_o2</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">L_1</span><span class="o">+</span><span class="n">L_2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lost Value=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lost Value=0.29837110342067186
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h3>逆伝播<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<a class="reference internal image-reference" href="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png"><img alt="drawing" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png" style="width: 500px;" /></a>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial w_5} = \frac{\partial L}{\partial out_{o1}}\frac{\partial out_{o1}}{\partial net_{o1}}\frac{\partial net_{o1}}{\partial w_5}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\frac{\partial L}{\partial out_{o1}}\)</span>を計算する</p>
+<div class="math notranslate nohighlight">
+\[
+L= \frac{1}{2}(target_{o_{1}}-out_{o_{1}})^2+\frac{1}{2}(target_{o_{2}}-out_{o_{2}})^2
+\]</div>
+<p>合成関数の微分<span class="math notranslate nohighlight">\(g(f(x))= g^{\prime}(f(x))f^{\prime}(x)\)</span>によって
+$<span class="math notranslate nohighlight">\(
+\frac{\partial L}{\partial out_{o1}}= 2*\frac{1}{2}(target_{o_{1}}-out_{o_{1}})*-1+0
+\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_out_o1</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mf">0.01</span><span class="o">-</span><span class="n">out_o1</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d_out_o1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_out_o1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d_out_o1=0.741365065574646
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\frac{\partial out_{o1}}{\partial net_{o1}}\)</span>を計算する
+$<span class="math notranslate nohighlight">\(
+out_{o1}= sigmod(net_{o_{1}})
+\)</span><span class="math notranslate nohighlight">\(
+Sigmoid関数の微分は\)</span>f^{\prime}(x)=f(x)(1-f(X))<span class="math notranslate nohighlight">\(なので
+\)</span><span class="math notranslate nohighlight">\(
+\frac{\partial out_{o1}}{\partial net_{o1}}= out_{o1}(1-out_{o1})
+\)</span>$</p>
+<p>#####Note
+　シグモイド関数の勾配の証明</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{\partial a_1({\bf u}_1)}{\partial {\bf u}_1}
+&amp;= -\frac{-(\exp(-{\bf u}_1))}{(1 + \exp(-{\bf u}_1))^2} \\
+&amp;= \frac{1}{1 + \exp(-{\bf u}_1)} \cdot \frac{\exp(-{\bf u}_1)}{1 + \exp(-{\bf u}_1)} \\
+&amp;= \frac{1}{1 + \exp(-{\bf u}_1)} \cdot \frac{1 + \exp(-{\bf u}_1) - 1}{1 + \exp(-{\bf u}_1)} \\
+&amp;= \frac{1}{1 + \exp(-{\bf u}_1)} \left(1 - \frac{1}{1 + \exp(-{\bf u}_1)}\right) \\
+&amp;= a_1({\bf u}_1)\left(1 - a_1({\bf u}_1)\right) \\
+&amp;= {\bf h}_1 ( 1 - {\bf h}_1 )
+\end{aligned}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_net_o1</span> <span class="o">=</span> <span class="n">out_o1</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">out_o1</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d_net_o1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_net_o1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d_net_o1=0.18681560380865392
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\frac{\partial net_{o1}}{\partial w_5}\)</span>を計算する
+$<span class="math notranslate nohighlight">\(
+net_{o_{1}}=w_{5}*out_{h_{1}}+w_{6}*out_{h_{2}}+b_{2}*1
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\frac{\partial net_{o1}}{\partial w_5}= out_{h_{1}}= 0.5932700037956238 
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(
+\frac{\partial L}{\partial w_5} = \frac{\partial L}{\partial out_{o1}}\frac{\partial out_{o1}}{\partial net_{o1}}\frac{\partial net_{o1}}{\partial w_5}
+\)</span>に代入すると</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_w5</span><span class="o">=</span> <span class="n">d_out_o1</span><span class="o">*</span><span class="n">d_net_o1</span><span class="o">*</span><span class="n">out_h1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d_w5=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_w5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d_w5=0.08216704428195953
+</pre></div>
+</div>
+</div>
+</div>
+<p>パラメータを更新する
+$<span class="math notranslate nohighlight">\(w_5^+ = w_{5}- \eta \frac{\partial net_{o1}}{\partial w_5}\)</span>$</p>
+</section>
+</section>
+<section id="softmax-with-loss">
+<h2>Softmax-with-Lossレイヤ<a class="headerlink" href="#softmax-with-loss" title="Permalink to this headline">#</a></h2>
+<p>ソフトマックス関数の順伝播について、<span class="math notranslate nohighlight">\(i\)</span>番目のデータに関する入力を<span class="math notranslate nohighlight">\(\mathbf{a}_i = (a_{i1}, a_{i2}, \cdots, a_{i,10})\)</span>、出力を<span class="math notranslate nohighlight">\(\mathbf{y}_i = (y_{i1}, a_{i2}, \cdots, y_{i,10})\)</span>とすると、<span class="math notranslate nohighlight">\(k\)</span>番目の項の計算式は次のようになります。
+$<span class="math notranslate nohighlight">\(
+y_{ik} = \frac{
+          \exp(a_{ik})
+      }{
+          \sum_{k'=1}^{10} \exp(a_{ik'})
+      }
+\)</span>$</p>
+<p>バッチ版交差エントロピー誤差の順伝播について、入力を<span class="math notranslate nohighlight">\(\mathbf{Y} = (y_{11}, \cdots, y_{N,10})\)</span>、教師データを<span class="math notranslate nohighlight">\(\mathbf{T} = (t_{11}, \cdots, t_{N,10})\)</span>、出力を<span class="math notranslate nohighlight">\(L\)</span>とすると、計算式は次のようになります。</p>
+<div class="math notranslate nohighlight">
+\[
+L   = - \frac{1}{N}
+        \sum_{i=1}^N \sum_{k=1}^{10}
+          t_{ik} \log y_{ik}
+\]</div>
+<p>ソフトマックス関数と交差エントロピー誤差の逆伝播について、ソフトマックス関数の出力<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>と教師データ<span class="math notranslate nohighlight">\(\mathbf{T}\)</span>を用いて、<span class="math notranslate nohighlight">\(i\)</span>行<span class="math notranslate nohighlight">\(k\)</span>列目の項の出力(微分)の計算式は次のようになります。</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial L}{\partial a_{ik}}
+    = \frac{1}{N} \left(
+          y_{ik} - t_{ik}
+    \right)
+\]</div>
+<p>証明は<a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/06/180000">ソフトマックス関数と交差エントロピー誤差の逆伝播【ゼロつく1のノート(数学)】</a>にご参照くだい。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> 
+    <span class="p">[</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.0</span><span class="p">,</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;仮の入力</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;仮の教師データ</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>仮の入力(3, 10)
+仮の教師データ(3, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 順伝播</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ソフトマックス関数による活性化&quot;</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;出力の和は１&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;交差エントロピー誤差を計算&quot;</span><span class="p">)</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="n">cross_entropy_error</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ソフトマックス関数による活性化
+[[1.09515437e-04 8.09215708e-04 5.97934026e-03 4.41816806e-02
+  3.26460917e-01 1.80560431e-04 1.33417115e-03 9.85826548e-03
+  7.28432766e-02 5.38243058e-01]
+ [1.00000000e-01 1.00000000e-01 1.00000000e-01 1.00000000e-01
+  1.00000000e-01 1.00000000e-01 1.00000000e-01 1.00000000e-01
+  1.00000000e-01 1.00000000e-01]
+ [1.31688261e-08 9.73051952e-08 7.18993546e-07 5.31268365e-06
+  3.92557175e-05 2.90062699e-04 2.14328955e-03 1.58368867e-02
+  1.17019645e-01 8.64664719e-01]]
+出力の和は１
+[1. 1. 1.]
+交差エントロピー誤差を計算
+2.355810776839421
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># バッチサイズを取得</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+
+<span class="c1"># 逆伝播</span>
+<span class="n">dA</span> <span class="o">=</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">batch_size</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+[[ 3.65051457e-05  2.69738569e-04  1.99311342e-03  1.47272269e-02
+   1.08820306e-01  6.01868102e-05  4.44723717e-04 -3.30047245e-01
+   2.42810922e-02  1.79414353e-01]
+ [ 3.33333333e-02  3.33333333e-02  3.33333333e-02  3.33333333e-02
+  -3.00000000e-01  3.33333333e-02  3.33333333e-02  3.33333333e-02
+   3.33333333e-02  3.33333333e-02]
+ [ 4.38960872e-09  3.24350651e-08  2.39664515e-07  1.77089455e-06
+   1.30852392e-05  9.66875662e-05  7.14429851e-04  5.27896225e-03
+   3.90065482e-02 -4.51117605e-02]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mnist">
+<h2>Mnistでの実装<a class="headerlink" href="#mnist" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">t_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">load_mnist</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">one_hot_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">network</span> <span class="o">=</span> <span class="n">TwoLayerNet</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">784</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">output_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mnistの中身を確認</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">digit_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">digit_num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_data</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">digit_num</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span>  <span class="c1"># reshape from 1d to 2d pixel array</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grid_data</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;afmhot&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">t_train</span><span class="p">[</span><span class="n">digit_num</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/backpropagation_42_0.png" src="../_images/backpropagation_42_0.png" />
+</div>
+</div>
+<section id="id13">
+<h3>勾配確認<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad_numerical</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">numerical_gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+<span class="n">grad_backprop</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="network-numerical-gradient">
+<h4><strong>network.numerical_gradient</strong>を解読しましょう<a class="headerlink" href="#network-numerical-gradient" title="Permalink to this headline">#</a></h4>
+<p>network.numerical_gradientという関数はchp.4で紹介されたが、当時の議論で説明しきれない部分がありますので、改めて説明します。</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numerical_gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">loss_W</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">W</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        
+        <span class="n">grads</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numerical_gradient</span><span class="p">(</span><span class="n">loss_W</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">])</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numerical_gradient</span><span class="p">(</span><span class="n">loss_W</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">])</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numerical_gradient</span><span class="p">(</span><span class="n">loss_W</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">])</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numerical_gradient</span><span class="p">(</span><span class="n">loss_W</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">grads</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="c1"># prefictは順伝播の関数</span>
+        <span class="k">return</span> <span class="n">cross_entropy_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numerical_gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span> <span class="c1"># 0.0001</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+    <span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;multi_index&#39;</span><span class="p">],</span> <span class="n">op_flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;readwrite&#39;</span><span class="p">])</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="o">.</span><span class="n">finished</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">multi_index</span>
+        <span class="n">tmp_val</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">+</span> <span class="n">h</span>
+        <span class="n">fxh1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x+h)</span>
+        
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">-</span> <span class="n">h</span> 
+        <span class="n">fxh2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x-h)</span>
+        <span class="n">grad</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fxh1</span> <span class="o">-</span> <span class="n">fxh2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="c1"># 値を元に戻す</span>
+        <span class="n">it</span><span class="o">.</span><span class="n">iternext</span><span class="p">()</span>   
+        
+    <span class="k">return</span> <span class="n">grad</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pedict-function">
+<h3>pedict functionで順伝播の結果を計算する<a class="headerlink" href="#pedict-function" title="Permalink to this headline">#</a></h3>
+<p>ランダムに初期パラメータを生成</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span> <span class="o">=</span> <span class="mi">784</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span>
+<span class="n">weight_init_std</span><span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight_init_std</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+<span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">)</span>
+<span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight_init_std</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+<span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W1</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span>
+<span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>入力データを用意する</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_batch</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">t_batch</span> <span class="o">=</span> <span class="n">t_train</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3はバッチ内三つのデータがあると、784は一つの画像データ</span>
+<span class="n">x_batch</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 784)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">W1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b1</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t_batch</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;予測値は</span><span class="si">{}</span><span class="s2">,真の値は</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>予測値は6,真の値は5
+予測値は6,真の値は0
+予測値は6,真の値は4
+</pre></div>
+</div>
+</div>
+</div>
+<p>cross_entropy_error functionで誤差を計算する</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cross_entropy_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+    <span class="c1"># 教師データがone-hot-vectorの場合、正解ラベルのインデックスに変換</span>
+    <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+             
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">batch_size</span><span class="p">),</span> <span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1e-7</span><span class="p">))</span> <span class="o">/</span> <span class="n">batch_size</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">=</span> <span class="n">cross_entropy_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">t_batch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loss=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss=2.317030625734852
+</pre></div>
+</div>
+</div>
+</div>
+<p>元のコードはnet.Wに引数が格納されて、そして関数に渡すという形で計算している。<br />
+その中身は、以下のように分解できる。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loss_a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
+  <span class="c1">#W1, W2 = params[&#39;W1&#39;], params[&#39;W2&#39;]</span>
+  <span class="c1">#b1, b2 = params[&#39;b1&#39;], params[&#39;b2&#39;]  </span>
+  <span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">W1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b1</span>
+  <span class="n">z1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+  <span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+  <span class="n">error</span> <span class="o">=</span> <span class="n">cross_entropy_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">error</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">=</span> <span class="n">loss_a</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span><span class="n">t_batch</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loss=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loss=2.317030625734852
+</pre></div>
+</div>
+</div>
+</div>
+<p>パラメータの勾配を求めるための関数</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numerical_gradient</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span> <span class="c1"># 0.0001</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+ 
+    <span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;multi_index&#39;</span><span class="p">],</span> <span class="n">op_flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;readwrite&#39;</span><span class="p">])</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="o">.</span><span class="n">finished</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">multi_index</span>
+        <span class="n">tmp_val</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">+</span> <span class="n">h</span>
+        <span class="n">fxh1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x+h)</span>
+ 
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">-</span> <span class="n">h</span> 
+        <span class="n">fxh2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># f(x-h)</span>
+        <span class="n">grad</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fxh1</span> <span class="o">-</span> <span class="n">fxh2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+ 
+        <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="c1"># 値を元に戻す</span>
+        <span class="n">it</span><span class="o">.</span><span class="n">iternext</span><span class="p">()</span>   
+ 
+    <span class="k">return</span> <span class="n">grad</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(W_{1}\)</span>を例として勾配を求める</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span> <span class="c1"># 0.0001</span>
+<span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
+<span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">W1</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;multi_index&#39;</span><span class="p">],</span> <span class="n">op_flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;readwrite&#39;</span><span class="p">])</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="o">.</span><span class="n">finished</span><span class="p">:</span>
+  <span class="n">idx</span> <span class="o">=</span> <span class="n">it</span><span class="o">.</span><span class="n">multi_index</span>
+  <span class="n">tmp_val</span> <span class="o">=</span> <span class="n">W1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+  <span class="n">W1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">+</span> <span class="n">h</span>
+  <span class="n">fxh1</span> <span class="o">=</span> <span class="n">loss_a</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span><span class="n">t_batch</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span> <span class="c1"># f(x+h)</span>
+  <span class="c1">#print(fxh1)</span>
+ 
+  <span class="n">W1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="o">-</span> <span class="n">h</span> 
+  <span class="n">fxh2</span> <span class="o">=</span> <span class="n">loss_a</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span><span class="n">t_batch</span><span class="p">,</span><span class="n">W1</span><span class="p">,</span><span class="n">W2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span> <span class="c1"># f(x-h)</span>
+  <span class="c1">#print(fxh2)</span>
+
+  <span class="n">grad</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fxh1</span> <span class="o">-</span> <span class="n">fxh2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+  <span class="c1">#print(grad[idx])</span>
+ 
+  <span class="n">W1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp_val</span> <span class="c1"># 値を元に戻す</span>
+  <span class="n">it</span><span class="o">.</span><span class="n">iternext</span><span class="p">()</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<p>勾配の出力を確認</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad</span><span class="p">[</span><span class="mi">600</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 5.69242111e-04, -6.18326670e-04, -1.28256750e-03, -2.03223776e-04,
+       -3.08951502e-04,  1.99019308e-04, -9.75491812e-04, -1.45852949e-03,
+       -1.55624225e-04, -1.29169697e-04, -4.56087927e-04, -8.46577148e-04,
+       -3.63986912e-04, -1.93852367e-04,  1.26751025e-03,  7.90685952e-04,
+        1.60055621e-03, -4.31397682e-04, -1.15269719e-03,  1.55349045e-03,
+        9.02198316e-05, -5.36035107e-04, -1.10255616e-03,  6.98183789e-04,
+       -5.47497381e-05, -7.77203717e-04, -1.98334624e-04,  2.28447849e-03,
+        4.36187761e-04, -1.57837103e-03,  8.94897523e-04, -1.17622086e-03,
+        7.86152703e-04,  2.70975099e-03, -1.32384242e-03, -1.16573846e-03,
+        3.63739669e-04, -2.40548281e-04,  9.67891147e-04, -1.38734022e-03,
+       -2.88489055e-05, -5.27855630e-04,  2.37560815e-04,  1.45131605e-03,
+       -1.09416075e-03,  1.16527607e-03,  1.44329201e-03,  1.66018105e-03,
+       -2.03529262e-04,  6.87555117e-04])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id14">
+<h4><strong>network.numerical_gradient</strong>はただこの前に紹介した計算方法をパッチに対応させた<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">W1</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span>
+        <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span>
+        <span class="n">grads</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="n">batch_num</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="c1"># forward</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">W1</span><span class="p">)</span> <span class="o">+</span> <span class="n">b1</span>
+        <span class="n">z1</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+        
+        <span class="c1"># backward</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="n">batch_num</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">dz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">W2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="n">da1</span> <span class="o">=</span> <span class="n">sigmoid_grad</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz1</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">da1</span><span class="p">)</span>
+        <span class="n">grads</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">da1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">grads</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">grad_numerical</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">numerical_gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---数値微分 </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---数値微分 11.26956295967102 seconds ---
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">grad_backprop</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---誤差逆伝播法 </span><span class="si">%s</span><span class="s2"> seconds ---&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---誤差逆伝播法 0.0012819766998291016 seconds ---
+</pre></div>
+</div>
+</div>
+</div>
+<p>2つの方法による勾配の差がほぼ0です</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">grad_numerical</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">grad_backprop</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">-</span> <span class="n">grad_numerical</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>W1:4.1028438097724164e-10
+b1:2.5420138896414074e-09
+W2:4.343378962498192e-09
+b2:1.3970555004100272e-07
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="id15">
+<h2>誤差逆伝播法を使った学習<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iters_num</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">train_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">train_acc_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_acc_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">iter_per_epoch</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">train_size</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters_num</span><span class="p">):</span>
+    <span class="n">batch_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">)</span>
+    <span class="n">x_batch</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">batch_mask</span><span class="p">]</span>
+    <span class="n">t_batch</span> <span class="o">=</span> <span class="n">t_train</span><span class="p">[</span><span class="n">batch_mask</span><span class="p">]</span>
+    
+    <span class="c1"># 勾配</span>
+    <span class="c1">#grad = network.numerical_gradient(x_batch, t_batch)</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+      
+
+
+    <span class="c1"># 更新</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;W1&#39;</span><span class="p">,</span> <span class="s1">&#39;b1&#39;</span><span class="p">,</span> <span class="s1">&#39;W2&#39;</span><span class="p">,</span> <span class="s1">&#39;b2&#39;</span><span class="p">):</span>
+        <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    
+    
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
+    <span class="n">train_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">500</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">train_acc</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">t_train</span><span class="p">)</span>
+        <span class="n">test_acc</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">)</span>
+        <span class="n">train_acc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_acc</span><span class="p">)</span>
+        <span class="n">test_acc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_acc</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;iter:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_acc=</span><span class="si">{}</span><span class="s2">, test_acc=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_acc</span><span class="p">,</span> <span class="n">test_acc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter:0
+train_acc=0.12608333333333333, test_acc=0.1334
+iter:500
+train_acc=0.89915, test_acc=0.9023
+iter:1000
+train_acc=0.9173833333333333, test_acc=0.9206
+iter:1500
+train_acc=0.92855, test_acc=0.9248
+iter:2000
+train_acc=0.9381833333333334, test_acc=0.9369
+iter:2500
+train_acc=0.9425666666666667, test_acc=0.9408
+iter:3000
+train_acc=0.95025, test_acc=0.9491
+iter:3500
+train_acc=0.9535166666666667, test_acc=0.9527
+iter:4000
+train_acc=0.9570333333333333, test_acc=0.9559
+iter:4500
+train_acc=0.9616166666666667, test_acc=0.9583
+iter:5000
+train_acc=0.9610666666666666, test_acc=0.9575
+iter:5500
+train_acc=0.96615, test_acc=0.9618
+iter:6000
+train_acc=0.9682, test_acc=0.9621
+iter:6500
+train_acc=0.9710166666666666, test_acc=0.9651
+iter:7000
+train_acc=0.9712, test_acc=0.9654
+iter:7500
+train_acc=0.97365, test_acc=0.9675
+iter:8000
+train_acc=0.9748166666666667, test_acc=0.968
+iter:8500
+train_acc=0.9743, test_acc=0.9676
+iter:9000
+train_acc=0.9766333333333334, test_acc=0.9672
+iter:9500
+train_acc=0.9781666666666666, test_acc=0.9705
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">iters_num</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train_loss_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;iteration&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cross Entropy Error&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/backpropagation_74_0.png" src="../_images/backpropagation_74_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_acc_list</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span>
+
+
+<span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train_acc_list</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span> <span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train acc&quot;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">test_acc_list</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test acc&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span> 
+<span class="n">pyplot</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;epochs&quot;</span><span class="p">)</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span> 
+<span class="n">pyplot</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">pyplot</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> 
+<span class="n">pyplot</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> 
+<span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/backpropagation_75_0.png" src="../_images/backpropagation_75_0.png" />
+</div>
+</div>
+<p>学習済みのモデルで予測を行う</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict_value</span><span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_train</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">predict_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predict_value</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predict_value</span><span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_train</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">predict_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predict_value</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">digit_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">digit_num</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">grid_data</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="n">digit_num</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span>  <span class="c1"># reshape from 1d to 2d pixel array</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grid_data</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&quot;afmhot&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;pedict_value:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_value</span><span class="p">[</span><span class="n">digit_num</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/backpropagation_78_0.png" src="../_images/backpropagation_78_0.png" />
+</div>
+</div>
+</section>
+<section id="id16">
+<h2>参考になった資料<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/04/180000">バッチ版Affineレイヤの逆伝播【ゼロつく1のノート(数学)】</a></p></li>
+<li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/06/180000">ソフトマックス関数と交差エントロピー誤差の逆伝播【ゼロつく1のノート(数学)】</a></p></li>
+<li><p><a class="reference external" href="https://tutorials.chainer.org/ja/13_Basics_of_Neural_Networks.html">ニューラルネットワークの基礎</a></p></li>
+<li><p><a class="reference external" href="https://deepnotes.io/">DeepNotes</a></p></li>
+<li><p><a class="reference external" href="https://www.3blue1brown.com/">3Blue1Brown</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./draft"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 呂　沢宇<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
