@@ -16,5 +16,5 @@ parts:
 - caption: Pythonの基礎
   chapters:
   - file: draft/python_environment.ipynb
-  - file: draft/variable.ipynb
   - file: draft/python_basic.ipynb
+  - file: draft/variable.ipynb
