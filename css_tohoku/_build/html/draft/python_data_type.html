@@ -441,7 +441,42 @@ title="Print to PDF"
        による文字の抽出
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#len">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         len
+        </span>
+       </code>
+       による文字の抽出
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#split">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         split
+        </span>
+       </code>
+       による文字の分割
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#replace">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+       による文字の置換
+      </a>
+     </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     真偽値型
+    </a>
    </li>
   </ul>
  </li>
@@ -518,7 +553,42 @@ title="Print to PDF"
        による文字の抽出
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#len">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         len
+        </span>
+       </code>
+       による文字の抽出
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#split">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         split
+        </span>
+       </code>
+       による文字の分割
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#replace">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         replace
+        </span>
+       </code>
+       による文字の置換
+      </a>
+     </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     真偽値型
+    </a>
    </li>
   </ul>
  </li>
@@ -766,13 +836,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ce94c7a8-42c9-41c1-a1f0-4ee038b3e016" name="79f4c8b9-0a86-4e57-9b2b-bb53177226e3" type="radio">
-</input><label class="sd-tab-label" for="ce94c7a8-42c9-41c1-a1f0-4ee038b3e016">
+<input checked="checked" id="722076a1-807a-49d8-873d-8b9cce06d095" name="5c1e55de-076a-4297-8d52-748e9c4bb06a" type="radio">
+</input><label class="sd-tab-label" for="722076a1-807a-49d8-873d-8b9cce06d095">
 練習問題1</label><div class="sd-tab-content docutils">
 <p>一日は何秒だを計算してみよう。</p>
 </div>
-<input id="9636ef78-77d5-4155-b5ac-aaf6f1240bbe" name="79f4c8b9-0a86-4e57-9b2b-bb53177226e3" type="radio">
-</input><label class="sd-tab-label" for="9636ef78-77d5-4155-b5ac-aaf6f1240bbe">
+<input id="1c7b4f0c-5e71-485a-9860-2cdb0c13f8b0" name="5c1e55de-076a-4297-8d52-748e9c4bb06a" type="radio">
+</input><label class="sd-tab-label" for="1c7b4f0c-5e71-485a-9860-2cdb0c13f8b0">
 練習問題2</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(1\)</span>年<span class="math notranslate nohighlight">\(365\)</span>日といいますが、厳密的に言えば、<span class="math notranslate nohighlight">\(1\)</span>年を<span class="math notranslate nohighlight">\(366\)</span>日とする閏年を<span class="math notranslate nohighlight">\(400\)</span>年間に<span class="math notranslate nohighlight">\(97\)</span>回設けることによって、<span class="math notranslate nohighlight">\(1\)</span>年の平均日数を<span class="math notranslate nohighlight">\(365.2425\)</span>日とする。</p>
 <p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
@@ -971,6 +1041,82 @@ World
 </div>
 </div>
 </section>
+<section id="len">
+<h4><code class="docutils literal notranslate"><span class="pre">len</span></code>による文字の抽出<a class="headerlink" href="#len" title="Permalink to this headline">#</a></h4>
+<p>Pythonの取り組み関数で文字列に対する操作を行うことができます。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>先取りの定義ですが、関数とは、決められた操作を実行する名前付きのコードです。それらの中で、インポートなしですぐに使える関数を「<strong>組み込み関数</strong>」と呼びます。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="split">
+<h4><code class="docutils literal notranslate"><span class="pre">split</span></code>による文字の分割<a class="headerlink" href="#split" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">split</span></code>関数は、区切り文字に基づいて文字列を分割し、部分文字列のリストを作ることができます。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>引数とは、関数やを呼び出す際に渡す値のことです。基本的には、関数はこの「渡された値に対して処理を行い、結果を返す」ということを行っています。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Max&#39;, &#39;Weber&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replace">
+<h4><code class="docutils literal notranslate"><span class="pre">replace</span></code>による文字の置換<a class="headerlink" href="#replace" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">replace</span></code>関数は、文字列の一部を置換することができます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span><span class="s2">&quot;Karl&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Weber&quot;</span><span class="p">,</span><span class="s2">&quot;Marx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Karl Marx&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h3>真偽値型<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>Pythonの真偽値型は<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>で定義されます。</p>
+<ul class="simple">
+<li><p>条件判断では、その結果が<code class="docutils literal notranslate"><span class="pre">True</span></code>であるか<code class="docutils literal notranslate"><span class="pre">False</span></code>であるかを判定します。</p></li>
+<li><p>真偽値型の値同士は<code class="docutils literal notranslate"><span class="pre">and</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">or</span></code>キーワードで結合し、その結果を計算することができます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>

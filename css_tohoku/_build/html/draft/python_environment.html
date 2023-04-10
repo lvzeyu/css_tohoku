@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pythonの基本文法" href="python_basic.html" />
@@ -405,13 +407,18 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter">
-   Jupyter
+  <a class="reference internal nav-link" href="#jupyter-notebook">
+   Jupyter Notebook
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#jupyter">
      Jupyterの基本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     カーネル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -437,6 +444,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id6">
        引用
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       数式
       </a>
      </li>
     </ul>
@@ -480,13 +492,18 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter">
-   Jupyter
+  <a class="reference internal nav-link" href="#jupyter-notebook">
+   Jupyter Notebook
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#jupyter">
      Jupyterの基本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     カーネル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -512,6 +529,11 @@ title="Print to PDF"
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id6">
        引用
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       数式
       </a>
      </li>
     </ul>
@@ -566,16 +588,31 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
 <p><img alt="" src="../_images/conda.png" /></p>
 </section>
 </section>
-<section id="jupyter">
-<h2>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">#</a></h2>
+<section id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p>Jupyter Notebookとは、ブラウザの強力な表示機能を活用したインターフェイスです。コードのインタラクティブな実行だけでなく、Markdownテキスト・数式・図などを含んだドキュメント作成の機能も備えています。</p>
-<section id="id2">
-<h3>Jupyterの基本<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="jupyter">
+<h3>Jupyterの基本<a class="headerlink" href="#jupyter" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Jupyterにはコマンドモードとエディットモードがあります。セルをダブルクリックするか、選択して<code class="docutils literal notranslate"><span class="pre">enter</span></code>を押すと、そのセルのエディットモードになります。エディットモードで<code class="docutils literal notranslate"><span class="pre">esc</span></code>を押すか、別のセルをクリックするとコマンドモードに戻ります。</p></li>
 <li><p>jupyterはセルを基本的な要素としています。セルにはいくつか種類がありますが、CodeとMarkdownの２種類だけ覚えてください。</p></li>
 <li><p><a class="reference external" href="https://qiita.com/zawawahoge/items/baa2a5318df079c5f7e5">ショートカット</a>はいろいろありますが、最低限次だけは覚えましょう。</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>shift+enterを押す: コードを実行し、下のセルに移動する.
+Mを押す: マークダウンセルにする
+Yを押す: コードセルにする
+Dを二回押す: セルを削除する
+Oを押す: セルの出力結果の表示・非表示
+Aを押す: 上にセルを追加する
+Bを押す: 下にセルを追加する  	
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>カーネル<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Jupyter Notebookにおけるカーネル(Kernel)とは、プログラミング言語の機能を提供することを指します。本授業の場合は、基本的にはIpythonカーネルを指します。</p>
+<p>Jupyter Notebook自身は、あくまでもWebアプリケーションとしてのインタフェースにすぎません。Ipythonカーネルを通じて、Jupyter NotebookのインタフェースとPythonに繋ぎます。</p>
+<p>VsCodeでは利用可能なカーネルを検索してくれるので、右上の<code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Kernel</span></code>でPython環境を指定することができます。</p>
 </section>
 <section id="markdown">
 <h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h3>
@@ -643,6 +680,11 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;社会学（しゃかいがく、仏: sociologie、英:Sociology）は、社会現象の実態や、現象の起こる原因に関するメカニズム（因果関係）を体験・統計・データなどを用いて分析することで解明する学問である。
 </pre></div>
 </div>
+</section>
+<section id="id7">
+<h4>数式<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<p>Latex書式で数式を記述することができます。</p>
+<p><span class="math notranslate nohighlight">\(\frac{n!}{k!(n-k)!} = \binom{n}{k}\)</span></p>
 </section>
 </section>
 </section>
