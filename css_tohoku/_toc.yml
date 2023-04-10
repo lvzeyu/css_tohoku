@@ -18,4 +18,4 @@ parts:
   - file: draft/python_environment.ipynb
   - file: draft/python_basic.ipynb
   - file: draft/variable.ipynb
-  - file: draft/data_structure.ipynb
+  - file: draft/data_struture.ipynb
