@@ -730,7 +730,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;, &#39;Weber&#39;, &#39;Parsons&#39;, &#39;Marx&#39;, &#39;Giddens&#39;, &#39;Durkheim&#39;, 4]
 </pre></div>
 </div>
 </div>
@@ -750,7 +750,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;, &#39;Weber&#39;, &#39;Parsons&#39;, &#39;Marx&#39;, &#39;Giddens&#39;, &#39;Durkheim&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;, &#39;Weber&#39;, &#39;Weber&#39;, &#39;Parsons&#39;, &#39;Marx&#39;, &#39;Giddens&#39;, &#39;Durkheim&#39;, 4]
 </pre></div>
 </div>
 </div>
@@ -766,7 +766,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;Weber&#39;, 2, 3, 4, 4, 5, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;,
+ &#39;Weber&#39;,
+ &#39;Weber&#39;,
+ &#39;Parsons&#39;,
+ &#39;Marx&#39;,
+ &#39;Giddens&#39;,
+ &#39;Durkheim&#39;,
+ 4,
+ 4,
+ 5,
+ 6]
 </pre></div>
 </div>
 </div>
@@ -782,7 +792,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;Weber&#39;, 2, 3, 4, &#39;Marx&#39;, 5, 6]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;, &#39;Weber&#39;, &#39;Weber&#39;, &#39;Parsons&#39;, &#39;Marx&#39;, &#39;Marx&#39;, &#39;Durkheim&#39;, 4, 4, 5, 6]
 </pre></div>
 </div>
 </div>
@@ -795,7 +805,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;Weber&#39;, 2, 3, 4, &#39;Marx&#39;, &#39;Durkheim&#39;, &#39;Parsons&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Weber&#39;, &#39;Weber&#39;, &#39;Weber&#39;, &#39;Parsons&#39;, &#39;Marx&#39;, &#39;Marx&#39;, &#39;Durkheim&#39;, &#39;Parsons&#39;]
 </pre></div>
 </div>
 </div>
@@ -803,6 +813,10 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">remove</span></code>による値を指定した要素を削除</p></li>
 </ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>削除しよう要素が複数ある場合、remove()は最初に見つかった要素だけ削除する</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
