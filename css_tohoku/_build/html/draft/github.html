@@ -1,35 +1,44 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub &#8212; 計算社会科学のためのPythonプログラミング入門</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +46,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +61,93 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/github';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python環境" href="python_environment.html" />
     <link rel="prev" title="Git" href="git.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/tohoku-university-logo-vector.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">計算社会科学のためのPythonプログラミング入門</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,526 +156,288 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  イントロダクション
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
-   授業の概要
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
+
+
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  GitとGitHub
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="git.html">
-   Git
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   GitHub
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">GitHub</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Pythonの基礎
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="python_environment.html">
-   Python環境
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_basic.html">Pythonの基本文法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable.html">変数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_struture.html">データ構造</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/github.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/github.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/tree/master/blob/master/css_tohoku/draft/github.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/github.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/draft/github.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/github.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/draft/github.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   GitHubの初期設定
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   リモートリポジトリに関する操作
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     リモートリポジトリの作成と連携
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push">
-     プッシュ(Push)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fetch">
-     フェッチ(Fetch)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull">
-     プル(Pull)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#revert">
-     revert
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull-request">
-     プルリクエスト(Pull request)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       プルリクエストの実例
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clone">
-     クローン(Clone)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       クローンのやり方
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   GitHubでの共同作業
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-flow">
-     GitHub Flow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#main">
-     mainブランチでは開発しない
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     開発する内容ごとに「トピックブランチ」を作成する
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ブランチは定期的にPushする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     プルリクエストを使って作業に関するやりとりをする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     プルリクエストを使ってにコードレビューを行う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     レビューが承認されたらmainブランチにマージする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-issues">
-     GitHub Issues
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>GitHub</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   GitHubの初期設定
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   リモートリポジトリに関する操作
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     リモートリポジトリの作成と連携
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push">
-     プッシュ(Push)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fetch">
-     フェッチ(Fetch)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull">
-     プル(Pull)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#revert">
-     revert
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull-request">
-     プルリクエスト(Pull request)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       プルリクエストの実例
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clone">
-     クローン(Clone)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       クローンのやり方
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   GitHubでの共同作業
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-flow">
-     GitHub Flow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#main">
-     mainブランチでは開発しない
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     開発する内容ごとに「トピックブランチ」を作成する
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     ブランチは定期的にPushする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     プルリクエストを使って作業に関するやりとりをする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     プルリクエストを使ってにコードレビューを行う
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     レビューが承認されたらmainブランチにマージする
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-issues">
-     GitHub Issues
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GitHub</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリに関する操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">プルリクエストの実例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">クローン(Clone)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クローンのやり方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubでの共同作業</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-flow">GitHub Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">mainブランチでは開発しない</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">開発する内容ごとに「トピックブランチ」を作成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ブランチは定期的にPushする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">プルリクエストを使って作業に関するやりとりをする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">プルリクエストを使ってにコードレビューを行う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">レビューが承認されたらmainブランチにマージする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-issues">GitHub Issues</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="github">
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="github">
 <h1>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h1>
 <p>ここまで、Gitをローカル環境での利用方法をまなびました。Gitは分散型のバージョン管理システムで、同じプロジェクトに関するリポジトリをネットワーク上に複数置くこともできます。この性質を利用すると、色々なことができるようになります。</p>
 <ul class="simple">
@@ -643,7 +446,7 @@ title="Print to PDF"
 <li><p>リモートリポジトリで作業をバックアップすること</p></li>
 </ul>
 <p>Git機能を搭載したプロジェクト管理サービスは数多くありますが、本授業はその中でも一番使われている<a class="reference external" href="https://github.com/">Github</a>を利用していきます。</p>
-<section id="id1">
+<div class="section" id="id1">
 <h2>GitHubの初期設定<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>GitHubアカウントを作成します。</p></li>
@@ -673,18 +476,18 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
 </pre></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h2>リモートリポジトリに関する操作<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<section id="id3">
+<div class="section" id="id3">
 <h3>リモートリポジトリの作成と連携<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>GitHubの使い方は、公式のチュートリアルを適宜参照してください。</p>
-</aside>
+</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="efe57ca1-887f-4130-87a6-8f66018d0cf4" name="e89c7018-4e2f-40f6-b7c6-a6068b22e579" type="radio">
-</input><label class="sd-tab-label" for="efe57ca1-887f-4130-87a6-8f66018d0cf4">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ページの右上隅で、[<span class="math notranslate nohighlight">\(+\)</span>]ドロップダウンメニューを使用して、 [新しいリポジトリ] を選択します。
@@ -703,8 +506,8 @@ git remote add origin git@github.com:lvzeyu/test.git
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>でリモートリポジトリの一覧を確認します。正しく追加されたら、<code class="docutils literal notranslate"><span class="pre">origin</span></code>というリモートリポジトリが表示されます。</p></li>
 </ul>
 </div>
-<input id="b1490f97-7c35-4e3c-8f30-8d900158919f" name="e89c7018-4e2f-40f6-b7c6-a6068b22e579" type="radio">
-</input><label class="sd-tab-label" for="b1490f97-7c35-4e3c-8f30-8d900158919f">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>新しいリモートリポジトリの作成
@@ -725,13 +528,13 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
-</section>
-<section id="push">
+</div>
+<div class="section" id="push">
 <h3>プッシュ(Push)<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリにローカルリポジトリでの変更を反映する操作は「プッシュ」といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="65a0dc82-6b16-4cef-9dc1-eb49a916d048" name="0b6a0fec-1cdf-43b5-8156-c37faef8bce6" type="radio">
-</input><label class="sd-tab-label" for="65a0dc82-6b16-4cef-9dc1-eb49a916d048">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>でリモートリポジトリとの連携状況を確認します。</p></li>
@@ -742,8 +545,8 @@ git push -u origin main
 </pre>
 <p><img alt="" src="../_images/git_push.png" /></p>
 </div>
-<input id="957d752f-cd22-4b21-9f6e-18706caa24fa" name="0b6a0fec-1cdf-43b5-8156-c37faef8bce6" type="radio">
-</input><label class="sd-tab-label" for="957d752f-cd22-4b21-9f6e-18706caa24fa">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「REMOTES」でリモートリポジトリとの連携状況を確認します。</p></li>
@@ -752,33 +555,33 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
-</section>
-<section id="fetch">
+</div>
+<div class="section" id="fetch">
 <h3>フェッチ(Fetch)<a class="headerlink" href="#fetch" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリとローカルリポジトリ、それぞれの状況に違いがあるかを調べる操作は、フェッチ(Fetch)といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e47fbe1a-8f46-466d-930c-4e5506901f54" name="c65c97ec-cd0e-41f9-9499-85e2d5911200" type="radio">
-</input><label class="sd-tab-label" for="e47fbe1a-8f46-466d-930c-4e5506901f54">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 実習問題1</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>GitHubでリモートリポジトリのREADMEファイルを作成し、適宜内容を加えて、その変更をコミットします。</p></li>
 </ul>
 </div>
-<input id="a5e5461d-719d-44fc-94d2-bbd23ab3b501" name="c65c97ec-cd0e-41f9-9499-85e2d5911200" type="radio">
-</input><label class="sd-tab-label" for="a5e5461d-719d-44fc-94d2-bbd23ab3b501">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 実習問題2</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ローカルリポジトリの<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>に任意の変更を加えて、その変更をコミットします。</p></li>
 </ul>
 </div>
 </div>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>ログが途中までして表示されおらず、プロンプトが<code class="docutils literal notranslate"><span class="pre">「：」</span></code>となっている場合、<code class="docutils literal notranslate"><span class="pre">q</span></code>キーを押してください。</p>
-</aside>
+</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f06b5031-af54-45b8-ab47-421487dd2995" name="971c1c1b-78e4-4dc5-b4e8-41d0c184aa97" type="radio">
-</input><label class="sd-tab-label" for="f06b5031-af54-45b8-ab47-421487dd2995">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>でリモートリポジトリの状況を取ってきます。</p></li>
@@ -786,8 +589,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <img alt="" src="../_images/git_fetch.png" /></p></li>
 </ul>
 </div>
-<input id="de14072b-171f-4f3f-a16a-d57dbf449bdf" name="971c1c1b-78e4-4dc5-b4e8-41d0c184aa97" type="radio">
-</input><label class="sd-tab-label" for="de14072b-171f-4f3f-a16a-d57dbf449bdf">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「fetch」でフェッチを行います。</p></li>
@@ -796,21 +599,21 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
-</section>
-<section id="pull">
+</div>
+<div class="section" id="pull">
 <h3>プル(Pull)<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリに加えられた変更がローカルリポジトリに取り込まれる操作は「プル(Pull)」といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="daf9e630-de8e-4281-b5ba-f9a89b940162" name="4dbf11a1-ebab-4da9-aedf-a437f413d23d" type="radio">
-</input><label class="sd-tab-label" for="daf9e630-de8e-4281-b5ba-f9a89b940162">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>でプル操作を行います。</p></li>
 <li><p>ローカルリポジトリの内容が更新されることを確認できます。</p></li>
 </ul>
 </div>
-<input id="97f3d615-515b-4d44-bd56-127c3ba107ed" name="4dbf11a1-ebab-4da9-aedf-a437f413d23d" type="radio">
-</input><label class="sd-tab-label" for="97f3d615-515b-4d44-bd56-127c3ba107ed">
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「pull」でフェッチを行います。</p></li>
@@ -820,14 +623,14 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>基本的に、リモートリポジトリで作業する場合、<ins><strong>作業前は必ずプルしよう</strong><ins>ことを覚えてください。</p>
 <p>最新の状態をプルを忘れ、古いファイルをしてしまった結果、プッシュをするときにエラーが発生し、そこでプルをするとコンフリクトが起きます。特に他のメンバーと共同作業をしているときコンフリクトが発生すると、解決するのはなかなか困難です。</p>
 <p>普段から作業を始まる前にプルを行い、1日中でに作業が一段落ついたときもプルするなど、できるだけ頻繁に最新の状態に保っておくと良いでしょう。</p>
-</section>
-<section id="revert">
+</div>
+<div class="section" id="revert">
 <h3>revert<a class="headerlink" href="#revert" title="Permalink to this headline">#</a></h3>
 <p>ローカルリポジトリでは、コミットをした後間違いに気づいたときは、リセットをしてやり直すことができます。</p>
 <p>リモートリポジトリにプッシュしてしまった後で間違いに気づいたら、<code class="docutils literal notranslate"><span class="pre">revert</span></code>でコミットを取り消せることができます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="79ebead2-1d8c-4716-991a-29d7a7319582" name="e747ef44-46ee-472c-ba30-58e9b3f974f3" type="radio">
-</input><label class="sd-tab-label" for="79ebead2-1d8c-4716-991a-29d7a7319582">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>での変更をリモートリポジトリにプッシュします。</p></li>
@@ -837,8 +640,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="23c4327d-ed2f-4727-b1f5-a5a75aa748b5" name="2968f2ac-3496-478c-8f9b-c04f16522572" type="radio">
-</input><label class="sd-tab-label" for="23c4327d-ed2f-4727-b1f5-a5a75aa748b5">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>コマンドで打ち消したいコミットを指定します。例えば、</p></li>
@@ -857,8 +660,8 @@ git push
 </ul>
 <p><img alt="" src="../_images/revert2.png" /></p>
 </div>
-<input id="65979d4d-af9d-416f-b882-7e7be793a384" name="2968f2ac-3496-478c-8f9b-c04f16522572" type="radio">
-</input><label class="sd-tab-label" for="65979d4d-af9d-416f-b882-7e7be793a384">
+<input id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「COMMITS」でコミットの一覧を確認します。</p></li>
@@ -870,13 +673,13 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">revert</span></code>は「打ち消し」を機能していますが、<code class="docutils literal notranslate"><span class="pre">reset</span></code>とは違って元に戻すのではなく<ins>「間違ったところを訂正する内容のコミットをする」</ins>といった作業を行なっています(revert→push)。</p>
 <p>なぜこのような設計になるといえば、共同作業の場合、他のメンバーがすでにプルして、変更などをしてしまっているかもしれません。その状態でリモートリポジトリの内容を後戻りさせてしまうと、その差分を埋めるのは困難です。つまり、本質的には、プッシュした内容を「なかったこと」にすることはできません。</p>
-</section>
-<section id="pull-request">
+</div>
+<div class="section" id="pull-request">
 <h3>プルリクエスト(Pull request)<a class="headerlink" href="#pull-request" title="Permalink to this headline">#</a></h3>
 <p>ここまでに説明した通り、間違えた内容をプッシュすると、他のメンバーが知らねうちに間違えた内容を適用しまって、不具合の原因になります。</p>
 <p>このようなリスクを回避するために、通常はプッシュは慎重に行いながら、「プルリクエスト(Pull request)」を使うことが推奨されます。</p>
 <p>プルプルリクエストとは、マージを実行する際に、他のメンバーへの変更通知や変更箇所の比較表示など様々の確認を行うことができる機能です。この機能を使えば、プッシュする前にメンバーにレビューを依頼し、問題がない場合だけブランチにマージをして、変更を確定することができるようになります。</p>
-<section id="id4">
+<div class="section" id="id4">
 <h4>プルリクエストの実例<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチで作業を行い、<code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチにプルリクエストをして、確認する上でマージを実行する処理を行いましょう。</p>
 <ul class="simple">
@@ -917,14 +720,14 @@ git push --set-upstream origin develop
 <li><p>変更依頼(Request changes): pull request をマージする前に対処する必要があることを見つけた際に、変更や確認を依頼します。</p></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="clone">
+</div>
+</div>
+<div class="section" id="clone">
 <h3>クローン(Clone)<a class="headerlink" href="#clone" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリをコピーしてローカルリポジトリを作る操作は、クローン(Clone)といいます。
 クローンをすると、リモートリポジトリの内容が丸ごと新しく作られたローカルリポジトリに複製され、そのリポジトリはクローン元のリモートリポジトリと紐ついた状態になります。</p>
 <p>こうして、複数の環境でプログラムの開発が行えるようになります。</p>
-<section id="id5">
+<div class="section" id="id5">
 <h4>クローンのやり方<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>ここで、この授業のリモートリポジトリをクローンしてみましょう。</p>
 <ul class="simple">
@@ -933,54 +736,54 @@ git push --set-upstream origin develop
 <li><p>自分のPCでターミナルを開く、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>コマンドにリモートリポジトリのアドレスを指定すると、そのコピーはディレクトリとしてローカルに作られます。</p></li>
 </ul>
 <p><img alt="" src="../_images/clone.png" /></p>
-</section>
-</section>
-</section>
-<section id="id6">
+</div>
+</div>
+</div>
+<div class="section" id="id6">
 <h2>GitHubでの共同作業<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<section id="github-flow">
+<div class="section" id="github-flow">
 <h3>GitHub Flow<a class="headerlink" href="#github-flow" title="Permalink to this headline">#</a></h3>
 <p>ここまで紹介したように、GitとGitHubは豊富な機能が備え、スムーズに開発と共同作業に資することができます。一方で、運用する場合にはルールを定めないとき様々な問題が起こりうるです。</p>
 <p>GitHubはプルリクエストを中心とした「GitHub Flow」というワークフローを提唱しています。</p>
-</section>
-<section id="main">
+</div>
+<div class="section" id="main">
 <h3>mainブランチでは開発しない<a class="headerlink" href="#main" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>mainブランチは常に最新で正しい状態にしておく、<ins>直接mainブランチで作業などは行ってはいけません。</ins></p></li>
 </ul>
-</section>
-<section id="id7">
+</div>
+<div class="section" id="id7">
 <h3>開発する内容ごとに「トピックブランチ」を作成する<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>機能の追加・変更、バグフィックスの際には、<ins>作業の内容ごとに「トピックブランチ」を分けます</ins>。トピックブランチの名前はできるだけ作業内容がわかるものとします。<ins>必ずmainブランチからトピックブランチを切って作業を行います。</ins></p></li>
 </ul>
-</section>
-<section id="id8">
+</div>
+<div class="section" id="id8">
 <h3>ブランチは定期的にPushする<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>定期的にローカルリポジトリからリモートリポジトリにPushして、ローカルでの作業内容をメンバーと共有しましょう。できるだけマージする際に生じる変更箇所のコンフリクトを回避します。</p></li>
 </ul>
-</section>
-<section id="id9">
+</div>
+<div class="section" id="id9">
 <h3>プルリクエストを使って作業に関するやりとりをする<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>プルリクエスト機能を活用して他のメンバーとコミュニケーションをとりましょう。何かコミュニケーションをしたいことがある場合、プルリクエストのコメント欄でやりとりをします。</p></li>
 </ul>
-</section>
-<section id="id10">
+</div>
+<div class="section" id="id10">
 <h3>プルリクエストを使ってにコードレビューを行う<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>トピックブランチでの作業が終わったら、レビュアーを指定してプルリクエストのレビューを依頼します。レビュアーは内容を確認して、承認またはコメントをします。</p></li>
 </ul>
-</section>
-<section id="id11">
+</div>
+<div class="section" id="id11">
 <h3>レビューが承認されたらmainブランチにマージする<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>コードレビューが承認されたらmainブランチにマージします。マージ後には、できるだけ早く動作検証を行います。問題がなければ、トピックブランチを削除してもよいでしょう。</p></li>
 </ul>
 <p><img alt="" src="../_images/flow.png" /></p>
-</section>
-<section id="github-issues">
+</div>
+<div class="section" id="github-issues">
 <h3>GitHub Issues<a class="headerlink" href="#github-issues" title="Permalink to this headline">#</a></h3>
 <p>Issueとは「課題」という意味で、開発メンバー間で共有が必要な事項をスレッド形式で立てられる機能です。</p>
 <p>見つけた問題点を報告することはもちろん、それ以外にも作業の計画やコードに関する質問を手軽に投稿して、チームメンバーとコミュニケーションすることができます。</p>
@@ -990,9 +793,9 @@ git push --set-upstream origin develop
 <li><p>他のメンバーにIssueおよびプルリクエストをアサインすることで、誰が特定の Issue やPull Requestで作業しているかが明確になります。</p></li>
 <li><p>ラベルでIssueを分類します。</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1014,50 +817,126 @@ git push --set-upstream origin develop
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="git.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Git</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="git.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Git</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="python_environment.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="python_environment.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Python環境</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHubの初期設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">リモートリポジトリに関する操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リモートリポジトリの作成と連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push">プッシュ(Push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch">フェッチ(Fetch)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull">プル(Pull)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revert">revert</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">プルリクエスト(Pull request)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">プルリクエストの実例</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">クローン(Clone)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クローンのやり方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GitHubでの共同作業</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-flow">GitHub Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main">mainブランチでは開発しない</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">開発する内容ごとに「トピックブランチ」を作成する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ブランチは定期的にPushする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">プルリクエストを使って作業に関するやりとりをする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">プルリクエストを使ってにコードレビューを行う</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">レビューが承認されたらmainブランチにマージする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-issues">GitHub Issues</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By 呂　沢宇<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By 呂　沢宇
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
