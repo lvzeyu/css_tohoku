@@ -3,7 +3,7 @@
 
 # # 授業の概要
 # 
-# Pythonは世界中でよく使われているプログラミング言語です。特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習などの領域において、最も重要な言語の一つと変わっていきました。
+# Pythonは世界中でよく使われているプログラミング言語です。特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習、深層学習などの領域において、最も重要な言語の一つと変わっていきました。
 # 
 # この授業は、プログラミング言語Pythonを用いて計算社会科学的なデータ操作・処理・分析用プログラムを書くための基本的な技術を習得することを目的とします。その以外、プログラミングとデータ分析のために必要な知識と技術も学びます。
 # 
@@ -25,14 +25,14 @@
 import numpy as np
 
 
-# In[30]:
+# In[2]:
 
 
 a = np.zeros((2,2)) # すべて0の配列を作成
 print(a)
 
 
-# In[31]:
+# In[3]:
 
 
 b = np.random.normal(
@@ -43,14 +43,14 @@ b = np.random.normal(
 print(b)
 
 
-# In[32]:
+# In[4]:
 
 
 arr1 = np.arange(4).reshape((2, 2))
 print(arr1)
 
 
-# In[33]:
+# In[5]:
 
 
 arr2 = np.arange(6).reshape((2, 3))
@@ -59,27 +59,27 @@ print(arr2)
 
 # - 行列の操作と演算を行うにはNumPyを使うと便利です
 
-# In[34]:
+# In[6]:
 
 
 arr1.reshape((1, 4))
 
 
-# In[35]:
+# In[7]:
 
 
 # 転置
 arr1.T
 
 
-# In[36]:
+# In[8]:
 
 
 # 逆行列
 np.linalg.inv(arr1)
 
 
-# In[37]:
+# In[9]:
 
 
 # 内積
@@ -91,7 +91,7 @@ np.dot(arr1, arr2)
 # [**pandas**](https://pandas.pydata.org/docs/)とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。
 # Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。
 
-# In[38]:
+# In[10]:
 
 
 import pandas as pd
@@ -99,21 +99,21 @@ data = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/maste
 data
 
 
-# In[43]:
+# In[11]:
 
 
 # 頻度を計算する
 data["species"].value_counts()
 
 
-# In[44]:
+# In[12]:
 
 
-# 統計量
+# 統計量を計算する
 data["sepal_width"].describe()
 
 
-# In[45]:
+# In[13]:
 
 
 # データフレームの変形
@@ -127,7 +127,7 @@ data.melt(id_vars=["species"],
 # 
 #  [**matplotlib**](https://matplotlib.org/stable/index.html)は、グラフ描画ライブラリである。オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持つ。Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、他のライブライとうまく連携しやすくなっています。
 
-# In[42]:
+# In[14]:
 
 
 import matplotlib.pyplot as plt
