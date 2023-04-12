@@ -578,12 +578,18 @@ title="Print to PDF"
 <h2>授業の内容<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
-<p>Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語である。</p>
+<p>この授業は、Pythonの基礎から応用までカバーします。</p>
+<ul class="simple">
+<li><p>Pythonのデータ型: タプル、リスト、辞書などデータ型の特徴と操作方法</p></li>
+<li><p>Pythonの構文: 変数の宣言、演算子、制御構文（条件分岐、ループ）、関数の定義、クラスの定義、オブジェクト指向プログラミングの基本概念</p></li>
+<li><p><strong>Pythonの実践: ライブラリの使用</strong></p></li>
+</ul>
+<p>Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語です。</p>
 <p>この授業は、その中に代表的かつ実用性の高いライブラリを紹介します。</p>
 <section id="numpy">
 <h4>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。</p>
-<p>効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。</p>
+<p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールです。</p>
+<p>効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供します。</p>
 <ul class="simple">
 <li><p>配列を作成するための関数は多く備えています</p></li>
 </ul>
@@ -620,12 +626,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.20296553  0.06463363]
- [ 0.4043027   0.82648666]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.70488059  2.12852939]
+ [-0.59124493  0.31596189]]
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>行列の操作と演算を行うにはNumPyを使うと便利です</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -654,9 +663,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>行列の操作と演算を行うにはNumPyを使うと便利です</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -717,6 +723,10 @@ title="Print to PDF"
 <p><a class="reference external" href="https://pandas.pydata.org/docs/"><strong>pandas</strong></a>とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。</p>
 <p>Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。</p>
 <p>csvやExcel、jsonなどのデータソースからデータを読み込んで操作することができます。そして、構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Irisデータセットは、「花びら（petal）／がく片（sepal）の長さと幅（cm）」という4つの特徴量と、あやめの種類である「setosa／versicolor／virginica」という3つのラベルで構成される表形式データセット。</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1068,7 +1078,7 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Intro_23_0.png" src="../_images/Intro_23_0.png" />
+<img alt="../_images/Intro_24_0.png" src="../_images/Intro_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1083,10 +1093,10 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17022e8f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17094bdc0&gt;
 </pre></div>
 </div>
-<img alt="../_images/Intro_24_1.png" src="../_images/Intro_24_1.png" />
+<img alt="../_images/Intro_25_1.png" src="../_images/Intro_25_1.png" />
 </div>
 </div>
 </section>
