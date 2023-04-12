@@ -571,16 +571,19 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>授業の概要<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>Pythonは世界中でよく使われているプログラミング言語です。特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習、深層学習などの領域において、最も重要な言語の一つと変わっていきました。</p>
-<p>この授業は、プログラミング言語Pythonを用いて計算社会科学的なデータ操作・処理・分析用プログラムを書くための基本的な技術を習得することを目的とします。その以外、プログラミングとデータ分析のために必要な知識と技術も学びます。</p>
+<p>Pythonはよく使われているオープンソースのプログラミング言語です。</p>
+<p>Pythonは、簡単な構文、豊富なライブラリ、そして高い可読性という特徴を持ち、特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習、深層学習などの領域において、最も重要な言語の一つと変わっていきました。</p>
+<p>この授業は、Pythonの基礎から始め、<strong>計算社会科学研究ためのデータ操作・処理・分析用プログラムを書くための基本的な技術</strong>を習得することを目的とします。</p>
 <section id="id2">
 <h2>授業の内容<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
 <p>Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語である。</p>
+<p>この授業は、その中に代表的かつ実用性の高いライブラリを紹介します。</p>
 <section id="numpy">
 <h4>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。</p>
+<p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。</p>
+<p>効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。</p>
 <ul class="simple">
 <li><p>配列を作成するための関数は多く備えています</p></li>
 </ul>
@@ -617,8 +620,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.49646534 -0.49339082]
- [-0.05386192 -1.11660412]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.20296553  0.06463363]
+ [ 0.4043027   0.82648666]]
 </pre></div>
 </div>
 </div>
@@ -711,8 +714,9 @@ title="Print to PDF"
 </section>
 <section id="pandas">
 <h4>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://pandas.pydata.org/docs/"><strong>pandas</strong></a>とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。
-Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。</p>
+<p><a class="reference external" href="https://pandas.pydata.org/docs/"><strong>pandas</strong></a>とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。</p>
+<p>Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。</p>
+<p>csvやExcel、jsonなどのデータソースからデータを読み込んで操作することができます。そして、構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -880,6 +884,68 @@ Name: sepal_width, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># speciesごとに指標の平均を計算する</span>
+<span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>setosa</td>
+      <td>5.006</td>
+      <td>3.428</td>
+      <td>1.462</td>
+      <td>0.246</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>versicolor</td>
+      <td>5.936</td>
+      <td>2.770</td>
+      <td>4.260</td>
+      <td>1.326</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>virginica</td>
+      <td>6.588</td>
+      <td>2.974</td>
+      <td>5.552</td>
+      <td>2.026</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># データフレームの変形</span>
 <span class="n">data</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">],</span> 
         <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> 
@@ -986,7 +1052,9 @@ Name: sepal_width, dtype: float64
 </section>
 <section id="matplotlib">
 <h4>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://matplotlib.org/stable/index.html"><strong>matplotlib</strong></a>は、グラフ描画ライブラリである。オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持つ。Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、他のライブライとうまく連携しやすくなっています。</p>
+<p><a class="reference external" href="https://matplotlib.org/stable/index.html"><strong>matplotlib</strong></a>は、グラフ描画ライブラリでです。</p>
+<p>オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持っています。</p>
+<p>Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、PandasやNumpyなどのライブライとうまく連携しやすくなっています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1000,13 +1068,92 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Intro_22_0.png" src="../_images/Intro_22_0.png" />
+<img alt="../_images/Intro_23_0.png" src="../_images/Intro_23_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">],</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;xtick.direction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;out&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;ytick.direction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;in&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17022e8f0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Intro_24_1.png" src="../_images/Intro_24_1.png" />
 </div>
 </div>
 </section>
 <section id="scikit-learn">
 <h4>scikit-learn<a class="headerlink" href="#scikit-learn" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://scikit-learn.org/stable/"><strong>scikit-learn</strong></a>は機械学習ライブラリである。教師あり学習、教師なし学習に関する<a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html">アルゴリズム</a>(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装を提供しています。</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/"><strong>scikit-learn</strong></a>は機械学習ライブラリです。</p>
+<p>NumPyやSciPyといった科学計算ライブラリと組み合わせて使用することができ、また、PandasやMatplotlibといったライブラリとの互換性も高く、機械学習モデルの開発、評価、デプロイまでを網羅する幅広い機能を提供しています。</p>
+<p>初心者にも扱いやすいAPIを提供しており、教師あり学習、教師なし学習に関する<a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html">アルゴリズム</a>(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装、交差検証、グリッドサーチ、チューニングや特徴量の選択など機械学習に関する操作もサポートされています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="c1"># データセットの読み込み</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="c1"># データセットの分割（学習用データとテスト用データ）</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ロジスティック回帰モデルのインスタンス化</span>
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+
+<span class="c1"># 学習</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># テストデータを用いた予測</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># 結果の表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ロジスティック回帰モデルの予測の精度: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ロジスティック回帰モデルの予測の精度: 0.9600
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+
+<span class="c1"># SVMのインスタンス化</span>
+<span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+
+<span class="c1"># 学習</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># テストデータを用いた予測</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># 結果の表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;サポートベクターマシンの予測の精度: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>サポートベクターマシンの予測の精度: 0.9600
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id3">
 <h4>学習の到達目標<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
@@ -1047,6 +1194,14 @@ Name: sepal_width, dtype: float64
 <li><p>これからの授業で説明しますが、GitとGitHubによるプロジェクトを管理すると、<ins>各メンバーの作業履歴を確認できます</ins>ので、グループ全体の成果だけでなく、各メンバーの貢献度も加味して成績を評価します。</p></li>
 </ul>
 </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>データ解析プロジェクトについて
+テーマとデータの選定は自由です。プロジェクトのイメージは、<a class="reference external" href="https://www.kaggle.com/">kaggle</a>でJupyter Notebookのデータ解析リポートを参考してみてください。
+Kaggleはデータサイエンスや機械学習の分野で有名なオンラインプラットフォームです。Kaggleには世界中のデータ科学者がデータセットやノートブックを共有しています。</p>
+</div>
+<ul class="simple">
 <li><p>成績評価の分配は以下の通りです</p>
 <ul>
 <li><p>出席: <span class="math notranslate nohighlight">\(30\%\)</span></p></li>
@@ -1060,7 +1215,7 @@ Name: sepal_width, dtype: float64
 <p>GitHub　Issueの使い方についてはこれからの授業で説明します。</p>
 </aside>
 <ul class="simple">
-<li><p>授業の内容に関して不明点あるいはご要望があれば、随時メールでご連絡ください。また、プログラミングや操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。</p></li>
+<li><p>授業の内容に関して不明点あるいはご要望があれば、随時<a class="reference external" href="mailto:lyu&#46;zeyu&#46;e8&#37;&#52;&#48;tohoku&#46;ac&#46;jp">メール</a>でご連絡ください。また、プログラミングやソフトウェア操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。</p></li>
 <li><p>授業のオフィスアワーは、できれば二日前アポイントを取ってくだい。</p></li>
 </ul>
 </section>
