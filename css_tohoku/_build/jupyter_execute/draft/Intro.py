@@ -3,9 +3,11 @@
 
 # # 授業の概要
 # 
-# Pythonは世界中でよく使われているプログラミング言語です。特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習、深層学習などの領域において、最も重要な言語の一つと変わっていきました。
+# Pythonはよく使われているオープンソースのプログラミング言語です。
 # 
-# この授業は、プログラミング言語Pythonを用いて計算社会科学的なデータ操作・処理・分析用プログラムを書くための基本的な技術を習得することを目的とします。その以外、プログラミングとデータ分析のために必要な知識と技術も学びます。
+# Pythonは、簡単な構文、豊富なライブラリ、そして高い可読性という特徴を持ち、特に、科学計算とデータ分析のコミュニティの発展に伴う、Pythonはデータサイエンス、機械学習、深層学習などの領域において、最も重要な言語の一つと変わっていきました。
+# 
+# この授業は、Pythonの基礎から始め、**計算社会科学研究ためのデータ操作・処理・分析用プログラムを書くための基本的な技術**を習得することを目的とします。
 # 
 
 # ## 授業の内容
@@ -13,9 +15,13 @@
 # ### Python
 
 # Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語である。
+# 
+# この授業は、その中に代表的かつ実用性の高いライブラリを紹介します。
 
 # #### NumPy
-# [**NumPy**](https://numpy.org/doc/)は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。
+# [**NumPy**](https://numpy.org/doc/)は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールである。
+# 
+# 効率的な数値計算を行うための型付きの多次元配列（numpy.ndarray）のサポートをPythonに加えるとともに、それらを操作するための大規模な高水準の数学関数ライブラリを提供する。
 
 # - 配列を作成するための関数は多く備えています
 
@@ -89,7 +95,10 @@ np.dot(arr1, arr2)
 # #### pandas
 # 
 # [**pandas**](https://pandas.pydata.org/docs/)とは、データ解析を容易にする機能を提供するPythonのデータ解析ライブラリです。
-# Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。
+# 
+# Pandasの特徴は、データ操作のための高速で効率的なデータフレーム (DataFrame) という高いレベルのデータ構造データを提供しています。
+# 
+# csvやExcel、jsonなどのデータソースからデータを読み込んで操作することができます。そして、構造化されるデータ形式で、データの調整や変形など様々な処理が可能です。
 
 # In[10]:
 
@@ -116,6 +125,13 @@ data["sepal_width"].describe()
 # In[13]:
 
 
+# speciesごとに指標の平均を計算する
+data.groupby("species").mean().reset_index()
+
+
+# In[14]:
+
+
 # データフレームの変形
 data.melt(id_vars=["species"], 
         var_name="features", 
@@ -125,9 +141,13 @@ data.melt(id_vars=["species"],
 # 
 # #### matplotlib
 # 
-#  [**matplotlib**](https://matplotlib.org/stable/index.html)は、グラフ描画ライブラリである。オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持つ。Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、他のライブライとうまく連携しやすくなっています。
+#  [**matplotlib**](https://matplotlib.org/stable/index.html)は、グラフ描画ライブラリでです。
+#  
+#  オブジェクト指向のAPIを提供しており、様々な種類のグラフを描画する能力を持っています。
+#  
+#  Pythonで使える可視化ためのライブライは他にもありますが、Matplotlibは最も広く使われているため、PandasやNumpyなどのライブライとうまく連携しやすくなっています。
 
-# In[14]:
+# In[15]:
 
 
 import matplotlib.pyplot as plt
@@ -139,9 +159,71 @@ plt.hist(normal, bins=50, density=True, alpha=0.6, color='b')
 plt.show()
 
 
+# In[16]:
+
+
+for i in data["species"].unique():
+    plt.scatter(data[data["species"]==i]["sepal_length"],
+    data[data["species"]==i]["sepal_width"], label=i)
+plt.rcParams['xtick.direction'] = "out"
+plt.rcParams['ytick.direction'] = "in"
+plt.legend()
+
+
 # #### scikit-learn
 # 
-# [**scikit-learn**](https://scikit-learn.org/stable/)は機械学習ライブラリである。教師あり学習、教師なし学習に関する[アルゴリズム](https://scikit-learn.org/stable/modules/classes.html)(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装を提供しています。
+# [**scikit-learn**](https://scikit-learn.org/stable/)は機械学習ライブラリです。
+# 
+# NumPyやSciPyといった科学計算ライブラリと組み合わせて使用することができ、また、PandasやMatplotlibといったライブラリとの互換性も高く、機械学習モデルの開発、評価、デプロイまでを網羅する幅広い機能を提供しています。
+# 
+# 初心者にも扱いやすいAPIを提供しており、教師あり学習、教師なし学習に関する[アルゴリズム](https://scikit-learn.org/stable/modules/classes.html)(SVM、Random Forest、回帰、クラスタリングなど)の効率的な実装、交差検証、グリッドサーチ、チューニングや特徴量の選択など機械学習に関する操作もサポートされています。
+
+# In[17]:
+
+
+from sklearn.datasets import load_iris
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+# データセットの読み込み
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# データセットの分割（学習用データとテスト用データ）
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=3)
+
+# ロジスティック回帰モデルのインスタンス化
+logreg = LogisticRegression()
+
+# 学習
+logreg.fit(X_train, y_train)
+
+# テストデータを用いた予測
+y_pred = logreg.predict(X_test)
+
+# 結果の表示
+print("ロジスティック回帰モデルの予測の精度: {:.4f}".format(accuracy_score(y_test, y_pred)))
+
+
+# In[18]:
+
+
+from sklearn.svm import SVC
+svm = SVC()
+
+# SVMのインスタンス化
+svm = SVC()
+
+# 学習
+svm.fit(X_train, y_train)
+
+# テストデータを用いた予測
+y_pred = svm.predict(X_test)
+
+# 結果の表示
+print("サポートベクターマシンの予測の精度: {:.4f}".format(accuracy_score(y_test, y_pred)))
+
 
 # #### 学習の到達目標
 # 
@@ -176,6 +258,12 @@ plt.show()
 #     - グループワークの管理は<ins>GitとGitHub</ins>を使ってください。
 #     - グループ内の責任分担は自由ですが、<ins>全てのメンバーが一部のプログラミング作業を分担する</ins>ことが望ましい。
 #     - これからの授業で説明しますが、GitとGitHubによるプロジェクトを管理すると、<ins>各メンバーの作業履歴を確認できます</ins>ので、グループ全体の成果だけでなく、各メンバーの貢献度も加味して成績を評価します。
+# 
+# ```{note} データ解析プロジェクトについて
+# テーマとデータの選定は自由です。プロジェクトのイメージは、[kaggle](https://www.kaggle.com/)でJupyter Notebookのデータ解析リポートを参考してみてください。
+# Kaggleはデータサイエンスや機械学習の分野で有名なオンラインプラットフォームです。Kaggleには世界中のデータ科学者がデータセットやノートブックを共有しています。
+# ```
+# 
 # - 成績評価の分配は以下の通りです
 #     - 出席: $30\%$
 #     - 授業後の課題: $30\%$
@@ -183,7 +271,7 @@ plt.show()
 # ```{margin}
 # GitHub　Issueの使い方についてはこれからの授業で説明します。
 # ```
-# - 授業の内容に関して不明点あるいはご要望があれば、随時メールでご連絡ください。また、プログラミングや操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。
+# - 授業の内容に関して不明点あるいはご要望があれば、随時[メール](<mailto:lyu.zeyu.e8@tohoku.ac.jp>)でご連絡ください。また、プログラミングやソフトウェア操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。
 # - 授業のオフィスアワーは、できれば二日前アポイントを取ってくだい。
 
 # # 授業の資料
@@ -203,6 +291,4 @@ plt.show()
 # 
 # - [**GitHub**](https://github.com/)アカウントを作ってください。
 # - [公式サイト](https://git-scm.com/downloads)からGitをインストールしてください。
-# 
-
 # 
