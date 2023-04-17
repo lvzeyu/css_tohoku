@@ -429,6 +429,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#dict">
    辞書(dict)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     辞書の作成
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     辞書に要素の追加・変更
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     要素の取得
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -487,6 +504,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#dict">
    辞書(dict)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     辞書の作成
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     辞書に要素の追加・変更
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     要素の取得
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -940,6 +974,270 @@ title="Print to PDF"
 </section>
 <section id="dict">
 <h2>辞書(dict)<a class="headerlink" href="#dict" title="Permalink to this headline">#</a></h2>
+<p>辞書（dictionary）は、キー（key）と値（value）のペアを格納するデータ構造です。キーはユニークである必要があり、値は重複して格納することができます。</p>
+<p>辞書はミュータブルなので、キーと値要素を追加、削除、変更することは可能です。</p>
+<section id="id7">
+<h3>辞書の作成<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>辞書は波括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>で囲まれ、キーと値のペアはコロン:で区切って並べ、<code class="docutils literal notranslate"><span class="pre">{key:value}</span></code>という形で作れます。</p>
+<ul class="simple">
+<li><p>辞書にキーとして使用できるのは、イミュータブル型(例えば、整数、浮動小数点数、文字列、タプルなど)しか使用できません。</p></li>
+<li><p>辞書のキーはユニークである必要があります。</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">{}</span></code>でキーと値を持たない空辞書を作れます。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;Marx&quot;</span><span class="p">:</span> <span class="s2">&quot;German&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Weber&quot;</span><span class="p">:</span> <span class="s2">&quot;German&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Durkheim&quot;</span><span class="p">:</span><span class="s2">&quot;France&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Parsons&quot;</span><span class="p">:</span><span class="s2">&quot;America&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Marx</span><span class="o">=</span><span class="mi">1818</span><span class="p">,</span> <span class="n">Weber</span><span class="o">=</span><span class="mi">1864</span><span class="p">,</span> <span class="n">Durkheim</span><span class="o">=</span><span class="mi">1858</span><span class="p">,</span> <span class="n">Parsons</span><span class="o">=</span><span class="mi">1902</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span><span class="o">=</span><span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;Marx&quot;</span><span class="p">,</span><span class="mi">1818</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Weber&quot;</span><span class="p">,</span><span class="mi">1864</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Durkheim&quot;</span><span class="p">,</span><span class="mi">1858</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Parsons&quot;</span><span class="p">,</span><span class="mi">1902</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3>辞書に要素の追加・変更<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>キーを使って要素を参照し、値を代入することで辞書に要素を追加できます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="p">[</span><span class="s2">&quot;Merton&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;America&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Marx&#39;: &#39;German&#39;,
+ &#39;Weber&#39;: &#39;German&#39;,
+ &#39;Durkheim&#39;: &#39;France&#39;,
+ &#39;Parsons&#39;: &#39;America&#39;,
+ &#39;Merton&#39;: &#39;America&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>キーはユニークでなければならないので、キーを複数回使った場合、最後の値が辞書に保留されます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span><span class="p">[</span><span class="s2">&quot;Merton&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">1911</span> <span class="c1"># 間違い</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Marx&#39;: 1818,
+ &#39;Weber&#39;: 1864,
+ &#39;Durkheim&#39;: 1858,
+ &#39;Parsons&#39;: 1902,
+ &#39;Merton&#39;: 1911}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span><span class="p">[</span><span class="s2">&quot;Merton&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">1910</span> <span class="c1"># 正しい値</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Marx&#39;: 1818,
+ &#39;Weber&#39;: 1864,
+ &#39;Durkheim&#39;: 1858,
+ &#39;Parsons&#39;: 1902,
+ &#39;Merton&#39;: 1910}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h3>要素の取得<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>辞書のもっとも一般的な用途は、キーを指定して、対応する値を取り出すことです。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="p">[</span><span class="s2">&quot;Durkheim&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;France&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Durkheim&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;France&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code>によるすべてのキーの取得</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Marx&#39;, &#39;Weber&#39;, &#39;Durkheim&#39;, &#39;Parsons&#39;, &#39;Merton&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code>によるすべての値の取得</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;German&#39;, &#39;German&#39;, &#39;France&#39;, &#39;America&#39;, &#39;America&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code>によるキー・値ペアの取得</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;Marx&#39;, &#39;German&#39;), (&#39;Weber&#39;, &#39;German&#39;), (&#39;Durkheim&#39;, &#39;France&#39;), (&#39;Parsons&#39;, &#39;America&#39;), (&#39;Merton&#39;, &#39;America&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code>による長さの取得</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">nation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">update()</span></code>による辞書の結合</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>第2辞書が第1辞書と同じキーを持っている場合、<code class="docutils literal notranslate"><span class="pre">update()</span></code>による第2辞書の値が保留されます。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation2</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Goffman</span><span class="o">=</span><span class="s2">&quot;America&quot;</span><span class="p">,</span> <span class="n">Giddens</span><span class="o">=</span><span class="s2">&quot;England&quot;</span><span class="p">,</span> <span class="n">Habermas</span><span class="o">=</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">nation2</span><span class="p">)</span>
+<span class="n">nation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Marx&#39;: &#39;German&#39;,
+ &#39;Weber&#39;: &#39;German&#39;,
+ &#39;Durkheim&#39;: &#39;France&#39;,
+ &#39;Parsons&#39;: &#39;America&#39;,
+ &#39;Merton&#39;: &#39;America&#39;,
+ &#39;Goffman&#39;: &#39;America&#39;,
+ &#39;Giddens&#39;: &#39;England&#39;,
+ &#39;Habermas&#39;: &#39;Germany&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">del</span></code>による指定したキーを持つ要素の削除</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">nation</span><span class="p">[</span><span class="s1">&#39;Giddens&#39;</span><span class="p">]</span>
+<span class="n">nation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Marx&#39;: &#39;German&#39;,
+ &#39;Weber&#39;: &#39;German&#39;,
+ &#39;Durkheim&#39;: &#39;France&#39;,
+ &#39;Parsons&#39;: &#39;America&#39;,
+ &#39;Merton&#39;: &#39;America&#39;,
+ &#39;Goffman&#39;: &#39;America&#39;,
+ &#39;Habermas&#39;: &#39;Germany&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 

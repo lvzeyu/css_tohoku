@@ -534,8 +534,8 @@ title="Print to PDF"
 <section id="id1">
 <h2>紹介<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://git-scm.com/">Git</a>は「<strong>パージョン管理システム(Version Control System)</strong>」と呼ばれるものの一つです。</p>
-<p>パージョン管理システムとは、一つのファイル、または複数のファイルの集合に対して、時間とともに加えられた変更を記録するシステムで、後から特定のバージョンを呼び出すことができるようにするためのものです。</p>
-<p>ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、またはどのタイミングで問題が起こっていたかを確認したり、様々なことができるプログラム開発やファイル管理を補助するシステムです。</p>
+<p>パージョン管理システム(（Version Control System)とは、プログラムやドキュメントなどのファイルに対して、時間とともに加えられた変更を記録するシステムです。</p>
+<p>具体的に言えば、ファイルの「パージョン(変更履歴)」を記録して、いつでも過去の状況に戻したり、過去の変更履歴を比較したり、またはどのタイミングで問題が起こっていたかを確認したり、様々なことができるプログラム開発やファイル管理を補助するシステムです。</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>様々な方法でGitを使うことができますが、この授業では、コマンドラインツールとVSCodeでGitを使います。コマンドラインツールを利用する際、Macの場合はターミナル、Windowsの場合はコマンド・プロンプトやPowerShellを使います。</p>
@@ -584,8 +584,8 @@ title="Print to PDF"
 <p>空のディレクトリではなくすでに存在するファイルのバージョン管理を始めたい場合は、まずそのファイルを監視対象に追加する。例えば、すでに存在する<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を以下のコマンドで追加します。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code></p>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c4bca580-b362-44ba-ad66-ff154aff63a5" name="98f34af7-c9d3-4134-962a-b6e6a503acec" type="radio">
-</input><label class="sd-tab-label" for="c4bca580-b362-44ba-ad66-ff154aff63a5">
+<input checked="checked" id="c314d2ec-b101-40ff-a5fe-9fd34f55496f" name="b4d0da44-d3fb-4451-9233-19a1109a12f2" type="radio">
+</input><label class="sd-tab-label" for="c314d2ec-b101-40ff-a5fe-9fd34f55496f">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ディレクトリを作ろう</p></li>
@@ -601,8 +601,8 @@ cd test
 git init
 </pre>
 </div>
-<input id="a1e78a1f-d5d8-4005-bb3c-9389d2f370b6" name="98f34af7-c9d3-4134-962a-b6e6a503acec" type="radio">
-</input><label class="sd-tab-label" for="a1e78a1f-d5d8-4005-bb3c-9389d2f370b6">
+<input id="a837a114-99f0-47ff-8c33-ca2ae577c269" name="b4d0da44-d3fb-4451-9233-19a1109a12f2" type="radio">
+</input><label class="sd-tab-label" for="a837a114-99f0-47ff-8c33-ca2ae577c269">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ファイル」→「フォルダーを開く』→　ディレクトリを選択。VSCode左側の『エクスプローラー』に、開いたフォルダ名が表示されます。</p></li>
@@ -615,11 +615,18 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <section id="commit">
 <h3>コミット(commit)<a class="headerlink" href="#commit" title="Permalink to this headline">#</a></h3>
 <p>リポジトリを作成すると、そこに対する<strong>ファイルの変更履歴を登録すること</strong>ができます。その操作を<ins><strong>コミット(commit)</strong><ins>といいます。</p>
-<p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョンと呼ばれるものが作成されます。コミットによって、ディレクトリ中の全てのファイルのスナップショットを記録します。</p>
+<p>コミットを実行すると、リポジトリの内では、前回コミットした時の状態から現在の状態までの差分を記録したリビジョン(Revision)と呼ばれるものが作成されます。</p>
+<p>コミットによって、ディレクトリ中の全てのファイルのスナップショットを記録します。</p>
 <p><img alt="" src="../_images/commit1.png" /></p>
 <ul class="simple">
-<li><p>Gitの管理下に置かれた、みなさんが実際に作業をしているディレクトリのことを<ins>ワークツリー<ins>と呼びます。</p></li>
-<li><p>Gitでは、コミットを実行した時にワークツリーから直接リポジトリ内に状態を記録するのでなく、その間に設けられている<ins>インデックス<ins>の設定された状態を記録するようになっています。インデックスとは、リポジトリにコミットする準備をするための場所のことです。そのため、コミットでファイルの状態を記録するためには、<ins>まずインデックスにファイルを登録する必要があります。<ins>このようにインデックスを間に挟むことで、ワークツリー内の必要ないファイルを含めずにコミットを行ったり、ファイルの一部の変更だけをインデックスに登録してコミットすることができます。</p></li>
+<li><p>Gitの管理下に置かれた、みなさんが実際に作業をしているディレクトリのことを<strong>ワークツリー</strong>と呼びます。</p></li>
+<li><p>Gitでは、コミットを実行した時にワークツリーから直接リポジトリ内に状態を記録するのでなく、その間に設けられている<strong>インデックス</strong>の設定された状態を記録するようになっています。</p>
+<ul>
+<li><p>インデックスとは、リポジトリにコミットする準備をするための場所のことです。</p></li>
+<li><p>コミットでファイルの状態を記録するためには、<ins>まずインデックスにファイルを登録する必要があります。<ins></p></li>
+<li><p>このようにインデックスを間に挟むことで、ワークツリー内の必要ないファイルを含めずにコミットを行ったり、ファイルの一部の変更だけをインデックスに登録してコミットすることができます。</p></li>
+</ul>
+</li>
 <li><p>まとめると、コミットのプロセスは以下になります:</p>
 <ol class="simple">
 <li><p>ワークツリー（作業している場所）で編集、変更を行います</p></li>
@@ -629,8 +636,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </li>
 </ul>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="232c2066-da44-42d4-9a75-7aca73265e19" name="c0f5ce93-17c6-4c6b-aae8-c0fb9998e01a" type="radio">
-</input><label class="sd-tab-label" for="232c2066-da44-42d4-9a75-7aca73265e19">
+<input checked="checked" id="5fe1ae2a-3385-4369-bec2-bd2dd405ce4b" name="ad1ba3c0-e71a-4602-9634-5bc0faee07fe" type="radio">
+</input><label class="sd-tab-label" for="5fe1ae2a-3385-4369-bec2-bd2dd405ce4b">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ディレクトリで任意のファイルを作る。例えば、</p></li>
@@ -661,8 +668,8 @@ git commit -m "myfileを作成ました"
 </pre>
 <p><img alt="" src="../_images/git_status_3.png" /></p>
 </div>
-<input id="d74cedd8-3203-4191-a087-85a54c15dd13" name="c0f5ce93-17c6-4c6b-aae8-c0fb9998e01a" type="radio">
-</input><label class="sd-tab-label" for="d74cedd8-3203-4191-a087-85a54c15dd13">
+<input id="06db91b9-530d-460e-b376-b62ef8a56ff9" name="ad1ba3c0-e71a-4602-9634-5bc0faee07fe" type="radio">
+</input><label class="sd-tab-label" for="06db91b9-530d-460e-b376-b62ef8a56ff9">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ファイルを作成すると、VSCodeが自動的に変更を検出し、ソース管理サイドバーで数字が表示されます。</p></li>
@@ -682,8 +689,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>仮に、<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を削除し、コミットした操作を行いましたが、実はこのファイルは捨ててはいけないファイルだったと気ついたとします。</p>
 <p>Gitで間違えた変更を元に戻していきましょう。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="559598d0-7a62-4cb9-a233-9bd52c62ba2e" name="743b68b7-92b7-4ed7-89cd-57465c911200" type="radio">
-</input><label class="sd-tab-label" for="559598d0-7a62-4cb9-a233-9bd52c62ba2e">
+<input checked="checked" id="9e197b32-2e03-41e5-97a4-c3b5537228e3" name="a2711a4d-89ff-426f-96ee-6bc050ebfd79" type="radio">
+</input><label class="sd-tab-label" for="9e197b32-2e03-41e5-97a4-c3b5537228e3">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を削除し、<code class="docutils literal notranslate"><span class="pre">delete</span> <span class="pre">myfile</span></code>というコメントでコミットします。</p></li>
@@ -695,8 +702,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code>は現在使用しているブランチの先頭を表す、つまり、今自分が作業をしているブランチの最新のコミットを示すことです。</p>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="114d1794-4856-4889-9812-88a9bcbd6e03" name="55d036a1-bd52-4ba0-bbf3-ea7604333988" type="radio">
-</input><label class="sd-tab-label" for="114d1794-4856-4889-9812-88a9bcbd6e03">
+<input checked="checked" id="81b61020-8ccd-4015-8f78-1e3ae3293b57" name="4c7621f0-21cc-4c82-bf08-03e3b868f2a9" type="radio">
+</input><label class="sd-tab-label" for="81b61020-8ccd-4015-8f78-1e3ae3293b57">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>でコミットの情報を確認します。コミットを特定するためには、<code class="docutils literal notranslate"><span class="pre">5d5277156bfef81535e8938f4e9f71b1db2eacf8</span></code>のような形のハッシュを使います。</p></li>
@@ -713,8 +720,8 @@ git reset 8983e71d981c204a92d417c0301b8e9c5f99b7f9
 </pre>
 <p>-「特定のコミットまで戻す」とは、コミットにおけるワークツーリ、インデックス、リポジトリのどちらに戻すでも可能です。コマンドにオプションを付加することでresetの方法を指定できます。デフォルトの場合は、コミットとステージングが元の状態に戻ります。</p>
 </div>
-<input id="7fb2831b-46ca-4529-888c-0b85737deb56" name="55d036a1-bd52-4ba0-bbf3-ea7604333988" type="radio">
-</input><label class="sd-tab-label" for="7fb2831b-46ca-4529-888c-0b85737deb56">
+<input id="5a970c75-c59d-4cf4-955d-72183babfab9" name="4c7621f0-21cc-4c82-bf08-03e3b868f2a9" type="radio">
+</input><label class="sd-tab-label" for="5a970c75-c59d-4cf4-955d-72183babfab9">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a>という拡張機能をインストールします。</p></li>
@@ -733,8 +740,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="70c900cf-7c86-4375-b892-4219aa5c819e" name="1add8216-5f33-4985-aaca-3a51c1294ecf" type="radio">
-</input><label class="sd-tab-label" for="70c900cf-7c86-4375-b892-4219aa5c819e">
+<input checked="checked" id="3b5bf1f9-cbe8-488b-98f8-c04066c67851" name="fd3aa122-8b8d-46cb-9607-17dd2286c2fd" type="radio">
+</input><label class="sd-tab-label" for="3b5bf1f9-cbe8-488b-98f8-c04066c67851">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>で一つ前のコミットに戻す、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でコミット状態を確認してください。</p></li>
@@ -753,8 +760,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>ブランチ機能を使うことで、複数の状態を同時に保つことができます。個人作業での試行錯誤もグールプの共同作業も非常に役を立っています。</p>
 <p><img alt="" src="../_images/branch.png" /></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4a9e5d3b-0925-4cf9-93b5-f9281efd4e6c" name="00e2ab5f-db5a-462b-86e7-9a04bab3fd9f" type="radio">
-</input><label class="sd-tab-label" for="4a9e5d3b-0925-4cf9-93b5-f9281efd4e6c">
+<input checked="checked" id="e5550c80-5136-44c1-9420-cf61311a9cf4" name="25c3dce3-15b5-40b1-ad50-ed118dd4af9b" type="radio">
+</input><label class="sd-tab-label" for="e5550c80-5136-44c1-9420-cf61311a9cf4">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">myfile2.txt</span></code>という新しいファイルを作成し、<code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">myfile2</span></code>というコメントでコミットします。</p></li>
@@ -763,8 +770,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7a60a167-4d38-4fac-bd92-0251607e1951" name="02f5efec-9b5c-43f9-ad57-eefe39d829d1" type="radio">
-</input><label class="sd-tab-label" for="7a60a167-4d38-4fac-bd92-0251607e1951">
+<input checked="checked" id="c471a777-80a5-4b3e-9d36-4ad86f2f4e9f" name="2a6636b5-4a42-4daa-84aa-d10c9af58ac0" type="radio">
+</input><label class="sd-tab-label" for="c471a777-80a5-4b3e-9d36-4ad86f2f4e9f">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>新しいブランチを作ってみましょう。例えば、以下のコマンドで<code class="docutils literal notranslate"><span class="pre">develop</span></code>という名前のブランチを作成します。</p></li>
@@ -786,8 +793,8 @@ git checkout 8983e71 -b renewal
 git checkout develop
 </pre>
 </div>
-<input id="3c909c6b-62cf-4d02-b1bc-aec95eeda9c3" name="02f5efec-9b5c-43f9-ad57-eefe39d829d1" type="radio">
-</input><label class="sd-tab-label" for="3c909c6b-62cf-4d02-b1bc-aec95eeda9c3">
+<input id="0c6cabcd-0355-4dce-ac5f-fb0fbd6e8dec" name="2a6636b5-4a42-4daa-84aa-d10c9af58ac0" type="radio">
+</input><label class="sd-tab-label" for="0c6cabcd-0355-4dce-ac5f-fb0fbd6e8dec">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>画面の左下のブランチ名（main/master）が表示されている個所をクリックし、新しいブランチを作成を実行します。手順で作成するブランチ名を入力してブランチを作成します。</p></li>
@@ -813,8 +820,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </aside>
 <p><img alt="" src="../_images/git_merge_1.svg" /></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c30f0802-7ab0-4e59-817c-e27e400fd5a4" name="a9adb4c5-5c62-4f5d-8df6-b178d9da7cc7" type="radio">
-</input><label class="sd-tab-label" for="c30f0802-7ab0-4e59-817c-e27e400fd5a4">
+<input checked="checked" id="53186245-0b9f-4dbb-98b5-7516958e02de" name="c546c325-1376-45e2-b7a3-4beedcbcf4a8" type="radio">
+</input><label class="sd-tab-label" for="53186245-0b9f-4dbb-98b5-7516958e02de">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチに切り替えます。</p></li>
@@ -826,19 +833,19 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <img alt="" src="../_images/git_merge_2.svg" />
 ここで、<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチを```main/master``ブランチにマージします。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8050e81a-5400-4a35-9012-ea17d5d8f24d" name="ce9b8f0a-5ead-474e-8ba4-eac5b5e8dc05" type="radio">
-</input><label class="sd-tab-label" for="8050e81a-5400-4a35-9012-ea17d5d8f24d">
+<input checked="checked" id="4cd86a21-ee4e-40ec-9d69-c7b5d64c781e" name="71ba8381-7e4d-482d-a392-d244d8255f65" type="radio">
+</input><label class="sd-tab-label" for="4cd86a21-ee4e-40ec-9d69-c7b5d64c781e">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>で現在<code class="docutils literal notranslate"><span class="pre">main/master</span></code>ブランチにいることを確認します。</p></li>
 <li><p>マージを実行します。</p></li>
 </ul>
 <pre>
-git merge develop -m "merge develop branch
+git merge develop -m "merge develop branch"
 </pre>
 </div>
-<input id="57513ce6-fe45-4b21-98ee-697c021ffa94" name="ce9b8f0a-5ead-474e-8ba4-eac5b5e8dc05" type="radio">
-</input><label class="sd-tab-label" for="57513ce6-fe45-4b21-98ee-697c021ffa94">
+<input id="f92bbaf4-83f9-410d-964e-f88335b690dd" name="71ba8381-7e4d-482d-a392-d244d8255f65" type="radio">
+</input><label class="sd-tab-label" for="f92bbaf4-83f9-410d-964e-f88335b690dd">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ステータスバーの左下端に表示されているブランチが「<code class="docutils literal notranslate"><span class="pre">main/master</span></code>」になっていることを確認します。</p></li>
@@ -854,6 +861,22 @@ VSCode操作</label><div class="sd-tab-content docutils">
 git log --graph --decorate --oneline
 </pre>
 <p><img alt="" src="../_images/git_merge_4.png" /></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="de20bfb4-fc25-4a66-93fc-df2f2eeb39a2" name="7dc3b0fe-b9dc-4ff8-8775-1cebd47058b7" type="radio">
+</input><label class="sd-tab-label" for="de20bfb4-fc25-4a66-93fc-df2f2eeb39a2">
+課題</label><div class="sd-tab-content docutils">
+<p>以下の指示に従って操作を行ってくだい。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chss2023_practices</span></code>という名前のフォルダを作成し、その中でGitを初期化します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code>というファイルを作成し、“README.mdを作成しました” というメッセージでコミットしてください。</p></li>
+<li><p>“README.mdを作成しました” のコミットに基づく、<code class="docutils literal notranslate"><span class="pre">develop</span></code>というブランチを作成してくだい。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master/main</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">practice1.txt</span></code>というファイルを作成し、“practice1.txtを作成しました” というメッセージでコミットしてください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">practice2.txt</span></code>というファイルを作成し、“practice2.txtを作成しました” というメッセージでコミットしてください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master/main</span></code>ブランチに<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチをマージします。メッセージは”merge develop branch” で入力してください。</p></li>
+<li><p>「ソース管理」→「Show Commit Graph」でコミット履歴を確認してくだい。表示されるCommit Graphをスクリーンショットして、課題として提出してください。</p></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 </section>
