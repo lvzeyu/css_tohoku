@@ -334,9 +334,3 @@ name.replace("Max","Karl").replace("Weber","Marx")
 
 True or False
 
-
-# In[ ]:
-
-
-
-
