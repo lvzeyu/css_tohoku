@@ -170,6 +170,11 @@ const thebe_selector_output = ".output, .cell_output"
    データ構造
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if.html">
+   分岐
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -502,6 +507,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   GitHubに関する課題
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -629,6 +639,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   GitHubに関する課題
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -688,8 +703,8 @@ title="Print to PDF"
 <p>GitHubの使い方は、公式のチュートリアルを適宜参照してください。</p>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a1ee9273-7747-4a7d-91e9-d08385920416" name="8fe2ceb8-eb3b-40b1-8992-c0109259537c" type="radio">
-</input><label class="sd-tab-label" for="a1ee9273-7747-4a7d-91e9-d08385920416">
+<input checked="checked" id="206b142d-f714-4503-89f7-44cb5b5233fd" name="69f4864f-091e-465a-b577-80d5baee9e25" type="radio">
+</input><label class="sd-tab-label" for="206b142d-f714-4503-89f7-44cb5b5233fd">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ページの右上隅で、[<span class="math notranslate nohighlight">\(+\)</span>]ドロップダウンメニューを使用して、 [新しいリポジトリ] を選択します。
@@ -708,8 +723,8 @@ git remote add origin git@github.com:lvzeyu/test.git
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>でリモートリポジトリの一覧を確認します。正しく追加されたら、<code class="docutils literal notranslate"><span class="pre">origin</span></code>というリモートリポジトリが表示されます。</p></li>
 </ul>
 </div>
-<input id="dcbc4bbd-0871-4bdd-81eb-c34804ce935d" name="8fe2ceb8-eb3b-40b1-8992-c0109259537c" type="radio">
-</input><label class="sd-tab-label" for="dcbc4bbd-0871-4bdd-81eb-c34804ce935d">
+<input id="18dbdd07-4a94-442a-bde2-6749f5b420b9" name="69f4864f-091e-465a-b577-80d5baee9e25" type="radio">
+</input><label class="sd-tab-label" for="18dbdd07-4a94-442a-bde2-6749f5b420b9">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>新しいリモートリポジトリの作成
@@ -735,8 +750,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <h3>プッシュ(Push)<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリにローカルリポジトリでの変更を反映する操作は「プッシュ」といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3aa713fd-f42a-4e26-9e3a-8440808dda55" name="af972b62-3600-47f3-a7e8-f72d709cf275" type="radio">
-</input><label class="sd-tab-label" for="3aa713fd-f42a-4e26-9e3a-8440808dda55">
+<input checked="checked" id="2c81ce70-505c-476e-b93a-131425718606" name="30767217-cab8-4784-bb98-80763048348e" type="radio">
+</input><label class="sd-tab-label" for="2c81ce70-505c-476e-b93a-131425718606">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>でリモートリポジトリとの連携状況を確認します。</p></li>
@@ -747,8 +762,8 @@ git push -u origin main
 </pre>
 <p><img alt="" src="../_images/git_push.png" /></p>
 </div>
-<input id="6decf614-9bfc-414f-bcfd-ebccf1016f4d" name="af972b62-3600-47f3-a7e8-f72d709cf275" type="radio">
-</input><label class="sd-tab-label" for="6decf614-9bfc-414f-bcfd-ebccf1016f4d">
+<input id="3cdb2478-8ade-4afd-b682-1256a772d39b" name="30767217-cab8-4784-bb98-80763048348e" type="radio">
+</input><label class="sd-tab-label" for="3cdb2478-8ade-4afd-b682-1256a772d39b">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「REMOTES」でリモートリポジトリとの連携状況を確認します。</p></li>
@@ -762,15 +777,15 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <h3>フェッチ(Fetch)<a class="headerlink" href="#fetch" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリとローカルリポジトリ、それぞれの状況に違いがあるかを調べる操作は、フェッチ(Fetch)といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2bb21cea-1853-4e67-ad41-5ab7638d11f6" name="ea00257c-f816-4e87-ac65-90fe9f16052d" type="radio">
-</input><label class="sd-tab-label" for="2bb21cea-1853-4e67-ad41-5ab7638d11f6">
+<input checked="checked" id="7e89518a-e3ec-4fc5-8ccf-2601302e816a" name="1fd3397a-4bc4-4293-b272-f217544dcab1" type="radio">
+</input><label class="sd-tab-label" for="7e89518a-e3ec-4fc5-8ccf-2601302e816a">
 実習問題1</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>GitHubでリモートリポジトリのREADMEファイルを作成し、適宜内容を加えて、その変更をコミットします。</p></li>
 </ul>
 </div>
-<input id="3d4f0c2d-18d2-4027-b89c-eefa4504bab3" name="ea00257c-f816-4e87-ac65-90fe9f16052d" type="radio">
-</input><label class="sd-tab-label" for="3d4f0c2d-18d2-4027-b89c-eefa4504bab3">
+<input id="1969be05-60b8-4452-8dd1-1f3399df4840" name="1fd3397a-4bc4-4293-b272-f217544dcab1" type="radio">
+</input><label class="sd-tab-label" for="1969be05-60b8-4452-8dd1-1f3399df4840">
 実習問題2</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>ローカルリポジトリの<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>に任意の変更を加えて、その変更をコミットします。</p></li>
@@ -782,8 +797,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>ログが途中までして表示されおらず、プロンプトが<code class="docutils literal notranslate"><span class="pre">「：」</span></code>となっている場合、<code class="docutils literal notranslate"><span class="pre">q</span></code>キーを押してください。</p>
 </aside>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="640a8620-40d7-4ab4-8061-6cf56390a2c9" name="ab6af945-c3de-42fb-b70b-64e57362c9fd" type="radio">
-</input><label class="sd-tab-label" for="640a8620-40d7-4ab4-8061-6cf56390a2c9">
+<input checked="checked" id="b6297a88-f093-4fb3-ba97-367edd3c1c3a" name="c00ffe44-9a0e-48c9-93e9-b1e4dfaa1458" type="radio">
+</input><label class="sd-tab-label" for="b6297a88-f093-4fb3-ba97-367edd3c1c3a">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>でリモートリポジトリの状況を取ってきます。</p></li>
@@ -791,8 +806,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <img alt="" src="../_images/git_fetch.png" /></p></li>
 </ul>
 </div>
-<input id="0cd186d5-9cc7-4f42-a91d-f7ce5db17742" name="ab6af945-c3de-42fb-b70b-64e57362c9fd" type="radio">
-</input><label class="sd-tab-label" for="0cd186d5-9cc7-4f42-a91d-f7ce5db17742">
+<input id="98070231-4aeb-4b42-b06b-73c7fb915c62" name="c00ffe44-9a0e-48c9-93e9-b1e4dfaa1458" type="radio">
+</input><label class="sd-tab-label" for="98070231-4aeb-4b42-b06b-73c7fb915c62">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「fetch」でフェッチを行います。</p></li>
@@ -806,16 +821,16 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <h3>プル(Pull)<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h3>
 <p>リモートリポジトリに加えられた変更がローカルリポジトリに取り込まれる操作は「プル(Pull)」といいます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="34db3ac4-0531-4d1f-b536-02a70a7e02ea" name="81265218-6e69-42cd-bc06-c09260c59dbf" type="radio">
-</input><label class="sd-tab-label" for="34db3ac4-0531-4d1f-b536-02a70a7e02ea">
+<input checked="checked" id="d07b4234-4c54-40f4-b827-ec0a5d7ab8be" name="efd0819e-28ea-4500-bf63-5b474c7b326d" type="radio">
+</input><label class="sd-tab-label" for="d07b4234-4c54-40f4-b827-ec0a5d7ab8be">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>でプル操作を行います。</p></li>
 <li><p>ローカルリポジトリの内容が更新されることを確認できます。</p></li>
 </ul>
 </div>
-<input id="b039e59a-47ba-4b64-b44f-5d1b948f00be" name="81265218-6e69-42cd-bc06-c09260c59dbf" type="radio">
-</input><label class="sd-tab-label" for="b039e59a-47ba-4b64-b44f-5d1b948f00be">
+<input id="562033e6-4db4-4085-90cd-038bc0aece0e" name="efd0819e-28ea-4500-bf63-5b474c7b326d" type="radio">
+</input><label class="sd-tab-label" for="562033e6-4db4-4085-90cd-038bc0aece0e">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「<code class="docutils literal notranslate"><span class="pre">...</span></code>」→ 「pull」でフェッチを行います。</p></li>
@@ -831,8 +846,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <p>ローカルリポジトリでは、コミットをした後間違いに気づいたときは、リセットをしてやり直すことができます。</p>
 <p>リモートリポジトリにプッシュしてしまった後で間違いに気づいたら、<code class="docutils literal notranslate"><span class="pre">revert</span></code>でコミットを取り消せることができます。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6f8e2c2d-7b9f-4614-86d3-c97654ce125d" name="b20cf5b2-897a-41a6-84d4-15edb668ab1e" type="radio">
-</input><label class="sd-tab-label" for="6f8e2c2d-7b9f-4614-86d3-c97654ce125d">
+<input checked="checked" id="5397e2fc-be26-4aac-bada-345397825977" name="9a7a450d-9f50-4082-ab37-ce7ae8ae4d7d" type="radio">
+</input><label class="sd-tab-label" for="5397e2fc-be26-4aac-bada-345397825977">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>での変更をリモートリポジトリにプッシュします。</p></li>
@@ -842,8 +857,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d936eb2d-0a4a-4a7b-acc3-741b52b5d141" name="f834cfec-f744-4575-8987-f2bdf10bd9b3" type="radio">
-</input><label class="sd-tab-label" for="d936eb2d-0a4a-4a7b-acc3-741b52b5d141">
+<input checked="checked" id="157adbf4-55a4-4fb6-b6a5-14106a54d01b" name="25aad42e-d09e-4b99-bf9d-dc8a7b09518c" type="radio">
+</input><label class="sd-tab-label" for="157adbf4-55a4-4fb6-b6a5-14106a54d01b">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code>コマンドで打ち消したいコミットを指定します。例えば、</p></li>
@@ -862,8 +877,8 @@ git push
 </ul>
 <p><img alt="" src="../_images/revert2.png" /></p>
 </div>
-<input id="7a655f1e-abbd-49bd-923f-4d0c27125003" name="f834cfec-f744-4575-8987-f2bdf10bd9b3" type="radio">
-</input><label class="sd-tab-label" for="7a655f1e-abbd-49bd-923f-4d0c27125003">
+<input id="d0384ce9-17e4-482f-a4ff-866ff8703073" name="25aad42e-d09e-4b99-bf9d-dc8a7b09518c" type="radio">
+</input><label class="sd-tab-label" for="d0384ce9-17e4-482f-a4ff-866ff8703073">
 VSCode操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>「ソース管理」→ 「COMMITS」でコミットの一覧を確認します。</p></li>
@@ -934,10 +949,10 @@ git push --set-upstream origin develop
 <p>ここで、この授業のリモートリポジトリをクローンしてみましょう。</p>
 <ul class="simple">
 <li><p>クローンをするためには、まずは目的のリモートリポジトリのアドレスを手に入れる必要があります。リモートリポジトリの画面の右上の「Code」ボタンをクリクリします。</p></li>
-<li><p>「Clone」というエリアにアドレスで、「SSH」を選択し、リモートリポジトリのアドレスをコピーしておきます。<code class="docutils literal notranslate"><span class="pre">git&#64;github.com:lvzeyu/css_tohoku.git</span></code></p></li>
+<li><p>「Clone」というエリアにアドレスで、「SSH」を選択し、リモートリポジトリのアドレスをコピーしておきます。<code class="docutils literal notranslate"> <span class="pre">git&#64;github.com:lvzeyu/chss_2023_assignment.git</span></code></p></li>
 <li><p>自分のPCでターミナルを開く、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>コマンドにリモートリポジトリのアドレスを指定すると、そのコピーはディレクトリとしてローカルに作られます。</p></li>
 </ul>
-<p><img alt="" src="../_images/clone.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span>&#160; <span class="pre">git&#64;github.com:lvzeyu/chss_2023_assignment.git</span></code></p>
 </section>
 </section>
 </section>
@@ -996,6 +1011,21 @@ git push --set-upstream origin develop
 <li><p>ラベルでIssueを分類します。</p></li>
 </ul>
 </section>
+</section>
+<section id="id12">
+<h2>GitHubに関する課題<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<p>以下の手順に従って、課題提出するための<a class="reference external" href="https://github.com/lvzeyu/chss_2023_assignment">リポジトリ</a>に課題を提出しましょう。</p>
+<ul class="simple">
+<li><p>最新の状況を取得するために、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>を行なってください。</p></li>
+<li><p>各自のブランチを作ってください。 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">[name]</span></code>,[name]では誰なのかわかるように名前付けください。</p></li>
+<li><p>自分のブランチに移動してください(<strong>ここ重要!</strong>)。VSCodeの左下で自分のブランチにいるかどうかを確認してください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">課題0426</span></code>というフォルダの中に、<code class="docutils literal notranslate"><span class="pre">[name].txt</span></code>というファイルを作成してください([name]では誰なのかわかるように名前付けください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>で操作をコミットしてください。メッセージは<code class="docutils literal notranslate"><span class="pre">XXXが課題を提出しました</span></code>で書いてください。</p></li>
+<li><p>コミットが終わりましたら、操作をリモートリポジトリにプッシュします。「VScode」→「ソース管理」→「Branchの発行」を押してください。</p></li>
+<li><p>GitHubのリモートリポジトリでファイルが同期されたかどうかを確認してください。「 XXX had recent pushes less than a minute ago」のようなメッセージが表示されるはずです。</p></li>
+<li><p>mainブランチにマージするのpull requestを行います。「Compare&amp;pull request」を押して、次の画面でタイトルとコメントを適宜入力し、<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">pull</span> <span class="pre">request</span></code>を押してください。</p></li>
+<li><p>教員がpull requestを確認するから承認しますので、承認まで待ってください。</p></li>
+</ul>
 </section>
 </section>
 
