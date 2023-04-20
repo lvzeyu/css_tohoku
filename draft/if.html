@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Presistence &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>分岐 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="データ構造" href="data_struture.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -145,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
   Pythonの基礎
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_environment.html">
    Python環境
@@ -166,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
    データ構造
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="if.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    分岐
   </a>
  </li>
@@ -230,7 +233,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/persistence.ipynb"
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/if.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -248,7 +251,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/persistence.ipynb"
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/if.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -308,7 +311,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/persistence.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/if.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -336,7 +339,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/draft/persistence.ipynb"
+        <a href="../_sources/draft/if.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -396,35 +399,9 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csv">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     csv
-    </span>
-   </code>
-   モジュール
+  <a class="reference internal nav-link" href="#if">
+   if文とブロックの書き方
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     json
-    </span>
-   </code>
-   モジュール
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dump">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dump
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -435,7 +412,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Presistence</h1>
+                <h1>分岐</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -446,35 +423,9 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csv">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     csv
-    </span>
-   </code>
-   モジュール
+  <a class="reference internal nav-link" href="#if">
+   if文とブロックの書き方
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     json
-    </span>
-   </code>
-   モジュール
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dump">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       dump
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -486,16 +437,94 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="presistence">
-<h1>Presistence<a class="headerlink" href="#presistence" title="Permalink to this headline">#</a></h1>
-<section id="csv">
-<h2><code class="docutils literal notranslate"><span class="pre">csv</span></code>モジュール<a class="headerlink" href="#csv" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="json">
-<h2><a class="reference external" href="https://docs.python.org/ja/3/library/json.html"><code class="docutils literal notranslate"><span class="pre">json</span></code></a>モジュール<a class="headerlink" href="#json" title="Permalink to this headline">#</a></h2>
-<section id="dump">
-<h3><code class="docutils literal notranslate"><span class="pre">dump</span></code><a class="headerlink" href="#dump" title="Permalink to this headline">#</a></h3>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>分岐<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>ここまでは一文だけの命令を作ってきました。でも、本格的なプログラミングのためには、複数の文を繰返し実行したり、条件分岐させたりということが必要になります。これを制御文と言います。比較演算子や論理演算子について学んだので、いろいろな条件を使ってプログラムを実行させることができるようになりました。</p>
+<section id="if">
+<h2>if文とブロックの書き方<a class="headerlink" href="#if" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> の後に条件を書きます。そして条件が満たされているときは<strong>ブロック</strong>の中身を実行します。</p></li>
+<li><p>ここで<strong>ブロック</strong>という概念が初めて出てきました。<code class="docutils literal notranslate"><span class="pre">if</span></code>の条件の後の:がブロックを示します。Pythonの特徴として、ブロックの領域はインデントを利用して示します。インデントがないとエラーになります。通常は、スペース4つでインデントします。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>ブロックはif以下の条件を満たさないときに実行されます。</p></li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>ここでついでにpythonでのコメントの書き方も学んでおきます。コードの中に、<code class="docutils literal notranslate"><span class="pre">#</span></code>で始まる文を書くと、以後の文は実行時に無視されます。プログラムを書くときは、それぞれのコードで何をしようとしているか、細かくコメントを書いておくことが重要です。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 正解／不正解を返すプログラムを作る</span>
+<span class="n">var</span> <span class="o">=</span> <span class="mi">1863</span>
+<span class="k">if</span> <span class="n">var</span> <span class="o">==</span> <span class="mi">1864</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;正解です！&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;不正解です。&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>不正解です。
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>初心者がよく間違いましたが、pythonにおける<code class="docutils literal notranslate"><span class="pre">=</span></code>は変数の代入に使われます。一方、<code class="docutils literal notranslate"><span class="pre">==</span></code>は等しいかどうかをテストするための演算子です。</p>
+</aside>
+<ul class="simple">
+<li><p>条件分岐が3種類以上に分かれる場合には、</p>
+<ul>
+<li><p>最初の条件で<code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
+<li><p>間の条件で<code class="docutils literal notranslate"><span class="pre">elif</span></code></p></li>
+<li><p>最後で<code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hour</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;おはよう&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">hour</span><span class="o">&gt;</span><span class="mi">22</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;おやすみ&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;こんにちは&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>おやすみ
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="003f91ca-cda6-4fe0-b42f-8d17a9c48086" name="547edfc9-9cb5-4c85-b2df-8dee5dfbbd84" type="radio">
+</input><label class="sd-tab-label" for="003f91ca-cda6-4fe0-b42f-8d17a9c48086">
+実習問題</label><div class="sd-tab-content docutils">
+<p><span class="math notranslate nohighlight">\(x\)</span>を入力し、以下の数式で<span class="math notranslate nohighlight">\(f(x)\)</span>を計算するプログラミングを書いてください。</p>
+</div>
+</div>
+<div class="amsmath math notranslate nohighlight" id="equation-62b39e2f-30dc-478a-bcf4-501e4ebbef67">
+<span class="eqno">(1)<a class="headerlink" href="#equation-62b39e2f-30dc-478a-bcf4-501e4ebbef67" title="Permalink to this equation">#</a></span>\[\begin{equation}
+
+f(x) = \left\{
+\begin{array}{ll}
+x+5 &amp; (x \lt 0) \\
+0 &amp; (x == 0) \\
+x^2 &amp; (x &gt; 0)
+\end{array}
+\right.
+ \end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ここからかいてみよう</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -526,6 +555,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="data_struture.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">データ構造</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
