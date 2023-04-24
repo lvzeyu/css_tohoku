@@ -403,6 +403,36 @@ title="Print to PDF"
    if文とブロックの書き方
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   様々な条件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     演算子
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     複数の条件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-not-in">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       in/not
+      </span>
+      <span class="pre">
+       in
+      </span>
+     </code>
+     による多重比較
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -426,6 +456,36 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#if">
    if文とブロックの書き方
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   様々な条件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     演算子
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     複数の条件
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-not-in">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       in/not
+      </span>
+      <span class="pre">
+       in
+      </span>
+     </code>
+     による多重比較
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -500,14 +560,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="99e8cd8a-c1d0-44ea-8730-3c32ddfdacb2" name="24726b4d-a053-40dc-8b95-542a35563db5" type="radio">
-</input><label class="sd-tab-label" for="99e8cd8a-c1d0-44ea-8730-3c32ddfdacb2">
+<input checked="checked" id="e7574c00-f8f8-4828-bf5e-ce7380541963" name="c35fb6cb-e536-441e-a5ab-b29b804d6ad2" type="radio">
+</input><label class="sd-tab-label" for="e7574c00-f8f8-4828-bf5e-ce7380541963">
 実習問題</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(x\)</span>を入力し、以下の数式で<span class="math notranslate nohighlight">\(f(x)\)</span>を計算するプログラミングを書いてください。</p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-0cef47b0-4b75-411b-b4d5-82ec9c6f53d9">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0cef47b0-4b75-411b-b4d5-82ec9c6f53d9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d40273e2-b328-43e2-85d3-5cc5002aeb3a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d40273e2-b328-43e2-85d3-5cc5002aeb3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 
 f(x) = \left\{
 \begin{array}{ll}
@@ -525,6 +585,122 @@ x^2 &amp; (x &gt; 0)
 </div>
 </div>
 </div>
+</section>
+<section id="id2">
+<h2>様々な条件<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>if の右などに来る条件として様々なものを書くことができます。</p>
+<section id="id3">
+<h3>演算子<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>演算子</p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x &lt; y</p></td>
+<td><p>x は y より小さい</p></td>
+</tr>
+<tr class="row-odd"><td><p>x &lt;= y</p></td>
+<td><p>x は y 以下</p></td>
+</tr>
+<tr class="row-even"><td><p>x &gt; y</p></td>
+<td><p>x は y より大きい</p></td>
+</tr>
+<tr class="row-odd"><td><p>x &gt;= y</p></td>
+<td><p>x は y 以上</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>x == y</strong></p></td>
+<td><p><strong>x と y は等しい</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>x != y</strong></p></td>
+<td><p><strong>x と y は等しくない</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>複数の条件<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>な基本的な条件を、 <code class="docutils literal notranslate"><span class="pre">and</span></code> と<code class="docutils literal notranslate"><span class="pre">or</span></code>などの倫理演算子を用いて組み合わせることができます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">x</span><span class="o">&gt;</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">x</span><span class="o">&gt;</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-not-in">
+<h3><code class="docutils literal notranslate"><span class="pre">in/not</span> <span class="pre">in</span></code>による多重比較<a class="headerlink" href="#in-not-in" title="Permalink to this headline">#</a></h3>
+<p>所属関係を調べる際は<code class="docutils literal notranslate"><span class="pre">in</span></code>演算子を使います。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">12</span>
+<span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">12</span>
+<span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;s&quot;</span> <span class="ow">in</span> <span class="s2">&quot;sociology&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>真理値を返す関数
+真理値とは、 <code class="docutils literal notranslate"><span class="pre">True</span></code> または <code class="docutils literal notranslate"><span class="pre">False</span></code> のどちらかの値のことです。 これらは変数ではなく、組み込み定数であることに注意してください。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> は、正しいこと（真）を表します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> は、間違ったこと（偽）を表します。
+<code class="docutils literal notranslate"><span class="pre">if</span></code> の後の条件の式は、<code class="docutils literal notranslate"><span class="pre">True</span></code> か <code class="docutils literal notranslate"><span class="pre">False</span></code> を値として持ちます。</p></li>
+</ul>
+</div>
+</section>
 </section>
 </section>
 
