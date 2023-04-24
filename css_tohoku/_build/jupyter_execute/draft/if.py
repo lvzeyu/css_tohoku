@@ -58,7 +58,7 @@ else:
 # f(x) = \left\{
 # \begin{array}{ll}
 # x+5 & (x \lt 0) \\
-# 0 & (x == 0) \\
+# 0 & (x = 0) \\
 # x^2 & (x > 0)
 # \end{array}
 # \right.
