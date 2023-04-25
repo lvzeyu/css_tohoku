@@ -20,3 +20,4 @@ parts:
   - file: draft/variable.ipynb
   - file: draft/data_struture.ipynb
   - file: draft/if.ipynb
+  - file: draft/loop.ipynb
