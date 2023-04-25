@@ -21,3 +21,4 @@ parts:
   - file: draft/data_struture.ipynb
   - file: draft/if.ipynb
   - file: draft/loop.ipynb
+  - file: draft/function.ipynb

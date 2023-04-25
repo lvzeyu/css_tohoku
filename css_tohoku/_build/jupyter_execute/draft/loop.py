@@ -250,8 +250,70 @@ for i, j in zip(numbers, letters):
     print(j, i)
 
 
-# In[ ]:
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# 2つのリストをzip関数を使ってループし、各リストの要素を合計し、その結果を新しいリストに格納するプログラムを作成してください。
+# ```
+# ````
+
+# In[1]:
 
 
+#答え
+list_a = [1, 2, 3, 4, 5]
+list_b = [6, 7, 8, 9, 10]
+sum_list = []
 
 
+# ## 辞書のループ処理
+
+# 辞書の要素にわたって操作はよくあります。
+
+# - 辞書 の全てのキーを変数```key```に代入しながら、実行文を繰り返すには次のように書きます。
+
+# In[5]:
+
+
+nation={'Marx': 'German',
+ 'Weber': 'German',
+ 'Durkheim': 'France',
+ 'Parsons': 'America',
+ 'Merton': 'America',
+ 'Goffman': 'America',
+ 'Habermas': 'Germany'}
+
+
+# In[7]:
+
+
+for key in nation:
+    print('Name:', key, ', Nationality:', nation[key])
+
+
+# - ```values```メソッドを使えば（キーを使わずに）値を1つずつ取り出すこともできます。
+
+# In[8]:
+
+
+for value in nation.values():
+    print('Nationality:', value)
+
+
+# - ```items```メソッドを使えばキーと値を一度に取り出すこともできます。 
+
+# In[9]:
+
+
+for key, value in nation.items():
+    print('Name:', key, 'Nationality:', value)
+
+
+# ````{tab-set}
+# ```{tab-item} 入れ子のリストを平らにする
+# 入れ子になったリストを平らにしててくだい。
+# 
+# list1=[1, [2, 3], [4, [5]]]
+# ```
+# ````
+
+# 

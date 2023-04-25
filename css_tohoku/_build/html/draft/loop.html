@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="関数" href="function.html" />
     <link rel="prev" title="分岐" href="if.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -177,6 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    ループ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   関数
   </a>
  </li>
 </ul>
@@ -433,6 +439,11 @@ title="Print to PDF"
    zip
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   辞書のループ処理
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -480,6 +491,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zip">
    zip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   辞書のループ処理
   </a>
  </li>
 </ul>
@@ -632,8 +648,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="fd34bd93-2ad7-434a-858f-c1ebaa5d9ad6" name="4bf3469d-7d85-4741-9105-a649f16f854f" type="radio">
-</input><label class="sd-tab-label" for="fd34bd93-2ad7-434a-858f-c1ebaa5d9ad6">
+<input checked="checked" id="3c908cf5-524d-4c70-8420-f99513125378" name="bb21dffc-a8cf-4301-b48c-465595b6b85e" type="radio">
+</input><label class="sd-tab-label" for="3c908cf5-524d-4c70-8420-f99513125378">
 実習問題</label><div class="sd-tab-content docutils">
 <p>ここで、ユークリッドの互除法というアルゴリズムの実装にトライしてみましょう。</p>
 <p>ユークリッドの互除法とは、2つの整数、aとbの最大公約数を求めるアルゴリズムです。例えば、2485と1162の最大公約数を求めたい場合</p>
@@ -732,8 +748,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="553eedf3-5b98-4464-bd9e-7ed84efb8e77" name="cf1c7727-6b65-4022-ab67-45965a0842b5" type="radio">
-</input><label class="sd-tab-label" for="553eedf3-5b98-4464-bd9e-7ed84efb8e77">
+<input checked="checked" id="77c931d7-16e9-474c-9ca7-85ac09c7c742" name="0440faa9-875b-40d5-b5ee-a045b34faa9e" type="radio">
+</input><label class="sd-tab-label" for="77c931d7-16e9-474c-9ca7-85ac09c7c742">
 実習問題</label><div class="sd-tab-content docutils">
 <p>被除数が100である場合、リストの値を除数とする割り算の結果を順番に計算するプログラムを実装してください。</p>
 <ul class="simple">
@@ -775,8 +791,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="fdd704e7-6c1b-4cf0-8233-0128ee396bb1" name="d7379c31-210c-4dd7-a5f1-3b012a1eeddc" type="radio">
-</input><label class="sd-tab-label" for="fdd704e7-6c1b-4cf0-8233-0128ee396bb1">
+<input checked="checked" id="d905bdd6-3250-4450-ad39-70ebb0119487" name="d4c73781-33a9-474b-89e3-8dece4f8fde2" type="radio">
+</input><label class="sd-tab-label" for="d905bdd6-3250-4450-ad39-70ebb0119487">
 実習問題</label><div class="sd-tab-content docutils">
 <p>以下にリストに基づいて、リストの要素を値、そのインデックスをキーとする辞書を作ってくだい。</p>
 </div>
@@ -853,6 +869,114 @@ c 3
 </div>
 </div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="90a87616-752c-4193-8a72-ab4d54c01713" name="0a9c2c16-6497-4e69-a79d-b26524e74c38" type="radio">
+</input><label class="sd-tab-label" for="90a87616-752c-4193-8a72-ab4d54c01713">
+実習問題</label><div class="sd-tab-content docutils">
+<p>2つのリストをzip関数を使ってループし、各リストの要素を合計し、その結果を新しいリストに格納するプログラムを作成してください。</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#答え</span>
+<span class="n">list_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">list_b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">sum_list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>辞書のループ処理<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>辞書の要素にわたって操作はよくあります。</p>
+<ul class="simple">
+<li><p>辞書 の全てのキーを変数<code class="docutils literal notranslate"><span class="pre">key</span></code>に代入しながら、実行文を繰り返すには次のように書きます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nation</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Marx&#39;</span><span class="p">:</span> <span class="s1">&#39;German&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Weber&#39;</span><span class="p">:</span> <span class="s1">&#39;German&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Durkheim&#39;</span><span class="p">:</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Parsons&#39;</span><span class="p">:</span> <span class="s1">&#39;America&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Merton&#39;</span><span class="p">:</span> <span class="s1">&#39;America&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Goffman&#39;</span><span class="p">:</span> <span class="s1">&#39;America&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Habermas&#39;</span><span class="p">:</span> <span class="s1">&#39;Germany&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">nation</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name:&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;, Nationality:&#39;</span><span class="p">,</span> <span class="n">nation</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Marx , Nationality: German
+Name: Weber , Nationality: German
+Name: Durkheim , Nationality: France
+Name: Parsons , Nationality: America
+Name: Merton , Nationality: America
+Name: Goffman , Nationality: America
+Name: Habermas , Nationality: Germany
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code>メソッドを使えば（キーを使わずに）値を1つずつ取り出すこともできます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">nation</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nationality:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nationality: German
+Nationality: German
+Nationality: France
+Nationality: America
+Nationality: America
+Nationality: America
+Nationality: Germany
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">items</span></code>メソッドを使えばキーと値を一度に取り出すこともできます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">nation</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name:&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;Nationality:&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Marx Nationality: German
+Name: Weber Nationality: German
+Name: Durkheim Nationality: France
+Name: Parsons Nationality: America
+Name: Merton Nationality: America
+Name: Goffman Nationality: America
+Name: Habermas Nationality: Germany
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="51f8c9eb-b6fc-4314-875d-27a4bf58523f" name="130279ef-8f61-42b5-b534-8ccf207be6b4" type="radio">
+</input><label class="sd-tab-label" for="51f8c9eb-b6fc-4314-875d-27a4bf58523f">
+入れ子のリストを平らにする</label><div class="sd-tab-content docutils">
+<p>入れ子になったリストを平らにしててくだい。</p>
+<p>list1=[1, [2, 3], [4, [5]]]</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -889,6 +1013,13 @@ c 3
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">分岐</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="function.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">関数</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
