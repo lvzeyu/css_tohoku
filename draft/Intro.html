@@ -50,8 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Git" href="git.html" />
@@ -173,6 +173,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="if.html">
    分岐
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loop.html">
+   ループ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   関数
   </a>
  </li>
 </ul>
@@ -631,8 +641,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.99224577 -1.14147426]
- [ 1.01455236  1.23727704]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.15999423  0.15135747]
+ [-1.31132363  0.74575234]]
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1108,7 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x174882f20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7f121628b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Intro_25_1.png" src="../_images/Intro_25_1.png" />
@@ -1268,7 +1278,7 @@ Kaggleはデータサイエンスや機械学習の分野で有名なオンラ�
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./draft"
         },
         predefinedOutput: true
