@@ -438,7 +438,32 @@ title="Print to PDF"
      デフォルト引数値の指定
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     による位置引数の分解・接合(タプル化)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     によるキーワード引数の分解・接合(辞書化)
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   ラムダ関数
+  </a>
  </li>
 </ul>
 
@@ -489,7 +514,32 @@ title="Print to PDF"
      デフォルト引数値の指定
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     による位置引数の分解・接合(タプル化)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       **
+      </span>
+     </code>
+     によるキーワード引数の分解・接合(辞書化)
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   ラムダ関数
+  </a>
  </li>
 </ul>
 
@@ -597,9 +647,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4486218000
-関数の内部 10 4486218256
-関数の実行後 2 4486218000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4482482448
+関数の内部 10 4482482704
+関数の実行後 2 4482482448
 </pre></div>
 </div>
 </div>
@@ -674,8 +724,8 @@ Hi, Bob!
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d087a324-07e8-4f85-a762-84f93d93d64e" name="5021183f-a417-4772-aa3c-6a4a2ead1f72" type="radio">
-</input><label class="sd-tab-label" for="d087a324-07e8-4f85-a762-84f93d93d64e">
+<input checked="checked" id="b62caa86-5d7b-40f5-b1ef-9a3aeff22a83" name="a88d44b5-b3e7-4fd4-bf4e-f773cc28347f" type="radio">
+</input><label class="sd-tab-label" for="b62caa86-5d7b-40f5-b1ef-9a3aeff22a83">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>被除数と除数を指定し、割り算の結果を順番に計算する関数を作成してください。</p>
 <ul class="simple">
@@ -683,8 +733,8 @@ Hi, Bob!
 <li><p>計算不可能の場合、「計算できません」というエラーを表示してください</p></li>
 </ul>
 </div>
-<input id="737f5b15-afcc-41b8-85ad-34d4a84b5a32" name="5021183f-a417-4772-aa3c-6a4a2ead1f72" type="radio">
-</input><label class="sd-tab-label" for="737f5b15-afcc-41b8-85ad-34d4a84b5a32">
+<input id="269a58bf-fdd5-4d35-8c7d-7c97d124ff37" name="a88d44b5-b3e7-4fd4-bf4e-f773cc28347f" type="radio">
+</input><label class="sd-tab-label" for="269a58bf-fdd5-4d35-8c7d-7c97d124ff37">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>ユークリッドの互除法の関数を作成してください。</p>
 <ul class="simple">
@@ -694,6 +744,154 @@ Hi, Bob!
 </div>
 </div>
 </section>
+<section id="id8">
+<h3><code class="docutils literal notranslate"><span class="pre">*</span></code>による位置引数の分解・接合(タプル化)<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>関数定義の中で引数の一部として<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと、可変個の位置引数がタプルにまとめられてその引数にセットされるようになる。</p>
+<p>この機能は、関数に異なる数の引数を渡す時に便利です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_all_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># argsの中身を確認</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">*args</span></code>以外、<code class="docutils literal notranslate"><span class="pre">*params</span></code>など任意の名前を使っても良いですが、<code class="docutils literal notranslate"><span class="pre">*args</span></code>を使う習慣になっています。</p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_all_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h3><code class="docutils literal notranslate"><span class="pre">**</span></code>によるキーワード引数の分解・接合(辞書化)<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>可変個のキーワード引数は、関数定義の中でキーワード引数の数が可変であることを指定する方法です。</p>
+<p>２つのアスタリスク(<code class="docutils literal notranslate"><span class="pre">**</span></code>)を使えば、キーワード引数を1個の辞書にまとめることができます。
+引数の名前は辞書のキー、引数の値は辞書の値になっています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_kwargs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a 1
+b 2
+c 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>引数の順番
+関数の命名は基本的には自由ですが、以下のような慣習があります。</p>
+<ol class="simple">
+<li><p>位置引数　: 関数定義で明示的に指定された引数です。位置引数は、引数の順序に基づいて値が関数に渡されます。</p></li>
+<li><p>キーワード引数: 引数の名前と値をペアとして指定する引数です。キーワード引数は、引数の名前を指定して値を関数に渡すことができます。</p></li>
+<li><p>可変個の位置引数: 位置引数として渡された値は、タプルとして関数内で利用できます。</p></li>
+<li><p>キーワード引数: キーワード引数として渡された値は、辞書として関数内で利用できます。</p></li>
+</ol>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="3ec6aae9-fa99-419c-b59f-883e2281d978" name="080b49db-4148-4b46-ae99-17cf5d02f62c" type="radio">
+</input><label class="sd-tab-label" for="3ec6aae9-fa99-419c-b59f-883e2281d978">
+実習問題</label><div class="sd-tab-content docutils">
+<p>複数の商品とその価格を受け取り、価格の合計を計算する関数を作成してください。</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculation</span><span class="p">():</span>
+
+    <span class="k">return</span> <span class="n">total</span>
+
+
+<span class="n">calculate_total</span><span class="p">(</span><span class="n">apple</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">orange</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">banana</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h2>ラムダ関数<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p>ラムダ関数は、簡潔な関数を一行で定義するための手法です。</p>
+<p>関数を定義するための従来の<code class="docutils literal notranslate"><span class="pre">def</span></code>キーワードを使用せずに、<code class="docutils literal notranslate"><span class="pre">lambda</span></code>キーワードを用いて直接関数を記述します。</p>
+<p>ラムダ関数の一般的な構文は以下の通りです：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">arguments</span><span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<p>ここで、<code class="docutils literal notranslate"><span class="pre">arguments</span></code>関数の引数を表し、<code class="docutils literal notranslate"><span class="pre">expression</span></code>は引数を使って実行する式です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2つの数値を加算するラムダ関数</span>
+<span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 与えられた数が偶数かどうかを判定するラムダ関数:</span>
+<span class="n">is_even</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 出力: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_even</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>  <span class="c1"># 出力: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="d6036cbc-fb75-44da-aa3f-ac545036b7df" name="e1269214-3d8c-486a-8c60-859d2eae3d31" type="radio">
+</input><label class="sd-tab-label" for="d6036cbc-fb75-44da-aa3f-ac545036b7df">
+実習問題1</label><div class="sd-tab-content docutils">
+<p>整数のリストが与えられたとき、そのリストから偶数の要素のみをフィルタリングするラムダ関数を作成してください。</p>
+</div>
+<input id="c219e21d-82a5-43fa-b972-cbf8e75af707" name="e1269214-3d8c-486a-8c60-859d2eae3d31" type="radio">
+</input><label class="sd-tab-label" for="c219e21d-82a5-43fa-b972-cbf8e75af707">
+実習問題2</label><div class="sd-tab-content docutils">
+<p>浮動小数点数のリストが与えられたとき、そのリストの要素の平均値を計算するラムダ関数を作成してください。</p>
+</div>
+</div>
 </section>
 </section>
 
