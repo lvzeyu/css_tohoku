@@ -22,3 +22,4 @@ parts:
   - file: draft/if.ipynb
   - file: draft/loop.ipynb
   - file: draft/function.ipynb
+  - file: draft/class.ipynb
