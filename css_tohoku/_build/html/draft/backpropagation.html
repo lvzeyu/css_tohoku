@@ -173,6 +173,16 @@ const thebe_selector_output = ".output, .cell_output"
    分岐
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loop.html">
+   ループ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   関数
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -695,8 +705,8 @@ w_{12} &amp; w_{22} &amp; w_{32}
 \end{pmatrix}
 \end{split}\]</div>
 <p>出力<span class="math notranslate nohighlight">\(\boldsymbol{Y}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65c729ca-3bc5-45e5-9162-d0308aa4e492">
-<span class="eqno">()<a class="headerlink" href="#equation-65c729ca-3bc5-45e5-9162-d0308aa4e492" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b89565ac-f331-4153-b022-d35bc7038b03">
+<span class="eqno">()<a class="headerlink" href="#equation-b89565ac-f331-4153-b022-d35bc7038b03" title="Permalink to this equation">#</a></span>\[\begin{align}
 \boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \\
 &amp;=
 \begin{pmatrix}
@@ -716,8 +726,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix}　\tag{1.1}
 \end{align}\]</div>
 <p>となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00a26b28-4f93-44fe-92c2-bce81c1e76b7">
-<span class="eqno">()<a class="headerlink" href="#equation-00a26b28-4f93-44fe-92c2-bce81c1e76b7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0f117792-645b-4df5-a9b9-8194f1dee4e3">
+<span class="eqno">()<a class="headerlink" href="#equation-0f117792-645b-4df5-a9b9-8194f1dee4e3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{X}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial x_1} &amp; \frac{\partial L}{\partial x_2}
@@ -728,8 +738,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix} 
 \end{align}\]</div>
 <p>ここで</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0db5320-9b15-4a3c-bc42-f77f515b7671">
-<span class="eqno">()<a class="headerlink" href="#equation-b0db5320-9b15-4a3c-bc42-f77f515b7671" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-df17a9b5-fa57-4156-80f9-7b9d8ed5d783">
+<span class="eqno">()<a class="headerlink" href="#equation-df17a9b5-fa57-4156-80f9-7b9d8ed5d783" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} = 
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
@@ -743,8 +753,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{align}\]</div>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe62bd76-15f8-4e51-b6db-b8c27b101fca">
-<span class="eqno">()<a class="headerlink" href="#equation-fe62bd76-15f8-4e51-b6db-b8c27b101fca" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-a8f0e7c5-8e0c-4e0b-91d7-c0fa91c52444">
+<span class="eqno">()<a class="headerlink" href="#equation-a8f0e7c5-8e0c-4e0b-91d7-c0fa91c52444" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -753,8 +763,8 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa1f95c6-5a5e-4d7b-a93f-496605a86934">
-<span class="eqno">()<a class="headerlink" href="#equation-fa1f95c6-5a5e-4d7b-a93f-496605a86934" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-7f2d2bd2-a6e9-457c-a2b6-92153844f341">
+<span class="eqno">()<a class="headerlink" href="#equation-7f2d2bd2-a6e9-457c-a2b6-92153844f341" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -763,12 +773,12 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea819193-9ea1-42db-b77a-ac996963916a">
-<span class="eqno">()<a class="headerlink" href="#equation-ea819193-9ea1-42db-b77a-ac996963916a" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-2ba43db7-9ea5-45e6-90ce-d87a43c4c8bf">
+<span class="eqno">()<a class="headerlink" href="#equation-2ba43db7-9ea5-45e6-90ce-d87a43c4c8bf" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-886fe320-16d9-4ce2-ae29-9efd34f45746">
-<span class="eqno">()<a class="headerlink" href="#equation-886fe320-16d9-4ce2-ae29-9efd34f45746" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-ca1f7fd4-6e96-4959-9863-e650b26baf53">
+<span class="eqno">()<a class="headerlink" href="#equation-ca1f7fd4-6e96-4959-9863-e650b26baf53" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -777,8 +787,8 @@ w_{31} &amp; w_{32}
 \end{aligned}</p>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4ad941a-ab25-4700-820b-f2026ace7998">
-<span class="eqno">()<a class="headerlink" href="#equation-f4ad941a-ab25-4700-820b-f2026ace7998" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-d2a9d849-a526-4ab1-a3f4-836d71933751">
+<span class="eqno">()<a class="headerlink" href="#equation-d2a9d849-a526-4ab1-a3f4-836d71933751" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -787,8 +797,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc2b105b-d313-409e-bdfb-13884b8007b2">
-<span class="eqno">()<a class="headerlink" href="#equation-cc2b105b-d313-409e-bdfb-13884b8007b2" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-72abbad3-ace5-48c8-8b85-c8b348c9d470">
+<span class="eqno">()<a class="headerlink" href="#equation-72abbad3-ace5-48c8-8b85-c8b348c9d470" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -797,12 +807,12 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-103068e3-06e3-407b-947e-e0e3d53ef7a0">
-<span class="eqno">()<a class="headerlink" href="#equation-103068e3-06e3-407b-947e-e0e3d53ef7a0" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1b17a932-853e-4ea9-94ec-60c26c7ca0cf">
+<span class="eqno">()<a class="headerlink" href="#equation-1b17a932-853e-4ea9-94ec-60c26c7ca0cf" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-fc3a4ead-6fe7-42dc-adb1-1d82d335ab0a">
-<span class="eqno">()<a class="headerlink" href="#equation-fc3a4ead-6fe7-42dc-adb1-1d82d335ab0a" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-024b8b1b-8838-4c4f-a80c-cc137aae23b5">
+<span class="eqno">()<a class="headerlink" href="#equation-024b8b1b-8838-4c4f-a80c-cc137aae23b5" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -810,8 +820,8 @@ w_{31} &amp; w_{32}
 <p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
 \end{aligned}</p>
 <p>一方、損失関数<span class="math notranslate nohighlight">\(L\)</span>の重み<span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span>による偏微分は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd27411e-2e3b-4487-9837-90f1ba2e1e6c">
-<span class="eqno">()<a class="headerlink" href="#equation-cd27411e-2e3b-4487-9837-90f1ba2e1e6c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5859506-0214-4684-aca1-fb593ed80b2b">
+<span class="eqno">()<a class="headerlink" href="#equation-f5859506-0214-4684-aca1-fb593ed80b2b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -819,8 +829,8 @@ w_{31} &amp; w_{32}
 \end{pmatrix} \\
 \end{align}\]</div>
 <p>です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe89657f-979b-4d12-bc8f-8e17634b1744">
-<span class="eqno">()<a class="headerlink" href="#equation-fe89657f-979b-4d12-bc8f-8e17634b1744" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8207b9c2-1d8e-48d1-85dc-634b6fbe2785">
+<span class="eqno">()<a class="headerlink" href="#equation-8207b9c2-1d8e-48d1-85dc-634b6fbe2785" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \\
 \frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \\
 \frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \\
@@ -829,8 +839,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial w_{32}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
 \end{align}\]</div>
 <p>となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82f2c671-f755-4599-a5f3-267d68527951">
-<span class="eqno">()<a class="headerlink" href="#equation-82f2c671-f755-4599-a5f3-267d68527951" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-671bd6e4-9bea-4e32-9ed3-2d56167a5fc0">
+<span class="eqno">()<a class="headerlink" href="#equation-671bd6e4-9bea-4e32-9ed3-2d56167a5fc0" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -865,8 +875,8 @@ x_2
 &amp;= \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>
 <p>これで、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e628b71-05ee-499a-aa2f-c66ea0e11f7e">
-<span class="eqno">()<a class="headerlink" href="#equation-3e628b71-05ee-499a-aa2f-c66ea0e11f7e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-82adf240-c662-43f4-9463-f5e059c80063">
+<span class="eqno">()<a class="headerlink" href="#equation-82adf240-c662-43f4-9463-f5e059c80063" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;=
 \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>
@@ -1148,29 +1158,15 @@ out_{h_{1}}= Sigmoid(net_{h_{1}})
 <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">common.layers</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">common.gradient</span> <span class="kn">import</span> <span class="n">numerical_gradient</span>
+<span class="c1">#os.chdir(&quot;/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch&quot;)</span>
+<span class="c1">#from common.layers import *</span>
+<span class="c1">#from common.gradient import numerical_gradient</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">dataset.mnist</span> <span class="kn">import</span> <span class="n">load_mnist</span>
-<span class="kn">from</span> <span class="nn">ch05.two_layer_net</span> <span class="kn">import</span> <span class="n">TwoLayerNet</span>
-<span class="kn">from</span> <span class="nn">common.functions</span> <span class="kn">import</span> <span class="n">softmax</span> <span class="c1"># ソフトマックス関数:バッチ対応版</span>
-<span class="kn">from</span> <span class="nn">common.functions</span> <span class="kn">import</span> <span class="n">cross_entropy_error</span> <span class="c1"># 交差エントロピー誤差:4.2.4項</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">time</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">common.layers</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">common.gradient</span> <span class="kn">import</span> <span class="n">numerical_gradient</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch&#39;
+<span class="c1">#import torch</span>
+<span class="c1">#from dataset.mnist import load_mnist</span>
+<span class="c1">#from ch05.two_layer_net import TwoLayerNet</span>
+<span class="c1">#from common.functions import softmax # ソフトマックス関数:バッチ対応版</span>
+<span class="c1">#from common.functions import cross_entropy_error # 交差エントロピー誤差:4.2.4項</span>
 </pre></div>
 </div>
 </div>
@@ -1179,14 +1175,11 @@ out_{h_{1}}= Sigmoid(net_{h_{1}})
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_h1</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.15</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.35</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_h1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_h1</span><span class="p">))</span>
-<span class="n">out_h1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_h1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_h1=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_h1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_h1=0.3775
-out_h1=0.5932700037956238
 </pre></div>
 </div>
 </div>
@@ -1202,7 +1195,17 @@ out_h1=0.5932700037956238
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>net_h2=0.39249999999999996
-out_h2=0.5968843698501587
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">net_h2</span><span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.35</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;net_h2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">net_h2</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">out_h2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">net_h2</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out_h2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_h2</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;torch&#39; is not defined
 </pre></div>
 </div>
 </div>

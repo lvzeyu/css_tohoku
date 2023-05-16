@@ -521,27 +521,25 @@ import matplotlib.pyplot as plt
 import sys, os
 import time
 
-os.chdir("/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch")
-from common.layers import *
-from common.gradient import numerical_gradient
+#os.chdir("/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch")
+#from common.layers import *
+#from common.gradient import numerical_gradient
 from collections import OrderedDict
-import torch
-from dataset.mnist import load_mnist
-from ch05.two_layer_net import TwoLayerNet
-from common.functions import softmax # ソフトマックス関数:バッチ対応版
-from common.functions import cross_entropy_error # 交差エントロピー誤差:4.2.4項
+#import torch
+#from dataset.mnist import load_mnist
+#from ch05.two_layer_net import TwoLayerNet
+#from common.functions import softmax # ソフトマックス関数:バッチ対応版
+#from common.functions import cross_entropy_error # 交差エントロピー誤差:4.2.4項
 
 
-# In[ ]:
+# In[2]:
 
 
 net_h1= (0.15)*(0.05)+(0.2)*(0.1)+0.35
 print("net_h1={}".format(net_h1))
-out_h1 = torch.sigmoid(torch.tensor(net_h1))
-print("out_h1={}".format(out_h1))
 
 
-# In[ ]:
+# In[3]:
 
 
 net_h2= (0.25)*(0.05)+(0.3)*(0.1)+0.35
