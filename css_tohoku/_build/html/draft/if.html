@@ -185,6 +185,11 @@ const thebe_selector_output = ".output, .cell_output"
    関数
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -571,14 +576,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="73155392-bc6d-4045-9c30-abe2083375d1" name="6627128e-06f3-4c0b-a77d-9d26fd36bc8e" type="radio">
-</input><label class="sd-tab-label" for="73155392-bc6d-4045-9c30-abe2083375d1">
+<input checked="checked" id="29245e99-5d04-484a-ae2e-867631af8d5f" name="f27e9aa0-183a-4fa7-b4ae-f47949d2c5e9" type="radio">
+</input><label class="sd-tab-label" for="29245e99-5d04-484a-ae2e-867631af8d5f">
 実習問題</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(x\)</span>を入力し、以下の数式で<span class="math notranslate nohighlight">\(f(x)\)</span>を計算するプログラミングを書いてください。</p>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-192809ac-0825-4d59-b9e0-44383a790e2b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-192809ac-0825-4d59-b9e0-44383a790e2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-23859f90-4d2e-4f0c-88a0-7e76dea5389b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-23859f90-4d2e-4f0c-88a0-7e76dea5389b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 
 f(x) = \left\{
 \begin{array}{ll}
@@ -591,7 +596,9 @@ x^2 &amp; (x &gt; 0)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ここからかいてみよう</span>
-<span class="n">x</span><span class="o">=</span><span class="mi">12</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">12</span> <span class="c1">#xの値を変えてみよう</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">:</span>
+    <span class="k">pass</span> <span class="c1"># passを削除し、ここから書いてみよう</span>
 </pre></div>
 </div>
 </div>
@@ -710,6 +717,36 @@ x^2 &amp; (x &gt; 0)
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> は、間違ったこと（偽）を表します。
 <code class="docutils literal notranslate"><span class="pre">if</span></code> の後の条件の式は、<code class="docutils literal notranslate"><span class="pre">True</span></code> か <code class="docutils literal notranslate"><span class="pre">False</span></code> を値として持ちます。</p></li>
 </ul>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="539c528d-9897-45dc-8d6e-ff9f371179f4" name="327c9d41-2ed1-45c1-9e2e-f6f51f9057e1" type="radio">
+</input><label class="sd-tab-label" for="539c528d-9897-45dc-8d6e-ff9f371179f4">
+実習問題1</label><div class="sd-tab-content docutils">
+<p>ユーザーの年齢に応じて、入場料金を計算するプログラムを作成してください。条件は以下の通りです。</p>
+<p>3歳以下: 無料
+4歳から12歳まで: 500円
+13歳以上: 1000円</p>
+</div>
+<input id="b14296dc-ca50-4b64-a0c6-708aa4951a54" name="327c9d41-2ed1-45c1-9e2e-f6f51f9057e1" type="radio">
+</input><label class="sd-tab-label" for="b14296dc-ca50-4b64-a0c6-708aa4951a54">
+実習問題2</label><div class="sd-tab-content docutils">
+<p>ユーザーが入力した言語が特定の言語リストに含まれるかどうかを判定し、結果を表示するプログラムを作成してください。条件は以下の通りです。</p>
+<ul class="simple">
+<li><p>ユーザーが入力した言語がリスト languages に含まれている場合は、「サポートされている言語です」と表示します。</p></li>
+<li><p>ユーザーが入力した言語がリスト languages に含まれていない場合で、リスト supported_languages に含まれている場合は、「他の言語でもサポートされています」と表示します。</p></li>
+<li><p>上記のいずれの場合でもない場合は、「サポートされていない言語です」と表示します。</p></li>
+</ul>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">languages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="s2">&quot;C++&quot;</span><span class="p">,</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">]</span>
+<span class="n">supported_languages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ruby&quot;</span><span class="p">,</span> <span class="s2">&quot;Go&quot;</span><span class="p">,</span> <span class="s2">&quot;PHP&quot;</span><span class="p">]</span>
+
+<span class="n">user_language</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> <span class="c1"># user_languageを変えてみよう</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
