@@ -438,6 +438,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   親クラスからの継承
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -483,6 +488,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   親クラスからの継承
+  </a>
  </li>
 </ul>
 
@@ -624,7 +634,7 @@ title="Print to PDF"
         <span class="bp">self</span><span class="o">.</span><span class="n">birth</span> <span class="o">=</span> <span class="n">birth</span>
 
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello,&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     
     <span class="k">def</span> <span class="nf">print_birth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> was born in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">birth</span><span class="p">))</span>
@@ -634,36 +644,172 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marx</span><span class="o">=</span><span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Marx&quot;</span><span class="p">,</span> <span class="mi">1818</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sato</span><span class="o">=</span><span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Sato&quot;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marx</span><span class="o">.</span><span class="n">print_birth</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sato</span><span class="o">.</span><span class="n">print_birth</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marx was born in 1818
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sato was born in 2000
 </pre></div>
 </div>
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6827fe66-471d-4b40-8c64-8385ebcd3981" name="e7831d0a-5455-4d19-85c9-d176ea1521fb" type="radio">
-</input><label class="sd-tab-label" for="6827fe66-471d-4b40-8c64-8385ebcd3981">
+<input checked="checked" id="7e942695-4416-4cfe-851b-9061d243e53e" name="ca205d07-152e-4b3e-95ed-6700f3807f64" type="radio">
+</input><label class="sd-tab-label" for="7e942695-4416-4cfe-851b-9061d243e53e">
 実習問題1</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">death</span></code>という属性で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。　で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="d7646a16-ee1d-4e48-a1b1-1390b048572e" name="e7831d0a-5455-4d19-85c9-d176ea1521fb" type="radio">
-</input><label class="sd-tab-label" for="d7646a16-ee1d-4e48-a1b1-1390b048572e">
+<input id="c1badfb2-4960-4600-bd74-31e09a03745b" name="ca205d07-152e-4b3e-95ed-6700f3807f64" type="radio">
+</input><label class="sd-tab-label" for="c1badfb2-4960-4600-bd74-31e09a03745b">
 実習問題2</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に享年を計算するメソッドを追加する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
+</div>
+<input id="3219d145-4186-4784-ab33-0b5bf634f643" name="ca205d07-152e-4b3e-95ed-6700f3807f64" type="radio">
+</input><label class="sd-tab-label" for="3219d145-4186-4784-ab33-0b5bf634f643">
+実習問題3</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>は2023を受け取って、年齢を計算してください。</p>
 </div>
 </div>
 </section>
+</section>
+<section id="id5">
+<h2>親クラスからの継承<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>継承は、既存のクラスをもとにして、変更部分だけを与えることにより、 新たなクラスを定義する機能です。</p>
+<p>元のクラスは親クラスまたはスーパークラス、基底クラス、新しいクラスは子またはサブクラスと呼ばれます。</p>
+<p>以下の例では、<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスをもとにして<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスを定義しています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">pass</span> <span class="c1"># 何もしない</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>クラスは他のクラスを継承したものかどうかは、<code class="docutils literal notranslate"><span class="pre">issubclass()</span></code>を使えば調べられます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">issubclass</span><span class="p">(</span><span class="n">Student</span><span class="p">,</span> <span class="n">Person</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>次に、継承を使用し、新しいクラスを作成してみよう。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">birth</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">birth</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="n">number</span>
+
+    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am a student.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">__init__</span></code>メソッドでは<code class="docutils literal notranslate"><span class="pre">super()</span></code>を使用することにより、<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスの属性<code class="docutils literal notranslate"><span class="pre">name</span></code>と<code class="docutils literal notranslate"><span class="pre">birth</span></code>を継承できます。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">super()</span></code>が親クラスの<code class="docutils literal notranslate"><span class="pre">Person</span></code>の定義を取り出す</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>メソッド呼び出しは、<code class="docutils literal notranslate"><span class="pre">Person.__init__()</span></code>メソッドを呼び出す</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.number</span></code>は<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスに含まれていなく、<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに新しい属性を追加する</p></li>
+</ul>
+<p>さらに、<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスには<code class="docutils literal notranslate"><span class="pre">say_hello</span></code>メソッドなど親クラスである<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスで定義されたメソッドが追加されて、<code class="docutils literal notranslate"><span class="pre">super().say_hello()</span></code>という形でを呼び出されます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="s2">&quot;S12345&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;John&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">birth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">number</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;S12345&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>さらに、<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスには<code class="docutils literal notranslate"><span class="pre">say_hello</span></code>メソッドなど親クラスである<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスで定義されたメソッドが追加されて、<code class="docutils literal notranslate"><span class="pre">super().say_hello()</span></code>という形でを呼び出されます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is John
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">introduce</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is John
+I am a student.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="22381179-44fa-41b0-aa10-37edca40cc15" name="5d3e72b0-c8e9-4c2f-b786-feb8a20936b5" type="radio">
+</input><label class="sd-tab-label" for="22381179-44fa-41b0-aa10-37edca40cc15">
+実習問題1</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">実習問題2</p>
+<div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>というメソッドを追加してくだい。<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>は、親クラスで定義された<code class="docutils literal notranslate"><span class="pre">age()</span></code>メソッドで年齢を計算し、<code class="docutils literal notranslate"><span class="pre">{name}</span> <span class="pre">is</span> <span class="pre">{age}</span> <span class="pre">years</span> <span class="pre">old</span></code>という形でプリントしてください。例えば、名前は<code class="docutils literal notranslate"><span class="pre">sato</span></code>, 年齢は<code class="docutils literal notranslate"><span class="pre">23</span></code>の場合、<code class="docutils literal notranslate"><span class="pre">sato</span> <span class="pre">is</span> <span class="pre">23</span> <span class="pre">years</span> <span class="pre">old</span></code>が表示されるようにしてください。</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
