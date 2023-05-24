@@ -119,7 +119,7 @@ class Person:
         self.birth = birth
 
     def say_hello(self):
-        print("Hello,", self.name)
+        print("Hello, my name is", self.name)
     
     def print_birth(self):
         print("{} was born in {}".format(self.name,self.birth))
@@ -128,25 +128,126 @@ class Person:
 # In[9]:
 
 
-marx=Person("Marx", 1818)
+sato=Person("Sato", 2000)
 
 
 # In[10]:
 
 
-marx.print_birth()
+sato.print_birth()
 
 
 # ````{tab-set}
 # ```{tab-item} 実習問題1
-# ```Personクラス```に```death```という属性で没年を受け取って、```print_death()```メソッドを追加する。
+# ```Personクラス```に```current_year```という属性を追加してください。　で没年を受け取って、```print_death()```メソッドを追加する。
 # ```
 # 
 # ```{tab-item} 実習問題2
-# ```Personクラス```に享年を計算するメソッドを追加する。
+# ```Personクラス```に```age()```年齢を計算するメソッドを追加してください。
+# ```
 # 
+# ```{tab-item} 実習問題3
+# ```Personクラス```をインスタント化にしてくだい。その際、```current_year```の値として2023を受け取って、年齢を計算してください。
 # ```
 # 
 # ````
 
+# ## 親クラスからの継承
+
+# 継承は、既存のクラスをもとにして、変更部分だけを与えることにより、 新たなクラスを定義する機能です。
 # 
+# 元のクラスは親クラスまたはスーパークラス、基底クラス、新しいクラスは子またはサブクラスと呼ばれます。
+# 
+# 以下の例では、```Person```クラスをもとにして```Student```クラスを定義しています。
+
+# In[11]:
+
+
+class Student(Person):
+    pass # 何もしない
+
+
+# クラスは他のクラスを継承したものかどうかは、```issubclass()```を使えば調べられます。
+
+# In[12]:
+
+
+issubclass(Student, Person)
+
+
+# 次に、継承を使用し、新しいクラスを作成してみよう。
+
+# In[13]:
+
+
+class Student(Person):
+    def __init__(self, name, birth, number):
+        super().__init__(name, birth)
+        self.number = number
+
+    def introduce(self):
+        super().say_hello()
+        print("I am a student.")
+
+
+# ```Student```クラスが```Person```クラスを継承する際、```__init__```メソッドでは```super()```を使用することにより、```Person```クラスの属性```name```と```birth```を継承できます。
+# 
+# - ```super()```が親クラスの```Person```の定義を取り出す
+# - ```super().__init__()```メソッド呼び出しは、```Person.__init__()```メソッドを呼び出す
+# - ```self.number```は```Person```クラスに含まれていなく、```Student```クラスに新しい属性を追加する
+
+# さらに、```Student```クラスには```say_hello```メソッドなど親クラスである```Person```クラスで定義されたメソッドが追加されて、```super().say_hello()```という形でを呼び出されます。
+
+# In[14]:
+
+
+john = Student("John", 2000, "S12345")
+
+
+# In[15]:
+
+
+john.name
+
+
+# In[16]:
+
+
+john.birth
+
+
+# In[17]:
+
+
+john.number
+
+
+# さらに、```Student```クラスには```say_hello```メソッドなど親クラスである```Person```クラスで定義されたメソッドが追加されて、```super().say_hello()```という形でを呼び出されます。
+
+# In[18]:
+
+
+john.say_hello()
+
+
+# In[19]:
+
+
+john.introduce()
+
+
+# ````{tab-set}
+# ```{tab-item} 実習問題1
+# ```Student```クラスが```Person```クラスを継承する際、```current_year```という属性も継承してくだい。
+# 
+# ```{tab-item} 実習問題2
+# ```Student```クラスに```print_age()```というメソッドを追加してくだい。```print_age()```は、親クラスで定義された```age()```メソッドで年齢を計算し、```{name} is {age} years old```という形でプリントしてください。例えば、名前は```sato```, 年齢は```23```の場合、```sato is 23 years old```が表示されるようにしてください。
+# ```
+# 
+# ````
+
+# In[ ]:
+
+
+
+
