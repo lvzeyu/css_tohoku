@@ -185,6 +185,23 @@ const thebe_selector_output = ".output, .cell_output"
    関数
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips.html">
+   Tips
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -533,7 +550,13 @@ e
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">range()</span></code>という関数を使うと連続する数値からなるデータを得ることができますので、これを用いてfor文を書くことができます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range()</span></code>という関数を使うと連続する数値からなるデータを得ることができますので、これを用いてfor文を書くことができます。主な目的は、ループの回数を指定したり、リストやタプルを作成したりする際に範囲を指定することです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: 範囲の開始値を指定します（デフォルトは<span class="math notranslate nohighlight">\(0\)</span>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code>:  範囲の終了値を指定します（指定した値より小さい値まで範囲が生成されます）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: 範囲内の値の間隔を指定します（デフォルトは<span class="math notranslate nohighlight">\(1\)</span>）</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
@@ -546,6 +569,40 @@ e
 2
 3
 4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#startを省略した場合、デフォルトで0から開始されます。</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
 5
 </pre></div>
 </div>
@@ -648,8 +705,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="aebefa19-8415-4b14-babf-c5ed86c8a80f" name="7763efce-d966-4852-a25a-df3165262dfb" type="radio">
-</input><label class="sd-tab-label" for="aebefa19-8415-4b14-babf-c5ed86c8a80f">
+<input checked="checked" id="33d041f1-c40a-4b2a-97e7-5a94fd7c8e73" name="25eb9fbb-fd74-48cd-a417-78247f24c7e2" type="radio">
+</input><label class="sd-tab-label" for="33d041f1-c40a-4b2a-97e7-5a94fd7c8e73">
 実習問題</label><div class="sd-tab-content docutils">
 <p>ここで、ユークリッドの互除法というアルゴリズムの実装にトライしてみましょう。</p>
 <p>ユークリッドの互除法とは、2つの整数、aとbの最大公約数を求めるアルゴリズムです。例えば、2485と1162の最大公約数を求めたい場合</p>
@@ -708,7 +765,7 @@ e
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#for i in range(20):</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
@@ -748,8 +805,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="39b16b56-1e5a-4d04-bab9-db9ad79a1bf2" name="01b73c1c-c9ab-4581-bb89-536734b81147" type="radio">
-</input><label class="sd-tab-label" for="39b16b56-1e5a-4d04-bab9-db9ad79a1bf2">
+<input checked="checked" id="e849222b-0756-4e17-93ff-e14696290ef8" name="f9f69dc6-e840-4767-937b-1a97f9ae3acc" type="radio">
+</input><label class="sd-tab-label" for="e849222b-0756-4e17-93ff-e14696290ef8">
 実習問題</label><div class="sd-tab-content docutils">
 <p>被除数が100である場合、リストの値を除数とする割り算の結果を順番に計算するプログラムを実装してください。</p>
 <ul class="simple">
@@ -791,8 +848,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="41617fca-ed35-487e-a3d9-aec6e4398f14" name="d447f6a1-9ef9-45ff-8d8f-f8173d52b173" type="radio">
-</input><label class="sd-tab-label" for="41617fca-ed35-487e-a3d9-aec6e4398f14">
+<input checked="checked" id="dad063cc-4edb-4f2b-b938-205e848289ec" name="220126ca-7f79-43f9-b36b-941f1c2f3b5a" type="radio">
+</input><label class="sd-tab-label" for="dad063cc-4edb-4f2b-b938-205e848289ec">
 実習問題</label><div class="sd-tab-content docutils">
 <p>以下にリストに基づいて、リストの要素を値、そのインデックスをキーとする辞書を作ってくだい。</p>
 </div>
@@ -870,8 +927,8 @@ c 3
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="080fdc65-698e-41fb-ac83-a3c96ac4e90d" name="7daaaeec-aaff-49cd-803f-18e9c7031731" type="radio">
-</input><label class="sd-tab-label" for="080fdc65-698e-41fb-ac83-a3c96ac4e90d">
+<input checked="checked" id="dd7e19eb-b500-4706-9c57-cf8b8909ed61" name="cf38db82-2ebf-4861-8bb1-8bbddd4e3328" type="radio">
+</input><label class="sd-tab-label" for="dd7e19eb-b500-4706-9c57-cf8b8909ed61">
 実習問題</label><div class="sd-tab-content docutils">
 <p>2つのリストをzip関数を使ってループし、各リストの要素を合計し、その結果を新しいリストに格納するプログラムを作成してください。</p>
 </div>
@@ -970,8 +1027,8 @@ Name: Habermas Nationality: Germany
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="064fe5d2-415a-417e-a441-e36965935101" name="e3b3afe8-8fbb-4add-83ae-a8db617393ae" type="radio">
-</input><label class="sd-tab-label" for="064fe5d2-415a-417e-a441-e36965935101">
+<input checked="checked" id="9b89ff5c-4e63-40cd-84e5-a69afed749a2" name="96644f7c-fef5-4ba2-9c7e-6ec5f5a6411f" type="radio">
+</input><label class="sd-tab-label" for="9b89ff5c-4e63-40cd-84e5-a69afed749a2">
 入れ子のリストを平らにする</label><div class="sd-tab-content docutils">
 <p>入れ子になったリストを平らにしててくだい。</p>
 <p>list1=[1, [2, 3], [4, [5]]]</p>
