@@ -456,6 +456,11 @@ title="Print to PDF"
    親クラスからの継承
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   特殊メソッド
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -505,6 +510,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
    親クラスからの継承
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   特殊メソッド
   </a>
  </li>
 </ul>
@@ -675,18 +685,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1019bb24-83cf-4bea-a924-a156bc5ce027" name="4954f183-04ca-4430-a2d9-95b86c83d836" type="radio">
-</input><label class="sd-tab-label" for="1019bb24-83cf-4bea-a924-a156bc5ce027">
+<input checked="checked" id="109a4068-8477-45ef-baaf-a1366c37115f" name="0f3f1ad3-3ea4-4c45-ab2e-502f9ae2a592" type="radio">
+</input><label class="sd-tab-label" for="109a4068-8477-45ef-baaf-a1366c37115f">
 実習問題1</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。　で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。<code class="docutils literal notranslate"><span class="pre">death</span></code>で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="1e2e26e2-4d48-46e7-aa05-8daf821f9acd" name="4954f183-04ca-4430-a2d9-95b86c83d836" type="radio">
-</input><label class="sd-tab-label" for="1e2e26e2-4d48-46e7-aa05-8daf821f9acd">
+<input id="c662a758-9fe0-482e-8069-7afb4c66bd16" name="0f3f1ad3-3ea4-4c45-ab2e-502f9ae2a592" type="radio">
+</input><label class="sd-tab-label" for="c662a758-9fe0-482e-8069-7afb4c66bd16">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
 </div>
-<input id="b049150e-5e49-4d7d-bde4-af007fe5b0c1" name="4954f183-04ca-4430-a2d9-95b86c83d836" type="radio">
-</input><label class="sd-tab-label" for="b049150e-5e49-4d7d-bde4-af007fe5b0c1">
+<input id="91f0cd2d-0d09-4169-a05f-fc5c50b3f1d3" name="0f3f1ad3-3ea4-4c45-ab2e-502f9ae2a592" type="radio">
+</input><label class="sd-tab-label" for="91f0cd2d-0d09-4169-a05f-fc5c50b3f1d3">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>の値として2023を受け取って、年齢を計算してください。</p>
 </div>
@@ -811,8 +821,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="311d78ab-3222-4757-a903-8a07a28d2284" name="f977c185-dae7-4e74-8684-4226489a3670" type="radio">
-</input><label class="sd-tab-label" for="311d78ab-3222-4757-a903-8a07a28d2284">
+<input checked="checked" id="f60f1813-9b10-4bad-85e6-09057c337351" name="54e6c290-e946-4c16-93af-808bccc94cd9" type="radio">
+</input><label class="sd-tab-label" for="f60f1813-9b10-4bad-85e6-09057c337351">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p>
 <div class="sd-tab-item docutils">
@@ -820,6 +830,257 @@ I am a student.
 <div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>というメソッドを追加してくだい。<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>は、親クラスで定義された<code class="docutils literal notranslate"><span class="pre">age()</span></code>メソッドで年齢を計算し、<code class="docutils literal notranslate"><span class="pre">{name}</span> <span class="pre">is</span> <span class="pre">{age}</span> <span class="pre">years</span> <span class="pre">old</span></code>という形でプリントしてください。例えば、名前は<code class="docutils literal notranslate"><span class="pre">sato</span></code>, 年齢は<code class="docutils literal notranslate"><span class="pre">23</span></code>の場合、<code class="docutils literal notranslate"><span class="pre">sato</span> <span class="pre">is</span> <span class="pre">23</span> <span class="pre">years</span> <span class="pre">old</span></code>が表示されるようにしてください。</p>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>特殊メソッド<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num=1+9</span></code>のようなコードを実行する際、値1と値9を持つ整数オブジェクトは、<code class="docutils literal notranslate"><span class="pre">+</span></code>が数学の足し算の意味で使われています</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name='Karl'+'Marx'</span></code>のようなコードを実行する際、<code class="docutils literal notranslate"><span class="pre">+</span></code>が文字列の結合の意味で使われています。</p></li>
+</ul>
+<p>なぜPythonがどの使い方にすべきことを知るといえば、<strong>特殊メソッド</strong>で演算子の機能を定義しているわけです。</p>
+<p>特殊メソッドは、クラスの振る舞いや組み込みの言語機能をカスタマイズするために使用されます。</p>
+<p>メソッド名の前後に2つのアンダースコア（ダブルアンダースコア）が付いていることが特徴です。</p>
+<p>既に紹介した<code class="docutils literal notranslate"><span class="pre">__init()__</span></code>は、初期化ための特殊メソッドとして知られており、オブジェクトが作成される際に自動的に呼び出されます。オブジェクトの初期化やインスタンス変数の設定など、初期化に必要な処理を実行します。</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>特殊メソッドはPythonの言語機能と密接に関連しており、それらを正しく動作させるためには予約された名前が必要です。</p>
+<p>アンダースコアによって、これらの特殊メソッドが明示的に区別され、特殊メソッドと一般的なメソッドや変数名との間で名前の衝突を回避することができます。。</p>
+</aside>
+<p>次のコードは、<code class="docutils literal notranslate"><span class="pre">equal()</span></code>という通常のメソッドを定義します。</p>
+<p>このメソッドにより、文字列を小文字へ変換してから比較します。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Word</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="k">def</span> <span class="nf">equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">word2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">word2</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;Sendai&quot;</span><span class="p">)</span>
+<span class="n">sendai2</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;sendai&quot;</span><span class="p">)</span>
+<span class="n">tokyo</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tokyo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">sendai2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span> <span class="o">==</span> <span class="n">sendai2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで、組み込み型と同じように、<code class="docutils literal notranslate"><span class="pre">==</span></code>を使いたいときは、<code class="docutils literal notranslate"><span class="pre">equal()</span></code>メソッドを<code class="docutils literal notranslate"><span class="pre">__eq__</span></code>という特殊メソッドに変更します。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Word</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">word2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">word2</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;Sendai&quot;</span><span class="p">)</span>
+<span class="n">sendai2</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;sendai&quot;</span><span class="p">)</span>
+<span class="n">tokyo</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span> <span class="o">==</span> <span class="n">sendai2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span> <span class="o">==</span> <span class="n">tokyo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>メソッド名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__eq__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__ne__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__lt__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__le__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__gt__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__ge__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>メソッド名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__floordiv__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__mod__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__pow__(self,</span> <span class="pre">other)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>メソッド名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__str__(self)</span></code></p></td>
+<td><p>オブジェクトの文字列表現を返す。<code class="docutils literal notranslate"><span class="pre">str()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code></p></td>
+<td><p>オブジェクトの公式な表現を返すために使用されます。<code class="docutils literal notranslate"><span class="pre">repr()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></p></td>
+<td><p>オブジェクトの長さ（要素数）を返すために使用されます。<code class="docutils literal notranslate"><span class="pre">len()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Word</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">word2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">word2</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;The word is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span><span class="o">=</span><span class="n">Word</span><span class="p">(</span><span class="s2">&quot;Sendai&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sendai</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The word is Sendai
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sendai</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SENDAI
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="0bb28a1d-3f15-483d-86f6-fe2e4c9e588a" name="3e553aa9-fd89-447e-a39f-a8fab308dfc1" type="radio">
+</input><label class="sd-tab-label" for="0bb28a1d-3f15-483d-86f6-fe2e4c9e588a">
+実習問題</label><div class="sd-tab-content docutils">
+<div class="highlight-クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </div>
 </div>
