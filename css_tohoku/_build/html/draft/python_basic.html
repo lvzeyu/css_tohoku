@@ -50,8 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="変数" href="variable.html" />
@@ -183,6 +183,23 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="function.html">
    関数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips.html">
+   Tips
   </a>
  </li>
 </ul>
@@ -772,13 +789,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="acc31e83-7b8b-40cd-91a8-72dfdfe35c0f" name="d824262f-6a2a-4688-bc8e-adf64c271bf2" type="radio">
-</input><label class="sd-tab-label" for="acc31e83-7b8b-40cd-91a8-72dfdfe35c0f">
+<input checked="checked" id="1bc298f5-52f1-4d23-87b7-3d112aed864e" name="9e1452ca-7354-489b-8d43-d957a330fbe6" type="radio">
+</input><label class="sd-tab-label" for="1bc298f5-52f1-4d23-87b7-3d112aed864e">
 練習問題1</label><div class="sd-tab-content docutils">
 <p>一日は何秒だを計算してみよう。</p>
 </div>
-<input id="437d6004-a5dd-4c23-9017-7c1387692166" name="d824262f-6a2a-4688-bc8e-adf64c271bf2" type="radio">
-</input><label class="sd-tab-label" for="437d6004-a5dd-4c23-9017-7c1387692166">
+<input id="85c9cffa-6508-493a-8bd9-8c5bc7ef9743" name="9e1452ca-7354-489b-8d43-d957a330fbe6" type="radio">
+</input><label class="sd-tab-label" for="85c9cffa-6508-493a-8bd9-8c5bc7ef9743">
 練習問題2</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(1\)</span>年<span class="math notranslate nohighlight">\(365\)</span>日といいますが、厳密的に言えば、<span class="math notranslate nohighlight">\(1\)</span>年を<span class="math notranslate nohighlight">\(366\)</span>日とする閏年を<span class="math notranslate nohighlight">\(400\)</span>年間に<span class="math notranslate nohighlight">\(97\)</span>回設けることによって、<span class="math notranslate nohighlight">\(1\)</span>年の平均日数を<span class="math notranslate nohighlight">\(365.2425\)</span>日とする。</p>
 <p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
@@ -930,7 +947,7 @@ World
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./draft"
         },
         predefinedOutput: true

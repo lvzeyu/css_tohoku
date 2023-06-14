@@ -50,10 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="オブジェクトとクラス" href="class.html" />
     <link rel="prev" title="ループ" href="loop.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -182,6 +183,23 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    関数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips.html">
+   Tips
   </a>
  </li>
 </ul>
@@ -647,9 +665,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4482482448
-関数の内部 10 4482482704
-関数の実行後 2 4482482448
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 140333358967120
+関数の内部 10 140333358967376
+関数の実行後 2 140333358967120
 </pre></div>
 </div>
 </div>
@@ -724,8 +742,8 @@ Hi, Bob!
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b62caa86-5d7b-40f5-b1ef-9a3aeff22a83" name="a88d44b5-b3e7-4fd4-bf4e-f773cc28347f" type="radio">
-</input><label class="sd-tab-label" for="b62caa86-5d7b-40f5-b1ef-9a3aeff22a83">
+<input checked="checked" id="4eb65555-79fa-41ad-b693-43958979a1a4" name="a8d785af-31fb-4dbd-9ec0-59c19777ebe3" type="radio">
+</input><label class="sd-tab-label" for="4eb65555-79fa-41ad-b693-43958979a1a4">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>被除数と除数を指定し、割り算の結果を順番に計算する関数を作成してください。</p>
 <ul class="simple">
@@ -733,8 +751,8 @@ Hi, Bob!
 <li><p>計算不可能の場合、「計算できません」というエラーを表示してください</p></li>
 </ul>
 </div>
-<input id="269a58bf-fdd5-4d35-8c7d-7c97d124ff37" name="a88d44b5-b3e7-4fd4-bf4e-f773cc28347f" type="radio">
-</input><label class="sd-tab-label" for="269a58bf-fdd5-4d35-8c7d-7c97d124ff37">
+<input id="2e6db5ab-9850-472e-bfba-ab2f0b8d7653" name="a8d785af-31fb-4dbd-9ec0-59c19777ebe3" type="radio">
+</input><label class="sd-tab-label" for="2e6db5ab-9850-472e-bfba-ab2f0b8d7653">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>ユークリッドの互除法の関数を作成してください。</p>
 <ul class="simple">
@@ -824,8 +842,8 @@ c 3
 </ol>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3ec6aae9-fa99-419c-b59f-883e2281d978" name="080b49db-4148-4b46-ae99-17cf5d02f62c" type="radio">
-</input><label class="sd-tab-label" for="3ec6aae9-fa99-419c-b59f-883e2281d978">
+<input checked="checked" id="036e5c44-a7df-4eee-8617-5d515f2516a0" name="24ca8c37-4465-4927-8047-224204f456a3" type="radio">
+</input><label class="sd-tab-label" for="036e5c44-a7df-4eee-8617-5d515f2516a0">
 実習問題</label><div class="sd-tab-content docutils">
 <p>複数の商品とその価格を受け取り、価格の合計を計算する関数を作成してください。</p>
 </div>
@@ -881,13 +899,13 @@ False
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d6036cbc-fb75-44da-aa3f-ac545036b7df" name="e1269214-3d8c-486a-8c60-859d2eae3d31" type="radio">
-</input><label class="sd-tab-label" for="d6036cbc-fb75-44da-aa3f-ac545036b7df">
+<input checked="checked" id="096f358f-d884-43c2-b245-e8f3f798225e" name="2337f2c9-7e9e-49d9-b3b3-59857d4d2c27" type="radio">
+</input><label class="sd-tab-label" for="096f358f-d884-43c2-b245-e8f3f798225e">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>整数のリストが与えられたとき、そのリストから偶数の要素のみをフィルタリングするラムダ関数を作成してください。</p>
 </div>
-<input id="c219e21d-82a5-43fa-b972-cbf8e75af707" name="e1269214-3d8c-486a-8c60-859d2eae3d31" type="radio">
-</input><label class="sd-tab-label" for="c219e21d-82a5-43fa-b972-cbf8e75af707">
+<input id="268a8d52-e7c1-42ef-aceb-dcf3802f7356" name="2337f2c9-7e9e-49d9-b3b3-59857d4d2c27" type="radio">
+</input><label class="sd-tab-label" for="268a8d52-e7c1-42ef-aceb-dcf3802f7356">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>浮動小数点数のリストが与えられたとき、そのリストの要素の平均値を計算するラムダ関数を作成してください。</p>
 </div>
@@ -907,7 +925,7 @@ False
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./draft"
         },
         predefinedOutput: true
@@ -928,6 +946,13 @@ False
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">ループ</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="class.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">オブジェクトとクラス</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
