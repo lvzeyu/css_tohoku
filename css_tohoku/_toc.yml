@@ -24,7 +24,9 @@ parts:
   - file: draft/function.ipynb
   - file: draft/class.ipynb
   - file: draft/py.ipynb
-
+- caption: データ分析ためのパケージ
+  chapters:
+  - file: draft/numpy.ipynb
 - caption: Supplementary
   chapters:
   - file: draft/tips.ipynb
