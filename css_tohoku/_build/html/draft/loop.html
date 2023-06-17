@@ -50,8 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="関数" href="function.html" />
@@ -188,6 +188,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="class.html">
    オブジェクトとクラス
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="py.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     py
+    </span>
+   </code>
+   ファイル
   </a>
  </li>
 </ul>
@@ -705,8 +715,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e2552b87-9380-4701-b51f-0aecfc27c6c7" name="67660ee5-4c87-4b2d-b9b6-19e743eacf15" type="radio">
-</input><label class="sd-tab-label" for="e2552b87-9380-4701-b51f-0aecfc27c6c7">
+<input checked="checked" id="f8b9563f-ba78-43c9-bb6b-524a254d7055" name="ccafcce8-da1c-4600-842e-f8bb8dd22863" type="radio">
+</input><label class="sd-tab-label" for="f8b9563f-ba78-43c9-bb6b-524a254d7055">
 実習問題</label><div class="sd-tab-content docutils">
 <p>ここで、ユークリッドの互除法というアルゴリズムの実装にトライしてみましょう。</p>
 <p>ユークリッドの互除法とは、2つの整数、aとbの最大公約数を求めるアルゴリズムです。例えば、2485と1162の最大公約数を求めたい場合</p>
@@ -765,10 +775,10 @@ e
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wm</span><span class="o">/</span><span class="mi">5</span><span class="n">xxpvjcj15g89khxd5jwn9200000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_97407</span><span class="o">/</span><span class="mf">682867735.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#for i in range(20):</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
 
 <span class="ne">ValueError</span>: math domain error
 </pre></div>
@@ -805,8 +815,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="293f3001-64b6-48d5-86d4-86704f41185d" name="f4601b8b-c76a-4b4e-a7fc-2fd4f5dc0400" type="radio">
-</input><label class="sd-tab-label" for="293f3001-64b6-48d5-86d4-86704f41185d">
+<input checked="checked" id="af20ffc3-87fc-4eea-99a5-c137b270890c" name="146bee99-45e2-4ae6-811e-0a9ff180676b" type="radio">
+</input><label class="sd-tab-label" for="af20ffc3-87fc-4eea-99a5-c137b270890c">
 実習問題</label><div class="sd-tab-content docutils">
 <p>被除数が100である場合、リストの値を除数とする割り算の結果を順番に計算するプログラムを実装してください。</p>
 <ul class="simple">
@@ -848,8 +858,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="caa99b82-33cf-4b21-82d6-dc584eb00012" name="389fba9f-66b3-4b16-ab48-cda70e02b0ce" type="radio">
-</input><label class="sd-tab-label" for="caa99b82-33cf-4b21-82d6-dc584eb00012">
+<input checked="checked" id="8cf7f981-bbd3-49ec-8214-ccf958a6dbc9" name="938f2fdf-bbe6-4ed1-9ff4-8b1cd2960290" type="radio">
+</input><label class="sd-tab-label" for="8cf7f981-bbd3-49ec-8214-ccf958a6dbc9">
 実習問題</label><div class="sd-tab-content docutils">
 <p>以下にリストに基づいて、リストの要素を値、そのインデックスをキーとする辞書を作ってくだい。</p>
 </div>
@@ -927,8 +937,8 @@ c 3
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6cff2d0e-eb76-417f-b44a-2b90feb81a47" name="97b8e813-ad0b-4cc2-b3de-aff7d9384c1b" type="radio">
-</input><label class="sd-tab-label" for="6cff2d0e-eb76-417f-b44a-2b90feb81a47">
+<input checked="checked" id="6ea55caa-736d-41c8-be84-729c1e9ebc0d" name="26710d35-bec0-453d-9883-00a2c41d4f11" type="radio">
+</input><label class="sd-tab-label" for="6ea55caa-736d-41c8-be84-729c1e9ebc0d">
 実習問題</label><div class="sd-tab-content docutils">
 <p>2つのリストをzip関数を使ってループし、各リストの要素を合計し、その結果を新しいリストに格納するプログラムを作成してください。</p>
 </div>
@@ -1027,8 +1037,8 @@ Name: Habermas Nationality: Germany
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6cefba53-a66a-4ed5-ba49-dab3f7036930" name="d47ae019-f3cb-4fe6-8daf-c20d7057a92a" type="radio">
-</input><label class="sd-tab-label" for="6cefba53-a66a-4ed5-ba49-dab3f7036930">
+<input checked="checked" id="c81e5120-bed6-46ea-92a4-7ed75baa3a6e" name="2136336b-5bb5-4e14-ab23-ace551ac0947" type="radio">
+</input><label class="sd-tab-label" for="c81e5120-bed6-46ea-92a4-7ed75baa3a6e">
 入れ子のリストを平らにする</label><div class="sd-tab-content docutils">
 <p>入れ子になったリストを平らにしててくだい。</p>
 <p>list1=[1, [2, 3], [4, [5]]]</p>
@@ -1049,7 +1059,7 @@ Name: Habermas Nationality: Germany
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./draft"
         },
         predefinedOutput: true

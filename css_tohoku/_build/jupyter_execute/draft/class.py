@@ -163,13 +163,32 @@ sato.print_birth()
 # In[11]:
 
 
+class Person:
+    def __init__(self, name, birth, current_year=2023):
+        self.name = name
+        self.birth = birth
+        self.current_year = current_year
+
+    def say_hello(self):
+        print("Hello, my name is", self.name)
+    
+    def print_birth(self):
+        print("{} was born in {}".format(self.name,self.birth))
+    
+    def age(self):
+        return self.current_year - self.birth
+
+
+# In[12]:
+
+
 class Student(Person):
     pass # 何もしない
 
 
 # クラスは他のクラスを継承したものかどうかは、```issubclass()```を使えば調べられます。
 
-# In[12]:
+# In[13]:
 
 
 issubclass(Student, Person)
@@ -177,7 +196,7 @@ issubclass(Student, Person)
 
 # 次に、継承を使用し、新しいクラスを作成してみよう。
 
-# In[13]:
+# In[14]:
 
 
 class Student(Person):
@@ -198,25 +217,25 @@ class Student(Person):
 
 # さらに、```Student```クラスには```say_hello```メソッドなど親クラスである```Person```クラスで定義されたメソッドが追加されて、```super().say_hello()```という形でを呼び出されます。
 
-# In[14]:
+# In[15]:
 
 
 john = Student("John", 2000, "S12345")
 
 
-# In[15]:
+# In[16]:
 
 
 john.name
 
 
-# In[16]:
+# In[17]:
 
 
 john.birth
 
 
-# In[17]:
+# In[18]:
 
 
 john.number
@@ -224,13 +243,13 @@ john.number
 
 # さらに、```Student```クラスには```say_hello```メソッドなど親クラスである```Person```クラスで定義されたメソッドが追加されて、```super().say_hello()```という形でを呼び出されます。
 
-# In[18]:
+# In[19]:
 
 
 john.say_hello()
 
 
-# In[19]:
+# In[20]:
 
 
 john.introduce()
@@ -243,7 +262,76 @@ john.introduce()
 # ```{tab-item} 実習問題2
 # ```Student```クラスに```print_age()```というメソッドを追加してくだい。```print_age()```は、親クラスで定義された```age()```メソッドで年齢を計算し、```{name} is {age} years old```という形でプリントしてください。例えば、名前は```sato```, 年齢は```23```の場合、```sato is 23 years old```が表示されるようにしてください。
 # ```
+# ````
+
+# ## 集約
 # 
+# Pythonにおけるクラスの集約（aggregation）とは、あるクラスが他のクラスのインスタンスをメンバーとして持つことを指します。つまり、1つのクラスが他のクラスを部品として利用し、それらのクラスの機能やデータを組み合わせて利用することができるということです。
+# 
+# クラスの集約は、関連性のあるオブジェクトを独立して定義し、それらを組み合わせてより複雑な構造を作成する場合に便利です。
+
+# In[21]:
+
+
+class Address:
+    def __init__(self, state, city, street):
+        self.state = state
+        self.city = city
+        self.street = street
+
+    def get_full_address(self):
+        return f"{self.state} {self.city} {self.street}"
+
+
+# In[22]:
+
+
+class Person:
+    def __init__(self, name, birth, current_year=2023,address=None):
+        self.name = name
+        self.birth = birth
+        self.current_year = current_year
+        self.address = address
+
+    def say_hello(self):
+        print("Hello, my name is", self.name)
+    
+    def print_birth(self):
+        print("{} was born in {}".format(self.name,self.birth))
+    
+    def age(self):
+        return self.current_year - self.birth
+    
+    def get_person_info(self):
+        address_info = self.address.get_full_address()
+        return f"Name: {self.name}, Age: {self.age()}, Address: {address_info}"
+
+
+# In[23]:
+
+
+# Addressのインスタンスを作成
+address = Address("宮城県", "仙台市", "青葉区川内27番1号")
+
+# Personのインスタンスを作成し、Addressのインスタンスを渡す
+sato = Person(name="佐藤", birth=2000, address=address)
+
+
+# In[24]:
+
+
+sato.get_person_info()
+
+
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# Majorというクラスを作成し、専門分野に関する情報を保持する。
+# - Majorクラスには専攻名（major）、所属学部（department）、入学年（duration）が含まれている。
+# - StudentクラスがPersonクラスを継承する。その際、
+#  - Majorのインスタンスを渡す
+#  - 入学年（duration）と現在の年(current_year)で学年を計算するメソッドを定義する
+# - Studentクラスをインスタンス化して、学年を計算してください。
+# ```
 # ````
 
 # ## 特殊メソッド
@@ -270,45 +358,6 @@ john.introduce()
 # 
 # このメソッドにより、文字列を小文字へ変換してから比較します。
 
-# In[20]:
-
-
-class Word:
-    def __init__(self, text):
-        self.text = text
-
-    def equal(self,word2):
-        return self.text.lower() == word2.text.lower()
-
-
-# In[21]:
-
-
-sendai=Word("Sendai")
-sendai2=Word("sendai")
-tokyo=Word("Tokyo")
-
-
-# In[22]:
-
-
-sendai.equal(tokyo)
-
-
-# In[23]:
-
-
-sendai.equal(sendai2)
-
-
-# In[24]:
-
-
-sendai == sendai2
-
-
-# ここで、組み込み型と同じように、```==```を使いたいときは、```equal()```メソッドを```__eq__```という特殊メソッドに変更します。
-
 # In[25]:
 
 
@@ -316,7 +365,7 @@ class Word:
     def __init__(self, text):
         self.text = text
 
-    def __eq__(self,word2):
+    def equal(self,word2):
         return self.text.lower() == word2.text.lower()
 
 
@@ -331,10 +380,49 @@ tokyo=Word("Tokyo")
 # In[27]:
 
 
-sendai == sendai2
+sendai.equal(tokyo)
 
 
 # In[28]:
+
+
+sendai.equal(sendai2)
+
+
+# In[29]:
+
+
+sendai == sendai2
+
+
+# ここで、組み込み型と同じように、```==```を使いたいときは、```equal()```メソッドを```__eq__```という特殊メソッドに変更します。
+
+# In[30]:
+
+
+class Word:
+    def __init__(self, text):
+        self.text = text
+
+    def __eq__(self,word2):
+        return self.text.lower() == word2.text.lower()
+
+
+# In[31]:
+
+
+sendai=Word("Sendai")
+sendai2=Word("sendai")
+tokyo=Word("Tokyo")
+
+
+# In[32]:
+
+
+sendai == sendai2
+
+
+# In[33]:
 
 
 sendai == tokyo
@@ -368,7 +456,7 @@ sendai == tokyo
 # | `__len__(self)`   | オブジェクトの長さ（要素数）を返すために使用されます。```len()```                 |
 # 
 
-# In[29]:
+# In[34]:
 
 
 class Word:
@@ -382,19 +470,19 @@ class Word:
         return self.text.upper()
 
 
-# In[30]:
+# In[35]:
 
 
 sendai=Word("Sendai")
 
 
-# In[31]:
+# In[36]:
 
 
 sendai
 
 
-# In[32]:
+# In[37]:
 
 
 print(sendai)
@@ -402,11 +490,6 @@ print(sendai)
 
 # ````{tab-set}
 # ```{tab-item} 実習問題
-# ```クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。
+# クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。
+# ```
 # ````
-
-# In[ ]:
-
-
-
-

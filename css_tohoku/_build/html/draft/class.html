@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tips" href="tips.html" />
+    <link rel="next" title="pyファイル" href="py.html" />
     <link rel="prev" title="関数" href="function.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -186,6 +186,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    オブジェクトとクラス
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="py.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     py
+    </span>
+   </code>
+   ファイル
   </a>
  </li>
 </ul>
@@ -458,6 +468,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
+   集約
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
    特殊メソッド
   </a>
  </li>
@@ -514,6 +529,11 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
+   集約
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
    特殊メソッド
   </a>
  </li>
@@ -685,18 +705,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cd65da97-b11e-4093-99a4-d20182ff0ea5" name="24197800-c4ea-46a4-9514-7fa73907ee83" type="radio">
-</input><label class="sd-tab-label" for="cd65da97-b11e-4093-99a4-d20182ff0ea5">
+<input checked="checked" id="67f76ea5-3802-451b-be5c-39815fbde492" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
+</input><label class="sd-tab-label" for="67f76ea5-3802-451b-be5c-39815fbde492">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。<code class="docutils literal notranslate"><span class="pre">death</span></code>で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="fc8f33c4-bf33-4815-85e4-4e004635ba52" name="24197800-c4ea-46a4-9514-7fa73907ee83" type="radio">
-</input><label class="sd-tab-label" for="fc8f33c4-bf33-4815-85e4-4e004635ba52">
+<input id="3ce986d3-7a5b-4a5c-80fc-06c7726eb673" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
+</input><label class="sd-tab-label" for="3ce986d3-7a5b-4a5c-80fc-06c7726eb673">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
 </div>
-<input id="59ba372b-9073-4a89-a549-25d588ef7494" name="24197800-c4ea-46a4-9514-7fa73907ee83" type="radio">
-</input><label class="sd-tab-label" for="59ba372b-9073-4a89-a549-25d588ef7494">
+<input id="47c960f0-fa30-4265-ac26-9ff0e31d6099" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
+</input><label class="sd-tab-label" for="47c960f0-fa30-4265-ac26-9ff0e31d6099">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>の値として2023を受け取って、年齢を計算してください。</p>
 </div>
@@ -708,6 +728,26 @@ title="Print to PDF"
 <p>継承は、既存のクラスをもとにして、変更部分だけを与えることにより、 新たなクラスを定義する機能です。</p>
 <p>元のクラスは親クラスまたはスーパークラス、基底クラス、新しいクラスは子またはサブクラスと呼ばれます。</p>
 <p>以下の例では、<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスをもとにして<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスを定義しています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">birth</span><span class="p">,</span> <span class="n">current_year</span><span class="o">=</span><span class="mi">2023</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth</span> <span class="o">=</span> <span class="n">birth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">=</span> <span class="n">current_year</span>
+
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">print_birth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> was born in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">birth</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
@@ -821,8 +861,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="7c7067df-40f4-4ec0-8a50-300d5dd98051" name="557b0581-6fb5-4430-bb1f-dd8ee2d6bb51" type="radio">
-</input><label class="sd-tab-label" for="7c7067df-40f4-4ec0-8a50-300d5dd98051">
+<input checked="checked" id="220298ad-3b68-495a-9f12-1e6e5949fed7" name="ba0dd6dc-6acf-4717-afdf-8088e9ec0d50" type="radio">
+</input><label class="sd-tab-label" for="220298ad-3b68-495a-9f12-1e6e5949fed7">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p>
 <div class="sd-tab-item docutils">
@@ -835,7 +875,88 @@ I am a student.
 </div>
 </section>
 <section id="id6">
-<h2>特殊メソッド<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2>集約<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<p>Pythonにおけるクラスの集約（aggregation）とは、あるクラスが他のクラスのインスタンスをメンバーとして持つことを指します。つまり、1つのクラスが他のクラスを部品として利用し、それらのクラスの機能やデータを組み合わせて利用することができるということです。</p>
+<p>クラスの集約は、関連性のあるオブジェクトを独立して定義し、それらを組み合わせてより複雑な構造を作成する場合に便利です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Address</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="n">street</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">city</span> <span class="o">=</span> <span class="n">city</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">street</span> <span class="o">=</span> <span class="n">street</span>
+
+    <span class="k">def</span> <span class="nf">get_full_address</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">city</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">street</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">birth</span><span class="p">,</span> <span class="n">current_year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">birth</span> <span class="o">=</span> <span class="n">birth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">=</span> <span class="n">current_year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, my name is&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">print_birth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> was born in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">birth</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">birth</span>
+    
+    <span class="k">def</span> <span class="nf">get_person_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">address_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="o">.</span><span class="n">get_full_address</span><span class="p">()</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">()</span><span class="si">}</span><span class="s2">, Address: </span><span class="si">{</span><span class="n">address_info</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addressのインスタンスを作成</span>
+<span class="n">address</span> <span class="o">=</span> <span class="n">Address</span><span class="p">(</span><span class="s2">&quot;宮城県&quot;</span><span class="p">,</span> <span class="s2">&quot;仙台市&quot;</span><span class="p">,</span> <span class="s2">&quot;青葉区川内27番1号&quot;</span><span class="p">)</span>
+
+<span class="c1"># Personのインスタンスを作成し、Addressのインスタンスを渡す</span>
+<span class="n">sato</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;佐藤&quot;</span><span class="p">,</span> <span class="n">birth</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="n">address</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sato</span><span class="o">.</span><span class="n">get_person_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Name: 佐藤, Age: 23, Address: 宮城県 仙台市 青葉区川内27番1号&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="6333d620-6c8d-43e7-a301-ce342a5b72ac" name="20984517-936e-4965-bde1-3c91bff69ccc" type="radio">
+</input><label class="sd-tab-label" for="6333d620-6c8d-43e7-a301-ce342a5b72ac">
+実習問題</label><div class="sd-tab-content docutils">
+<p>Majorというクラスを作成し、専門分野に関する情報を保持する。</p>
+<ul class="simple">
+<li><p>Majorクラスには専攻名（major）、所属学部（department）、入学年（duration）が含まれている。</p></li>
+<li><p>StudentクラスがPersonクラスを継承する。その際、</p></li>
+<li><p>Majorのインスタンスを渡す</p></li>
+<li><p>入学年（duration）と現在の年(current_year)で学年を計算するメソッドを定義する</p></li>
+<li><p>Studentクラスをインスタンス化して、学年を計算してください。</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>特殊メソッド<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">num=1+9</span></code>のようなコードを実行する際、値1と値9を持つ整数オブジェクトは、<code class="docutils literal notranslate"><span class="pre">+</span></code>が数学の足し算の意味で使われています</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name='Karl'+'Marx'</span></code>のようなコードを実行する際、<code class="docutils literal notranslate"><span class="pre">+</span></code>が文字列の結合の意味で使われています。</p></li>
@@ -1076,12 +1197,10 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2d3ce170-9aab-4130-8759-b95203e38cc1" name="b6b02a5f-7302-4aef-b153-155e0a594bfa" type="radio">
-</input><label class="sd-tab-label" for="2d3ce170-9aab-4130-8759-b95203e38cc1">
+<input checked="checked" id="312a9e3c-05ff-46e9-a122-19d44fb1bb08" name="644924cb-380c-4edc-a9f7-012fcc012ee4" type="radio">
+</input><label class="sd-tab-label" for="312a9e3c-05ff-46e9-a122-19d44fb1bb08">
 実習問題</label><div class="sd-tab-content docutils">
-<div class="highlight-クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。</p>
 </div>
 </div>
 </section>
@@ -1099,7 +1218,7 @@ I am a student.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./draft"
         },
         predefinedOutput: true
@@ -1121,10 +1240,10 @@ I am a student.
             <p class="prev-next-title">関数</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tips.html" title="next page">
+    <a class='right-next' id="next-link" href="py.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tips</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

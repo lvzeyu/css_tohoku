@@ -23,6 +23,7 @@ parts:
   - file: draft/loop.ipynb
   - file: draft/function.ipynb
   - file: draft/class.ipynb
+  - file: draft/py.ipynb
 
 - caption: Supplementary
   chapters:
