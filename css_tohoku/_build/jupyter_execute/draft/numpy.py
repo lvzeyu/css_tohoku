@@ -192,4 +192,197 @@ x2[1,-1]=12
 x2
 
 
+# ## NumPyの応用例:線型回帰モデル
+
+# $n$個のデータ$(x_1,y_1),...(x_n,y_n)$が観測され、各$y_i$が
+# $$
+# y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
+# $$
+# が得られます。
+
+# ### 最小二乗法
 # 
+# 最小二乗法の目標は、与えられたデータセットに対して予測された値（モデルの出力）と実際の値（データセットの出力）の差を最小化することである。
+# 
+# $$
+# h(\alpha,\beta)= \sum_{i=1}^n (y_i-\alpha-\beta x_i)^2
+# $$
+# 
+
+# $E[h(\alpha,\beta)]=0$から,母集団における$\alpha$と$\beta$を求めるが、これはあくまでも母集団の概念である。実際に持っているのは母集団に対応する標本であって、母集団そのもののは手に入りません。
+# 
+# $$
+# \frac{1}{n} \sum_{i=1}^n (y_i-\hat{\alpha}-\hat{\beta}x_i)=0
+# $$
+# 
+# データから得られる推定値を$\hat{\alpha}, \hat{\beta}$で定義する。
+# 
+# $$
+# \frac{1}{n} \sum_{i=1}^n (y_i-\hat{\alpha}-\hat{\beta}x_i)
+# \\
+# =\frac{1}{n} \sum_{i=1}^n (y_i)-\frac{1}{n} \sum_{i=1}^n \hat{\alpha}- \frac{1}{n} \sum_{i=1}^n \hat{\beta}x_i 
+# \\
+# =\frac{1}{n} \sum_{i=1}^n (y_i)- \hat{\alpha}- \hat{\beta} \frac{1}{n} \sum_{i=1}^n x_i
+# \\
+# = \bar{y} - \hat{\alpha} - \hat{\beta}\bar{x}
+# $$
+
+# ここで、$\bar{y}$は標本平均と呼ぶ。この式を切片について書き直すと、
+# 
+# $$\hat{\alpha}　= \bar{y}  - \hat{\beta}\bar{x}$$
+
+# この式を　
+# $$
+# \frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0 (条件付き期待値ゼロ仮定　E(u|x)=0 より)
+# $$
+# に代入すると
+
+# $$
+# \sum_{i=1}^n x_i(y_i-(\bar{y}  - \hat{\beta}\bar{x})-\hat{\beta}x_i)=0
+# $$
+# 
+# $$
+# \sum_{i=1}^n x_i(y_i-\bar{y})=\hat{\beta} \sum_{i=1}^n x_i(\bar{x}-x_i)
+# $$
+
+# ここで、
+# $$
+# \sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y}) = \sum_{i=1}^n x_i(y_i-\bar{y}) = \sum_{i=1}^n y_i(x_i-\bar{x})
+# $$
+# 
+# $$
+# \sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n x_i^2-n(\bar{x})^2
+# $$
+# のため
+
+# この式から$\hat{\beta}$を解くと、
+# $$
+# 
+# \hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}
+# 
+# $$
+# そして、$\hat{\alpha}$も得られる
+# $$
+# 
+# \hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}
+# 
+# $$
+
+# 任意の推定値$\hat{\alpha},\hat{\beta}$に関して、$i$に関する当てはめる値(fitted value)を
+# $$
+# 
+# \hat{y_i}=\hat{\alpha} +\hat{\beta} x_i
+# 
+# $$
+# と定義する。
+# 
+# 回帰直線と観測値との差
+# $$
+# 
+# \hat{u_i}=y_i-\hat{y_i}
+# 
+# $$
+# 
+# を残差(residual)といいます。
+# 
+# 残差の二乗の和をとったもの
+# $$
+# 
+# RSS=\sum_{i=1}^n \hat{u_i}^2
+# 
+# $$
+# を残差平方和(residual sum of squares, RSS)といいます。
+
+# ここで、残差平方和を最小にするような$\hat{\alpha}$と$\hat{\beta}$を選びます。
+
+# In[23]:
+
+
+import numpy as np
+
+# サンプルデータ
+# パラメータ
+beta_0 = 2.5  # 切片
+beta_1 = 0.8  # 傾き
+n = 100  # データ数
+
+# 説明変数を一様分布から生成
+x = np.random.uniform(low=0, high=10, size=n)
+
+# ノイズ項を標準正規分布から生成
+epsilon = np.random.normal(loc=0, scale=1, size=n)
+
+# 目的変数を生成
+y = beta_0 + beta_1 * x + epsilon
+
+
+# In[24]:
+
+
+# パラメータの推定
+x_mean = np.mean(x)
+y_mean = np.mean(y)
+
+# β₁の推定
+numerator = np.sum((x - x_mean) * (y - y_mean))
+denominator = np.sum((x - x_mean) ** 2)
+beta = numerator / denominator
+print("beta: ", beta)
+# β₀の推定
+alpha = y_mean - beta * x_mean
+
+print("alpha: ", alpha)
+
+
+# In[25]:
+
+
+# 予測値の計算
+y_pred = alpha + beta * x
+
+# 残差の計算
+residuals = y - y_pred
+
+# 残差の合計の確認
+residual_sum = np.sum(residuals)
+
+print("残差の合計:", residual_sum)
+
+
+# In[26]:
+
+
+{
+    "tags": [
+        "hide-cell"
+    ]
+}
+import numpy as np
+import proplot as plt
+
+
+# Creating a figure and axes
+fig, ax = plt.subplots(refwidth=4)
+
+# Scatter plot of the data points
+ax.scatter(x, y, color='blue', label='Data Points',alpha=0.6)
+
+# Regression line
+x_line = np.linspace(0, 10, 100)
+y_line = beta_0 + beta_1 * x_line
+ax.plot(x_line, y_line, color='red', label='Regression Line')
+
+# Vertical lines and residuals
+for i in range(n):
+    x_i = x[i]
+    y_i = y[i]
+    y_pred_i = beta_0 + beta_1 * x_i
+    ax.vlines(x_i, y_i, y_pred_i, color='gray', linestyle='dotted')
+
+# Plot settings
+ax.format(xlabel='x', ylabel='y', title='Linear Regression')
+ax.legend(loc="lower right")
+
+# Display the plot
+plt.show()
+

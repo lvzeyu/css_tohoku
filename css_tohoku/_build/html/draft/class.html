@@ -201,6 +201,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Supplementary
  </span>
 </p>
@@ -705,18 +717,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="67f76ea5-3802-451b-be5c-39815fbde492" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
-</input><label class="sd-tab-label" for="67f76ea5-3802-451b-be5c-39815fbde492">
+<input checked="checked" id="c811f7e0-dc44-4301-a22d-d45521e48810" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
+</input><label class="sd-tab-label" for="c811f7e0-dc44-4301-a22d-d45521e48810">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。<code class="docutils literal notranslate"><span class="pre">death</span></code>で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="3ce986d3-7a5b-4a5c-80fc-06c7726eb673" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
-</input><label class="sd-tab-label" for="3ce986d3-7a5b-4a5c-80fc-06c7726eb673">
+<input id="9276dbbc-4b48-4e32-acd5-a64a7dfe4781" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
+</input><label class="sd-tab-label" for="9276dbbc-4b48-4e32-acd5-a64a7dfe4781">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
 </div>
-<input id="47c960f0-fa30-4265-ac26-9ff0e31d6099" name="106b3c1e-4941-43c5-a9d6-01115a480933" type="radio">
-</input><label class="sd-tab-label" for="47c960f0-fa30-4265-ac26-9ff0e31d6099">
+<input id="17b9aecc-8cc8-4f78-b381-2c5abb58767e" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
+</input><label class="sd-tab-label" for="17b9aecc-8cc8-4f78-b381-2c5abb58767e">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>の値として2023を受け取って、年齢を計算してください。</p>
 </div>
@@ -790,7 +802,6 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>メソッド呼び出しは、<code class="docutils literal notranslate"><span class="pre">Person.__init__()</span></code>メソッドを呼び出す</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.number</span></code>は<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスに含まれていなく、<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに新しい属性を追加する</p></li>
 </ul>
-<p>さらに、<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスには<code class="docutils literal notranslate"><span class="pre">say_hello</span></code>メソッドなど親クラスである<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスで定義されたメソッドが追加されて、<code class="docutils literal notranslate"><span class="pre">super().say_hello()</span></code>という形でを呼び出されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="s2">&quot;S12345&quot;</span><span class="p">)</span>
@@ -861,16 +872,13 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="220298ad-3b68-495a-9f12-1e6e5949fed7" name="ba0dd6dc-6acf-4717-afdf-8088e9ec0d50" type="radio">
-</input><label class="sd-tab-label" for="220298ad-3b68-495a-9f12-1e6e5949fed7">
-実習問題1</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p>
-<div class="sd-tab-item docutils">
-<p class="sd-tab-label rubric">実習問題2</p>
-<div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>というメソッドを追加してくだい。<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>は、親クラスで定義された<code class="docutils literal notranslate"><span class="pre">age()</span></code>メソッドで年齢を計算し、<code class="docutils literal notranslate"><span class="pre">{name}</span> <span class="pre">is</span> <span class="pre">{age}</span> <span class="pre">years</span> <span class="pre">old</span></code>という形でプリントしてください。例えば、名前は<code class="docutils literal notranslate"><span class="pre">sato</span></code>, 年齢は<code class="docutils literal notranslate"><span class="pre">23</span></code>の場合、<code class="docutils literal notranslate"><span class="pre">sato</span> <span class="pre">is</span> <span class="pre">23</span> <span class="pre">years</span> <span class="pre">old</span></code>が表示されるようにしてください。</p>
-</div>
-</div>
+<input checked="checked" id="d987d721-3a17-42b5-9a61-0186274cfd5f" name="d2557a36-332b-47dd-9918-4a2e5605a664" type="radio">
+</input><label class="sd-tab-label" for="d987d721-3a17-42b5-9a61-0186274cfd5f">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスに<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>というメソッドを追加してくだい。<code class="docutils literal notranslate"><span class="pre">print_age()</span></code>は、親クラスで定義された<code class="docutils literal notranslate"><span class="pre">age()</span></code>メソッドで年齢を計算し、<code class="docutils literal notranslate"><span class="pre">{name}</span> <span class="pre">is</span> <span class="pre">{age}</span> <span class="pre">years</span> <span class="pre">old</span></code>という形でプリントしてください。例えば、名前は<code class="docutils literal notranslate"><span class="pre">sato</span></code>, 年齢は<code class="docutils literal notranslate"><span class="pre">23</span></code>の場合、<code class="docutils literal notranslate"><span class="pre">sato</span> <span class="pre">is</span> <span class="pre">23</span> <span class="pre">years</span> <span class="pre">old</span></code>が表示されるようにしてください。</p></li>
+</ul>
 </div>
 </div>
 </section>
@@ -941,17 +949,21 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6333d620-6c8d-43e7-a301-ce342a5b72ac" name="20984517-936e-4965-bde1-3c91bff69ccc" type="radio">
-</input><label class="sd-tab-label" for="6333d620-6c8d-43e7-a301-ce342a5b72ac">
+<input checked="checked" id="a7fd1fc6-48b4-41f8-a139-8d658bb5730f" name="790892f3-c98d-4702-a7cc-b27d8a953705" type="radio">
+</input><label class="sd-tab-label" for="a7fd1fc6-48b4-41f8-a139-8d658bb5730f">
 実習問題</label><div class="sd-tab-content docutils">
-<p>Majorというクラスを作成し、専門分野に関する情報を保持する。</p>
-<ul class="simple">
+<ol class="simple">
+<li><p>Majorというクラスを作成し、専門分野に関する情報を保持する。</p></li>
 <li><p>Majorクラスには専攻名（major）、所属学部（department）、入学年（duration）が含まれている。</p></li>
 <li><p>StudentクラスがPersonクラスを継承する。その際、</p></li>
+</ol>
+<ul class="simple">
 <li><p>Majorのインスタンスを渡す</p></li>
 <li><p>入学年（duration）と現在の年(current_year)で学年を計算するメソッドを定義する</p></li>
-<li><p>Studentクラスをインスタンス化して、学年を計算してください。</p></li>
 </ul>
+<ol class="simple">
+<li><p>Studentクラスをインスタンス化して、学年を計算してください。</p></li>
+</ol>
 </div>
 </div>
 </section>
@@ -968,7 +980,7 @@ I am a student.
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>特殊メソッドはPythonの言語機能と密接に関連しており、それらを正しく動作させるためには予約された名前が必要です。</p>
-<p>アンダースコアによって、これらの特殊メソッドが明示的に区別され、特殊メソッドと一般的なメソッドや変数名との間で名前の衝突を回避することができます。。</p>
+<p>アンダースコアによって、これらの特殊メソッドが明示的に区別され、特殊メソッドと一般的なメソッドや変数名との間で名前の衝突を回避することができます。</p>
 </aside>
 <p>次のコードは、<code class="docutils literal notranslate"><span class="pre">equal()</span></code>という通常のメソッドを定義します。</p>
 <p>このメソッドにより、文字列を小文字へ変換してから比較します。</p>
@@ -1197,8 +1209,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="312a9e3c-05ff-46e9-a122-19d44fb1bb08" name="644924cb-380c-4edc-a9f7-012fcc012ee4" type="radio">
-</input><label class="sd-tab-label" for="312a9e3c-05ff-46e9-a122-19d44fb1bb08">
+<input checked="checked" id="be352523-3549-4cf4-985d-1ac15451540b" name="401ddd8f-32fd-4663-8f89-c3697d396dfd" type="radio">
+</input><label class="sd-tab-label" for="be352523-3549-4cf4-985d-1ac15451540b">
 実習問題</label><div class="sd-tab-content docutils">
 <p>クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。</p>
 </div>

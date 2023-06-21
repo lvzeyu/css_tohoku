@@ -475,6 +475,18 @@ title="Print to PDF"
    配列のインデクス
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   NumPyの応用例:線型回帰モデル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     最小二乗法
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -520,6 +532,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id4">
    配列のインデクス
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   NumPyの応用例:線型回帰モデル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     最小二乗法
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -678,9 +702,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.17296068, 0.85206468, 0.09565753],
-       [0.95731155, 0.02504772, 0.65184264],
-       [0.49526175, 0.09755537, 0.31410061]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03972075, 0.01313721, 0.11652585],
+       [0.73118765, 0.56261878, 0.77577024],
+       [0.62545668, 0.9852187 , 0.8515409 ]])
 </pre></div>
 </div>
 </div>
@@ -692,9 +716,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.41748911,  0.4781821 , -1.23965612],
-       [ 1.3268887 ,  0.55129775, -0.81686325],
-       [-0.67281959, -1.39094889, -1.27245889]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.29763031,  1.28435389, -0.03988175],
+       [ 0.19294575,  0.98395715, -0.31604881],
+       [-0.10334999,  0.43267467, -0.57742993]])
 </pre></div>
 </div>
 </div>
@@ -706,9 +730,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 0, 8],
-       [3, 4, 2],
-       [0, 2, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 2, 1],
+       [0, 5, 4],
+       [5, 1, 7]])
 </pre></div>
 </div>
 </div>
@@ -854,6 +878,197 @@ dtype: int64
 </div>
 </div>
 </div>
+</section>
+<section id="id5">
+<h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(n\)</span>個のデータ<span class="math notranslate nohighlight">\((x_1,y_1),...(x_n,y_n)\)</span>が観測され、各<span class="math notranslate nohighlight">\(y_i\)</span>が
+$<span class="math notranslate nohighlight">\(
+y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
+\)</span>$
+が得られます。</p>
+<section id="id6">
+<h3>最小二乗法<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>最小二乗法の目標は、与えられたデータセットに対して予測された値（モデルの出力）と実際の値（データセットの出力）の差を最小化することである。</p>
+<div class="math notranslate nohighlight">
+\[
+h(\alpha,\beta)= \sum_{i=1}^n (y_i-\alpha-\beta x_i)^2
+\]</div>
+<p><span class="math notranslate nohighlight">\(E[h(\alpha,\beta)]=0\)</span>から,母集団における<span class="math notranslate nohighlight">\(\alpha\)</span>と<span class="math notranslate nohighlight">\(\beta\)</span>を求めるが、これはあくまでも母集団の概念である。実際に持っているのは母集団に対応する標本であって、母集団そのもののは手に入りません。</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n} \sum_{i=1}^n (y_i-\hat{\alpha}-\hat{\beta}x_i)=0
+\]</div>
+<p>データから得られる推定値を<span class="math notranslate nohighlight">\(\hat{\alpha}, \hat{\beta}\)</span>で定義する。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{n} \sum_{i=1}^n (y_i-\hat{\alpha}-\hat{\beta}x_i)
+\\
+=\frac{1}{n} \sum_{i=1}^n (y_i)-\frac{1}{n} \sum_{i=1}^n \hat{\alpha}- \frac{1}{n} \sum_{i=1}^n \hat{\beta}x_i 
+\\
+=\frac{1}{n} \sum_{i=1}^n (y_i)- \hat{\alpha}- \hat{\beta} \frac{1}{n} \sum_{i=1}^n x_i
+\\
+= \bar{y} - \hat{\alpha} - \hat{\beta}\bar{x}
+\end{split}\]</div>
+<p>ここで、<span class="math notranslate nohighlight">\(\bar{y}\)</span>は標本平均と呼ぶ。この式を切片について書き直すと、</p>
+<div class="math notranslate nohighlight">
+\[\hat{\alpha}　= \bar{y}  - \hat{\beta}\bar{x}\]</div>
+<p>この式を　
+$<span class="math notranslate nohighlight">\(
+\frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0 (条件付き期待値ゼロ仮定　E(u|x)=0 より)
+\)</span>$
+に代入すると</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n x_i(y_i-(\bar{y}  - \hat{\beta}\bar{x})-\hat{\beta}x_i)=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n x_i(y_i-\bar{y})=\hat{\beta} \sum_{i=1}^n x_i(\bar{x}-x_i)
+\]</div>
+<p>ここで、
+$<span class="math notranslate nohighlight">\(
+\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y}) = \sum_{i=1}^n x_i(y_i-\bar{y}) = \sum_{i=1}^n y_i(x_i-\bar{x})
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n x_i^2-n(\bar{x})^2
+\]</div>
+<p>のため</p>
+<p>この式から<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を解くと、
+$$</p>
+<p>\hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}</p>
+<div class="math notranslate nohighlight">
+\[
+そして、$\hat{\alpha}$も得られる
+\]</div>
+<p>\hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}</p>
+<p>$$</p>
+<p>任意の推定値<span class="math notranslate nohighlight">\(\hat{\alpha},\hat{\beta}\)</span>に関して、<span class="math notranslate nohighlight">\(i\)</span>に関する当てはめる値(fitted value)を
+$$</p>
+<p>\hat{y_i}=\hat{\alpha} +\hat{\beta} x_i</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+と定義する。\\回帰直線と観測値との差
+\end{aligned}\end{align} \]</div>
+<p>\hat{u_i}=y_i-\hat{y_i}</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}を残差(residual)といいます。\\残差の二乗の和をとったもの
+\end{aligned}\end{align} \]</div>
+<p>RSS=\sum_{i=1}^n \hat{u_i}^2</p>
+<p>$$
+を残差平方和(residual sum of squares, RSS)といいます。</p>
+<p>ここで、残差平方和を最小にするような<span class="math notranslate nohighlight">\(\hat{\alpha}\)</span>と<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を選びます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># サンプルデータ</span>
+<span class="c1"># パラメータ</span>
+<span class="n">beta_0</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># 切片</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># 傾き</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># データ数</span>
+
+<span class="c1"># 説明変数を一様分布から生成</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># ノイズ項を標準正規分布から生成</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># 目的変数を生成</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># パラメータの推定</span>
+<span class="n">x_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># β₁の推定</span>
+<span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_mean</span><span class="p">))</span>
+<span class="n">denominator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;beta: &quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="c1"># β₀の推定</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">x_mean</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha: &quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta:  0.7671310948779998
+alpha:  2.7675436714282973
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 予測値の計算</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># 残差の計算</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_pred</span>
+
+<span class="c1"># 残差の合計の確認</span>
+<span class="n">residual_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;残差の合計:&quot;</span><span class="p">,</span> <span class="n">residual_sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残差の合計: -7.72715225139109e-14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-cell&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">proplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Creating a figure and axes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">refwidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Scatter plot of the data points</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="c1"># Regression line</span>
+<span class="n">x_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_line</span> <span class="o">=</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">x_line</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">y_line</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Regression Line&#39;</span><span class="p">)</span>
+
+<span class="c1"># Vertical lines and residuals</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x_i</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">y_i</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">y_pred_i</span> <span class="o">=</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">x_i</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span><span class="p">,</span> <span class="n">y_pred_i</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot settings</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Linear Regression&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numpy_53_0.png" src="../_images/numpy_53_0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
