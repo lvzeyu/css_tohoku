@@ -702,9 +702,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.44318768, 0.14182644, 0.27549141],
-       [0.99680807, 0.63583486, 0.58344873],
-       [0.77419231, 0.9396154 , 0.24657332]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03972075, 0.01313721, 0.11652585],
+       [0.73118765, 0.56261878, 0.77577024],
+       [0.62545668, 0.9852187 , 0.8515409 ]])
 </pre></div>
 </div>
 </div>
@@ -716,9 +716,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.55953115,  0.1310689 , -1.12900441],
-       [-0.33164907, -1.56933374, -1.04565688],
-       [ 0.355605  , -1.07315266, -1.57910642]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.29763031,  1.28435389, -0.03988175],
+       [ 0.19294575,  0.98395715, -0.31604881],
+       [-0.10334999,  0.43267467, -0.57742993]])
 </pre></div>
 </div>
 </div>
@@ -730,9 +730,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 6],
-       [7, 9, 4],
-       [5, 9, 7]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 2, 1],
+       [0, 5, 4],
+       [5, 1, 7]])
 </pre></div>
 </div>
 </div>
@@ -935,27 +935,27 @@ $<span class="math notranslate nohighlight">\(
 \]</div>
 <p>のため</p>
 <p>この式から<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を解くと、
-$<span class="math notranslate nohighlight">\(
-\hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}
-\)</span><span class="math notranslate nohighlight">\(
-そして、\)</span>\hat{\alpha}<span class="math notranslate nohighlight">\(も得られる
-\)</span><span class="math notranslate nohighlight">\(
-\hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}
-\)</span>$</p>
+$$</p>
+<p>\hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}</p>
+<div class="math notranslate nohighlight">
+\[
+そして、$\hat{\alpha}$も得られる
+\]</div>
+<p>\hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}</p>
+<p>$$</p>
 <p>任意の推定値<span class="math notranslate nohighlight">\(\hat{\alpha},\hat{\beta}\)</span>に関して、<span class="math notranslate nohighlight">\(i\)</span>に関する当てはめる値(fitted value)を
-$<span class="math notranslate nohighlight">\(
-\hat{y_i}=\hat{\alpha} +\hat{\beta} x_i
-\)</span>$
-と定義する。</p>
-<p>回帰直線と観測値との差
-$<span class="math notranslate nohighlight">\(
-\hat{u_i}=y_i-\hat{y_i}
-\)</span>$
-を残差(residual)といいます。</p>
-<p>残差の二乗の和をとったもの
-$<span class="math notranslate nohighlight">\(
-RSS=\sum_{i=1}^n \hat{u_i}^2
-\)</span>$
+$$</p>
+<p>\hat{y_i}=\hat{\alpha} +\hat{\beta} x_i</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+と定義する。\\回帰直線と観測値との差
+\end{aligned}\end{align} \]</div>
+<p>\hat{u_i}=y_i-\hat{y_i}</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}を残差(residual)といいます。\\残差の二乗の和をとったもの
+\end{aligned}\end{align} \]</div>
+<p>RSS=\sum_{i=1}^n \hat{u_i}^2</p>
+<p>$$
 を残差平方和(residual sum of squares, RSS)といいます。</p>
 <p>ここで、残差平方和を最小にするような<span class="math notranslate nohighlight">\(\hat{\alpha}\)</span>と<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を選びます。</p>
 <div class="cell docutils container">

@@ -458,7 +458,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   推定量の分散
+   推定量の確率的性質
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -499,7 +499,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   推定量の分散
+   推定量の確率的性質
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -644,8 +644,8 @@ RSS=\sum_{i=1}^n \hat{u_i}^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta:  0.7715497127914712
-alpha:  2.774434556286685
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta:  0.8523738242968701
+alpha:  2.334680020590004
 </pre></div>
 </div>
 </div>
@@ -666,19 +666,14 @@ alpha:  2.774434556286685
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残差の合計: -1.509903313490213e-14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残差の合計: 4.3076653355456074e-14
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;hide-cell&quot;</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">proplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
@@ -727,7 +722,7 @@ SSE=\sum_{i=1}^n (\hat{y_i}-\bar{y})^2
 \)</span>$</p></li>
 <li><p>残差二乗和(residual sum of squares; SSR)
 $<span class="math notranslate nohighlight">\(
-SSE=\sum_{i=1}^n (\hat{u_i})^2
+SSR=\sum_{i=1}^n (\hat{u_i})^2
 \)</span>$</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(y_i\)</span>の全変動のうち、<span class="math notranslate nohighlight">\(x_i\)</span>で説明される割合を
@@ -737,7 +732,7 @@ R^2=\frac{SSE}{SST}=1-\frac{SSR}{SST}
 <p>決定係数と呼ばれます。</p>
 </section>
 <section id="id4">
-<h2>推定量の分散<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>推定量の確率的性質<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>OLSの仮定に基づいて、母集団から繰り返しサンプリングするごとに、それぞれ異なる推定値(<span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span>)が得られたが、十分な回数にわたってランダムに抽出されると、平均で真のパラメータ(<span class="math notranslate nohighlight">\(\beta\)</span>)に等しいという信念が与えてくれます。この性質を、<strong>不偏性(unbiasedness)</strong> と呼ばれます。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -751,14 +746,33 @@ E(\hat{\beta})=\beta
 <li><p>条件付き期待値ゼロ仮定:母集団において、説明変数の値に関わらず誤差項の平均が<span class="math notranslate nohighlight">\(0\)</span>です。<span class="math notranslate nohighlight">\(E(u|x)=E(u)=0\)</span></p></li>
 </ul>
 <p>これらの仮定のもとで、ランダムに抽出された標本からパラメータを推定したとき、<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>の期待値が<span class="math notranslate nohighlight">\(\beta\)</span>の周りに集まることを示す必要があります。</p>
-<p>一方、サンプリングに伴う推定量の分布のばらつき、つまり分散と標準偏差、を測る必要があります。</p>
 <section id="homoskedasticity">
 <h3>均一分散(homoskedasticity)<a class="headerlink" href="#homoskedasticity" title="Permalink to this headline">#</a></h3>
+<p>サンプリングに伴う推定量の分布のばらつき、つまり分散と標準偏差、を測る必要があります。</p>
 <p>均一分散は、母集団の誤差項<span class="math notranslate nohighlight">\(u\)</span>が、説明変数<span class="math notranslate nohighlight">\(x\)</span>のいかなる値においても、同じ分散をもつことを意味しています。
 $<span class="math notranslate nohighlight">\(
 V(u|x)=\sigma ^2
 \)</span><span class="math notranslate nohighlight">\(
 誤差項がランダムに平均\)</span>0<span class="math notranslate nohighlight">\(,分散\)</span>\sigma ^2<span class="math notranslate nohighlight">\(で分布していることは、\)</span>y_i<span class="math notranslate nohighlight">\(の変動を回帰直線で説明しきれない部分に何ら情報や傾向性が存在しない時に、単回帰モデルの当てはまりがよいことになります。そのため、誤差項\)</span>u_i$の推定値である残差に何らかの傾向性が残っている時に回帰直線での近似だけでは不十分です。</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\beta}-\beta =\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})-\beta (x_i-\bar{x})^2 }{\sum_{i=1}^n (x_i-\bar{x})^2} = \frac{\sum_{i=1}^n [(x_i-\bar{x})(y_i-\bar{y})- (x_i-\bar{x})\beta] }{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{\sum_{i=1}^n (x_i-\bar{x})(u_i-\bar{u})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{\sum_{i=1}^n (x_i-\bar{x})u_i}{\sum_{i=1}^n (x_i-\bar{x})^2}
+\]</div>
+<p>これより、</p>
+<div class="math notranslate nohighlight">
+\[
+E[\hat{\beta}-\beta]=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Var[\hat{\beta}]=E[(\hat{\beta}-\beta)^2]= \frac{\sum_{i=1}^n (x_i-\bar{x})^2 E(u_i^2)}{ \sum_{i=1}^n (x_i-\bar{x})^2}= \frac{\sigma ^2}{\sum_{i=1}^n (x_i-\bar{x})^2}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\beta\)</span>に影響を与える要因は、</p>
+<ul class="simple">
+<li><p>誤差の分散<span class="math notranslate nohighlight">\(\sigma ^2\)</span>が大きくなると、推定値の分散も大きくなります。つまり<span class="math notranslate nohighlight">\(y\)</span>と<span class="math notranslate nohighlight">\(x\)</span>の関係にノイズが多い(<span class="math notranslate nohighlight">\(u\)</span>の変動が大きい)と、<span class="math notranslate nohighlight">\(\beta\)</span>に関して読み取るのは難しくなります。</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>の分散が大きいほど<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>の推定精度が高くなります。</p></li>
+</ul>
+<p>また、母集団の分散は<span class="math notranslate nohighlight">\(\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n-1}\)</span>であり、標本分散は<span class="math notranslate nohighlight">\(\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}\)</span>であるため、<span class="math notranslate nohighlight">\(n\)</span>が大きくなると、<span class="math notranslate nohighlight">\(x\)</span>の標本分散は母集団の分散である<span class="math notranslate nohighlight">\(\sigma ^2\)</span>に近づいていきます。そのため、サンプルサイズが増やすと、サンプリングの伴う推定値の分散が小さくすることができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -814,8 +828,8 @@ V(u|x)=\sigma ^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>切片の推定値: 2.5125139190386405
-傾きの推定値: 0.7982922917255698
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>切片の推定値: 2.4781817049593178
+傾きの推定値: 0.8048157086436605
 </pre></div>
 </div>
 </div>
@@ -843,7 +857,7 @@ V(u|x)=\sigma ^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/regression_28_0.png" src="../_images/regression_28_0.png" />
+<img alt="../_images/regression_31_0.png" src="../_images/regression_31_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -909,7 +923,7 @@ V(u|x)=\sigma ^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/regression_30_0.png" src="../_images/regression_30_0.png" />
+<img alt="../_images/regression_33_0.png" src="../_images/regression_33_0.png" />
 </div>
 </div>
 </section>
