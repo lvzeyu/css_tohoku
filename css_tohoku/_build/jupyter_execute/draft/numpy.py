@@ -142,9 +142,7 @@ print("x3 size: ", x3.size) # total size of the array
 print("dtype:", x3.dtype) # data type of the array
 
 
-# ## 配列のインデクス
-
-# 1次元配列では、Pythonリストと同様に、$i$番目($0$から)の値にアクセスできます。
+# 配列の形状は、```reshape()``` メソッドによって変更することができます。
 
 # In[16]:
 
@@ -155,24 +153,113 @@ x1
 # In[17]:
 
 
-x1[1]
+x1.reshape((2, 3)) # reshape
 
 
-# 多次元配列では、カンマで区切ったインデクスで要素にアクセスします。
+# ## 配列のインデクス
+
+# １次元```ndarray```では、Pythonリストと同様に、$i$番目($0$から)の値にアクセスできます。
 
 # In[18]:
 
 
-x2
+x1= np.array([1,2,3,4,5,6,7,8,9])
 
 
 # In[19]:
 
 
-x2[1,1]
+x1[1]
 
 
 # In[20]:
+
+
+x1[3:6]
+
+
+# ```ndarray```から切り出した一部にの値を指定することができます。
+# 
+# Pythonのリストとは**異なって**,　```ndarray```のスライスは元の```ndarray```のビューであり、```ndarray```のコピーではないことを注意する必要があります。
+# 
+# つまり、スライスへの変更は、元の```ndarray```に反映されます。
+
+# In[21]:
+
+
+x1_slice = x1[3:6]
+x1_slice
+
+
+# In[22]:
+
+
+x1_slice[0]=12345
+
+
+# In[23]:
+
+
+x1
+
+
+# 多次元配列では、カンマで区切ったインデクスで要素にアクセスします。
+
+# In[24]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create a 3x3 matrix
+matrix = np.arange(9).reshape(3, 3)
+
+# Set the background color for all cells
+background_color = '#E0E0E0'  # Light gray
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+# Create a heatmap plot with the specified background color
+heatmap = ax.imshow(matrix, cmap='Blues', vmin=0, vmax=8)
+
+# Loop over each cell and add the index value as text
+for i in range(matrix.shape[0]):
+    for j in range(matrix.shape[1]):
+        ax.text(j, i, f'({i},{j})', ha='center', va='center', color='black')
+
+# Set axis labels
+ax.set_xticks(np.arange(matrix.shape[1]))
+ax.set_yticks(np.arange(matrix.shape[0]))
+ax.set_xticklabels([])
+ax.set_yticklabels([])
+ax.tick_params(length=0)
+ax.set_xlabel('axis 1')
+ax.set_ylabel('axis 0')
+
+# Set the title
+ax.set_title('Index of 3x3 Matrix')
+
+# Remove the colorbar
+plt.colorbar(heatmap).remove()
+
+# Show the plot
+plt.show()
+
+
+# In[25]:
+
+
+x2= np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+
+# In[26]:
+
+
+x2[1,1]
+
+
+# In[27]:
 
 
 x2[1,-1]
@@ -180,17 +267,310 @@ x2[1,-1]
 
 # インデクスを指定し、要素の値を変更するもできます。
 
-# In[21]:
+# In[28]:
 
 
 x2[1,-1]=12
 
 
-# In[22]:
+# In[29]:
 
 
 x2
 
+
+# ```ndarray```における、比較演算子もベクトル演算子として定義されていますので、真偽値配列をインデックス参照として渡すことができます。
+
+# In[30]:
+
+
+x2>10
+
+
+# In[31]:
+
+
+x2[x2>10]=100
+x2
+
+
+# ## 数学演算
+
+# ### 配列の算術演算
+
+# ```NumPy```はベクトル演算の機能を提供しています。
+# 
+# - 同じサイズの```ndarray```同士の算術演算は、同位置の要素同士で計算されます。
+
+# In[32]:
+
+
+arr=np.array([[1,2,3],[4,5,6]])
+arr
+
+
+# In[33]:
+
+
+arr*arr
+
+
+# In[34]:
+
+
+arr+arr
+
+
+# In[35]:
+
+
+arr-arr
+
+
+# - スカラーと```ndarray```との算術演算の場合、要素ごとに計算されます。
+
+# In[36]:
+
+
+1/arr
+
+
+# In[37]:
+
+
+arr**0.5
+
+
+# ## ユニバーサル関数: すべての要素への関数適用
+# 
+# ユニバーサル関数は、NumPy配列の各要素に対して要素ごとの演算を行うための関数です。これにより、繰り返し処理を書く必要なく、高速かつ効率的な計算が可能になります。
+# 
+# 例えば、```sqrt```(平方根)```exp```（指数）を計算する:
+
+# In[38]:
+
+
+arr= np.arange(10)
+arr
+
+
+# In[39]:
+
+
+np.sqrt(arr)
+
+
+# In[40]:
+
+
+np.exp(arr)
+
+
+# このような引数に一つの```ndarray```を取ることから単項ufuncと呼ばれます。一方、複数な```ndarray```を引数として受け取る関数もあります。
+
+# In[41]:
+
+
+x1= np.random.randint(10, size=6)
+x1
+
+
+# In[42]:
+
+
+x2= np.random.randint(10, size=6)
+x2
+
+
+# In[43]:
+
+
+np.maximum(x1,x2)
+
+
+# | 関数名                 | 説明                                        |
+# |----------------------|-------------------------------------------|
+# | `numpy.abs(x)`        | 配列の各要素の絶対値を計算します。                    |
+# | `numpy.sqrt(x)`       | 配列の各要素の平方根を計算します。                    |
+# | `numpy.exp(x)`        | 配列の各要素の指数関数を計算します。                    |
+# | `numpy.log(x)`        | 配列の各要素の自然対数を計算します。                    |
+# | `numpy.sin(x)`        | 配列の各要素の正弦を計算します。                       |
+# | `numpy.cos(x)`        | 配列の各要素の余弦を計算します。                       |
+# | `numpy.add(x1, x2)`   | 2つの配列の要素ごとの加算を行います。                  |
+# | `numpy.subtract(x1, x2)` | 2つの配列の要素ごとの減算を行います。                  |
+# | `numpy.multiply(x1, x2)` | 2つの配列の要素ごとの乗算を行います。                  |
+# | `numpy.divide(x1, x2)`   | 2つの配列の要素ごとの除算を行います。                  |
+# | `numpy.power(x1, x2)`    | 2つの配列の要素ごとのべき乗を計算します。               |
+# 
+
+# ```{note}
+# [公式ドキュメンタリー](https://numpy.org/doc/stable/reference/ufuncs.html#)でユニバーサル関数一覧を確認できます。
+# ```
+
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# 与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。
+# ```
+# ````
+
+# In[44]:
+
+
+array1 = np.array([[1, 2],
+                   [0, 4],
+                   [5, 6],
+                   [-2,2],
+                   [3, 6]])
+
+array2 = np.array([[6, 3],
+                   [7, 0],
+                   [5, 5],
+                   [9, 1],
+                   [5, 6]])
+
+
+# ### 統計関数
+# 
+# NumPyの統計関数は、```ndarray```配列全体、あるいは特定の軸を中心とした統計処理を提供します。
+# 
+# いくつかの統計値を計算してみましょう。
+
+# In[45]:
+
+
+arr=np.arange(20).reshape(5,4)
+arr
+
+
+# In[46]:
+
+
+arr.mean()
+
+
+# In[47]:
+
+
+arr.sum()
+
+
+# ```mean()```や```sum```はどの軸を中心に処理することを引数```axis```で指定することができます。
+# - ```axis=0```は列ごとの計算
+# - ```axis=1```は行ごとの計算
+
+# In[48]:
+
+
+arr.mean(axis=0)
+
+
+# In[49]:
+
+
+arr.sum(axis=1)
+
+
+# | 関数名                    | 説明                                               |
+# |------------------------|--------------------------------------------------|
+# | `numpy.mean(x)`         | 配列の平均値を計算します。                                |
+# | `numpy.median(x)`       | 配列の中央値を計算します。                                |
+# | `numpy.min(x)`          | 配列の最小値を取得します。                                |
+# | `numpy.max(x)`          | 配列の最大値を取得します。                                |
+# | `numpy.sum(x)`          | 配列の要素の合計値を計算します。                            |
+# | `numpy.prod(x)`         | 配列の要素の積を計算します。                               |
+# | `numpy.std(x)`          | 配列の標準偏差を計算します。                               |
+# | `numpy.var(x)`          | 配列の分散を計算します。                                 |
+# | `numpy.percentile(x, q)` | 配列のパーセンタイル値を計算します。                           |
+
+# ## 行列計算
+# 
+# NumPyは、高度な行列計算を効率的に行うための多くの機能を提供しています。
+
+# NumPyで内積(ドット積)を計算するために関数```dot```を提供します。
+# 
+# ```{margin}
+# MATLABなどの言語で*を内積として用いますが、NumPyでは対応する要素ごとを掛け合わせることを意味します。
+# ```
+
+# In[50]:
+
+
+x= np.array([[1,2,3],
+             [4,5,6]])
+y= np.array([[6,23],
+             [-1,7],
+             [8,9]])
+
+
+# In[51]:
+
+
+x.dot(y)
+
+
+# In[52]:
+
+
+np.dot(x,y)
+
+
+# 標準的な行列の分解、逆、行列式の計算といった機能は[```numpy.linalg```](https://numpy.org/doc/stable/reference/routines.linalg.html)モジュールで提供されています。
+
+# In[53]:
+
+
+from numpy.linalg import inv, qr
+
+x= np.array([[1,2,3],
+             [6,4,9],
+             [1,12,5]])
+mat= x.T.dot(x)
+mat.dot(inv(mat))
+
+
+# In[54]:
+
+
+# Create the identity matrix
+identity_matrix = np.eye(mat.shape[0])
+
+# Check if the dot product is close to the identity matrix
+if np.allclose(mat.dot(inv(mat)), identity_matrix):
+    print("The dot product is equal to the identity matrix.")
+else:
+    print("The dot product is not equal to the identity matrix.")
+
+
+# In[ ]:
+
+
+
+
+
+# | 関数名                          | 説明                                                                |
+# |--------------------------------|-------------------------------------------------------------------|
+# | `numpy.linalg.inv()`           | 行列の逆行列を計算します。                                                      |
+# | `numpy.linalg.det()`           | 行列の行列式を計算します。                                                      |
+# | `numpy.linalg.eig()`           | 行列の固有値と固有ベクトルを計算します。                                               |
+# | `numpy.linalg.solve()`         | 線形方程式を解きます。                                                         |
+# | `numpy.linalg.lstsq()`         | 最小二乗法を用いて線形方程式を解きます。                                               |
+# | `numpy.linalg.qr()`            | 行列のQR分解を計算します。                                                       |
+# | `numpy.linalg.svd()`           | 特異値分解（SVD）を計算します。                                                     |
+# | `numpy.linalg.matrix_power()`  | 行列のべき乗を計算します。                                                       |
+# | `numpy.linalg.norm()`          | ベクトルまたは行列のノルムを計算します。                                          |
+# | `numpy.linalg.inv()`           | 行列の逆行列を計算します。                                                      |
+# | `numpy.linalg.matrix_rank()`   | 行列のランクを計算します。                                                      |
+
+# <details><summary>Answer</summary>
+# 
+# The two heads are getting the same input data so they will be calculating the same gradients and will end up learning the same thing. We have two options:
+# 
+# A. Feed the two networks different data. This would essentially mean training the two networks independently or restructuring our data so that batch sizes of treated and control units can be split equally after input.
+# 
+# B. Somehow ensure that each head only receives error gradients for the correct treatment group. This will require writing a custom loss function.
+# 
+# Let's go with B.
+# </details>
 
 # ## NumPyの応用例:線型回帰モデル
 
@@ -295,7 +675,7 @@ x2
 
 # ここで、残差平方和を最小にするような$\hat{\alpha}$と$\hat{\beta}$を選びます。
 
-# In[23]:
+# In[55]:
 
 
 import numpy as np
@@ -316,7 +696,7 @@ epsilon = np.random.normal(loc=0, scale=1, size=n)
 y = beta_0 + beta_1 * x + epsilon
 
 
-# In[24]:
+# In[56]:
 
 
 # パラメータの推定
@@ -334,7 +714,7 @@ alpha = y_mean - beta * x_mean
 print("alpha: ", alpha)
 
 
-# In[25]:
+# In[57]:
 
 
 # 予測値の計算
@@ -349,7 +729,7 @@ residual_sum = np.sum(residuals)
 print("残差の合計:", residual_sum)
 
 
-# In[26]:
+# In[58]:
 
 
 {
