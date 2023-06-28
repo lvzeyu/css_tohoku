@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tips" href="tips.html" />
+    <link rel="next" title="pandas" href="pandas.html" />
     <link rel="prev" title="pyファイル" href="py.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -210,6 +210,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
   </a>
  </li>
 </ul>
@@ -795,9 +800,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.25399713, 0.0188279 , 0.69803355],
-       [0.33854689, 0.16082399, 0.26025977],
-       [0.90031241, 0.45019271, 0.30572706]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.86384671, 0.12543755, 0.51742063],
+       [0.58041901, 0.80134731, 0.35522174],
+       [0.74501396, 0.08978314, 0.86769943]])
 </pre></div>
 </div>
 </div>
@@ -809,9 +814,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.61604183,  1.45260178,  0.88723647],
-       [-0.94367367, -2.19620823,  0.46353941],
-       [-1.43604097,  0.38312771,  0.16748036]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.19615639,  1.15897648, -0.48057932],
+       [ 0.53923314, -2.09474693, -0.2149988 ],
+       [-0.55080573,  0.98522079,  1.88462548]])
 </pre></div>
 </div>
 </div>
@@ -823,9 +828,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 1, 2],
-       [7, 6, 8],
-       [7, 9, 8]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 8, 3],
+       [6, 5, 7],
+       [8, 1, 1]])
 </pre></div>
 </div>
 </div>
@@ -1317,8 +1322,8 @@ dtype: int64
 <p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b798c078-e548-4d32-bb01-d0c6b5e0fd83" name="147413d4-09cf-449e-8001-1071b6601e23" type="radio">
-</input><label class="sd-tab-label" for="b798c078-e548-4d32-bb01-d0c6b5e0fd83">
+<input checked="checked" id="1ecbd611-01c7-4c53-8601-7a33ec4c8b0b" name="7c9839ca-45a0-466e-a896-1485e3fe5d17" type="radio">
+</input><label class="sd-tab-label" for="1ecbd611-01c7-4c53-8601-7a33ec4c8b0b">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1451,8 +1456,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="5a78b5fe-a00b-464f-bb61-72c9af36e68b" name="13c4f4e4-fa5b-42e6-b600-d1e447a0ba3f" type="radio">
-</input><label class="sd-tab-label" for="5a78b5fe-a00b-464f-bb61-72c9af36e68b">
+<input checked="checked" id="66199d93-d4e3-43fc-a8d9-5e1dd4ac0420" name="e0cd9c3f-a79f-429b-aa36-ae46d9eb49e9" type="radio">
+</input><label class="sd-tab-label" for="66199d93-d4e3-43fc-a8d9-5e1dd4ac0420">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
@@ -1547,6 +1552,10 @@ dtype: int64
 </div>
 </div>
 </div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>NumPyの内積計算において、数学的な演算結果と完全に一致しない場合が生じる可能性があるのは、数値計算における丸め誤差（round-off error）と呼ばれる現象が関係しています。NumPyは浮動小数点数を使用して数値計算を行います。浮動小数点数は有限のビット数で実数を表現するため、厳密な実数値を表現できない場合があります。内積計算では、浮動小数点数の丸め誤差が蓄積されることで、数学的な期待値と微小な差異が生じることがあります。これは浮動小数点数の精度限界によるものであり、NumPyに限らず他のプログラミング言語や数値計算ライブラリでも同様の現象が見られます。</p>
+</aside>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>関数名</p></th>
@@ -1590,8 +1599,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4d5d73d8-b41b-46a5-8b29-05f4cf27f7c3" name="8580eec0-95b8-4417-bb0f-fe863334e61c" type="radio">
-</input><label class="sd-tab-label" for="4d5d73d8-b41b-46a5-8b29-05f4cf27f7c3">
+<input checked="checked" id="a1711453-2041-4605-a60a-79f1f21e870f" name="32509bcf-073d-4a28-9526-7180e9acc801" type="radio">
+</input><label class="sd-tab-label" for="a1711453-2041-4605-a60a-79f1f21e870f">
 実習問題</label><div class="sd-tab-content docutils">
 <p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
 </div>
@@ -1602,7 +1611,11 @@ dtype: int64
 \[
 \text{Proj}(\mathbf{v}) = \frac{\mathbf{v} \cdot \mathbf{u}}{\|\mathbf{u}\|^2} \cdot \mathbf{u}
 \]</div>
-</details></section>
+</details><aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>NumPyでは、次元が一致しない場合でも自動的に配列のサイズを調整して内積計算を行います。</p>
+</aside>
+</section>
 <section id="id10">
 <h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <section id="id11">
@@ -1798,7 +1811,7 @@ alpha:  2.7740186712020654
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/numpy_109_0.png" src="../_images/numpy_109_0.png" />
+<img alt="../_images/numpy_111_0.png" src="../_images/numpy_111_0.png" />
 </div>
 </div>
 </section>
@@ -1895,10 +1908,10 @@ X^TX\beta = X^TY
             <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tips.html" title="next page">
+    <a class='right-next' id="next-link" href="pandas.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tips</p>
+        <p class="prev-next-title">pandas</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
