@@ -94,25 +94,27 @@ np.linspace(0, 1, 5) # create an array of five values evenly spaced between 0 an
 # In[10]:
 
 
-np.random.random((3, 3)) # create a 3x3 array of uniformly distributed random values between 0 and 1
+np.eye(3) # create a 3x3 identity matrix
 
+
+# ```NumPy```は、様々な種類の確率分布関数に基づく乱数値を生成できます。
 
 # In[11]:
 
 
-np.random.normal(0, 1, (3, 3)) # create a 3x3 array of normally distributed random values with mean 0 and standard deviation 1
+np.random.random((3, 3)) # create a 3x3 array of uniformly distributed random values between 0 and 1
 
 
 # In[12]:
 
 
-np.random.randint(0, 10, (3, 3)) # create a 3x3 array of random integers in the interval [0, 10)
+np.random.normal(0, 1, (3, 3)) # create a 3x3 array of normally distributed random values with mean 0 and standard deviation 1
 
 
 # In[13]:
 
 
-np.eye(3) # create a 3x3 identity matrix
+np.random.randint(0, 10, (3, 3)) # create a 3x3 array of random integers in the interval [0, 10)
 
 
 # ```{note}
@@ -482,6 +484,13 @@ arr.sum(axis=1)
 # | `numpy.var(x)`          | 配列の分散を計算します。                                 |
 # | `numpy.percentile(x, q)` | 配列のパーセンタイル値を計算します。                           |
 
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# - 平均5、標準偏差1の正規分布に従う乱数を生成してください。
+# - 生成された配列の平均と標準偏差を計算しよう。
+# ```
+# ````
+
 # ## 行列計算
 # 
 # NumPyは、高度な行列計算を効率的に行うための多くの機能を提供しています。
@@ -541,12 +550,6 @@ else:
     print("The dot product is not equal to the identity matrix.")
 
 
-# In[ ]:
-
-
-
-
-
 # | 関数名                          | 説明                                                                |
 # |--------------------------------|-------------------------------------------------------------------|
 # | `numpy.linalg.inv()`           | 行列の逆行列を計算します。                                                      |
@@ -561,23 +564,30 @@ else:
 # | `numpy.linalg.inv()`           | 行列の逆行列を計算します。                                                      |
 # | `numpy.linalg.matrix_rank()`   | 行列のランクを計算します。                                                      |
 
-# <details><summary>Answer</summary>
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# 特定のベクトル($v$)を他のベクトル($u$)に射影する結果を計算しよう。
+# ```
+# ````
+
+# <details><summary>ヒント</summary>
+# 射影の公式は以下になります：
 # 
-# The two heads are getting the same input data so they will be calculating the same gradients and will end up learning the same thing. We have two options:
-# 
-# A. Feed the two networks different data. This would essentially mean training the two networks independently or restructuring our data so that batch sizes of treated and control units can be split equally after input.
-# 
-# B. Somehow ensure that each head only receives error gradients for the correct treatment group. This will require writing a custom loss function.
-# 
-# Let's go with B.
+# $$
+# \text{Proj}(\mathbf{v}) = \frac{\mathbf{v} \cdot \mathbf{u}}{\|\mathbf{u}\|^2} \cdot \mathbf{u}
+# $$
 # </details>
 
 # ## NumPyの応用例:線型回帰モデル
 
+# ### 単回帰モデル
+
 # $n$個のデータ$(x_1,y_1),...(x_n,y_n)$が観測され、各$y_i$が
+# 
 # $$
 # y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
 # $$
+# 
 # が得られます。
 
 # ### 最小二乗法
@@ -611,10 +621,12 @@ else:
 # 
 # $$\hat{\alpha}　= \bar{y}  - \hat{\beta}\bar{x}$$
 
-# この式を　
+# この式を条件付き期待値ゼロ仮定　$E(u|x)=0$ より、
+# 
 # $$
-# \frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0 (条件付き期待値ゼロ仮定　E(u|x)=0 より)
+# \frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0
 # $$
+# 
 # に代入すると
 
 # $$
@@ -626,6 +638,7 @@ else:
 # $$
 
 # ここで、
+# 
 # $$
 # \sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y}) = \sum_{i=1}^n x_i(y_i-\bar{y}) = \sum_{i=1}^n y_i(x_i-\bar{x})
 # $$
@@ -633,44 +646,43 @@ else:
 # $$
 # \sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n x_i^2-n(\bar{x})^2
 # $$
+# 
 # のため
 
 # この式から$\hat{\beta}$を解くと、
-# $$
 # 
+# $$
 # \hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}
 # 
 # $$
-# そして、$\hat{\alpha}$も得られる
+# そして、$ \hat{\alpha} $も得られる
+# 
 # $$
-# 
 # \hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}
-# 
 # $$
 
 # 任意の推定値$\hat{\alpha},\hat{\beta}$に関して、$i$に関する当てはめる値(fitted value)を
-# $$
 # 
+# $$
 # \hat{y_i}=\hat{\alpha} +\hat{\beta} x_i
 # 
 # $$
 # と定義する。
 # 
 # 回帰直線と観測値との差
+# 
 # $$
-# 
 # \hat{u_i}=y_i-\hat{y_i}
-# 
 # $$
 # 
 # を残差(residual)といいます。
 # 
 # 残差の二乗の和をとったもの
-# $$
 # 
+# $$
 # RSS=\sum_{i=1}^n \hat{u_i}^2
-# 
 # $$
+# 
 # を残差平方和(residual sum of squares, RSS)といいます。
 
 # ここで、残差平方和を最小にするような$\hat{\alpha}$と$\hat{\beta}$を選びます。
@@ -765,4 +777,76 @@ ax.legend(loc="lower right")
 
 # Display the plot
 plt.show()
+
+
+# ### 重回帰モデル
+
+# $k$個の説明変数$x_1,...,x_k$が考えられ、$y$との間に
+# 
+# $$
+# y_j=\beta_0+\beta_1 x_{1j}+...+\beta_k x_{kj}+ u_j
+# $$
+# 
+# なる線型関係が想定されます。これを重回帰モデルといいます。
+# 
+# $\beta_1,....,\beta_k$は偏回帰係数(partial regression coefficient)と呼びます。
+# 
+# 重回帰モデルを行列を用いて
+# 
+# $$
+# \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}= \begin{bmatrix} 
+# 1 & x_{11} & x_{12} & \ldots & x_{1k} \\
+# 1 & x_{21} & x_{22} & \ldots & x_{2k} \\
+# \vdots & \vdots & \vdots & \ddots & \vdots \\
+# 1 & x_{n1} & x_{n2} & \ldots & x_{nk} \\
+# \end{bmatrix} \begin{bmatrix} \beta_0 \\ \beta_1 \\ \beta_2 \\ \vdots \\ \beta_p \end{bmatrix}+\begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix}
+# $$
+# 
+# と表されます。それぞれの対応するベクトル及び行列とおくと、
+# 
+# $$
+# \mathbf{y} =\mathbf{X} \mathbf{\beta}+\mathbf{u}
+# $$
+
+# ここで、誤差$\mathbf{u}$について、
+# - 不偏性: $E(\mathbf{u})=0$
+# - 等分散性、無相関性: 平均ベクトル$E(\mathbf{u})=0$年、$Cov(\mathbf{u})=E[\mathbf{u} \mathbf{u}^T]=\sigma^2 \mathbf{I}$と仮定する
+
+# 回帰係数ベクトル$\mathbf{\beta}$の最小二乗推定量は、
+# 
+# $$
+# h(\mathbf{\beta})=\sum_{j=1}^n [y_j-(\beta_0+\beta_{1}x_{1j}+... +\beta_k x_{kj})]^2
+# $$
+# 
+# を最小化することより得られる。
+# 
+# この式を行列を用いて表すと、
+# 
+# $$
+# h(\mathbf{\beta})=(\mathbf{y}-\mathbf{X}\mathbf{\beta})^T(\mathbf{y}-\mathbf{X}\mathbf{\beta})
+# $$
+# 
+
+# $min\ h(\mathbf{\beta})$という最小化問題を解くために、
+# 
+# $$
+# \frac{\partial}{\partial\beta} (y - X\beta)^T(y - X\beta) = \frac{\partial}{\partial\beta} (Y^TY - 2\beta^TX^TY + \beta^TX^TX\beta)= -2X^T y + 2X^T X\beta = 0
+# $$
+# 
+# を得ることができます。ここで、$X^T X\beta=X^T Y$のため、
+# 
+# $$
+# X^TX\beta = X^TY
+# $$
+# 
+# $\mathbf{X}$はフル・ランクであるとすると、$X^TX$の逆行列が存在しますので、
+# 
+# $$
+# \beta = (X^TX)^{-1}X^TY
+# $$
+
+# In[ ]:
+
+
+
 

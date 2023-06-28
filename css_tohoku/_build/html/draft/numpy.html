@@ -511,7 +511,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
+     単回帰モデル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
      最小二乗法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     重回帰モデル
     </a>
    </li>
   </ul>
@@ -598,7 +608,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
+     単回帰モデル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
      最小二乗法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     重回帰モデル
     </a>
    </li>
   </ul>
@@ -755,14 +775,29 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># create a 3x3 identity matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は、様々な種類の確率分布関数に基づく乱数値を生成できます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># create a 3x3 array of uniformly distributed random values between 0 and 1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.37826741, 0.4081553 , 0.6987068 ],
-       [0.4626551 , 0.00750726, 0.27627288],
-       [0.78488787, 0.5607734 , 0.360486  ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.25399713, 0.0188279 , 0.69803355],
+       [0.33854689, 0.16082399, 0.26025977],
+       [0.90031241, 0.45019271, 0.30572706]])
 </pre></div>
 </div>
 </div>
@@ -774,9 +809,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.61559568, -1.81462642, -0.54743462],
-       [ 0.72720683,  0.01081035, -0.23004372],
-       [ 0.09505351, -2.37406411, -1.04371121]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.61604183,  1.45260178,  0.88723647],
+       [-0.94367367, -2.19620823,  0.46353941],
+       [-1.43604097,  0.38312771,  0.16748036]])
 </pre></div>
 </div>
 </div>
@@ -788,23 +823,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 4, 8],
-       [8, 7, 9],
-       [6, 1, 8]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># create a 3x3 identity matrix</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0., 0.],
-       [0., 1., 0.],
-       [0., 0., 1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 1, 2],
+       [7, 6, 8],
+       [7, 9, 8]])
 </pre></div>
 </div>
 </div>
@@ -987,7 +1008,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/numpy_41_0.png" src="../_images/numpy_41_0.png" />
+<img alt="../_images/numpy_42_0.png" src="../_images/numpy_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1296,8 +1317,8 @@ dtype: int64
 <p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="802fe0ac-b33b-42d4-8404-99cffce0d20c" name="a5b404a9-c897-4de9-8900-d4e9c10ca8b2" type="radio">
-</input><label class="sd-tab-label" for="802fe0ac-b33b-42d4-8404-99cffce0d20c">
+<input checked="checked" id="b798c078-e548-4d32-bb01-d0c6b5e0fd83" name="147413d4-09cf-449e-8001-1071b6601e23" type="radio">
+</input><label class="sd-tab-label" for="b798c078-e548-4d32-bb01-d0c6b5e0fd83">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1429,6 +1450,16 @@ dtype: int64
 </tr>
 </tbody>
 </table>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5a78b5fe-a00b-464f-bb61-72c9af36e68b" name="13c4f4e4-fa5b-42e6-b600-d1e447a0ba3f" type="radio">
+</input><label class="sd-tab-label" for="5a78b5fe-a00b-464f-bb61-72c9af36e68b">
+実習問題</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
+<li><p>生成された配列の平均と標準偏差を計算しよう。</p></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="id9">
@@ -1558,21 +1589,33 @@ dtype: int64
 </tr>
 </tbody>
 </table>
-<details><summary>Answer</summary>
-<p>The two heads are getting the same input data so they will be calculating the same gradients and will end up learning the same thing. We have two options:</p>
-<p>A. Feed the two networks different data. This would essentially mean training the two networks independently or restructuring our data so that batch sizes of treated and control units can be split equally after input.</p>
-<p>B. Somehow ensure that each head only receives error gradients for the correct treatment group. This will require writing a custom loss function.</p>
-<p>Let’s go with B.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="4d5d73d8-b41b-46a5-8b29-05f4cf27f7c3" name="8580eec0-95b8-4417-bb0f-fe863334e61c" type="radio">
+</input><label class="sd-tab-label" for="4d5d73d8-b41b-46a5-8b29-05f4cf27f7c3">
+実習問題</label><div class="sd-tab-content docutils">
+<p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
+</div>
+</div>
+<details><summary>ヒント</summary>
+射影の公式は以下になります：
+<div class="math notranslate nohighlight">
+\[
+\text{Proj}(\mathbf{v}) = \frac{\mathbf{v} \cdot \mathbf{u}}{\|\mathbf{u}\|^2} \cdot \mathbf{u}
+\]</div>
 </details></section>
 <section id="id10">
 <h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(n\)</span>個のデータ<span class="math notranslate nohighlight">\((x_1,y_1),...(x_n,y_n)\)</span>が観測され、各<span class="math notranslate nohighlight">\(y_i\)</span>が
-$<span class="math notranslate nohighlight">\(
-y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
-\)</span>$
-が得られます。</p>
 <section id="id11">
-<h3>最小二乗法<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>単回帰モデル<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(n\)</span>個のデータ<span class="math notranslate nohighlight">\((x_1,y_1),...(x_n,y_n)\)</span>が観測され、各<span class="math notranslate nohighlight">\(y_i\)</span>が</p>
+<div class="math notranslate nohighlight">
+\[
+y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
+\]</div>
+<p>が得られます。</p>
+</section>
+<section id="id12">
+<h3>最小二乗法<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>最小二乗法の目標は、与えられたデータセットに対して予測された値（モデルの出力）と実際の値（データセットの出力）の差を最小化することである。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1597,11 +1640,12 @@ h(\alpha,\beta)= \sum_{i=1}^n (y_i-\alpha-\beta x_i)^2
 <p>ここで、<span class="math notranslate nohighlight">\(\bar{y}\)</span>は標本平均と呼ぶ。この式を切片について書き直すと、</p>
 <div class="math notranslate nohighlight">
 \[\hat{\alpha}　= \bar{y}  - \hat{\beta}\bar{x}\]</div>
-<p>この式を　
-$<span class="math notranslate nohighlight">\(
-\frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0 (条件付き期待値ゼロ仮定　E(u|x)=0 より)
-\)</span>$
-に代入すると</p>
+<p>この式を条件付き期待値ゼロ仮定　<span class="math notranslate nohighlight">\(E(u|x)=0\)</span> より、</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n} \sum_{i=1}^n x_i(y_i-\hat{\alpha}-\hat{\beta}x_i)=0
+\]</div>
+<p>に代入すると</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=1}^n x_i(y_i-(\bar{y}  - \hat{\beta}\bar{x})-\hat{\beta}x_i)=0
@@ -1610,38 +1654,42 @@ $<span class="math notranslate nohighlight">\(
 \[
 \sum_{i=1}^n x_i(y_i-\bar{y})=\hat{\beta} \sum_{i=1}^n x_i(\bar{x}-x_i)
 \]</div>
-<p>ここで、
-$<span class="math notranslate nohighlight">\(
+<p>ここで、</p>
+<div class="math notranslate nohighlight">
+\[
 \sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y}) = \sum_{i=1}^n x_i(y_i-\bar{y}) = \sum_{i=1}^n y_i(x_i-\bar{x})
-\)</span>$</p>
+\]</div>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n x_i^2-n(\bar{x})^2
 \]</div>
 <p>のため</p>
-<p>この式から<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を解くと、
-$$</p>
-<p>\hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}</p>
+<p>この式から<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を解くと、</p>
 <div class="math notranslate nohighlight">
 \[
-そして、$\hat{\alpha}$も得られる
+\hat{\beta}=\frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}=\frac{標本共分散(x_i,y_i)}{標本分散(x_i)}\]</div>
+<p>そして、<span class="math notranslate nohighlight">\( \hat{\alpha} \)</span>も得られる</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}
 \]</div>
-<p>\hat{\alpha}=\hat{y}-\hat{\beta}\bar{x}</p>
-<p>$$</p>
-<p>任意の推定値<span class="math notranslate nohighlight">\(\hat{\alpha},\hat{\beta}\)</span>に関して、<span class="math notranslate nohighlight">\(i\)</span>に関する当てはめる値(fitted value)を
-$$</p>
-<p>\hat{y_i}=\hat{\alpha} +\hat{\beta} x_i</p>
+<p>任意の推定値<span class="math notranslate nohighlight">\(\hat{\alpha},\hat{\beta}\)</span>に関して、<span class="math notranslate nohighlight">\(i\)</span>に関する当てはめる値(fitted value)を</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-と定義する。\\回帰直線と観測値との差
-\end{aligned}\end{align} \]</div>
-<p>\hat{u_i}=y_i-\hat{y_i}</p>
+\[
+\hat{y_i}=\hat{\alpha} +\hat{\beta} x_i\]</div>
+<p>と定義する。</p>
+<p>回帰直線と観測値との差</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}を残差(residual)といいます。\\残差の二乗の和をとったもの
-\end{aligned}\end{align} \]</div>
-<p>RSS=\sum_{i=1}^n \hat{u_i}^2</p>
-<p>$$
-を残差平方和(residual sum of squares, RSS)といいます。</p>
+\[
+\hat{u_i}=y_i-\hat{y_i}
+\]</div>
+<p>を残差(residual)といいます。</p>
+<p>残差の二乗の和をとったもの</p>
+<div class="math notranslate nohighlight">
+\[
+RSS=\sum_{i=1}^n \hat{u_i}^2
+\]</div>
+<p>を残差平方和(residual sum of squares, RSS)といいます。</p>
 <p>ここで、残差平方和を最小にするような<span class="math notranslate nohighlight">\(\hat{\alpha}\)</span>と<span class="math notranslate nohighlight">\(\hat{\beta}\)</span>を選びます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1750,9 +1798,65 @@ alpha:  2.7740186712020654
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/numpy_106_0.png" src="../_images/numpy_106_0.png" />
+<img alt="../_images/numpy_109_0.png" src="../_images/numpy_109_0.png" />
 </div>
 </div>
+</section>
+<section id="id13">
+<h3>重回帰モデル<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(k\)</span>個の説明変数<span class="math notranslate nohighlight">\(x_1,...,x_k\)</span>が考えられ、<span class="math notranslate nohighlight">\(y\)</span>との間に</p>
+<div class="math notranslate nohighlight">
+\[
+y_j=\beta_0+\beta_1 x_{1j}+...+\beta_k x_{kj}+ u_j
+\]</div>
+<p>なる線型関係が想定されます。これを重回帰モデルといいます。</p>
+<p><span class="math notranslate nohighlight">\(\beta_1,....,\beta_k\)</span>は偏回帰係数(partial regression coefficient)と呼びます。</p>
+<p>重回帰モデルを行列を用いて</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}= \begin{bmatrix} 
+1 &amp; x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1k} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{nk} \\
+\end{bmatrix} \begin{bmatrix} \beta_0 \\ \beta_1 \\ \beta_2 \\ \vdots \\ \beta_p \end{bmatrix}+\begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix}
+\end{split}\]</div>
+<p>と表されます。それぞれの対応するベクトル及び行列とおくと、</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} =\mathbf{X} \mathbf{\beta}+\mathbf{u}
+\]</div>
+<p>ここで、誤差<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>について、</p>
+<ul class="simple">
+<li><p>不偏性: <span class="math notranslate nohighlight">\(E(\mathbf{u})=0\)</span></p></li>
+<li><p>等分散性、無相関性: 平均ベクトル<span class="math notranslate nohighlight">\(E(\mathbf{u})=0\)</span>年、<span class="math notranslate nohighlight">\(Cov(\mathbf{u})=E[\mathbf{u} \mathbf{u}^T]=\sigma^2 \mathbf{I}\)</span>と仮定する</p></li>
+</ul>
+<p>回帰係数ベクトル<span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span>の最小二乗推定量は、</p>
+<div class="math notranslate nohighlight">
+\[
+h(\mathbf{\beta})=\sum_{j=1}^n [y_j-(\beta_0+\beta_{1}x_{1j}+... +\beta_k x_{kj})]^2
+\]</div>
+<p>を最小化することより得られる。</p>
+<p>この式を行列を用いて表すと、</p>
+<div class="math notranslate nohighlight">
+\[
+h(\mathbf{\beta})=(\mathbf{y}-\mathbf{X}\mathbf{\beta})^T(\mathbf{y}-\mathbf{X}\mathbf{\beta})
+\]</div>
+<p><span class="math notranslate nohighlight">\(min\ h(\mathbf{\beta})\)</span>という最小化問題を解くために、</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial}{\partial\beta} (y - X\beta)^T(y - X\beta) = \frac{\partial}{\partial\beta} (Y^TY - 2\beta^TX^TY + \beta^TX^TX\beta)= -2X^T y + 2X^T X\beta = 0
+\]</div>
+<p>を得ることができます。ここで、<span class="math notranslate nohighlight">\(X^T X\beta=X^T Y\)</span>のため、</p>
+<div class="math notranslate nohighlight">
+\[
+X^TX\beta = X^TY
+\]</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{X}\)</span>はフル・ランクであるとすると、<span class="math notranslate nohighlight">\(X^TX\)</span>の逆行列が存在しますので、</p>
+<div class="math notranslate nohighlight">
+\[
+\beta = (X^TX)^{-1}X^TY
+\]</div>
 </section>
 </section>
 </section>

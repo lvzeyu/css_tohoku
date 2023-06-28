@@ -27,6 +27,7 @@ parts:
 - caption: データ分析ためのパケージ
   chapters:
   - file: draft/numpy.ipynb
+  - file: draft/pandas.ipynb
 - caption: Supplementary
   chapters:
   - file: draft/tips.ipynb
