@@ -322,7 +322,7 @@ df
 
 # ````{tab-set}
 # ```{tab-item} 実習問題1
-# ラムダ関数を適用する形で男性ダミー変数を作成しよう。
+# ラムダ関数を適用することで男性ダミー変数を作成しよう。
 # ```
 # 
 # ```{tab-item} 実習問題2
@@ -380,12 +380,253 @@ df["age"].fillna(mean_age,inplace=True) # inplace=Trueで元のデータを変�
 df
 
 
+# ## データのグループ化
+
+# 単純な集約はデータセットの全体像を把握することができますが、データをカテゴライズして、それぞれのグループごとの計算が望ましい場合もあります。
+# 
+# ```pandas```は柔軟な```groupby```インタフェースを持っており、これを利用することで、特定の列のデータに基づいてグループ化を行い、任意の関数を適用して、結果を結合して戻します。
+# 
+# ![](https://jakevdp.github.io/figures/split-apply-combine.svg)
+# 
+# データフレームのグループ化を行う場合は```groupby```メソッドを使います。```groupby```メソッドで戻されたオブジェクトは```GroupBy```オブジェクトと呼ばれ、様々な[メソッドと属性](https://pandas.pydata.org/docs/reference/groupby.html)が用意されております。
+# 
+
+# ### 集約
+
+# In[39]:
+
+
+df.groupby("age").mean()
+
+
+# In[40]:
+
+
+df.groupby("age")["fare"].mean()
+
+
+# In[41]:
+
+
+df.groupby("age")["fare"].sum()
+
+
+# ```sum()```や```mean()```以外、```agg()```メソッドを使用するとさらに柔軟な操作が可能になります。
+# 
+# ```agg()```メソッドで複数の関数を指定することが可能です。
+
+# In[42]:
+
+
+df.groupby("age")["fare"].agg(["mean","sum","count"])
+
+
+# 複数の列によるのグールプ操作ももちろん可能です。
+
+# In[43]:
+
+
+df.groupby(["age","sex"])["fare"].agg(["mean","sum","count"])
+
+
+# さらに、複数の列に対して、それぞれ異なる関数を適用することも可能です。この場合、列名と適用したい関数名をマッピングした辞書を```agg```に渡します。
+
+# In[44]:
+
+
+df.groupby("sex").agg({"fare":"median","age":"mean"})
+
+
+# In[45]:
+
+
+df.groupby("sex").agg({"fare":["mean","median","std"],"age":"mean"})
+
+
+# ```{note}
+# 場合によっては、集約されたデータは階層的インデックス([MulitiIndex](https://pandas.pydata.org/docs/user_guide/advanced.html))が付けされています。as_index=Falseをgroupbyに渡すことで、この動作を無効化することができます。
+# ```
+
+# ### 変換
+# 
+# グループ化されたデーでに対する変形を行う処理も少なくありません。```transform```メソッドを使用すると、グループごとに個々の要素に対して計算や変換を適用し、元のデータと同じサイズ・形状の結果を取得することができます。
+# 
+# 例えば、ある値からグループごとの平均と差を取り、データのセンタリングを行うのが、よく用いられる変換の例です。
+
+# In[46]:
+
+
+df.groupby("age")["fare"].transform(lambda x: x - x.mean())
+
+
+# ````{tab-set}
+# ```{tab-item} 実習問題
+# 性別ごとに、fareの値を標準化してみよう。
+# ```
+# ````
+
+# <details><summary>標準化</summary>
+# 標準化の公式は以下になります：
+# 
+# $$
+# z= \frac{x-\hat{x}}{\sigma}
+# $$
+# </details>
+
+# ## データの連結とマージ
+
+# ### ```concat```による連結
+# 
+# ```pd.concat```という関数は、特定の軸に沿ってデータフレームを連結するために用いられます。
+
+# - 行方向の結合
+
+# In[47]:
+
+
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
+display(df1, df2)
+result = pd.concat([df1, df2])# default: axis=0
+result
+
+
+# - 列方向の結合
+
+# In[48]:
+
+
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'C': [5, 6], 'D': [7, 8]})
+display(df1, df2)
+result = pd.concat([df1, df2], axis=1)
+result
+
+
+# - ```join```引数で結合方法を指定する
+# 
+#     - ```inner```（デフォルト）: 結合するオブジェクトの共通のインデックスのみを保持します。共通のインデックスのみが結果に表示されます。
+#     - ```outer```: 結合するすべてのインデックスを保持します。共通のインデックス以外にも存在するインデックスが結果に表示されます。欠損値が含まれる可能性があります。
+#     - ```left```: 左側のオブジェクトのインデックスを基準に結合します。左側のオブジェクトのインデックスが保持されます。右側のオブジェクトには存在しないインデックスの値は欠損値になります。
+#     - ```right```: 右側のオブジェクトのインデックスを基準に結合します。右側のオブジェクトのインデックスが保持されます。左側のオブジェクトには存在しないインデックスの値は欠損値になります。
+
+# In[49]:
+
+
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]}, index=[0, 1])
+df2 = pd.DataFrame({'B': [5, 6], 'C': [7, 8]}, index=[1, 2])
+display(df1, df2)
+result = pd.concat([df1, df2], join='inner')
+result
+
+
+# In[50]:
+
+
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]}, index=[0, 1])
+df2 = pd.DataFrame({'B': [5, 6], 'C': [7, 8]}, index=[1, 2])
+result = pd.concat([df1, df2], join='outer')
+result
+
+
+# ### ```merge```による結合
+
+# ### 結合の種類
+
+# In[51]:
+
+
+df1 = pd.DataFrame({'employee': ['Bob', 'Jake', 'Lisa', 'Sue'],
+                    'group': ['Accounting', 'Engineering',
+                              'Engineering', 'HR']})
+df2 = pd.DataFrame({'employee': ['Lisa', 'Bob', 'Jake', 'Sue'],
+                    'hire_date': [2004, 2008, 2012, 2014]})
+display(df1, df2)
+
+
+# - 一対一結合
+
+# In[52]:
+
+
+df3 = pd.merge(df1, df2)
+df3
+
+
+# - 多対一結合
+
+# In[53]:
+
+
+df4 = pd.DataFrame({'group': ['Accounting', 'Engineering', 'HR'],
+                    'supervisor': ['Carly', 'Guido', 'Steve']})
+display(df3, df4, pd.merge(df3, df4))
+
+
+# - 多対多結合
+
+# In[54]:
+
+
+df5 = pd.DataFrame({'group': ['Accounting', 'Accounting',
+                              'Engineering', 'Engineering', 'HR', 'HR'],
+                    'skills': ['math', 'spreadsheets', 'software', 'math',
+                               'spreadsheets', 'organization']})
+display(df1, df5, pd.merge(df1, df5))
+
+
+# ### キーの指定
+# 
+# 基本的には、結合するデータフレームの中で一つ以上共通の列を探し、それをキーとして使用します。
+# 
+# ```on```引数で明示的に指定することもできます。指定するキーは結合の基準となる列であり、結合の際にこの列の値が一致する行同士が結合されます
+
+# In[55]:
+
+
+display(df1, df2, pd.merge(df1, df2, on='employee'))
+
+
+# 二つのデータフレームを異なる列名で結合することもできます。この場合、```left_on```と```right_on```引数を使用して二つの列名を指定できます。
+
+# In[56]:
+
+
+df3 = pd.DataFrame({'name': ['Bob', 'Jake', 'Lisa', 'Sue'],
+                    'salary': [70000, 80000, 120000, 90000]})
+display(df1, df3, pd.merge(df1, df3, left_on="employee", right_on="name"))
+
+
+# ### 結合方法
+# 
+# これまでの例は、デフォルトである```inner```(内部結合)で行いましたが、```how```引数で明示的に結合方法を指定することができます。
+
+# In[57]:
+
+
+df6 = pd.DataFrame({'name': ['Peter', 'Paul', 'Mary'],
+                    'food': ['fish', 'beans', 'bread']},
+                   columns=['name', 'food'])
+df7 = pd.DataFrame({'name': ['Mary', 'Joseph'],
+                    'drink': ['wine', 'beer']},
+                   columns=['name', 'drink'])
+display(df6, df7, pd.merge(df6, df7))
+
+
+# In[58]:
+
+
+display(pd.merge(df6, df7, how='left'))
+
+
+# In[59]:
+
+
+display(pd.merge(df6, df7, how='right'))
+
+
 # In[ ]:
 
 
 
 
-
-# ## データのグループ化
-
-# 
