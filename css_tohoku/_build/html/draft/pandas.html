@@ -720,7 +720,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <h1>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
-<p>pandas はデータ分析によく用いられるパッケージであり、データの操作や解析、可視化などを行うための機能を提供します。</p>
+<p>pandas はデータ分析によく用いられるパッケージであり、データの操作や解析などを行うための機能を提供します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1013,7 +1013,7 @@ dtype: int64
 <p>例えば、CSV ファイルを読み込むための```pd.read_csv()``という関数が用意されています。 こちらを使って CSV ファイルを読み込みます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./Data/titanic.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lvzeyu/css_tohoku/master/css_tohoku/draft/Data/titanic.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1761,8 +1761,8 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d5571fe8-074e-4994-bb0e-93bd42931df1" name="df17cfb9-5b20-411b-b394-a19559f6720e" type="radio">
-</input><label class="sd-tab-label" for="d5571fe8-074e-4994-bb0e-93bd42931df1">
+<input checked="checked" id="08d869e7-d8ad-445d-a931-e15ece6e561c" name="54e76d06-108b-4bd9-9310-0da2bf114902" type="radio">
+</input><label class="sd-tab-label" for="08d869e7-d8ad-445d-a931-e15ece6e561c">
 実習問題</label><div class="sd-tab-content docutils">
 <p>年齢が30-50歳の男性のデータを取り出し、Name, Age, Sexを示してください。</p>
 </div>
@@ -3480,13 +3480,13 @@ Name: 96, dtype: object
 </div></div></div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d1afd2ca-6d25-4f4b-b7ca-5f35f714786a" name="932bd6e4-35cf-4548-b033-c2a70b8bee00" type="radio">
-</input><label class="sd-tab-label" for="d1afd2ca-6d25-4f4b-b7ca-5f35f714786a">
+<input checked="checked" id="dbc48b17-f547-4661-81d5-206249e79294" name="38d0c432-a734-4ae4-9710-a686a688f770" type="radio">
+</input><label class="sd-tab-label" for="dbc48b17-f547-4661-81d5-206249e79294">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>ラムダ関数を適用することで男性ダミー変数を作成しよう。</p>
 </div>
-<input id="d0fd7554-d66c-4003-aed3-444339017266" name="932bd6e4-35cf-4548-b033-c2a70b8bee00" type="radio">
-</input><label class="sd-tab-label" for="d0fd7554-d66c-4003-aed3-444339017266">
+<input id="5a12e1c6-33ad-4829-9b0a-1bcbd7de6e9e" name="38d0c432-a734-4ae4-9710-a686a688f770" type="radio">
+</input><label class="sd-tab-label" for="5a12e1c6-33ad-4829-9b0a-1bcbd7de6e9e">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>Cabin変数によって、頭文字で新しいカテゴリ変数を作成しよう。例えば、C105の場合はCに変更します。</p>
 </div>
@@ -4472,7 +4472,7 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/wm/5xxpvjcj15g89khxd5jwn9200000gn/T/ipykernel_33491/3768573119.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/wm/5xxpvjcj15g89khxd5jwn9200000gn/T/ipykernel_51843/3768573119.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df.groupby(&quot;age&quot;).mean()
 </pre></div>
 </div>
@@ -5056,8 +5056,8 @@ Name: fare, Length: 1309, dtype: float64
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f32a1d81-28b2-46a0-a464-4dcd956bcd19" name="1a9526b0-92c7-44d5-9dd3-42d491ba5471" type="radio">
-</input><label class="sd-tab-label" for="f32a1d81-28b2-46a0-a464-4dcd956bcd19">
+<input checked="checked" id="21b44a27-5286-4b3a-8f3c-425467bedaa5" name="dd128070-04e4-4b51-8a8f-888878f56177" type="radio">
+</input><label class="sd-tab-label" for="21b44a27-5286-4b3a-8f3c-425467bedaa5">
 実習問題</label><div class="sd-tab-content docutils">
 <p>性別ごとに、fareの値を標準化してみよう。</p>
 </div>

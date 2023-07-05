@@ -3,7 +3,7 @@
 
 # # pandas
 # 
-# pandas はデータ分析によく用いられるパッケージであり、データの操作や解析、可視化などを行うための機能を提供します。
+# pandas はデータ分析によく用いられるパッケージであり、データの操作や解析などを行うための機能を提供します。
 
 # In[1]:
 
@@ -137,7 +137,7 @@ df
 # In[13]:
 
 
-df=pd.read_csv("./Data/titanic.csv")
+df=pd.read_csv("https://raw.githubusercontent.com/lvzeyu/css_tohoku/master/css_tohoku/draft/Data/titanic.csv")
 
 
 # In[14]:
