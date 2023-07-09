@@ -28,6 +28,7 @@ parts:
   chapters:
   - file: draft/numpy.ipynb
   - file: draft/pandas.ipynb
+  - file: draft/scikit-learn.ipynb
 - caption: Supplementary
   chapters:
   - file: draft/tips.ipynb
