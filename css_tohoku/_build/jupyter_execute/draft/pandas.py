@@ -282,9 +282,9 @@ df.sort_values(by=["age","embarked"])
 # In[31]:
 
 
-male={"male":0,
+female={"male":0,
       "female":1}
-df["male"]=df["sex"].map(male)
+df["female"]=df["sex"].map(female)
 df
 
 
