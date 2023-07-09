@@ -1761,8 +1761,8 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="08d869e7-d8ad-445d-a931-e15ece6e561c" name="54e76d06-108b-4bd9-9310-0da2bf114902" type="radio">
-</input><label class="sd-tab-label" for="08d869e7-d8ad-445d-a931-e15ece6e561c">
+<input checked="checked" id="9fd76924-42f7-44ea-b1d0-0e339670c818" name="dd08aed1-ad86-4ea8-aaaf-04fb3a7bce84" type="radio">
+</input><label class="sd-tab-label" for="9fd76924-42f7-44ea-b1d0-0e339670c818">
 実習問題</label><div class="sd-tab-content docutils">
 <p>年齢が30-50歳の男性のデータを取り出し、Name, Age, Sexを示してください。</p>
 </div>
@@ -2719,9 +2719,9 @@ Name: 96, dtype: object
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">male</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;male&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">female</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;male&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
       <span class="s2">&quot;female&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">male</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">female</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -2759,7 +2759,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
-      <th>male</th>
+      <th>female</th>
     </tr>
   </thead>
   <tbody>
@@ -3014,6 +3014,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -3034,6 +3035,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>St Louis, MO</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3052,6 +3054,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3070,6 +3073,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3087,6 +3091,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>135.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3106,10 +3111,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -3142,6 +3149,7 @@ Name: 96, dtype: object
       <td>328.0</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3160,6 +3168,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3177,6 +3186,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>304.0</td>
       <td>NaN</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3196,6 +3206,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3214,11 +3225,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1309 rows × 15 columns</p>
+<p>1309 rows × 16 columns</p>
 </div></div></div>
 </div>
 <ul class="simple">
@@ -3272,6 +3284,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -3292,6 +3305,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>St Louis, MO</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3310,6 +3324,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3328,6 +3343,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3345,6 +3361,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>135.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3364,10 +3381,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -3400,6 +3419,7 @@ Name: 96, dtype: object
       <td>328.0</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3418,6 +3438,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3435,6 +3456,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>304.0</td>
       <td>NaN</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3454,6 +3476,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3472,21 +3495,22 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1309 rows × 15 columns</p>
+<p>1309 rows × 16 columns</p>
 </div></div></div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="dbc48b17-f547-4661-81d5-206249e79294" name="38d0c432-a734-4ae4-9710-a686a688f770" type="radio">
-</input><label class="sd-tab-label" for="dbc48b17-f547-4661-81d5-206249e79294">
+<input checked="checked" id="9d9328c5-c610-4964-8cdb-6f1ed285ecda" name="4ba0d82f-804c-4297-b694-3561282e72ce" type="radio">
+</input><label class="sd-tab-label" for="9d9328c5-c610-4964-8cdb-6f1ed285ecda">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>ラムダ関数を適用することで男性ダミー変数を作成しよう。</p>
 </div>
-<input id="5a12e1c6-33ad-4829-9b0a-1bcbd7de6e9e" name="38d0c432-a734-4ae4-9710-a686a688f770" type="radio">
-</input><label class="sd-tab-label" for="5a12e1c6-33ad-4829-9b0a-1bcbd7de6e9e">
+<input id="c791b3e3-c5be-4d80-8fbc-09fb0ec6651c" name="4ba0d82f-804c-4297-b694-3561282e72ce" type="radio">
+</input><label class="sd-tab-label" for="c791b3e3-c5be-4d80-8fbc-09fb0ec6651c">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>Cabin変数によって、頭文字で新しいカテゴリ変数を作成しよう。例えば、C105の場合はCに変更します。</p>
 </div>
@@ -3537,6 +3561,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -3578,6 +3603,7 @@ Name: 96, dtype: object
       <th>parch</th>
       <th>ticket</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -3591,6 +3617,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>24160</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3602,6 +3629,7 @@ Name: 96, dtype: object
       <td>2.0</td>
       <td>113781</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3613,6 +3641,7 @@ Name: 96, dtype: object
       <td>2.0</td>
       <td>113781</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3623,6 +3652,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>2.0</td>
       <td>113781</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3635,10 +3665,12 @@ Name: 96, dtype: object
       <td>2.0</td>
       <td>113781</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -3657,6 +3689,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>2665</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3668,6 +3701,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>2665</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3678,6 +3712,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>0.0</td>
       <td>2656</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3690,6 +3725,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>2670</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3701,11 +3737,12 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>315082</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1309 rows × 8 columns</p>
+<p>1309 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>特定の列に基づく欠損値を削除することも可能です。</p>
@@ -3748,6 +3785,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -3768,6 +3806,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>St Louis, MO</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3786,6 +3825,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3804,6 +3844,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3821,6 +3862,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>135.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3840,10 +3882,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -3876,6 +3920,7 @@ Name: 96, dtype: object
       <td>312.0</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3894,6 +3939,7 @@ Name: 96, dtype: object
       <td>328.0</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -3911,6 +3957,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>304.0</td>
       <td>NaN</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -3930,6 +3977,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -3948,11 +3996,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1046 rows × 15 columns</p>
+<p>1046 rows × 16 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -3999,6 +4048,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -4019,6 +4069,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>St Louis, MO</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4037,6 +4088,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -4055,6 +4107,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4072,6 +4125,7 @@ Name: 96, dtype: object
       <td>0</td>
       <td>135.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -4091,10 +4145,12 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -4127,6 +4183,7 @@ Name: 96, dtype: object
       <td>328.0</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4145,6 +4202,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>0</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4161,6 +4219,7 @@ Name: 96, dtype: object
       <td>C</td>
       <td>0</td>
       <td>304.0</td>
+      <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -4181,6 +4240,7 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -4199,11 +4259,12 @@ Name: 96, dtype: object
       <td>0.0</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1309 rows × 15 columns</p>
+<p>1309 rows × 16 columns</p>
 </div></div></div>
 </div>
 <p>平均を使った欠損値の補完する方法がよく用いられます。</p>
@@ -4248,6 +4309,7 @@ Name: 96, dtype: object
       <th>body</th>
       <th>home.dest</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
   </thead>
@@ -4268,6 +4330,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>St Louis, MO</td>
       <td>1</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4286,6 +4349,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>1</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -4304,6 +4368,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4321,6 +4386,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>135.0</td>
       <td>Montreal, PQ / Chesterville, ON</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -4340,10 +4406,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>Montreal, PQ / Chesterville, ON</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -4376,6 +4444,7 @@ Name: 96, dtype: object
       <td>328.0</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4394,6 +4463,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>1</td>
       <td>0</td>
     </tr>
     <tr>
@@ -4411,6 +4481,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>304.0</td>
       <td>NaN</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
@@ -4430,6 +4501,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
     <tr>
@@ -4448,11 +4520,12 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>NaN</td>
       <td>0</td>
+      <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>1309 rows × 15 columns</p>
+<p>1309 rows × 16 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -4472,7 +4545,7 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/wm/5xxpvjcj15g89khxd5jwn9200000gn/T/ipykernel_51843/3768573119.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/wm/5xxpvjcj15g89khxd5jwn9200000gn/T/ipykernel_63984/3768573119.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df.groupby(&quot;age&quot;).mean()
 </pre></div>
 </div>
@@ -4500,10 +4573,12 @@ Name: 96, dtype: object
       <th>fare</th>
       <th>body</th>
       <th>survived</th>
+      <th>female</th>
       <th>male</th>
     </tr>
     <tr>
       <th>age</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -4522,6 +4597,7 @@ Name: 96, dtype: object
       <td>28.508523</td>
       <td>NaN</td>
       <td>0.772727</td>
+      <td>0.409091</td>
       <td>0.590909</td>
     </tr>
     <tr>
@@ -4532,6 +4608,7 @@ Name: 96, dtype: object
       <td>34.881250</td>
       <td>4.0</td>
       <td>0.333333</td>
+      <td>0.583333</td>
       <td>0.416667</td>
     </tr>
     <tr>
@@ -4542,6 +4619,7 @@ Name: 96, dtype: object
       <td>24.066671</td>
       <td>NaN</td>
       <td>0.714286</td>
+      <td>0.428571</td>
       <td>0.571429</td>
     </tr>
     <tr>
@@ -4553,6 +4631,7 @@ Name: 96, dtype: object
       <td>NaN</td>
       <td>0.700000</td>
       <td>0.500000</td>
+      <td>0.500000</td>
     </tr>
     <tr>
       <th>5.0</th>
@@ -4562,10 +4641,12 @@ Name: 96, dtype: object
       <td>24.451660</td>
       <td>NaN</td>
       <td>0.800000</td>
+      <td>0.800000</td>
       <td>0.200000</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -4582,6 +4663,7 @@ Name: 96, dtype: object
       <td>7.750000</td>
       <td>171.0</td>
       <td>0.000000</td>
+      <td>0.000000</td>
       <td>1.000000</td>
     </tr>
     <tr>
@@ -4591,6 +4673,7 @@ Name: 96, dtype: object
       <td>0.000000</td>
       <td>42.079200</td>
       <td>22.0</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>1.000000</td>
     </tr>
@@ -4602,6 +4685,7 @@ Name: 96, dtype: object
       <td>7.775000</td>
       <td>NaN</td>
       <td>0.000000</td>
+      <td>0.000000</td>
       <td>1.000000</td>
     </tr>
     <tr>
@@ -4611,6 +4695,7 @@ Name: 96, dtype: object
       <td>0.000000</td>
       <td>78.850000</td>
       <td>NaN</td>
+      <td>1.000000</td>
       <td>1.000000</td>
       <td>0.000000</td>
     </tr>
@@ -4622,11 +4707,12 @@ Name: 96, dtype: object
       <td>30.000000</td>
       <td>NaN</td>
       <td>1.000000</td>
+      <td>0.000000</td>
       <td>1.000000</td>
     </tr>
   </tbody>
 </table>
-<p>92 rows × 7 columns</p>
+<p>92 rows × 8 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -5056,8 +5142,8 @@ Name: fare, Length: 1309, dtype: float64
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="21b44a27-5286-4b3a-8f3c-425467bedaa5" name="dd128070-04e4-4b51-8a8f-888878f56177" type="radio">
-</input><label class="sd-tab-label" for="21b44a27-5286-4b3a-8f3c-425467bedaa5">
+<input checked="checked" id="22d25f8b-f84a-4f1f-be4d-c4fc42cd0a65" name="57650f58-83a5-4113-9f04-965a5c114d8d" type="radio">
+</input><label class="sd-tab-label" for="22d25f8b-f84a-4f1f-be4d-c4fc42cd0a65">
 実習問題</label><div class="sd-tab-content docutils">
 <p>性別ごとに、fareの値を標準化してみよう。</p>
 </div>
