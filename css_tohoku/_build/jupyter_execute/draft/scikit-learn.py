@@ -24,7 +24,6 @@
 # - 性能指標の選択
 # - 学習アルゴリズムの実装
 # - モデル性能の評価
-# 
 
 # ## scikit-learnのデータ表現
 
@@ -45,25 +44,13 @@ iris= datasets.load_iris()
 # - データの各行は、観測された一つのサンプルを表します。
 # - データの各列は、各サンプルの特徴を表す量的情報を持ちます。
 
-# In[2]:
-
-
-iris.data
-
-
 # ### 目的配列
 # 
 # 特徴行列に対して、サンプルの長さを持つラベルや目的配列も扱います。
 # 
 # アイリスデータセットの場合、アイリスの種類を表す数値ラベルが目的配列と見なされます。
 
-# In[3]:
-
-
-iris.target
-
-
-# In[4]:
+# In[2]:
 
 
 import pandas as pd
@@ -73,7 +60,7 @@ iris_df['target'] = iris.target
 iris_df.head()
 
 
-# ## scikit-learnのAPI
+# ## scikit-learnによる機械学習
 # 
 # scikit-learnは、各機械学習アルゴリズムと幅広い機械学習アプリケーションに一貫したインタフェースを提供するAPIを通じて実装されています。
 # 
@@ -97,7 +84,7 @@ iris_df.head()
 # 
 # scikit-learnでは、全てのモデルはPythonクラスとして実装されており、ここでは分類を行うモデルの1つであるロジスティック回帰 ([```LogisticRegression```](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)) クラスをインポートしています。
 
-# In[5]:
+# In[3]:
 
 
 from sklearn.linear_model import LogisticRegression
@@ -107,7 +94,7 @@ from sklearn.linear_model import LogisticRegression
 # 
 # モデルのクラスに応じて、ハイパーパラメータでモデルを調整することは可能です。
 
-# In[6]:
+# In[4]:
 
 
 model=LogisticRegression(solver='lbfgs',  multi_class='auto')
@@ -120,7 +107,7 @@ model=LogisticRegression(solver='lbfgs',  multi_class='auto')
 # - 基本的には、特徴量のサンプルとラベルのサンプルを同じ長さに保つ必要があります。ここでは、アイリスデータセットは既に正しい形式で整形されました。
 # - ```train_test_split()``` でデータセットを訓練データとテストデータに分割できます。ここでは、```train_test_split()``` 関数の ```test_size``` 引数にデータセットの$30%$をテストデータとすることを指定しています。また、```stratify``` 引数にラベルデータを指定することで、訓練データとテストデータ、それぞれでラベルの分布が同じになるようにしています。
 
-# In[7]:
+# In[5]:
 
 
 from sklearn.model_selection import train_test_split
@@ -140,13 +127,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # 
 # ```fit()```メソッドは、モデルに依存する計算を内部で実行し、計算の結果は、ユーザが調べられるようにモデルの[属性](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)に格納されます。
 
-# In[8]:
+# In[6]:
 
 
 model.fit(X_train, y_train) # モデルを訓練データに適合
 
 
-# In[9]:
+# In[7]:
 
 
 model.classes_
@@ -158,13 +145,13 @@ model.classes_
 # 
 # ```accuracy_score()``` はモデルの予測精度を評価するための関数です。
 
-# In[10]:
+# In[8]:
 
 
 y_predicted=model.predict(X_test) # テストデータでラベルを予測
 
 
-# In[11]:
+# In[9]:
 
 
 from sklearn.metrics import accuracy_score
@@ -179,7 +166,7 @@ accuracy_score(y_test, y_predicted) # 予測精度（accuracy）の評価
 # 
 # 散布図を用いて petal_length と petal_width の関係を可視化してみると、関係があるといえそうでしょうか。
 
-# In[12]:
+# In[10]:
 
 
 import proplot as pplt
@@ -208,13 +195,13 @@ ax.set_ylabel('Petal Width (cm)')
 # 
 # 
 
-# In[13]:
+# In[11]:
 
 
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
-iris = load_iris()
+iris= datasets.load_iris()
 X = iris.data[:, 2:3]  # Petal length as input feature
 y = iris.data[:, 3]  # Petal width as target variable
 
@@ -230,7 +217,7 @@ mean_squared_error(y_test,y_predicted) # 予測精度（平均二乗誤差）の
 
 # 線形回帰モデルにより学習された petal_length と petal_width の関係を表す回帰式を可視化しています。学習された回帰式が実際のデータに適合していることがわかります。
 
-# In[98]:
+# In[12]:
 
 
 # Create a scatter plot with regression line using proplot
@@ -315,8 +302,231 @@ plt.show()
 # ```
 # ````
 
-# In[ ]:
+# ## scikit-learnによる特徴エンジニアリング
+# 
+# 特徴エンジニアリング（Feature Engineering）は、機械学習アルゴリズムがうまく学習できるために、入力データの特徴（特徴量）を適切に抽出、選択、変換するプロセスです。
+# 
+# 特徴エンジニアリングは、ドメイン知識や実験に基づいて行われるため、データの理解や探索的データ分析が重要です。また、特徴エンジニアリングは機械学習モデルの性能に大きな影響を与えるため、適切な特徴量の設計や変換はモデルの成功において重要なステップです。
+# 
+# scikit-learnには、特徴エンジニアリングに役立つさまざまなモジュールや関数が用意されています。
+# 
+# ここでは、もう少し複雑なデータでscikit-learnによるいくつか有用な特徴エンジニアリング手法を紹介します。
+# 
+# housingデータセットには、住宅に関連するさまざまな特徴量（説明変数）とそれに対応する住宅価格（目的変数）が含まれています。
+
+# In[142]:
 
 
+housing = pd.read_csv("https://raw.githubusercontent.com/ageron/data/main/housing/housing.csv")
+housing.head()
 
+
+# ### 欠損値の処理
+
+# In[145]:
+
+
+housing[housing["total_bedrooms"].isnull()]
+
+
+# scikit-learnの```SimpleImputer```は、欠損値を補完するための便利なツールです。
+# - 各変数の欠損値をその変数の中央値で置き換えることを指定して、```SimpleImputer```のインスタンスを作成する。
+# - ```fit()```メソッドを使って、データに```imputer```インスタンスを適合させられます。
+# - ```imputer```は各変数の中央値を計算し、```statistics_```に結果を格納しています。
+# - ```transform```で「訓練した」```imputer```を使って、欠損値を中央値に置き換えます。
+
+# In[150]:
+
+
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy="median")
+
+
+# In[152]:
+
+
+imputer.fit(housing.drop("ocean_proximity", axis=1)) # 文字列属性は除外
+
+
+# In[153]:
+
+
+imputer.statistics_
+
+
+# In[154]:
+
+
+X= imputer.transform(housing.drop("ocean_proximity", axis=1))
+
+
+# In[156]:
+
+
+housing_tr = pd.DataFrame(X, columns=housing.drop("ocean_proximity", axis=1).columns)
+
+
+# In[172]:
+
+
+# total_bedroomsの欠損値が中央値に置き換えられました
+housing_tr.iloc[housing[housing["total_bedrooms"].isnull()].index]
+
+
+# ### スケーリング
+# 
+# 特徴量スケーリングは、異なるスケールや範囲を持つ特徴量を統一された形に変換するプロセスです。
+# 
+# 多くの機械学習アルゴリズムは、入力特徴量のスケールが大きく異なると性能をうまく発揮できないです。
+# 
+# すべでの変数のスケールを統一するためによく使われている方法としては、
+# - 正規化(normalization): 特徴量を0から1の範囲にスケーリングする　$X_{normalized} = (X - X_{min}) / (X_{max} - X_{min})$
+# - 標準化(standarization):　特徴量を平均が0、標準偏差が1となるようにスケーリングする $X_{standardized} = (X - X_{mean}) / X_{std}$
+# 
+# があげられます。
+# 
+
+# In[183]:
+
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler(feature_range=(0,1))
+scaled_features =  scaler.fit_transform(housing.drop("ocean_proximity", axis=1))
+housing_tr = pd.DataFrame(scaled_features, columns=housing.drop("ocean_proximity", axis=1).columns)
+housing_tr.head()
+
+
+# In[184]:
+
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaled_features = scaler.fit_transform(housing.drop("ocean_proximity", axis=1))
+housing_tr = pd.DataFrame(scaled_features, columns=housing.drop("ocean_proximity", axis=1).columns)
+housing_tr.head()
+
+
+# ### テキストの処理
+# 
+# テキストデータは通常、単語や文字のシーケンスとして表現されますが、機械学習モデルに入力するためには数値データに変換する必要があります。
+# 
+# テキストの特徴量スケーリングの方法は色々ありますが、ここでは単純な手法だけ紹介します。
+# 
+# テキストを数値のカテゴリに変換します
+
+# In[188]:
+
+
+from sklearn.preprocessing import OrdinalEncoder
+ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded = ordinal_encoder.fit_transform(housing[["ocean_proximity"]])
+housing_cat_encoded[:10]
+
+
+# In[189]:
+
+
+ordinal_encoder.categories_
+
+
+# one-hot encoding
+# 
+# - one-hot encodingは、カテゴリカルな特徴量をバイナリベクトルの形式に変換し、各カテゴリの存在・非存在を表現する方法です。
+# 
+# ![](https://miro.medium.com/v2/resize:fit:1022/1*lS-1YL8UfhcSFnZ5weIMdg.png)
+
+# In[191]:
+
+
+from sklearn.preprocessing import OneHotEncoder
+cat_encoder = OneHotEncoder()
+housing_cat_1hot = cat_encoder.fit_transform(housing[["ocean_proximity"]])
+housing_cat_1hot.toarray()
+
+
+# ### 変換パイプライン
+# 
+# scikit-learnの変換パイプラインは、データの前処理や特徴量エンジニアリングの手順を効率的に実行するための便利なツールです。
+# 
+# データの特徴量エンジニアリングのステップはいくつもあり、正しい順序で実行しなければなりません。そのような処理シーケンスを実行しやすくため```Pipeline```クラスを使います。
+
+# In[192]:
+
+
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+num_pipeline = Pipeline([
+    ("imputer", SimpleImputer(strategy="median")),
+    ("std_scaler", StandardScaler())])
+
+
+# In[197]:
+
+
+housing_num_tr = num_pipeline.fit_transform(housing.drop(["ocean_proximity","median_house_value"], axis=1))
+
+
+# さらに、すべての列に対して実行し、各列に適切な変換を設置することもできます。
+
+# In[199]:
+
+
+from sklearn.compose import ColumnTransformer
+
+num_attribs = list(housing.drop(["ocean_proximity","median_house_value"], axis=1))
+cat_attribs = ["ocean_proximity"]
+
+full_pipeline = ColumnTransformer([
+    ("num", num_pipeline, num_attribs),
+    ("cat", OneHotEncoder(), cat_attribs)])
+
+
+# In[200]:
+
+
+housing_prepared = full_pipeline.fit_transform(housing)
+
+
+# In[202]:
+
+
+pd.DataFrame(housing_prepared).head()
+
+
+# ### モデルの実装
+
+# In[218]:
+
+
+housing.drop(["ocean_proximity","median_house_value"], axis=1).dropna()
+
+
+# In[203]:
+
+
+X_train, X_test, y_train, y_test = train_test_split(housing_prepared, housing["median_house_value"], test_size=0.2, random_state=42)
+
+
+# In[210]:
+
+
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+y_pred = lin_reg.predict(X_test)
+
+# モデルの評価（平均二乗誤差）
+print('testing score:', r2_score(y_test, y_pred))
+
+
+# In[215]:
+
+
+from sklearn.tree import DecisionTreeRegressor
+tree_regressor = DecisionTreeRegressor(max_depth = 10).fit(X_train, y_train)
+y_pred = tree_regressor.predict(X_test)
+print('testing score:', r2_score(y_test, y_pred))
 
