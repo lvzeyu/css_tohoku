@@ -288,7 +288,7 @@ ax.set_xlabel('sepal length (cm)')
 ax.set_ylabel('sepal width (cm)')
 
 # Show the plot
-plt.show()
+fig.show()
 
 
 # ````{tab-set}
@@ -314,7 +314,7 @@ plt.show()
 # 
 # housingデータセットには、住宅に関連するさまざまな特徴量（説明変数）とそれに対応する住宅価格（目的変数）が含まれています。
 
-# In[237]:
+# In[15]:
 
 
 housing = pd.read_csv("https://raw.githubusercontent.com/ageron/data/main/housing/housing.csv")
@@ -323,7 +323,7 @@ housing.head()
 
 # ### 欠損値の処理
 
-# In[238]:
+# In[16]:
 
 
 housing[housing["total_bedrooms"].isnull()]
@@ -335,38 +335,38 @@ housing[housing["total_bedrooms"].isnull()]
 # - ```imputer```は各変数の中央値を計算し、```statistics_```に結果を格納しています。
 # - ```transform```で「訓練した」```imputer```を使って、欠損値を中央値に置き換えます。
 
-# In[239]:
+# In[17]:
 
 
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy="median")
 
 
-# In[240]:
+# In[18]:
 
 
 imputer.fit(housing.drop("ocean_proximity", axis=1)) # 文字列属性は除外
 
 
-# In[241]:
+# In[19]:
 
 
 imputer.statistics_
 
 
-# In[242]:
+# In[20]:
 
 
 X= imputer.transform(housing.drop("ocean_proximity", axis=1))
 
 
-# In[243]:
+# In[21]:
 
 
 housing_tr = pd.DataFrame(X, columns=housing.drop("ocean_proximity", axis=1).columns)
 
 
-# In[244]:
+# In[22]:
 
 
 # total_bedroomsの欠損値が中央値に置き換えられました
@@ -386,7 +386,7 @@ housing_tr.iloc[housing[housing["total_bedrooms"].isnull()].index]
 # があげられます。
 # 
 
-# In[245]:
+# In[23]:
 
 
 from sklearn.preprocessing import MinMaxScaler
@@ -396,7 +396,7 @@ housing_tr = pd.DataFrame(scaled_features, columns=housing.drop("ocean_proximity
 housing_tr.head()
 
 
-# In[246]:
+# In[24]:
 
 
 from sklearn.preprocessing import StandardScaler
@@ -414,7 +414,7 @@ housing_tr.head()
 # 
 # テキストを数値のカテゴリに変換します
 
-# In[247]:
+# In[25]:
 
 
 from sklearn.preprocessing import OrdinalEncoder
@@ -423,7 +423,7 @@ housing_cat_encoded = ordinal_encoder.fit_transform(housing[["ocean_proximity"]]
 housing_cat_encoded[:10]
 
 
-# In[248]:
+# In[26]:
 
 
 ordinal_encoder.categories_
@@ -435,7 +435,7 @@ ordinal_encoder.categories_
 # 
 # ![](https://miro.medium.com/v2/resize:fit:1022/1*lS-1YL8UfhcSFnZ5weIMdg.png)
 
-# In[249]:
+# In[27]:
 
 
 from sklearn.preprocessing import OneHotEncoder
@@ -450,7 +450,7 @@ housing_cat_1hot.toarray()
 # 
 # データの特徴量エンジニアリングのステップはいくつもあり、正しい順序で実行しなければなりません。そのような処理シーケンスを実行しやすくため```Pipeline```クラスを使います。
 
-# In[250]:
+# In[28]:
 
 
 from sklearn.pipeline import Pipeline
@@ -461,7 +461,7 @@ num_pipeline = Pipeline([
     ("std_scaler", StandardScaler())])
 
 
-# In[251]:
+# In[29]:
 
 
 housing_num_tr = num_pipeline.fit_transform(housing.drop(["ocean_proximity","median_house_value"], axis=1))
@@ -469,7 +469,7 @@ housing_num_tr = num_pipeline.fit_transform(housing.drop(["ocean_proximity","med
 
 # さらに、すべての列に対して実行し、各列に適切な変換を設置することもできます。
 
-# In[252]:
+# In[30]:
 
 
 from sklearn.compose import ColumnTransformer
@@ -482,13 +482,13 @@ full_pipeline = ColumnTransformer([
     ("cat", OneHotEncoder(), cat_attribs)])
 
 
-# In[253]:
+# In[31]:
 
 
 housing_prepared = full_pipeline.fit_transform(housing)
 
 
-# In[254]:
+# In[32]:
 
 
 pd.DataFrame(housing_prepared).head()
@@ -496,19 +496,19 @@ pd.DataFrame(housing_prepared).head()
 
 # ### モデルの実装
 
-# In[255]:
+# In[33]:
 
 
 housing.drop(["ocean_proximity","median_house_value"], axis=1).dropna()
 
 
-# In[256]:
+# In[34]:
 
 
 X_train, X_test, y_train, y_test = train_test_split(housing_prepared, housing["median_house_value"], test_size=0.2, random_state=42)
 
 
-# In[257]:
+# In[35]:
 
 
 from sklearn.linear_model import LinearRegression
@@ -522,7 +522,7 @@ y_pred = lin_reg.predict(X_test)
 print('testing score:', r2_score(y_test, y_pred))
 
 
-# In[258]:
+# In[36]:
 
 
 from sklearn.tree import DecisionTreeRegressor
