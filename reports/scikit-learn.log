@@ -17,27 +17,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn.cluster import KMeans
+df = pd.DataFrame(data=X, columns=iris.feature_names)
+df['cluster'] = y_km
 
-# アイリスデータセットの読み込み
-iris = load_iris()
-X = iris.data
+# クラスタごとに色分けしてプロット
+fig, ax = pplt.subplots()
+ax.scatter(df['sepal length (cm)'], df['sepal width (cm)'], c=df['cluster'], cmap='viridis')
 
-# PCAモデルのインスタンス化とデータの変換
-model = KMeans(n_clusters=3) #引数 n_clusters にハイパーパラメータとしてクラスタ数
-model.fit(X) # モデルをデータに適合
-y_km=model.predict(X) # クラスタを予測
+# Set plot labels and title
+ax.set_xlabel('sepal length (cm)')
+ax.set_ylabel('sepal width (cm)')
+
+# Show the plot
+plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[13], line 4[0m
-[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcluster[39;00m [38;5;28;01mimport[39;00m KMeans
-[1;32m      3[0m [38;5;66;03m# アイリスデータセットの読み込み[39;00m
-[0;32m----> 4[0m iris [38;5;241m=[39m [43mload_iris[49m()
-[1;32m      5[0m X [38;5;241m=[39m iris[38;5;241m.[39mdata
-[1;32m      7[0m [38;5;66;03m# PCAモデルのインスタンス化とデータの変換[39;00m
+Cell [0;32mIn[14], line 13[0m
+[1;32m     10[0m ax[38;5;241m.[39mset_ylabel([38;5;124m'[39m[38;5;124msepal width (cm)[39m[38;5;124m'[39m)
+[1;32m     12[0m [38;5;66;03m# Show the plot[39;00m
+[0;32m---> 13[0m [43mplt[49m[38;5;241m.[39mshow()
 
-[0;31mNameError[0m: name 'load_iris' is not defined
-NameError: name 'load_iris' is not defined
+[0;31mNameError[0m: name 'plt' is not defined
+NameError: name 'plt' is not defined
 
