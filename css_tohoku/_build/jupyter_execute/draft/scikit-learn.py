@@ -233,7 +233,7 @@ ax.set_ylabel('Petal Width (cm)')
 ax.legend()
 
 # Show the plot
-plt.show()
+fig.show()
 
 
 # ````{tab-set}
@@ -256,7 +256,7 @@ plt.show()
 # - ```fit()``` メソッドによりモデルをデータに適合させます
 # - ```predict()``` メソッドを用いて各データが所属するクラスタの情報 (```y_km```) を取得しています。
 
-# In[136]:
+# In[13]:
 
 
 from sklearn.cluster import KMeans
@@ -273,7 +273,7 @@ y_km=model.predict(X) # クラスタを予測
 
 # 学習された各花データのクラスタ情報を元のデータセットのデータフレームに列として追加し、クラスタごとに異なる色でデータセットを可視化しています。
 
-# In[137]:
+# In[236]:
 
 
 df = pd.DataFrame(data=X, columns=iris.feature_names)
@@ -314,7 +314,7 @@ plt.show()
 # 
 # housingデータセットには、住宅に関連するさまざまな特徴量（説明変数）とそれに対応する住宅価格（目的変数）が含まれています。
 
-# In[142]:
+# In[237]:
 
 
 housing = pd.read_csv("https://raw.githubusercontent.com/ageron/data/main/housing/housing.csv")
@@ -323,7 +323,7 @@ housing.head()
 
 # ### 欠損値の処理
 
-# In[145]:
+# In[238]:
 
 
 housing[housing["total_bedrooms"].isnull()]
@@ -335,38 +335,38 @@ housing[housing["total_bedrooms"].isnull()]
 # - ```imputer```は各変数の中央値を計算し、```statistics_```に結果を格納しています。
 # - ```transform```で「訓練した」```imputer```を使って、欠損値を中央値に置き換えます。
 
-# In[150]:
+# In[239]:
 
 
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy="median")
 
 
-# In[152]:
+# In[240]:
 
 
 imputer.fit(housing.drop("ocean_proximity", axis=1)) # 文字列属性は除外
 
 
-# In[153]:
+# In[241]:
 
 
 imputer.statistics_
 
 
-# In[154]:
+# In[242]:
 
 
 X= imputer.transform(housing.drop("ocean_proximity", axis=1))
 
 
-# In[156]:
+# In[243]:
 
 
 housing_tr = pd.DataFrame(X, columns=housing.drop("ocean_proximity", axis=1).columns)
 
 
-# In[172]:
+# In[244]:
 
 
 # total_bedroomsの欠損値が中央値に置き換えられました
@@ -386,7 +386,7 @@ housing_tr.iloc[housing[housing["total_bedrooms"].isnull()].index]
 # があげられます。
 # 
 
-# In[183]:
+# In[245]:
 
 
 from sklearn.preprocessing import MinMaxScaler
@@ -396,7 +396,7 @@ housing_tr = pd.DataFrame(scaled_features, columns=housing.drop("ocean_proximity
 housing_tr.head()
 
 
-# In[184]:
+# In[246]:
 
 
 from sklearn.preprocessing import StandardScaler
@@ -414,7 +414,7 @@ housing_tr.head()
 # 
 # テキストを数値のカテゴリに変換します
 
-# In[188]:
+# In[247]:
 
 
 from sklearn.preprocessing import OrdinalEncoder
@@ -423,7 +423,7 @@ housing_cat_encoded = ordinal_encoder.fit_transform(housing[["ocean_proximity"]]
 housing_cat_encoded[:10]
 
 
-# In[189]:
+# In[248]:
 
 
 ordinal_encoder.categories_
@@ -435,7 +435,7 @@ ordinal_encoder.categories_
 # 
 # ![](https://miro.medium.com/v2/resize:fit:1022/1*lS-1YL8UfhcSFnZ5weIMdg.png)
 
-# In[191]:
+# In[249]:
 
 
 from sklearn.preprocessing import OneHotEncoder
@@ -450,7 +450,7 @@ housing_cat_1hot.toarray()
 # 
 # データの特徴量エンジニアリングのステップはいくつもあり、正しい順序で実行しなければなりません。そのような処理シーケンスを実行しやすくため```Pipeline```クラスを使います。
 
-# In[192]:
+# In[250]:
 
 
 from sklearn.pipeline import Pipeline
@@ -461,7 +461,7 @@ num_pipeline = Pipeline([
     ("std_scaler", StandardScaler())])
 
 
-# In[197]:
+# In[251]:
 
 
 housing_num_tr = num_pipeline.fit_transform(housing.drop(["ocean_proximity","median_house_value"], axis=1))
@@ -469,7 +469,7 @@ housing_num_tr = num_pipeline.fit_transform(housing.drop(["ocean_proximity","med
 
 # さらに、すべての列に対して実行し、各列に適切な変換を設置することもできます。
 
-# In[199]:
+# In[252]:
 
 
 from sklearn.compose import ColumnTransformer
@@ -482,13 +482,13 @@ full_pipeline = ColumnTransformer([
     ("cat", OneHotEncoder(), cat_attribs)])
 
 
-# In[200]:
+# In[253]:
 
 
 housing_prepared = full_pipeline.fit_transform(housing)
 
 
-# In[202]:
+# In[254]:
 
 
 pd.DataFrame(housing_prepared).head()
@@ -496,19 +496,19 @@ pd.DataFrame(housing_prepared).head()
 
 # ### モデルの実装
 
-# In[218]:
+# In[255]:
 
 
 housing.drop(["ocean_proximity","median_house_value"], axis=1).dropna()
 
 
-# In[203]:
+# In[256]:
 
 
 X_train, X_test, y_train, y_test = train_test_split(housing_prepared, housing["median_house_value"], test_size=0.2, random_state=42)
 
 
-# In[210]:
+# In[257]:
 
 
 from sklearn.linear_model import LinearRegression
@@ -518,11 +518,11 @@ lin_reg = LinearRegression()
 lin_reg.fit(X_train, y_train)
 y_pred = lin_reg.predict(X_test)
 
-# モデルの評価（平均二乗誤差）
+# モデルの評価
 print('testing score:', r2_score(y_test, y_pred))
 
 
-# In[215]:
+# In[258]:
 
 
 from sklearn.tree import DecisionTreeRegressor
@@ -530,3 +530,18 @@ tree_regressor = DecisionTreeRegressor(max_depth = 10).fit(X_train, y_train)
 y_pred = tree_regressor.predict(X_test)
 print('testing score:', r2_score(y_test, y_pred))
 
+
+# ## まとめ
+# 
+# scikit-learnでは、一貫した単純なインターフェースを持っています。
+# 
+# - 推定器（Estimator）: 機械学習モデルをトレーニングするための基本的なインターフェースを提供します。主な目的は、与えられたデータからパターンや関係性を学習し、未知のデータに対して予測を行うことです。推定器のクラスは、```fit()```メソッドを実装しており、トレーニングデータを受け取り、モデルのパラメータを適合させます。
+# 
+# - 変換器（Transformer）: データの前処理や特徴量エンジニアリングのためのインターフェースを提供します。主な目的は、データの変換や特徴量の抽出、次元削減などの操作を行うことです。変換は、変換対象のデータセットを引数として```transform()```メソッドで行われます。
+# 
+# - 予測器（Predictor）: トレーニングされたモデルを使用して未知のデータに対して予測を行うためのインターフェースを提供します。予測器のクラスは、```predict()```メソッドを実装しており、トレーニング済みのモデルを使用して新しいデータの予測を行います。
+# 
+# 
+# これらのインターフェースは、scikit-learnの設計の中核をなしており、推定器、変換器、予測器の組み合わせによって、データの前処理、モデルのトレーニング、予測の一連の処理を柔軟に組み立てることができます。また、これらの概念に基づく一貫したインターフェースは、異なるモデルや手法の組み合わせや比較を容易にし、効果的な機械学習ワークフローの構築を支援します。
+
+# 
