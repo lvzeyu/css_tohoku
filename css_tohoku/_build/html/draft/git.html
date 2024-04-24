@@ -448,8 +448,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ターミナルの基本操作</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">既存のディレクトリでのリポジトリの初期化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
@@ -508,15 +509,39 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>Gitの基本操作<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>ターミナルの基本操作<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>ターミナルは、コンピューターシステムとテキストベースのインターフェースを介して対話するためのツールです。ターミナルを使用すると、ユーザーはコマンドを入力し、それをオペレーティングシステムに送信することができ、システムはそのコマンドを実行して結果をユーザーにテキストとして返します。</p>
+<p>この方法で、ソフトウェアの実行、ファイル管理、システム設定の変更などが行えます。</p>
+<pre>
+ls  #カレントディレクトリにあるファイルやディレクトリを表示する
+ls -l  #ファイルやディレクトリの詳細も同時に表示する
+ls -a  #隠しファイルも含めファイルやディレクトリを全て表示する
+ls −la  #隠しファイルを含む全てのファイルやディレクトリの詳細を表示する
+</pre><pre>
+mkdir test #testというファイルを作る
+</pre><pre>
+cd test  # testというファイルに移動する
+cd ~/  #ホームディレクトリに移動する
+cd ..  #一つ上の階層のファイルに移動する
+</pre><pre>
+echo This is some text > myfile.txt
+</pre><pre>
+rm myfile.txt  #test.htmlを削除する
+</pre><aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>プログラミング言語における<code class="docutils literal notranslate"><span class="pre">#</span></code>はコメントを表すために使います。つまり、# 以降のコメントは実行されません。</p>
+</aside>
+</section>
+<section id="id5">
+<h2>Gitの基本操作<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>Git プロジェクトを取得するには、大きく二通りの方法があります。</p>
 <ul class="simple">
 <li><p>既存のプロジェクトやディレクトリを Git にインポートする方法。</p></li>
 <li><p>既存の Git リポジトリを別のサーバーからクローンする方法です。</p></li>
 </ul>
 <p>まず、既存のプロジェクトやディレクトリを Git にインポートし、ファイルをコミットと履歴の管理を説明します。</p>
-<section id="id5">
-<h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>既存のディレクトリでのリポジトリの初期化<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>空のディレクトリではなくすでに存在するファイルのバージョン管理を始めたい場合は、まずそのファイルを監視対象に追加する。例えば、すでに存在する<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を以下のコマンドで追加します。<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">myfile.txt</span></code></p>
@@ -805,7 +830,7 @@ git log --graph --decorate --oneline
 課題</label><div class="sd-tab-content docutils">
 <p>以下の指示に従って操作を行ってくだい。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">chss2023_practices</span></code>という名前のフォルダを作成し、その中でGitを初期化します。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chss2024_practices</span></code>という名前のフォルダを作成し、その中でGitを初期化します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code>というファイルを作成し、“README.mdを作成しました” というメッセージでコミットしてください。</p></li>
 <li><p>“README.mdを作成しました” のコミットに基づく、<code class="docutils literal notranslate"><span class="pre">develop</span></code>というブランチを作成してくだい。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">master/main</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">practice1.txt</span></code>というファイルを作成し、“practice1.txtを作成しました” というメッセージでコミットしてください。</p></li>
@@ -889,8 +914,9 @@ git log --graph --decorate --oneline
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode">VSCodeのインストール</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Gitの基本操作</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">既存のディレクトリでのリポジトリの初期化</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ターミナルの基本操作</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Gitの基本操作</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">既存のディレクトリでのリポジトリの初期化</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">コミット(commit)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>

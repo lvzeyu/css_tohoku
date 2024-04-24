@@ -512,10 +512,10 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>任意のパスフレーズを入力してEnter（2回）。パスフレーズが不要であれば<strong>空欄のまま</strong>Enterでよい。</p></li>
+<li><p>任意のパスフレーズを入力して<code class="docutils literal notranslate"><span class="pre">Enter</span></code>（2回）。パスフレーズが不要であれば<strong>空欄のまま</strong>Enterでよい。</p></li>
 <li><p>SSH Keyを格納するディレクトリに移動します。<code class="docutils literal notranslate"><span class="pre">ls</span></code>でファイルを確認します。<code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>というファイルがあるはずです。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーのファイルを開く、表示された<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>という形の内容はSSHキーになります。SHHキーをコピーします。</p></li>
-<li><p>GitHub のアカウントにパブリック SSH キーを追加する必要もあります。Githubのページの右上で、プロフィール画像をクリックし、続いてSettings→Access→SSH and GPG keys→ New SSH keyという順番でクリックしてください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">id_rsa.pub</span></code>でSSHキーのファイルを開く、表示された<code class="docutils literal notranslate"><span class="pre">ssh-rsa</span> <span class="pre">XXX</span></code>という形の内容は<strong>SSHキー</strong>になります。SHHキーをコピーします。</p></li>
+<li><p>GitHub のアカウントにパブリック SSH キーを追加する必要もあります。Githubのページの右上で、プロフィール画像をクリックし、続いて<code class="docutils literal notranslate"><span class="pre">Settings</span></code>→ <code class="docutils literal notranslate"><span class="pre">Access</span></code> → <code class="docutils literal notranslate"><span class="pre">SSH</span> <span class="pre">and</span> <span class="pre">GPG</span> <span class="pre">keys</span></code>→ <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">SSH</span> <span class="pre">key</span></code>という順番でクリックしてください。</p></li>
 <li><p>クリップボードの内容を <code class="docutils literal notranslate"><span class="pre">Key</span></code> フィールドに貼り付けます。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code>をクリックしてたら、SSHの登録が完了です。</p></li>
 <li><p>ターミナルで<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-T</span> <span class="pre">git&#64;github.com</span></code>を実行します。もしGitHubと連携できましたら、以下の内容が表示されます。</p></li>
@@ -849,12 +849,12 @@ git push --set-upstream origin develop
 </section>
 <section id="id12">
 <h2>GitHubに関する課題<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
-<p>以下の手順に従って、課題提出するための<a class="reference external" href="https://github.com/lvzeyu/chss_2023_assignment">リポジトリ</a>に課題を提出しましょう。</p>
+<p>以下の手順に従って、課題提出するための<a class="reference external" href="https://github.com/lvzeyu/chss_2024_assignment">リポジトリ</a>に課題を提出しましょう。</p>
 <ul class="simple">
 <li><p>最新の状況を取得するために、<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>を行なってください。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチに基づく、各自のブランチを作ってください。 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">[name]</span></code>,[name]では誰なのかわかるように名前付けください。</p></li>
 <li><p>自分のブランチに移動してください(<strong>ここ重要!</strong>)。VSCodeの左下で自分のブランチにいるかどうかを確認してください。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">課題0426</span></code>というフォルダの中に、<code class="docutils literal notranslate"><span class="pre">[name].txt</span></code>というファイルを作成してください([name]では誰なのかわかるように名前付けください)。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Assignment</span> <span class="pre">Submission</span></code>というフォルダの中に、<code class="docutils literal notranslate"><span class="pre">[name].txt</span></code>というファイルを作成してください([name]では誰なのかわかるように名前付けください)。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>で操作をコミットしてください。メッセージは<code class="docutils literal notranslate"><span class="pre">XXXが課題を提出しました</span></code>で書いてください。</p></li>
 <li><p>コミットが終わりましたら、操作をリモートリポジトリにプッシュします。「VScode」→「ソース管理」→「Branchの発行」を押してください。</p></li>
 <li><p>GitHubのリモートリポジトリでファイルが同期されたかどうかを確認してください。「 XXX had recent pushes less than a minute ago」のようなメッセージが表示されるはずです。</p></li>
