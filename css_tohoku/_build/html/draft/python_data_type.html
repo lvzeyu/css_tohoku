@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'draft/python_data_type';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="データ構造" href="data_struture.html" />
+    <link rel="prev" title="Pythonの基本構文" href="python_grammer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -442,21 +444,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数値</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ブール値</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">整数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">浮動小数点数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">文字列</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">作成</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><span class="math notranslate nohighlight">\(+\)</span>による連結</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span class="math notranslate nohighlight">\(*\)</span>による繰り返し</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><span class="math notranslate nohighlight">\([]\)</span>による文字の抽出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">演算子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">算術演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">代入演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">比較演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">ブール演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">条件演算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">文字列演算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">基本的なデータ型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">ブール値</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">論理演算</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">比較演算</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">条件文</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">ブール値の変換</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int">整数(<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">浮動小数点数 (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">文字列</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">文字列作成</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><span class="math notranslate nohighlight">\(+\)</span>による連結</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><span class="math notranslate nohighlight">\(*\)</span>による繰り返し</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><code class="docutils literal notranslate"><span class="pre">[]</span></code>による文字の抽出</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#len"><code class="docutils literal notranslate"><span class="pre">len</span></code>による文字の抽出</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split"><code class="docutils literal notranslate"><span class="pre">split</span></code>による文字の分割</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace</span></code>による文字の置換</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">真偽値型</a></li>
 </ul>
 </li>
 </ul>
@@ -472,16 +486,170 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>データ型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Pythonでは、変数を使用してデータを格納します。</p>
+<p>各変数は特定のデータ型を持ち、これによって整数、文字列などの異なる種類のデータを扱うことができます。</p>
 <section id="id2">
-<h2>数値<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>演算子<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>演算子を使用して変数に格納されたデータを操作します。算術演算子による計算、比較演算子による条件判定、論理演算子による複合的な条件式の作成など、プログラムのほとんどすべての動作に演算子が関わっています。</p>
+<p>同じ演算子が異なるデータ型に適用されるとき異なる操作になることがあります。</p>
 <section id="id3">
-<h3>ブール値<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>Pythonでは、bool型の値は<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>の2種類です。<strong>条件式</strong>や<strong>論理演算</strong>でよく使われます。</p>
-<p>組込み関数<code class="docutils literal notranslate"><span class="pre">bool()</span></code> は、オブジェクトや演算式等を真理値判定に基づいて、任意のPythonデータ型を<code class="docutils literal notranslate"><span class="pre">bool</span></code>に変換できます。</p>
+<h3>算術演算子<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">a</span>            <span class="c1"># 正数</span>
+<span class="o">-</span><span class="n">a</span>            <span class="c1"># 負数</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>         <span class="c1"># 加算</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>         <span class="c1"># 減算</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">b</span>         <span class="c1"># 乗算</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">b</span>         <span class="c1"># 除算</span>
+<span class="n">a</span> <span class="o">%</span> <span class="n">b</span>         <span class="c1"># a を b で割った余り</span>
+<span class="n">a</span> <span class="o">**</span> <span class="n">b</span>        <span class="c1"># a の b 乗</span>
+<span class="n">a</span> <span class="o">//</span> <span class="n">b</span>        <span class="c1"># 切り捨て除算</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>代入演算子<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>         <span class="c1"># a に b を代入する</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>        <span class="c1"># a = a + b に同じ</span>
+<span class="n">a</span> <span class="o">-=</span> <span class="n">b</span>        <span class="c1"># a = a - b に同じ</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="n">b</span>        <span class="c1"># a = a * b に同じ</span>
+<span class="n">a</span> <span class="o">/=</span> <span class="n">b</span>        <span class="c1"># a = a / b に同じ</span>
+<span class="n">a</span> <span class="o">%=</span> <span class="n">b</span>        <span class="c1"># a = a % b に同じ</span>
+<span class="n">a</span> <span class="o">**=</span> <span class="n">b</span>       <span class="c1"># a = a ** b に同じ</span>
+<span class="n">a</span> <span class="o">//=</span> <span class="n">b</span>       <span class="c1"># a = a // b に同じ</span>
+<span class="n">a</span> <span class="o">&amp;=</span> <span class="n">b</span>        <span class="c1"># a = a &amp; b に同じ</span>
+<span class="n">a</span> <span class="o">|=</span> <span class="n">b</span>        <span class="c1"># a = a | b に同じ</span>
+<span class="n">a</span> <span class="o">^=</span> <span class="n">b</span>        <span class="c1"># a = a ^ b に同じ</span>
+<span class="n">a</span> <span class="o">&lt;&lt;=</span> <span class="n">b</span>       <span class="c1"># a = a &lt;&lt; b に同じ</span>
+<span class="n">a</span> <span class="o">&gt;&gt;=</span> <span class="n">b</span>       <span class="c1"># a = a &gt;&gt; b に同じ</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>比較演算子<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>           <span class="c1"># a が b と等しい</span>
+<span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>           <span class="c1"># a が b と異なる</span>
+<span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>            <span class="c1"># a が b よりも小さい</span>
+<span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>            <span class="c1"># a が b よりも大きい</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>           <span class="c1"># a が b 以下である</span>
+<span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>           <span class="c1"># a が b 以上である</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>           <span class="c1"># a が b と等しい</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>       <span class="c1"># a が b と異なる</span>
+<span class="n">a</span> <span class="ow">in</span> <span class="n">b</span>           <span class="c1"># a が b に含まれる (a, b は共に文字列、または、b はリストやタプル)</span>
+<span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span>       <span class="c1"># a が b に含まれない (a, b は共に文字列、または、b はリストやタプル)</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>ブール演算子<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>         <span class="c1"># a も b も真であれば真</span>
+<span class="n">a</span> <span class="ow">or</span> <span class="n">b</span>          <span class="c1"># a または b が真であれば真</span>
+<span class="ow">not</span> <span class="n">a</span>           <span class="c1"># a が偽であれば真</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>条件演算<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="k">if</span> <span class="n">c</span> <span class="k">else</span> <span class="n">y</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>文字列演算<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>         <span class="c1"># 文字列 a と 文字列 b を連結します</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">n</span>         <span class="c1"># 文字列 a を n 回繰り返します</span>
+<span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>          <span class="c1"># 文字列 a の中の n 番目の文字を取り出します</span>
+<span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">m</span><span class="p">]</span>        <span class="c1"># 文字列 a の中の n 番目から m 番目までの文字列を取り出します</span>
+<span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">:]</span>         <span class="c1"># 文字列 a の中の n 番目から最後までの文字列を取り出します</span>
+<span class="n">a</span><span class="p">[:</span><span class="n">m</span><span class="p">]</span>         <span class="c1"># 文字列 a の中の 0 番目から m 番目までの文字列を取り出します</span>
+<span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">m</span><span class="p">:</span><span class="n">s</span><span class="p">]</span>      <span class="c1"># 文字列 a の中の n 番目から m 番目までの文字列を s個とばしで取り出します</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>基本的なデータ型<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+</section>
+<section id="id10">
+<h3>ブール値<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>ブール値（bool型）は、プログラム内で真<code class="docutils literal notranslate"><span class="pre">True</span></code>または偽<code class="docutils literal notranslate"><span class="pre">False</span></code>のいずれかを表すデータ型です。<strong>条件式</strong>や<strong>論理演算</strong>でよく使われます。</p>
+<section id="id11">
+<h4>論理演算<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>論理演算子（<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>）を使って、ブール値を操作します。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h4>比較演算<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">!=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id13">
+<h4>条件文<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will always execute&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This will always execute
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>関数</strong>の詳細については今後の授業で学びますので、さしあたり今は、関数に引数を渡すと、その値に応じた何らかの処理結果を返すということを知っておけば良いです。</p>
 </div>
+</section>
+<section id="id14">
+<h4>ブール値の変換<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<p>Pythonでは、ほとんどのデータ型をbool型に変換することが可能です。</p>
+<p>組込み関数<code class="docutils literal notranslate"><span class="pre">bool()</span></code> は、オブジェクトや演算式等を真理値判定に基づいて、任意のPythonデータ型を<code class="docutils literal notranslate"><span class="pre">bool</span></code>に変換できます。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(0\)</span>ではない数値は<code class="docutils literal notranslate"><span class="pre">True</span></code>と見されます。</p></li>
 </ul>
@@ -513,8 +681,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id4">
-<h3>整数<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+</section>
+<section id="int">
+<h3>整数(<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#int" title="Link to this heading">#</a></h3>
 <p>整数は、小数点以下がなく数値です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,10 +772,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id5">
-<h3>浮動小数点数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="float">
+<h3>浮動小数点数 (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
 <p>Pythonでは、整数と小数点のある数（実数）は浮動小数点数といいます。</p>
-<p>ここで注意する必要があるのは、整数と実数が数学的に同じ数を表す場合でも、コンピュータの中で異なる形式で記憶されますので、表示は異なります。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">5.</span>
@@ -717,11 +885,11 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>文字列<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id15">
+<h3>文字列<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>文字列は数値とは異なるデータ型の一つで、文字通り文字を扱います。</p>
-<section id="id7">
-<h4>作成<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<section id="id16">
+<h4>文字列作成<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>文字列は、<strong>シーケンス</strong>型という広義の型に属しています。シーケンス型とは順番のある要素の集まりを指します。インデックスで要素を指定して取り出すことができます。インデックスは<span class="math notranslate nohighlight">\(R\)</span>などとは違い、<span class="math notranslate nohighlight">\(1\)</span>ではなく、<span class="math notranslate nohighlight">\(0\)</span>から始まります。例えば、</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code>とすると、<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(2\)</span>までの要素を取り出します。</p></li>
@@ -816,8 +984,8 @@ World
 </div>
 </div>
 </section>
-<section id="id8">
-<h4><span class="math notranslate nohighlight">\(+\)</span>による連結<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<section id="id17">
+<h4><span class="math notranslate nohighlight">\(+\)</span>による連結<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">+</span><span class="s2">&quot;World&quot;</span>
@@ -831,8 +999,8 @@ World
 </div>
 </div>
 </section>
-<section id="id9">
-<h4><span class="math notranslate nohighlight">\(*\)</span>による繰り返し<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<section id="id18">
+<h4><span class="math notranslate nohighlight">\(*\)</span>による繰り返し<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">*</span><span class="mi">3</span>
@@ -846,8 +1014,8 @@ World
 </div>
 </div>
 </section>
-<section id="id10">
-<h4><span class="math notranslate nohighlight">\([]\)</span>による文字の抽出<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<section id="id19">
+<h4><code class="docutils literal notranslate"><span class="pre">[]</span></code>による文字の抽出<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>文字列から文字を取り出したい時には、<span class="math notranslate nohighlight">\([]\)</span>にインデックスを指定するとその位置の文字を取得できます。</p>
 <ul class="simple">
 <li><p>先頭の文字は<span class="math notranslate nohighlight">\(0\)</span>から数えます。</p></li>
@@ -966,26 +1134,6 @@ World
 </div>
 </section>
 </section>
-<section id="id11">
-<h3>真偽値型<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
-<p>Pythonの真偽値型は<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>で定義されます。</p>
-<ul class="simple">
-<li><p>条件判断では、その結果が<code class="docutils literal notranslate"><span class="pre">True</span></code>であるか<code class="docutils literal notranslate"><span class="pre">False</span></code>であるかを判定します。</p></li>
-<li><p>真偽値型の値同士は<code class="docutils literal notranslate"><span class="pre">and</span></code>もしくは<code class="docutils literal notranslate"><span class="pre">or</span></code>キーワードで結合し、その結果を計算することができます。</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -1019,6 +1167,24 @@ World
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="python_grammer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pythonの基本構文</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data_struture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">データ構造</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1035,21 +1201,33 @@ World
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数値</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">ブール値</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">整数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">浮動小数点数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">文字列</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">作成</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><span class="math notranslate nohighlight">\(+\)</span>による連結</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><span class="math notranslate nohighlight">\(*\)</span>による繰り返し</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><span class="math notranslate nohighlight">\([]\)</span>による文字の抽出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">演算子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">算術演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">代入演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">比較演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">ブール演算子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">条件演算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">文字列演算</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">基本的なデータ型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">ブール値</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">論理演算</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">比較演算</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">条件文</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">ブール値の変換</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int">整数(<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">浮動小数点数 (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">文字列</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">文字列作成</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17"><span class="math notranslate nohighlight">\(+\)</span>による連結</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><span class="math notranslate nohighlight">\(*\)</span>による繰り返し</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19"><code class="docutils literal notranslate"><span class="pre">[]</span></code>による文字の抽出</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#len"><code class="docutils literal notranslate"><span class="pre">len</span></code>による文字の抽出</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#split"><code class="docutils literal notranslate"><span class="pre">split</span></code>による文字の分割</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace</span></code>による文字の置換</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">真偽値型</a></li>
 </ul>
 </li>
 </ul>

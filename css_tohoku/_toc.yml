@@ -16,8 +16,8 @@ parts:
 - caption: Pythonの基礎
   chapters:
   - file: draft/python_environment.ipynb
-  - file: draft/python_basic.ipynb
-  - file: draft/variable.ipynb
+  - file: draft/python_grammer.ipynb
+  - file: draft/python_data_type.ipynb
   - file: draft/data_struture.ipynb
   - file: draft/if.ipynb
   - file: draft/loop.ipynb
