@@ -512,6 +512,36 @@ document.write(`
 </div>
 </div>
 </div>
+<p>シーケンス型（sequence types）とは、データが順序付けられているデータ型のことを指します。Pythonなどのプログラミング言語における主なシーケンス型には以下のようなものがあります：</p>
+<p>リスト（List）: 可変的で、異なるデータ型の要素を含むことができます。
+タプル（Tuple）: 不変的で、一度作成後にはその内容を変更することができません。
+文字列（String）: 不変的で、文字の並びを表します。
+レンジ（Range）: 数値のシーケンスを生成するために使われます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定義された一年の平均日数</span>
+<span class="n">average_days_per_year</span> <span class="o">=</span> <span class="mf">365.2425</span>
+
+<span class="c1"># 1日は24時間、1時間は60分、1分は60秒である</span>
+<span class="n">seconds_per_day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+
+<span class="c1"># 一年の秒数を計算</span>
+<span class="n">seconds_per_year</span> <span class="o">=</span> <span class="n">average_days_per_year</span> <span class="o">*</span> <span class="n">seconds_per_day</span>
+
+<span class="c1"># 一年の秒数を分と秒に変換</span>
+<span class="n">minutes_per_year</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">//</span> <span class="mi">60</span>  <span class="c1"># 整数分のみ取得</span>
+<span class="n">seconds_remaining</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># 残りの秒数</span>
+
+<span class="n">minutes_per_year</span><span class="p">,</span> <span class="n">seconds_remaining</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(525949.0, 12.0)
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
