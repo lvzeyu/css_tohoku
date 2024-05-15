@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>練習課題 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
   
   
@@ -57,9 +57,10 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/answer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/exercise1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Tips" href="tips.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -268,7 +269,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/answer.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/exercise1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +317,7 @@
       
       
       
-      <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/answer.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/exercise1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +347,7 @@
       
       
       
-      <li><a href="../_sources/draft/answer.ipynb" target="_blank"
+      <li><a href="../_sources/draft/exercise1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -430,7 +431,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>練習課題</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -439,9 +440,11 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問題1 文字列が回文かどうかをチェック</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">問題2 文字列の最初の文字を大文字にする</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">問題 3 二つのリストに重複している項目を削除する</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -452,142 +455,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">details</span><span class="o">&gt;&lt;</span><span class="n">summary</span><span class="o">&gt;</span><span class="n">Answer</span><span class="o">&lt;/</span><span class="n">summary</span><span class="o">&gt;</span>
-
-<span class="n">The</span> <span class="n">two</span> <span class="n">heads</span> <span class="n">are</span> <span class="n">getting</span> <span class="n">the</span> <span class="n">same</span> <span class="nb">input</span> <span class="n">data</span> <span class="n">so</span> <span class="n">they</span> <span class="n">will</span> <span class="n">be</span> <span class="n">calculating</span> <span class="n">the</span> <span class="n">same</span> <span class="n">gradients</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">end</span> <span class="n">up</span> <span class="n">learning</span> <span class="n">the</span> <span class="n">same</span> <span class="n">thing</span><span class="o">.</span> <span class="n">We</span> <span class="n">have</span> <span class="n">two</span> <span class="n">options</span><span class="p">:</span>
-
-<span class="n">A</span><span class="o">.</span> <span class="n">Feed</span> <span class="n">the</span> <span class="n">two</span> <span class="n">networks</span> <span class="n">different</span> <span class="n">data</span><span class="o">.</span> <span class="n">This</span> <span class="n">would</span> <span class="n">essentially</span> <span class="n">mean</span> <span class="n">training</span> <span class="n">the</span> <span class="n">two</span> <span class="n">networks</span> <span class="n">independently</span> <span class="ow">or</span> <span class="n">restructuring</span> <span class="n">our</span> <span class="n">data</span> <span class="n">so</span> <span class="n">that</span> <span class="n">batch</span> <span class="n">sizes</span> <span class="n">of</span> <span class="n">treated</span> <span class="ow">and</span> <span class="n">control</span> <span class="n">units</span> <span class="n">can</span> <span class="n">be</span> <span class="n">split</span> <span class="n">equally</span> <span class="n">after</span> <span class="nb">input</span><span class="o">.</span>
-
-<span class="n">B</span><span class="o">.</span> <span class="n">Somehow</span> <span class="n">ensure</span> <span class="n">that</span> <span class="n">each</span> <span class="n">head</span> <span class="n">only</span> <span class="n">receives</span> <span class="n">error</span> <span class="n">gradients</span> <span class="k">for</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">treatment</span> <span class="n">group</span><span class="o">.</span> <span class="n">This</span> <span class="n">will</span> <span class="n">require</span> <span class="n">writing</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">loss</span> <span class="n">function</span><span class="o">.</span>
-
-<span class="n">Let</span><span class="s1">&#39;s go with B.</span>
-<span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-    <span class="n">Let</span><span class="s1">&#39;s go with B.</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 9)
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>練習課題<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>問題1 文字列が回文かどうかをチェック<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>回文(Palindrome)とは、前から読んでも後ろから読んでも同じ文字列のことです。例えば、「<code class="docutils literal notranslate"><span class="pre">dad</span></code>」という単語は、前から読んでも後ろから読んでも同じです。</p>
+<p>以下の文字列は回文かどうかをチェックするプログラムを書いてください。</p>
+<ul class="simple">
+<li><p>回文である場合、「The string is a palindrome」を出力する</p></li>
+<li><p>回文ではない場合、「The string is not a palindrome」を出力する</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-
-<span class="c1"># アイリスデータセットの読み込み</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
-<span class="n">y_true</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-
-<span class="c1"># GMMモデルのインスタンス化と学習</span>
-<span class="n">gmm</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># クラスタ数を3に設定</span>
-<span class="n">gmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># クラスタリング結果のラベルを取得</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">gmm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="n">df_clustering</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;cluster&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_true</span><span class="p">})</span>
-<span class="n">df_clustering</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">df_clustering</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span> <span class="c1"># クラスタ番号を元のラベルに対応させる</span>
-
-<span class="c1"># クラスタリングの精度を計算</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">df_clustering</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">],</span> <span class="n">df_clustering</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>
-
-<span class="c1"># 結果の表示</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;クラスタリングの精度: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>クラスタリングの精度: 0.9666666666666667
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s1">&#39;aibohphobia&#39;</span>
+<span class="n">my_str2</span> <span class="o">=</span> <span class="s1">&#39;たけやぶやけた&#39;</span>
+<span class="n">my_str3</span> <span class="o">=</span> <span class="s1">&#39;Tohoku&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>シーケンス型（sequence types）とは、データが順序付けられているデータ型のことを指します。Pythonなどのプログラミング言語における主なシーケンス型には以下のようなものがあります：</p>
-<p>リスト（List）: 可変的で、異なるデータ型の要素を含むことができます。
-タプル（Tuple）: 不変的で、一度作成後にはその内容を変更することができません。
-文字列（String）: 不変的で、文字の並びを表します。
-レンジ（Range）: 数値のシーケンスを生成するために使われます。</p>
+</section>
+<section id="id3">
+<h2>問題2 文字列の最初の文字を大文字にする<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code>メソッドは、文字列内のすべての小文字を大文字に変換し、それを返します。</p>
+<p>my_stringにおける各単語の最初の文字を大文字にしなさい(Computational Social Science).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定義された一年の平均日数</span>
-<span class="n">average_days_per_year</span> <span class="o">=</span> <span class="mf">365.2425</span>
-
-<span class="c1"># 1日は24時間、1時間は60分、1分は60秒である</span>
-<span class="n">seconds_per_day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
-
-<span class="c1"># 一年の秒数を計算</span>
-<span class="n">seconds_per_year</span> <span class="o">=</span> <span class="n">average_days_per_year</span> <span class="o">*</span> <span class="n">seconds_per_day</span>
-
-<span class="c1"># 一年の秒数を分と秒に変換</span>
-<span class="n">minutes_per_year</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">//</span> <span class="mi">60</span>  <span class="c1"># 整数分のみ取得</span>
-<span class="n">seconds_remaining</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># 残りの秒数</span>
-
-<span class="n">minutes_per_year</span><span class="p">,</span> <span class="n">seconds_remaining</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(525949.0, 12.0)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;computational social science&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="id4">
+<h2>問題 3 二つのリストに重複している項目を削除する<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">list1</span></code>から<code class="docutils literal notranslate"><span class="pre">list_2</span></code>に含まれる要素を削除する</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1: check if a string is palindrome or not</span>
-
-<span class="n">my_str</span> <span class="o">=</span> <span class="s1">&#39;aIbohPhoBiA&#39;</span>
-
-<span class="c1"># make it suitable for caseless comparison</span>
-<span class="n">my_str</span> <span class="o">=</span> <span class="n">my_str</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
-
-<span class="c1"># reverse the string</span>
-<span class="n">rev_str</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
-
-<span class="c1"># check if the string is equal to its reverse</span>
-<span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">rev_str</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is a palindrome.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is not a palindrome.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2: check if a string is a Palindrome.</span>
-
-<span class="n">string</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter string:&quot;</span><span class="p">))</span>
-<span class="k">if</span><span class="p">(</span><span class="n">string</span><span class="o">==</span><span class="n">string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is a palindrome&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string isn&#39;t a palindrome&quot;</span><span class="p">)</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">&gt;&gt;Output/Runtime Test Cases</span>
-<span class="sd">     </span>
-<span class="sd">Case 1:</span>
-<span class="sd">Enter string:madam</span>
-<span class="sd">The string is a palindrome</span>
-
-<span class="sd">Case 2:</span>
-<span class="sd">Enter string:hello</span>
-<span class="sd">The string isn&#39;t a palindrome</span>
-<span class="sd">&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -619,6 +531,15 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tips.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tips</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -634,9 +555,11 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">問題1 文字列が回文かどうかをチェック</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">問題2 文字列の最初の文字を大文字にする</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">問題 3 二つのリストに重複している項目を削除する</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

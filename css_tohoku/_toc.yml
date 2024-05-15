@@ -32,3 +32,6 @@ parts:
 - caption: Supplementary
   chapters:
   - file: draft/tips.ipynb
+- caption: 練習問題
+  chapters:
+  - file: draft/exercise1.ipynb
