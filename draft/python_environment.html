@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pythonの基本文法" href="python_basic.html" />
+    <link rel="next" title="Pythonの基本構文" href="python_grammer.html" />
     <link rel="prev" title="GitHub" href="github.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -156,13 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -203,6 +203,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Supplementary
  </span>
 </p>
@@ -210,6 +232,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -332,7 +366,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -349,7 +383,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/python_environment.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/python_environment.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -437,12 +471,17 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   仮想環境
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
    Anaconda
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      Anacondaのインストール
     </a>
    </li>
@@ -452,6 +491,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   最初の Python アプリケーションの作成
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#jupyter-notebook">
@@ -464,8 +508,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id4">
      カーネル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     セルの記述と実行
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -474,27 +523,27 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id6">
        見出し
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id7">
        箇条書きリスト
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id8">
        番号付きリスト
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
+      <a class="reference internal nav-link" href="#id9">
        引用
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id10">
        数式
       </a>
      </li>
@@ -522,12 +571,17 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   仮想環境
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anaconda">
    Anaconda
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      Anacondaのインストール
     </a>
    </li>
@@ -537,6 +591,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   最初の Python アプリケーションの作成
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#jupyter-notebook">
@@ -549,8 +608,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id4">
      カーネル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     セルの記述と実行
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -559,27 +623,27 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id6">
        見出し
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id7">
        箇条書きリスト
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id8">
        番号付きリスト
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
+      <a class="reference internal nav-link" href="#id9">
        引用
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id10">
        数式
       </a>
      </li>
@@ -599,12 +663,22 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1>Python環境<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>仮想環境<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Python を使って開発や実験を行うときは、用途に応じて専用の実行環境を作成し、切り替えて使用するのが一般的です。こういった、一時的に作成する実行環境を、「仮想環境」 と言います。</p>
+<ul class="simple">
+<li><p><strong>依存関係の管理</strong>: プロジェクトごとに仮想環境を分けることで、それぞれの環境で必要なパッケージのバージョンを独立して管理できます。これにより、異なるプロジェクト間での依存関係の衝突を避けることができます。</p></li>
+<li><p><strong>システムの整理</strong>: システム全体にライブラリをインストールするのではなく、必要なプロジェクトにのみインストールすることで、システムをクリーンに保ちます。</p></li>
+<li><p><strong>移植性の向上</strong>: 仮想環境を使用することで、その環境を容易に他のマシンにコピー・再現することが可能になります。</p></li>
+<li><p><strong>バージョンアップのテスト</strong>: 新しいライブラリのバージョンを試す場合、仮想環境を使えば、システム全体に影響を与えることなくテストが行えます。</p></li>
+</ul>
+</section>
 <section id="anaconda">
 <h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h2>
 <p>数あるPython の環境を構築する方法の中で、 <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>を利用することをお勧めします。
 Anaconda はデータサイエンス向けの環境を提供するプラットフォームです。科学技術計算などを中心とした、多くのモジュールやツールのコンパイル済みバイナリファイルを提供しており、簡単にPythonを利用する環境を構築・管理できます。Windows, Linux, macOS向けのパッケージが提供されています。</p>
-<section id="id1">
-<h3>Anacondaのインストール<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h3>Anacondaのインストール<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>下記の記事を参照してAnacondaをインストールします</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.python.jp/install/anaconda/windows/install.html">Windows版Anacondaのインストール</a></p></li>
@@ -633,7 +707,21 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
 </pre></div>
 </div>
 <p><img alt="" src="../_images/conda.png" /></p>
+<ul class="simple">
+<li><p>Python のバージョンを確認する</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
 </section>
+</section>
+<section id="id3">
+<h2>最初の Python アプリケーションの作成<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>Python と Python ツールがインストールされたので、最初の Python アプリケーションを作成できます。</p>
+<p><a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/6-exercise-first-application?pivots=windows">公式のチュートリアル</a>を参照してください。</p>
 </section>
 <section id="jupyter-notebook">
 <h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this headline">#</a></h2>
@@ -655,17 +743,33 @@ Bを押す: 下にセルを追加する
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>カーネル<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h3>カーネル<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Jupyter Notebookにおけるカーネル(Kernel)とは、プログラミング言語の機能を提供することを指します。本授業の場合は、基本的にはIpythonカーネルを指します。</p>
 <p>Jupyter Notebook自身は、あくまでもWebアプリケーションとしてのインタフェースにすぎません。Ipythonカーネルを通じて、Jupyter NotebookのインタフェースとPythonに繋ぎます。</p>
 <p>VsCodeでは利用可能なカーネルを検索してくれるので、右上の<code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Kernel</span></code>でPython環境を指定することができます。</p>
 </section>
+<section id="id5">
+<h3>セルの記述と実行<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p><img alt="" src="../_images/jupyter_cell.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello,jupyter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello,jupyter
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="markdown">
 <h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h3>
 <p>Markdown（マークダウン）は、文書を記述するための言語のひとつです。基本的なMarkdown記法を覚えておきましょう。</p>
-<section id="id3">
-<h4>見出し<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<section id="id6">
+<h4>見出し<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 見出し1</span>
 <span class="c1">## 見出し2</span>
 <span class="c1">### 見出し3</span>
@@ -675,8 +779,8 @@ Bを押す: 下にセルを追加する
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h4>箇条書きリスト<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<section id="id7">
+<h4>箇条書きリスト<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">リスト1</span>
     <span class="o">-</span> <span class="n">ネスト</span> <span class="n">リスト1_1</span>
         <span class="o">-</span> <span class="n">ネスト</span> <span class="n">リスト1_1_1</span>
@@ -702,8 +806,8 @@ Bを押す: 下にセルを追加する
 <li><p>リスト3</p></li>
 </ul>
 </section>
-<section id="id5">
-<h4>番号付きリスト<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<section id="id8">
+<h4>番号付きリスト<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">番号付きリスト1</span>
     <span class="mf">1.</span> <span class="n">番号付きリスト1_1</span>
     <span class="mf">1.</span> <span class="n">番号付きリスト1_2</span>
@@ -722,14 +826,14 @@ Bを押す: 下にセルを追加する
 <li><p>番号付きリスト3</p></li>
 </ol>
 </section>
-<section id="id6">
-<h4>引用<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<section id="id9">
+<h4>引用<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;社会学（しゃかいがく、仏: sociologie、英:Sociology）は、社会現象の実態や、現象の起こる原因に関するメカニズム（因果関係）を体験・統計・データなどを用いて分析することで解明する学問である。
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h4>数式<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<section id="id10">
+<h4>数式<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>Latex書式で数式を記述することができます。</p>
 <p><span class="math notranslate nohighlight">\(\frac{n!}{k!(n-k)!} = \binom{n}{k}\)</span></p>
 </section>
@@ -771,10 +875,10 @@ Bを押す: 下にセルを追加する
             <p class="prev-next-title">GitHub</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="python_basic.html" title="next page">
+    <a class='right-next' id="next-link" href="python_grammer.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pythonの基本文法</p>
+        <p class="prev-next-title">Pythonの基本構文</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

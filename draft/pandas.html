@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tips" href="tips.html" />
+    <link rel="next" title="scikit-learn" href="scikit-learn.html" />
     <link rel="prev" title="NumPy" href="numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -156,13 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -217,6 +217,11 @@ const thebe_selector_output = ".output, .cell_output"
    pandas
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -227,6 +232,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -349,7 +366,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -366,7 +383,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/pandas.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/pandas.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1761,8 +1778,8 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9fd76924-42f7-44ea-b1d0-0e339670c818" name="dd08aed1-ad86-4ea8-aaaf-04fb3a7bce84" type="radio">
-</input><label class="sd-tab-label" for="9fd76924-42f7-44ea-b1d0-0e339670c818">
+<input checked="checked" id="6a286f0b-670a-435a-9d8a-a23a795e8e28" name="0286c045-3b82-4bd0-ab8c-999e8de75e00" type="radio">
+</input><label class="sd-tab-label" for="6a286f0b-670a-435a-9d8a-a23a795e8e28">
 実習問題</label><div class="sd-tab-content docutils">
 <p>年齢が30-50歳の男性のデータを取り出し、Name, Age, Sexを示してください。</p>
 </div>
@@ -3504,13 +3521,13 @@ Name: 96, dtype: object
 </div></div></div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9d9328c5-c610-4964-8cdb-6f1ed285ecda" name="4ba0d82f-804c-4297-b694-3561282e72ce" type="radio">
-</input><label class="sd-tab-label" for="9d9328c5-c610-4964-8cdb-6f1ed285ecda">
+<input checked="checked" id="2210e589-96e9-4d74-8591-22ea7a12abcd" name="7f8db0cd-c378-4d06-b955-3b8e633dfd4e" type="radio">
+</input><label class="sd-tab-label" for="2210e589-96e9-4d74-8591-22ea7a12abcd">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>ラムダ関数を適用することで男性ダミー変数を作成しよう。</p>
 </div>
-<input id="c791b3e3-c5be-4d80-8fbc-09fb0ec6651c" name="4ba0d82f-804c-4297-b694-3561282e72ce" type="radio">
-</input><label class="sd-tab-label" for="c791b3e3-c5be-4d80-8fbc-09fb0ec6651c">
+<input id="08b08bfa-9382-45a6-b690-e635b38555f1" name="7f8db0cd-c378-4d06-b955-3b8e633dfd4e" type="radio">
+</input><label class="sd-tab-label" for="08b08bfa-9382-45a6-b690-e635b38555f1">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>Cabin変数によって、頭文字で新しいカテゴリ変数を作成しよう。例えば、C105の場合はCに変更します。</p>
 </div>
@@ -4545,10 +4562,6 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/wm/5xxpvjcj15g89khxd5jwn9200000gn/T/ipykernel_63984/3768573119.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
-  df.groupby(&quot;age&quot;).mean()
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5142,8 +5155,8 @@ Name: fare, Length: 1309, dtype: float64
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="22d25f8b-f84a-4f1f-be4d-c4fc42cd0a65" name="57650f58-83a5-4113-9f04-965a5c114d8d" type="radio">
-</input><label class="sd-tab-label" for="22d25f8b-f84a-4f1f-be4d-c4fc42cd0a65">
+<input checked="checked" id="d43f2377-deba-4f31-9b2c-018f072c0577" name="e6860012-baf1-456a-bee5-363aff77b090" type="radio">
+</input><label class="sd-tab-label" for="d43f2377-deba-4f31-9b2c-018f072c0577">
 実習問題</label><div class="sd-tab-content docutils">
 <p>性別ごとに、fareの値を標準化してみよう。</p>
 </div>
@@ -6711,10 +6724,10 @@ z= \frac{x-\hat{x}}{\sigma}
             <p class="prev-next-title">NumPy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tips.html" title="next page">
+    <a class='right-next' id="next-link" href="scikit-learn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tips</p>
+        <p class="prev-next-title">scikit-learn</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

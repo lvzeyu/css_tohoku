@@ -154,13 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -210,6 +210,16 @@ const thebe_selector_output = ".output, .cell_output"
    NumPy
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -220,6 +230,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -342,7 +364,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -359,7 +381,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/class.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/class.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -717,18 +739,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c811f7e0-dc44-4301-a22d-d45521e48810" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
-</input><label class="sd-tab-label" for="c811f7e0-dc44-4301-a22d-d45521e48810">
+<input checked="checked" id="c9e5a4ae-f215-4fbe-bf4b-913ba196d6c7" name="5725edb0-5dea-4a28-a813-9569d11223ff" type="radio">
+</input><label class="sd-tab-label" for="c9e5a4ae-f215-4fbe-bf4b-913ba196d6c7">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。<code class="docutils literal notranslate"><span class="pre">death</span></code>で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="9276dbbc-4b48-4e32-acd5-a64a7dfe4781" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
-</input><label class="sd-tab-label" for="9276dbbc-4b48-4e32-acd5-a64a7dfe4781">
+<input id="8bd6ffcb-73c5-4955-9030-b63fb39a50ea" name="5725edb0-5dea-4a28-a813-9569d11223ff" type="radio">
+</input><label class="sd-tab-label" for="8bd6ffcb-73c5-4955-9030-b63fb39a50ea">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
 </div>
-<input id="17b9aecc-8cc8-4f78-b381-2c5abb58767e" name="1ddf1862-9d9a-4d6c-b44f-2852c7c22b43" type="radio">
-</input><label class="sd-tab-label" for="17b9aecc-8cc8-4f78-b381-2c5abb58767e">
+<input id="5ed9c384-7f21-4073-8361-cf32904b55ff" name="5725edb0-5dea-4a28-a813-9569d11223ff" type="radio">
+</input><label class="sd-tab-label" for="5ed9c384-7f21-4073-8361-cf32904b55ff">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>の値として2023を受け取って、年齢を計算してください。</p>
 </div>
@@ -872,8 +894,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d987d721-3a17-42b5-9a61-0186274cfd5f" name="d2557a36-332b-47dd-9918-4a2e5605a664" type="radio">
-</input><label class="sd-tab-label" for="d987d721-3a17-42b5-9a61-0186274cfd5f">
+<input checked="checked" id="8812cdef-7832-4daf-878f-38344a64e370" name="d23ce2f0-158b-4027-ba52-14925aae9903" type="radio">
+</input><label class="sd-tab-label" for="8812cdef-7832-4daf-878f-38344a64e370">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p></li>
@@ -949,8 +971,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a7fd1fc6-48b4-41f8-a139-8d658bb5730f" name="790892f3-c98d-4702-a7cc-b27d8a953705" type="radio">
-</input><label class="sd-tab-label" for="a7fd1fc6-48b4-41f8-a139-8d658bb5730f">
+<input checked="checked" id="116f92c2-07ac-435b-ac6e-a90dc28a7872" name="57e9a743-2cdd-40d0-b586-0b95dd4fe985" type="radio">
+</input><label class="sd-tab-label" for="116f92c2-07ac-435b-ac6e-a90dc28a7872">
 実習問題</label><div class="sd-tab-content docutils">
 <ol class="simple">
 <li><p>Majorというクラスを作成し、専門分野に関する情報を保持する。</p></li>
@@ -1209,8 +1231,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="be352523-3549-4cf4-985d-1ac15451540b" name="401ddd8f-32fd-4663-8f89-c3697d396dfd" type="radio">
-</input><label class="sd-tab-label" for="be352523-3549-4cf4-985d-1ac15451540b">
+<input checked="checked" id="8f27f68a-db63-4a39-b967-6d77f1036df2" name="a9f03382-d015-41e0-9d2f-48b0b45c2e14" type="radio">
+</input><label class="sd-tab-label" for="8f27f68a-db63-4a39-b967-6d77f1036df2">
 実習問題</label><div class="sd-tab-content docutils">
 <p>クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。</p>
 </div>

@@ -156,13 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -217,6 +217,11 @@ const thebe_selector_output = ".output, .cell_output"
    pandas
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -227,6 +232,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -349,7 +366,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -366,7 +383,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/numpy.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/numpy.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -658,7 +675,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.23.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.21.4
 </pre></div>
 </div>
 </div>
@@ -800,9 +817,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.86384671, 0.12543755, 0.51742063],
-       [0.58041901, 0.80134731, 0.35522174],
-       [0.74501396, 0.08978314, 0.86769943]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.2949662 , 0.29832872, 0.2086668 ],
+       [0.88601383, 0.24636794, 0.87554855],
+       [0.69141195, 0.39023832, 0.01455322]])
 </pre></div>
 </div>
 </div>
@@ -814,9 +831,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.19615639,  1.15897648, -0.48057932],
-       [ 0.53923314, -2.09474693, -0.2149988 ],
-       [-0.55080573,  0.98522079,  1.88462548]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.61082538,  1.56109855, -0.10652682],
+       [ 1.68445185,  0.47824396,  1.20439977],
+       [ 0.97269838, -1.01214608,  0.02416019]])
 </pre></div>
 </div>
 </div>
@@ -828,9 +845,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 8, 3],
-       [6, 5, 7],
-       [8, 1, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 6, 5],
+       [7, 1, 0],
+       [5, 3, 9]])
 </pre></div>
 </div>
 </div>
@@ -1322,8 +1339,8 @@ dtype: int64
 <p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1ecbd611-01c7-4c53-8601-7a33ec4c8b0b" name="7c9839ca-45a0-466e-a896-1485e3fe5d17" type="radio">
-</input><label class="sd-tab-label" for="1ecbd611-01c7-4c53-8601-7a33ec4c8b0b">
+<input checked="checked" id="52ff1a28-e32b-485b-b97b-8ce2766d7d80" name="8587cdf8-218e-45b9-835b-391250766523" type="radio">
+</input><label class="sd-tab-label" for="52ff1a28-e32b-485b-b97b-8ce2766d7d80">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1456,8 +1473,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="66199d93-d4e3-43fc-a8d9-5e1dd4ac0420" name="e0cd9c3f-a79f-429b-aa36-ae46d9eb49e9" type="radio">
-</input><label class="sd-tab-label" for="66199d93-d4e3-43fc-a8d9-5e1dd4ac0420">
+<input checked="checked" id="77d9e10e-8022-403a-bf01-8a7c02016c09" name="d4d89294-6112-4734-a603-22b407354893" type="radio">
+</input><label class="sd-tab-label" for="77d9e10e-8022-403a-bf01-8a7c02016c09">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
@@ -1599,8 +1616,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a1711453-2041-4605-a60a-79f1f21e870f" name="32509bcf-073d-4a28-9526-7180e9acc801" type="radio">
-</input><label class="sd-tab-label" for="a1711453-2041-4605-a60a-79f1f21e870f">
+<input checked="checked" id="a169bca9-5892-4bea-96df-1bfa9feeef46" name="e9f9ce61-55a9-42e1-8167-34acb7b40647" type="radio">
+</input><label class="sd-tab-label" for="a169bca9-5892-4bea-96df-1bfa9feeef46">
 実習問題</label><div class="sd-tab-content docutils">
 <p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
 </div>

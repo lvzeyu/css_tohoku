@@ -156,13 +156,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -203,6 +203,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Supplementary
  </span>
 </p>
@@ -210,6 +232,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -332,7 +366,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -349,7 +383,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/Intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/Intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -501,11 +535,16 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   授業の資料
+   その他
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
+   授業の資料
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
    次回の授業までに
   </a>
  </li>
@@ -593,11 +632,16 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   授業の資料
+   その他
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
+   授業の資料
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
    次回の授業までに
   </a>
  </li>
@@ -624,10 +668,12 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Pythonのデータ型: タプル、リスト、辞書などデータ型の特徴と操作方法</p></li>
 <li><p>Pythonの構文: 変数の宣言、演算子、制御構文（条件分岐、ループ）、関数の定義、クラスの定義、オブジェクト指向プログラミングの基本概念</p></li>
-<li><p><strong>Pythonの実践: ライブラリの使用</strong></p></li>
+<li><p><strong>Pythonの実践: ライブラリの使用</strong></p>
+<ul>
+<li><p>Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語です。この授業は、その中に代表的かつ実用性の高いライブラリを紹介します。</p></li>
 </ul>
-<p>Pythonはデータ解析・機械学習のためのライブラリが充実しており、データ解析や機械学習の分野で最もよく使われている言語です。</p>
-<p>この授業は、その中に代表的かつ実用性の高いライブラリを紹介します。</p>
+</li>
+</ul>
 <section id="numpy">
 <h4>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
 <p><a class="reference external" href="https://numpy.org/doc/"><strong>NumPy</strong></a>は、プログラミング言語Pythonにおいて数値計算を効率的に行うための拡張モジュールです。</p>
@@ -668,8 +714,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.59760258  0.89290054]
- [ 0.43656049  0.9179874 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.15071707  1.21283238]
+ [-1.24197419 -0.95329083]]
 </pre></div>
 </div>
 </div>
@@ -1135,7 +1181,7 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17402fe20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x140b66170&gt;
 </pre></div>
 </div>
 <img alt="../_images/Intro_25_1.png" src="../_images/Intro_25_1.png" />
@@ -1236,43 +1282,35 @@ Name: sepal_width, dtype: float64
 <section class="tex2jax_ignore mathjax_ignore" id="id5">
 <h1>授業設計と成績評価<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>授業中実践的なプログラミング操作が多いので、必ずPCをご持参ください。また、インターネットとの接続が必要される操作もありますので、PCのインターネット接続も事前に設定してください。</p></li>
-<li><p>授業後課題提出を求める場合があります。基本的には授業の理解度を確認するためのプログラミング課題と想定しています。</p></li>
-<li><p>グループワークの形で実践的なデータ解析プロジェクトに取り組んで、最終の授業で発表します。</p>
+<li><p>授業中実践的なプログラミング操作が多いので、必ずPCをご持参ください。</p>
 <ul>
-<li><p>基本的にはpythonを使ってくだい。</p></li>
-<li><p>グループワークの管理は<ins>GitとGitHub</ins>を使ってください。</p></li>
-<li><p>グループ内の責任分担は自由ですが、<ins>全てのメンバーが一部のプログラミング作業を分担する</ins>ことが望ましい。</p></li>
-<li><p>これからの授業で説明しますが、GitとGitHubによるプロジェクトを管理すると、<ins>各メンバーの作業履歴を確認できます</ins>ので、グループ全体の成果だけでなく、各メンバーの貢献度も加味して成績を評価します。</p></li>
+<li><p>インターネットとの接続が必要される操作もありますので、PCのインターネット接続も事前に設定してください。</p></li>
 </ul>
 </li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>データ解析プロジェクトについて
-テーマとデータの選定は自由です。プロジェクトのイメージは、<a class="reference external" href="https://www.kaggle.com/">kaggle</a>でJupyter Notebookのデータ解析リポートを参考してみてください。
-Kaggleはデータサイエンスや機械学習の分野で有名なオンラインプラットフォームです。Kaggleには世界中のデータ科学者がデータセットやノートブックを共有しています。</p>
-</div>
-<ul class="simple">
 <li><p>成績評価の分配は以下の通りです</p>
 <ul>
-<li><p>出席: <span class="math notranslate nohighlight">\(30\%\)</span></p></li>
-<li><p>授業後の課題: <span class="math notranslate nohighlight">\(30\%\)</span></p></li>
-<li><p>グループワーク: <span class="math notranslate nohighlight">\(40\%\)</span></p></li>
+<li><p>出席 (<span class="math notranslate nohighlight">\(30\%\)</span>): 授業で学んだ知識とスキルの応用を問う課題</p></li>
+<li><p>授業後の課題 (<span class="math notranslate nohighlight">\(70\%\)</span>): 授業の理解度を確認するためのプログラミング課題</p>
+<ul>
+<li><p>基本的に毎回の授業後には課題が出ます</p></li>
+<li><p>個人差がありますが、平均的には30分程度要する課題を想定しています</p></li>
+<li><p>最後の課題は、授業から学んだ知識とスキルを問う課題になります</p></li>
 </ul>
 </li>
 </ul>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>GitHub　Issueの使い方についてはこれからの授業で説明します。</p>
-</aside>
-<ul class="simple">
-<li><p>授業の内容に関して不明点あるいはご要望があれば、随時<a class="reference external" href="mailto:lyu&#46;zeyu&#46;e8&#37;&#52;&#48;tohoku&#46;ac&#46;jp">メール</a>でご連絡ください。また、プログラミングやソフトウェア操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。</p></li>
-<li><p>授業のオフィスアワーは、できれば二日前アポイントを取ってくだい。</p></li>
+</li>
 </ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id6">
-<h1>授業の資料<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h1>
+<h1>その他<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>授業の内容に関して不明点あるいはご要望があれば、随時<a class="reference external" href="mailto:lyu&#46;zeyu&#46;e8&#37;&#52;&#48;tohoku&#46;ac&#46;jp">メール</a>でご連絡ください。また、プログラミングやソフトウェア操作の質問については、Google ClassroomまたはGitHub Issueでも受け付けます。</p></li>
+<li><p>授業のオフィスアワーは、できれば<span class="math notranslate nohighlight">\(1\)</span>日前アポイントを取ってくだい。</p></li>
+<li><p>本授業ではプログラミングの事前知識は不要ですが、マニュアルに従ったコンピュータの操作やエラーメッセージを検索を含む基本的な情報リテラシーは望まれます。</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>授業の資料<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h1>
 <p>この授業の資料は、<a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a>形式で作成されたソースファイルを<a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>を用いて変換することで作成されたコンテンツになっている。</p>
 <ul class="simple">
 <li><p>授業の資料はこちらの<a class="reference external" href="https://lvzeyu.github.io/css_tohoku/">リンク</a>から閲覧できます。</p></li>
@@ -1285,11 +1323,22 @@ Kaggleはデータサイエンスや機械学習の分野で有名なオンラ�
 </div>
 <p><img alt="" src="../_images/intro1.png" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id7">
-<h1>次回の授業までに<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>次回の授業までに<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
+<li><p>演習ための環境を事前に整備してください</p>
+<ul>
 <li><p><a class="reference external" href="https://github.com/"><strong>GitHub</strong></a>アカウントを作ってください。</p></li>
-<li><p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールしてください。</p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">公式サイト</a>からGitをインストールしてください。</p>
+<ul>
+<li><p><a class="reference external" href="https://prog-8.com/docs/git-env-win">Windows</a></p></li>
+<li><p><a class="reference external" href="https://prog-8.com/docs/git-env-win">Mac</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/">VSCode</a>をインストールしてください。</p></li>
+</ul>
+</li>
+<li><p>授業中では以上の作業に関する説明が省略しますので、不明点があれば必ず次回の授業までに聞いてください。</p></li>
 </ul>
 </section>
 

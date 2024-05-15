@@ -152,13 +152,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -213,6 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
    pandas
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -223,6 +228,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -345,7 +362,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -362,7 +379,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/answer.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/answer.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -534,6 +551,82 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>クラスタリングの精度: 0.9666666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<p>シーケンス型（sequence types）とは、データが順序付けられているデータ型のことを指します。Pythonなどのプログラミング言語における主なシーケンス型には以下のようなものがあります：</p>
+<p>リスト（List）: 可変的で、異なるデータ型の要素を含むことができます。
+タプル（Tuple）: 不変的で、一度作成後にはその内容を変更することができません。
+文字列（String）: 不変的で、文字の並びを表します。
+レンジ（Range）: 数値のシーケンスを生成するために使われます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定義された一年の平均日数</span>
+<span class="n">average_days_per_year</span> <span class="o">=</span> <span class="mf">365.2425</span>
+
+<span class="c1"># 1日は24時間、1時間は60分、1分は60秒である</span>
+<span class="n">seconds_per_day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+
+<span class="c1"># 一年の秒数を計算</span>
+<span class="n">seconds_per_year</span> <span class="o">=</span> <span class="n">average_days_per_year</span> <span class="o">*</span> <span class="n">seconds_per_day</span>
+
+<span class="c1"># 一年の秒数を分と秒に変換</span>
+<span class="n">minutes_per_year</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">//</span> <span class="mi">60</span>  <span class="c1"># 整数分のみ取得</span>
+<span class="n">seconds_remaining</span> <span class="o">=</span> <span class="n">seconds_per_year</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># 残りの秒数</span>
+
+<span class="n">minutes_per_year</span><span class="p">,</span> <span class="n">seconds_remaining</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(525949.0, 12.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1: check if a string is palindrome or not</span>
+
+<span class="n">my_str</span> <span class="o">=</span> <span class="s1">&#39;aIbohPhoBiA&#39;</span>
+
+<span class="c1"># make it suitable for caseless comparison</span>
+<span class="n">my_str</span> <span class="o">=</span> <span class="n">my_str</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
+
+<span class="c1"># reverse the string</span>
+<span class="n">rev_str</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+
+<span class="c1"># check if the string is equal to its reverse</span>
+<span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">rev_str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is a palindrome.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is not a palindrome.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2: check if a string is a Palindrome.</span>
+
+<span class="n">string</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter string:&quot;</span><span class="p">))</span>
+<span class="k">if</span><span class="p">(</span><span class="n">string</span><span class="o">==</span><span class="n">string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string is a palindrome&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The string isn&#39;t a palindrome&quot;</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">&gt;&gt;Output/Runtime Test Cases</span>
+<span class="sd">     </span>
+<span class="sd">Case 1:</span>
+<span class="sd">Enter string:madam</span>
+<span class="sd">The string is a palindrome</span>
+
+<span class="sd">Case 2:</span>
+<span class="sd">Enter string:hello</span>
+<span class="sd">The string isn&#39;t a palindrome</span>
+<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 </div>

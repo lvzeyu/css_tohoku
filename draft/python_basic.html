@@ -54,8 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="変数" href="variable.html" />
-    <link rel="prev" title="Python環境" href="python_environment.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,20 +147,20 @@ const thebe_selector_output = ".output, .cell_output"
   Pythonの基礎
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_environment.html">
    Python環境
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Pythonの基本文法
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -203,6 +201,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Supplementary
  </span>
 </p>
@@ -210,6 +230,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="tips.html">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -332,7 +364,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -349,7 +381,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/python_basic.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/python_basic.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -799,13 +831,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="40a7b199-4f4a-4521-97a3-a614c928ce57" name="26d6b7b2-0644-42fb-a174-24fe3d141cd5" type="radio">
-</input><label class="sd-tab-label" for="40a7b199-4f4a-4521-97a3-a614c928ce57">
+<input checked="checked" id="7ffc2ddf-d9d4-4f2c-b7dc-df656cf8df3c" name="851967a9-ea14-49fa-a402-cb7121b12c14" type="radio">
+</input><label class="sd-tab-label" for="7ffc2ddf-d9d4-4f2c-b7dc-df656cf8df3c">
 練習問題1</label><div class="sd-tab-content docutils">
 <p>一日は何秒だを計算してみよう。</p>
 </div>
-<input id="b246f7d9-5ccb-45f2-8e71-89d8d4919e9c" name="26d6b7b2-0644-42fb-a174-24fe3d141cd5" type="radio">
-</input><label class="sd-tab-label" for="b246f7d9-5ccb-45f2-8e71-89d8d4919e9c">
+<input id="f003bc2f-1ea9-4ff0-914c-b5126c4d2f1b" name="851967a9-ea14-49fa-a402-cb7121b12c14" type="radio">
+</input><label class="sd-tab-label" for="f003bc2f-1ea9-4ff0-914c-b5126c4d2f1b">
 練習問題2</label><div class="sd-tab-content docutils">
 <p><span class="math notranslate nohighlight">\(1\)</span>年<span class="math notranslate nohighlight">\(365\)</span>日といいますが、厳密的に言えば、<span class="math notranslate nohighlight">\(1\)</span>年を<span class="math notranslate nohighlight">\(366\)</span>日とする閏年を<span class="math notranslate nohighlight">\(400\)</span>年間に<span class="math notranslate nohighlight">\(97\)</span>回設けることによって、<span class="math notranslate nohighlight">\(1\)</span>年の平均日数を<span class="math notranslate nohighlight">\(365.2425\)</span>日とする。</p>
 <p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
@@ -972,20 +1004,6 @@ World
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="python_environment.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python環境</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="variable.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">変数</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

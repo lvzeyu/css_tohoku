@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="pyファイル" href="py.html" />
+    <link rel="next" title="練習課題" href="exercise1.html" />
+    <link rel="prev" title="scikit-learn" href="scikit-learn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -153,13 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_basic.html">
-   Pythonの基本文法
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="variable.html">
-   変数
+  <a class="reference internal" href="python_data_type.html">
+   データ型
   </a>
  </li>
  <li class="toctree-l1">
@@ -200,6 +201,28 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Supplementary
  </span>
 </p>
@@ -207,6 +230,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
   </a>
  </li>
 </ul>
@@ -260,6 +295,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/tips.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/tips.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -282,7 +364,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master"
+        <a href="https://github.com/lvzeyu/css_tohoku"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -299,7 +381,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/tree/master/issues/new?title=Issue%20on%20page%20%2Fdraft/tips.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/tips.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -419,6 +501,39 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#print">
+   print文
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     print文の基本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     フォーマットされた出力
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#format">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .format()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#f-strings">
+       f-strings
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -471,6 +586,39 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#print">
+   print文
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     print文の基本
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     フォーマットされた出力
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#format">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .format()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#f-strings">
+       f-strings
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -502,8 +650,8 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">&lt;original_repository&gt;</span></code>という形で、指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をすることができます。</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://github.com/lvzeyu/chss_2023_assignment</span></code>から最新の状況を同期する操作を例として説明します。</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="844fb58b-386b-45f5-bb72-da46884d1847" name="73d75ee9-846d-4b74-8d5e-1180256246c4" type="radio">
-</input><label class="sd-tab-label" for="844fb58b-386b-45f5-bb72-da46884d1847">
+<input checked="checked" id="4f5afb90-c06a-49fe-8423-a06736092c75" name="0debc02d-670a-474a-b278-9224ad79e441" type="radio">
+</input><label class="sd-tab-label" for="4f5afb90-c06a-49fe-8423-a06736092c75">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/chss_2023_assignment</span></code></p></li>
@@ -513,8 +661,8 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>または <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">main</span></code>でローカルリポジトリブランチをリポジトリの最新状態に更新します。</p></li>
 </ul>
 </div>
-<input id="a66e27d7-cd29-4307-bdc3-d3712c0e3cf3" name="73d75ee9-846d-4b74-8d5e-1180256246c4" type="radio">
-</input><label class="sd-tab-label" for="a66e27d7-cd29-4307-bdc3-d3712c0e3cf3">
+<input id="15d55d75-b77d-493d-96f3-66632c2e6bea" name="0debc02d-670a-474a-b278-9224ad79e441" type="radio">
+</input><label class="sd-tab-label" for="15d55d75-b77d-493d-96f3-66632c2e6bea">
 VSCode操作</label><div class="sd-tab-content docutils">
 <p>-「ソース管理」→「…」をクリックします。</p>
 <ul class="simple">
@@ -523,6 +671,142 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 </div>
+</section>
+</section>
+<section id="print">
+<h2>print文<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h3>print文の基本<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>関数の引数には数値、配列、タプル、オブジェクトなどを指定することができます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                   <span class="c1">#=&gt; 3</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>           <span class="c1">#=&gt; [1, 2, 3]</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>           <span class="c1">#=&gt; (1, 2, 3)</span>
+<span class="nb">print</span><span class="p">({</span><span class="s1">&#39;k1&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;k2&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">})</span>  <span class="c1">#=&gt; {&#39;k2&#39;: 20, &#39;k1&#39;: 10}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+[1, 2, 3]
+(1, 2, 3)
+{&#39;k1&#39;: 10, &#39;k2&#39;: 20}
+</pre></div>
+</div>
+</div>
+</div>
+<p>引数をカンマ(<code class="docutils literal notranslate"><span class="pre">,</span></code>)で複数指定すると、ひとつのスペースで区切って複数の値を表示します。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AAA&quot;</span><span class="p">,</span> <span class="s2">&quot;BBB&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>         <span class="c1">#=&gt; AAA BBB</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AAA BBB 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h3>フォーマットされた出力<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>より高度的な使い方として、出力結果をよりわかりやすく整形することができます。</p>
+<section id="format">
+<h4><code class="docutils literal notranslate"><span class="pre">.format()</span></code><a class="headerlink" href="#format" title="Permalink to this headline">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">.format()</span></code>メソッドを使う基本的な構文は、中括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>を使って文字列内にプレースホルダーを設定し、それに<code class="docutils literal notranslate"><span class="pre">.format()</span></code>で値を渡す形です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;山田&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;名前：</span><span class="si">{}</span><span class="s2"> 年齢：</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>  <span class="c1">#=&gt; 名前：山田 年齢：25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>名前：山田 年齢：25
+</pre></div>
+</div>
+</div>
+</div>
+<p>プレースホルダーに位置を指定することもできます。これにより、引数の順序を自由に変更したり、同じ値を複数回使用したりできます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;山田&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;名前：</span><span class="si">{1}</span><span class="s2"> 年齢：</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>  <span class="c1">#=&gt; 名前：山田 年齢：25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>名前：山田 年齢：25
+</pre></div>
+</div>
+</div>
+</div>
+<p>キーワード引数を使って値を指定することができます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;名前：</span><span class="si">{name}</span><span class="s2">、職業：</span><span class="si">{job}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;木村&quot;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s2">&quot;学生&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>名前：木村、職業：学生
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="f-strings">
+<h4>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">#</a></h4>
+<p>Python 3.6以降では、文字列内で変数を直接埋め込むためのf-stringsが導入されました。</p>
+<p>f-stringを使用するには、文字列の前に<code class="docutils literal notranslate"><span class="pre">f</span></code>または<code class="docutils literal notranslate"><span class="pre">F</span></code>を置き、波括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>の中に変数名や式を書きます。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;山田&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;名前：</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">、年齢：</span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>名前：山田、年齢：25
+</pre></div>
+</div>
+</div>
+</div>
+<p>f-stringsでは、値の書式を指定することもできます。これは、値を特定の形式（例えば、小数点以下の桁数を指定する）で表示したい場合に便利です。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 小数点以下の桁数を指定</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;円周率は約 </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 円周率は約 3.14</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>円周率は約 3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># パーセンテージ表示</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.12345</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">.4%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># 12.3450% (パーセンテージ表示)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.3450%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 </section>
@@ -554,12 +838,19 @@ VSCode操作</label><div class="sd-tab-content docutils">
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="py.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="scikit-learn.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
+            <p class="prev-next-title">scikit-learn</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="exercise1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">練習課題</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
