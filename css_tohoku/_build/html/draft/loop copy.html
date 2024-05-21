@@ -59,11 +59,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/loop';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/loop copy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="関数" href="function.html" />
-    <link rel="prev" title="分岐" href="if.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,13 +196,13 @@
 <li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_basic.html">Pythonの基本文法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variable.html">変数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_struture.html">データ構造</a></li>
 <li class="toctree-l1"><a class="reference internal" href="if.html">分岐</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">ループ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loop.html">ループ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function.html">関数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="class.html">オブジェクトとクラス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="py.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
@@ -272,7 +270,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/loop.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/loop copy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +318,7 @@
       
       
       
-      <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/loop.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/loop copy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +348,7 @@
       
       
       
-      <li><a href="../_sources/draft/loop.ipynb" target="_blank"
+      <li><a href="../_sources/draft/loop copy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -450,19 +448,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">while</span></code>文によるループ</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">発展的なループの使い方</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">発展的なループ構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ループ内の制御構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pass"><code class="docutils literal notranslate"><span class="pre">pass</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例外処理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip"><code class="docutils literal notranslate"><span class="pre">zip</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">辞書のループ処理</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例外処理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">enumerate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">zip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">辞書のループ処理</a></li>
 </ul>
             </nav>
         </div>
@@ -477,6 +475,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>ループ<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>プログラムでは、同じ処理を繰り返し行いたい（ループさせたい）ことが多くあります。</p>
+<p>Pythonには<strong>while</strong>と<strong>for</strong>の2種類のループがあります。</p>
 <section id="id2">
 <h2>基本的なループ構造<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="for">
@@ -619,7 +618,7 @@ e
 </section>
 </section>
 <section id="id3">
-<h2>発展的なループの使い方<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>発展的なループ構造<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <section id="id4">
 <h3>ループ内の制御構造<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>ある特定の条件が満たされた場合に、ループを途中で抜けたり、終わらせたくなるときがあります。これにより、柔軟にプログラムを取り組むことができます。</p>
@@ -713,8 +712,9 @@ e
 </div>
 </section>
 </section>
+</section>
 <section id="id5">
-<h3>例外処理<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h2>例外処理<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>プログラムが実行されると、実行中に予期しないエラーが発生することがあります。この場合、プログラムは停止してしまいます。</p>
 <p>「エラーを無視してとにかくプログラムを最後まで実行させたい」「エラーが起こるときにエラーを回避するような仕組みをプログラム自体に実装したい」といった状況もあります。</p>
 <p><code class="docutils literal notranslate"><span class="pre">try-except</span></code>文を使用すると、エラーが発生した場合に特定の処理を実行し、プログラムの実行を継続することができます。</p>
@@ -759,6 +759,7 @@ e
 </div>
 </div>
 </div>
+<p>ここで、「<code class="docutils literal notranslate"><span class="pre">i</span></code>の値が正なら平方根を表示して、負の場合はエラーメッセージだけを表示する」という作業が必要な場合は以下のように</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -787,32 +788,6 @@ e
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">144</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
-    <span class="k">except</span> <span class="p">:</span>    
-        <span class="k">continue</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-2.0
-4.0
-6.0
-7.0
-8.0
-9.0
-10.0
-11.0
-12.0
-</pre></div>
-</div>
-</div>
-</div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -824,12 +799,22 @@ e
 </ul>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#答え</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">error_count</span> <span class="o">=</span> <span class="mi">0</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="enumerate">
-<h3><code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h3>
+<h2>enumerate<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>文の繰り返し処理では、要素の順序を把握したいことがあります。</p>
 <p><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数を利用することで、<code class="docutils literal notranslate"><span class="pre">for</span></code>文内のループ処理にインデックス番号を付与できるのです。</p>
-<p>例えば、2つの変数 <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> が指定されています。 <code class="docutils literal notranslate"><span class="pre">i</span></code> には <span class="math notranslate nohighlight">\(0, 1, 2, …\)</span> が順に代入されます。 <code class="docutils literal notranslate"><span class="pre">val</span></code> にはリストの要素が順に代入されます。</p>
+<p>2つの変数 <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> が指定されています。 <code class="docutils literal notranslate"><span class="pre">i</span></code> には <span class="math notranslate nohighlight">\(0, 1, 2, …\)</span> が順に代入されます。 <code class="docutils literal notranslate"><span class="pre">val</span></code> にはリストの要素が順に代入されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;1番目&#39;</span><span class="p">,</span> <span class="s1">&#39;2番目&#39;</span><span class="p">,</span> <span class="s1">&#39;3番目&#39;</span><span class="p">]</span>
@@ -863,7 +848,7 @@ e
 </div>
 </section>
 <section id="zip">
-<h3><code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#zip" title="Link to this heading">#</a></h3>
+<h2>zip<a class="headerlink" href="#zip" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数は、複数のイテラブル（リスト、タプル、セット、文字列など）から、要素をまとめて取り出すために使用される組み込み関数です。</p>
 <p>具体的に言えば、対応する位置の要素をタプルにまとめ、新しいイテラブルなオブジェクトを作成します。</p>
 <p>各タプルは、元のイテラブルの要素の数に基づいて作成されます。要素の数が一致しない場合は、最短のイテラブルに基づいてzipオブジェクトが作成されます。</p>
@@ -944,7 +929,7 @@ c 3
 </div>
 </section>
 <section id="id6">
-<h3>辞書のループ処理<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h2>辞書のループ処理<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>辞書の要素にわたって操作はよくあります。</p>
 <ul class="simple">
 <li><p>辞書 の全てのキーを変数<code class="docutils literal notranslate"><span class="pre">key</span></code>に代入しながら、実行文を繰り返すには次のように書きます。</p></li>
@@ -1035,7 +1020,6 @@ Name: Habermas Nationality: Germany
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1067,24 +1051,6 @@ Name: Habermas Nationality: Germany
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="if.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">分岐</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="function.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">関数</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1107,19 +1073,19 @@ Name: Habermas Nationality: Germany
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while"><code class="docutils literal notranslate"><span class="pre">while</span></code>文によるループ</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">発展的なループの使い方</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">発展的なループ構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ループ内の制御構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pass"><code class="docutils literal notranslate"><span class="pre">pass</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例外処理</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zip"><code class="docutils literal notranslate"><span class="pre">zip</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">辞書のループ処理</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">例外処理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate">enumerate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zip">zip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">辞書のループ処理</a></li>
 </ul>
   </nav></div>
 
