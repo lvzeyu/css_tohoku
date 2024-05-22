@@ -244,6 +244,11 @@ const thebe_selector_output = ".output, .cell_output"
    練習課題
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise2.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -766,8 +771,8 @@ w_{12} &amp; w_{22} &amp; w_{32}
 \end{pmatrix}
 \end{split}\]</div>
 <p>出力<span class="math notranslate nohighlight">\(\boldsymbol{Y}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f80171c7-57b8-4749-a9e2-b6e2b1104fa5">
-<span class="eqno">()<a class="headerlink" href="#equation-f80171c7-57b8-4749-a9e2-b6e2b1104fa5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0472ff98-34d6-4899-958c-c9800c5cd642">
+<span class="eqno">()<a class="headerlink" href="#equation-0472ff98-34d6-4899-958c-c9800c5cd642" title="Permalink to this equation">#</a></span>\[\begin{align}
 \boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \\
 &amp;=
 \begin{pmatrix}
@@ -787,8 +792,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix}　\tag{1.1}
 \end{align}\]</div>
 <p>となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37579e6b-b8fd-4824-9ab0-90344d6bcd66">
-<span class="eqno">()<a class="headerlink" href="#equation-37579e6b-b8fd-4824-9ab0-90344d6bcd66" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5c216e22-1fc1-43a2-bf58-6af14ca71ea6">
+<span class="eqno">()<a class="headerlink" href="#equation-5c216e22-1fc1-43a2-bf58-6af14ca71ea6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{X}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial x_1} &amp; \frac{\partial L}{\partial x_2}
@@ -799,8 +804,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix} 
 \end{align}\]</div>
 <p>ここで</p>
-<div class="amsmath math notranslate nohighlight" id="equation-acb4c763-4de1-47f2-9344-ff42dc30b467">
-<span class="eqno">()<a class="headerlink" href="#equation-acb4c763-4de1-47f2-9344-ff42dc30b467" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4599b00f-20f7-4add-bbe8-9c3a4d374afb">
+<span class="eqno">()<a class="headerlink" href="#equation-4599b00f-20f7-4add-bbe8-9c3a4d374afb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} = 
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
@@ -814,8 +819,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{align}\]</div>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6f5714b6-5599-408b-9236-842677b2d10c">
-<span class="eqno">()<a class="headerlink" href="#equation-6f5714b6-5599-408b-9236-842677b2d10c" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1440547e-5636-4ae1-9c26-7a74e54912a1">
+<span class="eqno">()<a class="headerlink" href="#equation-1440547e-5636-4ae1-9c26-7a74e54912a1" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -824,8 +829,8 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-370ea56b-0840-47e9-8781-3cdf7d6a6a59">
-<span class="eqno">()<a class="headerlink" href="#equation-370ea56b-0840-47e9-8781-3cdf7d6a6a59" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-d11c24ff-15e6-4770-9e99-a55aaae330b8">
+<span class="eqno">()<a class="headerlink" href="#equation-d11c24ff-15e6-4770-9e99-a55aaae330b8" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -834,12 +839,12 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54942371-ee66-4a8e-b6c5-07379a59abc6">
-<span class="eqno">()<a class="headerlink" href="#equation-54942371-ee66-4a8e-b6c5-07379a59abc6" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-e9eb3817-7d87-4d2f-819c-9ec00b49c7cb">
+<span class="eqno">()<a class="headerlink" href="#equation-e9eb3817-7d87-4d2f-819c-9ec00b49c7cb" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1eb48e0c-55da-40e1-988b-0f7cb5133cc5">
-<span class="eqno">()<a class="headerlink" href="#equation-1eb48e0c-55da-40e1-988b-0f7cb5133cc5" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-164139c7-0e11-4025-b26c-d6e55336fdc6">
+<span class="eqno">()<a class="headerlink" href="#equation-164139c7-0e11-4025-b26c-d6e55336fdc6" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -848,8 +853,8 @@ w_{31} &amp; w_{32}
 \end{aligned}</p>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad4bc212-9a78-408d-b454-9a25310671f3">
-<span class="eqno">()<a class="headerlink" href="#equation-ad4bc212-9a78-408d-b454-9a25310671f3" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-367443bf-2015-4912-9392-50782b49f89b">
+<span class="eqno">()<a class="headerlink" href="#equation-367443bf-2015-4912-9392-50782b49f89b" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -858,8 +863,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-20c5d248-af2e-48cd-934d-b71ff77be75c">
-<span class="eqno">()<a class="headerlink" href="#equation-20c5d248-af2e-48cd-934d-b71ff77be75c" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-62c116f2-c69c-4d7d-8c00-2acccf14f3e7">
+<span class="eqno">()<a class="headerlink" href="#equation-62c116f2-c69c-4d7d-8c00-2acccf14f3e7" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -868,12 +873,12 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-786dc9a2-873b-431f-80d2-940b42a26692">
-<span class="eqno">()<a class="headerlink" href="#equation-786dc9a2-873b-431f-80d2-940b42a26692" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-688b38c6-7dad-489d-9319-1b4de8f9d3b4">
+<span class="eqno">()<a class="headerlink" href="#equation-688b38c6-7dad-489d-9319-1b4de8f9d3b4" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-05733cb9-3246-420f-b1b5-b58d7d206768">
-<span class="eqno">()<a class="headerlink" href="#equation-05733cb9-3246-420f-b1b5-b58d7d206768" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-f1e6d779-3ea1-4712-9452-e3cc19efbce7">
+<span class="eqno">()<a class="headerlink" href="#equation-f1e6d779-3ea1-4712-9452-e3cc19efbce7" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -881,8 +886,8 @@ w_{31} &amp; w_{32}
 <p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
 \end{aligned}</p>
 <p>一方、損失関数<span class="math notranslate nohighlight">\(L\)</span>の重み<span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span>による偏微分は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e2c806a8-24ef-4af1-a89e-f623899cb3f5">
-<span class="eqno">()<a class="headerlink" href="#equation-e2c806a8-24ef-4af1-a89e-f623899cb3f5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-54442873-c715-44db-af13-b21a3d40399e">
+<span class="eqno">()<a class="headerlink" href="#equation-54442873-c715-44db-af13-b21a3d40399e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -890,8 +895,8 @@ w_{31} &amp; w_{32}
 \end{pmatrix} \\
 \end{align}\]</div>
 <p>です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1de74879-a1f0-4525-9a17-07583ba76b1e">
-<span class="eqno">()<a class="headerlink" href="#equation-1de74879-a1f0-4525-9a17-07583ba76b1e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-09bb3e40-8b83-4895-8455-186097a3a7fb">
+<span class="eqno">()<a class="headerlink" href="#equation-09bb3e40-8b83-4895-8455-186097a3a7fb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \\
 \frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \\
 \frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \\
@@ -900,8 +905,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial w_{32}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
 \end{align}\]</div>
 <p>となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abee6730-13de-4cdf-9866-09071572d465">
-<span class="eqno">()<a class="headerlink" href="#equation-abee6730-13de-4cdf-9866-09071572d465" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d7a783b1-d287-4185-bc3c-72cc7190b5a6">
+<span class="eqno">()<a class="headerlink" href="#equation-d7a783b1-d287-4185-bc3c-72cc7190b5a6" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -936,8 +941,8 @@ x_2
 &amp;= \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>
 <p>これで、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddea9928-fcc5-4534-a193-f7a454e3a530">
-<span class="eqno">()<a class="headerlink" href="#equation-ddea9928-fcc5-4534-a193-f7a454e3a530" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-822364d6-441a-4e2f-96bc-7e89aff37ef0">
+<span class="eqno">()<a class="headerlink" href="#equation-822364d6-441a-4e2f-96bc-7e89aff37ef0" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;=
 \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>

@@ -54,8 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="関数" href="function.html" />
-    <link rel="prev" title="分岐" href="if.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
   Pythonの基礎
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python_environment.html">
    Python環境
@@ -175,8 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
    分岐
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="loop.html">
    ループ
   </a>
  </li>
@@ -310,7 +308,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/loop.ipynb"
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/loop copy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -328,7 +326,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/loop.ipynb"
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/loop copy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -388,7 +386,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/loop.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/loop copy.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -416,7 +414,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/draft/loop.ipynb"
+        <a href="../_sources/draft/loop copy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -508,7 +506,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   発展的なループの使い方
+   発展的なループ構造
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -545,35 +543,27 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     例外処理
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enumerate">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       enumerate
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zip">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       zip
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     辞書のループ処理
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   例外処理
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enumerate">
+   enumerate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zip">
+   zip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   辞書のループ処理
+  </a>
  </li>
 </ul>
 
@@ -627,7 +617,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   発展的なループの使い方
+   発展的なループ構造
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -664,35 +654,27 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     例外処理
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enumerate">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       enumerate
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zip">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       zip
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     辞書のループ処理
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   例外処理
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enumerate">
+   enumerate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zip">
+   zip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   辞書のループ処理
+  </a>
  </li>
 </ul>
 
@@ -707,6 +689,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>ループ<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>プログラムでは、同じ処理を繰り返し行いたい（ループさせたい）ことが多くあります。</p>
+<p>Pythonには<strong>while</strong>と<strong>for</strong>の2種類のループがあります。</p>
 <section id="id2">
 <h2>基本的なループ構造<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <section id="for">
@@ -849,7 +832,7 @@ e
 </section>
 </section>
 <section id="id3">
-<h2>発展的なループの使い方<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2>発展的なループ構造<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <section id="id4">
 <h3>ループ内の制御構造<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>ある特定の条件が満たされた場合に、ループを途中で抜けたり、終わらせたくなるときがあります。これにより、柔軟にプログラムを取り組むことができます。</p>
@@ -918,8 +901,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="83354ee2-6845-4953-bfee-b19b7d00ab94" name="dcd46370-f2e4-4db4-971c-dd418a0b32ac" type="radio">
-</input><label class="sd-tab-label" for="83354ee2-6845-4953-bfee-b19b7d00ab94">
+<input checked="checked" id="951ffffb-49c3-4ea2-b6d3-7f85101f85e7" name="ed75f240-79f6-4f01-a4e9-b27a445eed1a" type="radio">
+</input><label class="sd-tab-label" for="951ffffb-49c3-4ea2-b6d3-7f85101f85e7">
 実習問題</label><div class="sd-tab-content docutils">
 <p>ここで、ユークリッドの互除法というアルゴリズムの実装にトライしてみましょう。</p>
 <p>ユークリッドの互除法とは、2つの整数、aとbの最大公約数を求めるアルゴリズムです。例えば、2485と1162の最大公約数を求めたい場合</p>
@@ -943,8 +926,9 @@ e
 </div>
 </section>
 </section>
+</section>
 <section id="id5">
-<h3>例外処理<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h2>例外処理<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>プログラムが実行されると、実行中に予期しないエラーが発生することがあります。この場合、プログラムは停止してしまいます。</p>
 <p>「エラーを無視してとにかくプログラムを最後まで実行させたい」「エラーが起こるときにエラーを回避するような仕組みをプログラム自体に実装したい」といった状況もあります。</p>
 <p><code class="docutils literal notranslate"><span class="pre">try-except</span></code>文を使用すると、エラーが発生した場合に特定の処理を実行し、プログラムの実行を継続することができます。</p>
@@ -989,6 +973,7 @@ e
 </div>
 </div>
 </div>
+<p>ここで、「<code class="docutils literal notranslate"><span class="pre">i</span></code>の値が正なら平方根を表示して、負の場合はエラーメッセージだけを表示する」という作業が必要な場合は以下のように</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -1017,35 +1002,9 @@ e
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">144</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> 
-    <span class="k">except</span> <span class="p">:</span>    
-        <span class="k">continue</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-2.0
-4.0
-6.0
-7.0
-8.0
-9.0
-10.0
-11.0
-12.0
-</pre></div>
-</div>
-</div>
-</div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="b14e63ae-0d85-4343-83aa-c5da866906a0" name="a8d49804-3a93-4b6e-850d-e150a9d442da" type="radio">
-</input><label class="sd-tab-label" for="b14e63ae-0d85-4343-83aa-c5da866906a0">
+<input checked="checked" id="056d1b29-0476-4e6e-80c0-55f577bfc2eb" name="ed24f112-ee52-41df-98cd-415df70f67c0" type="radio">
+</input><label class="sd-tab-label" for="056d1b29-0476-4e6e-80c0-55f577bfc2eb">
 実習問題</label><div class="sd-tab-content docutils">
 <p>被除数が100である場合、リストの値を除数とする割り算の結果を順番に計算するプログラムを実装してください。</p>
 <ul class="simple">
@@ -1054,12 +1013,22 @@ e
 </ul>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#答え</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">error_count</span> <span class="o">=</span> <span class="mi">0</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="enumerate">
-<h3><code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#enumerate" title="Permalink to this headline">#</a></h3>
+<h2>enumerate<a class="headerlink" href="#enumerate" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>文の繰り返し処理では、要素の順序を把握したいことがあります。</p>
 <p><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>関数を利用することで、<code class="docutils literal notranslate"><span class="pre">for</span></code>文内のループ処理にインデックス番号を付与できるのです。</p>
-<p>例えば、2つの変数 <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> が指定されています。 <code class="docutils literal notranslate"><span class="pre">i</span></code> には <span class="math notranslate nohighlight">\(0, 1, 2, …\)</span> が順に代入されます。 <code class="docutils literal notranslate"><span class="pre">val</span></code> にはリストの要素が順に代入されます。</p>
+<p>2つの変数 <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> が指定されています。 <code class="docutils literal notranslate"><span class="pre">i</span></code> には <span class="math notranslate nohighlight">\(0, 1, 2, …\)</span> が順に代入されます。 <code class="docutils literal notranslate"><span class="pre">val</span></code> にはリストの要素が順に代入されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;1番目&#39;</span><span class="p">,</span> <span class="s1">&#39;2番目&#39;</span><span class="p">,</span> <span class="s1">&#39;3番目&#39;</span><span class="p">]</span>
@@ -1077,8 +1046,8 @@ e
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="abfcd718-2650-404e-9d8d-3efd091dcc5d" name="324a0afa-21b5-4ee4-bfff-86f7f79b286c" type="radio">
-</input><label class="sd-tab-label" for="abfcd718-2650-404e-9d8d-3efd091dcc5d">
+<input checked="checked" id="c5ae16c4-7572-4840-ab18-649745b4b27e" name="db57c57d-ae7c-463a-9582-75e2dd5c55a9" type="radio">
+</input><label class="sd-tab-label" for="c5ae16c4-7572-4840-ab18-649745b4b27e">
 実習問題</label><div class="sd-tab-content docutils">
 <p>以下にリストに基づいて、リストの要素を値、そのインデックスをキーとする辞書を作ってくだい。</p>
 </div>
@@ -1093,7 +1062,7 @@ e
 </div>
 </section>
 <section id="zip">
-<h3><code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#zip" title="Permalink to this headline">#</a></h3>
+<h2>zip<a class="headerlink" href="#zip" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">zip()</span></code>関数は、複数のイテラブル（リスト、タプル、セット、文字列など）から、要素をまとめて取り出すために使用される組み込み関数です。</p>
 <p>具体的に言えば、対応する位置の要素をタプルにまとめ、新しいイテラブルなオブジェクトを作成します。</p>
 <p>各タプルは、元のイテラブルの要素の数に基づいて作成されます。要素の数が一致しない場合は、最短のイテラブルに基づいてzipオブジェクトが作成されます。</p>
@@ -1156,8 +1125,8 @@ c 3
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4ea7a91e-2e48-4241-8c8d-49b47d806405" name="c839d232-68dd-4559-ad11-7652d7bf8421" type="radio">
-</input><label class="sd-tab-label" for="4ea7a91e-2e48-4241-8c8d-49b47d806405">
+<input checked="checked" id="24fb9f38-0aee-47c3-a6eb-ca975229fb73" name="259f8e27-9c80-4d00-ae79-46fcfe05f56c" type="radio">
+</input><label class="sd-tab-label" for="24fb9f38-0aee-47c3-a6eb-ca975229fb73">
 実習問題</label><div class="sd-tab-content docutils">
 <p>2つのリストをzip関数を使ってループし、各リストの要素を合計し、その結果を新しいリストに格納するプログラムを作成してください。</p>
 </div>
@@ -1174,7 +1143,7 @@ c 3
 </div>
 </section>
 <section id="id6">
-<h3>辞書のループ処理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h2>辞書のループ処理<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>辞書の要素にわたって操作はよくあります。</p>
 <ul class="simple">
 <li><p>辞書 の全てのキーを変数<code class="docutils literal notranslate"><span class="pre">key</span></code>に代入しながら、実行文を繰り返すには次のように書きます。</p></li>
@@ -1255,7 +1224,14 @@ Name: Habermas Nationality: Germany
 </div>
 </div>
 </div>
-</section>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="1aaf1c4e-fc9c-4302-9a20-657f35f515d5" name="9356fb66-bbec-48fb-ac54-0f58cc81aca9" type="radio">
+</input><label class="sd-tab-label" for="1aaf1c4e-fc9c-4302-9a20-657f35f515d5">
+入れ子のリストを平らにする</label><div class="sd-tab-content docutils">
+<p>入れ子になったリストを平らにしててくだい。</p>
+<p>list1=[1, [2, 3], [4, [5]]]</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -1286,20 +1262,6 @@ Name: Habermas Nationality: Germany
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="if.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">分岐</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="function.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">関数</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
