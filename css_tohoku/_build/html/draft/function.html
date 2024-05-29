@@ -251,6 +251,11 @@ const thebe_selector_output = ".output, .cell_output"
    練習課題
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -487,7 +492,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   引数
+   ローカル変数とグローバル変数
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -495,18 +500,25 @@ title="Print to PDF"
      スコープ
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   引数
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      キーワード引数
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id8">
      デフォルト引数値の指定
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id9">
      <code class="docutils literal notranslate">
       <span class="pre">
        *
@@ -516,7 +528,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id10">
      <code class="docutils literal notranslate">
       <span class="pre">
        **
@@ -528,7 +540,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    ラムダ関数
   </a>
  </li>
@@ -563,7 +575,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   引数
+   ローカル変数とグローバル変数
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -571,18 +583,25 @@ title="Print to PDF"
      スコープ
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   引数
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      キーワード引数
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id8">
      デフォルト引数値の指定
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id9">
      <code class="docutils literal notranslate">
       <span class="pre">
        *
@@ -592,7 +611,7 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
+    <a class="reference internal nav-link" href="#id10">
      <code class="docutils literal notranslate">
       <span class="pre">
        **
@@ -604,7 +623,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    ラムダ関数
   </a>
  </li>
@@ -682,9 +701,7 @@ title="Print to PDF"
 <p>関数の返値がない場合は、<code class="docutils literal notranslate"><span class="pre">None</span></code> が返されます。</p>
 </section>
 <section id="id4">
-<h2>引数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
-<p>関数を定義する際に、ヘッダの括弧の中に関数へ渡す値を引数と言います。</p>
-<p>関数を呼び出す際に引数に値を渡すことで、関数は受け取った値を処理することができます。</p>
+<h2>ローカル変数とグローバル変数<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <section id="id5">
 <h3>スコープ<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <aside class="margin sidebar">
@@ -714,16 +731,62 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4455399696
-関数の内部 10 4455399952
-関数の実行後 2 4455399696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4483711248
+関数の内部 10 4483711504
+関数の実行後 2 4483711248
+</pre></div>
+</div>
+</div>
+</div>
+<p>同じモジュールスコープで定義されたグローバル変数は、関数の内側でも参照できます。また、関数の内側では、グローバル変数だけではなく、同じモジュールスコープで定義した別の関数も呼び出せます。</p>
+<p>次の例では、関数 <code class="docutils literal notranslate"><span class="pre">func2()</span></code> は、先に定義された関数 <code class="docutils literal notranslate"><span class="pre">func1()</span></code> を呼び出しています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;, this is func1.&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="n">func1</span><span class="p">(</span><span class="s2">&quot;func2&quot;</span><span class="p">)</span>
+
+<span class="n">func2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello func2 , this is func1.
+</pre></div>
+</div>
+</div>
+</div>
+<p>同様に、モジュールスコープで import したモジュールも、そのスコープで定義された関数から参照できます。</p>
+<p>の例は、モジュールスコープで import した <code class="docutils literal notranslate"><span class="pre">time</span></code> モジュールを関数 <code class="docutils literal notranslate"><span class="pre">print_time()</span></code> 内で参照し、<code class="docutils literal notranslate"><span class="pre">time.asctime()</span></code> 関数を呼び出して現在の日付と時間を取得しています。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">print_time</span><span class="p">():</span>
+    <span class="c1"># モジュールスコープで import した timeモジュールを利用</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
+    
+<span class="n">print_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is Wed May 29 12:47:57 2024
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
 <section id="id6">
-<h3>キーワード引数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<h2>引数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<p>関数を定義する際に、ヘッダの括弧の中に関数へ渡す値を引数と言います。</p>
+<p>関数を呼び出す際に引数に値を渡すことで、関数は受け取った値を処理することができます。</p>
+<section id="id7">
+<h3>キーワード引数<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>上記の例では、事前に定義した引数の順番に従って、関数は引数を受け取っています。</p>
 <p>キーワード付き引数（キーワード引数）を使うと、関数は引数の変数名とその値の組みを受け取ることができます。 その際、引数は順不同で関数に渡すことができます。</p>
 <div class="cell docutils container">
@@ -764,8 +827,8 @@ title="Print to PDF"
 <p>位置引数とキーワード引数の両方を使って関数を呼び出す場合には、まず先に位置引数を指定する必要があります。</p>
 </aside>
 </section>
-<section id="id7">
-<h3>デフォルト引数値の指定<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id8">
+<h3>デフォルト引数値の指定<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>デフォルト引数値は、関数の定義時に引数に初期値を指定することによって設定できます。これにより、関数を呼び出すときに引数の値を省略することができます。</p>
 <p>デフォルト引数値を指定するには、引数リスト内で引数の名前の後ろに等号と初期値を指定します。例えば、以下のように関数を定義することができます。</p>
 <div class="cell docutils container">
@@ -791,8 +854,8 @@ Hi, Bob!
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="616f15c4-8380-42f3-99a3-6b5bfd54da8c" name="37aac382-26d1-4411-8b89-5e2714c91629" type="radio">
-</input><label class="sd-tab-label" for="616f15c4-8380-42f3-99a3-6b5bfd54da8c">
+<input checked="checked" id="08dc634b-d31a-4ea2-833a-de4b15ea88a7" name="59fff8ac-9a34-42e5-a2fa-63e82a81e25e" type="radio">
+</input><label class="sd-tab-label" for="08dc634b-d31a-4ea2-833a-de4b15ea88a7">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>被除数と除数を指定し、割り算の結果を順番に計算する関数を作成してください。</p>
 <ul class="simple">
@@ -800,8 +863,8 @@ Hi, Bob!
 <li><p>計算不可能の場合、「計算できません」というエラーを表示してください</p></li>
 </ul>
 </div>
-<input id="adffef38-0f75-455e-9e0e-d2222ae1e2ba" name="37aac382-26d1-4411-8b89-5e2714c91629" type="radio">
-</input><label class="sd-tab-label" for="adffef38-0f75-455e-9e0e-d2222ae1e2ba">
+<input id="fa34e9c6-68a9-434f-933f-0f8997e15f22" name="59fff8ac-9a34-42e5-a2fa-63e82a81e25e" type="radio">
+</input><label class="sd-tab-label" for="fa34e9c6-68a9-434f-933f-0f8997e15f22">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>ユークリッドの互除法の関数を作成してください。</p>
 <ul class="simple">
@@ -811,8 +874,8 @@ Hi, Bob!
 </div>
 </div>
 </section>
-<section id="id8">
-<h3><code class="docutils literal notranslate"><span class="pre">*</span></code>による位置引数の分解・接合(タプル化)<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3><code class="docutils literal notranslate"><span class="pre">*</span></code>による位置引数の分解・接合(タプル化)<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>関数定義の中で引数の一部として<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと、可変個の位置引数がタプルにまとめられてその引数にセットされるようになる。</p>
 <p>この機能は、関数に異なる数の引数を渡す時に便利です。</p>
 <div class="cell docutils container">
@@ -851,8 +914,8 @@ Hi, Bob!
 </div>
 </div>
 </section>
-<section id="id9">
-<h3><code class="docutils literal notranslate"><span class="pre">**</span></code>によるキーワード引数の分解・接合(辞書化)<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id10">
+<h3><code class="docutils literal notranslate"><span class="pre">**</span></code>によるキーワード引数の分解・接合(辞書化)<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>可変個のキーワード引数は、関数定義の中でキーワード引数の数が可変であることを指定する方法です。</p>
 <p>２つのアスタリスク(<code class="docutils literal notranslate"><span class="pre">**</span></code>)を使えば、キーワード引数を1個の辞書にまとめることができます。
 引数の名前は辞書のキー、引数の値は辞書の値になっています。</p>
@@ -891,8 +954,8 @@ c 3
 </ol>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c85a1db2-10ce-4ed4-aa64-0014999aaed1" name="f240babb-9089-4fce-85b8-9c5300ee12c3" type="radio">
-</input><label class="sd-tab-label" for="c85a1db2-10ce-4ed4-aa64-0014999aaed1">
+<input checked="checked" id="56c1ab62-e42f-4bc0-86f6-0b2b47f4b48d" name="36320b6b-bdc2-4e2c-8a27-48c449bd8404" type="radio">
+</input><label class="sd-tab-label" for="56c1ab62-e42f-4bc0-86f6-0b2b47f4b48d">
 実習問題</label><div class="sd-tab-content docutils">
 <p>複数の商品とその価格を受け取り、価格の合計を計算する関数を作成してください。</p>
 </div>
@@ -908,8 +971,8 @@ c 3
 </div>
 </section>
 </section>
-<section id="id10">
-<h2>ラムダ関数<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h2>ラムダ関数<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>ラムダ関数は、簡潔な関数を一行で定義するための手法です。</p>
 <p>関数を定義するための従来の<code class="docutils literal notranslate"><span class="pre">def</span></code>キーワードを使用せずに、<code class="docutils literal notranslate"><span class="pre">lambda</span></code>キーワードを用いて直接関数を記述します。</p>
 <p>ラムダ関数の一般的な構文は以下の通りです：</p>
@@ -948,13 +1011,13 @@ False
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cc1d22e7-ece7-42af-b3c1-b3b66375bf21" name="18ab1c2d-4466-4c7b-bf5a-82d6a755dcfa" type="radio">
-</input><label class="sd-tab-label" for="cc1d22e7-ece7-42af-b3c1-b3b66375bf21">
+<input checked="checked" id="257988d4-9d27-4aef-a269-7d53f031ec8c" name="d5b65bed-b31d-468d-86f1-00a6ccb9a9dd" type="radio">
+</input><label class="sd-tab-label" for="257988d4-9d27-4aef-a269-7d53f031ec8c">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>整数のリストが与えられたとき、そのリストから偶数の要素のみをフィルタリングするラムダ関数を作成してください。</p>
 </div>
-<input id="1ce492b7-8bb5-4d88-a08f-79d379d6ccf9" name="18ab1c2d-4466-4c7b-bf5a-82d6a755dcfa" type="radio">
-</input><label class="sd-tab-label" for="1ce492b7-8bb5-4d88-a08f-79d379d6ccf9">
+<input id="c6337c19-fe4c-4011-8cb7-56404f650090" name="d5b65bed-b31d-468d-86f1-00a6ccb9a9dd" type="radio">
+</input><label class="sd-tab-label" for="c6337c19-fe4c-4011-8cb7-56404f650090">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>浮動小数点数のリストが与えられたとき、そのリストの要素の平均値を計算するラムダ関数を作成してください。</p>
 </div>
