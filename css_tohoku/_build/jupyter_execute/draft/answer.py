@@ -46,8 +46,141 @@ accuracy = accuracy_score(df_clustering["cluster"], df_clustering["target"])
 print(f"クラスタリングの精度: {accuracy}")
 
 
+# シーケンス型（sequence types）とは、データが順序付けられているデータ型のことを指します。Pythonなどのプログラミング言語における主なシーケンス型には以下のようなものがあります：
+# 
+# リスト（List）: 可変的で、異なるデータ型の要素を含むことができます。
+# タプル（Tuple）: 不変的で、一度作成後にはその内容を変更することができません。
+# 文字列（String）: 不変的で、文字の並びを表します。
+# レンジ（Range）: 数値のシーケンスを生成するために使われます。
+
+# In[1]:
+
+
+# 定義された一年の平均日数
+average_days_per_year = 365.2425
+
+# 1日は24時間、1時間は60分、1分は60秒である
+seconds_per_day = 24 * 60 * 60
+
+# 一年の秒数を計算
+seconds_per_year = average_days_per_year * seconds_per_day
+
+# 一年の秒数を分と秒に変換
+minutes_per_year = seconds_per_year // 60  # 整数分のみ取得
+seconds_remaining = seconds_per_year % 60  # 残りの秒数
+
+minutes_per_year, seconds_remaining
+
+
 # In[ ]:
 
 
+# Example 1: check if a string is palindrome or not
 
+my_str = 'aIbohPhoBiA'
+
+# make it suitable for caseless comparison
+my_str = my_str.casefold()
+
+# reverse the string
+rev_str = reversed(my_str)
+
+# check if the string is equal to its reverse
+if list(my_str) == list(rev_str):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
+
+# In[ ]:
+
+
+# Example 2: check if a string is a Palindrome.
+
+string=str(input("Enter string:"))
+if(string==string[::-1]):
+    print("The string is a palindrome")
+else:
+    print("The string isn't a palindrome")
+
+'''
+>>Output/Runtime Test Cases
+     
+Case 1:
+Enter string:madam
+The string is a palindrome
+
+Case 2:
+Enter string:hello
+The string isn't a palindrome
+'''
+
+
+# In[ ]:
+
+
+if num > 1:
+   # check for factors
+   for i in range(2,num):
+        if (num % i) == 0:
+            print(num,"is not a prime number")
+            print(i,"times",num//i,"is",num)
+            break
+   else:
+        print(num,"is a prime number")
+       
+# if input number is less than
+# or equal to 1, it is not prime
+else:
+    print(num,"is not a prime number")
+
+
+# In[ ]:
+
+
+# Example 1: display all the prime numbers within an interval
+
+lower = 900
+upper = 1000
+
+print("Prime numbers between", lower, "and", upper, "are:")
+
+for num in range(lower, upper + 1):
+   # all prime numbers are greater than 1
+   if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)
+    
+
+
+# In[ ]:
+
+
+# Example 1: display the Fibonacci sequence up to n-th term
+
+nterms = int(input("How many terms? "))
+
+# first two terms
+n1, n2 = 0, 1
+count = 0
+
+# check if the number of terms is valid
+if nterms <= 0:
+    print("Please enter a positive integer")
+# if there is only one term, return n1
+elif nterms == 1:
+    print("Fibonacci sequence upto",nterms,":")
+    print(n1)
+# generate fibonacci sequence
+else:
+    print("Fibonacci sequence:")
+    while count < nterms:
+        print(n1)
+        nth = n1 + n2
+        # update values
+        n1 = n2
+        n2 = nth
 
