@@ -35,3 +35,5 @@ parts:
 - caption: 練習問題
   chapters:
   - file: draft/exercise1.ipynb
+  - file: draft/exercise2.ipynb
+  - file: draft/exercise3.ipynb
