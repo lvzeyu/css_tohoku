@@ -297,3 +297,302 @@ average = lambda numbers: sum(numbers) / len(numbers) if numbers else 0
 even_numbers = [x for x in numbers if (lambda y: y % 2 == 0)(x)]
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+class Sphere():
+    
+    def __init__(self,radius):
+        self.radius = radius
+        
+    def volume(self):
+        return (4/3)*3.14*self.radius**3
+    
+    def surface_area(self):
+        return 4 *3.14 * self.radius **2
+    
+
+
+# In[1]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+    def __init__(self, board_size=5):
+        self.board_size = board_size
+        self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+        self.player_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    
+    def calc_distance(self, pos1, pos2):
+        diff_x = pos1[0] - pos2[0]
+        diff_y = pos1[1] - pos2[1]
+        return math.sqrt(diff_x**2 + diff_y**2)
+
+    def move_player(self):
+        current_x, current_y = self.player_pos
+        target_x, target_y = self.suika_pos
+
+        if current_x < target_x:
+            current_x += 1
+        elif current_x > target_x:
+            current_x -= 1
+
+        if current_y < target_y:
+            current_y += 1
+        elif current_y > target_y:
+            current_y -= 1
+
+        self.player_pos = (current_x, current_y)
+        print("プレイヤーが移動しました:", self.player_pos)
+    
+    def play_game(self):
+        while self.suika_pos != self.player_pos:
+            distance = self.calc_distance(self.suika_pos, self.player_pos)
+            print("スイカまでの距離:", distance)
+            self.move_player()
+        
+        print("スイカを見つけました！")
+
+
+# In[4]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+  def __init__(self, board_size=5):
+    self.board_size = board_size
+    self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    self.player_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    self.move_count = 0
+
+  def calc_distance(self, pos1, pos2):
+    diff_x = pos1[0] - pos2[0]
+    diff_y = pos1[1] - pos2[1]
+    return math.sqrt(diff_x**2 + diff_y**2)
+
+  def move_player(self):
+    current_x, current_y = self.player_pos
+    target_x, target_y = self.suika_pos
+
+    if current_x < target_x:
+      current_x += 1
+    elif current_x > target_x:
+      current_x -= 1
+
+    if current_y < target_y:
+      current_y += 1
+    elif current_y > target_y:
+      current_y -= 1
+
+    self.player_pos = (current_x, current_y)
+    self.move_count += 1
+    #print("プレイヤーが移動しました:", self.player_pos)
+
+  def play_game(self):
+    while self.suika_pos != self.player_pos:
+      distance = self.calc_distance(self.suika_pos, self.player_pos)
+      #print("スイカまでの距離:", distance)
+      self.move_player()
+
+    #print("スイカを見つけました！移動数:", self.move_count)
+
+  def calculate_average_moves(self, num_games):
+    total_moves = 0
+    for _ in range(num_games):
+      game = WatermelonHunt(self.board_size)
+      game.play_game()
+      total_moves += game.move_count
+
+    average_moves = total_moves / num_games
+    print(f"board_size={self.board_size} の平均移動数: {average_moves:.2f}")
+    return average_moves
+
+# ゲームを実行
+
+game = WatermelonHunt(board_size=5)
+game.play_game()
+average_moves=game.calculate_average_moves(10)
+
+
+# In[ ]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+  def __init__(self, board_size=5, verbose=True):
+    self.board_size = board_size
+    self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    self.player_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    self.move_count = 0
+    self.verbose = verbose
+
+  def calc_distance(self, pos1, pos2):
+    diff_x = pos1[0] - pos2[0]
+    diff_y = pos1[1] - pos2[1]
+    return math.sqrt(diff_x**2 + diff_y**2)
+
+  def move_player(self):
+    current_x, current_y = self.player_pos
+    target_x, target_y = self.suika_pos
+
+    if current_x < target_x:
+      current_x += 1
+    elif current_x > target_x:
+      current_x -= 1
+
+    if current_y < target_y:
+      current_y += 1
+    elif current_y > target_y:
+      current_y -= 1
+
+    self.player_pos = (current_x, current_y)
+    self.move_count += 1
+    if self.verbose:
+      print("プレイヤーが移動しました:", self.player_pos)
+
+  def play_game(self):
+    while self.suika_pos != self.player_pos:
+      distance = self.calc_distance(self.suika_pos, self.player_pos)
+      if self.verbose:
+        print("スイカまでの距離:", distance)
+      self.move_player()
+
+    if self.verbose:
+      print("スイカを見つけました！移動数:", self.move_count)
+    return self.move_count
+
+  def calculate_average_moves(self, num_games):
+    total_moves = 0
+    for _ in range(num_games):
+      game = WatermelonHunt(self.board_size, verbose=False)
+      total_moves += game.play_game()
+
+    average_moves = total_moves / num_games
+    print(f"board_size={self.board_size} の平均移動数: {average_moves:.2f}")
+
+# ゲームを実行
+
+game = WatermelonHunt(board_size=5, verbose=True)
+move_count = game.play_game()
+print(f"今回の移動数: {move_count}")
+game.calculate_average_moves(10)
+
+
+# In[4]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+  def __init__(self, player_num, board_size=5, verbose=True):
+    self.player_num = player_num
+    self.board_size = board_size
+    self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+    self.player_pos = [(random.randrange(0, self.board_size), random.randrange(0, self.board_size)) for _ in range(player_num)]
+    self.move_count = [0]*player_num
+    self.verbose = verbose
+
+  def calc_distance(self, pos1, pos2):
+    diff_x = pos1[0] - pos2[0]
+    diff_y = pos1[1] - pos2[1]
+    return math.sqrt(diff_x**2 + diff_y**2)
+
+  def move_player(self, player_index):
+    current_x, current_y = self.player_pos[player_index]
+    target_x, target_y = self.suika_pos
+
+    if current_x < target_x:
+      current_x += 1
+    elif current_x > target_x:
+      current_x -= 1
+
+    if current_y < target_y:
+      current_y += 1
+    elif current_y > target_y:
+      current_y -= 1
+
+    self.player_pos[player_index] = (current_x, current_y)
+    self.move_count[player_index] += 1
+    if self.verbose:
+      print(f"プレイヤー{player_index}が移動しました:", self.player_pos[player_index])
+
+  def play_game(self):
+    while True:
+      for i in range(self.player_num):
+        distance = self.calc_distance(self.suika_pos, self.player_pos[i])
+        if self.verbose:
+          print(f"プレイヤー{i}からスイカまでの距離:", distance)
+        self.move_player(i)
+        if self.suika_pos == self.player_pos[i]:
+          if self.verbose:
+            print(f"プレイヤー{i}がスイカを見つけました！移動数:", self.move_count[i])
+          return i, self.move_count[i]
+
+  def calculate_average_moves(self, num_games):
+    total_moves = [0]*self.player_num
+    for _ in range(num_games):
+      game = WatermelonHunt(self.player_num, self.board_size, verbose=False)
+      winner, moves = game.play_game()
+      total_moves[winner] += moves
+
+    average_moves = [moves / num_games for moves in total_moves]
+    for i, avg in enumerate(average_moves):
+      print(f"プレイヤー{i}のboard_size={self.board_size} の平均移動数: {avg:.2f}")
+
+# ゲームを実行
+
+game = WatermelonHunt(board_size=5, player_num=3, verbose=True)
+move_count = game.play_game()
+print(f"今回の勝者の移動数: {move_count}")
+
+
+# In[5]:
+
+
+game.calculate_average_moves(10)
+
+
+# In[ ]:
+
+
+class Person:
+    def __init__(self, name, birth, current_year):
+        self.name = name
+        self.birth = birth
+        self.current_year = current_year
+
+    def say_hello(self):
+        print("Hello, my name is", self.name)
+    
+    def print_birth(self):
+        print("{} was born in {}".format(self.name, self.birth))
+
+    def print_death(self, death):
+        print("{} died in {}".format(self.name, death))
+
+    def age(self):
+        return self.current_year - self.birth
+
+# インスタンス化とテスト
+current_year = 2023
+person = Person("John Doe", 1980, current_year)
+
+person.say_hello()
+person.print_birth()
+person.print_death(2050)
+print("{} is {} years old.".format(person.name, person.age()))
+
