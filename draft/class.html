@@ -249,6 +249,11 @@ const thebe_selector_output = ".output, .cell_output"
    練習課題
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -474,6 +479,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   基本概念
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#class">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -484,34 +494,34 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id3">
      初期化
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      メソッド
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id5">
      属性とメソッドの追加
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    親クラスからの継承
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    集約
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    特殊メソッド
   </a>
  </li>
@@ -535,6 +545,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   基本概念
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#class">
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -545,34 +560,34 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id3">
      初期化
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id4">
      メソッド
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id5">
      属性とメソッドの追加
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id6">
    親クラスからの継承
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id7">
    集約
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    特殊メソッド
   </a>
  </li>
@@ -588,13 +603,27 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>オブジェクトとクラス<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>今までさまざまな箇所で触れたように、Pythonに含まれるすべての要素がオブジェクトとして扱われます。</p>
-<p>オブジェクトは、<strong>データ</strong>と<strong>メソッド</strong>を持っています。</p>
-<p>例えば、<code class="docutils literal notranslate"><span class="pre">num=10</span></code>と書けば、値10の<strong>整数型のオブジェクト</strong>を作って、numという名前にオブジェクト参照を代入できます。整数型のオブジェクトは加算や乗算などのメソッドを持つため、<code class="docutils literal notranslate"><span class="pre">num+10</span></code>や<code class="docutils literal notranslate"><span class="pre">num*10</span></code>などの計算は可能です。</p>
-<p>もちろん、<code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code>や<code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span></code>などの文字列もオプジェットであり、メソッドを持っています。文字列のオプジェットに定義されるメソッドによる、<code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;+&quot;dog&quot;</span></code>で文字列の結合のような文字列のオプジェット特有な操作が可能です。</p>
+<section id="id2">
+<h2>基本概念<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>今までさまざまな箇所で触れたように、Pythonに含まれるすべての要素がオブジェクトとして扱われます。そのゆえに、pythonは<strong>オブジェクト指向プログラミング</strong>の一種になります。</p>
+<p><strong>オブジェクト</strong>とは、データ（属性）とそれを操作する関数（メソッド）をカプセル化したものです。</p>
+<p>例えば、「customer」というオブジェクトで考えてみます。</p>
+<ul class="simple">
+<li><p>customerでは、「email」や「phone」などのプロファイルがあります。このようなcustomerが持つ特徴を「属性」といいます。</p></li>
+<li><p>customerでは、「place order」や「cancel order」などの行動を行うことができます。このようなcustomerが取ることのできるアクションを「メソッド」といいます。</p></li>
+</ul>
+<p>各customer独自の属性とメソッドを持っていますが、「形式」は共通しています。</p>
+<p>あるcustomerを定義するために必要される属性とメソッドを定義している「テンプレート」に相当するものは、「<strong>クラス</strong>」といいます。</p>
+<p>「テンプレート」に内容を記入することで、作成される一人一人のcustomerが「<strong>インスタンス</strong>」といいます。</p>
+<p><img alt="" src="../_images/object_example.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num=10</span></code>と書けば、値10の<strong>整数型のオブジェクト</strong>を作って、numという名前にオブジェクト参照を代入できます。整数型のオブジェクトは加算や乗算などのメソッドを持つため、<code class="docutils literal notranslate"><span class="pre">num+10</span></code>や<code class="docutils literal notranslate"><span class="pre">num*10</span></code>などの計算は可能です。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code>や<code class="docutils literal notranslate"><span class="pre">&quot;dog&quot;</span></code>などの文字列もオプジェットであり、メソッドを持っています。文字列のオプジェットに定義されるメソッドによる、<code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;+&quot;dog&quot;</span></code>で文字列の結合のような文字列のオプジェット特有な操作が可能です。</p></li>
+</ul>
 <p>Pythonのオブジェクトは<strong>クラス</strong>に基づいて作成されます。クラスはオブジェクトの設計図であり、オブジェクトが持つデータとメソッドを定義します。</p>
 <p>Pythonには、文字列、リスト、辞書などの標準データ型を作るための組み込みクラスがあります。</p>
 <p>新しいオブジェクトを作成する時、オブジェクトの内容と機能を規定するクラスを作る必要があります。</p>
+</section>
 <section id="class">
 <h2><code class="docutils literal notranslate"><span class="pre">class</span></code>によるクラスの定義<a class="headerlink" href="#class" title="Permalink to this headline">#</a></h2>
 <p>一般にクラス定義は、以下のような形をしています。</p>
@@ -607,12 +636,13 @@ title="Print to PDF"
         <span class="n">実行文</span>
 </pre></div>
 </div>
-<section id="id2">
-<h3>初期化<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>オプジェットを作成する際値を代入する場合は多いです。その場合。<code class="docutils literal notranslate"><span class="pre">__init__</span></code>という特殊なメソッドで、クラスのインスタンス化時に自動的に初期設定を行います。</p>
-</section>
 <section id="id3">
-<h3>メソッド<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>初期化<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>オプジェットを作成する際、なんらかの値を代入することは必要される場合が多いです。</p>
+<p>その場合、<code class="docutils literal notranslate"><span class="pre">__init__</span></code>という特殊なメソッドで、クラスのインスタンス化時に自動的に初期設定を行います。これにより、同じクラスの異なるインスタンスが異なる値を持つことができます。</p>
+</section>
+<section id="id4">
+<h3>メソッド<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>ここで示したように、<strong>メソッド</strong>は、クラスの中の関数のことです。</p>
 <p>メソッド定義は関数定義と同じ形をしていますが、その最初の引数には慣例として<code class="docutils literal notranslate"><span class="pre">self</span></code>という名前を付けます。 この引数には、メソッドが呼び出されたオブジェクト自身が渡されます。メソッド内で自身の属性や他のメソッドにアクセスするために使用されます。</p>
 <div class="cell docutils container">
@@ -642,7 +672,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>の値をオブジェクトに格納する</p></li>
 <li><p>新しいオブジェクトを返す、<code class="docutils literal notranslate"><span class="pre">Marx</span></code>という名前を与える</p></li>
 </ul>
-<p>オブジェクトにおける値は、属性としてオブジェクトとともに保存されますので、直接に読み書きできます。</p>
+<p>オブジェクトにおける値は、属性としてオブジェクトとともに保存されますので、オプジェットの外から直接に読み書きできます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marx</span><span class="o">.</span><span class="n">name</span>
@@ -704,8 +734,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id4">
-<h3>属性とメソッドの追加<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h3>属性とメソッドの追加<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>同じような形式で、属性とメソッドの追加しましょう。</p>
 <p>例えば、<code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">birth</span></code>属性と<code class="docutils literal notranslate"><span class="pre">print_birth()</span></code>メソッドを追加するなら</p>
 <div class="cell docutils container">
@@ -744,26 +774,26 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c6074adf-0a62-400a-aa2a-488e776e715d" name="791dd562-27a4-4b8c-8757-a40a9e185a43" type="radio">
-</input><label class="sd-tab-label" for="c6074adf-0a62-400a-aa2a-488e776e715d">
+<input checked="checked" id="7e080b54-4a22-47c9-ba15-2df083c1558e" name="4a522f9d-187e-48ce-8e06-b098cd4749d4" type="radio">
+</input><label class="sd-tab-label" for="7e080b54-4a22-47c9-ba15-2df083c1558e">
 実習問題1</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性を追加してください。<code class="docutils literal notranslate"><span class="pre">death</span></code>で没年を受け取って、<code class="docutils literal notranslate"><span class="pre">print_death()</span></code>メソッドを追加する。</p>
 </div>
-<input id="4633bd0c-0bf2-44a7-b1ca-d868df1a5c15" name="791dd562-27a4-4b8c-8757-a40a9e185a43" type="radio">
-</input><label class="sd-tab-label" for="4633bd0c-0bf2-44a7-b1ca-d868df1a5c15">
+<input id="9835ba4b-1925-4ab6-af54-56e5485d1c0d" name="4a522f9d-187e-48ce-8e06-b098cd4749d4" type="radio">
+</input><label class="sd-tab-label" for="9835ba4b-1925-4ab6-af54-56e5485d1c0d">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>に<code class="docutils literal notranslate"><span class="pre">age()</span></code>年齢を計算するメソッドを追加してください。</p>
 </div>
-<input id="1aea89a2-9dcb-409c-be28-4d03463e7416" name="791dd562-27a4-4b8c-8757-a40a9e185a43" type="radio">
-</input><label class="sd-tab-label" for="1aea89a2-9dcb-409c-be28-4d03463e7416">
+<input id="554865ea-6a97-4f89-87e2-fc282193d1ca" name="4a522f9d-187e-48ce-8e06-b098cd4749d4" type="radio">
+</input><label class="sd-tab-label" for="554865ea-6a97-4f89-87e2-fc282193d1ca">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Personクラス</span></code>をインスタント化にしてくだい。その際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>の値として2023を受け取って、年齢を計算してください。</p>
 </div>
 </div>
 </section>
 </section>
-<section id="id5">
-<h2>親クラスからの継承<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h2>親クラスからの継承<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>継承は、既存のクラスをもとにして、変更部分だけを与えることにより、 新たなクラスを定義する機能です。</p>
 <p>元のクラスは親クラスまたはスーパークラス、基底クラス、新しいクラスは子またはサブクラスと呼ばれます。</p>
 <p>以下の例では、<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスをもとにして<code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスを定義しています。</p>
@@ -899,8 +929,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="86f29184-a04d-4f09-9e6d-6da965e644b1" name="ff21e09d-0ac4-43cc-b727-f2c6d44bf7a3" type="radio">
-</input><label class="sd-tab-label" for="86f29184-a04d-4f09-9e6d-6da965e644b1">
+<input checked="checked" id="768c801a-a312-4961-a79f-bf8ac033866f" name="c6b8b042-626d-474a-9dc9-08739e236d0f" type="radio">
+</input><label class="sd-tab-label" for="768c801a-a312-4961-a79f-bf8ac033866f">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Student</span></code>クラスが<code class="docutils literal notranslate"><span class="pre">Person</span></code>クラスを継承する際、<code class="docutils literal notranslate"><span class="pre">current_year</span></code>という属性も継承してくだい。</p></li>
@@ -909,8 +939,8 @@ I am a student.
 </div>
 </div>
 </section>
-<section id="id6">
-<h2>集約<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h2>集約<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Pythonにおけるクラスの集約（aggregation）とは、あるクラスが他のクラスのインスタンスをメンバーとして持つことを指します。つまり、1つのクラスが他のクラスを部品として利用し、それらのクラスの機能やデータを組み合わせて利用することができるということです。</p>
 <p>クラスの集約は、関連性のあるオブジェクトを独立して定義し、それらを組み合わせてより複雑な構造を作成する場合に便利です。</p>
 <div class="cell docutils container">
@@ -976,8 +1006,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="665bc6ea-8e95-4841-88ee-8a297c263b38" name="be50355b-26ba-4c64-bb8d-9f7ee94f1259" type="radio">
-</input><label class="sd-tab-label" for="665bc6ea-8e95-4841-88ee-8a297c263b38">
+<input checked="checked" id="a0f9d65a-0358-4838-b7f7-2cf339400532" name="c2b7a1d5-a3b9-447c-b44d-65d4c77e9dd9" type="radio">
+</input><label class="sd-tab-label" for="a0f9d65a-0358-4838-b7f7-2cf339400532">
 実習問題</label><div class="sd-tab-content docutils">
 <ol class="simple">
 <li><p>Majorというクラスを作成し、専門分野に関する情報を保持する。</p></li>
@@ -994,8 +1024,8 @@ I am a student.
 </div>
 </div>
 </section>
-<section id="id7">
-<h2>特殊メソッド<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h2>特殊メソッド<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">num=1+9</span></code>のようなコードを実行する際、値1と値9を持つ整数オブジェクトは、<code class="docutils literal notranslate"><span class="pre">+</span></code>が数学の足し算の意味で使われています</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name='Karl'+'Marx'</span></code>のようなコードを実行する際、<code class="docutils literal notranslate"><span class="pre">+</span></code>が文字列の結合の意味で使われています。</p></li>
@@ -1236,8 +1266,8 @@ I am a student.
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="70fbe33f-20d9-4d61-bb50-50777e659f63" name="101faf28-2442-4ae1-994c-3cfa3332f5d9" type="radio">
-</input><label class="sd-tab-label" for="70fbe33f-20d9-4d61-bb50-50777e659f63">
+<input checked="checked" id="a895f37a-515e-4dae-bc40-e04b89cda29b" name="8b696bee-02c6-45e6-aa22-186c764b3195" type="radio">
+</input><label class="sd-tab-label" for="a895f37a-515e-4dae-bc40-e04b89cda29b">
 実習問題</label><div class="sd-tab-content docutils">
 <p>クラスPersonに二人の年齢は等しいか、異なるか、より小さいか、より大きいか、を判断する演算を特殊メソッドで定義してください。</p>
 </div>
