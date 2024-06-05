@@ -184,3 +184,116 @@ else:
         n1 = n2
         n2 = nth
 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+import random
+import math
+
+BOARD_SIZE = 5  # ボードサイズを定義
+
+def generate_position(board_size):
+    # スイカとプレイヤーの初期位置をランダムに生成
+    return (random.randrange(0, board_size), random.randrange(0, board_size))
+
+def determine_move(player_pos, target_pos):
+    # スイカに向かってプレイヤーを移動させる方向を決定
+    current_x, current_y = player_pos
+    target_x, target_y = target_pos
+
+    move_x = 1 if current_x < target_x else -1 if current_x > target_x else 0
+    move_y = 1 if current_y < target_y else -1 if current_y > target_y else 0
+
+    return (move_x, move_y)
+
+def move_player(player_pos, move_x, move_y):
+    # プレイヤーの位置を更新
+    new_x = player_pos[0] + move_x
+    new_y = player_pos[1] + move_y
+    return (new_x, new_y)
+
+def play_game(board_size):
+    suika_pos = generate_position(board_size)
+    player_pos = generate_position(board_size)
+
+    while suika_pos != player_pos:
+        move_x, move_y = determine_move(player_pos, suika_pos)
+        player_pos = move_player(player_pos, move_x, move_y)
+        print("プレイヤーが移動しました:", player_pos)
+
+    print("スイカを見つけました！")
+
+# ゲームを開始
+play_game(BOARD_SIZE)
+
+
+# In[1]:
+
+
+import random
+import math
+
+BOARD_SIZE = 5  # ボードサイズを定義
+NUM_PLAYERS = 3  # プレイヤーの数
+
+def generate_position(board_size):
+    # スイカとプレイヤーの初期位置をランダムに生成
+    return (random.randrange(0, board_size), random.randrange(0, board_size))
+
+def determine_move(player_pos, target_pos):
+    # スイカに向かってプレイヤーを移動させる方向を決定
+    current_x, current_y = player_pos
+    target_x, target_y = target_pos
+
+    move_x = 1 if current_x < target_x else -1 if current_x > target_x else 0
+    move_y = 1 if current_y < target_y else -1 if current_y > target_y else 0
+
+    return (move_x, move_y)
+
+def move_player(player_pos, move_x, move_y):
+    # プレイヤーの位置を更新
+    new_x = player_pos[0] + move_x
+    new_y = player_pos[1] + move_y
+    return (new_x, new_y)
+
+def play_game(board_size, num_players):
+    suika_pos = generate_position(board_size)
+    player_positions = [generate_position(board_size) for _ in range(num_players)]
+
+    print("スイカの位置:", suika_pos)
+
+    winner = None
+    while winner is None:
+        for i in range(num_players):
+            if player_positions[i] == suika_pos:
+                winner = i
+                break
+            
+            move_x, move_y = determine_move(player_positions[i], suika_pos)
+            player_positions[i] = move_player(player_positions[i], move_x, move_y)
+            print(f"プレイヤー {i + 1} が移動しました:", player_positions[i])
+
+            if player_positions[i] == suika_pos:
+                winner = i
+                break
+
+    print(f"プレイヤー {winner + 1} がスイカを見つけました！")
+
+# ゲームを開始
+play_game(BOARD_SIZE, NUM_PLAYERS)
+
+
+# In[ ]:
+
+
+average = lambda numbers: sum(numbers) / len(numbers) if numbers else 0
+even_numbers = [x for x in numbers if (lambda y: y % 2 == 0)(x)]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
