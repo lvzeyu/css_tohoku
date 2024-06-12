@@ -249,6 +249,16 @@ const thebe_selector_output = ".output, .cell_output"
    練習課題
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise4.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -488,6 +498,16 @@ title="Print to PDF"
    ファイルの実行
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#argparse">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     argparse
+    </span>
+   </code>
+   によるコマンドラインオプションの設定
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -520,6 +540,16 @@ title="Print to PDF"
     </span>
    </code>
    ファイルの実行
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#argparse">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     argparse
+    </span>
+   </code>
+   によるコマンドラインオプションの設定
   </a>
  </li>
 </ul>
@@ -599,6 +629,57 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> はモジュールとして読み込まれた時にはモジュール名でしたが、スクリプトとして実行された場合には、<strong>main</strong> に変わります。この性質を利用することで、スクリプトとして実行された場合にのみ、ある処理を実行したいと言った処理を実現できます。</p></li>
 <li><p>この仕組みにより、<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">ファイル.py</span></code>スクリプトとして実行された場合、<code class="docutils literal notranslate"><span class="pre">__name__</span></code>変数には<code class="docutils literal notranslate"><span class="pre">__main__</span></code>という値が割り当てられます。したがって、<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>のブロック内のコード <code class="docutils literal notranslate"><span class="pre">main()</span></code>関数が呼び出され、スクリプトから直接に実行されます。</p></li>
 </ul>
+</section>
+<section id="argparse">
+<h2><code class="docutils literal notranslate"><span class="pre">argparse</span></code>によるコマンドラインオプションの設定<a class="headerlink" href="#argparse" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">argparse</span></code>はコマンドライン引数を設定・処理するためのツールです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">.py</span></code>フィアルで<code class="docutils literal notranslate"><span class="pre">argparse</span></code>を使うことで、コマンドラインからプログラムに引数を渡す、動作を制御することができます。</p>
+<p>「コマンドライン引数」とは、以下のようにPythonファイルを呼び出す際に渡せる値のことです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">n</span> <span class="n">cardene</span> <span class="o">--</span><span class="n">age</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ArgumentParser</span></code>クラスを使用して、プログラムの説明と引数を定義します。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+                    <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;ProgramName&#39;</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;What the program does&#39;</span><span class="p">,</span>
+                    <span class="n">epilog</span><span class="o">=</span><span class="s1">&#39;Text at the bottom of help&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add_argument</span></code> メソッドを使って、引数を定義します。</p></li>
+<li><p>引数の名前、オプション、型、デフォルト値などを指定することができます。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--age&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;年齢&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--favorite_color&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">],</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;好きな色&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_StoreAction(option_strings=[&#39;--favorite_color&#39;], dest=&#39;favorite_color&#39;, nargs=None, const=None, default=None, type=None, choices=[&#39;red&#39;, &#39;green&#39;, &#39;blue&#39;], required=False, help=&#39;好きな色&#39;, metavar=None)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Google Colab で Drive をマウントし、ディレクトリを変更するには、以下の手順を実行します。</p>
+<ul class="simple">
+<li><p>以下のコードを実行して、Drive をマウントします。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">google.colab</span> <span class="pre">import</span> <span class="pre">drive</span> <span class="pre">drive.mount('/content/drive')</span></code></p>
+<ul class="simple">
+<li><p>os.chdir() 関数を使用してディレクトリを変更できます。</p></li>
+</ul>
+</div>
 </section>
 </section>
 

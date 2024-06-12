@@ -251,6 +251,16 @@ const thebe_selector_output = ".output, .cell_output"
    練習課題
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise4.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -719,8 +729,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.53101243 0.76711553]
- [0.52910291 0.3487377 ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.24075018 0.07415293]
+ [1.33605281 1.03841772]]
 </pre></div>
 </div>
 </div>
@@ -1186,7 +1196,7 @@ Name: sepal_width, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x137f3bf70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x140faa800&gt;
 </pre></div>
 </div>
 <img alt="../_images/Intro_25_1.png" src="../_images/Intro_25_1.png" />
@@ -1345,6 +1355,17 @@ Name: sepal_width, dtype: float64
 </li>
 <li><p>授業中では以上の作業に関する説明が省略しますので、不明点があれば必ず次回の授業までに聞いてください。</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Google Colab で Drive をマウントし、ディレクトリを変更するには、以下の手順を実行します。</p>
+<ul class="simple">
+<li><p>以下のコードを実行して、Drive をマウントします。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">google.colab</span> <span class="pre">import</span> <span class="pre">drive</span> <span class="pre">drive.mount('/content/drive')</span></code></p>
+<ul class="simple">
+<li><p>os.chdir() 関数を使用してディレクトリを変更できます。</p></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
