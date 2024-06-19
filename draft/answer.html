@@ -1329,6 +1329,170 @@ board_size=5 の平均移動数: 2.40
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  線形回帰モデルに基づいてデータポイントを生成する関数</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    beta_0: 切片 (true value)</span>
+<span class="sd">    beta_1: 傾き (true value)</span>
+<span class="sd">    n: データ数</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    説明変数 (x) と目的変数 (y) の NumPy 配列</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">epsilon</span>
+
+  <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  線形回帰モデルのパラメータを推定する関数</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    x: 説明変数の NumPy 配列</span>
+<span class="sd">    y: 目的変数の NumPy 配列</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    推定されたパラメータ (beta_1, beta_0)</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># 平均値の計算</span>
+  <span class="n">x_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">y_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+  <span class="c1"># β₁の推定</span>
+  <span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_mean</span><span class="p">))</span>
+  <span class="n">denominator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="n">beta_hat</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
+
+  <span class="c1"># β₀の推定</span>
+  <span class="n">alpha_hat</span> <span class="o">=</span> <span class="n">y_mean</span> <span class="o">-</span> <span class="n">beta_hat</span> <span class="o">*</span> <span class="n">x_mean</span>
+
+  <span class="k">return</span> <span class="n">alpha_hat</span><span class="p">,</span> <span class="n">beta_hat</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define true parameter values</span>
+<span class="n">beta_0</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="c1"># Define data sizes</span>
+<span class="n">data_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">data_sizes</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">beta_hat</span><span class="p">,</span> <span class="n">alpha_hat</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data size: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, Estimated beta_0: </span><span class="si">{</span><span class="n">alpha_hat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Estimated beta_1: </span><span class="si">{</span><span class="n">beta_hat</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data size: 20, Estimated beta_0: 0.64, Estimated beta_1: 3.52
+Data size: 50, Estimated beta_0: 0.75, Estimated beta_1: 2.80
+Data size: 100, Estimated beta_0: 0.81, Estimated beta_1: 2.51
+Data size: 200, Estimated beta_0: 0.78, Estimated beta_1: 2.64
+Data size: 500, Estimated beta_0: 0.81, Estimated beta_1: 2.46
+Data size: 1000, Estimated beta_0: 0.78, Estimated beta_1: 2.49
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loop_n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">alpha_hat_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">beta_hat_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loop_n</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">beta_hat</span><span class="p">,</span> <span class="n">alpha_hat</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">alpha_hat_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alpha_hat</span><span class="p">)</span>
+    <span class="n">beta_hat_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">beta_hat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha_hat_list</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">alpha_hat_list</span><span class="p">)</span>
+<span class="n">beta_hat_list</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">beta_hat_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;平均 beta_0 推定値: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">alpha_hat_list</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, 標準偏差: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">alpha_hat_list</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;平均 beta_1 推定値: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">beta_hat_list</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, 標準偏差: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">beta_hat_list</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均 beta_0 推定値: 0.8088, 標準偏差: 0.1282
+平均 beta_1 推定値: 2.4248, 標準偏差: 0.7118
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define true parameter values</span>
+<span class="n">beta_0</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="c1"># Define data sizes</span>
+<span class="n">data_sizes</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
+
+<span class="c1"># Number of subplots (rows and columns)</span>
+<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>  <span class="c1"># Adjust as needed for your data sizes</span>
+
+<span class="c1"># Create a figure and subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Iterate through data sizes and subplots</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">data_sizes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">cols</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Calculate index for each subplot</span>
+
+    <span class="c1"># Generate data, estimate parameters, and plot</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">beta_0</span><span class="p">,</span> <span class="n">beta_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">beta_hat</span><span class="p">,</span> <span class="n">alpha_hat</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">x_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">y_line</span> <span class="o">=</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">x_line</span>  <span class="c1"># True line using true parameters</span>
+    <span class="n">y_est_line</span> <span class="o">=</span> <span class="n">alpha_hat</span> <span class="o">+</span> <span class="n">beta_hat</span> <span class="o">*</span> <span class="n">x_line</span>  <span class="c1"># Estimated line</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Access current subplot</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">y_line</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True Line&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># True line</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_line</span><span class="p">,</span> <span class="n">y_est_line</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Regression Line&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout and display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/answer_33_0.png" src="../_images/answer_33_0.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
