@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>誤差逆伝播法 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
   
@@ -18,54 +18,52 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draft/backpropagation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -73,7 +71,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -107,12 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -127,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -139,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
+    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -282,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="ソースリポジトリ"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -299,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/backpropagation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="問題を報告"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -320,7 +348,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -329,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/draft/backpropagation.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="ソースファイルをダウンロード"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -347,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="PDFに印刷"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -367,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="全画面モード"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -379,20 +407,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -415,7 +445,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> 目次 </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -458,27 +488,27 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>誤差逆伝播法<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<div class="section" id="id2">
-<h2>前回の内容<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>誤差逆伝播法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>前回の内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>逆伝播が<strong>連鎖律</strong>によって成り立つ：合成関数の偏微分は、<strong>連鎖律によって複数の偏微分の積の形に変形できる</strong>。</p></li>
 <li><p>簡単のレイヤーで逆伝播を実装することで、逆伝播の原理を理解した</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>今回の内容<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id3">
+<h2>今回の内容<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>ニューラルネットワーク全体に対して誤差逆伝播法によるパラメータを更新する流れを理解する。</p></li>
 <li><p>ニューラルネットワークで誤差逆伝播法で複数のパラメータ最適化を実装し、手書き数字を識別する。</p></li>
 </ul>
 <p><img alt="誤差逆伝播法 (backpropagation) の計算過程" src="https://tutorials.chainer.org/ja/_images/13_backpropagation.gif" /></p>
-</div>
-<div class="section" id="affine">
-<h2>Affineレイヤー<a class="headerlink" href="#affine" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="affine">
+<h2>Affineレイヤー<a class="headerlink" href="#affine" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \mathbf{Y} = \mathbf{X}\mathbf{W}+\mathbf{B}
@@ -497,8 +527,8 @@ w_{12} &amp; w_{22} &amp; w_{32}
 \end{pmatrix}
 \end{split}\]</div>
 <p>出力<span class="math notranslate nohighlight">\(\boldsymbol{Y}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4131697-4997-4f4f-b4d7-5accafff28f3">
-<span class="eqno">()<a class="headerlink" href="#equation-a4131697-4997-4f4f-b4d7-5accafff28f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e8c91f3-5efb-4720-b678-5c12fd1e5013">
+<span class="eqno">()<a class="headerlink" href="#equation-0e8c91f3-5efb-4720-b678-5c12fd1e5013" title="Permalink to this equation">#</a></span>\[\begin{align}
 \boldsymbol{Y} &amp;= \boldsymbol{X} \cdot \boldsymbol{W} \\
 &amp;=
 \begin{pmatrix}
@@ -518,8 +548,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix}　\tag{1.1}
 \end{align}\]</div>
 <p>となります。 損失関数<span class="math notranslate nohighlight">\(L\)</span>の入力<span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>による偏微分は<span class="math notranslate nohighlight">\(x_1, x_2\)</span>が<span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span>に出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bfe12eb8-c9a1-4319-aae0-445ef5eef7d3">
-<span class="eqno">()<a class="headerlink" href="#equation-bfe12eb8-c9a1-4319-aae0-445ef5eef7d3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b147bd71-ca69-4075-ba5a-da4150ba8645">
+<span class="eqno">()<a class="headerlink" href="#equation-b147bd71-ca69-4075-ba5a-da4150ba8645" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{X}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial x_1} &amp; \frac{\partial L}{\partial x_2}
@@ -530,8 +560,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{pmatrix} 
 \end{align}\]</div>
 <p>ここで</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c376718c-0e67-4fee-85e9-c82dabb87085">
-<span class="eqno">()<a class="headerlink" href="#equation-c376718c-0e67-4fee-85e9-c82dabb87085" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a6945765-573d-4ea7-895b-0cc526bcb60b">
+<span class="eqno">()<a class="headerlink" href="#equation-a6945765-573d-4ea7-895b-0cc526bcb60b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{Y}} \cdot \frac{\partial \boldsymbol{Y}}{\partial x_1} = 
 \begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
@@ -545,8 +575,8 @@ y_1 &amp; y_2 &amp; y_3
 \end{align}\]</div>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b02a937-6142-4493-9e03-1491151aff5b">
-<span class="eqno">()<a class="headerlink" href="#equation-3b02a937-6142-4493-9e03-1491151aff5b" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-9e18375f-8d17-48fb-a142-b3732bab49e2">
+<span class="eqno">()<a class="headerlink" href="#equation-9e18375f-8d17-48fb-a142-b3732bab49e2" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -555,8 +585,8 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a906f45-c310-4fa9-9bea-61b0a93b1238">
-<span class="eqno">()<a class="headerlink" href="#equation-6a906f45-c310-4fa9-9bea-61b0a93b1238" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-d6bc4d2a-0991-476c-9267-7938da911cbb">
+<span class="eqno">()<a class="headerlink" href="#equation-d6bc4d2a-0991-476c-9267-7938da911cbb" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -565,12 +595,12 @@ y_1 &amp; y_2 &amp; y_3
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f52a7d5-2ff3-4d4b-830c-d28160f5e1b4">
-<span class="eqno">()<a class="headerlink" href="#equation-8f52a7d5-2ff3-4d4b-830c-d28160f5e1b4" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-746e08cc-b02e-49c3-9b5d-0cd53e6cddf7">
+<span class="eqno">()<a class="headerlink" href="#equation-746e08cc-b02e-49c3-9b5d-0cd53e6cddf7" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c56f0a04-2096-41f7-a58c-d6bdb4afc34d">
-<span class="eqno">()<a class="headerlink" href="#equation-c56f0a04-2096-41f7-a58c-d6bdb4afc34d" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-85362a7d-4be7-4208-880d-85664d90b31b">
+<span class="eqno">()<a class="headerlink" href="#equation-85362a7d-4be7-4208-880d-85664d90b31b" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -579,8 +609,8 @@ w_{31} &amp; w_{32}
 \end{aligned}</p>
 <p>\begin{aligned}
 <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{X}}\)</span> =</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7aa9c7d-bcdd-4f88-89fe-9a91a7ad1232">
-<span class="eqno">()<a class="headerlink" href="#equation-d7aa9c7d-bcdd-4f88-89fe-9a91a7ad1232" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-dae5c282-8d82-49ab-93b9-dd55a1763ebe">
+<span class="eqno">()<a class="headerlink" href="#equation-dae5c282-8d82-49ab-93b9-dd55a1763ebe" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} \frac{\partial y_1}{\partial x_1} +
 \frac{\partial L}{\partial y_2} \frac{\partial y_2}{\partial x_1} +
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_1} &amp;
@@ -589,8 +619,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} \frac{\partial y_3}{\partial x_2} 
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9306b810-9989-4be9-b6e2-040f0d482214">
-<span class="eqno">()<a class="headerlink" href="#equation-9306b810-9989-4be9-b6e2-040f0d482214" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-5acc3d8b-9729-45c4-8d5d-c79b09495dd5">
+<span class="eqno">()<a class="headerlink" href="#equation-5acc3d8b-9729-45c4-8d5d-c79b09495dd5" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} w_{11} +
 \frac{\partial L}{\partial y_2} w_{21} +
 \frac{\partial L}{\partial y_3} w_{31} &amp;
@@ -599,12 +629,12 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial y_3} w_{32}
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-77cd9708-4f97-4f55-aefe-62e0873cb02e">
-<span class="eqno">()<a class="headerlink" href="#equation-77cd9708-4f97-4f55-aefe-62e0873cb02e" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-607fc0c6-f5cd-4601-b7ed-0ed1ff2c594b">
+<span class="eqno">()<a class="headerlink" href="#equation-607fc0c6-f5cd-4601-b7ed-0ed1ff2c594b" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 \frac{\partial L}{\partial y_1} &amp; \frac{\partial L}{\partial y_2} &amp; \frac{\partial L}{\partial y_3}
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8cdbd9ee-400c-4b92-a15c-772666e3f7e7">
-<span class="eqno">()<a class="headerlink" href="#equation-8cdbd9ee-400c-4b92-a15c-772666e3f7e7" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1af4f63b-1591-4ca5-a405-b32fe13ab608">
+<span class="eqno">()<a class="headerlink" href="#equation-1af4f63b-1591-4ca5-a405-b32fe13ab608" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 w_{11} &amp; w_{12} \\
 w_{21} &amp; w_{22} \\
 w_{31} &amp; w_{32}
@@ -612,8 +642,8 @@ w_{31} &amp; w_{32}
 <p>= <span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{Y}}\cdot \boldsymbol{W}^T\)</span>
 \end{aligned}</p>
 <p>一方、損失関数<span class="math notranslate nohighlight">\(L\)</span>の重み<span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span>による偏微分は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5900bb53-cb98-480c-bdfb-d3ee50906c78">
-<span class="eqno">()<a class="headerlink" href="#equation-5900bb53-cb98-480c-bdfb-d3ee50906c78" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2bf11fd9-8ccf-4c8c-9dc6-1b8ccbebcdfa">
+<span class="eqno">()<a class="headerlink" href="#equation-2bf11fd9-8ccf-4c8c-9dc6-1b8ccbebcdfa" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -621,8 +651,8 @@ w_{31} &amp; w_{32}
 \end{pmatrix} \\
 \end{align}\]</div>
 <p>です。 ここで、<span class="math notranslate nohighlight">\((1.1)\)</span>式において、<span class="math notranslate nohighlight">\(w_{11}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、<span class="math notranslate nohighlight">\(w_{12}\)</span>は<span class="math notranslate nohighlight">\(y_1\)</span>だけに、・・・<span class="math notranslate nohighlight">\(w_{31}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに、<span class="math notranslate nohighlight">\(w_{32}\)</span>は<span class="math notranslate nohighlight">\(y_3\)</span>だけに出てくることに注意すると、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55cfc6e9-ae8c-4b91-8b7d-4a626e22f204">
-<span class="eqno">()<a class="headerlink" href="#equation-55cfc6e9-ae8c-4b91-8b7d-4a626e22f204" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29fab8f6-4d30-42f9-b97e-951c02072d1f">
+<span class="eqno">()<a class="headerlink" href="#equation-29fab8f6-4d30-42f9-b97e-951c02072d1f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial w_{11}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{11}} \\
 \frac{\partial L}{\partial w_{12}} &amp;= \frac{\partial L}{\partial y_1}\frac{\partial y_1}{\partial w_{12}} \\
 \frac{\partial L}{\partial w_{21}} &amp;= \frac{\partial L}{\partial y_2}\frac{\partial y_2}{\partial w_{21}} \\
@@ -631,8 +661,8 @@ w_{31} &amp; w_{32}
 \frac{\partial L}{\partial w_{32}} &amp;= \frac{\partial L}{\partial y_3}\frac{\partial y_3}{\partial w_{32}}
 \end{align}\]</div>
 <p>となります。 したがって、<span class="math notranslate nohighlight">\(\frac{\partial L}{\partial \boldsymbol{W}}\)</span>は</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e4c0291-6607-46b7-984a-9ebca087665d">
-<span class="eqno">()<a class="headerlink" href="#equation-8e4c0291-6607-46b7-984a-9ebca087665d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb7d80ce-08b0-4f84-97a8-0c3da0d1dd44">
+<span class="eqno">()<a class="headerlink" href="#equation-eb7d80ce-08b0-4f84-97a8-0c3da0d1dd44" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;= 
 \begin{pmatrix}
 \frac{\partial L}{\partial w_{11}} &amp; \frac{\partial L}{\partial w_{21}} &amp; \frac{\partial L}{\partial w_{31}} \\
@@ -667,8 +697,8 @@ x_2
 &amp;= \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>
 <p>これで、</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b85159cd-a8ad-47b8-97a1-620996ab19be">
-<span class="eqno">()<a class="headerlink" href="#equation-b85159cd-a8ad-47b8-97a1-620996ab19be" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d814001-932b-46fb-a2c3-aee0c4b38545">
+<span class="eqno">()<a class="headerlink" href="#equation-2d814001-932b-46fb-a2c3-aee0c4b38545" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial L}{\partial \boldsymbol{W}} &amp;=
 \boldsymbol{X}^T \cdot \frac{\partial L}{\partial \boldsymbol{Y}}
 \end{align}\]</div>
@@ -681,12 +711,12 @@ x_2
 \[
 \frac{\partial L}{\partial \mathbf{W}}= X^\mathrm{T} \frac{\partial L}{\partial \mathbf{Y}}  
 \]</div>
-</div>
-<div class="section" id="id4">
-<h2>バッチ版Affineレイヤの逆伝播<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id4">
+<h2>バッチ版Affineレイヤの逆伝播<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>複数の層の場合にも対応できるような説明を加えます</p>
-<div class="section" id="id5">
-<h3>順伝播の確認<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h3>順伝播の確認<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>第1層の入力<span class="math notranslate nohighlight">\(\mathbf{X}\)</span>は、行数がバッチサイズ<span class="math notranslate nohighlight">\(N\)</span>、列数がピクセルデータ数<span class="math notranslate nohighlight">\(28^2\)</span>に対応するため、<span class="math notranslate nohighlight">\(N \times 784\)</span>の行列とします。<br />
 　これに対応する(第1層の)重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は、行数がピクセルデータ数、列数が隠れ層のニューロン数に対応するため、<span class="math notranslate nohighlight">\( 784\times M\)</span>の行列になります。隠れ層のニューロン数は自由に決められるため<span class="math notranslate nohighlight">\(M\)</span>とします。最終層の重みであれば、行数は最終層の入力の列数、列数は0から9の数字の数10に対応します。この項では1層のニューラルネットワークを扱うため、重み<span class="math notranslate nohighlight">\(\mathbf{W}\)</span>は<span class="math notranslate nohighlight">\(784 \times 10\)</span>の行列とします。<br />
 バイアス<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>は、要素数が10の1次元配列とします。
@@ -752,9 +782,9 @@ $<span class="math notranslate nohighlight">\(
       \end{pmatrix}
 \end{aligned}
 \end{split}\]</div>
-</div>
-<div class="section" id="id6">
-<h3>逆伝播の導出<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id6">
+<h3>逆伝播の導出<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>最終層のAffineレイヤの出力<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>は、損失関数レイヤの入力となり、交差エントロピー誤差<span class="math notranslate nohighlight">\(L\)</span>として出力されるのでした。よって最終層のAffineレイヤには、<span class="math notranslate nohighlight">\(L\)</span>を<span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>で微分した
 $<span class="math notranslate nohighlight">\(
 \frac{\partial L}{\partial \mathbf{Y}}
@@ -895,10 +925,10 @@ $<span class="math notranslate nohighlight">\(
 \tag{5.13.1}
 \end{align}
 \end{split}\]</div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>ミニバッチ学習<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2>ミニバッチ学習<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>訓練データセットから一様ランダムに <span class="math notranslate nohighlight">\(N_{b} \ (&gt;0)\)</span> 個のデータを抽出する</p></li>
 <li><p>その <span class="math notranslate nohighlight">\(N_{b}\)</span> 個のデータをまとめてニューラルネットワークに入力し、それぞれのデータに対する目的関数の値を計算する</p></li>
@@ -906,9 +936,9 @@ $<span class="math notranslate nohighlight">\(
 <li><p>この平均の値に対する各パラメータの勾配を求める</p></li>
 <li><p>求めた勾配を使ってパラメータを更新する</p></li>
 </ol>
-</div>
-<div class="section" id="id8">
-<h2>誤差逆伝播法の実装<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id8">
+<h2>誤差逆伝播法の実装<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>ここまで、Afflineレイヤーまた活性化関数に対して逆伝播で値を計算する方法を理解できたと思います。<br /> 実際のニューラルネットワークで逆伝播を活用する場合は<strong>誤差逆伝播法</strong>になります。<br /></p>
 <p>ニューラルネットワークを構成する関数が持つパラメータについての<strong>目的関数の勾配</strong>を、順伝播で通った経路を逆向きにたどるようにして<strong>途中の関数の勾配の掛け算</strong>によって求める</p>
 <p>ここから、手計算を通じて誤差逆伝播法の実装を理解しましよう。</p>
@@ -933,8 +963,8 @@ o_{1} = 0.01,o_{2} = 0.99
 \[
 L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
 \]</div>
-<div class="section" id="id9">
-<h3>入力層から隠れ層<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>入力層から隠れ層<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 net_{h_{1}}=w_{1}*i_{1}+w_{2}*i_{2}+b_{1}*1
@@ -1002,9 +1032,9 @@ out_{h_{1}}= Sigmoid(net_{h_{1}})
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id10">
-<h3>隠れ層から出力層<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id10">
+<h3>隠れ層から出力層<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 net_{o_{1}}=w_{5}*out_{h_{1}}+w_{6}*out_{h_{2}}+b_{2}*1
@@ -1054,9 +1084,9 @@ out_o2=0.7729284763336182
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\([0.751365065574646,0.7729284763336182]\)</span>と<span class="math notranslate nohighlight">\([0.05,0.10]\)</span>に比べて大きな差がありますので、パラメータを調整する必要がある。</p>
-</div>
-<div class="section" id="id11">
-<h3>平均二乗誤差<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id11">
+<h3>平均二乗誤差<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
@@ -1076,9 +1106,9 @@ L = \dfrac{1}{N} \sum_{n=1}^{N} (t_{n} - y_{n})^2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>逆伝播<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id12">
+<h3>逆伝播<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <a class="reference internal image-reference" href="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png"><img alt="drawing" src="https://images2015.cnblogs.com/blog/853467/201606/853467-20160630152018906-1524325812.png" style="width: 500px;" /></a>
 <div class="math notranslate nohighlight">
 \[
@@ -1166,10 +1196,10 @@ net_{o_{1}}=w_{5}*out_{h_{1}}+w_{6}*out_{h_{2}}+b_{2}*1
 </div>
 <p>パラメータを更新する
 $<span class="math notranslate nohighlight">\(w_5^+ = w_{5}- \eta \frac{\partial net_{o1}}{\partial w_5}\)</span>$</p>
-</div>
-</div>
-<div class="section" id="softmax-with-loss">
-<h2>Softmax-with-Lossレイヤ<a class="headerlink" href="#softmax-with-loss" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="softmax-with-loss">
+<h2>Softmax-with-Lossレイヤ<a class="headerlink" href="#softmax-with-loss" title="Link to this heading">#</a></h2>
 <p>ソフトマックス関数の順伝播について、<span class="math notranslate nohighlight">\(i\)</span>番目のデータに関する入力を<span class="math notranslate nohighlight">\(\mathbf{a}_i = (a_{i1}, a_{i2}, \cdots, a_{i,10})\)</span>、出力を<span class="math notranslate nohighlight">\(\mathbf{y}_i = (y_{i1}, a_{i2}, \cdots, y_{i,10})\)</span>とすると、<span class="math notranslate nohighlight">\(k\)</span>番目の項の計算式は次のようになります。
 $<span class="math notranslate nohighlight">\(
 y_{ik} = \frac{
@@ -1283,9 +1313,9 @@ L   = - \frac{1}{N}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mnist">
-<h2>Mnistでの実装<a class="headerlink" href="#mnist" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mnist">
+<h2>Mnistでの実装<a class="headerlink" href="#mnist" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">t_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">t_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">load_mnist</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">one_hot_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1314,8 +1344,8 @@ L   = - \frac{1}{N}
 <img alt="../_images/83721904c8697bba9b3ea00317069e270c02deae93d43cd479e39fa50cc19a2f.png" src="../_images/83721904c8697bba9b3ea00317069e270c02deae93d43cd479e39fa50cc19a2f.png" />
 </div>
 </div>
-<div class="section" id="id13">
-<h3>勾配確認<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<section id="id13">
+<h3>勾配確認<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad_numerical</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">numerical_gradient</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">t_batch</span><span class="p">)</span>
@@ -1324,8 +1354,8 @@ L   = - \frac{1}{N}
 </div>
 </div>
 </div>
-<div class="section" id="network-numerical-gradient">
-<h4><strong>network.numerical_gradient</strong>を解読しましょう<a class="headerlink" href="#network-numerical-gradient" title="Permalink to this headline">#</a></h4>
+<section id="network-numerical-gradient">
+<h4><strong>network.numerical_gradient</strong>を解読しましょう<a class="headerlink" href="#network-numerical-gradient" title="Link to this heading">#</a></h4>
 <p>network.numerical_gradientという関数はchp.4で紹介されたが、当時の議論で説明しきれない部分がありますので、改めて説明します。</p>
 <hr class="docutils" />
 <hr class="docutils" />
@@ -1370,11 +1400,11 @@ L   = - \frac{1}{N}
     <span class="k">return</span> <span class="n">grad</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="pedict-function">
-<h3>pedict functionで順伝播の結果を計算する<a class="headerlink" href="#pedict-function" title="Permalink to this headline">#</a></h3>
+<section id="pedict-function">
+<h3>pedict functionで順伝播の結果を計算する<a class="headerlink" href="#pedict-function" title="Link to this heading">#</a></h3>
 <p>ランダムに初期パラメータを生成</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1583,8 +1613,8 @@ L   = - \frac{1}{N}
 </div>
 </div>
 </div>
-<div class="section" id="id14">
-<h4><strong>network.numerical_gradient</strong>はただこの前に紹介した計算方法をパッチに対応させた<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<section id="id14">
+<h4><strong>network.numerical_gradient</strong>はただこの前に紹介した計算方法をパッチに対応させた<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
         <span class="n">W1</span><span class="p">,</span> <span class="n">W2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;W2&#39;</span><span class="p">]</span>
         <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;b2&#39;</span><span class="p">]</span>
@@ -1657,11 +1687,11 @@ b2:1.3970555004100272e-07
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id15">
-<h2>誤差逆伝播法を使った学習<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="id15">
+<h2>誤差逆伝播法を使った学習<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iters_num</span> <span class="o">=</span> <span class="mi">10000</span>
@@ -1816,9 +1846,9 @@ train_acc=0.9781666666666666, test_acc=0.9705
 <img alt="../_images/103f444924a9696aa08bcd448aa96d51ab768c43d2e29bbb9cc4bd8b39722923.png" src="../_images/103f444924a9696aa08bcd448aa96d51ab768c43d2e29bbb9cc4bd8b39722923.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id16">
-<h2>参考になった資料<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id16">
+<h2>参考になった資料<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/04/180000">バッチ版Affineレイヤの逆伝播【ゼロつく1のノート(数学)】</a></p></li>
 <li><p><a class="reference external" href="https://www.anarchive-beta.com/entry/2020/08/06/180000">ソフトマックス関数と交差エントロピー誤差の逆伝播【ゼロつく1のノート(数学)】</a></p></li>
@@ -1826,8 +1856,8 @@ train_acc=0.9781666666666666, test_acc=0.9705
 <li><p><a class="reference external" href="https://deepnotes.io/">DeepNotes</a></p></li>
 <li><p><a class="reference external" href="https://www.3blue1brown.com/">3Blue1Brown</a></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1854,8 +1884,10 @@ train_acc=0.9781666666666666, test_acc=0.9705
 
               
               
-                <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -1866,9 +1898,10 @@ train_acc=0.9781666666666666, test_acc=0.9705
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> 目次
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1910,22 +1943,23 @@ train_acc=0.9781666666666666, test_acc=0.9705
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
     
 <p class="component-author">
-著者 呂　沢宇
+By 呂　沢宇
 </p>
 
   </div>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1940,7 +1974,7 @@ train_acc=0.9781666666666666, test_acc=0.9705
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1949,8 +1983,8 @@ train_acc=0.9781666666666666, test_acc=0.9705
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>

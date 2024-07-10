@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>データ型 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
   
@@ -18,47 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draft/python_data_type';</script>
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="データ構造" href="data_struture.html" />
     <link rel="prev" title="Pythonの基本構文" href="python_grammer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,7 +73,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -109,12 +116,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <header>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +158,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
+    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -284,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="ソースリポジトリ"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -301,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/python_data_type.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="問題を報告"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -322,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -331,7 +359,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/draft/python_data_type.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="ソースファイルをダウンロード"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -349,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="PDFに印刷"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -369,7 +397,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="全画面モード"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -381,20 +409,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -417,7 +447,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> 目次 </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -461,18 +491,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>データ型<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>データ型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>Pythonでは、変数を使用してデータを格納します。</p>
 <p>各変数は特定のデータ型を持ち、これによって整数、文字列などの異なる種類のデータを扱うことができます。</p>
-<div class="section" id="id2">
-<h2>演算子<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>演算子<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>演算子を使用して変数に格納されたデータを操作します。算術演算子による計算、比較演算子による条件判定、論理演算子による複合的な条件式の作成など、プログラムのほとんどすべての動作に演算子が関わっています。</p>
 <p>同じ演算子が異なるデータ型に適用されるとき異なる操作になることがあります。</p>
-<div class="section" id="id3">
-<h3>算術演算子<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h3>算術演算子<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="n">a</span>            <span class="c1"># 正数</span>
 <span class="o">-</span><span class="n">a</span>            <span class="c1"># 負数</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>         <span class="c1"># 加算</span>
@@ -484,9 +514,9 @@ document.write(`
 <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>        <span class="c1"># 切り捨て除算</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>代入演算子<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id4">
+<h3>代入演算子<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>         <span class="c1"># a に b を代入する</span>
 <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span>        <span class="c1"># a = a + b に同じ</span>
 <span class="n">a</span> <span class="o">-=</span> <span class="n">b</span>        <span class="c1"># a = a - b に同じ</span>
@@ -502,9 +532,9 @@ document.write(`
 <span class="n">a</span> <span class="o">&gt;&gt;=</span> <span class="n">b</span>       <span class="c1"># a = a &gt;&gt; b に同じ</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>比較演算子<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id5">
+<h3>比較演算子<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>           <span class="c1"># a が b と等しい</span>
 <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>           <span class="c1"># a が b と異なる</span>
 <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>            <span class="c1"># a が b よりも小さい</span>
@@ -517,23 +547,23 @@ document.write(`
 <span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span>       <span class="c1"># a が b に含まれない (a, b は共に文字列、または、b はリストやタプル)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>ブール演算子<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id6">
+<h3>ブール演算子<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>         <span class="c1"># a も b も真であれば真</span>
 <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span>          <span class="c1"># a または b が真であれば真</span>
 <span class="ow">not</span> <span class="n">a</span>           <span class="c1"># a が偽であれば真</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>条件演算<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id7">
+<h3>条件演算<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="k">if</span> <span class="n">c</span> <span class="k">else</span> <span class="n">y</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>文字列演算<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id8">
+<h3>文字列演算<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>         <span class="c1"># 文字列 a と 文字列 b を連結します</span>
 <span class="n">a</span> <span class="o">*</span> <span class="n">n</span>         <span class="c1"># 文字列 a を n 回繰り返します</span>
 <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>          <span class="c1"># 文字列 a の中の n 番目の文字を取り出します</span>
@@ -543,15 +573,15 @@ document.write(`
 <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">m</span><span class="p">:</span><span class="n">s</span><span class="p">]</span>      <span class="c1"># 文字列 a の中の n 番目から m 番目までの文字列を s個とばしで取り出します</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>基本的なデータ型<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id10">
-<h3>ブール値<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id9">
+<h2>基本的なデータ型<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>ブール値<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>ブール値（bool型）は、プログラム内で真<code class="docutils literal notranslate"><span class="pre">True</span></code>または偽<code class="docutils literal notranslate"><span class="pre">False</span></code>のいずれかを表すデータ型です。<strong>条件式</strong>や<strong>論理演算</strong>でよく使われます。</p>
-<div class="section" id="id11">
-<h4>論理演算<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<section id="id11">
+<h4>論理演算<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>論理演算子（<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>）を使って、ブール値を操作します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,9 +607,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
-<h4>比較演算<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id12">
+<h4>比較演算<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span>
@@ -604,9 +634,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id13">
-<h4>条件文<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id13">
+<h4>条件文<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
@@ -624,9 +654,9 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p><strong>関数</strong>の詳細については今後の授業で学びますので、さしあたり今は、関数に引数を渡すと、その値に応じた何らかの処理結果を返すということを知っておけば良いです。</p>
 </div>
-</div>
-<div class="section" id="id14">
-<h4>ブール値の変換<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id14">
+<h4>ブール値の変換<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>Pythonでは、ほとんどのデータ型をbool型に変換することが可能です。</p>
 <p>組込み関数<code class="docutils literal notranslate"><span class="pre">bool()</span></code> は、オブジェクトや演算式等を真理値判定に基づいて、任意のPythonデータ型を<code class="docutils literal notranslate"><span class="pre">bool</span></code>に変換できます。</p>
 <ul class="simple">
@@ -659,10 +689,10 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="int">
-<h3>整数(<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#int" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="int">
+<h3>整数(<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#int" title="Link to this heading">#</a></h3>
 <p>整数は、小数点以下がなく数値です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,10 +719,10 @@ document.write(`
 </div>
 </div>
 <p>大きな数値のセパレータとしてアンダースコア(<code class="docutils literal notranslate"><span class="pre">_</span></code>)を使えます。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>整数の先頭に<span class="math notranslate nohighlight">\(0b\)</span>,<span class="math notranslate nohighlight">\(0o\)</span>,<span class="math notranslate nohighlight">\(0x\)</span>がつくのは、通常の10進数以外の基数であることを指します。</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1_000_000</span>
@@ -750,9 +780,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="float">
-<h3>浮動小数点数 (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#float" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="float">
+<h3>浮動小数点数 (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
 <p>Pythonでは、整数と小数点のある数（実数）は浮動小数点数といいます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,10 +822,10 @@ document.write(`
 </div>
 </div>
 <p>ここで注意する必要があるのは、整数と実数が数学的に同じ数を表す場合でも、コンピュータの中で異なる形式で記憶されますので、表示は異なります。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>プログラムの中で扱う変数には様々な”型”(<code class="docutils literal notranslate"><span class="pre">type</span></code>)があります。変数の型は<code class="docutils literal notranslate"><span class="pre">type()</span></code>という関数を使うことで調べることができる。</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">5.0</span><span class="p">))</span>
@@ -863,12 +893,12 @@ document.write(`
 <p>今度は一年は何分何秒かを計算しよう。一年<span class="math notranslate nohighlight">\(=()\)</span>分<span class="math notranslate nohighlight">\(()\)</span>秒で回答してください。</p>
 </div>
 </div>
-</div>
-<div class="section" id="id15">
-<h3>文字列<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id15">
+<h3>文字列<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>文字列は数値とは異なるデータ型の一つで、文字通り文字を扱います。</p>
-<div class="section" id="id16">
-<h4>文字列作成<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
+<section id="id16">
+<h4>文字列作成<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>文字列は、<strong>シーケンス</strong>型という広義の型に属しています。シーケンス型とは順番のある要素の集まりを指します。インデックスで要素を指定して取り出すことができます。インデックスは<span class="math notranslate nohighlight">\(R\)</span>などとは違い、<span class="math notranslate nohighlight">\(1\)</span>ではなく、<span class="math notranslate nohighlight">\(0\)</span>から始まります。例えば、</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0:3</span></code>とすると、<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(2\)</span>までの要素を取り出します。</p></li>
@@ -945,10 +975,10 @@ document.write(`
 </div>
 </div>
 <p>特定の文字の前にバックスラッシュをつけると、その文字を特殊な意味として扱うことができます。もっともよく使われるのは改行を意味する<code class="docutils literal notranslate"><span class="pre">\n</span></code>です。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Pythonには、小数の特殊なタイプの文字列があり、それらは最初クォートの前に文字を付けて示す。例えば、先頭が<code class="docutils literal notranslate"><span class="pre">r</span></code>の<em>raw文字列</em>では、 文字内の<code class="docutils literal notranslate"><span class="pre">\n</span></code> は改行を表すエスケープシーケンスをエスケープシーケンスとして解釈されないようにする。特に説明しない限り、ここで取り上げるのは普通のUnicode文字列です。</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World&quot;</span><span class="p">)</span>
@@ -962,9 +992,9 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id17">
-<h4><span class="math notranslate nohighlight">\(+\)</span>による連結<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id17">
+<h4><span class="math notranslate nohighlight">\(+\)</span>による連結<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">+</span><span class="s2">&quot;World&quot;</span>
@@ -977,9 +1007,9 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id18">
-<h4><span class="math notranslate nohighlight">\(*\)</span>による繰り返し<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id18">
+<h4><span class="math notranslate nohighlight">\(*\)</span>による繰り返し<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello&quot;</span><span class="o">*</span><span class="mi">3</span>
@@ -992,9 +1022,9 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id19">
-<h4><code class="docutils literal notranslate"><span class="pre">[]</span></code>による文字の抽出<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id19">
+<h4><code class="docutils literal notranslate"><span class="pre">[]</span></code>による文字の抽出<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>文字列から文字を取り出したい時には、<span class="math notranslate nohighlight">\([]\)</span>にインデックスを指定するとその位置の文字を取得できます。</p>
 <ul class="simple">
 <li><p>先頭の文字は<span class="math notranslate nohighlight">\(0\)</span>から数えます。</p></li>
@@ -1055,14 +1085,14 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="len">
-<h4><code class="docutils literal notranslate"><span class="pre">len</span></code>による文字の抽出<a class="headerlink" href="#len" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="len">
+<h4><code class="docutils literal notranslate"><span class="pre">len</span></code>による文字の抽出<a class="headerlink" href="#len" title="Link to this heading">#</a></h4>
 <p>Pythonの取り組み関数で文字列に対する操作を行うことができます。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>先取りの定義ですが、関数とは、決められた操作を実行する名前付きのコードです。それらの中で、インポートなしですぐに使える関数を「<strong>組み込み関数</strong>」と呼びます。</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -1075,14 +1105,14 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="split">
-<h4><code class="docutils literal notranslate"><span class="pre">split</span></code>による文字の分割<a class="headerlink" href="#split" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="split">
+<h4><code class="docutils literal notranslate"><span class="pre">split</span></code>による文字の分割<a class="headerlink" href="#split" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">split</span></code>関数は、区切り文字に基づいて文字列を分割し、部分文字列のリストを作ることができます。</p>
-<div class="margin sidebar">
+<aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>引数とは、関数やを呼び出す際に渡す値のことです。基本的には、関数はこの「渡された値に対して処理を行い、結果を返す」ということを行っています。</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
@@ -1095,9 +1125,9 @@ World
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="replace">
-<h4><code class="docutils literal notranslate"><span class="pre">replace</span></code>による文字の置換<a class="headerlink" href="#replace" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="replace">
+<h4><code class="docutils literal notranslate"><span class="pre">replace</span></code>による文字の置換<a class="headerlink" href="#replace" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">replace</span></code>関数は、文字列の一部を置換することができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1111,10 +1141,10 @@ World
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1141,8 +1171,10 @@ World
 
               
               
-                <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="python_grammer.html"
@@ -1171,9 +1203,10 @@ World
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> 目次
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1216,22 +1249,23 @@ World
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
     
 <p class="component-author">
-著者 呂　沢宇
+By 呂　沢宇
 </p>
 
   </div>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1246,7 +1280,7 @@ World
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1255,8 +1289,8 @@ World
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>
