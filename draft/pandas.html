@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="scikit-learn" href="scikit-learn.html" />
+    <link rel="next" title="可視化" href="visualization.html" />
     <link rel="prev" title="NumPy" href="numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -218,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   可視化
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="scikit-learn.html">
    scikit-learn
   </a>
@@ -248,6 +253,16 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exercise2.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise4.html">
    練習課題
   </a>
  </li>
@@ -742,7 +757,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <h1>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
-<p>pandas はデータ分析によく用いられるパッケージであり、データの操作や解析などを行うための機能を提供します。</p>
+<p>pandas はデータ分析によく用いられるパッケージであり、表形式のデータの操作や解析などを行うための機能を提供します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -755,7 +770,8 @@ title="Print to PDF"
 <p>pandasには<code class="docutils literal notranslate"><span class="pre">Series</span></code>と<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>の２つの種類のオブジェクト型があります。</p>
 <section id="series">
 <h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>は一次元の配列ようなオブジェクトです。<code class="docutils literal notranslate"><span class="pre">Series</span></code>には値とそれに関連付けられたインデックスというデータラベルの配列が含まれます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Series</span></code>は一次元の配列ようなオブジェクトです。<code class="docutils literal notranslate"><span class="pre">Series</span></code>には値とそれに関連付けられた<strong>インデックス</strong>というデータラベルの配列が含まれます。</p>
+<p>イメージとしては、エクセルシートの1列分に相当します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
@@ -911,10 +927,30 @@ dtype: int64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population_series</span><span class="p">[</span><span class="s2">&quot;東京&quot;</span><span class="p">:</span><span class="s2">&quot;京都&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>東京     13929286
+横浜      3723392
+大阪      2691004
+名古屋     2390411
+札幌      1952356
+神戸      1538316
+京都      1474570
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="dataframe">
 <h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h3>
 <p>データフレームはテーブル形式のデータ構造になって、行と列の両方のインデックスを持っています。</p>
+<p>複数のSeriesオブジェクトを結合して作成されます。エクセルシート全体のようなイメージで理解できます。</p>
 <p><img alt="" src="../_images/dataframe.svg" /></p>
 <p>データフレームを作成する方法はたくさんありますが、最も一般的な方法は、同じ長さを持つリスト型のバリューを持った辞書から作成します。</p>
 <div class="cell docutils container">
@@ -1349,6 +1385,7 @@ Name: age, Length: 98, dtype: int64
 </section>
 <section id="id4">
 <h2>インデックス参照、選択、フィルタリング<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>pandasでは、データフレームの行や列を効率的に操作するために、インデックス参照、選択、フィルタリング機能が提供されています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span>
@@ -1743,8 +1780,16 @@ Name: sex, Length: 1309, dtype: object
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">loc</span></code>と<code class="docutils literal notranslate"><span class="pre">iloc</span></code>を使うことで、データフレームから行や列の一部分を選択することができます。</p>
 <ul class="simple">
-<li><p>軸ラベルを使うときは<code class="docutils literal notranslate"><span class="pre">loc</span></code></p></li>
-<li><p>整数のインデックス位置による参照を使うときは<code class="docutils literal notranslate"><span class="pre">iloc</span></code></p></li>
+<li><p>軸ラベルを使うときは<code class="docutils literal notranslate"><span class="pre">loc</span></code></p>
+<ul>
+<li><p>ラベル（行名や列名）または条件式でインデックスを指定</p></li>
+</ul>
+</li>
+<li><p>整数のインデックス位置による参照を使うときは<code class="docutils literal notranslate"><span class="pre">iloc</span></code></p>
+<ul>
+<li><p>インデックス番号でインデックスを指定</p></li>
+</ul>
+</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1783,8 +1828,8 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e9a4e18e-9ce7-45ce-8c52-40fe9385b192" name="528d6415-4e1c-4c7b-a0dd-ad7c84da7462" type="radio">
-</input><label class="sd-tab-label" for="e9a4e18e-9ce7-45ce-8c52-40fe9385b192">
+<input checked="checked" id="1f12b60d-59b4-42e0-bd0f-e82d4f5d6b67" name="fadbdf4d-66f7-434b-85d6-0c4369a6a8fd" type="radio">
+</input><label class="sd-tab-label" for="1f12b60d-59b4-42e0-bd0f-e82d4f5d6b67">
 実習問題</label><div class="sd-tab-content docutils">
 <p>年齢が30-50歳の男性のデータを取り出し、Name, Age, Sexを示してください。</p>
 </div>
@@ -3526,13 +3571,13 @@ Name: 96, dtype: object
 </div></div></div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="cb7e9e02-a2f9-4e62-83c3-8fd6d70f919a" name="8066d477-da55-4645-8303-b48b815db841" type="radio">
-</input><label class="sd-tab-label" for="cb7e9e02-a2f9-4e62-83c3-8fd6d70f919a">
+<input checked="checked" id="e712613a-4c43-4023-93e5-a56d9dfa142d" name="bf29d5c6-9f4b-40c3-b706-838a4383095e" type="radio">
+</input><label class="sd-tab-label" for="e712613a-4c43-4023-93e5-a56d9dfa142d">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>ラムダ関数を適用することで男性ダミー変数を作成しよう。</p>
 </div>
-<input id="5192c04d-17c9-4ff6-9b0f-db8cc3945206" name="8066d477-da55-4645-8303-b48b815db841" type="radio">
-</input><label class="sd-tab-label" for="5192c04d-17c9-4ff6-9b0f-db8cc3945206">
+<input id="b29904e1-8df5-4a10-9cb9-bfe854c6fb0f" name="bf29d5c6-9f4b-40c3-b706-838a4383095e" type="radio">
+</input><label class="sd-tab-label" for="b29904e1-8df5-4a10-9cb9-bfe854c6fb0f">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>Cabin変数によって、頭文字で新しいカテゴリ変数を作成しよう。例えば、C105の場合はCに変更します。</p>
 </div>
@@ -4733,6 +4778,11 @@ Name: 96, dtype: object
 <p>92 rows × 8 columns</p>
 </div></div></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>groupbyでデータフレームをグループ化すると、階層構造を持つマルチインデックスデータフレームになることがあります。これは、グループ化のキーが複数の列にまたがる場合に発生します。</p>
+<p>必要に応じて、reset_index()などの関数を使用して、データフレームを整形することができます。</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)[</span><span class="s2">&quot;fare&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -5160,8 +5210,8 @@ Name: fare, Length: 1309, dtype: float64
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d1595c50-3e7b-4f00-ad3c-0c41cf53329b" name="d392cb80-98e8-4196-b899-b6aa401b0fb3" type="radio">
-</input><label class="sd-tab-label" for="d1595c50-3e7b-4f00-ad3c-0c41cf53329b">
+<input checked="checked" id="c53d1860-d6ca-472a-b102-5913b7eb51d5" name="32a6f9e2-6e94-4c15-85d7-31fc86446317" type="radio">
+</input><label class="sd-tab-label" for="c53d1860-d6ca-472a-b102-5913b7eb51d5">
 実習問題</label><div class="sd-tab-content docutils">
 <p>性別ごとに、fareの値を標準化してみよう。</p>
 </div>
@@ -5438,15 +5488,15 @@ z= \frac{x-\hat{x}}{\sigma}
 </div></div></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">join</span></code>引数で結合方法を指定する</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">inner</span></code>（デフォルト）: 結合するオブジェクトの共通のインデックスのみを保持します。共通のインデックスのみが結果に表示されます。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code>: 結合するすべてのインデックスを保持します。共通のインデックス以外にも存在するインデックスが結果に表示されます。欠損値が含まれる可能性があります。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: 左側のオブジェクトのインデックスを基準に結合します。左側のオブジェクトのインデックスが保持されます。右側のオブジェクトには存在しないインデックスの値は欠損値になります。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code>: 右側のオブジェクトのインデックスを基準に結合します。右側のオブジェクトのインデックスが保持されます。左側のオブジェクトには存在しないインデックスの値は欠損値になります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">join</span></code>引数で結合方法を指定する</p></li>
 </ul>
-</li>
-</ul>
+<p><img alt="" src="../_images/pandas_join.png" /></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- ```inner```（デフォルト）: 結合するオブジェクトの共通のインデックスのみを保持します。共通のインデックスのみが結果に表示されます。
+- ```outer```: 結合するすべてのインデックスを保持します。共通のインデックス以外にも存在するインデックスが結果に表示されます。欠損値が含まれる可能性があります。
+- ```left```: 左側のオブジェクトのインデックスを基準に結合します。左側のオブジェクトのインデックスが保持されます。右側のオブジェクトには存在しないインデックスの値は欠損値になります。
+- ```right```: 右側のオブジェクトのインデックスを基準に結合します。右側のオブジェクトのインデックスが保持されます。左側のオブジェクトには存在しないインデックスの値は欠損値になります。
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -6729,10 +6779,10 @@ z= \frac{x-\hat{x}}{\sigma}
             <p class="prev-next-title">NumPy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="scikit-learn.html" title="next page">
+    <a class='right-next' id="next-link" href="visualization.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">scikit-learn</p>
+        <p class="prev-next-title">可視化</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

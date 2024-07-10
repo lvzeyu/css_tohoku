@@ -18,16 +18,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from sklearn import datasets
+import proplot as pplt
+fig, ax = pplt.subplots()
+
 iris= datasets.load_iris()
+X = iris.data # 特徴量データ
+
+
+# Extract petal length and petal width
+petal_length = X[:, 2]
+petal_width = X[:, 3]
+
+# Create a scatter plot using proplot
+
+ax.scatter(petal_length, petal_width)
+# Set plot labels and title
+ax.set_xlabel('Petal Length (cm)')
+ax.set_ylabel('Petal Width (cm)')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msklearn[39;00m [38;5;28;01mimport[39;00m datasets
-[1;32m      2[0m iris[38;5;241m=[39m datasets[38;5;241m.[39mload_iris()
+Cell [0;32mIn[10], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mproplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpplt[39;00m
+[1;32m      2[0m fig, ax [38;5;241m=[39m pplt[38;5;241m.[39msubplots()
+[1;32m      4[0m iris[38;5;241m=[39m datasets[38;5;241m.[39mload_iris()
 
-[0;31mModuleNotFoundError[0m: No module named 'sklearn'
+[0;31mModuleNotFoundError[0m: No module named 'proplot'
 

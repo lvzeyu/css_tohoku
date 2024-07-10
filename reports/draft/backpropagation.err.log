@@ -18,30 +18,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import matplotlib.pyplot as plt
-import sys, os
-import time
-
-#os.chdir("/content/drive/MyDrive/Colab Notebooks/deep-learning-from-scratch")
-#from common.layers import *
-#from common.gradient import numerical_gradient
-from collections import OrderedDict
-#import torch
-#from dataset.mnist import load_mnist
-#from ch05.two_layer_net import TwoLayerNet
-#from common.functions import softmax # ソフトマックス関数:バッチ対応版
-#from common.functions import cross_entropy_error # 交差エントロピー誤差:4.2.4項
+net_h2= (0.25)*(0.05)+(0.3)*(0.1)+0.35
+print("net_h2={}".format(net_h2))
+out_h2 = torch.sigmoid(torch.tensor(net_h2))
+print("out_h2={}".format(out_h2))
 ------------------
 
+----- stdout -----
+net_h2=0.39249999999999996
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01msys[39;00m[38;5;241m,[39m [38;5;21;01mos[39;00m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mtime[39;00m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 3[0m
+[1;32m      1[0m net_h2[38;5;241m=[39m ([38;5;241m0.25[39m)[38;5;241m*[39m([38;5;241m0.05[39m)[38;5;241m+[39m([38;5;241m0.3[39m)[38;5;241m*[39m([38;5;241m0.1[39m)[38;5;241m+[39m[38;5;241m0.35[39m
+[1;32m      2[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mnet_h2=[39m[38;5;132;01m{}[39;00m[38;5;124m"[39m[38;5;241m.[39mformat(net_h2))
+[0;32m----> 3[0m out_h2 [38;5;241m=[39m [43mtorch[49m[38;5;241m.[39msigmoid(torch[38;5;241m.[39mtensor(net_h2))
+[1;32m      4[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mout_h2=[39m[38;5;132;01m{}[39;00m[38;5;124m"[39m[38;5;241m.[39mformat(out_h2))
 
-[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
+[0;31mNameError[0m: name 'torch' is not defined
 

@@ -218,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   可視化
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="scikit-learn.html">
    scikit-learn
   </a>
@@ -834,9 +839,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.30932092, 0.11450508, 0.63966101],
-       [0.3072902 , 0.14523113, 0.03352507],
-       [0.89463072, 0.34009647, 0.89925321]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.93869104, 0.56438333, 0.75980788],
+       [0.37731508, 0.51333289, 0.11364262],
+       [0.86418411, 0.16133097, 0.55869752]])
 </pre></div>
 </div>
 </div>
@@ -848,9 +853,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.10801402, -0.77321962,  0.11087995],
-       [ 0.87748174, -1.51833911,  0.48736389],
-       [ 0.48918477, -0.40414471, -0.52790467]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.30541811, -0.60512267,  1.47399765],
+       [ 0.3548722 , -0.03719735, -0.3469323 ],
+       [ 0.81809036,  0.84622132,  2.58113671]])
 </pre></div>
 </div>
 </div>
@@ -862,9 +867,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 1, 7],
-       [6, 8, 9],
-       [8, 9, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 4, 5],
+       [0, 9, 2],
+       [1, 5, 8]])
 </pre></div>
 </div>
 </div>
@@ -1356,8 +1361,8 @@ dtype: int64
 <p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="33199b66-98a6-4dcd-a0d1-2af67020829f" name="191dce01-62ef-492f-bf78-07fb128cc003" type="radio">
-</input><label class="sd-tab-label" for="33199b66-98a6-4dcd-a0d1-2af67020829f">
+<input checked="checked" id="5b9568d0-1abf-43e9-a035-66954aa3154b" name="a9d8a704-7b71-4a01-bc37-c1a22b69a914" type="radio">
+</input><label class="sd-tab-label" for="5b9568d0-1abf-43e9-a035-66954aa3154b">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1490,8 +1495,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="032d52ba-6760-40cb-8178-ffd1b067e435" name="2e6cbd71-b303-4bec-9941-afc437676666" type="radio">
-</input><label class="sd-tab-label" for="032d52ba-6760-40cb-8178-ffd1b067e435">
+<input checked="checked" id="616d79cd-cebf-455d-ab65-28b050d215e6" name="26291244-9a89-4ec7-a67e-3f12632e8ab1" type="radio">
+</input><label class="sd-tab-label" for="616d79cd-cebf-455d-ab65-28b050d215e6">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
@@ -1633,8 +1638,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1b6e163e-599f-4e58-a97e-79278c225257" name="2253f2e7-2d56-41a2-97bf-7fb3cf7ad70b" type="radio">
-</input><label class="sd-tab-label" for="1b6e163e-599f-4e58-a97e-79278c225257">
+<input checked="checked" id="db600c3a-661d-4578-a810-fc24c1ccd485" name="358eaac3-243f-42d5-9036-8b28c9a4dbea" type="radio">
+</input><label class="sd-tab-label" for="db600c3a-661d-4578-a810-fc24c1ccd485">
 実習問題</label><div class="sd-tab-content docutils">
 <p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
 </div>
@@ -1852,16 +1857,16 @@ alpha:  2.7740186712020654
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4db1eadf-e1da-4923-a9eb-238a1dd63f9a" name="13e42858-d27f-489d-aec0-bcc6724f6801" type="radio">
-</input><label class="sd-tab-label" for="4db1eadf-e1da-4923-a9eb-238a1dd63f9a">
+<input checked="checked" id="4b620dc9-100c-499b-8b6e-39518e012daa" name="6539f9e2-408d-48c2-9bb3-ad3864530e3e" type="radio">
+</input><label class="sd-tab-label" for="4b620dc9-100c-499b-8b6e-39518e012daa">
 実習問題1</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>母集団回帰係数、誤差項とサンプルサイズを指定し、観測データ(<span class="math notranslate nohighlight">\(x\)</span>,<span class="math notranslate nohighlight">\(y\)</span>)を生成する関数を作成しなさい</p></li>
 <li><p>観測データ(<span class="math notranslate nohighlight">\(x\)</span>,<span class="math notranslate nohighlight">\(y\)</span>)で、最小二乗法で回帰係数を推定する関数を作成しなさい</p></li>
 </ul>
 </div>
-<input id="a19f2bb0-785d-4244-8f96-ee922100aea5" name="13e42858-d27f-489d-aec0-bcc6724f6801" type="radio">
-</input><label class="sd-tab-label" for="a19f2bb0-785d-4244-8f96-ee922100aea5">
+<input id="85a77a7b-b3f5-47ac-891f-3c6f089fcc3a" name="6539f9e2-408d-48c2-9bb3-ad3864530e3e" type="radio">
+</input><label class="sd-tab-label" for="85a77a7b-b3f5-47ac-891f-3c6f089fcc3a">
 実習問題2</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>一定な母集団回帰係数、誤差項サンプルサイズを設定し、観測データを作成し、回帰係数を推定するといった推定プロセスを100回を行いなさい。</p></li>
