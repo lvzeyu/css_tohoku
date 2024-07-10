@@ -298,4 +298,18 @@ print("サポートベクターマシンの予測の精度: {:.4f}".format(accur
 # - 授業中では以上の作業に関する説明が省略しますので、不明点があれば必ず次回の授業までに聞いてください。
 # 
 
+# ```{note}
+# Google Colab で Drive をマウントし、ディレクトリを変更するには、以下の手順を実行します。
+# 
+# - 以下のコードを実行して、Drive をマウントします。
+# 
+# `
+# from google.colab import drive
+# drive.mount('/content/drive')
+# `
+# 
+# - os.chdir() 関数を使用してディレクトリを変更できます。
+# 
+# ```
+
 # 

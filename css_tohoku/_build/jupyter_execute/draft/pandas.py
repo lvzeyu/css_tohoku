@@ -3,7 +3,7 @@
 
 # # pandas
 # 
-# pandas はデータ分析によく用いられるパッケージであり、データの操作や解析などを行うための機能を提供します。
+# pandas はデータ分析によく用いられるパッケージであり、表形式のデータの操作や解析などを行うための機能を提供します。
 
 # In[1]:
 
@@ -17,7 +17,9 @@ import pandas as pd
 # 
 # ### Series
 # 
-# ```Series```は一次元の配列ようなオブジェクトです。```Series```には値とそれに関連付けられたインデックスというデータラベルの配列が含まれます。
+# ```Series```は一次元の配列ようなオブジェクトです。```Series```には値とそれに関連付けられた**インデックス**というデータラベルの配列が含まれます。
+# 
+# イメージとしては、エクセルシートの1列分に相当します。
 
 # In[2]:
 
@@ -98,16 +100,24 @@ population_series
 population_series[["東京","仙台"]]
 
 
+# In[11]:
+
+
+population_series["東京":"京都"]
+
+
 # ### DataFrame
 # 
 # データフレームはテーブル形式のデータ構造になって、行と列の両方のインデックスを持っています。
+# 
+# 複数のSeriesオブジェクトを結合して作成されます。エクセルシート全体のようなイメージで理解できます。
 # 
 # ![](./Figure/dataframe.svg)
 # 
 
 # データフレームを作成する方法はたくさんありますが、最も一般的な方法は、同じ長さを持つリスト型のバリューを持った辞書から作成します。
 
-# In[11]:
+# In[12]:
 
 
 data_dict = {
@@ -122,7 +132,7 @@ df = pd.DataFrame(data_dict)
 
 # 作成されたデータフレームは、```Serise```と同じように自動的にインデックスが代入されます。
 
-# In[12]:
+# In[13]:
 
 
 df
@@ -134,13 +144,13 @@ df
 # 
 # 例えば、CSV ファイルを読み込むための```pd.read_csv()``という関数が用意されています。 こちらを使って CSV ファイルを読み込みます。
 
-# In[13]:
+# In[14]:
 
 
 df=pd.read_csv("https://raw.githubusercontent.com/lvzeyu/css_tohoku/master/css_tohoku/draft/Data/titanic.csv")
 
 
-# In[14]:
+# In[15]:
 
 
 df
@@ -148,7 +158,7 @@ df
 
 # データフレームをファイルに書き出せます。
 
-# In[15]:
+# In[16]:
 
 
 #df.to_csv("./Data/titanic.csv")
@@ -158,25 +168,25 @@ df
 # 
 # データフレームには、中のデータに対し統計量を計算するための[メソッド](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.mean.html)も用意されています。
 
-# In[16]:
+# In[17]:
 
 
 df["age"].mean()
 
 
-# In[17]:
+# In[18]:
 
 
 df["age"].var()
 
 
-# In[18]:
+# In[19]:
 
 
 df["age"].sum()
 
 
-# In[19]:
+# In[20]:
 
 
 # 頻度
@@ -184,26 +194,28 @@ df["age"].value_counts()
 
 
 # ## インデックス参照、選択、フィルタリング
+# 
+# pandasでは、データフレームの行や列を効率的に操作するために、インデックス参照、選択、フィルタリング機能が提供されています。
 
-# In[20]:
+# In[21]:
 
 
 df["sex"]
 
 
-# In[21]:
+# In[22]:
 
 
 df[["sex","age"]]
 
 
-# In[22]:
+# In[23]:
 
 
 df[:5]
 
 
-# In[23]:
+# In[24]:
 
 
 df[df["age"]>70]
@@ -211,15 +223,17 @@ df[df["age"]>70]
 
 # ```loc```と```iloc```を使うことで、データフレームから行や列の一部分を選択することができます。
 # - 軸ラベルを使うときは```loc```
+#     - ラベル（行名や列名）または条件式でインデックスを指定
 # - 整数のインデックス位置による参照を使うときは```iloc```
+#     - インデックス番号でインデックスを指定
 
-# In[24]:
+# In[25]:
 
 
 df.loc[96,['name','age']]
 
 
-# In[25]:
+# In[26]:
 
 
 df.iloc[96,[1,3]]
@@ -227,7 +241,7 @@ df.iloc[96,[1,3]]
 
 # 条件を指定して選択した要素に対し、値の書き換えを行うことができます。
 
-# In[26]:
+# In[27]:
 
 
 df.loc[df["age"]<1, ['age']] = 1
@@ -245,13 +259,13 @@ df.loc[df["age"]<1, ['age']] = 1
 # 
 # 行や列のインデックスをソートするためには、```sort_index()```メソッドを使います。
 
-# In[27]:
+# In[28]:
 
 
 df.sort_index(ascending=False)
 
 
-# In[28]:
+# In[29]:
 
 
 df.sort_index(axis=1)
@@ -261,7 +275,7 @@ df.sort_index(axis=1)
 # 
 # デフォルトでは、欠損値が末尾にソートされます。
 
-# In[29]:
+# In[30]:
 
 
 df.sort_values(by="age")
@@ -269,7 +283,7 @@ df.sort_values(by="age")
 
 # ```sort_values()```に複数なソートキーを指定することもできます。
 
-# In[30]:
+# In[31]:
 
 
 df.sort_values(by=["age","embarked"])
@@ -279,7 +293,7 @@ df.sort_values(by=["age","embarked"])
 
 # - ```map()```メソッドは、Seriesオブジェクト内の各要素に対して、指定した辞書や関数を適用して新しい値を返す方法です。
 
-# In[31]:
+# In[32]:
 
 
 female={"male":0,
@@ -288,7 +302,7 @@ df["female"]=df["sex"].map(female)
 df
 
 
-# In[32]:
+# In[33]:
 
 
 def male_dummay(sex):
@@ -305,7 +319,7 @@ df
 
 # - ```apply()```メソッドは、DataFrameオブジェクトの列に対して関数を適用する方法です。
 
-# In[33]:
+# In[34]:
 
 
 def male_dummay(sex):
@@ -335,7 +349,7 @@ df
 # 欠損値を含むデータの場合、一部の行の値が欠損している列に ```NaN``` (Not a Number)、```None```、```NaT``` (Not a Time) などが含まれる場合があります。 
 # ### 欠損値を削除する
 
-# In[34]:
+# In[35]:
 
 
 # df[df.notnull()]
@@ -344,7 +358,7 @@ df.dropna()
 
 # 行ではなく列を削除する場合は、```axis=1```を指定します。
 
-# In[35]:
+# In[36]:
 
 
 df.dropna(axis=1)
@@ -352,7 +366,7 @@ df.dropna(axis=1)
 
 # 特定の列に基づく欠損値を削除することも可能です。
 
-# In[36]:
+# In[37]:
 
 
 df.dropna(subset=["age"])
@@ -364,7 +378,7 @@ df.dropna(subset=["age"])
 # 
 # ```fillna```メソッドに何らかの値を引数として与えて呼び出すと、その値で欠損値を置き換えることができます。
 
-# In[37]:
+# In[38]:
 
 
 df.fillna(0)
@@ -372,7 +386,7 @@ df.fillna(0)
 
 # 平均を使った欠損値の補完する方法がよく用いられます。
 
-# In[38]:
+# In[39]:
 
 
 mean_age = df["age"].mean() # まずは、補完に使用する平均値の計算を行います
@@ -393,19 +407,25 @@ df
 
 # ### 集約
 
-# In[39]:
+# In[40]:
 
 
 df.groupby("age").mean()
 
 
-# In[40]:
+# ```{note}
+# groupbyでデータフレームをグループ化すると、階層構造を持つマルチインデックスデータフレームになることがあります。これは、グループ化のキーが複数の列にまたがる場合に発生します。
+# 
+# 必要に応じて、reset_index()などの関数を使用して、データフレームを整形することができます。
+# ```
+
+# In[41]:
 
 
 df.groupby("age")["fare"].mean()
 
 
-# In[41]:
+# In[42]:
 
 
 df.groupby("age")["fare"].sum()
@@ -415,7 +435,7 @@ df.groupby("age")["fare"].sum()
 # 
 # ```agg()```メソッドで複数の関数を指定することが可能です。
 
-# In[42]:
+# In[43]:
 
 
 df.groupby("age")["fare"].agg(["mean","sum","count"])
@@ -423,7 +443,7 @@ df.groupby("age")["fare"].agg(["mean","sum","count"])
 
 # 複数の列によるのグールプ操作ももちろん可能です。
 
-# In[43]:
+# In[44]:
 
 
 df.groupby(["age","sex"])["fare"].agg(["mean","sum","count"])
@@ -431,13 +451,13 @@ df.groupby(["age","sex"])["fare"].agg(["mean","sum","count"])
 
 # さらに、複数の列に対して、それぞれ異なる関数を適用することも可能です。この場合、列名と適用したい関数名をマッピングした辞書を```agg```に渡します。
 
-# In[44]:
+# In[45]:
 
 
 df.groupby("sex").agg({"fare":"median","age":"mean"})
 
 
-# In[45]:
+# In[46]:
 
 
 df.groupby("sex").agg({"fare":["mean","median","std"],"age":"mean"})
@@ -453,7 +473,7 @@ df.groupby("sex").agg({"fare":["mean","median","std"],"age":"mean"})
 # 
 # 例えば、ある値からグループごとの平均と差を取り、データのセンタリングを行うのが、よく用いられる変換の例です。
 
-# In[46]:
+# In[47]:
 
 
 df.groupby("age")["fare"].transform(lambda x: x - x.mean())
@@ -481,7 +501,7 @@ df.groupby("age")["fare"].transform(lambda x: x - x.mean())
 
 # - 行方向の結合
 
-# In[47]:
+# In[48]:
 
 
 df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
@@ -493,7 +513,7 @@ result
 
 # - 列方向の結合
 
-# In[48]:
+# In[49]:
 
 
 df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
@@ -505,12 +525,14 @@ result
 
 # - ```join```引数で結合方法を指定する
 # 
+# ![](./Figure/pandas_join.png)
+# 
 #     - ```inner```（デフォルト）: 結合するオブジェクトの共通のインデックスのみを保持します。共通のインデックスのみが結果に表示されます。
 #     - ```outer```: 結合するすべてのインデックスを保持します。共通のインデックス以外にも存在するインデックスが結果に表示されます。欠損値が含まれる可能性があります。
 #     - ```left```: 左側のオブジェクトのインデックスを基準に結合します。左側のオブジェクトのインデックスが保持されます。右側のオブジェクトには存在しないインデックスの値は欠損値になります。
 #     - ```right```: 右側のオブジェクトのインデックスを基準に結合します。右側のオブジェクトのインデックスが保持されます。左側のオブジェクトには存在しないインデックスの値は欠損値になります。
 
-# In[49]:
+# In[50]:
 
 
 df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]}, index=[0, 1])
@@ -520,7 +542,7 @@ result = pd.concat([df1, df2], join='inner')
 result
 
 
-# In[50]:
+# In[51]:
 
 
 df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]}, index=[0, 1])
@@ -533,7 +555,7 @@ result
 
 # ### 結合の種類
 
-# In[51]:
+# In[52]:
 
 
 df1 = pd.DataFrame({'employee': ['Bob', 'Jake', 'Lisa', 'Sue'],
@@ -546,7 +568,7 @@ display(df1, df2)
 
 # - 一対一結合
 
-# In[52]:
+# In[53]:
 
 
 df3 = pd.merge(df1, df2)
@@ -555,7 +577,7 @@ df3
 
 # - 多対一結合
 
-# In[53]:
+# In[54]:
 
 
 df4 = pd.DataFrame({'group': ['Accounting', 'Engineering', 'HR'],
@@ -565,7 +587,7 @@ display(df3, df4, pd.merge(df3, df4))
 
 # - 多対多結合
 
-# In[54]:
+# In[55]:
 
 
 df5 = pd.DataFrame({'group': ['Accounting', 'Accounting',
@@ -581,7 +603,7 @@ display(df1, df5, pd.merge(df1, df5))
 # 
 # ```on```引数で明示的に指定することもできます。指定するキーは結合の基準となる列であり、結合の際にこの列の値が一致する行同士が結合されます
 
-# In[55]:
+# In[56]:
 
 
 display(df1, df2, pd.merge(df1, df2, on='employee'))
@@ -589,7 +611,7 @@ display(df1, df2, pd.merge(df1, df2, on='employee'))
 
 # 二つのデータフレームを異なる列名で結合することもできます。この場合、```left_on```と```right_on```引数を使用して二つの列名を指定できます。
 
-# In[56]:
+# In[57]:
 
 
 df3 = pd.DataFrame({'name': ['Bob', 'Jake', 'Lisa', 'Sue'],
@@ -601,7 +623,7 @@ display(df1, df3, pd.merge(df1, df3, left_on="employee", right_on="name"))
 # 
 # これまでの例は、デフォルトである```inner```(内部結合)で行いましたが、```how```引数で明示的に結合方法を指定することができます。
 
-# In[57]:
+# In[58]:
 
 
 df6 = pd.DataFrame({'name': ['Peter', 'Paul', 'Mary'],
@@ -613,13 +635,13 @@ df7 = pd.DataFrame({'name': ['Mary', 'Joseph'],
 display(df6, df7, pd.merge(df6, df7))
 
 
-# In[58]:
+# In[59]:
 
 
 display(pd.merge(df6, df7, how='left'))
 
 
-# In[59]:
+# In[60]:
 
 
 display(pd.merge(df6, df7, how='right'))

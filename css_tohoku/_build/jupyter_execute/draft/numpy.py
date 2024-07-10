@@ -5,6 +5,8 @@
 
 # 計算社会科学の研究は、テキスト、画像、ビデオや数値測定結果など幅広いデータセットとソースを扱っています。
 # 
+# これらの多種多様なデータをコンピュータで扱う場合はどのようにすればよいだろうか。
+# 
 # 形式に違いがあるにも関わらず、基本的に全てのデータは数値の配列として扱うのに適しています。
 # 
 # - テキストデータは文字のシーケンスであり、それぞれの文字には数値の表現があります（通常はUnicode）。テキスト処理や自然言語処理のために、テキストデータは数値の配列として表現されることがあります。一般的な手法には、文字を数値にエンコードする方法（例：ASCII、UTF-8）、単語や文字の出現頻度を数える方法、単語の埋め込み（Word2Vec、GloVe）などがあります。
@@ -13,6 +15,8 @@
 # ![](https://nbviewer.org/github/fastai/numerical-linear-algebra/blob/master/nbs/images/digit.gif)
 # 
 # どのようなデータであっても、それらを分析可能にする最初のステップは、数値の配列に変換することです。
+# 
+# このようにデータをベクトル情報として扱うことの利点は、異なるデータを同一の手段で扱うことができるようになる点である。
 # 
 # このため、数値配列の効率的な格納と操作は、データ分析にとって欠かせない要素です。
 # 
@@ -695,9 +699,12 @@ else:
 
 # ここで、残差平方和を最小にするような$\hat{\alpha}$と$\hat{\beta}$を選びます。
 
+# - 線形回帰モデルのデータをシミュレーションで生成します
+
 # In[55]:
 
 
+# 線形回帰モデルのデータをシミュレーションで生成します
 import numpy as np
 
 # サンプルデータ
@@ -752,18 +759,15 @@ print("残差の合計:", residual_sum)
 # In[58]:
 
 
-{
-    "tags": [
-        "hide-cell"
-    ]
-}
 import numpy as np
-import proplot as plt
+import matplotlib.pyplot as plt
+import scienceplots
+
+plt.style.use('science')
 
 
 # Creating a figure and axes
-fig, ax = plt.subplots(refwidth=4)
-
+fig, ax = plt.subplots(figsize=(6, 4))
 # Scatter plot of the data points
 ax.scatter(x, y, color='blue', label='Data Points',alpha=0.6)
 
@@ -780,12 +784,26 @@ for i in range(n):
     ax.vlines(x_i, y_i, y_pred_i, color='gray', linestyle='dotted')
 
 # Plot settings
-ax.format(xlabel='x', ylabel='y', title='Linear Regression')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Linear Regression')
 ax.legend(loc="lower right")
 
 # Display the plot
 plt.show()
 
+
+# ````{tab-set}
+# ```{tab-item} 実習問題1
+# - 母集団回帰係数、誤差項とサンプルサイズを指定し、観測データ($x$,$y$)を生成する関数を作成しなさい
+# - 観測データ($x$,$y$)で、最小二乗法で回帰係数を推定する関数を作成しなさい
+# ```
+# ```{tab-item} 実習問題2
+# - 一定な母集団回帰係数、誤差項サンプルサイズを設定し、観測データを作成し、回帰係数を推定するといった推定プロセスを100回を行いなさい。
+# - 毎回の推定値を格納し、その平均と標準偏差を計算しなさい。
+# - サンプルサイズが $20, 50, 100, 200, 500,1000$である場合、推定値の平均と標準偏差を比較しなさい
+# ```
+# ````
 
 # ### 重回帰モデル
 
@@ -852,9 +870,3 @@ plt.show()
 # $$
 # \beta = (X^TX)^{-1}X^TY
 # $$
-
-# In[ ]:
-
-
-
-
