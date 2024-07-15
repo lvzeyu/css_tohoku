@@ -425,7 +425,57 @@ game.play_game()
 average_moves=game.calculate_average_moves(10)
 
 
-# In[ ]:
+# In[5]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+    def __init__(self, board_size=5, verbose=True):
+        self.board_size = board_size
+        self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+        self.player_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+        self.verbose = verbose
+    
+    def calc_distance(self, pos1, pos2):
+        diff_x = pos1[0] - pos2[0]
+        diff_y = pos1[1] - pos2[1]
+        return math.sqrt(diff_x**2 + diff_y**2)
+
+    def move_player(self):
+        current_x, current_y = self.player_pos
+        target_x, target_y = self.suika_pos
+
+        if current_x < target_x:
+            current_x += 1
+        elif current_x > target_x:
+            current_x -= 1
+
+        if current_y < target_y:
+            current_y += 1
+        elif current_y > target_y:
+            current_y -= 1
+
+        self.player_pos = (current_x, current_y)
+        if self.verbose:
+            print("プレイヤーが移動しました:", self.player_pos)
+    
+    def play_game(self):
+        while self.suika_pos != self.player_pos:
+            distance = self.calc_distance(self.suika_pos, self.player_pos)
+            if self.verbose:
+                print("スイカまでの距離:", distance)
+            self.move_player()
+        
+        print("スイカを見つけました！")
+
+# Example usage
+game = WatermelonHunt(verbose=False)
+game.play_game()
+
+
+# In[2]:
 
 
 import random
@@ -491,7 +541,7 @@ print(f"今回の移動数: {move_count}")
 game.calculate_average_moves(10)
 
 
-# In[4]:
+# In[3]:
 
 
 import random
@@ -555,7 +605,7 @@ class WatermelonHunt:
 
 # ゲームを実行
 
-game = WatermelonHunt(board_size=5, player_num=3, verbose=True)
+game = WatermelonHunt(board_size=5, player_num=3, verbose=False)
 move_count = game.play_game()
 print(f"今回の勝者の移動数: {move_count}")
 
@@ -595,4 +645,276 @@ person.say_hello()
 person.print_birth()
 person.print_death(2050)
 print("{} is {} years old.".format(person.name, person.age()))
+
+
+# In[ ]:
+
+
+
+
+
+# ## 課題5
+# 
+# 複数のプレイヤーが参加し、最初にスイカに到達したプレイヤーが勝つゲームを想定します。
+# 
+# ```player_num```という属性を追加し、プレイヤーの数を制御します。
+# 
+# 各プレイヤーはそれぞれ独立してスイカに向かって移動し、ゲームの進行は各ターンで全プレイヤーが一度ずつ移動する。あるプレイヤーがスイカに到達したら、ゲームは終了します。
+
+# In[ ]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+    def __init__(self, board_size=5, player_num=2):
+        self.board_size = board_size
+        self.player_num = player_num
+        self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+        self.player_positions = [(random.randrange(0, self.board_size), random.randrange(0, self.board_size)) for _ in range(self.player_num)]
+        self.winner = None
+
+    def calc_distance(self, pos1, pos2):
+        diff_x = pos1[0] - pos2[0]
+        diff_y = pos1[1] - pos2[1]
+        return math.sqrt(diff_x**2 + diff_y**2)
+
+    def move_player(self, player_index):
+        current_x, current_y = self.player_positions[player_index]
+        target_x, target_y = self.suika_pos
+
+        if current_x < target_x:
+            current_x += 1
+        elif current_x > target_x:
+            current_x -= 1
+
+        if current_y < target_y:
+            current_y += 1
+        elif current_y > target_y:
+            current_y -= 1
+
+        self.player_positions[player_index] = (current_x, current_y)
+        print(f"プレイヤー {player_index + 1} が移動しました: {self.player_positions[player_index]}")
+        
+        if self.player_positions[player_index] == self.suika_pos:
+            self.winner = player_index + 1
+
+    def play_game(self):
+        while self.winner is None:
+            for i in range(self.player_num):
+                distance = self.calc_distance(self.suika_pos, self.player_positions[i])
+                print(f"プレイヤー {i + 1} のスイカまでの距離: {distance}")
+                self.move_player(i)
+                if self.winner is not None:
+                    break
+        
+        print(f"プレイヤー {self.winner} がスイカを見つけました！")
+
+# ゲームを開始する
+game = WatermelonHunt(board_size=5, player_num=3)
+game.play_game()
+
+
+# In[6]:
+
+
+import random
+import math
+
+class WatermelonHunt:
+    def __init__(self, board_size=5, player_num=2):
+        self.board_size = board_size
+        self.suika_pos = (random.randrange(0, self.board_size), random.randrange(0, self.board_size))
+        self.players_pos = [(random.randrange(0, self.board_size), random.randrange(0, self.board_size)) for _ in range(player_num)]
+        self.player_num = player_num
+    
+    def calc_distance(self, pos1, pos2):
+        diff_x = pos1[0] - pos2[0]
+        diff_y = pos1[1] - pos2[1]
+        return math.sqrt(diff_x**2 + diff_y**2)
+
+    def move_player(self, player_idx):
+        current_x, current_y = self.players_pos[player_idx]
+        target_x, target_y = self.suika_pos
+
+        if current_x < target_x:
+            current_x += 1
+        elif current_x > target_x:
+            current_x -= 1
+
+        if current_y < target_y:
+            current_y += 1
+        elif current_y > target_y:
+            current_y -= 1
+
+        self.players_pos[player_idx] = (current_x, current_y)
+        print(f"プレイヤー{player_idx + 1}が移動しました: {self.players_pos[player_idx]}")
+    
+    def play_game(self):
+        turn = 0
+        while True:
+            print(f"ターン {turn + 1}")
+            for player_idx in range(self.player_num):
+                distance = self.calc_distance(self.suika_pos, self.players_pos[player_idx])
+                print(f"プレイヤー{player_idx + 1}のスイカまでの距離: {distance}")
+                self.move_player(player_idx)
+                if self.players_pos[player_idx] == self.suika_pos:
+                    print(f"プレイヤー{player_idx + 1}がスイカを見つけました！")
+                    return
+            turn += 1
+
+# Example usage
+game = WatermelonHunt(board_size=5, player_num=3)
+game.play_game()
+
+
+# In[2]:
+
+
+from WatermelonHunt import WatermelonHunt
+
+
+# In[ ]:
+
+
+import numpy as np
+
+
+# In[32]:
+
+
+def generate_data(beta_0, beta_1, epsilon, n):
+  """
+  線形回帰モデルに基づいてデータポイントを生成する関数
+
+  Args:
+    beta_0: 切片 (true value)
+    beta_1: 傾き (true value)
+    n: データ数
+
+  Returns:
+    説明変数 (x) と目的変数 (y) の NumPy 配列
+  """
+
+  x = np.random.uniform(low=0, high=10, size=n)
+  epsilon = np.random.normal(loc=0, scale=1, size=n)
+  y = beta_0 + beta_1 * x + epsilon
+
+  return x, y
+
+
+# In[34]:
+
+
+def linear_regression(x, y):
+  """
+  線形回帰モデルのパラメータを推定する関数
+
+  Args:
+    x: 説明変数の NumPy 配列
+    y: 目的変数の NumPy 配列
+
+  Returns:
+    推定されたパラメータ (beta_1, beta_0)
+  """
+
+  # 平均値の計算
+  x_mean = np.mean(x)
+  y_mean = np.mean(y)
+
+  # β₁の推定
+  numerator = np.sum((x - x_mean) * (y - y_mean))
+  denominator = np.sum((x - x_mean) ** 2)
+  beta_hat = numerator / denominator
+
+  # β₀の推定
+  alpha_hat = y_mean - beta_hat * x_mean
+
+  return alpha_hat, beta_hat    
+
+
+# In[52]:
+
+
+# Define true parameter values
+beta_0 = 2.5
+beta_1 = 0.8
+
+# Define data sizes
+data_sizes = [20, 50, 100, 200, 500,1000]
+for n in data_sizes:
+    x, y = generate_data(beta_0, beta_1, 3, n)
+    beta_hat, alpha_hat = linear_regression(x, y)
+    print(f"Data size: {n}, Estimated beta_0: {alpha_hat:.2f}, Estimated beta_1: {beta_hat:.2f}")
+
+
+# In[43]:
+
+
+loop_n = 100
+alpha_hat_list = []
+beta_hat_list = []
+for _ in range(loop_n):
+    x, y = generate_data(beta_0, beta_1, 3, 10)
+    beta_hat, alpha_hat = linear_regression(x, y)
+    alpha_hat_list.append(alpha_hat)
+    beta_hat_list.append(beta_hat)
+
+
+# In[44]:
+
+
+alpha_hat_list=np.array(alpha_hat_list)
+beta_hat_list=np.array(beta_hat_list)
+print(f"平均 beta_0 推定値: {np.mean(alpha_hat_list):.4f}, 標準偏差: {np.std(alpha_hat_list):.4f}")
+print(f"平均 beta_1 推定値: {np.mean(beta_hat_list):.4f}, 標準偏差: {np.std(beta_hat_list):.4f}")
+
+
+# In[31]:
+
+
+# Define true parameter values
+beta_0 = 2.5
+beta_1 = 0.8
+
+# Define data sizes
+data_sizes =  [20, 50, 100, 200, 500,1000]
+
+# Number of subplots (rows and columns)
+rows, cols = 2, 3  # Adjust as needed for your data sizes
+
+# Create a figure and subplots
+fig, axes = plt.subplots(rows, cols, figsize=(12, 8))
+
+# Iterate through data sizes and subplots
+for i in range(rows):
+  for j in range(cols):
+    n = data_sizes[i * cols + j]  # Calculate index for each subplot
+
+    # Generate data, estimate parameters, and plot
+    x, y = generate_data(beta_0, beta_1, 3, n)
+    beta_hat, alpha_hat = linear_regression(x, y)
+    x_line = np.linspace(0, 10, 100)
+    y_line = beta_0 + beta_1 * x_line  # True line using true parameters
+    y_est_line = alpha_hat + beta_hat * x_line  # Estimated line
+
+    ax = axes[i, j]  # Access current subplot
+    ax.scatter(x, y, color='blue', label='Data Points', alpha=0.6)
+    ax.plot(x_line, y_line, color='green', label='True Line', linewidth=2)  # True line
+    ax.plot(x_line, y_est_line, color='red', label='Regression Line', linestyle='dashed')
+    ax.set_title(f'n={n}')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.legend(loc="lower right")
+
+# Adjust layout and display the plot
+plt.tight_layout()
+plt.show()
+
+
+# In[ ]:
+
+
+
 

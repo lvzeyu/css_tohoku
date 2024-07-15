@@ -1,181 +1,112 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="../" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>NumPy &#8212; 計算社会科学のためのPythonプログラミング入門</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-  
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'draft/numpy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pandas" href="pandas.html" />
     <link rel="prev" title="pyファイル" href="py.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    
 
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-
-  <header>
-  
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
-  
-  </header>
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      
-      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-
-<a class="navbar-brand logo" href="../intro.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
-    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      <img src="../_static/tohoku-university-logo-vector.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">計算社会科学のためのPythonプログラミング入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -184,308 +115,568 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  イントロダクション
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
-
-
-
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro.html">
+   授業の概要
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  GitとGitHub
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="github.html">
+   GitHub
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pythonの基礎
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_grammer.html">Pythonの基本構文</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_data_type.html">データ型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_struture.html">データ構造</a></li>
-<li class="toctree-l1"><a class="reference internal" href="if.html">分岐</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loop.html">ループ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function.html">関数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class.html">オブジェクトとクラス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="py.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_environment.html">
+   Python環境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_type.html">
+   データ型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_struture.html">
+   データ構造
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if.html">
+   分岐
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loop.html">
+   ループ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   関数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="py.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     py
+    </span>
+   </code>
+   ファイル
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">データ分析ためのパケージ</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scikit-learn.html">scikit-learn</a></li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   可視化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supplementary</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips.html">
+   Tips
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">練習問題</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="exercise1.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise2.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise3.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise4.html">練習課題</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise2.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise4.html">
+   練習課題
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/numpy.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/lvzeyu/css_tohoku/master?urlpath=lab/tree/css_tohoku/draft/numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="btn__text-container">Colab</span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/lvzeyu/css_tohoku" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/numpy.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/draft/numpy.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>NumPy</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">NumPy配列の作成</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Pythonリストから作る配列</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">配列の構築</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">NumPy配列の属性</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">配列のインデクス</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">数学演算</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配列の算術演算</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">ユニバーサル関数: すべての要素への関数適用</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">統計関数</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">行列計算</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">NumPyの応用例:線型回帰モデル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">単回帰モデル</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">最小二乗法</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">重回帰モデル</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/numpy.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/draft/numpy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   NumPy配列の作成
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     Pythonリストから作る配列
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     配列の構築
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   NumPy配列の属性
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   配列のインデクス
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   数学演算
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     配列の算術演算
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ユニバーサル関数: すべての要素への関数適用
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     統計関数
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   行列計算
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   NumPyの応用例:線型回帰モデル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     単回帰モデル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     最小二乗法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     重回帰モデル
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>NumPy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   NumPy配列の作成
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     Pythonリストから作る配列
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     配列の構築
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   NumPy配列の属性
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   配列のインデクス
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   数学演算
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     配列の算術演算
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   ユニバーサル関数: すべての要素への関数適用
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     統計関数
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   行列計算
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   NumPyの応用例:線型回帰モデル
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     単回帰モデル
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     最小二乗法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     重回帰モデル
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
+              <div>
+                
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
+<h1>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <p>計算社会科学の研究は、テキスト、画像、ビデオや数値測定結果など幅広いデータセットとソースを扱っています。</p>
 <p>これらの多種多様なデータをコンピュータで扱う場合はどのようにすればよいだろうか。</p>
 <p>形式に違いがあるにも関わらず、基本的に全てのデータは数値の配列として扱うのに適しています。</p>
@@ -506,15 +697,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.26.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.21.4
 </pre></div>
 </div>
 </div>
 </div>
 <section id="id1">
-<h2>NumPy配列の作成<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>NumPy配列の作成<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <section id="python">
-<h3>Pythonリストから作る配列<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
+<h3>Pythonリストから作る配列<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.array</span></code>を使って、PythonリストからNumPy配列（<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>）を作成します。</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -560,7 +751,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h3>配列の構築<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3>配列の構築<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の組み込み関数で配列を作成できます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,9 +839,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.2883363 , 0.92355074, 0.03006378],
-       [0.15900764, 0.55481348, 0.29106435],
-       [0.58506416, 0.67991527, 0.4672378 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.93869104, 0.56438333, 0.75980788],
+       [0.37731508, 0.51333289, 0.11364262],
+       [0.86418411, 0.16133097, 0.55869752]])
 </pre></div>
 </div>
 </div>
@@ -662,9 +853,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-2.72965594,  0.12752051, -1.77341728],
-       [ 0.75236069,  0.84800622,  0.66078004],
-       [-1.4311685 , -0.57203745, -0.73307908]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.30541811, -0.60512267,  1.47399765],
+       [ 0.3548722 , -0.03719735, -0.3469323 ],
+       [ 0.81809036,  0.84622132,  2.58113671]])
 </pre></div>
 </div>
 </div>
@@ -676,9 +867,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 0, 5],
-       [1, 4, 8],
-       [0, 7, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 4, 5],
+       [0, 9, 2],
+       [1, 5, 8]])
 </pre></div>
 </div>
 </div>
@@ -690,7 +881,7 @@ document.write(`
 </section>
 </section>
 <section id="id3">
-<h2>NumPy配列の属性<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>NumPy配列の属性<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -749,7 +940,7 @@ dtype: int64
 </div>
 </section>
 <section id="id4">
-<h2>配列のインデクス<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>配列のインデクス<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>１次元<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>では、Pythonリストと同様に、<span class="math notranslate nohighlight">\(i\)</span>番目(<span class="math notranslate nohighlight">\(0\)</span>から)の値にアクセスできます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,7 +1052,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4917ae0de289a9960794777082019e6b727990ac4233b5f263322e6b76bb4477.png" src="../_images/4917ae0de289a9960794777082019e6b727990ac4233b5f263322e6b76bb4477.png" />
+<img alt="../_images/numpy_42_0.png" src="../_images/numpy_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -949,9 +1140,9 @@ dtype: int64
 </div>
 </section>
 <section id="id5">
-<h2>数学演算<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2>数学演算<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <section id="id6">
-<h3>配列の算術演算<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3>配列の算術演算<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>はベクトル演算の機能を提供しています。</p>
 <ul class="simple">
 <li><p>同じサイズの<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>同士の算術演算は、同位置の要素同士で計算されます。</p></li>
@@ -1041,7 +1232,7 @@ dtype: int64
 </section>
 </section>
 <section id="id7">
-<h2>ユニバーサル関数: すべての要素への関数適用<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2>ユニバーサル関数: すべての要素への関数適用<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>ユニバーサル関数は、NumPy配列の各要素に対して要素ごとの演算を行うための関数です。これにより、繰り返し処理を書く必要なく、高速かつ効率的な計算が可能になります。</p>
 <p>例えば、<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>(平方根)<code class="docutils literal notranslate"><span class="pre">exp</span></code>（指数）を計算する:</p>
 <div class="cell docutils container">
@@ -1123,7 +1314,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>関数名</p></th>
 <th class="head"><p>説明</p></th>
@@ -1167,11 +1358,11 @@ dtype: int64
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html#">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/ufuncs.html">公式ドキュメンタリー</a>でユニバーサル関数一覧を確認できます。</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="5b9568d0-1abf-43e9-a035-66954aa3154b" name="a9d8a704-7b71-4a01-bc37-c1a22b69a914" type="radio">
+</input><label class="sd-tab-label" for="5b9568d0-1abf-43e9-a035-66954aa3154b">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1194,7 +1385,7 @@ dtype: int64
 </div>
 </div>
 <section id="id8">
-<h3>統計関数<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<h3>統計関数<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>NumPyの統計関数は、<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>配列全体、あるいは特定の軸を中心とした統計処理を提供します。</p>
 <p>いくつかの統計値を計算してみましょう。</p>
 <div class="cell docutils container">
@@ -1267,7 +1458,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>関数名</p></th>
 <th class="head"><p>説明</p></th>
@@ -1304,8 +1495,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<input checked="checked" id="616d79cd-cebf-455d-ab65-28b050d215e6" name="26291244-9a89-4ec7-a67e-3f12632e8ab1" type="radio">
+</input><label class="sd-tab-label" for="616d79cd-cebf-455d-ab65-28b050d215e6">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
@@ -1316,7 +1507,7 @@ dtype: int64
 </section>
 </section>
 <section id="id9">
-<h2>行列計算<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<h2>行列計算<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>NumPyは、高度な行列計算を効率的に行うための多くの機能を提供しています。</p>
 <p>NumPyで内積(ドット積)を計算するために関数<code class="docutils literal notranslate"><span class="pre">dot</span></code>を提供します。</p>
 <aside class="margin sidebar">
@@ -1374,9 +1565,9 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.00000000e+00, -7.77156117e-16, -1.77635684e-15],
-       [-8.88178420e-16,  1.00000000e+00, -8.88178420e-15],
-       [ 6.66133815e-15, -1.49880108e-15,  1.00000000e+00]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.00000000e+00,  0.00000000e+00,  7.10542736e-15],
+       [ 1.42108547e-14,  1.00000000e+00,  0.00000000e+00],
+       [ 0.00000000e+00, -3.55271368e-15,  1.00000000e+00]])
 </pre></div>
 </div>
 </div>
@@ -1404,7 +1595,7 @@ dtype: int64
 <p class="sidebar-title"></p>
 <p>NumPyの内積計算において、数学的な演算結果と完全に一致しない場合が生じる可能性があるのは、数値計算における丸め誤差（round-off error）と呼ばれる現象が関係しています。NumPyは浮動小数点数を使用して数値計算を行います。浮動小数点数は有限のビット数で実数を表現するため、厳密な実数値を表現できない場合があります。内積計算では、浮動小数点数の丸め誤差が蓄積されることで、数学的な期待値と微小な差異が生じることがあります。これは浮動小数点数の精度限界によるものであり、NumPyに限らず他のプログラミング言語や数値計算ライブラリでも同様の現象が見られます。</p>
 </aside>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>関数名</p></th>
 <th class="head"><p>説明</p></th>
@@ -1447,8 +1638,8 @@ dtype: int64
 </tbody>
 </table>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="db600c3a-661d-4578-a810-fc24c1ccd485" name="358eaac3-243f-42d5-9036-8b28c9a4dbea" type="radio">
+</input><label class="sd-tab-label" for="db600c3a-661d-4578-a810-fc24c1ccd485">
 実習問題</label><div class="sd-tab-content docutils">
 <p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
 </div>
@@ -1465,9 +1656,9 @@ dtype: int64
 </aside>
 </section>
 <section id="id10">
-<h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <section id="id11">
-<h3>単回帰モデル<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<h3>単回帰モデル<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span>個のデータ<span class="math notranslate nohighlight">\((x_1,y_1),...(x_n,y_n)\)</span>が観測され、各<span class="math notranslate nohighlight">\(y_i\)</span>が</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1476,7 +1667,7 @@ y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
 <p>が得られます。</p>
 </section>
 <section id="id12">
-<h3>最小二乗法<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<h3>最小二乗法<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>最小二乗法の目標は、与えられたデータセットに対して予測された値（モデルの出力）と実際の値（データセットの出力）の差を最小化することである。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1625,11 +1816,6 @@ alpha:  2.7740186712020654
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1666,22 +1852,21 @@ alpha:  2.7740186712020654
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<img alt="../_images/dce7af05189d8b9ea857480b691da242c5f62dc6bf709d85de5c07884d71b873.png" src="../_images/dce7af05189d8b9ea857480b691da242c5f62dc6bf709d85de5c07884d71b873.png" />
+<img alt="../_images/numpy_112_0.png" src="../_images/numpy_112_0.png" />
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<input checked="checked" id="4b620dc9-100c-499b-8b6e-39518e012daa" name="6539f9e2-408d-48c2-9bb3-ad3864530e3e" type="radio">
+</input><label class="sd-tab-label" for="4b620dc9-100c-499b-8b6e-39518e012daa">
 実習問題1</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>母集団回帰係数、誤差項とサンプルサイズを指定し、観測データ(<span class="math notranslate nohighlight">\(x\)</span>,<span class="math notranslate nohighlight">\(y\)</span>)を生成する関数を作成しなさい</p></li>
 <li><p>観測データ(<span class="math notranslate nohighlight">\(x\)</span>,<span class="math notranslate nohighlight">\(y\)</span>)で、最小二乗法で回帰係数を推定する関数を作成しなさい</p></li>
 </ul>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<input id="85a77a7b-b3f5-47ac-891f-3c6f089fcc3a" name="6539f9e2-408d-48c2-9bb3-ad3864530e3e" type="radio">
+</input><label class="sd-tab-label" for="85a77a7b-b3f5-47ac-891f-3c6f089fcc3a">
 実習問題2</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>一定な母集団回帰係数、誤差項サンプルサイズを設定し、観測データを作成し、回帰係数を推定するといった推定プロセスを100回を行いなさい。</p></li>
@@ -1692,7 +1877,7 @@ alpha:  2.7740186712020654
 </div>
 </section>
 <section id="id13">
-<h3>重回帰モデル<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<h3>重回帰モデル<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(k\)</span>個の説明変数<span class="math notranslate nohighlight">\(x_1,...,x_k\)</span>が考えられ、<span class="math notranslate nohighlight">\(y\)</span>との間に</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1770,124 +1955,50 @@ X^TX\beta = X^TY
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="py.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="py.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="pandas.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="pandas.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">pandas</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">NumPy配列の作成</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Pythonリストから作る配列</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">配列の構築</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">NumPy配列の属性</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">配列のインデクス</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">数学演算</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">配列の算術演算</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">ユニバーサル関数: すべての要素への関数適用</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">統計関数</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">行列計算</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">NumPyの応用例:線型回帰モデル</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">単回帰モデル</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">最小二乗法</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">重回帰モデル</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By 呂　沢宇
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 呂　沢宇<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

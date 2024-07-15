@@ -31,7 +31,6 @@ for place in sys.path:
 
 
 # ## ```py```ファイルの実行
-# 
 
 # ```if __name__ == “__main__”:```を使うことで、スクリプトから直接にコードを実行することができます。
 # 
@@ -55,3 +54,53 @@ if __name__ == "__main__":
 # 
 # - この仕組みにより、```python ファイル.py```スクリプトとして実行された場合、```__name__```変数には```__main__```という値が割り当てられます。したがって、```if __name__ == "__main__":```のブロック内のコード ```main()```関数が呼び出され、スクリプトから直接に実行されます。
 # 
+
+# ## ```argparse```によるコマンドラインオプションの設定
+# 
+# ```argparse```はコマンドライン引数を設定・処理するためのツールです。
+# 
+# ```.py```フィアルで```argparse```を使うことで、コマンドラインからプログラムに引数を渡す、動作を制御することができます。
+# 
+# 「コマンドライン引数」とは、以下のようにPythonファイルを呼び出す際に渡せる値のことです。
+# 
+# ```
+# python main.py --n cardene --age 30
+# ```
+
+# - ```ArgumentParser```クラスを使用して、プログラムの説明と引数を定義します。
+
+# In[3]:
+
+
+import argparse
+parser = argparse.ArgumentParser(
+                    prog='ProgramName',
+                    description='What the program does',
+                    epilog='Text at the bottom of help')
+
+
+# - ```add_argument``` メソッドを使って、引数を定義します。
+# - 引数の名前、オプション、型、デフォルト値などを指定することができます。
+# 
+# 
+
+# In[4]:
+
+
+parser.add_argument("--age", type=int, default=30, help="年齢")
+parser.add_argument("--favorite_color", choices=["red", "green", "blue"], help="好きな色")
+
+
+# ```{note}
+# Google Colab で Drive をマウントし、ディレクトリを変更するには、以下の手順を実行します。
+# 
+# - 以下のコードを実行して、Drive をマウントします。
+# 
+# `
+# from google.colab import drive
+# drive.mount('/content/drive')
+# `
+# 
+# - os.chdir() 関数を使用してディレクトリを変更できます。
+# 
+# ```
