@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 可視化
+# # 可視化(part 1)
 
 # Pythonでは、最も広く利用されている```matplotlib```をはじめ、```Seaborn```、```plotly```など可視化のための様々なライブラリが用意されています。
 
