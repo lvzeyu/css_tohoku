@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>可視化 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    <title>可視化(part 1) &#8212; 計算社会科学のためのPythonプログラミング入門</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="scikit-learn" href="scikit-learn.html" />
+    <link rel="next" title="機械学習" href="ml.html" />
     <link rel="prev" title="pandas" href="pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -217,7 +217,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   可視化
+   可視化(part 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ml.html">
+   機械学習
   </a>
  </li>
  <li class="toctree-l1">
@@ -494,44 +499,44 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id1">
      基本設定
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id2">
        スタイルの設定
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id3">
        フォントの設定
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id4">
      基本的な描画方法
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id5">
      オブジェクト指向なプロット
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id6">
        グラフ作成の主な流れ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id7">
        複数サブプロット
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id9">
+        <a class="reference internal nav-link" href="#id8">
          サブプロットの単純なグリッド
         </a>
        </li>
@@ -540,111 +545,111 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id9">
      プロットの作成
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
+      <a class="reference internal nav-link" href="#id10">
        線グラフ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
+      <a class="reference internal nav-link" href="#id11">
        棒グラフ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
+      <a class="reference internal nav-link" href="#id12">
        ヒストグラム
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
+      <a class="reference internal nav-link" href="#id13">
        箱ひげ図
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
+      <a class="reference internal nav-link" href="#id14">
        散布図
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id15">
      プロットの制御
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
+      <a class="reference internal nav-link" href="#id16">
        タイトル・軸ラベルの表示
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
+      <a class="reference internal nav-link" href="#id17">
        軸の目盛
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id19">
+      <a class="reference internal nav-link" href="#id18">
        グラフに文字をつける
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id20">
+        <a class="reference internal nav-link" href="#id19">
          フォントファミリー
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id21">
+        <a class="reference internal nav-link" href="#id20">
          文字の太さ
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id22">
+        <a class="reference internal nav-link" href="#id21">
          横方向の位置
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id23">
+        <a class="reference internal nav-link" href="#id22">
          行間の広さ
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id24">
+      <a class="reference internal nav-link" href="#id23">
        凡例の設定
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id25">
+        <a class="reference internal nav-link" href="#id24">
          凡例の表示
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id26">
+        <a class="reference internal nav-link" href="#id25">
          凡例の位置
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id27">
+        <a class="reference internal nav-link" href="#id26">
          凡例の列数
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id28">
+        <a class="reference internal nav-link" href="#id27">
          凡例の色
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id29">
+        <a class="reference internal nav-link" href="#id28">
          凡例の文字サイズ
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id30">
+        <a class="reference internal nav-link" href="#id29">
          凡例のタイトル
         </a>
        </li>
@@ -653,7 +658,7 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id31">
+    <a class="reference internal nav-link" href="#id30">
      グラフの保存
     </a>
    </li>
@@ -668,7 +673,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>可視化</h1>
+                <h1>可視化(part 1)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -684,44 +689,44 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id1">
      基本設定
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
+      <a class="reference internal nav-link" href="#id2">
        スタイルの設定
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
+      <a class="reference internal nav-link" href="#id3">
        フォントの設定
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id4">
      基本的な描画方法
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id5">
      オブジェクト指向なプロット
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
+      <a class="reference internal nav-link" href="#id6">
        グラフ作成の主な流れ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
+      <a class="reference internal nav-link" href="#id7">
        複数サブプロット
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id9">
+        <a class="reference internal nav-link" href="#id8">
          サブプロットの単純なグリッド
         </a>
        </li>
@@ -730,111 +735,111 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id9">
      プロットの作成
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
+      <a class="reference internal nav-link" href="#id10">
        線グラフ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
+      <a class="reference internal nav-link" href="#id11">
        棒グラフ
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
+      <a class="reference internal nav-link" href="#id12">
        ヒストグラム
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
+      <a class="reference internal nav-link" href="#id13">
        箱ひげ図
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
+      <a class="reference internal nav-link" href="#id14">
        散布図
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id16">
+    <a class="reference internal nav-link" href="#id15">
      プロットの制御
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
+      <a class="reference internal nav-link" href="#id16">
        タイトル・軸ラベルの表示
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
+      <a class="reference internal nav-link" href="#id17">
        軸の目盛
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id19">
+      <a class="reference internal nav-link" href="#id18">
        グラフに文字をつける
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id20">
+        <a class="reference internal nav-link" href="#id19">
          フォントファミリー
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id21">
+        <a class="reference internal nav-link" href="#id20">
          文字の太さ
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id22">
+        <a class="reference internal nav-link" href="#id21">
          横方向の位置
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id23">
+        <a class="reference internal nav-link" href="#id22">
          行間の広さ
         </a>
        </li>
       </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id24">
+      <a class="reference internal nav-link" href="#id23">
        凡例の設定
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id25">
+        <a class="reference internal nav-link" href="#id24">
          凡例の表示
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id26">
+        <a class="reference internal nav-link" href="#id25">
          凡例の位置
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id27">
+        <a class="reference internal nav-link" href="#id26">
          凡例の列数
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id28">
+        <a class="reference internal nav-link" href="#id27">
          凡例の色
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id29">
+        <a class="reference internal nav-link" href="#id28">
          凡例の文字サイズ
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id30">
+        <a class="reference internal nav-link" href="#id29">
          凡例のタイトル
         </a>
        </li>
@@ -843,7 +848,7 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id31">
+    <a class="reference internal nav-link" href="#id30">
      グラフの保存
     </a>
    </li>
@@ -859,8 +864,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>可視化<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="part-1">
+<h1>可視化(part 1)<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h1>
 <p>Pythonでは、最も広く利用されている<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>をはじめ、<code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>、<code class="docutils literal notranslate"><span class="pre">plotly</span></code>など可視化のための様々なライブラリが用意されています。</p>
 <section id="matplotlib">
 <h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
@@ -873,10 +878,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<section id="id1">
+<h3>基本設定<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <section id="id2">
-<h3>基本設定<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<section id="id3">
-<h4>スタイルの設定<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<h4>スタイルの設定<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">plt.style.use</span></code>命令を使用して、図のスタイルを適切に選択します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,8 +897,8 @@ title="Print to PDF"
 <p><a class="reference external" href="https://github.com/garrettj403/SciencePlots">Science Plots</a>は、簡易的に論文用の「良い感じの図」を作成してくれる拡張ライブラリです。</p>
 </aside>
 </section>
-<section id="id4">
-<h4>フォントの設定<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<section id="id3">
+<h4>フォントの設定<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>で図のフォントを指定することができます。特に、matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますので、フォント設定を変更することで表示させることが必要されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -932,8 +937,8 @@ title="Print to PDF"
 </div>
 </section>
 </section>
-<section id="id5">
-<h3>基本的な描画方法<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h3>基本的な描画方法<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>可視化を一番手軽に行うために、<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>ではデータを渡すだけで描画してくれる関数が多数用意されています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -946,7 +951,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133e24190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13439fdc0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/visualization_13_1.png" src="../_images/visualization_13_1.png" />
@@ -961,7 +966,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x133f02bf0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1344e2050&gt;]
 </pre></div>
 </div>
 <img alt="../_images/visualization_14_1.png" src="../_images/visualization_14_1.png" />
@@ -975,10 +980,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  4.,  20.,  58., 167., 231., 235., 170.,  80.,  30.,   5.]),
- array([-3.19516688, -2.56871149, -1.9422561 , -1.31580071, -0.68934532,
-        -0.06288992,  0.56356547,  1.19002086,  1.81647625,  2.44293165,
-         3.06938704]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  3.,   5.,  33., 109., 219., 258., 224., 112.,  34.,   3.]),
+ array([-3.83321089, -3.13126162, -2.42931236, -1.7273631 , -1.02541384,
+        -0.32346458,  0.37848469,  1.08043395,  1.78238321,  2.48433247,
+         3.18628173]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -1003,8 +1008,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>オブジェクト指向なプロット<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h3>オブジェクト指向なプロット<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>ここまでは<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>モジュールの関数を利用することでグラフを描画する方法を紹介しましたが、この方法では、描画している図が暗に行われているため、細かい設定を行うことが難しいです。</p>
 <p>そこで、より明示的な方法で描画ができるオブジェクト指向なインターフェースを使った方法を解説します。</p>
 <p>「オブジェクト指向インターフェース」は<code class="docutils literal notranslate"><span class="pre">Figure</span></code>や<code class="docutils literal notranslate"><span class="pre">Axes</span></code>などのオブジェクトを用いてグラフを作成する方法です。</p>
@@ -1021,8 +1026,8 @@ title="Print to PDF"
 </li>
 </ul>
 <p><img alt="" src="../_images/matplotlib_figure_parts.png" /></p>
-<section id="id7">
-<h4>グラフ作成の主な流れ<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<section id="id6">
+<h4>グラフ作成の主な流れ<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>オブジェクト指向インターフェースにおけるグラフ作成の流れは以下の通りです。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code>でFigureオブジェクト(土台)を作成</p></li>
@@ -1079,10 +1084,10 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+<section id="id7">
+<h4>複数サブプロット<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <section id="id8">
-<h4>複数サブプロット<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
-<section id="id9">
-<h5>サブプロットの単純なグリッド<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<h5>サブプロットの単純なグリッド<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
 <p>列または行で整列したサブプロットの集合で結果を可視化することは非常に一般です。</p>
 <p>オブジェクト指向インターフェースでは、こうした複数のプロットを一つの図にまとめる場合には特に有用です。</p>
 <div class="cell docutils container">
@@ -1142,12 +1147,12 @@ title="Print to PDF"
 </section>
 </section>
 </section>
-<section id="id10">
-<h3>プロットの作成<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>プロットの作成<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>では、さまざまなカスタマイズや設定を行うことができます。
 <img alt="" src="../_images/anatomy.png" /></p>
-<section id="id11">
-<h4>線グラフ<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<section id="id10">
+<h4>線グラフ<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>線の主な書式を以下の表に示します。</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1249,8 +1254,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id12">
-<h4>棒グラフ<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<section id="id11">
+<h4>棒グラフ<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>棒の色を指定するには、同様に<code class="docutils literal notranslate"><span class="pre">color</span></code>引数を使用します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1367,8 +1372,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id13">
-<h4>ヒストグラム<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<section id="id12">
+<h4>ヒストグラム<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <p>ヒストグラムを出力するには、<code class="docutils literal notranslate"><span class="pre">ax.hist</span></code>を使用します。<code class="docutils literal notranslate"><span class="pre">ax.hist</span></code>の最初の引数に表示するデータを配列で与えます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1465,8 +1470,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id14">
-<h4>箱ひげ図<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
+<section id="id13">
+<h4>箱ひげ図<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <p>箱ひげ図をプロットするには、<code class="docutils literal notranslate"><span class="pre">ax.boxplot</span></code>を使用します。<code class="docutils literal notranslate"><span class="pre">ax.boxplot</span></code>に渡すデータ（以下の例では<code class="docutils literal notranslate"><span class="pre">x</span></code>）が1次元配列の場合、箱ひげ図は1個だけ出力されます。一方、データが2次元配列の場合、箱ひげ図は列の数だけ出力されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1535,8 +1540,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id15">
-<h4>散布図<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h4>
+<section id="id14">
+<h4>散布図<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
 <p>散布図を出力するには、<code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>を使用します。<code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>の最初の引数に横軸方向の値、2番目の引数に縦軸方向の値をそれぞれ配列で与えます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1633,10 +1638,10 @@ title="Print to PDF"
 </div>
 </section>
 </section>
+<section id="id15">
+<h3>プロットの制御<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <section id="id16">
-<h3>プロットの制御<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
-<section id="id17">
-<h4>タイトル・軸ラベルの表示<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<h4>タイトル・軸ラベルの表示<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
 <p>グラフタイトル、x軸のラベル、y軸のラベルを表示と調整することができます。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fontsize</span></code>: タイトル(軸ラベル)のフォントサイズを指定します。</p></li>
@@ -1664,8 +1669,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id18">
-<h4>軸の目盛<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+<section id="id17">
+<h4>軸の目盛<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <p>x軸とy軸には、プロットする値に応じて自動的に目盛ラベルが表示されますが、さらにカスタマイズすることもできます。</p>
 <ul class="simple">
 <li><p>x軸</p>
@@ -1698,10 +1703,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.axis.YTick at 0x134be44c0&gt;,
- &lt;matplotlib.axis.YTick at 0x134be7400&gt;,
- &lt;matplotlib.axis.YTick at 0x134be6860&gt;,
- &lt;matplotlib.axis.YTick at 0x134bf5fc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.axis.YTick at 0x1352d4610&gt;,
+ &lt;matplotlib.axis.YTick at 0x1352d7eb0&gt;,
+ &lt;matplotlib.axis.YTick at 0x1352d6d70&gt;,
+ &lt;matplotlib.axis.YTick at 0x1352a92a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/visualization_81_1.png" src="../_images/visualization_81_1.png" />
@@ -1820,8 +1825,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id19">
-<h4>グラフに文字をつける<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+<section id="id18">
+<h4>グラフに文字をつける<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
 <p>グラフにテキストやマークをつけることで、関連する追加情報を提供することができます。</p>
 <p>文字をつけるには、<code class="docutils literal notranslate"><span class="pre">ax.text</span></code>メソッドを使用します。このメソッドには、注釈をつけるテキスト、位置、およびその他のスタイルオプションを指定できます。</p>
 <p>基本的には、<code class="docutils literal notranslate"><span class="pre">ax.text(x,</span> <span class="pre">y,</span> <span class="pre">s)</span></code>は文字列を描画することができます。ここで、<code class="docutils literal notranslate"><span class="pre">x</span></code>と<code class="docutils literal notranslate"><span class="pre">y</span></code>は文字列の左下のx, y座標であり、<code class="docutils literal notranslate"><span class="pre">s</span></code>は表示する文字列です。</p>
@@ -1878,8 +1883,8 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<section id="id20">
-<h5>フォントファミリー<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h5>
+<section id="id19">
+<h5>フォントファミリー<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h5>
 <p>フォントファミリー（フォントの種類）は<code class="docutils literal notranslate"><span class="pre">fontfamily</span></code>または<code class="docutils literal notranslate"><span class="pre">family</span></code>オプションで変更できます。‘serif’, ‘sans-serif’, ‘cursive’（筆記体）, ‘fantasy’（装飾の多いフォント）, ‘monospace’（等幅フォント）から選択可能です。以下に例を示します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1898,8 +1903,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id21">
-<h5>文字の太さ<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h5>
+<section id="id20">
+<h5>文字の太さ<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h5>
 <p>文字列の太さは<code class="docutils literal notranslate"><span class="pre">fontweight</span></code>または<code class="docutils literal notranslate"><span class="pre">weight</span></code>オプションで変更できます。0～1000の範囲の数値で指定、または’ultralight’, ‘light’, ‘normal’, ‘regular’, ‘book’, ‘medium’, ‘roman’, ‘semibold’, ‘demibold’, ‘demi’, ‘bold’, ‘heavy’, ‘extra bold’, ‘black’から選択します。以下に例を示します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1918,8 +1923,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id22">
-<h5>横方向の位置<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h5>
+<section id="id21">
+<h5>横方向の位置<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h5>
 <p>テキストの横方向の位置は、<code class="docutils literal notranslate"><span class="pre">horizontalalignment</span></code>または<code class="docutils literal notranslate"><span class="pre">ha</span></code>オプションに<code class="docutils literal notranslate"><span class="pre">'left'</span></code>, <code class="docutils literal notranslate"><span class="pre">'center'</span></code>, <code class="docutils literal notranslate"><span class="pre">'right'</span></code>のいずれかを与えて指定します。
 <code class="docutils literal notranslate"><span class="pre">ax.text(x,</span> <span class="pre">y,</span> <span class="pre">s)</span></code>の最初の引数<code class="docutils literal notranslate"><span class="pre">x</span></code>で文字列の横方向の位置を指定しますが、</p>
 <ul class="simple">
@@ -1945,8 +1950,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id23">
-<h5>行間の広さ<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h5>
+<section id="id22">
+<h5>行間の広さ<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h5>
 <p>テキストの行間の広さは<code class="docutils literal notranslate"><span class="pre">linespacing</span></code>オプションで指定します。以下にデフォルトの行間と<code class="docutils literal notranslate"><span class="pre">linespacing</span></code>を1, 1.5とした例をそれぞれ示します（デフォルトの値は1.2です）。
 また、<code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>は改行を意味します。</p>
 <div class="cell docutils container">
@@ -1994,11 +1999,11 @@ title="Print to PDF"
 </div>
 </section>
 </section>
-<section id="id24">
-<h4>凡例の設定<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h4>
+<section id="id23">
+<h4>凡例の設定<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h4>
 <p>プロットの凡例は、様々なプロット要素にラベルを割り当て、可視化の結果をわかりやすくします。</p>
-<section id="id25">
-<h5>凡例の表示<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h5>
+<section id="id24">
+<h5>凡例の表示<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h5>
 <p>凡例を表示する方法はいくつかあります。</p>
 <p>1つ目は、データをプロットする際に<code class="docutils literal notranslate"><span class="pre">label</span></code>引数でラベルを設定し、<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドで凡例を表示する方法です。</p>
 <p>2つ目は、<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドにラベルを与える方法です。ラベルはリストで与えます。</p>
@@ -2023,8 +2028,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id26">
-<h5>凡例の位置<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h5>
+<section id="id25">
+<h5>凡例の位置<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h5>
 <p>凡例の位置は<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドの<code class="docutils literal notranslate"><span class="pre">loc</span></code>オプションで指定できます。デフォルト値は<code class="docutils literal notranslate"><span class="pre">best</span></code>（プロットと凡例がなるべく重ならないように配置する）です。また、以下からも指定可能です。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------</span>
 <span class="o">|</span><span class="n">upper</span> <span class="n">left</span> <span class="o">|</span><span class="n">upper</span> <span class="n">center</span><span class="o">|</span><span class="n">upper</span> <span class="n">right</span> <span class="o">|</span>
@@ -2065,15 +2070,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x134ed01c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13530d270&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_102_1.png" src="../_images/visualization_102_1.png" />
 </div>
 </div>
 </section>
-<section id="id27">
-<h5>凡例の列数<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h5>
+<section id="id26">
+<h5>凡例の列数<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h5>
 <p>凡例の列数は<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドの<code class="docutils literal notranslate"><span class="pre">ncol</span></code>オプションで指定できます。以下は列数を2とした例です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2091,8 +2096,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id28">
-<h5>凡例の色<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h5>
+<section id="id27">
+<h5>凡例の色<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h5>
 <p>凡例の文字色は<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドの<code class="docutils literal notranslate"><span class="pre">labelcolor</span></code>, 背景色は<code class="docutils literal notranslate"><span class="pre">facecolor</span></code>, 枠線の色は<code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>でそれぞれ指定できます。また、背景色の透過度は<code class="docutils literal notranslate"><span class="pre">framealpha</span></code>で指定できます（0～1の範囲で指定し、値が小さいほど透明に近づきます）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2104,15 +2109,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13520df00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x135aaa530&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_106_1.png" src="../_images/visualization_106_1.png" />
 </div>
 </div>
 </section>
-<section id="id29">
-<h5>凡例の文字サイズ<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h5>
+<section id="id28">
+<h5>凡例の文字サイズ<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h5>
 <p>凡例の文字サイズは<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドの<code class="docutils literal notranslate"><span class="pre">fontsize</span></code>オプションで指定できます。整数または次のいずれかから指定可能です。
 <code class="docutils literal notranslate"><span class="pre">{&quot;xx-small&quot;,</span> <span class="pre">&quot;x-small&quot;,</span> <span class="pre">&quot;small&quot;.</span> <span class="pre">&quot;medium&quot;,</span> <span class="pre">&quot;large&quot;,</span> <span class="pre">&quot;x-large&quot;,</span> <span class="pre">&quot;xx-large&quot;}</span></code></p>
 <div class="cell docutils container">
@@ -2125,15 +2130,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13561fca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x135b4a020&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_108_1.png" src="../_images/visualization_108_1.png" />
 </div>
 </div>
 </section>
-<section id="id30">
-<h5>凡例のタイトル<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h5>
+<section id="id29">
+<h5>凡例のタイトル<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h5>
 <p>凡例にタイトルを設定する場合、<code class="docutils literal notranslate"><span class="pre">legend()</span></code>メソッドの<code class="docutils literal notranslate"><span class="pre">title</span></code>オプションで指定できます。以下はタイトルを”Prices”と設定した例です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2145,7 +2150,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x134d87070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x135b11900&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_110_1.png" src="../_images/visualization_110_1.png" />
@@ -2189,7 +2194,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1353917b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13580f700&gt;
 </pre></div>
 </div>
 <img alt="../_images/visualization_111_1.png" src="../_images/visualization_111_1.png" />
@@ -2198,8 +2203,8 @@ title="Print to PDF"
 </section>
 </section>
 </section>
-<section id="id31">
-<h3>グラフの保存<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h3>
+<section id="id30">
+<h3>グラフの保存<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <p>グラフを保存する場合、<code class="docutils literal notranslate"><span class="pre">fig.savefig()</span></code>メソッドを使用します。</p>
 <p>保存する画像の形式は、ファイル名の拡張子から自動的に判断されます。<code class="docutils literal notranslate"><span class="pre">.png</span></code>以外には.<code class="docutils literal notranslate"><span class="pre">jpg</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code>が指定可能です。</p>
 <p><code class="docutils literal notranslate"><span class="pre">fig.savefig()</span></code>のメソッドの主なオプションを以下に示します。</p>
@@ -2237,8 +2242,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1345dbfa-5621-4850-ab00-06bbd6f969d3" name="84e96a9b-37d8-47e1-93ae-6ea6bc216d3a" type="radio">
-</input><label class="sd-tab-label" for="1345dbfa-5621-4850-ab00-06bbd6f969d3">
+<input checked="checked" id="c1a40eff-fdf0-43bd-aa85-a4122a6a8e54" name="756f9b24-33e3-49ba-ba85-429a42264306" type="radio">
+</input><label class="sd-tab-label" for="c1a40eff-fdf0-43bd-aa85-a4122a6a8e54">
 実習問題</label><div class="sd-tab-content docutils">
 <p>以下の図を再現してください</p>
 </div>
@@ -2291,10 +2296,10 @@ title="Print to PDF"
             <p class="prev-next-title">pandas</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="scikit-learn.html" title="next page">
+    <a class='right-next' id="next-link" href="ml.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">scikit-learn</p>
+        <p class="prev-next-title">機械学習</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
