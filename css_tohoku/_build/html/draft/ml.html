@@ -1,0 +1,1114 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>機械学習 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="scikit-learn" href="scikit-learn.html" />
+    <link rel="prev" title="可視化(part 1)" href="visualization.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/tohoku-university-logo-vector.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">計算社会科学のためのPythonプログラミング入門</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    計算社会科学のためのPythonプログラミング入門
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  イントロダクション
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro.html">
+   授業の概要
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  GitとGitHub
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="github.html">
+   GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pythonの基礎
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_environment.html">
+   Python環境
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_grammer.html">
+   Pythonの基本構文
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_data_type.html">
+   データ型
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_struture.html">
+   データ構造
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="if.html">
+   分岐
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loop.html">
+   ループ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="function.html">
+   関数
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class.html">
+   オブジェクトとクラス
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="py.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     py
+    </span>
+   </code>
+   ファイル
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  データ分析ためのパケージ
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization.html">
+   可視化(part 1)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   機械学習
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Supplementary
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips.html">
+   Tips
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  練習問題
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise2.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise3.html">
+   練習課題
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise4.html">
+   練習課題
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lvzeyu/css_tohoku/issues/new?title=Issue%20on%20page%20%2Fdraft/ml.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/draft/ml.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   機械学習の基本概念
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     機械はどのように学習するか
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       データストレージ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       抽象化
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       汎化
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       評価
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     実際の機械学習プロセス
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     機械学習の入力データ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     機械学習アルゴリズムの種類
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       教師あり学習
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id12">
+         クラスラベルを予測するための分類
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id13">
+         連続値を予測するための回帰
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id14">
+         教師あり学習の仕組み
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id15">
+         過学習
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     教師なし学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       クラスタリング
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       次元削減
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   機械学習アルゴリズム
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     教師あり学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       線形回帰
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svm">
+       サポートベクターマシン (SVM)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       決定木とランダムフォレスト
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       アンサンブル学習
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       ニューラルネットワーク
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     教師なし学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-means">
+       K-means
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pca">
+       PCA
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>機械学習</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   機械学習の基本概念
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     機械はどのように学習するか
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       データストレージ
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       抽象化
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       汎化
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       評価
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     実際の機械学習プロセス
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     機械学習の入力データ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     機械学習アルゴリズムの種類
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       教師あり学習
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id12">
+         クラスラベルを予測するための分類
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id13">
+         連続値を予測するための回帰
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id14">
+         教師あり学習の仕組み
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id15">
+         過学習
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     教師なし学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       クラスタリング
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       次元削減
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   機械学習アルゴリズム
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     教師あり学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       線形回帰
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svm">
+       サポートベクターマシン (SVM)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       決定木とランダムフォレスト
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       アンサンブル学習
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       ニューラルネットワーク
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     教師なし学習
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-means">
+       K-means
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pca">
+       PCA
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>機械学習<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>私たちは生まれたときから溢れんばかりのデータに囲まれています。人類の体の感覚器官(目、耳、鼻)は絶えず生データにさらされており、それらのデータは脳によって処理されています。脳はデータを整理し、重要な情報を抽出し、それを元に認識や判断を行います。</p>
+<p>このような「観測ー処理」のプロセスを通じて、人間の経験を通じて学習し、特定のタスクを遂行できるように適応していきます。</p>
+<p>このプロセスでは、多くの科学研究のプロセスにも似ています。例えば、天文学者は天体の位置や輝度を観測し、気象学者は温度、湿度、風速などの気象データを収集します。そして、観測データを基にモデルを構築し、そのモデルを使って現象を説明したり予測したりします。</p>
+<p>現在、電子センサーの発展に伴う、記録されるデータの量は爆発的に増え、その内容も豊かになりました。この大量の情報をすべて理解する系統的な手段があれば、知識に基づく行動が可能になるかもしれません。</p>
+<p>機械学習は、コンピュータが大量のデータを学習することで、データの中に潜むパターンと規則性を抽出する技術です。利用可能なデータ、統計学的手法、計算能力が急速に発展したことが、この分野が成長するきっかけとなります。</p>
+<section id="id2">
+<h2>機械学習の基本概念<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>機械はどのように学習するか<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>機械学習は、コンピュータが大量のデータを学習することで、データの中に潜むパターンと規則性を抽出する技術です。</p>
+<p>人間の脳は生まれたときから「自然に」学習するように作られているが、コンピュータが学習するために必要な条件は明確にしておかなければならないです。ただ、学習者は人間なのか機械なのかに関わらず、基本的な学習プロセスは似ています。</p>
+<section id="id4">
+<h4>データストレージ<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<p>コンピュータは、ハードディスク、フラッシュメモリ、RAM(Random-Access Memory)、CPUとGPUを組み合わせることで、データを格納しています。</p>
+<p>その中に、GPUは特に大量のデータを高速に処理する能力に優れています。もともとは画像処理やレンダリングのために設計されましたが、その並列処理能力の高さから、機械学習やディープラーニングの訓練においても重要な役割を果たしています。</p>
+</section>
+<section id="id5">
+<h4>抽象化<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>「格納されたデータに広い意味を割り当て」という作業は、抽象化の過程で発生します。</p>
+<p>コンピュータが格納したなまデータを要約するために<strong>モデル</strong>を使います。</p>
+<p>モデルとは、データに内在するパターンを明示的に記述したものであり、様々な種類があります。基本的には、生データを要約し、重要な特徴や傾向を抽出する役割を果たします。</p>
+<ul class="simple">
+<li><p>例えば、重力の発見について考えてみよう。Newton、数式(モデル)<span class="math notranslate nohighlight">\(g=9.8m/s^2\)</span>を観測データ(物体が落下する距離と時間の関係)に適合させることで、重力の存在を推測しました。</p></li>
+</ul>
+<p>パターンは常に存在していますが、情報を異なる形式で表現することによって新たに概念化される場合もあります・</p>
+</section>
+<section id="id6">
+<h4>汎化<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<p>学習プロセスの次のステップは、抽象化された知識を将来の行動に利用することになります。</p>
+<p>パターンをモデル化する手法は様々であり、どのパターンが有益であるかは状況次第です。</p>
+<p>汎化では、学習を通じて発見したパターンを絞り込み、将来のタスクに最も役立つのだけを抽出します。</p>
+</section>
+<section id="id7">
+<h4>評価<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<p>学習がどれくらいうまくいったのかを評価し、学習器の性能を計測する必要があります。評価を通じて、新しい未知のデータにモデルがどれくらい汎化するのかを判断する。</p>
+</section>
+</section>
+<section id="id8">
+<h3>実際の機械学習プロセス<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>ここまでは、機械学習の理論的な仕組みについて説明しましたが、学習プロセスを実際の機械学習実装に適用するといくつのステップで構成されます。</p>
+<ul class="simple">
+<li><p>データの収集</p></li>
+<li><p>データの探索と前処理</p>
+<ul>
+<li><p>生データを学習プロセスに利用できる状態にするために、学習器が期待する入力に合わせてコード化する必要があります</p></li>
+</ul>
+</li>
+<li><p>モデルの訓練</p>
+<ul>
+<li><p>アルゴリズムでデータをモデルという形式で表現します</p></li>
+</ul>
+</li>
+<li><p>モデルの評価</p>
+<ul>
+<li><p>特定な性能指標でモデルを評価します</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h3>機械学習の入力データ<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>人間は、テキスト、写真、音声といった非構造化データを難なく処理できますが、コンピューターは一般的にデータが構造化されていることを要求します。つまり、特定な現象のインスタンスがそれぞれ同じ特徴量で構成されていて、それらの特徴量がコンピューターで解釈できる形式に整理されている必要があります。</p>
+<p>そのため、非構造化データにコンピューターに処理するためには、入力データを構造化データに変換する必要があります。</p>
+<p>機械学習に使われる入力データの形式では、行列形式のデータが多いです。</p>
+<ul class="simple">
+<li><p>テキスト: 単語を数値ベクトルに変換し、テキスト全体をベクトルの行列として表現します</p></li>
+<li><p>画像: 画像をピクセル値の行列として表現します</p></li>
+<li><p>音声: 時間周波数して表現します</p></li>
+</ul>
+<p>入力データの「質」は、モデルの精度を大きく左右する場合もあります。機械学習モデルの性能を向上させるために、生のデータから新たな特徴量（特徴）を抽出し、作成する一連の作業は特徴量エンジニアリングと呼ばれます。</p>
+<ul class="simple">
+<li><p>数値化: カテゴリカルデータ（性別など）を数値に変換する</p></li>
+<li><p>スケーリング: 異なるスケールの数値データを同じスケールに揃える（標準化、正規化など）</p></li>
+<li><p>変換: 非線形な関係を持つデータを線形な関係に変換する（対数変換など）</p></li>
+<li><p>組み合わせ: 既存の特徴量を組み合わせて新しい特徴量を作成する（例：2つの数値特徴量の積）</p></li>
+<li><p>特徴選択: 多くの特徴量の中から、モデルの性能に最も貢献する特徴量を選択する</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>機械学習アルゴリズムの種類<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="id11">
+<h4>教師あり学習<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<p>教師あり学習（Supervised Learning）：教師あり学習では、入力データ（特徴量）とそれに対応する正解ラベル（目標値）のペアを使用してモデルを訓練します。</p>
+<p>モデルは、入力データと正解ラベルの間の関係やパターンを学習し、未知の入力データに対して正しい予測や分類を行うことが期待されます。</p>
+<p><img alt="" src="../_images/sml.png" /></p>
+<p>教師あり学習の代表的なタスクには、分類（クラスの予測）や回帰（数値の予測）があります。</p>
+<ul class="simple">
+<li><p>手書き数字の画像を入力として与え、それぞれの画像がどの数字に対応するのかを予測する手法</p></li>
+<li><p>住宅価格を予測する回帰モデルなどがあります</p></li>
+</ul>
+<section id="id12">
+<h5>クラスラベルを予測するための分類<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h5>
+<p>「分類」は教師あり学習のサブフィールドの一つである。過去の観測に基づき、新しいインスタンス(データ点)のクラスラベルを予測することが目標となる。</p>
+<p>例えば、メールスパムフィルタの例について考えてみよう。この場合、機械学習のアルゴリズムが「スパムメール」と「非スパムメール」という二つのクラスを区別</p>
+<p><img alt="" src="../_images/mail.png" /></p>
+<p>メールをなんらかに形で、２次元の特徴量で表現するシナリオを考えてみよう。</p>
+<p>黒い線で示されている決定境界を学習すれば、二つのクラスを区別し、新しいデータの値の基づいてクラスを分類できるようになります。</p>
+</section>
+<section id="id13">
+<h5>連続値を予測するための回帰<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h5>
+<p>教師あり学習アルゴリズムは、数値データの予測にも利用でいます。唯一の手法ではないが、一般的な形式の数値予測には、回帰アルゴリズムは広く使われています。</p>
+<p>機械学習の分野では、予測変数を一般的に特徴量と呼び、応答変数を目的変数と呼ばれます。</p>
+</section>
+<section id="id14">
+<h5>教師あり学習の仕組み<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h5>
+<p>教師あり学習では、モデルの学習、評価、検証のために、大きく分けて3種類のデータセットが用いられます。</p>
+<ul class="simple">
+<li><p>教師データ: 入力データ（特徴量）と、それに対応する正解ラベル（目的変数）のペアで構成されています。モデルが、入力データから正解ラベルを予測するパターンを学習します。</p></li>
+<li><p>検証データ: 検証データを用いて、様々なハイパーパラメータの組み合わせを試行し、最も良い性能を示す組み合わせを選び出すことができます</p></li>
+<li><p>テストデータ: 学習済みのモデルの性能を評価するために使用されるデータです。モデルが、学習していない新しいデータに対しても高い予測精度を発揮できるかを確認します。</p>
+<ul>
+<li><p>損失関数: 機械学習モデルが予測した値と、実際の正解値との間の誤差を数値化する関数のことです。この誤差を最小化することで、モデルの精度を向上させることを目指します。</p>
+<ul>
+<li><p>回帰問題によく使われる損失関数: 二乗誤差</p></li>
+<li><p>分類問題によく使われる損失関数: クロスエントロピー誤差</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>パラメータ: モデルが学習を通じて自動的に調整する値です。
+ハイパーパラメータ: モデルの学習前に人間が設定する値です。例えば、学習率、正則化の強さ、エポック数、バッチサイズなどが挙げられます。</p>
+</aside>
+</section>
+<section id="id15">
+<h5>過学習<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h5>
+<p>過学習とは、データの傾向に沿うようにモデルを学習させた結果、学習時のデータに対してはよい精度を出すが、未知データに対しては同様の精度を出せないモデルが構築されてしまうことです。過学習になると、モデルを実運用することが難しくなってしまいます。</p>
+<p>過学習は、特定のデータにモデルが過剰に適合（学習）してしまうことによって生じます。モデルを学習する際には、過学習の発生に注意しながら、データ、モデル、学習方法それぞれに対し、それを防ぐよう対処する必要があります。</p>
+<p><img alt="" src="../_images/overfitting.png" /></p>
+<p>過学習を防ぐ方法は多岐にわたりますが、どの方法が最も効果的かは、データの種類やモデルの種類によって異なります。</p>
+<ul class="simple">
+<li><p>正則化</p></li>
+<li><p>Early Stopping（早期終了）</p></li>
+<li><p>Dropout(ドロップアウト)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id16">
+<h3>教師なし学習<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<p>教師なし学習（Unsupervised Learning）：教師なし学習では、正解ラベルを使わずに入力データのみを使用してモデルを訓練します。</p>
+<p>モデルはデータ内のパターンや関連性を自動的に発見し、データをクラスタリング（類似したデータのグループ化）や次元削減データの特徴量を圧縮)などの方法で解析します。</p>
+<section id="id17">
+<h4>クラスタリング<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<p>情報を構造化し、データ間の意味ある関係を導き出すのに適した手法です。分析によって浮かび上がる各クラスは、オブジェクトからなるグループを定義します。</p>
+<p><img alt="" src="../_images/clustering.png" /></p>
+</section>
+<section id="id18">
+<h4>次元削減<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+<p>高次元のデータを次元削減を適用することで、データからノイズを取り除き、関連する大半の情報を維持する上で、データをより低次元の部分空間に圧縮する手法なります。</p>
+<p>高次元の特徴量を可視化することで、データの分布や特徴を視覚的に捉えることができます。</p>
+<p><img alt="" src="../_images/dimension_d.png" /></p>
+</section>
+</section>
+</section>
+<section id="id19">
+<h2>機械学習アルゴリズム<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
+<section id="id20">
+<h3>教師あり学習<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<section id="id21">
+<h4>線形回帰<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h4>
+<p>線形回帰は、ある変数（目的変数）が、他の変数（説明変数）の線形な関数で表されるというモデルを構築する統計学の手法です。つまり、説明変数の値の変化が、目的変数の値にどのように影響するかを、線形的な関係としてモデル化します。</p>
+</section>
+<section id="svm">
+<h4>サポートベクターマシン (SVM)<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h4>
+<p>サポートベクターマシンは、データのクラスを最もよく分離する超平面を特定することで分類や回帰をを行うアルゴリズムです。</p>
+<p>SVMの核となる概念は、マージン最大化とカーネル法です。</p>
+<ul class="simple">
+<li><p>マージン最大化</p>
+<ul>
+<li><p>サポートベクターマシンが高精度でクラス分類などのタスクを実行するために、「マージン最大化」と呼ばれる考え方を用いています。「マージン」とは、クラスの分類基準となる境界と、各データとの距離のことです。</p></li>
+<li><p>マージン最大化すること、つまり2つのサポートベクトルから最も遠い位置に境界線を設定することを意味します。マージンが小さい場合、データが少し変動するだけで境界を超えてしまうため、分類結果が変わりやすく、誤判定のリスクが出てくるでしょう。</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../_images/svm.png" /></p>
+<ul class="simple">
+<li><p>カーネル法</p>
+<ul>
+<li><p>線形分離できないデータの場合、SVMはカーネル法と呼ばれるテクニックを用いて、データを高次元空間に写像します。高次元空間では、線形分離が可能になる場合が多く、SVMは元のデータ空間で非線形な境界線を引くような効果を実現できます。</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../_images/svm2.png" /></p>
+</section>
+<section id="id22">
+<h4>決定木とランダムフォレスト<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h4>
+<p>決定木は、樹木状の構造を用いてデータを分類したり、数値を予測したりする機械学習のアルゴリズムです。まるで木が枝分かれするように、データの特徴量を基に、Yes/Noといった質問を繰り返していくことで、最終的に分類や予測を行います。</p>
+<p><img alt="" src="../_images/tree.png" /></p>
+<p>決定木の構造は視覚的に分かりやすく、多様なデータに適用できるなどのメリットが挙げられますが、データのわずかな変化で、決定木の構造が大きく変わることによって、不安定の問題はしばしば発生します。</p>
+<p>ランダムフォレストは、複数の決定木を組み合わせることで、決定木の単体よりも高精度な予測を実現するアンサンブル学習の手法です。</p>
+<ul class="simple">
+<li><p>複数の決定木を生成: 複数の決定木を、それぞれ異なる部分集合のデータと特徴量を用いて作成します。</p></li>
+<li><p>多数決: 各決定木の予測結果を多数決で集計し、最終的な予測結果とします。</p></li>
+</ul>
+</section>
+<section id="id23">
+<h4>アンサンブル学習<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h4>
+<p>アンサンブル学習とは、複数のモデルを組み合わせて学習器を生成する機械学習の手法です。
+アンサンブル学習に用いられる各学習機は弱学習器とよばれ、単体では精度のよいものではありませんが、複数組み合わせることで、精度の高いモデルを構成することができます。</p>
+<p>代表的なアンサンブル学習の手法には以下のようなものがあります。</p>
+<ul class="simple">
+<li><p>バギング: 同じ学習アルゴリズムを異なる学習データで学習させた複数のモデルの予測結果を多数決で決定します。</p></li>
+</ul>
+<p><img alt="" src="../_images/emsemble1.png" /></p>
+<ul class="simple">
+<li><p>ブースティング: 弱い学習器を順に学習させ、前の学習器の誤りを修正するように次の学習器を学習させる手法です。ブースティングの例としては、AdaBoost、XGBoost、Gradient Treeなどがあります。</p></li>
+</ul>
+<p><img alt="" src="../_images/emsemble2.png" /></p>
+<ul class="simple">
+<li><p>スタッキング: 複数の異なるベースモデルの予測結果を新たな特徴量として、メタモデルで予測する手法です。</p>
+<ul>
+<li><p>第一段階で様々な学習器（例：ロジスティック回帰やランダムフォレスト）にそれぞれブートストラップ法で得たデータセットを学習させます。</p></li>
+<li><p>第二段階では、どの学習器の組み合わせを使うと正解率が一番高いかを学習します。学習器によって正解率が高いものと低いものがあるので、より正解率の高い学習器のみを組み合わせることによって、ランダムで組み合わせるよりも精度が高くなります。</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../_images/emsemble3.png" /></p>
+</section>
+<section id="id24">
+<h4>ニューラルネットワーク<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h4>
+<p>Deep Learningは機械学習においても話題の中心になっています。Deep Learningについては、多層のニューラルネットワークを効率よく訓練するための機械学習のサブフィールドとして考えることができます。</p>
+<p>ニューラルネットワークは、人間の脳の神経回路網を模倣した数学的なモデルであり、以下のように表現することができます。</p>
+<p><img alt="" src="../_images/nn.png" /></p>
+<ul class="simple">
+<li><p>ニューロンは、入力信号を受け取って、重み付けと活性化関数を経て出力信号を生成します。</p></li>
+<li><p>ニューラルネットワークは、入力が行われる「入力層」、中間にある「隠れ層（中間層）」、出力が行われる「出力層」から作られます。</p></li>
+<li><p>層と層の間には「重み」で各ニューロン間の接続の強さを表し、学習によって調整されます。ニューラルネットワークの学習とは、これらの重みを調整する過程です。誤差逆伝播法と呼ばれるアルゴリズムを用いて、出力と正解との誤差を最小にするように、重みが少しずつ更新されていきます。</p></li>
+</ul>
+<p>Deep Learningは、連続する層の学習に重点が置かれます。それらの層が深くなるほど、より複雑な特徴を捉え、高度なタスクに対応できるようになります。</p>
+<p><img alt="" src="../_images/nn2.png" /></p>
+<p>ニューラルネットワークでは、従来の機械学習手法での特徴エンジニアリングの手順を自動化にしました。ニューラルネットワークのパラメータは、学習を通じて最適化され、入力データから適切な特徴を抽出するためのフィルターのような役割を果たします。その意味で、人間が事前に介入する労力を低減できます。</p>
+</section>
+</section>
+<section id="id25">
+<h3>教師なし学習<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
+<section id="k-means">
+<h4>K-means<a class="headerlink" href="#k-means" title="Permalink to this headline">#</a></h4>
+<p>k-means法は、データをいくつかのグループ（クラスタ）に分類する手法です。特に、非階層クラスタリングと呼ばれる、あらかじめクラスタの数が決まっている場合に用いられる手法としてよく知られています。</p>
+<ul class="simple">
+<li><p>初期化: データの中からランダムに<span class="math notranslate nohighlight">\(k\)</span>個の点を中心点として選びます。このkが、最終的に得たいクラスタの数になります。</p></li>
+<li><p>割り当て: 各データを、最も近い中心点を持つクラスタに割り当てます。</p></li>
+<li><p>更新: 各クラスタに属するデータの平均値を新しい中心点とします。</p></li>
+<li><p>反復: 2と3を、中心点がほとんど動かなくなるまで繰り返します。</p></li>
+</ul>
+<p><img alt="" src="../_images/k-means.png" /></p>
+</section>
+<section id="pca">
+<h4>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">#</a></h4>
+<p>PCA（Principal Component Analysis）は、多次元のデータをより低次元の空間に圧縮し、元の特徴量よりも少ない数の変数（次元）でデータを説明する手法です。</p>
+<ul class="simple">
+<li><p>共分散行列の計算: データの各変数間の相関関係を表す共分散行列を計算します。</p></li>
+<li><p>固有値・固有ベクトルの計算: 共分散行列の固有値・固有ベクトルを求めます。固有ベクトルは、データの分散が最大となる方向を示します。</p></li>
+<li><p>主成分の選択: 固有値が大きい順に固有ベクトルを選択し、新しい座標軸（主成分）とします。</p></li>
+<li><p>データの投影: 元のデータを新しい座標軸に投影することで、低次元空間に変換します。</p></li>
+</ul>
+<p><img alt="" src="../_images/pca.png" /></p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./draft"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="visualization.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">可視化(part 1)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="scikit-learn.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">scikit-learn</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By 呂　沢宇<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

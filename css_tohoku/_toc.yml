@@ -29,6 +29,8 @@ parts:
   - file: draft/numpy.ipynb
   - file: draft/pandas.ipynb
   - file: draft/visualization.ipynb
+  - file: draft/visualization2.ipynb
+  - file: draft/ml.ipynb
   - file: draft/scikit-learn.ipynb
 - caption: Supplementary
   chapters:
