@@ -458,11 +458,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-github">Git/GitHub</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull">指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をする方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">指定するリポジトリにおける特定のコミットをマージする方法</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print文</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">print文の基本</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">フォーマットされた出力</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">print文の基本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">フォーマットされた出力</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#format"><code class="docutils literal notranslate"><span class="pre">.format()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
 </ul>
@@ -505,10 +506,14 @@ document.write(`
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/chss_2023_assignment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/chss_2025_assignment</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code>でgitリポジトリに関連付けられたリモートリポジトリの一覧とそのURLを表示する</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">origin/upstream</span>&#160; <span class="pre">git&#64;github.com:lvzeyu/chss_2023_assignment.git</span></code>というリモートリポジトリが表示されることを確認</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branch_name&gt;</span></code>で自分のブランチを作成・移動</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin/upstream</span>&#160; <span class="pre">git&#64;github.com:lvzeyu/chss_2025_assignment.git</span></code>というリモートリポジトリが表示されることを確認</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branch_name&gt;</span></code>で自分のブランチを作成</p>
+<ul>
+<li><p>既に作成した場合は```git checkout　 &lt;branch_name&gt;````で自分のブランチに移動</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code>または <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">main</span></code>でローカルリポジトリブランチをリポジトリの最新状態に更新します。</p></li>
 </ul>
 </div>
@@ -523,11 +528,33 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
+<section id="id2">
+<h3>指定するリポジトリにおける特定のコミットをマージする方法<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">ターミナル操作</p>
+<div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>```git checkout　 &lt;branch_name&gt;````で自分のブランチに移動</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">origin</span></code>で最新のリモート情報を取得</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span> <span class="pre">&lt;コミットハッシュ&gt;</span></code>:指定したコミットを現在のブランチに反映する</p></li>
+</ul>
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">VSCode操作</p>
+<div class="sd-tab-content docutils">
+<p>-「ソース管理」→「View　Git Graph」をクリックします。</p>
+<ul class="simple">
+<li><p>該当するコミットを選択→「Cherry Pick」→「Yes」</p></li>
+</ul>
+</div>
+</div>
+</section>
 </section>
 <section id="print">
 <h2>print文<a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3>print文の基本<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>print文の基本<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code>関数の引数には数値、配列、タプル、オブジェクトなどを指定することができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -561,8 +588,8 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </section>
-<section id="id3">
-<h3>フォーマットされた出力<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3>フォーマットされた出力<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>より高度的な使い方として、出力結果をよりわかりやすく整形することができます。</p>
 <section id="format">
 <h4><code class="docutils literal notranslate"><span class="pre">.format()</span></code><a class="headerlink" href="#format" title="Link to this heading">#</a></h4>
@@ -732,11 +759,12 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-github">Git/GitHub</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull">指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をする方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">指定するリポジトリにおける特定のコミットをマージする方法</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print文</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">print文の基本</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">フォーマットされた出力</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">print文の基本</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">フォーマットされた出力</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#format"><code class="docutils literal notranslate"><span class="pre">.format()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
 </ul>
