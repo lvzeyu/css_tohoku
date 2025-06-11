@@ -518,6 +518,7 @@ document.write(`
 <section id="id3">
 <h2>課題2<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>「スイカ割りゲーム」のプログラムをクラスの形に整理してください。</p>
+<p><img alt="" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F510221%2Fcf759119-d591-ebdd-22e1-b42e840e91c0.png?ixlib=rb-4.0.0&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=a8d6af0665717fe07630cabc3c2f301f" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -545,25 +546,43 @@ document.write(`
     <span class="n">new_y</span> <span class="o">=</span> <span class="n">player_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">move_y</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">new_x</span><span class="p">,</span> <span class="n">new_y</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">calc_distance</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
+    <span class="c1"># 2点間の距離を計算</span>
+    <span class="n">diff_x</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">diff_y</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">diff_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
 <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="n">board_size</span><span class="p">):</span>
     <span class="n">suika_pos</span> <span class="o">=</span> <span class="n">generate_position</span><span class="p">(</span><span class="n">board_size</span><span class="p">)</span>
     <span class="n">player_pos</span> <span class="o">=</span> <span class="n">generate_position</span><span class="p">(</span><span class="n">board_size</span><span class="p">)</span>
 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;スイカの初期位置: </span><span class="si">{</span><span class="n">suika_pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;プレイヤーの初期位置: </span><span class="si">{</span><span class="n">player_pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
     <span class="k">while</span> <span class="n">suika_pos</span> <span class="o">!=</span> <span class="n">player_pos</span><span class="p">:</span>
         <span class="n">move_x</span><span class="p">,</span> <span class="n">move_y</span> <span class="o">=</span> <span class="n">determine_move</span><span class="p">(</span><span class="n">player_pos</span><span class="p">,</span> <span class="n">suika_pos</span><span class="p">)</span>
         <span class="n">player_pos</span> <span class="o">=</span> <span class="n">move_player</span><span class="p">(</span><span class="n">player_pos</span><span class="p">,</span> <span class="n">move_x</span><span class="p">,</span> <span class="n">move_y</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;プレイヤーが移動しました:&quot;</span><span class="p">,</span> <span class="n">player_pos</span><span class="p">)</span>
+
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">calc_distance</span><span class="p">(</span><span class="n">player_pos</span><span class="p">,</span> <span class="n">suika_pos</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;プレイヤーが移動しました: </span><span class="si">{</span><span class="n">player_pos</span><span class="si">}</span><span class="s2"> (スイカまでの距離: </span><span class="si">{</span><span class="n">distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;スイカを見つけました！&quot;</span><span class="p">)</span>
-
-<span class="c1"># ゲームを開始</span>
-<span class="n">play_game</span><span class="p">(</span><span class="n">BOARD_SIZE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">play_game</span><span class="p">(</span><span class="n">BOARD_SIZE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>プレイヤーが移動しました: (2, 3)
-プレイヤーが移動しました: (1, 3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>スイカの初期位置: (0, 2)
+プレイヤーの初期位置: (3, 0)
+プレイヤーが移動しました: (2, 1) (スイカまでの距離: 2.24)
+プレイヤーが移動しました: (1, 2) (スイカまでの距離: 1.00)
+プレイヤーが移動しました: (0, 2) (スイカまでの距離: 0.00)
 スイカを見つけました！
 </pre></div>
 </div>
@@ -593,73 +612,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="k">class</span> <span class="nc">WatermelonHunt</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board_size</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span> <span class="o">=</span> <span class="n">board_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">))</span>
-    
-    <span class="k">def</span> <span class="nf">calc_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
-        <span class="n">diff_x</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">diff_y</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">diff_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">move_player</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span>
-        <span class="n">target_x</span><span class="p">,</span> <span class="n">target_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span>
-
-        <span class="k">if</span> <span class="n">current_x</span> <span class="o">&lt;</span> <span class="n">target_x</span><span class="p">:</span>
-            <span class="n">current_x</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">current_x</span> <span class="o">&gt;</span> <span class="n">target_x</span><span class="p">:</span>
-            <span class="n">current_x</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="k">if</span> <span class="n">current_y</span> <span class="o">&lt;</span> <span class="n">target_y</span><span class="p">:</span>
-            <span class="n">current_y</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">current_y</span> <span class="o">&gt;</span> <span class="n">target_y</span><span class="p">:</span>
-            <span class="n">current_y</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;プレイヤーが移動しました:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span><span class="p">:</span>
-            <span class="n">distance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_distance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_pos</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;スイカまでの距離:&quot;</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">move_player</span><span class="p">()</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;スイカを見つけました！&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">game</span> <span class="o">=</span> <span class="n">WatermelonHunt</span><span class="p">(</span><span class="n">board_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">game</span><span class="o">.</span><span class="n">play_game</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>スイカまでの距離: 4.123105625617661
-プレイヤーが移動しました: (7, 3)
-スイカまでの距離: 3.0
-プレイヤーが移動しました: (7, 4)
-スイカまでの距離: 2.0
-プレイヤーが移動しました: (7, 5)
-スイカまでの距離: 1.0
-プレイヤーが移動しました: (7, 6)
-スイカを見つけました！
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#game = WatermelonHunt(board_size=10)</span>
+<span class="c1">#game.play_game()</span>
 </pre></div>
 </div>
 </div>
@@ -702,60 +658,6 @@ document.write(`
 <p>複数のプレイヤーが参加し、最初にスイカに到達したプレイヤーが勝つゲームを想定します。</p>
 <p><code class="docutils literal notranslate"><span class="pre">player_num</span></code>という属性を追加し、プレイヤーの数を制御します。</p>
 <p>各プレイヤーはそれぞれ独立してスイカに向かって移動し、ゲームの進行は各ターンで全プレイヤーが一度ずつ移動する。あるプレイヤーがスイカに到達したら、ゲームは終了します。</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-<span class="k">class</span> <span class="nc">WatermelonHunt</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">player_num</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span> <span class="o">=</span> <span class="n">board_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">board_size</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_num</span><span class="p">)]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_num</span> <span class="o">=</span> <span class="n">player_num</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="k">def</span> <span class="nf">calc_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
-        <span class="n">diff_x</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">diff_y</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">diff_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">move_player</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_index</span><span class="p">):</span>
-        <span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_positions</span><span class="p">[</span><span class="n">player_index</span><span class="p">]</span>
-        <span class="n">target_x</span><span class="p">,</span> <span class="n">target_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span>
-
-        <span class="k">if</span> <span class="n">current_x</span> <span class="o">&lt;</span> <span class="n">target_x</span><span class="p">:</span>
-            <span class="n">current_x</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">current_x</span> <span class="o">&gt;</span> <span class="n">target_x</span><span class="p">:</span>
-            <span class="n">current_x</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="k">if</span> <span class="n">current_y</span> <span class="o">&lt;</span> <span class="n">target_y</span><span class="p">:</span>
-            <span class="n">current_y</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">current_y</span> <span class="o">&gt;</span> <span class="n">target_y</span><span class="p">:</span>
-            <span class="n">current_y</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">player_positions</span><span class="p">[</span><span class="n">player_index</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;プレイヤー </span><span class="si">{</span><span class="n">player_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> が移動しました: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">player_positions</span><span class="p">[</span><span class="n">player_index</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_positions</span><span class="p">[</span><span class="n">player_index</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">suika_pos</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">=</span> <span class="n">player_index</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">play_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player_num</span><span class="p">):</span>
-                <span class="k">pass</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;プレイヤー </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="si">}</span><span class="s2"> がスイカを見つけました！&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
 </section>
 </section>
 
