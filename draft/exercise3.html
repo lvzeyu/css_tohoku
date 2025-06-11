@@ -483,13 +483,51 @@ document.write(`
 <span class="n">BOARD_SIZE</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># ボードサイズを定義</span>
 
 <span class="k">def</span> <span class="nf">calc_distance</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
-    <span class="k">pass</span>
+    <span class="c1"># 二点間のユークリッド距離を計算</span>
+    <span class="n">diff_x</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">diff_y</span> <span class="o">=</span> <span class="n">pos1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">diff_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">diff_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># スイカとプレイヤーの初期位置をランダムに設定</span>
 <span class="n">suika_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BOARD_SIZE</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BOARD_SIZE</span><span class="p">))</span>
 <span class="n">player_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BOARD_SIZE</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">BOARD_SIZE</span><span class="p">))</span>
 
 <span class="c1"># プレイヤーがスイカの位置に到達するまで処理を続ける</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">suika_pos</span> <span class="o">!=</span> <span class="n">player_pos</span><span class="p">):</span>
+    <span class="c1"># スイカまでの距離を表示</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">calc_distance</span><span class="p">(</span><span class="n">suika_pos</span><span class="p">,</span> <span class="n">player_pos</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;スイカまでの距離:&quot;</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+
+    <span class="c1"># スイカに向かってプレイヤーを移動させる方向を決定</span>
+    <span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span> <span class="o">=</span> <span class="n">player_pos</span>
+    <span class="n">target_x</span><span class="p">,</span> <span class="n">target_y</span> <span class="o">=</span> <span class="n">suika_pos</span>
+
+    <span class="k">if</span> <span class="n">current_x</span> <span class="o">&lt;</span> <span class="n">target_x</span><span class="p">:</span>
+        <span class="n">current_x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">current_x</span> <span class="o">&gt;</span> <span class="n">target_x</span><span class="p">:</span>
+        <span class="n">current_x</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">current_y</span> <span class="o">&lt;</span> <span class="n">target_y</span><span class="p">:</span>
+        <span class="n">current_y</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">current_y</span> <span class="o">&gt;</span> <span class="n">target_y</span><span class="p">:</span>
+        <span class="n">current_y</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c1"># プレイヤーの位置を更新</span>
+    <span class="n">player_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_x</span><span class="p">,</span> <span class="n">current_y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;プレイヤーが移動しました:&quot;</span><span class="p">,</span> <span class="n">player_pos</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;スイカを見つけました！&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>スイカまでの距離: 3.1622776601683795
+プレイヤーが移動しました: (2, 3)
+スイカまでの距離: 2.0
+プレイヤーが移動しました: (1, 3)
+スイカまでの距離: 1.0
+プレイヤーが移動しました: (0, 3)
+スイカを見つけました！
 </pre></div>
 </div>
 </div>
