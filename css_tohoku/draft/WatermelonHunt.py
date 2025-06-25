@@ -52,18 +52,18 @@ class WatermelonHunt:
 #    game.play_game()
 
 
-#if __name__ == "__main__":
-#    # 引数を処理する
-#    parser = argparse.ArgumentParser(description="スイカ狩りゲーム")
-#    parser.add_argument("--board_size", type=int, default=5, help="ボードのサイズ")
-#    parser.add_argument("--player_num", type=int, default=2, help="プレイヤーの人数")
-#    args = parser.parse_args()
+if __name__ == "__main__":
+# #    # 引数を処理する
+    parser = argparse.ArgumentParser(description="スイカ狩りゲーム")
+    parser.add_argument("--board_size", type=int, default=5, help="ボードのサイズ")
+    parser.add_argument("--player_num", type=int, default=2, help="プレイヤーの人数")
+    args = parser.parse_args()
 
     # ゲームを開始する
-#    game = WatermelonHunt(board_size=args.board_size, player_num=args.player_num)
-#    game.play_game()
+    game = WatermelonHunt(board_size=args.board_size, player_num=args.player_num)
+    game.play_game()
 
 
 #ゲームを開始する
-game = WatermelonHunt(board_size=5, player_num=3)
-game.play_game()
+#game = WatermelonHunt(board_size=5, player_num=3)
+#game.play_game()
