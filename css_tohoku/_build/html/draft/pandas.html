@@ -213,8 +213,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="numpy.html">NumPy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">pandas</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">可視化(part 1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="visualization2.html">可視化(part 2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ml.html">機械学習</a></li>
@@ -456,17 +454,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">pandasのデータ構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの読み書き</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#utf-8">UTF-8でエンコードされたファイルの読み込み</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-jis">Shift_JISでエンコードされたファイルの読み込み</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">統計量の算出</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">インデックス参照、選択、フィルタリング</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">ソート</a></li>
@@ -490,9 +483,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -828,16 +818,11 @@ dtype: int64
 <li><p>Shift_JIS: 日本国内で広く使用されている日本語専用の文字コード。</p></li>
 <li><p>EUC-JP: 主にUnix系のシステムで使用される日本語文字コード。</p></li>
 </ul>
-<p>`</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="utf-8">
-<h1>UTF-8でエンコードされたファイルの読み込み<a class="headerlink" href="#utf-8" title="Link to this heading">#</a></h1>
-<p>df = pd.read_csv(‘example.csv’, encoding=‘utf-8’)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="shift-jis">
-<h1>Shift_JISでエンコードされたファイルの読み込み<a class="headerlink" href="#shift-jis" title="Link to this heading">#</a></h1>
-<p>df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
+<p>`
+UTF-8でエンコードされたファイルの読み込み
+df = pd.read_csv(‘example.csv’, encoding=‘utf-8’)</p>
+<p>Shift_JISでエンコードされたファイルの読み込み
+df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
 `</p>
 </details><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1088,6 +1073,7 @@ dtype: int64
 </div>
 </div>
 </div>
+</section>
 <section id="id3">
 <h2>統計量の算出<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>データフレームには、中のデータに対し統計量を計算するための<a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.mean.html">メソッド</a>も用意されています。</p>
@@ -6406,17 +6392,12 @@ z= \frac{x-\hat{x}}{\sigma}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">pandasのデータ構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">データの読み書き</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#utf-8">UTF-8でエンコードされたファイルの読み込み</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-jis">Shift_JISでエンコードされたファイルの読み込み</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">統計量の算出</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">インデックス参照、選択、フィルタリング</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">ソート</a></li>
@@ -6440,9 +6421,6 @@ z= \frac{x-\hat{x}}{\sigma}
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
