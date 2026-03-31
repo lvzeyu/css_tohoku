@@ -6,38 +6,41 @@ root: intro
 parts:
 - caption: イントロダクション
   chapters:
-  - file: draft/Intro.ipynb
+  - file: python_css/intro.ipynb
 
 - caption: GitとGitHub
   chapters:
-  - file: draft/git.ipynb
-  - file: draft/github.ipynb
+  - file: python_css/git.ipynb
+  - file: python_css/github.ipynb
 
 - caption: Pythonの基礎
   chapters:
-  - file: draft/python_environment.ipynb
-  - file: draft/python_grammer.ipynb
-  - file: draft/python_data_type.ipynb
-  - file: draft/data_struture.ipynb
-  - file: draft/if.ipynb
-  - file: draft/loop.ipynb
-  - file: draft/function.ipynb
-  - file: draft/class.ipynb
-  - file: draft/py.ipynb
-- caption: データ分析ためのパケージ
+  - file: python_css/python_environment.ipynb
+  - file: python_css/python_grammar.ipynb
+  - file: python_css/python_data_type.ipynb
+  - file: python_css/data_structure.ipynb
+  - file: python_css/conditional.ipynb
+  - file: python_css/loop.ipynb
+  - file: python_css/function.ipynb
+  - file: python_css/class.ipynb
+  - file: python_css/python_script.ipynb
+
+- caption: データ分析のためのパッケージ
   chapters:
-  - file: draft/numpy.ipynb
-  - file: draft/pandas.ipynb
-  - file: draft/visualization.ipynb
-  - file: draft/visualization2.ipynb
-  - file: draft/ml.ipynb
-  - file: draft/scikit-learn.ipynb
+  - file: python_css/numpy.ipynb
+  - file: python_css/pandas.ipynb
+  - file: python_css/visualization.ipynb
+  - file: python_css/visualization2.ipynb
+  - file: python_css/machine_learning.ipynb
+  - file: python_css/scikit_learn.ipynb
+
 - caption: Supplementary
   chapters:
-  - file: draft/tips.ipynb
+  - file: python_css/tips.ipynb
+
 - caption: 練習問題
   chapters:
-  - file: draft/exercise1.ipynb
-  - file: draft/exercise2.ipynb
-  - file: draft/exercise3.ipynb
-  - file: draft/exercise4.ipynb
+  - file: python_css/exercises/exercise1.ipynb
+  - file: python_css/exercises/exercise2.ipynb
+  - file: python_css/exercises/exercise3.ipynb
+  - file: python_css/exercises/exercise4.ipynb
