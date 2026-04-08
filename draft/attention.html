@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Attention &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draft/attention';</script>
@@ -165,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/intro.html">授業の概要</a></li>
 
 
 
@@ -185,40 +191,40 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/github.html">GitHub</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_grammer.html">Pythonの基本構文</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_data_type.html">データ型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_struture.html">データ構造</a></li>
-<li class="toctree-l1"><a class="reference internal" href="if.html">分岐</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loop.html">ループ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function.html">関数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class.html">オブジェクトとクラス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="py.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_environment.html">Python環境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_grammar.html">Pythonの基本構文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_data_type.html">データ型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/data_structure.html">データ構造</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/conditional.html">分岐</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/loop.html">ループ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/function.html">関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/class.html">オブジェクトとクラス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_script.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">データ分析ためのパケージ</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">データ分析のためのパッケージ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="numpy.html">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">可視化(part 1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization2.html">可視化(part 2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ml.html">機械学習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scikit-learn.html">scikit-learn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/visualization.html">可視化(part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/visualization2.html">可視化(part 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/machine_learning.html">機械学習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/scikit_learn.html">scikit-learn</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supplementary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/tips.html">Tips</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">練習問題</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="exercise1.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise2.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise3.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise4.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise1.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise2.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise3.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise4.html">練習課題</a></li>
 </ul>
 
     </div>
@@ -248,9 +254,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -275,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/attention.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -422,9 +428,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -463,15 +469,15 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="attention">
-<h1>Attention<a class="headerlink" href="#attention" title="Permalink to this heading">#</a></h1>
+<h1>Attention<a class="headerlink" href="#attention" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>8.1 Attention の仕組み<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>8.1 Attention の仕組み<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="seq2seq">
-<h3>8.1.1 seq2seqの問題点<a class="headerlink" href="#seq2seq" title="Permalink to this heading">#</a></h3>
+<h3>8.1.1 seq2seqの問題点<a class="headerlink" href="#seq2seq" title="Link to this heading">#</a></h3>
 <p>seq2seqでは、「Encoder側の最後の隠れ状態<span class="math notranslate nohighlight">\(\mathbf{h}_{T-1} = (h_{0,0}^{(T-1)}, \cdots, h_{N-1,H-1}^{(T-1)})\)</span>」を「Decoder側の最初のLSTMレイヤ」に入力しました。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 
 <span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">    &lt;video alt=&quot;hydrangea&quot; width=&quot;640&quot; height=&quot;480&quot; controls&gt;</span>
@@ -492,12 +498,12 @@ document.write(`
 <p><img alt="seq2seq_problem" src="https://lena-voita.github.io/resources/lectures/seq2seq/attention/bottleneck-min.png" /></p>
 </section>
 <section id="encoder">
-<h3>8.1.2 Encoderの改良<a class="headerlink" href="#encoder" title="Permalink to this heading">#</a></h3>
+<h3>8.1.2 Encoderの改良<a class="headerlink" href="#encoder" title="Link to this heading">#</a></h3>
 <p><strong>ポイント</strong>: 入力する文章の長さ(単語の数)に応じてEncoderの長さを変化すべきです。</p>
 <p><img alt="seq2seq_attention" src="https://camo.qiitausercontent.com/0672413a2ed55d707906253eaef08a4fe012896e/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f3230393730352f32353233333635302d313135352d653730382d613265662d3835616230626661346538362e706e67" /></p>
 </section>
 <section id="decoder">
-<h3>8.1.3 Decoderの改良<a class="headerlink" href="#decoder" title="Permalink to this heading">#</a></h3>
+<h3>8.1.3 Decoderの改良<a class="headerlink" href="#decoder" title="Link to this heading">#</a></h3>
 <p>Decoderの基本構造</p>
 <ul class="simple">
 <li><p>Enocoder最後の隠れ状態ベクトル <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> は, Decoder最初のLSTMレイヤに渡すことにします。</p></li>
@@ -586,7 +592,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

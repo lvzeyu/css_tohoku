@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>関数 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python_css/function';</script>
@@ -165,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -248,9 +254,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -275,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/python_css/function.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -422,9 +428,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -471,19 +477,19 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>関数<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>関数<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>関数は処理をまとめた再利用可能なコードです。</p>
 <p>関数を使うことで、同じ処理を複数回実行する必要がある場合に、コードを簡潔に保ち、修正や更新も容易になります。</p>
 <p><code class="docutils literal notranslate"><span class="pre">len()</span></code>や<code class="docutils literal notranslate"><span class="pre">dict()</span></code>などの組み込み関数は関数の例です。</p>
 <section id="id2">
-<h2>関数の定義<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>関数の定義<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>関数を定義するには、</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>を使って、関数を定義することを示します。その後、関数名を指定し、関数に対する引数を括弧に囲んで書き、最後にコロン(<code class="docutils literal notranslate"><span class="pre">:</span></code>)を書きます。</p></li>
 <li><p>関数本体では、処理を実行するためのコードを書きます。関数内で変数を宣言することもできますが、関数外で定義された変数を使用することもできます。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code>キーワードを使用して、関数が返す値を指定します。<code class="docutils literal notranslate"><span class="pre">return</span></code>を省略すると、関数は何も返しません。</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">関数名</span><span class="p">(</span><span class="n">引数1</span><span class="p">,</span> <span class="n">引数2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">関数名</span><span class="p">(</span><span class="n">引数1</span><span class="p">,</span> <span class="n">引数2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
     <span class="n">処理1</span>
     <span class="n">処理2</span>
     <span class="o">...</span>
@@ -493,7 +499,7 @@ document.write(`
 <p>以下は、引数として2つの数値を受け取り、その和を返す関数の例です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
@@ -527,16 +533,16 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2>返値<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>返値<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>関数は受け取った引数を元に処理を行い、その結果の返値を返すことができます。</p>
 <p>返値は、<code class="docutils literal notranslate"><span class="pre">return</span></code> で定義します。 <code class="docutils literal notranslate"><span class="pre">return</span></code> が実行されると、関数の処理はそこで終了するため、次に文があっても実行はされません。</p>
 <p>戻り値<code class="docutils literal notranslate"><span class="pre">return</span></code>は単一の値や文字列に限らず、複数の値でも可能ですし、リストを返すことも出来ます。</p>
 <p>関数の返値がない場合は、<code class="docutils literal notranslate"><span class="pre">None</span></code> が返されます。</p>
 </section>
 <section id="id4">
-<h2>ローカル変数とグローバル変数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>ローカル変数とグローバル変数<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <section id="id5">
-<h3>スコープ<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>スコープ<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>変数のスコープは、命名空間とも呼ばれます。</p>
@@ -552,7 +558,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">testfunc</span></code>の中で定義されている<code class="docutils literal notranslate"><span class="pre">a=10</span></code>は、関数の内部で定義(代入)される変数であるため、ローカル変数とみなされて処理が行われるので、グローバル変数である<code class="docutils literal notranslate"><span class="pre">a=2</span></code>に影響しないです。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">testfunc</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testfunc</span><span class="p">():</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;関数の内部&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
     
@@ -564,9 +570,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4517370192
-関数の内部 10 4517370448
-関数の実行後 2 4517370192
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>関数の実行前 2 4316505336
+関数の内部 10 4316505592
+関数の実行後 2 4316505336
 </pre></div>
 </div>
 </div>
@@ -575,10 +581,10 @@ document.write(`
 <p>次の例では、関数 <code class="docutils literal notranslate"><span class="pre">func2()</span></code> は、先に定義された関数 <code class="docutils literal notranslate"><span class="pre">func1()</span></code> を呼び出しています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func1</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;, this is func1.&quot;</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">func2</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
     <span class="n">func1</span><span class="p">(</span><span class="s2">&quot;func2&quot;</span><span class="p">)</span>
 
 <span class="n">func2</span><span class="p">()</span>
@@ -595,9 +601,9 @@ document.write(`
 <p>の例は、モジュールスコープで import した <code class="docutils literal notranslate"><span class="pre">time</span></code> モジュールを関数 <code class="docutils literal notranslate"><span class="pre">print_time()</span></code> 内で参照し、<code class="docutils literal notranslate"><span class="pre">time.asctime()</span></code> 関数を呼び出して現在の日付と時間を取得しています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">print_time</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">print_time</span><span class="p">():</span>
     <span class="c1"># モジュールスコープで import した timeモジュールを利用</span>
     <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is&quot;</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
@@ -607,7 +613,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is Tue Mar 31 09:58:13 2026
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is Wed Apr  8 12:28:29 2026
 </pre></div>
 </div>
 </div>
@@ -615,16 +621,16 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>引数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>引数<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>関数を定義する際に、ヘッダの括弧の中に関数へ渡す値を引数と言います。</p>
 <p>関数を呼び出す際に引数に値を渡すことで、関数は受け取った値を処理することができます。</p>
 <section id="id7">
-<h3>キーワード引数<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>キーワード引数<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>上記の例では、事前に定義した引数の順番に従って、関数は引数を受け取っています。</p>
 <p>キーワード付き引数（キーワード引数）を使うと、関数は引数の変数名とその値の組みを受け取ることができます。 その際、引数は順不同で関数に渡すことができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minus_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">result</span>
 </pre></div>
@@ -661,12 +667,12 @@ document.write(`
 </aside>
 </section>
 <section id="id8">
-<h3>デフォルト引数値の指定<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>デフォルト引数値の指定<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>デフォルト引数値は、関数の定義時に引数に初期値を指定することによって設定できます。これにより、関数を呼び出すときに引数の値を省略することができます。</p>
 <p>デフォルト引数値を指定するには、引数リスト内で引数の名前の後ろに等号と初期値を指定します。例えば、以下のように関数を定義することができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -688,7 +694,7 @@ Hi, Bob!
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<label class="sd-tab-label" for="sd-tab-item-0">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>被除数と除数を指定し、割り算の結果を順番に計算する関数を作成してください。</p>
 <ul class="simple">
@@ -697,7 +703,7 @@ Hi, Bob!
 </ul>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<label class="sd-tab-label" for="sd-tab-item-1">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>ユークリッドの互除法の関数を作成してください。</p>
 <ul class="simple">
@@ -708,12 +714,12 @@ Hi, Bob!
 </div>
 </section>
 <section id="id9">
-<h3><code class="docutils literal notranslate"><span class="pre">*</span></code>による位置引数の分解・接合(タプル化)<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">*</span></code>による位置引数の分解・接合(タプル化)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>関数定義の中で引数の一部として<code class="docutils literal notranslate"><span class="pre">*</span></code>を使うと、可変個の位置引数がタプルにまとめられてその引数にセットされるようになる。</p>
 <p>この機能は、関数に異なる数の引数を渡す時に便利です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_all_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_all_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># argsの中身を確認</span>
@@ -748,13 +754,13 @@ Hi, Bob!
 </div>
 </section>
 <section id="id10">
-<h3><code class="docutils literal notranslate"><span class="pre">**</span></code>によるキーワード引数の分解・接合(辞書化)<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">**</span></code>によるキーワード引数の分解・接合(辞書化)<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>可変個のキーワード引数は、関数定義の中でキーワード引数の数が可変であることを指定する方法です。</p>
 <p>２つのアスタリスク(<code class="docutils literal notranslate"><span class="pre">**</span></code>)を使えば、キーワード引数を1個の辞書にまとめることができます。
 引数の名前は辞書のキー、引数の値は辞書の値になっています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </pre></div>
@@ -788,12 +794,12 @@ c 3
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<label class="sd-tab-label" for="sd-tab-item-2">
 実習問題</label><div class="sd-tab-content docutils">
 <p>複数の商品とその価格を受け取り、価格の合計を計算する関数を作成してください。</p>
 </div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculation</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculation</span><span class="p">():</span>
 
     <span class="k">return</span> <span class="n">total</span>
 
@@ -805,7 +811,7 @@ c 3
 </section>
 </section>
 <section id="id11">
-<h2>ラムダ関数<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>ラムダ関数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <p>ラムダ関数は、簡潔な関数を一行で定義するための手法です。</p>
 <p>関数を定義するための従来の<code class="docutils literal notranslate"><span class="pre">def</span></code>キーワードを使用せずに、<code class="docutils literal notranslate"><span class="pre">lambda</span></code>キーワードを用いて直接関数を記述します。</p>
 <p>ラムダ関数の一般的な構文は以下の通りです：</p>
@@ -845,12 +851,12 @@ False
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<label class="sd-tab-label" for="sd-tab-item-3">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>整数のリストが与えられたとき、そのリストから偶数の要素のみをフィルタリングするラムダ関数を作成してください。</p>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<label class="sd-tab-label" for="sd-tab-item-4">
 実習問題2</label><div class="sd-tab-content docutils">
 <p>浮動小数点数のリストが与えられたとき、そのリストの要素の平均値を計算するラムダ関数を作成してください。</p>
 </div>
@@ -960,7 +966,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

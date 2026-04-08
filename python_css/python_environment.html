@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python環境 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python_css/python_environment';</script>
@@ -165,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -248,9 +254,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -275,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/python_css/python_environment.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -422,9 +428,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -478,9 +484,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Python環境<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1>Python環境<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>仮想環境<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>仮想環境<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Python を使って開発や実験を行うときは、用途に応じて専用の実行環境を作成し、切り替えて使用するのが一般的です。こういった、一時的に作成する実行環境を、「仮想環境」 と言います。</p>
 <ul class="simple">
 <li><p><strong>依存関係の管理</strong>: プロジェクトごとに仮想環境を分けることで、それぞれの環境で必要なパッケージのバージョンを独立して管理できます。これにより、異なるプロジェクト間での依存関係の衝突を避けることができます。</p></li>
@@ -490,11 +496,11 @@ document.write(`
 </ul>
 </section>
 <section id="anaconda">
-<h2>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading">#</a></h2>
+<h2>Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h2>
 <p>数あるPython の環境を構築する方法の中で、 <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>を利用することをお勧めします。
 Anaconda はデータサイエンス向けの環境を提供するプラットフォームです。科学技術計算などを中心とした、多くのモジュールやツールのコンパイル済みバイナリファイルを提供しており、簡単にPythonを利用する環境を構築・管理できます。Windows, Linux, macOS向けのパッケージが提供されています。</p>
 <section id="id2">
-<h3>Anacondaのインストール<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Anacondaのインストール<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>下記の記事を参照してAnacondaをインストールします</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.python.jp/install/anaconda/windows/install.html">Windows版Anacondaのインストール</a></p></li>
@@ -503,7 +509,7 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
 </ul>
 </section>
 <section id="conda">
-<h3>Conda環境の作成<a class="headerlink" href="#conda" title="Permalink to this heading">#</a></h3>
+<h3>Conda環境の作成<a class="headerlink" href="#conda" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Conda環境は、<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code>コマンドでPython環境を作成します。つぎのコマンドは、<code class="docutils literal notranslate"><span class="pre">chss</span></code> という名前で、<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.10</span></code>の環境を作成します。</p></li>
 </ul>
@@ -535,15 +541,15 @@ Anaconda はデータサイエンス向けの環境を提供するプラット�
 </section>
 </section>
 <section id="id3">
-<h2>最初の Python アプリケーションの作成<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>最初の Python アプリケーションの作成<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Python と Python ツールがインストールされたので、最初の Python アプリケーションを作成できます。</p>
 <p><a class="reference external" href="https://learn.microsoft.com/ja-jp/training/modules/python-install-vscode/6-exercise-first-application?pivots=windows">公式のチュートリアル</a>を参照してください。</p>
 </section>
 <section id="jupyter-notebook">
-<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
 <p>Jupyter Notebookとは、ブラウザの強力な表示機能を活用したインターフェイスです。コードのインタラクティブな実行だけでなく、Markdownテキスト・数式・図などを含んだドキュメント作成の機能も備えています。</p>
 <section id="jupyter">
-<h3>Jupyterの基本<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h3>
+<h3>Jupyterの基本<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Jupyterにはコマンドモードとエディットモードがあります。セルをダブルクリックするか、選択して<code class="docutils literal notranslate"><span class="pre">enter</span></code>を押すと、そのセルのエディットモードになります。エディットモードで<code class="docutils literal notranslate"><span class="pre">esc</span></code>を押すか、別のセルをクリックするとコマンドモードに戻ります。</p></li>
 <li><p>jupyterはセルを基本的な要素としています。セルにはいくつか種類がありますが、CodeとMarkdownの２種類だけ覚えてください。</p></li>
@@ -560,13 +566,13 @@ Bを押す: 下にセルを追加する
 </div>
 </section>
 <section id="id4">
-<h3>カーネル<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>カーネル<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Jupyter Notebookにおけるカーネル(Kernel)とは、プログラミング言語の機能を提供することを指します。本授業の場合は、基本的にはIpythonカーネルを指します。</p>
 <p>Jupyter Notebook自身は、あくまでもWebアプリケーションとしてのインタフェースにすぎません。Ipythonカーネルを通じて、Jupyter NotebookのインタフェースとPythonに繋ぎます。</p>
 <p>VsCodeでは利用可能なカーネルを検索してくれるので、右上の<code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Kernel</span></code>でPython環境を指定することができます。</p>
 </section>
 <section id="id5">
-<h3>セルの記述と実行<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>セルの記述と実行<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p><img alt="" src="../_images/jupyter_cell1.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,10 +588,10 @@ Bを押す: 下にセルを追加する
 </div>
 </section>
 <section id="markdown">
-<h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h3>
+<h3>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h3>
 <p>Markdown（マークダウン）は、文書を記述するための言語のひとつです。基本的なMarkdown記法を覚えておきましょう。</p>
 <section id="id6">
-<h4>見出し<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h4>見出し<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 見出し1</span>
 <span class="c1">## 見出し2</span>
 <span class="c1">### 見出し3</span>
@@ -596,7 +602,7 @@ Bを押す: 下にセルを追加する
 </div>
 </section>
 <section id="id7">
-<h4>箇条書きリスト<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<h4>箇条書きリスト<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">リスト1</span>
     <span class="o">-</span> <span class="n">ネスト</span> <span class="n">リスト1_1</span>
         <span class="o">-</span> <span class="n">ネスト</span> <span class="n">リスト1_1_1</span>
@@ -623,7 +629,7 @@ Bを押す: 下にセルを追加する
 </ul>
 </section>
 <section id="id8">
-<h4>番号付きリスト<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<h4>番号付きリスト<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">番号付きリスト1</span>
     <span class="mf">1.</span> <span class="n">番号付きリスト1_1</span>
     <span class="mf">1.</span> <span class="n">番号付きリスト1_2</span>
@@ -643,13 +649,13 @@ Bを押す: 下にセルを追加する
 </ol>
 </section>
 <section id="id9">
-<h4>引用<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>引用<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;社会学（しゃかいがく、仏: sociologie、英:Sociology）は、社会現象の実態や、現象の起こる原因に関するメカニズム（因果関係）を体験・統計・データなどを用いて分析することで解明する学問である。
 </pre></div>
 </div>
 </section>
 <section id="id10">
-<h4>数式<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>数式<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>Latex書式で数式を記述することができます。</p>
 <p><span class="math notranslate nohighlight">\(\frac{n!}{k!(n-k)!} = \binom{n}{k}\)</span></p>
 </section>
@@ -766,7 +772,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

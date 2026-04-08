@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tips &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python_css/tips';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -163,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -246,9 +252,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -273,14 +279,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/python_css/tips.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -420,9 +426,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -474,11 +480,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tips">
-<h1>Tips<a class="headerlink" href="#tips" title="Permalink to this heading">#</a></h1>
+<h1>Tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h1>
 <section id="vscode">
-<h2>VSCode<a class="headerlink" href="#vscode" title="Permalink to this heading">#</a></h2>
+<h2>VSCode<a class="headerlink" href="#vscode" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>作業リポジトリを指定する<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>作業リポジトリを指定する<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>gitリポジトリ内で複数のgitリポジトリの履歴を管理することができますが、場合による混乱になることもありますので、作業リポジトリを指定して、VSCodeを使う方がいいです。</p>
 <ul class="simple">
 <li><p>メニュー　→　ファイル　→ 新しいウィンドウ</p></li>
@@ -488,14 +494,14 @@ document.write(`
 </section>
 </section>
 <section id="git-github">
-<h2>Git/GitHub<a class="headerlink" href="#git-github" title="Permalink to this heading">#</a></h2>
+<h2>Git/GitHub<a class="headerlink" href="#git-github" title="Link to this heading">#</a></h2>
 <section id="git-pull">
-<h3>指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をする方法<a class="headerlink" href="#git-pull" title="Permalink to this heading">#</a></h3>
+<h3>指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をする方法<a class="headerlink" href="#git-pull" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">&lt;original_repository&gt;</span></code>という形で、指定するリポジトリから<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>をすることができます。</p>
 <p><code class="docutils literal notranslate"><span class="pre">https://github.com/lvzeyu/chss_2023_assignment</span></code>から最新の状況を同期する操作を例として説明します。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<label class="sd-tab-label" for="sd-tab-item-0">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/chss_2025_assignment</span></code></p></li>
@@ -510,7 +516,7 @@ document.write(`
 </ul>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<label class="sd-tab-label" for="sd-tab-item-1">
 VSCode操作</label><div class="sd-tab-content docutils">
 <p>-「ソース管理」→「…」をクリックします。</p>
 <ul class="simple">
@@ -521,10 +527,10 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="id2">
-<h3>指定するリポジトリにおける特定のコミットをマージする方法<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>指定するリポジトリにおける特定のコミットをマージする方法<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<label class="sd-tab-label" for="sd-tab-item-2">
 ターミナル操作</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout　</span> <span class="pre">&lt;branch_name&gt;</span></code>で自分のブランチに移動</p></li>
@@ -533,7 +539,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </ul>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<label class="sd-tab-label" for="sd-tab-item-3">
 VSCode操作</label><div class="sd-tab-content docutils">
 <p>-「ソース管理」→「View　Git Graph」をクリックします。</p>
 <ul class="simple">
@@ -544,7 +550,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="google-colaboratorygoogle">
-<h2>Google ColaboratoryでGoogle ドライブにマウントし、ファイルへアクセスする方法<a class="headerlink" href="#google-colaboratorygoogle" title="Permalink to this heading">#</a></h2>
+<h2>Google ColaboratoryでGoogle ドライブにマウントし、ファイルへアクセスする方法<a class="headerlink" href="#google-colaboratorygoogle" title="Link to this heading">#</a></h2>
 <p>下記を実行すると、google の認証手順を踏んで、Googleドライブにマウントすると、<code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span></code>というトップディレクトリがマウントされます</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,9 +562,9 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="print">
-<h2>print文<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<h2>print文<a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>print文の基本<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>print文の基本<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">print()</span></code>関数の引数には数値、配列、タプル、オブジェクトなどを指定することができます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -593,10 +599,10 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="id4">
-<h3>フォーマットされた出力<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>フォーマットされた出力<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>より高度的な使い方として、出力結果をよりわかりやすく整形することができます。</p>
 <section id="format">
-<h4><code class="docutils literal notranslate"><span class="pre">.format()</span></code><a class="headerlink" href="#format" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">.format()</span></code><a class="headerlink" href="#format" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">.format()</span></code>メソッドを使う基本的な構文は、中括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>を使って文字列内にプレースホルダーを設定し、それに<code class="docutils literal notranslate"><span class="pre">.format()</span></code>で値を渡す形です。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,7 +648,7 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="f-strings">
-<h4>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this heading">#</a></h4>
+<h4>f-strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h4>
 <p>Python 3.6以降では、文字列内で変数を直接埋め込むためのf-stringsが導入されました。</p>
 <p>f-stringを使用するには、文字列の前に<code class="docutils literal notranslate"><span class="pre">f</span></code>または<code class="docutils literal notranslate"><span class="pre">F</span></code>を置き、波括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>の中に変数名や式を書きます。</p>
 <div class="cell docutils container">
@@ -800,7 +806,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

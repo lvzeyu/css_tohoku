@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>NumPy &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,46 +28,40 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draft/numpy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pandas" href="pandas.html" />
-    <link rel="prev" title="pyファイル" href="py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,6 +124,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -165,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">イントロダクション</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Intro.html">授業の概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/intro.html">授業の概要</a></li>
 
 
 
@@ -185,40 +191,40 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GitとGitHub</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/github.html">GitHub</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pythonの基礎</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_environment.html">Python環境</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_grammer.html">Pythonの基本構文</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_data_type.html">データ型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_struture.html">データ構造</a></li>
-<li class="toctree-l1"><a class="reference internal" href="if.html">分岐</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loop.html">ループ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function.html">関数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class.html">オブジェクトとクラス</a></li>
-<li class="toctree-l1"><a class="reference internal" href="py.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_environment.html">Python環境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_grammar.html">Pythonの基本構文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_data_type.html">データ型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/data_structure.html">データ構造</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/conditional.html">分岐</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/loop.html">ループ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/function.html">関数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/class.html">オブジェクトとクラス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/python_script.html"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">データ分析ためのパケージ</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">可視化(part 1)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualization2.html">可視化(part 2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ml.html">機械学習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scikit-learn.html">scikit-learn</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">データ分析のためのパッケージ</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python_css/numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/pandas.html">pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/visualization.html">可視化(part 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/visualization2.html">可視化(part 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/machine_learning.html">機械学習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/scikit_learn.html">scikit-learn</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supplementary</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/tips.html">Tips</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">練習問題</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="exercise1.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise2.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise3.html">練習課題</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise4.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise1.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise2.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise3.html">練習課題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_css/exercises/exercise4.html">練習課題</a></li>
 </ul>
 
     </div>
@@ -248,9 +254,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -275,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/draft/numpy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -422,9 +428,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -479,7 +485,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1>NumPy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
+<h1>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
 <p>計算社会科学の研究は、テキスト、画像、ビデオや数値測定結果など幅広いデータセットとソースを扱っています。</p>
 <p>これらの多種多様なデータをコンピュータで扱う場合はどのようにすればよいだろうか。</p>
 <p>形式に違いがあるにも関わらず、基本的に全てのデータは数値の配列として扱うのに適しています。</p>
@@ -494,21 +500,21 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>は、多次元配列や行列演算を効率的に処理する機能を提供し、科学技術計算やデータ解析に広く利用されています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.26.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.26.2
 </pre></div>
 </div>
 </div>
 </div>
 <section id="id1">
-<h2>NumPy配列の作成<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>NumPy配列の作成<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="python">
-<h3>Pythonリストから作る配列<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
+<h3>Pythonリストから作る配列<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.array</span></code>を使って、PythonリストからNumPy配列（<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>）を作成します。</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -554,7 +560,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h3>配列の構築<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>配列の構築<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>の組み込み関数で配列を作成できます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,9 +648,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.6958738 , 0.33032063, 0.9649371 ],
-       [0.05650145, 0.99326052, 0.1400965 ],
-       [0.61352255, 0.44608042, 0.79414483]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76205438, 0.303274  , 0.59236955],
+       [0.58676694, 0.65043369, 0.53632722],
+       [0.26373711, 0.9394927 , 0.94063066]])
 </pre></div>
 </div>
 </div>
@@ -656,9 +662,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.31996381,  0.23299519,  1.17583346],
-       [-0.61571703,  0.07986088,  0.91252649],
-       [ 1.37445045, -0.55009263, -0.41731686]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.12529147, -2.33815855,  0.32919666],
+       [-0.44057342,  0.29440698, -0.10764451],
+       [-1.46180189,  0.33647776,  0.37477186]])
 </pre></div>
 </div>
 </div>
@@ -670,9 +676,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7, 1, 9],
-       [5, 8, 5],
-       [2, 5, 2]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7, 1, 5],
+       [4, 2, 6],
+       [6, 8, 0]])
 </pre></div>
 </div>
 </div>
@@ -684,10 +690,10 @@ document.write(`
 </section>
 </section>
 <section id="id3">
-<h2>NumPy配列の属性<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>NumPy配列の属性<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># seed for reproducibility</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># one-dimensional array</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="c1"># two-dimensional array</span>
@@ -743,7 +749,7 @@ dtype: int64
 </div>
 </section>
 <section id="id4">
-<h2>配列のインデクス<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>配列のインデクス<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>１次元<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>では、Pythonリストと同様に、<span class="math notranslate nohighlight">\(i\)</span>番目(<span class="math notranslate nohighlight">\(0\)</span>から)の値にアクセスできます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -814,8 +820,8 @@ dtype: int64
 <p>多次元配列では、カンマで区切ったインデクスで要素にアクセスします。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Create a 3x3 matrix</span>
 <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -855,67 +861,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Create a 3x3 matrix</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook_1</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">pyplot</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">2500</span>
-<span class="g g-Whitespace">   </span><span class="mi">2498</span>     <span class="nb">dict</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">rcParams</span><span class="p">,</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span> <span class="n">rcsetup</span><span class="o">.</span><span class="n">_auto_backend_sentinel</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2499</span> <span class="c1"># Set up the backend.</span>
-<span class="ne">-&gt; </span><span class="mi">2500</span> <span class="n">switch_backend</span><span class="p">(</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;backend&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">2502</span> <span class="c1"># Just to be safe.  Interactive mode can be turned on without</span>
-<span class="g g-Whitespace">   </span><span class="mi">2503</span> <span class="c1"># calling `plt.ion()` so register it again here.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2504</span> <span class="c1"># This is safe because multiple calls to `install_repl_displayhook`</span>
-<span class="g g-Whitespace">   </span><span class="mi">2505</span> <span class="c1"># are no-ops and the registered function respect `mpl.is_interactive()`</span>
-<span class="g g-Whitespace">   </span><span class="mi">2506</span> <span class="c1"># to determine if they should trigger a draw.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2507</span> <span class="n">install_repl_displayhook</span><span class="p">()</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyterbook_1/lib/python3.9/site-packages/matplotlib/pyplot.py:277,</span> in <span class="ni">switch_backend</span><span class="nt">(newbackend)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="c1"># Backends are implemented as modules, but &quot;inherit&quot; default method</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="c1"># implementations from backend_bases._Backend.  This is achieved by</span>
-<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="c1"># creating a &quot;class&quot; that inherits from backend_bases._Backend and whose</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="c1"># body is filled with the module&#39;s globals.</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="n">backend_name</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">_backend_module_name</span><span class="p">(</span><span class="n">newbackend</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">277</span> <span class="k">class</span><span class="w"> </span><span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="n">required_framework</span> <span class="o">=</span> <span class="n">_get_required_interactive_framework</span><span class="p">(</span><span class="n">backend_mod</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyterbook_1/lib/python3.9/site-packages/matplotlib/pyplot.py:278,</span> in <span class="ni">switch_backend.&lt;locals&gt;.backend_mod</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">class</span><span class="w"> </span><span class="nc">backend_mod</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">backend_bases</span><span class="o">.</span><span class="n">_Backend</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)))</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyterbook_1/lib/python3.9/importlib/__init__.py:127,</span> in <span class="ni">import_module</span><span class="nt">(name, package)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>             <span class="k">break</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">--&gt; </span><span class="mi">127</span> <span class="k">return</span> <span class="n">_bootstrap</span><span class="o">.</span><span class="n">_gcd_import</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="n">level</span><span class="p">:],</span> <span class="n">package</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook_1</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">backend_inline</span><span class="p">,</span> <span class="n">config</span>  <span class="c1"># noqa</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;0.2.1&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># we can&#39;t &#39;&#39;.join(...) otherwise finding the version number at build time requires</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># import which introduces IPython and matplotlib at build time, and thus circular</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># dependencies.</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook_1</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib_inline</span><span class="o">/</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">236</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>                 <span class="n">ip</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">unregister</span><span class="p">(</span><span class="s2">&quot;post_run_cell&quot;</span><span class="p">,</span> <span class="n">configure_once</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>             <span class="n">ip</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;post_run_cell&quot;</span><span class="p">,</span> <span class="n">configure_once</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">236</span> <span class="n">_enable_matplotlib_integration</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span> <span class="k">def</span><span class="w"> </span><span class="nf">_fetch_figure_metadata</span><span class="p">(</span><span class="n">fig</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get some metadata to help with displaying a figure.&quot;&quot;&quot;</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/jupyterbook_1/lib/python3.9/site-packages/matplotlib_inline/backend_inline.py:215,</span> in <span class="ni">_enable_matplotlib_integration</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
-<span class="ne">--&gt; </span><span class="mi">215</span> <span class="k">if</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">__version_info__</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="n">backend</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">auto_select</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span>: module &#39;matplotlib&#39; has no attribute &#39;__version_info__&#39;
-</pre></div>
-</div>
+<img alt="../_images/f2428b4f04ad49a35a710f372951a887dee51163865ead18c56b09165c87a442.png" src="../_images/f2428b4f04ad49a35a710f372951a887dee51163865ead18c56b09165c87a442.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1003,9 +949,9 @@ dtype: int64
 </div>
 </section>
 <section id="id5">
-<h2>数学演算<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>数学演算<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>配列の算術演算<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>配列の算術演算<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code>はベクトル演算の機能を提供しています。</p>
 <ul class="simple">
 <li><p>同じサイズの<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>同士の算術演算は、同位置の要素同士で計算されます。</p></li>
@@ -1095,7 +1041,7 @@ dtype: int64
 </section>
 </section>
 <section id="id7">
-<h2>ユニバーサル関数: すべての要素への関数適用<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>ユニバーサル関数: すべての要素への関数適用<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>ユニバーサル関数は、NumPy配列の各要素に対して要素ごとの演算を行うための関数です。これにより、繰り返し処理を書く必要なく、高速かつ効率的な計算が可能になります。</p>
 <p>例えば、<code class="docutils literal notranslate"><span class="pre">sqrt</span></code>(平方根)<code class="docutils literal notranslate"><span class="pre">exp</span></code>（指数）を計算する:</p>
 <div class="cell docutils container">
@@ -1226,7 +1172,7 @@ dtype: int64
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<label class="sd-tab-label" for="sd-tab-item-0">
 実習問題</label><div class="sd-tab-content docutils">
 <p>与えられた二つのサイズが (5,2) の配列の各要素は、二次元空間での位置を表しています。二つの配列における同じ行である要素で表示する点間のユークリッド距離を計算してください。</p>
 </div>
@@ -1249,7 +1195,7 @@ dtype: int64
 </div>
 </div>
 <section id="id8">
-<h3>統計関数<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>統計関数<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>NumPyの統計関数は、<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>配列全体、あるいは特定の軸を中心とした統計処理を提供します。</p>
 <p>いくつかの統計値を計算してみましょう。</p>
 <div class="cell docutils container">
@@ -1361,7 +1307,7 @@ dtype: int64
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<label class="sd-tab-label" for="sd-tab-item-1">
 実習問題</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>平均5、標準偏差1の正規分布に従う乱数を生成してください。</p></li>
@@ -1372,7 +1318,7 @@ dtype: int64
 </section>
 </section>
 <section id="id9">
-<h2>行列計算<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>行列計算<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <p>NumPyは、高度な行列計算を効率的に行うための多くの機能を提供しています。</p>
 <p>NumPyで内積(ドット積)を計算するために関数<code class="docutils literal notranslate"><span class="pre">dot</span></code>を提供します。</p>
 <aside class="margin sidebar">
@@ -1419,7 +1365,7 @@ dtype: int64
 <p>標準的な行列の分解、逆、行列式の計算といった機能は<a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html"><code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code></a>モジュールで提供されています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">qr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span><span class="p">,</span> <span class="n">qr</span>
 
 <span class="n">x</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
              <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
@@ -1505,7 +1451,7 @@ dtype: int64
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<label class="sd-tab-label" for="sd-tab-item-2">
 実習問題</label><div class="sd-tab-content docutils">
 <p>特定のベクトル(<span class="math notranslate nohighlight">\(v\)</span>)を他のベクトル(<span class="math notranslate nohighlight">\(u\)</span>)に射影する結果を計算しよう。</p>
 </div>
@@ -1522,9 +1468,9 @@ dtype: int64
 </aside>
 </section>
 <section id="id10">
-<h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>NumPyの応用例:線型回帰モデル<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="id11">
-<h3>単回帰モデル<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>単回帰モデル<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span>個のデータ<span class="math notranslate nohighlight">\((x_1,y_1),...(x_n,y_n)\)</span>が観測され、各<span class="math notranslate nohighlight">\(y_i\)</span>が</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1533,7 +1479,7 @@ y_i=\alpha +\beta x_i+u_i,\ i=1,...,n
 <p>が得られます。</p>
 </section>
 <section id="id12">
-<h3>最小二乗法<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>最小二乗法<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>最小二乗法の目標は、与えられたデータセットに対して予測された値（モデルの出力）と実際の値（データセットの出力）の差を最小化することである。</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1615,7 +1561,7 @@ RSS=\sum_{i=1}^n \hat{u_i}^2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 線形回帰モデルのデータをシミュレーションで生成します</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># サンプルデータ</span>
 <span class="c1"># パラメータ</span>
@@ -1654,8 +1600,8 @@ RSS=\sum_{i=1}^n \hat{u_i}^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta:  0.7559967477987241
-alpha:  2.6018977549592948
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beta:  0.753327243094578
+alpha:  2.7740186712020654
 </pre></div>
 </div>
 </div>
@@ -1676,7 +1622,7 @@ alpha:  2.6018977549592948
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残差の合計: -1.7319479184152442e-14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>残差の合計: -7.505107646466058e-14
 </pre></div>
 </div>
 </div>
@@ -1688,9 +1634,9 @@ alpha:  2.6018977549592948
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scienceplots</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scienceplots</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;science&#39;</span><span class="p">)</span>
 
@@ -1725,12 +1671,12 @@ alpha:  2.6018977549592948
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dce7af05189d8b9ea857480b691da242c5f62dc6bf709d85de5c07884d71b873.png" src="../_images/dce7af05189d8b9ea857480b691da242c5f62dc6bf709d85de5c07884d71b873.png" />
+<img alt="../_images/2c3dccccddfd425cc3ec261f9eda76e8880755cb2e7a7f2aa5f3dc957c51aab0.png" src="../_images/2c3dccccddfd425cc3ec261f9eda76e8880755cb2e7a7f2aa5f3dc957c51aab0.png" />
 </div>
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<label class="sd-tab-label" for="sd-tab-item-3">
 実習問題1</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>母集団回帰係数、誤差項とサンプルサイズを指定し、観測データ(<span class="math notranslate nohighlight">\(x\)</span>,<span class="math notranslate nohighlight">\(y\)</span>)を生成する関数を作成しなさい</p></li>
@@ -1738,7 +1684,7 @@ alpha:  2.6018977549592948
 </ul>
 </div>
 <input id="sd-tab-item-4" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<label class="sd-tab-label" for="sd-tab-item-4">
 実習問題2</label><div class="sd-tab-content docutils">
 <ul class="simple">
 <li><p>一定な母集団回帰係数、誤差項サンプルサイズを設定し、観測データを作成し、回帰係数を推定するといった推定プロセスを100回を行いなさい。</p></li>
@@ -1749,7 +1695,7 @@ alpha:  2.6018977549592948
 </div>
 </section>
 <section id="id13">
-<h3>重回帰モデル<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>重回帰モデル<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(k\)</span>個の説明変数<span class="math notranslate nohighlight">\(x_1,...,x_k\)</span>が考えられ、<span class="math notranslate nohighlight">\(y\)</span>との間に</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1837,24 +1783,6 @@ X^TX\beta = X^TY
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="py.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">py</span></code>ファイル</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="pandas.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pandas</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1917,7 +1845,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

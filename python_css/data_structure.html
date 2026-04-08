@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>データ構造 &#8212; 計算社会科学のためのPythonプログラミング入門</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python_css/data_structure';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -163,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -246,9 +252,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -273,14 +279,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/lvzeyu/css_tohoku/blob/master/css_tohoku/python_css/data_structure.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -420,9 +426,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -478,13 +484,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>データ構造<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>データ構造<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>今までは、ブール値、整数、浮動小数点数、文字列という基本データ型を説明ました。ここからは、これらの基本データ型を要素としてまとめて取り扱うデータとしての構造について説明します。</p>
 <section id="tuple">
-<h2>タプル(tuple)<a class="headerlink" href="#tuple" title="Permalink to this heading">#</a></h2>
+<h2>タプル(tuple)<a class="headerlink" href="#tuple" title="Link to this heading">#</a></h2>
 <p>タプルは、固定長で変更不可能(immutable)な一連のPythonオブジェクトの集合です。タプルでは、構成する要素としてあらゆる型のデータを指定できます。</p>
 <section id="id2">
-<h3>タプルの作成<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>タプルの作成<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>タプルを作成するには、色々な方法があります。</p>
 <ul class="simple">
 <li><p>コンマで値を区切ります</p></li>
@@ -576,7 +582,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3>タプルの操作<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>タプルの操作<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>文字列と同じように、タプルの要素は<code class="docutils literal notranslate"><span class="pre">[]</span></code>で参照できます。</p></li>
 </ul>
@@ -654,10 +660,10 @@ document.write(`
 </section>
 </section>
 <section id="id4">
-<h2>リスト<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>リスト<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>リストは、可変長で変更可能(mutable)な一連のPythonオブジェクトの集合です。つまり、タプルとは異なり、リスト内容は直接に変更できます。</p>
 <section id="id5">
-<h3>リストの作成<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>リストの作成<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>構成する要素をコンマで区切り全体をかき括弧<code class="docutils literal notranslate"><span class="pre">[...]</span></code>で囲みます</p></li>
 </ul>
@@ -696,7 +702,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>リストの操作<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>リストの操作<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>リストはミュータブルであるため、新しい要素を追加したり、既存の要素を削除、置換したりできます。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">append</span></code>による末尾への要素の追加</p></li>
@@ -918,10 +924,10 @@ document.write(`
 </section>
 </section>
 <section id="set">
-<h2>セット(set)<a class="headerlink" href="#set" title="Permalink to this heading">#</a></h2>
+<h2>セット(set)<a class="headerlink" href="#set" title="Link to this heading">#</a></h2>
 <p>セット(set)は、重複しない要素の集合です。</p>
 <section id="id7">
-<h3>セットの作成<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>セットの作成<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>セットは一意な要素の集合なので、作成する際同じ要素は複数がいる場合、一つしか含まれないです。</p>
@@ -960,7 +966,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h3>セットの操作<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>セットの操作<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code>による要素数の取得</p></li>
 </ul>
@@ -1010,7 +1016,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>セットの集合演算<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>セットの集合演算<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>セットは、数学的な集合演算をサポートします。</p>
 <ul class="simple">
 <li><p>セットの和</p></li>
@@ -1045,11 +1051,11 @@ document.write(`
 </section>
 </section>
 <section id="dict">
-<h2>辞書(dict)<a class="headerlink" href="#dict" title="Permalink to this heading">#</a></h2>
+<h2>辞書(dict)<a class="headerlink" href="#dict" title="Link to this heading">#</a></h2>
 <p>辞書（dictionary）は、キー（key）と値（value）のペアを格納するデータ構造です。キーはユニークである必要があり、値は重複して格納することができます。</p>
 <p>辞書はミュータブルなので、キーと値要素を追加、削除、変更することは可能です。</p>
 <section id="id10">
-<h3>辞書の作成<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>辞書の作成<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>辞書は波括弧<code class="docutils literal notranslate"><span class="pre">{}</span></code>で囲まれ、キーと値のペアはコロン:で区切って並べ、<code class="docutils literal notranslate"><span class="pre">{key:value}</span></code>という形で作れます。</p>
 <ul class="simple">
 <li><p>辞書にキーとして使用できるのは、イミュータブル型(例えば、整数、浮動小数点数、文字列、タプルなど)しか使用できません。</p></li>
@@ -1087,7 +1093,7 @@ document.write(`
 </div>
 </section>
 <section id="id11">
-<h3>辞書に要素の追加・変更<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>辞書に要素の追加・変更<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>キーを使って要素を参照し、値を代入することで辞書に要素を追加できます。</p></li>
 </ul>
@@ -1165,7 +1171,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3>要素の取得<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>要素の取得<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>辞書のもっとも一般的な用途は、キーを指定して、対応する値を取り出すことです。</p></li>
 </ul>
@@ -1311,7 +1317,7 @@ document.write(`
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
+<label class="sd-tab-label" for="sd-tab-item-0">
 実習問題1</label><div class="sd-tab-content docutils">
 <p>下の表が社会学者の没年を示している。社会学者の名前をキー、没年を値として辞書を作ってください。</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1335,12 +1341,12 @@ document.write(`
 </div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
+<label class="sd-tab-label" for="sd-tab-item-1">
 実習問題2</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Merton</span></code>の没年である<code class="docutils literal notranslate"><span class="pre">2003</span></code>を先の辞書に追加してください。</p>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-2">
+<label class="sd-tab-label" for="sd-tab-item-2">
 実習問題3</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Marx</span></code>の享年を計算してください。</p>
 </div>
@@ -1348,7 +1354,7 @@ document.write(`
 </section>
 </section>
 <section id="id13">
-<h2>シーケンス<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<h2>シーケンス<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>これまで色々なデータ型そして操作方法を勉強しました。その中に、集約する要素が一定の順序で並んでいて、その順序(インデックス)を使ってその要素を指定できる種類のオブジェクトを<strong>シーケンス</strong>といいます。</p>
 <p>シーケンスであるデータ型は以下の特徴があります。</p>
 <ul class="simple">
@@ -1359,7 +1365,7 @@ document.write(`
 </ul>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-3">
+<label class="sd-tab-label" for="sd-tab-item-3">
 問題</label><div class="sd-tab-content docutils">
 <p>今まで紹介されたデータ型の中に、シーケンスであるデータ型は何ですか</p>
 </div>
@@ -1478,7 +1484,7 @@ By 呂　沢宇
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
