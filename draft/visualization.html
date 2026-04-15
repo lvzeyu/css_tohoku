@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -62,6 +65,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,19 +81,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -97,7 +90,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -105,8 +97,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +147,17 @@
     
     
     <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
-    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>`);</script>
+    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark pst-js-only" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -231,9 +220,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -394,7 +388,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -408,25 +402,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -516,7 +502,7 @@ document.write(`
 実に、<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>は<code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>や<code class="docutils literal notranslate"><span class="pre">plotly</span></code>など、多くの可視化ライブラリの基盤にもなっていまあすので、これらのラッパーを使用した場合でも、最終的な出力を調整するためには、<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>の構文を熟知しておく必要がしばしばあります。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +515,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.style.use(&#39;classic&#39;)</span>
-<span class="kn">import</span> <span class="nn">scienceplots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scienceplots</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;science&#39;</span><span class="p">,</span><span class="s1">&#39;no-latex&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -545,7 +531,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>で図のフォントを指定することができます。特に、matplotlib をデフォルトのまま使用すると日本語のテキストは文字化けしてしまいますので、フォント設定を変更することで表示させることが必要されます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">font_manager</span>
 
 <span class="c1"># Path to your TTF file</span>
 <span class="n">ttf_path</span> <span class="o">=</span> <span class="s1">&#39;./Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf&#39;</span>
@@ -575,7 +561,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8a829749ed6ffa463eb2916dc7f7ee93c6e1bd9da66ed6a435478255e9c20e44.png" src="../_images/8a829749ed6ffa463eb2916dc7f7ee93c6e1bd9da66ed6a435478255e9c20e44.png" />
+<img alt="../_images/c8c67790c8dfad464dfa370487ae587cf9a14a483e06da0b2acb7f2f4094f080.png" src="../_images/c8c67790c8dfad464dfa370487ae587cf9a14a483e06da0b2acb7f2f4094f080.png" />
 </div>
 </div>
 </section>
@@ -585,7 +571,7 @@ document.write(`
 <p>可視化を一番手軽に行うために、<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>ではデータを渡すだけで描画してくれる関数が多数用意されています。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="c1"># 折れ線グラフ</span>
@@ -594,10 +580,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f78d2d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a4d8e30&gt;]
 </pre></div>
 </div>
-<img alt="../_images/7db64b263a227cacba202faa2dd883f925e1e812bb5e57c6c16bdfee912c33be.png" src="../_images/7db64b263a227cacba202faa2dd883f925e1e812bb5e57c6c16bdfee912c33be.png" />
+<img alt="../_images/20504664862c37b08725c9f10fad328a09f2274265a6ce3d912569140701e1d1.png" src="../_images/20504664862c37b08725c9f10fad328a09f2274265a6ce3d912569140701e1d1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,10 +595,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f8cd610&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a438080&gt;]
 </pre></div>
 </div>
-<img alt="../_images/f84c178dd3bb9c413be338d47ad0806e06154dee1614350920114de09558fb1a.png" src="../_images/f84c178dd3bb9c413be338d47ad0806e06154dee1614350920114de09558fb1a.png" />
+<img alt="../_images/506a54b8130d48a46d0b8cd335d07ea247308efdffb6474a47397c01b9b03f78.png" src="../_images/506a54b8130d48a46d0b8cd335d07ea247308efdffb6474a47397c01b9b03f78.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -623,14 +609,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  6.,  18.,  59., 143., 258., 231., 155.,  89.,  38.,   3.]),
- array([-3.28283824, -2.65453855, -2.02623885, -1.39793915, -0.76963946,
-        -0.14133976,  0.48695994,  1.11525964,  1.74355933,  2.37185903,
-         3.00015873]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  1.,   7.,  41.,  82., 208., 281., 225., 124.,  24.,   7.]),
+ array([-3.96377018, -3.24875972, -2.53374926, -1.8187388 , -1.10372833,
+        -0.38871787,  0.32629259,  1.04130305,  1.75631351,  2.47132397,
+         3.18633443]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/224379995e176c8aece69c19abdf7e661ce19ee9466c12fea1d892b1f9bf1117.png" src="../_images/224379995e176c8aece69c19abdf7e661ce19ee9466c12fea1d892b1f9bf1117.png" />
+<img alt="../_images/fe3144960193fdcdaf9e1fe08b45464149b9630eafd31f7a28157dd6ef58ff61.png" src="../_images/fe3144960193fdcdaf9e1fe08b45464149b9630eafd31f7a28157dd6ef58ff61.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -647,7 +633,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ErrorbarContainer object of 3 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/273619c5981122505ed25bc123da8fe921f73deb9256f23e59f211ace4ab6730.png" src="../_images/273619c5981122505ed25bc123da8fe921f73deb9256f23e59f211ace4ab6730.png" />
+<img alt="../_images/551b6c0a87b35e88f576bfe622aa0ee1db5fcd943644711a2bfbcf9db16f7978.png" src="../_images/551b6c0a87b35e88f576bfe622aa0ee1db5fcd943644711a2bfbcf9db16f7978.png" />
 </div>
 </div>
 </section>
@@ -702,7 +688,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f3496351f7f426ef15e79ddff1e82d8dc57ac2bbfd79834d1112707f6b0ae41.png" src="../_images/0f3496351f7f426ef15e79ddff1e82d8dc57ac2bbfd79834d1112707f6b0ae41.png" />
+<img alt="../_images/f21f64ccab8670197085968e262ba9ee49ae3fb404ba97f913590f6bf0f43eb6.png" src="../_images/f21f64ccab8670197085968e262ba9ee49ae3fb404ba97f913590f6bf0f43eb6.png" />
 </div>
 </div>
 <p>同じAxesオブジェクトからグラフを作成するメソッドを複数回呼び出すと、1つのAxesに複数のグラフを重ねて描くことができます。</p>
@@ -723,7 +709,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3ec71d1f63320345a02424b567bcfc32266e1d11a213cd55b7ec6acabc150d9e.png" src="../_images/3ec71d1f63320345a02424b567bcfc32266e1d11a213cd55b7ec6acabc150d9e.png" />
+<img alt="../_images/4a7e80a8faa25b21d88fb04328f467dc0c50e6366f9a0924644832725a9ebc10.png" src="../_images/4a7e80a8faa25b21d88fb04328f467dc0c50e6366f9a0924644832725a9ebc10.png" />
 </div>
 </div>
 </section>
@@ -753,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5ceddc40bffc3c7b1fd63c2ecd0d77258479e095b2f16cf85bacfdd00b7e51bd.png" src="../_images/5ceddc40bffc3c7b1fd63c2ecd0d77258479e095b2f16cf85bacfdd00b7e51bd.png" />
+<img alt="../_images/e74d0417de7dabcfc13ea6364becce5054821434e4b440cc17a752d21607d4e8.png" src="../_images/e74d0417de7dabcfc13ea6364becce5054821434e4b440cc17a752d21607d4e8.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code>で、単一のサブプロットを作成するのではなく、一回の呼び出しでサブプロットのグリッドを作成することができます。これにより、複数のプロットを一つの図内で並べて表示することが簡単にできます。</p>
@@ -784,7 +770,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73696a4f4870e5214f0d3623efc4922f08b356c302b250b03920962afb626fc7.png" src="../_images/73696a4f4870e5214f0d3623efc4922f08b356c302b250b03920962afb626fc7.png" />
+<img alt="../_images/e24285298264e3bcf1889a8ee4bd6d991ee0dc334760bd465cf9e7ddaa70cf2a.png" src="../_images/e24285298264e3bcf1889a8ee4bd6d991ee0dc334760bd465cf9e7ddaa70cf2a.png" />
 </div>
 </div>
 </section>
@@ -835,7 +821,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e5d268990bf6f7123f9a874550c13f9d1ca707e40da95e8385ebe2fd54c327a.png" src="../_images/8e5d268990bf6f7123f9a874550c13f9d1ca707e40da95e8385ebe2fd54c327a.png" />
+<img alt="../_images/67feab18a9225800f8032481e3dfc81e326d4375a7b25326ee5af0c21607fa97.png" src="../_images/67feab18a9225800f8032481e3dfc81e326d4375a7b25326ee5af0c21607fa97.png" />
 </div>
 </div>
 <p>同様に、<code class="docutils literal notranslate"><span class="pre">linesyle</span></code>キーワードを使用して線のスタイルを調整することもできます。</p>
@@ -857,7 +843,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a04003405a18ba9b67d31477a8a6e56037781d4922f671910e4b04348475beac.png" src="../_images/a04003405a18ba9b67d31477a8a6e56037781d4922f671910e4b04348475beac.png" />
+<img alt="../_images/82a29a54ae75668bf7efcf3c56684806321c5ba2ee66d55f9d6de51be1572a43.png" src="../_images/82a29a54ae75668bf7efcf3c56684806321c5ba2ee66d55f9d6de51be1572a43.png" />
 </div>
 </div>
 <p>また、線スタイルとカラーコードでまとめて指定することもできます。</p>
@@ -873,7 +859,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c39b9a96d1cdfb20e6ae9c5334ba857b6553b935c623919a7a030e14b83877ca.png" src="../_images/c39b9a96d1cdfb20e6ae9c5334ba857b6553b935c623919a7a030e14b83877ca.png" />
+<img alt="../_images/b770eea1ec617eef03a3e61969ed1ee5b7e80354ecd65ea357e116637b034149.png" src="../_images/b770eea1ec617eef03a3e61969ed1ee5b7e80354ecd65ea357e116637b034149.png" />
 </div>
 </div>
 <p>線の色とスタイルに加えて、データポイントにマーカーを追加することもできます。marker引数を使用します。</p>
@@ -891,10 +877,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/0s/grknnvt93bs7w2rbrt894wkc0000gn/T/ipykernel_48124/4250235199.py:7: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend()
 </pre></div>
 </div>
-<img alt="../_images/5b7d51b769b307f6ab8280168f42fdd3e68452f19ecbf0009d14efc5c26fa24d.png" src="../_images/5b7d51b769b307f6ab8280168f42fdd3e68452f19ecbf0009d14efc5c26fa24d.png" />
+<img alt="../_images/eb8524e830297c721a3a8b41a72e5453fff3ae6008698802f3b24332bb8b247f.png" src="../_images/eb8524e830297c721a3a8b41a72e5453fff3ae6008698802f3b24332bb8b247f.png" />
 </div>
 </div>
 </section>
@@ -914,7 +901,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/8d4301bf6488d0da2c37caa7e1e9d23cee0696d50137b893a4bbd301be5483d9.png" src="../_images/8d4301bf6488d0da2c37caa7e1e9d23cee0696d50137b893a4bbd301be5483d9.png" />
+<img alt="../_images/e51d662cdedd06244256de5d2e50351cf2d8b0c5f2d5e40bbf87b809a08d7729.png" src="../_images/e51d662cdedd06244256de5d2e50351cf2d8b0c5f2d5e40bbf87b809a08d7729.png" />
 </div>
 </div>
 <p>棒の幅を指定するには、<code class="docutils literal notranslate"><span class="pre">width</span></code>引数を使用します。</p>
@@ -931,7 +918,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/35763eca5b5b495b64fe1c589fb6f3c834b5e516030dd36d5afcb7fc2c6bef46.png" src="../_images/35763eca5b5b495b64fe1c589fb6f3c834b5e516030dd36d5afcb7fc2c6bef46.png" />
+<img alt="../_images/9172be9cb8aa2dc5a8c8f51b07290020183be17b4e9d527f70e23e2c04fb6407.png" src="../_images/9172be9cb8aa2dc5a8c8f51b07290020183be17b4e9d527f70e23e2c04fb6407.png" />
 </div>
 </div>
 <p>棒に枠線を付ける場合、枠線の色を<code class="docutils literal notranslate"><span class="pre">edgecolor</span></code>, 枠線の太さを<code class="docutils literal notranslate"><span class="pre">linewidth</span></code>で指定します。</p>
@@ -948,7 +935,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/16927e068007eeafb3fa7398e96187d72ae0e711dec628c96d4d8c89695d9591.png" src="../_images/16927e068007eeafb3fa7398e96187d72ae0e711dec628c96d4d8c89695d9591.png" />
+<img alt="../_images/1134cafcbfa473a9e8d2a91815e0b0cc89f6d817c70e2835bbf76f033fcf5592.png" src="../_images/1134cafcbfa473a9e8d2a91815e0b0cc89f6d817c70e2835bbf76f033fcf5592.png" />
 </div>
 </div>
 <p>横棒グラフを出力するには、ax.barhを使用します。ax.barhの最初の引数が縦軸方向の位置、2番目の引数が棒の長さとなります。</p>
@@ -965,7 +952,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 10 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/d4093b0e927687f17a02be1989d4e057ec12abdbad68f5fb3215058578e48e74.png" src="../_images/d4093b0e927687f17a02be1989d4e057ec12abdbad68f5fb3215058578e48e74.png" />
+<img alt="../_images/104f718acfa0a7d2921b3f485a1b19a342dd6416edb35a8308d3d558ba760c19.png" src="../_images/104f718acfa0a7d2921b3f485a1b19a342dd6416edb35a8308d3d558ba760c19.png" />
 </div>
 </div>
 <p>棒の位置を調整するために、棒の中心をシフトすることができます。</p>
@@ -993,7 +980,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0, &#39;A&#39;), Text(1, 0, &#39;B&#39;), Text(2, 0, &#39;C&#39;), Text(3, 0, &#39;D&#39;)]
 </pre></div>
 </div>
-<img alt="../_images/3f84b34ed36910bef9d6ee9de6dedafd3b4168734f3456e34ef9a9cc46404717.png" src="../_images/3f84b34ed36910bef9d6ee9de6dedafd3b4168734f3456e34ef9a9cc46404717.png" />
+<img alt="../_images/05412131f83d640bc8940f96fe6d93559aaafb13f519904299dcdc460b765669.png" src="../_images/05412131f83d640bc8940f96fe6d93559aaafb13f519904299dcdc460b765669.png" />
 </div>
 </div>
 <p>積み上げ棒グラフを作成する場合、bottomオプションで下になるデータを指定します。</p>
@@ -1012,7 +999,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c05d5de446d231f1444acd66c4837d0df5c110b03ce38642dbde0ebe6dd40d3f.png" src="../_images/c05d5de446d231f1444acd66c4837d0df5c110b03ce38642dbde0ebe6dd40d3f.png" />
+<img alt="../_images/30204763244b292ba3fdf20dec1225e9a118667c8675aac79db92a02b041a7c4.png" src="../_images/30204763244b292ba3fdf20dec1225e9a118667c8675aac79db92a02b041a7c4.png" />
 </div>
 </div>
 </section>
@@ -1031,7 +1018,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3cfcd1c6751446749063097fcb746d4c36c06d1e277f211dc8b90bb582c0c845.png" src="../_images/3cfcd1c6751446749063097fcb746d4c36c06d1e277f211dc8b90bb582c0c845.png" />
+<img alt="../_images/7cdf63c5610e9a9f544c821eb3033b1b352d85e3f8b91675350ff7516e8f6fc4.png" src="../_images/7cdf63c5610e9a9f544c821eb3033b1b352d85e3f8b91675350ff7516e8f6fc4.png" />
 </div>
 </div>
 <p>表示する棒の数は<code class="docutils literal notranslate"><span class="pre">bins</span></code>オプションで指定できます（デフォルトは<code class="docutils literal notranslate"><span class="pre">10</span></code>）。</p>
@@ -1044,7 +1031,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11c891a24fee28947b8e9db4291180e21490a59853ac53409035f49172698989.png" src="../_images/11c891a24fee28947b8e9db4291180e21490a59853ac53409035f49172698989.png" />
+<img alt="../_images/0a585dc46c5c795b4fefd7fd8b86e3a881320b8ac45493e6e534f2729161525e.png" src="../_images/0a585dc46c5c795b4fefd7fd8b86e3a881320b8ac45493e6e534f2729161525e.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1061,7 +1048,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd695f74bba6be8cbf9183c483f42e6d1f6b45ef5e2b329b5f3d22e2d08fe87a.png" src="../_images/fd695f74bba6be8cbf9183c483f42e6d1f6b45ef5e2b329b5f3d22e2d08fe87a.png" />
+<img alt="../_images/08a32b3eb23ba59f205775a0c23edf22097b82b72b41140f2b506faaa57ddc77.png" src="../_images/08a32b3eb23ba59f205775a0c23edf22097b82b72b41140f2b506faaa57ddc77.png" />
 </div>
 </div>
 <p>複数系列のデータからヒストグラムを作成するする方法を示します。</p>
@@ -1080,7 +1067,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34feae06dd65a642fa1af2cb257624a6ae238d8479b17d0cee84e24389815271.png" src="../_images/34feae06dd65a642fa1af2cb257624a6ae238d8479b17d0cee84e24389815271.png" />
+<img alt="../_images/9ea6d7386dee2c3ee8a3e01bfbc03ee9c8007eca8ef1474e07733655425ae9c8.png" src="../_images/9ea6d7386dee2c3ee8a3e01bfbc03ee9c8007eca8ef1474e07733655425ae9c8.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">alpha</span></code>オプションを使って棒を透過させ、重ねて表示することも可能です。</p>
@@ -1095,7 +1082,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5e68a2225b52dbd649ae0e6cdef400ea649734c7577424025d5f442d8cba1682.png" src="../_images/5e68a2225b52dbd649ae0e6cdef400ea649734c7577424025d5f442d8cba1682.png" />
+<img alt="../_images/09922dfdd6dadea84389d5ba495855271b23c22a50274ca7568e88e02138abb3.png" src="../_images/09922dfdd6dadea84389d5ba495855271b23c22a50274ca7568e88e02138abb3.png" />
 </div>
 </div>
 <p>ヒストグラムを積み上げる場合、<code class="docutils literal notranslate"><span class="pre">histtype=&quot;barstacked&quot;</span></code>とするか、<code class="docutils literal notranslate"><span class="pre">stacked=True</span></code>とします。</p>
@@ -1110,7 +1097,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c0c02493cd68daa349cef94aeaba5b068bf8bea80683ca84a2eedd666bf9c041.png" src="../_images/c0c02493cd68daa349cef94aeaba5b068bf8bea80683ca84a2eedd666bf9c041.png" />
+<img alt="../_images/5572b53807301ce229d634ff9be7a22897614c7c54afa6a39074f8417c4bdfad.png" src="../_images/5572b53807301ce229d634ff9be7a22897614c7c54afa6a39074f8417c4bdfad.png" />
 </div>
 </div>
 </section>
@@ -1130,7 +1117,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d9d6454acdb0677607acf9b5deefc522c205da67c5d6b793c567d7232a110c25.png" src="../_images/d9d6454acdb0677607acf9b5deefc522c205da67c5d6b793c567d7232a110c25.png" />
+<img alt="../_images/661174100c4d6a709c928de3eeded4d210a5b8c1ca2c29d0e8fd17fdcf51e7e7.png" src="../_images/661174100c4d6a709c928de3eeded4d210a5b8c1ca2c29d0e8fd17fdcf51e7e7.png" />
 </div>
 </div>
 <p>boxplotで指定できる主なオプションを以下に示します。</p>
@@ -1153,7 +1140,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fea30996c8e1a3976244dbf4ab98ebebdbe76af26c81b4577887fae79be89bb8.png" src="../_images/fea30996c8e1a3976244dbf4ab98ebebdbe76af26c81b4577887fae79be89bb8.png" />
+<img alt="../_images/22f9c6c0358f3c328bb8e3e79f07bea1214432316d410ca3564ee6754799ade0.png" src="../_images/22f9c6c0358f3c328bb8e3e79f07bea1214432316d410ca3564ee6754799ade0.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">labels</span></code>オプションでデータのラベルを指定できます。</p>
@@ -1166,7 +1153,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bddf63ce59560de9417ac7c56bec15ceabe4253a81d51cc6e2ed43c1e4c0d21e.png" src="../_images/bddf63ce59560de9417ac7c56bec15ceabe4253a81d51cc6e2ed43c1e4c0d21e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/0s/grknnvt93bs7w2rbrt894wkc0000gn/T/ipykernel_48124/2070440926.py:2: MatplotlibDeprecationWarning: The &#39;labels&#39; parameter of boxplot() has been renamed &#39;tick_labels&#39; since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  ax.boxplot(x, labels=[&quot;A&quot;, &quot;B&quot;])
+</pre></div>
+</div>
+<img alt="../_images/f40cbd402e1e0ac708e82a8e084003df278d71bbe37b649b197b19650f139541.png" src="../_images/f40cbd402e1e0ac708e82a8e084003df278d71bbe37b649b197b19650f139541.png" />
 </div>
 </div>
 <p>平均値を表示するには<code class="docutils literal notranslate"><span class="pre">showmeans=True</span></code>とします。平均値マーカーの表示方法は、<code class="docutils literal notranslate"><span class="pre">meanprops</span></code>オプションに辞書形式で指定できます。</p>
@@ -1180,7 +1171,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4449a4fa2f048814da7ebb9e0df92cc73bd6ff37fdfbadfbe3281e42d6bf8beb.png" src="../_images/4449a4fa2f048814da7ebb9e0df92cc73bd6ff37fdfbadfbe3281e42d6bf8beb.png" />
+<img alt="../_images/95de2c51a7295678c1bd16d30f864ac8cebdd136ccf8bb76967c02ab41946320.png" src="../_images/95de2c51a7295678c1bd16d30f864ac8cebdd136ccf8bb76967c02ab41946320.png" />
 </div>
 </div>
 </section>
@@ -1189,7 +1180,7 @@ document.write(`
 <p>散布図を出力するには、<code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>を使用します。<code class="docutils literal notranslate"><span class="pre">ax.scatter</span></code>の最初の引数に横軸方向の値、2番目の引数に縦軸方向の値をそれぞれ配列で与えます。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># 横軸の値</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># 縦軸の値</span>
@@ -1201,7 +1192,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d08e8c5f01a9e6772dae9b9e4469d2b039bcdc209b9931b014674bb5b883b074.png" src="../_images/d08e8c5f01a9e6772dae9b9e4469d2b039bcdc209b9931b014674bb5b883b074.png" />
+<img alt="../_images/19833dcedd82bdd8fa7b527ef279e7dddc6b93574196b5af5cc50cda832115d1.png" src="../_images/19833dcedd82bdd8fa7b527ef279e7dddc6b93574196b5af5cc50cda832115d1.png" />
 </div>
 </div>
 <p>散布図に系列を追加したい場合、以下のように<code class="docutils literal notranslate"><span class="pre">ax.plot</span></code>を追加します。<code class="docutils literal notranslate"><span class="pre">label</span></code>オプションと<code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code>を使うことで、系列名を凡例として表示できます。</p>
@@ -1219,7 +1210,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/75b988baa8bc6741e47fe30bc5b4a8609b875a68e56f2f44de246e92b0344b92.png" src="../_images/75b988baa8bc6741e47fe30bc5b4a8609b875a68e56f2f44de246e92b0344b92.png" />
+<img alt="../_images/a5167afcf1258421078b4f5afca458c3e7002694c9284e73eabeee21f35495f5.png" src="../_images/a5167afcf1258421078b4f5afca458c3e7002694c9284e73eabeee21f35495f5.png" />
 </div>
 </div>
 <p>マーカーの大きさ・色・種類を変更することができます</p>
@@ -1243,7 +1234,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8b928d568076e857ce185b6efd7d4bd8caf868a1f84c603dded06a4a3350dfc5.png" src="../_images/8b928d568076e857ce185b6efd7d4bd8caf868a1f84c603dded06a4a3350dfc5.png" />
+<img alt="../_images/6cb0751d12c1ef235a7abacf564102f9e3a894901d27253f039eb30e88c3890e.png" src="../_images/6cb0751d12c1ef235a7abacf564102f9e3a894901d27253f039eb30e88c3890e.png" />
 </div>
 </div>
 <p>散布図の各点の色を、値に合わせて指定できます。<code class="docutils literal notranslate"><span class="pre">c</span></code>に値を、<code class="docutils literal notranslate"><span class="pre">cmap</span></code>にカラーマップを指定します。</p>
@@ -1263,7 +1254,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/849c15966c01a79e982ed1d6093550c546119b6a5a94f1e0e7cc9650b2b15735.png" src="../_images/849c15966c01a79e982ed1d6093550c546119b6a5a94f1e0e7cc9650b2b15735.png" />
+<img alt="../_images/28264a3a35f89d881610fd34b36f0d02cf21fba2ca5649175a1a663953d3f8f4.png" src="../_images/28264a3a35f89d881610fd34b36f0d02cf21fba2ca5649175a1a663953d3f8f4.png" />
 </div>
 </div>
 <p>また、表示するカラーマップの範囲を固定したい場合、最小値と最大値をそれぞれ<code class="docutils literal notranslate"><span class="pre">vmin</span></code>, <code class="docutils literal notranslate"><span class="pre">vmax</span></code>で指定します。</p>
@@ -1277,7 +1268,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6f4d551d3b624c88e02167c2f08fe6fa4dde06a56f2413d5136d779453a2fbbd.png" src="../_images/6f4d551d3b624c88e02167c2f08fe6fa4dde06a56f2413d5136d779453a2fbbd.png" />
+<img alt="../_images/0fcb2d003c03a8bfd32d2f4846f1ec8511195535b96b3757048840567cb88b47.png" src="../_images/0fcb2d003c03a8bfd32d2f4846f1ec8511195535b96b3757048840567cb88b47.png" />
 </div>
 </div>
 </section>
@@ -1309,7 +1300,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;人口数&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3a1140ef697f92100faf0eb528d45c0f2f1359a123b6f8eafacc0380d204b8ae.png" src="../_images/3a1140ef697f92100faf0eb528d45c0f2f1359a123b6f8eafacc0380d204b8ae.png" />
+<img alt="../_images/ceabc05c24d5fd83531fffb3bc67c5c48fe86cd94d7c54ae086fa2a16bb2745f.png" src="../_images/ceabc05c24d5fd83531fffb3bc67c5c48fe86cd94d7c54ae086fa2a16bb2745f.png" />
 </div>
 </div>
 </section>
@@ -1347,13 +1338,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.axis.YTick at 0x11f86c410&gt;,
- &lt;matplotlib.axis.YTick at 0x11f77e6d0&gt;,
- &lt;matplotlib.axis.YTick at 0x11f6896d0&gt;,
- &lt;matplotlib.axis.YTick at 0x11f951bd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.axis.YTick at 0x11c7b6840&gt;,
+ &lt;matplotlib.axis.YTick at 0x11d89da00&gt;,
+ &lt;matplotlib.axis.YTick at 0x11de536e0&gt;,
+ &lt;matplotlib.axis.YTick at 0x11df322d0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/501cbfbe2f13b629120db1473324f60846df76cc10b5d502abbfab6ff249a41a.png" src="../_images/501cbfbe2f13b629120db1473324f60846df76cc10b5d502abbfab6ff249a41a.png" />
+<img alt="../_images/0dd23b3b55846db75b6da29e022909d2262378925ac7e04c05aaa393692f7366.png" src="../_images/0dd23b3b55846db75b6da29e022909d2262378925ac7e04c05aaa393692f7366.png" />
 </div>
 </div>
 <p>目盛りのさらに詳細な設定をするには、<code class="docutils literal notranslate"><span class="pre">Axes.tick_params()</span></code>メソッドを用います。このメソッドの主なオプションを以下に示します。</p>
@@ -1435,7 +1426,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d373fdd11c0e396d69ba8e0782210996f218fcdabc75dc8399e3c681bd84f94f.png" src="../_images/d373fdd11c0e396d69ba8e0782210996f218fcdabc75dc8399e3c681bd84f94f.png" />
+<img alt="../_images/f700e430190439cbf6b9c84224a32058259a563e060939132298a30f5db8ee59.png" src="../_images/f700e430190439cbf6b9c84224a32058259a563e060939132298a30f5db8ee59.png" />
 </div>
 </div>
 <p>目盛り線を引くには、Axes.grid()メソッドを用います。</p>
@@ -1466,7 +1457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/54bd845c83037b2ca801e14b6f5f3283a2e90c6a0c6e1816b8a613496e44af48.png" src="../_images/54bd845c83037b2ca801e14b6f5f3283a2e90c6a0c6e1816b8a613496e44af48.png" />
+<img alt="../_images/395fbb9713eff46a0062d887d954c8df32c0963527ed94f10afe17e013915a8d.png" src="../_images/395fbb9713eff46a0062d887d954c8df32c0963527ed94f10afe17e013915a8d.png" />
 </div>
 </div>
 </section>
@@ -1546,7 +1537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/31c81781eb84047fd59a7507fb5fc28d8da415aa1e6ea2887c4fb077dd01c26e.png" src="../_images/31c81781eb84047fd59a7507fb5fc28d8da415aa1e6ea2887c4fb077dd01c26e.png" />
+<img alt="../_images/6ab80db3d6c5f8fb5a11d909b1dcdd8296d13123e6069cc1e3c9a090f45ef162.png" src="../_images/6ab80db3d6c5f8fb5a11d909b1dcdd8296d13123e6069cc1e3c9a090f45ef162.png" />
 </div>
 </div>
 </section>
@@ -1566,7 +1557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a4292604f973c8754ea514fe8de1b9e681f9ef9228ca12aecd4b0f75897849f7.png" src="../_images/a4292604f973c8754ea514fe8de1b9e681f9ef9228ca12aecd4b0f75897849f7.png" />
+<img alt="../_images/1461241a41d5c52f32844f881552c5794e21ea2f5a2e994599843088d3de8d21.png" src="../_images/1461241a41d5c52f32844f881552c5794e21ea2f5a2e994599843088d3de8d21.png" />
 </div>
 </div>
 </section>
@@ -1593,7 +1584,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6ec62dc1f420c8f0ac5dbcfd467cd17162153665bc3567151481cef76ac40fd3.png" src="../_images/6ec62dc1f420c8f0ac5dbcfd467cd17162153665bc3567151481cef76ac40fd3.png" />
+<img alt="../_images/9e9198ce27d21027856859ccd8b6958b18d2137a39e47299299e10531e882207.png" src="../_images/9e9198ce27d21027856859ccd8b6958b18d2137a39e47299299e10531e882207.png" />
 </div>
 </div>
 </section>
@@ -1613,7 +1604,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/230a795522656a126e4e06c62b8e4ec098c87075f5b6d58dfca04b5e58fd7e9a.png" src="../_images/230a795522656a126e4e06c62b8e4ec098c87075f5b6d58dfca04b5e58fd7e9a.png" />
+<img alt="../_images/d314b19e1eafbbec87647f4d4654c4d838f3ae3d9656cc2347a2cbe42f296fe3.png" src="../_images/d314b19e1eafbbec87647f4d4654c4d838f3ae3d9656cc2347a2cbe42f296fe3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1641,7 +1632,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(6.5, 12000000, &#39;2019年時点のデータ\nになります&#39;)
 </pre></div>
 </div>
-<img alt="../_images/fc0cf120a63fe05ffa9b10e0951fb49b73312c612ef06948a53aa0e2314746c2.png" src="../_images/fc0cf120a63fe05ffa9b10e0951fb49b73312c612ef06948a53aa0e2314746c2.png" />
+<img alt="../_images/8fe94cee1dd5d760d5cb45b08818008007f101e1e05d45c6b284df5013272e12.png" src="../_images/8fe94cee1dd5d760d5cb45b08818008007f101e1e05d45c6b284df5013272e12.png" />
 </div>
 </div>
 </section>
@@ -1671,7 +1662,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b6770eb687c8a8a773d579051ad95916a59a85fbf1db27e95a07e77df2b3392.png" src="../_images/1b6770eb687c8a8a773d579051ad95916a59a85fbf1db27e95a07e77df2b3392.png" />
+<img alt="../_images/1f5fa252deb6948cb864e09bc85ded6d315bbe99ca75e7f88f30c85ed0bdc094.png" src="../_images/1f5fa252deb6948cb864e09bc85ded6d315bbe99ca75e7f88f30c85ed0bdc094.png" />
 </div>
 </div>
 </section>
@@ -1699,7 +1690,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5613330218f46e78a87486667a2a2d1105fa1bd4de5350df3f2ef97ffada31ed.png" src="../_images/5613330218f46e78a87486667a2a2d1105fa1bd4de5350df3f2ef97ffada31ed.png" />
+<img alt="../_images/6b1cfd2cfc72320432e7a1897734bc9eda489ae5c0ba8cfba48d35f7b26f4f29.png" src="../_images/6b1cfd2cfc72320432e7a1897734bc9eda489ae5c0ba8cfba48d35f7b26f4f29.png" />
 </div>
 </div>
 <p>また、凡例の位置は<code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code>オプションでも指定可能です。このオプションに座標を(x, y)で渡します。グラフの左下が(0, 0), 右上が(1, 1)となります。<code class="docutils literal notranslate"><span class="pre">bbox_to_anchor</span></code>にそれぞれ(0, 0)と(1, 1)を指定した例を以下に示します。</p>
@@ -1717,10 +1708,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11fdb92d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11e043110&gt;
 </pre></div>
 </div>
-<img alt="../_images/a08b3530ae666780d91d342b1e7a8dd74bfc382def7f896c58c5e32a58796cd2.png" src="../_images/a08b3530ae666780d91d342b1e7a8dd74bfc382def7f896c58c5e32a58796cd2.png" />
+<img alt="../_images/66adc73d5d1da580e004e492e220f77242acf38ac258557c15b3f634c284d88d.png" src="../_images/66adc73d5d1da580e004e492e220f77242acf38ac258557c15b3f634c284d88d.png" />
 </div>
 </div>
 </section>
@@ -1739,7 +1730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/936a7673fc3dfb5b8ecc9636cdd0f83dbaeebc7109d33765416e45daed81bec5.png" src="../_images/936a7673fc3dfb5b8ecc9636cdd0f83dbaeebc7109d33765416e45daed81bec5.png" />
+<img alt="../_images/50890c3fa354fab684a2e23b7a6c910afe77c63274b795613b8b9c712ea3cd65.png" src="../_images/50890c3fa354fab684a2e23b7a6c910afe77c63274b795613b8b9c712ea3cd65.png" />
 </div>
 </div>
 </section>
@@ -1756,10 +1747,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11f0f2b10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11da336b0&gt;
 </pre></div>
 </div>
-<img alt="../_images/4bd84bff5f2a955d2e2c45f4a776fbe1e3c62e6981e7612c5a3b095d102454c0.png" src="../_images/4bd84bff5f2a955d2e2c45f4a776fbe1e3c62e6981e7612c5a3b095d102454c0.png" />
+<img alt="../_images/a191ac32b1660d59d719a7db88fc0e7570109fe5986ca1976f4c2ed7a2d8a58e.png" src="../_images/a191ac32b1660d59d719a7db88fc0e7570109fe5986ca1976f4c2ed7a2d8a58e.png" />
 </div>
 </div>
 </section>
@@ -1777,10 +1768,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11f56ab10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11dc0f020&gt;
 </pre></div>
 </div>
-<img alt="../_images/16398b072e4271bcba96886e01fd78f2e7df63e302008edbb61ca12af4390a42.png" src="../_images/16398b072e4271bcba96886e01fd78f2e7df63e302008edbb61ca12af4390a42.png" />
+<img alt="../_images/1e57bc2905ed90270de6bc661c913b7f697b2698a1e0f63205b4d57f4059a817.png" src="../_images/1e57bc2905ed90270de6bc661c913b7f697b2698a1e0f63205b4d57f4059a817.png" />
 </div>
 </div>
 </section>
@@ -1797,10 +1788,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11f242b10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11e5e9040&gt;
 </pre></div>
 </div>
-<img alt="../_images/aadd97abb2f6da299ddce1e027ed30c00491273f83dec07d4aceb0ebd10a57c5.png" src="../_images/aadd97abb2f6da299ddce1e027ed30c00491273f83dec07d4aceb0ebd10a57c5.png" />
+<img alt="../_images/6ccceb1a6f4c0342fab3b8f21927c22e4a479334f1bc03abca61ab8dab1cc447.png" src="../_images/6ccceb1a6f4c0342fab3b8f21927c22e4a479334f1bc03abca61ab8dab1cc447.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1841,10 +1832,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11f6b8690&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11c0a6510&gt;
 </pre></div>
 </div>
-<img alt="../_images/ddf0fc21396caaab579c699ed4be76fb79e2599345d2ab6f07afc87940fd116e.png" src="../_images/ddf0fc21396caaab579c699ed4be76fb79e2599345d2ab6f07afc87940fd116e.png" />
+<img alt="../_images/f2adab0717427220d6a0f990f48e92af6d1b9ec6ba472a06cd1f9859ed159b30.png" src="../_images/f2adab0717427220d6a0f990f48e92af6d1b9ec6ba472a06cd1f9859ed159b30.png" />
 </div>
 </div>
 </section>
@@ -1898,7 +1889,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lvzeyu/css_tohoku/master/css_tohoku/draft/Data/titanic.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1947,14 +1938,16 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">基本設定</a><ul class="nav section-nav flex-column">
@@ -2051,8 +2044,8 @@ By 呂　沢宇
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

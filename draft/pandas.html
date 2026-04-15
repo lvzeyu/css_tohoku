@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -64,6 +67,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-light" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
-    <script>document.write(`<img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>`);</script>
+    <img src="../_static/tohoku-university-logo-vector.svg" class="logo__image only-dark pst-js-only" alt="計算社会科学のためのPythonプログラミング入門 - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -233,9 +222,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -396,7 +390,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -410,25 +404,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -495,7 +481,7 @@ document.write(`
 <p>pandas はデータ分析によく用いられるパッケージであり、表形式のデータの操作や解析などを行うための機能を提供します。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -557,7 +543,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(1)
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1067,7 @@ df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29.8811345124283
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(29.8811345124283)
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1079,7 @@ df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>207.7489735996976
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(207.74897359969773)
 </pre></div>
 </div>
 </div>
@@ -1105,7 +1091,7 @@ df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31255.6667
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(31255.6667)
 </pre></div>
 </div>
 </div>
@@ -1125,10 +1111,10 @@ df = pd.read_csv(‘example.csv’, encoding=‘shift_jis’)
 30.0000    40
 18.0000    39
            ..
-0.3333      1
-22.5000     1
-70.5000     1
-0.6667      1
+60.5000     1
+74.0000     1
+0.4167      1
+11.5000     1
 26.5000     1
 Name: count, Length: 98, dtype: int64
 </pre></div>
@@ -1157,7 +1143,7 @@ Name: count, Length: 98, dtype: int64
 1306      male
 1307      male
 1308      male
-Name: sex, Length: 1309, dtype: object
+Name: sex, Length: 1309, dtype: str
 </pre></div>
 </div>
 </div>
@@ -2788,7 +2774,7 @@ Name: 96, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">male_dummay</span><span class="p">(</span><span class="n">sex</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">male_dummay</span><span class="p">(</span><span class="n">sex</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">sex</span><span class="o">==</span><span class="s2">&quot;male&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">sex</span><span class="o">==</span><span class="s2">&quot;female&quot;</span><span class="p">:</span>
@@ -3058,7 +3044,7 @@ Name: 96, dtype: object
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">male_dummay</span><span class="p">(</span><span class="n">sex</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">male_dummay</span><span class="p">(</span><span class="n">sex</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">sex</span><span class="o">==</span><span class="s2">&quot;male&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">sex</span><span class="o">==</span><span class="s2">&quot;female&quot;</span><span class="p">:</span>
@@ -4097,6 +4083,15 @@ Name: 96, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/0s/grknnvt93bs7w2rbrt894wkc0000gn/T/ipykernel_48075/276994816.py:2: ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+Such inplace method never works to update the original DataFrame or Series, because the intermediate object on which we are setting values always behaves as a copy (due to Copy-on-Write).
+
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; instead, to perform the operation inplace on the original object, or try to avoid an inplace operation using &#39;df[col] = df[col].method(value)&#39;.
+
+See the documentation for a more detailed explanation: https://pandas.pydata.org/pandas-docs/stable/user_guide/copy_on_write.html
+  df[&quot;age&quot;].fillna(mean_age,inplace=True) # inplace=Trueで元のデータを変更
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4139,7 +4134,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>Allen, Miss. Elisabeth Walton</td>
       <td>female</td>
-      <td>29.000000</td>
+      <td>29.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>24160</td>
@@ -4158,7 +4153,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>Allison, Master. Hudson Trevor</td>
       <td>male</td>
-      <td>1.000000</td>
+      <td>1.0</td>
       <td>1.0</td>
       <td>2.0</td>
       <td>113781</td>
@@ -4177,7 +4172,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>Allison, Miss. Helen Loraine</td>
       <td>female</td>
-      <td>2.000000</td>
+      <td>2.0</td>
       <td>1.0</td>
       <td>2.0</td>
       <td>113781</td>
@@ -4196,7 +4191,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>Allison, Mr. Hudson Joshua Creighton</td>
       <td>male</td>
-      <td>30.000000</td>
+      <td>30.0</td>
       <td>1.0</td>
       <td>2.0</td>
       <td>113781</td>
@@ -4215,7 +4210,7 @@ Name: 96, dtype: object
       <td>1.0</td>
       <td>Allison, Mrs. Hudson J C (Bessie Waldo Daniels)</td>
       <td>female</td>
-      <td>25.000000</td>
+      <td>25.0</td>
       <td>1.0</td>
       <td>2.0</td>
       <td>113781</td>
@@ -4253,7 +4248,7 @@ Name: 96, dtype: object
       <td>3.0</td>
       <td>Zabour, Miss. Hileni</td>
       <td>female</td>
-      <td>14.500000</td>
+      <td>14.5</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>2665</td>
@@ -4272,7 +4267,7 @@ Name: 96, dtype: object
       <td>3.0</td>
       <td>Zabour, Miss. Thamine</td>
       <td>female</td>
-      <td>29.884799</td>
+      <td>NaN</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>2665</td>
@@ -4291,7 +4286,7 @@ Name: 96, dtype: object
       <td>3.0</td>
       <td>Zakarian, Mr. Mapriededer</td>
       <td>male</td>
-      <td>26.500000</td>
+      <td>26.5</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>2656</td>
@@ -4310,7 +4305,7 @@ Name: 96, dtype: object
       <td>3.0</td>
       <td>Zakarian, Mr. Ortin</td>
       <td>male</td>
-      <td>27.000000</td>
+      <td>27.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>2670</td>
@@ -4329,7 +4324,7 @@ Name: 96, dtype: object
       <td>3.0</td>
       <td>Zimmerman, Mr. Leo</td>
       <td>male</td>
-      <td>29.000000</td>
+      <td>29.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>315082</td>
@@ -4382,7 +4377,7 @@ Name: 96, dtype: object
 74.0     7.775000
 76.0    78.850000
 80.0    30.000000
-Name: fare, Length: 92, dtype: float64
+Name: fare, Length: 91, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -4406,7 +4401,7 @@ Name: fare, Length: 92, dtype: float64
 74.0      7.7750
 76.0     78.8500
 80.0     30.0000
-Name: fare, Length: 92, dtype: float64
+Name: fare, Length: 91, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -4518,7 +4513,7 @@ Name: fare, Length: 92, dtype: float64
     </tr>
   </tbody>
 </table>
-<p>92 rows × 3 columns</p>
+<p>91 rows × 3 columns</p>
 </div></div></div>
 </div>
 <p>複数の列によるのグールプ操作ももちろん可能です。</p>
@@ -4638,7 +4633,7 @@ Name: fare, Length: 92, dtype: float64
     </tr>
   </tbody>
 </table>
-<p>159 rows × 3 columns</p>
+<p>157 rows × 3 columns</p>
 </div></div></div>
 </div>
 <p>さらに、複数の列に対して、それぞれ異なる関数を適用することも可能です。この場合、列名と適用したい関数名をマッピングした辞書を<code class="docutils literal notranslate"><span class="pre">agg</span></code>に渡します。</p>
@@ -4680,12 +4675,12 @@ Name: fare, Length: 92, dtype: float64
     <tr>
       <th>female</th>
       <td>23.0000</td>
-      <td>28.890589</td>
+      <td>28.690722</td>
     </tr>
     <tr>
       <th>male</th>
       <td>11.8875</td>
-      <td>30.434387</td>
+      <td>30.588906</td>
     </tr>
   </tbody>
 </table>
@@ -4744,14 +4739,14 @@ Name: fare, Length: 92, dtype: float64
       <td>46.198097</td>
       <td>23.0000</td>
       <td>63.292599</td>
-      <td>28.890589</td>
+      <td>28.690722</td>
     </tr>
     <tr>
       <th>male</th>
       <td>26.154601</td>
       <td>11.8875</td>
       <td>42.486877</td>
-      <td>30.434387</td>
+      <td>30.588906</td>
     </tr>
   </tbody>
 </table>
@@ -4780,7 +4775,7 @@ Name: fare, Length: 92, dtype: float64
 4       129.682350
            ...    
 1304    -27.547900
-1305     -5.369119
+1305           NaN
 1306      0.000000
 1307    -28.773053
 1308    -22.931107
@@ -6362,14 +6357,16 @@ z= \frac{x-\hat{x}}{\sigma}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">pandasのデータ構造</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
@@ -6447,8 +6444,8 @@ By 呂　沢宇
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
