@@ -1,3 +1,3 @@
-conda activate jupyterbook_1
+source .venv/bin/activate
 jupyter-book build ./
 ghp-import -n -p -f _build/html
