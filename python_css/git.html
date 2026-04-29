@@ -448,6 +448,8 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">マージ(merge)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">コンフリクト（マージの競合）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">コンフリクトの解決方法</a></li>
 </ul>
 </li>
 </ul>
@@ -828,13 +830,86 @@ VSCode操作</label><div class="sd-tab-content docutils">
 git log --graph --decorate --oneline
 </pre>
 <p><img alt="" src="../_images/git_merge_41.png" /></p>
+</section>
+<section id="id7">
+<h3>コンフリクト（マージの競合）<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>二つのブランチが<strong>同じファイルの同じ箇所</strong>をそれぞれ変更してマージしようとすると、Gitはどちらの変更を採用すべきか判断できなくなります。これを**コンフリクト（競合）**と言います。</p>
+<p>例えば、<code class="docutils literal notranslate"><span class="pre">main</span></code>ブランチと<code class="docutils literal notranslate"><span class="pre">develop</span></code>ブランチが両方とも<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>の同じ行を別の内容に書き換えた場合、マージ時にコンフリクトが発生します。</p>
+<p><img alt="" src="python_css/Figure/conflict.svg" /></p>
+<p>コンフリクトが発生すると、Gitは自動マージを中止し、対象ファイルに以下のようなマーカーを書き込みます：</p>
+<pre>
+<<<<<<< HEAD
+mainブランチの変更内容
+=======
+developブランチの変更内容
+>>>>>>> develop
+</pre>
+</section>
+<section id="id8">
+<h3>コンフリクトの解決方法<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>コンフリクトを解決するには、<strong>どちらの内容を残すか（あるいは両方を組み合わせるか）を手動で決定</strong>し、マーカーを削除してコミットします。</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-14" name="sd-tab-set-9" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-14">
+ターミナル操作</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>マージを実行すると、コンフリクトが発生したことが表示されます。</p></li>
+</ol>
+<pre>
+git merge develop
+# CONFLICT (content): Merge conflict in myfile.txt
+# Automatic merge failed; fix conflicts and then commit the result.
+</pre>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>でコンフリクトしているファイルを確認します。</p></li>
+</ol>
+<pre>
+git status
+# both modified: myfile.txt
+</pre>
+<ol class="arabic simple" start="3">
+<li><p>エディタで<code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code>を開き、<code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code>、<code class="docutils literal notranslate"><span class="pre">=======</span></code>、<code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code>のマーカーを削除し、残したい内容に手動で編集します。</p></li>
+<li><p>編集が完了したら、ステージングしてコミットします。</p></li>
+</ol>
+<pre>
+git add myfile.txt
+git commit -m "resolve merge conflict"
+</pre>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+VSCode操作</label><div class="sd-tab-content docutils">
+<p>VSCodeはコンフリクトをグラフィカルに表示します。</p>
+<ol class="arabic simple">
+<li><p>コンフリクトが発生したファイルを開くと、VSCodeが競合箇所をハイライト表示します。</p></li>
+<li><p>各競合箇所に対して以下のオプションが表示されます：</p>
+<ul class="simple">
+<li><p><strong>「現在の変更を取り込む」(Accept Current Change)</strong>：<code class="docutils literal notranslate"><span class="pre">HEAD</span></code>（マージ先）の変更を採用</p></li>
+<li><p><strong>「入力側の変更を取り込む」(Accept Incoming Change)</strong>：マージ元ブランチの変更を採用</p></li>
+<li><p><strong>「両方の変更を取り込む」(Accept Both Changes)</strong>：両方の変更を保持</p></li>
+<li><p><strong>「変更の比較」(Compare Changes)</strong>：差分を比較</p></li>
+</ul>
+</li>
+<li><p>解決後、ソース管理サイドバーでステージングし、コミットします。</p></li>
+</ol>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>コンフリクトを<strong>防ぐ</strong>ためのベストプラクティス：</p>
+<ul class="simple">
+<li><p>同じファイルを複数人が同時に大きく変更しないよう調整する</p></li>
+<li><p>こまめにブランチを最新の<code class="docutils literal notranslate"><span class="pre">main</span></code>に同期する</p></li>
+<li><p>ファイルの役割を明確に分担する</p></li>
+</ul>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
 課題</label><div class="sd-tab-content docutils">
 <p>以下の指示に従って操作を行ってくだい。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">chss2024_practices</span></code>という名前のフォルダを作成し、その中でGitを初期化します。</p></li>
+<li><p>新しいフォルダを作成し、その中でGitを初期化します。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code>というファイルを作成し、“README.mdを作成しました” というメッセージでコミットしてください。</p></li>
 <li><p>“README.mdを作成しました” のコミットに基づく、<code class="docutils literal notranslate"><span class="pre">develop</span></code>というブランチを作成してくだい。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">master/main</span></code>ブランチで<code class="docutils literal notranslate"><span class="pre">practice1.txt</span></code>というファイルを作成し、“practice1.txtを作成しました” というメッセージでコミットしてください。</p></li>
@@ -927,6 +1002,8 @@ git log --graph --decorate --oneline
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset">コミットリセット(reset)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">ブランチ(branch)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">マージ(merge)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">コンフリクト（マージの競合）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">コンフリクトの解決方法</a></li>
 </ul>
 </li>
 </ul>
