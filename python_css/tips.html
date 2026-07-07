@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -454,6 +454,13 @@
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uv">uvを用いて仮想環境の構築</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">uvのインストール</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">プロジェクトの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">仮想環境の作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">パッケージのインストール</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -683,6 +690,60 @@ VSCode操作</label><div class="sd-tab-content docutils">
 </section>
 </section>
 </section>
+<section id="uv">
+<h2>uvを用いて仮想環境の構築<a class="headerlink" href="#uv" title="Link to this heading">#</a></h2>
+<p>uvは、Rustで実装された高速なPythonパッケージ・プロジェクト管理ツールです。従来のツールよりも処理が速く、最大でpipの10〜100倍の速度でインストールできます。</p>
+<section id="id5">
+<h3>uvのインストール<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># MacやLinuxの場合</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">LsSf</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">astral</span><span class="o">.</span><span class="n">sh</span><span class="o">/</span><span class="n">uv</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sh</span>
+
+<span class="c1"># macOS は Homebrew でも可</span>
+
+<span class="n">brew</span> <span class="n">install</span> <span class="n">uv</span>
+
+<span class="c1"># Windowsの場合はコマンドプロンプトまたはPowerShellで下記を実行</span>
+<span class="n">powershell</span> <span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">ByPass</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
+
+</pre></div>
+</div>
+<p>Windowsの場合では、環境変数を設定する必要があるかもしれません、詳細は<a class="reference external" href="https://note.com/kohaku935/n/ne405a010682a#588082d4-96c5-4701-9452-9359807ff925">こちらの記事</a>を参照しなさい。</p>
+<p>uvがインストールされたかどうかを確認します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>プロジェクトの作成<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># プロジェクトフォルダを作成して移動</span>
+<span class="n">mkdir</span> <span class="n">my</span><span class="o">-</span><span class="n">uv</span><span class="o">-</span><span class="n">project</span>
+<span class="n">cd</span> <span class="n">my</span><span class="o">-</span><span class="n">uv</span><span class="o">-</span><span class="n">project</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># プロジェクトを初期化</span>
+<span class="n">uv</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>プロジェクトを作成すると、下記のファイルが自動で作成されます。</p>
+<p><img alt="" src="../_images/uv.png" /></p>
+</section>
+<section id="id7">
+<h3>仮想環境の作成<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>プロジェクトごとに仮想環境を作成することが可能です。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 仮想環境を作成</span>
+<span class="n">uv</span> <span class="n">venv</span>
+</pre></div>
+</div>
+<p>コマンドを実行すると、<code class="docutils literal notranslate"><span class="pre">.venv</span></code>という名前の仮想環境が作成されます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code>スクリプトを実行すると、プロンプトの先頭にプロジェクト名が表示され、仮想環境が有効になったことが確認できます。</p>
+</section>
+<section id="id8">
+<h3>パッケージのインストール<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">add</span> <span class="n">transformers</span> <span class="n">torch</span> <span class="n">pillow</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -768,6 +829,13 @@ VSCode操作</label><div class="sd-tab-content docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uv">uvを用いて仮想環境の構築</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">uvのインストール</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">プロジェクトの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">仮想環境の作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">パッケージのインストール</a></li>
 </ul>
 </li>
 </ul>
