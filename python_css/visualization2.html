@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -504,30 +504,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#plt.style.use([&#39;science&#39;,&#39;no-latex&#39;])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Path to your TTF file</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ttf_path</span> <span class="o">=</span> <span class="s1">&#39;./Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Register the font</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">font_manager</span><span class="o">.</span><span class="n">fontManager</span><span class="o">.</span><span class="n">addfont</span><span class="p">(</span><span class="n">ttf_path</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">custom_font</span> <span class="o">=</span> <span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">fname</span><span class="o">=</span><span class="n">ttf_path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Set the custom font as default</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">custom_font</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
-
-<span class="nn">File ~/Lecture/css_tohoku/.venv-jupyterbook1/lib/python3.11/site-packages/matplotlib/font_manager.py:1293,</span> in <span class="ni">FontManager.addfont</span><span class="nt">(self, path)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1291</span>     <span class="bp">self</span><span class="o">.</span><span class="n">afmlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1292</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1293</span>     <span class="n">font</span> <span class="o">=</span> <span class="n">ft2font</span><span class="o">.</span><span class="n">FT2Font</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1294</span>     <span class="n">prop</span> <span class="o">=</span> <span class="n">ttfFontProperty</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1295</span>     <span class="bp">self</span><span class="o">.</span><span class="n">ttflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -561,7 +537,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dac8af1ac6d5e9fbbf5cc3929db0a670c37f25136089eda74686d2aabc17b047.png" src="../_images/dac8af1ac6d5e9fbbf5cc3929db0a670c37f25136089eda74686d2aabc17b047.png" />
+<img alt="../_images/cc3897f01b9ce39d2227a0194a73b32ffba2631f4aa0ec98ee22b4cbd5a10825.png" src="../_images/cc3897f01b9ce39d2227a0194a73b32ffba2631f4aa0ec98ee22b4cbd5a10825.png" />
 </div>
 </div>
 </section>
@@ -578,7 +554,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/094b2a10d575a8e99878cb3d1e07d0ef636966ee8b48246fd57ba5771db0edfb.png" src="../_images/094b2a10d575a8e99878cb3d1e07d0ef636966ee8b48246fd57ba5771db0edfb.png" />
+<img alt="../_images/6e245c69be3f584724d062e3cba0661381fb6f9ad7211982673d3f313ea00289.png" src="../_images/6e245c69be3f584724d062e3cba0661381fb6f9ad7211982673d3f313ea00289.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -598,7 +574,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83b7da6e6957a0e88b868525eccf6a3abbeff0dbee8a46339cabe35ceed9e003.png" src="../_images/83b7da6e6957a0e88b868525eccf6a3abbeff0dbee8a46339cabe35ceed9e003.png" />
+<img alt="../_images/67621b36286df88bfdbc5725d341951bf51ae98647e25deb446d5f5300cbf32d.png" src="../_images/67621b36286df88bfdbc5725d341951bf51ae98647e25deb446d5f5300cbf32d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -612,7 +588,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/c535c0ff39cd71219a850148f9226ed6a04229ef86e94da7289d3a85450de13e.png" src="../_images/c535c0ff39cd71219a850148f9226ed6a04229ef86e94da7289d3a85450de13e.png" />
+<img alt="../_images/a1beefc9c991f40ce3ad46d9d8f90bb9db4a521f61566177c5d6ded880c36a56.png" src="../_images/a1beefc9c991f40ce3ad46d9d8f90bb9db4a521f61566177c5d6ded880c36a56.png" />
 </div>
 </div>
 </section>
@@ -627,10 +603,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2a498c980&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x1129a64b0&gt;
 </pre></div>
 </div>
-<img alt="../_images/a6a30656634a702c6a3ab22302e88743525fb38a465a25bc86fa391ad3147f48.png" src="../_images/a6a30656634a702c6a3ab22302e88743525fb38a465a25bc86fa391ad3147f48.png" />
+<img alt="../_images/f4147144c69c7f98271534fb171fe7952a859df52cbb02cfa360158490d5bbca.png" src="../_images/f4147144c69c7f98271534fb171fe7952a859df52cbb02cfa360158490d5bbca.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -648,7 +624,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/0e88d100878f1891386063305019ab245b6d42a68daab26cb5f16ccd75c4b7d6.png" src="../_images/0e88d100878f1891386063305019ab245b6d42a68daab26cb5f16ccd75c4b7d6.png" />
+<img alt="../_images/64c85506fbd1a0b5ff6d274a1df8f977c5e1338837d2a08ebc7fa62acbbfe068.png" src="../_images/64c85506fbd1a0b5ff6d274a1df8f977c5e1338837d2a08ebc7fa62acbbfe068.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -665,7 +641,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x400 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/d7833ab0e4eddfb457f2ede95e9bcc0c176259f4e8f831088d4cd17b96a96e5c.png" src="../_images/d7833ab0e4eddfb457f2ede95e9bcc0c176259f4e8f831088d4cd17b96a96e5c.png" />
+<img alt="../_images/6e2cdee64a32ace7aa7823a5b4ce70d36cba606f55cbb9ce28f0e06e8ca3b796.png" src="../_images/6e2cdee64a32ace7aa7823a5b4ce70d36cba606f55cbb9ce28f0e06e8ca3b796.png" />
 </div>
 </div>
 </section>
@@ -694,7 +670,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;, ylabel=&#39;month&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/60128f30353c8b40e5e878f0159e65b8915d715456e0ce583e5cc2eb5661e7e2.png" src="../_images/60128f30353c8b40e5e878f0159e65b8915d715456e0ce583e5cc2eb5661e7e2.png" />
+<img alt="../_images/8451fe3dd6fd9ed9a5b16646551161e44a964505f1659bfdd10aebb1057db9ba.png" src="../_images/8451fe3dd6fd9ed9a5b16646551161e44a964505f1659bfdd10aebb1057db9ba.png" />
 </div>
 </div>
 </section>
@@ -708,10 +684,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x2a5c9b3b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x126d30b60&gt;
 </pre></div>
 </div>
-<img alt="../_images/807884497db4506656aac091a72856b20624ce5662d6e56e2e783b70c2a8c6a7.png" src="../_images/807884497db4506656aac091a72856b20624ce5662d6e56e2e783b70c2a8c6a7.png" />
+<img alt="../_images/085506d218ff196b728fa50fe399482a4994e83ba44f88609861fe861d7fd21a.png" src="../_images/085506d218ff196b728fa50fe399482a4994e83ba44f88609861fe861d7fd21a.png" />
 </div>
 </div>
 </section>
@@ -722,21 +698,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install plotly</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting plotly
-  Downloading plotly-5.22.0-py3-none-any.whl.metadata (7.1 kB)
-Requirement already satisfied: tenacity&gt;=6.2.0 in /Users/ryozawau/anaconda3/envs/jupyterbook/lib/python3.12/site-packages (from plotly) (8.2.3)
-Requirement already satisfied: packaging in /Users/ryozawau/anaconda3/envs/jupyterbook/lib/python3.12/site-packages (from plotly) (23.2)
-Downloading plotly-5.22.0-py3-none-any.whl (16.4 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">16.4/16.4 MB</span> <span class=" -Color -Color-Red">100.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>a <span class=" -Color -Color-Cyan">0:00:01</span>
-?25hInstalling collected packages: plotly
-Successfully installed plotly-5.22.0
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">24.0</span> -&gt; <span class=" -Color -Color-Green">24.1.2</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -874,7 +835,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/be3219e16cce1103be24de52c3e8446eafd1c34bb6cdf01e6be36526b52df994.png" src="../_images/be3219e16cce1103be24de52c3e8446eafd1c34bb6cdf01e6be36526b52df994.png" />
+<img alt="../_images/e6664ca7d007b8d94239e5e6a5c8a6a973f5b9d3739fc77b88780a858432a74c.png" src="../_images/e6664ca7d007b8d94239e5e6a5c8a6a973f5b9d3739fc77b88780a858432a74c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -905,7 +866,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b46dc6de4f8d98049a5cd983b3f6588e6841eca838d05c305e37006031dd060a.png" src="../_images/b46dc6de4f8d98049a5cd983b3f6588e6841eca838d05c305e37006031dd060a.png" />
+<img alt="../_images/0189e0d6ae75510cca2048ae8aaf2132d21c75e7a4d81ecb1419b9c99e666e63.png" src="../_images/0189e0d6ae75510cca2048ae8aaf2132d21c75e7a4d81ecb1419b9c99e666e63.png" />
 </div>
 </div>
 </section>
@@ -927,7 +888,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c138de652df39f8ecebfbee0b51720a95ff65f851d9c2b13b6f6379d38b3fcc.png" src="../_images/5c138de652df39f8ecebfbee0b51720a95ff65f851d9c2b13b6f6379d38b3fcc.png" />
+<img alt="../_images/22dc2cd975bebc7b9df5d2f5ccd9693b99877885e221832466499a9ee8407a8d.png" src="../_images/22dc2cd975bebc7b9df5d2f5ccd9693b99877885e221832466499a9ee8407a8d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -951,7 +912,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46980b9a51a677dfac4db14ba420329da63acf9e34580968223b67edc86d0ce6.png" src="../_images/46980b9a51a677dfac4db14ba420329da63acf9e34580968223b67edc86d0ce6.png" />
+<img alt="../_images/3ed28a4c165ed7bd7684d34d9721258a22e8370dea57e40091fa5f855f342aeb.png" src="../_images/3ed28a4c165ed7bd7684d34d9721258a22e8370dea57e40091fa5f855f342aeb.png" />
 </div>
 </div>
 </section>
@@ -977,7 +938,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99279ed7991afce94db3513f562dff3d1485595b5fdb3c6f2862d474b8292875.png" src="../_images/99279ed7991afce94db3513f562dff3d1485595b5fdb3c6f2862d474b8292875.png" />
+<img alt="../_images/9cfb78aa31c539d99aba9807fc7df14892b170c637d7c32946a2693be36ad842.png" src="../_images/9cfb78aa31c539d99aba9807fc7df14892b170c637d7c32946a2693be36ad842.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -998,7 +959,7 @@ Successfully installed plotly-5.22.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae79877e8626b84a7c4f8b87ada979b4d46616f8acd43ffe1eeba05e8529cc48.png" src="../_images/ae79877e8626b84a7c4f8b87ada979b4d46616f8acd43ffe1eeba05e8529cc48.png" />
+<img alt="../_images/5528bc18242c85c8fb3503f9a5f81489df0cea50cd303becddd72c8503f529e1.png" src="../_images/5528bc18242c85c8fb3503f9a5f81489df0cea50cd303becddd72c8503f529e1.png" />
 </div>
 </div>
 </section>
